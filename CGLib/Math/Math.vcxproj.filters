@@ -23,6 +23,7 @@
     <ClInclude Include="Vector4d.h">
       <Filter>Vector</Filter>
     </ClInclude>
+    <ClInclude Include="Quaternion.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Matrix">

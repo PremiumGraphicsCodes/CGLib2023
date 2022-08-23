@@ -3,10 +3,14 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="IGLObject.h" />
+    <ClInclude Include="VertexBufferObject.h" />
+    <ClInclude Include="glew.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="VertexBufferObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

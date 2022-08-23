@@ -26,6 +26,7 @@
     <ClInclude Include="Matrix2d.h" />
     <ClInclude Include="Matrix3d.h" />
     <ClInclude Include="Matrix4d.h" />
+    <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Vector2d.h" />
     <ClInclude Include="Vector3d.h" />
     <ClInclude Include="Vector4d.h" />
