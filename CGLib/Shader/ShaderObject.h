@@ -13,11 +13,13 @@
 
 //#include "ShaderUnit.h"
 #include "IGLObject.h"
+#include "ShaderUnit.h"
 
 namespace Crystal {
 	namespace Shader {
 		class VertexBufferObject;
 		class ITextureObject;
+		class ShaderUnit;
 
 class ShaderObject : public IGLObject
 {
@@ -32,9 +34,7 @@ public:
 
 	void remove() override;
 
-	bool build(const std::string& vSource, const std::string& fSource);
-
-	bool buildFromFile(const std::string& vFile, const std::string& fFile);
+	//bool link(const std::vector<std::unique_ptr<ShaderUnit>& shader);
 
 	void findUniformLocation(const std::string& str);
 

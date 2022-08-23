@@ -84,6 +84,11 @@ void ShaderObject::remove()
 }
 
 /*
+bool ShaderObject::link(const std::unique_ptr<ShaderUnit>& shader)
+{
+
+}
+
 bool ShaderObject::link(const std::vector<ShaderUnit>& shaders)
 {
 	clear();
@@ -113,40 +118,14 @@ bool ShaderObject::link(const std::vector<ShaderUnit>& shaders)
 }
 */
 
-bool ShaderObject::build(const std::string& vSource, const std::string& fSource)
-{
-	/*
-	ShaderUnit vShader;
-	ShaderUnit fShader;
-
-	assert(glGetError() == GL_NO_ERROR);
-
-	if (!vShader.compile(vSource, ShaderUnit::Stage::VERTEX)) {
-		log += vShader.getLog();
-		return false;
-	}
-	assert(glGetError() == GL_NO_ERROR);
-
-	if (!fShader.compile(fSource, ShaderUnit::Stage::FRAGMENT)) {
-		log += fShader.getLog();
-		return false;
-	}
-	assert(glGetError() == GL_NO_ERROR);
-
-	if (!link({ vShader, fShader })) {
-		return false;
-	}
-	*/
-
-	isBuildOk = true;
-	return true;
-	//positionLocation = glGetUniformLocation( shader.getId(), "position" );
-}
+/*
 
 bool ShaderObject::buildFromFile(const std::string& vFile, const std::string& fFile)
 {
 	return build(::getStrFromFile(vFile), ::getStrFromFile(fFile));
 }
+	*/
+
 
 void ShaderObject::findUniformLocation(const std::string& str)
 {
