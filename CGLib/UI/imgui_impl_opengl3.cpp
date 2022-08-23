@@ -91,7 +91,7 @@
 #endif
 */
 #endif
-#include "GL/glew.h"
+#include "../ThirdParty/glew-2.2.0/include/GL/glew.h"
 #include "GLFW\glfw3.h"
 #include "GLFW\glfw3native.h"
 
