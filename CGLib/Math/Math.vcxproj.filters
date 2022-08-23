@@ -24,6 +24,7 @@
       <Filter>Vector</Filter>
     </ClInclude>
     <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="pi.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Matrix">

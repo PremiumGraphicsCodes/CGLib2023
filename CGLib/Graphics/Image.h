@@ -34,5 +34,8 @@ private:
 	std::vector<T> values;
 };
 
+using Imageuc = Image<unsigned char>;
+using Imagef = Image<float>;
+
 	}
 }

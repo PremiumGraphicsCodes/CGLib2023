@@ -3,8 +3,10 @@
   <ItemGroup>
     <ClInclude Include="ColorRGBA.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Image.cpp" />
+    <ClCompile Include="Camera.cpp" />
   </ItemGroup>
 </Project>
