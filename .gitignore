@@ -28,3 +28,5 @@
 /CGLib/UISample/imgui.ini
 /CGLib/UISample/x64/Release
 /CGLib/x64/Release
+/RendererView/x64/Release
+/RendererView/imgui.ini
