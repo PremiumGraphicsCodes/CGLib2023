@@ -6,11 +6,13 @@
     <ClInclude Include="glew.h" />
     <ClInclude Include="TextureObject.h" />
     <ClInclude Include="ShaderObject.h" />
+    <ClInclude Include="ShaderBuilder.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VertexBufferObject.cpp" />
     <ClCompile Include="TextureObject.cpp" />
     <ClCompile Include="ShaderObject.cpp" />
+    <ClCompile Include="ShaderBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

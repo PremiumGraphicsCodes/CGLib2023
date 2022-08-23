@@ -153,11 +153,13 @@
   <ItemGroup>
     <ClInclude Include="glew.h" />
     <ClInclude Include="IGLObject.h" />
+    <ClInclude Include="ShaderBuilder.h" />
     <ClInclude Include="ShaderObject.h" />
     <ClInclude Include="TextureObject.h" />
     <ClInclude Include="VertexBufferObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ShaderBuilder.cpp" />
     <ClCompile Include="ShaderObject.cpp" />
     <ClCompile Include="TextureObject.cpp" />
     <ClCompile Include="VertexBufferObject.cpp" />

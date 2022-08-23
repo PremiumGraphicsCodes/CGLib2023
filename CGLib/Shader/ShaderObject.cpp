@@ -70,6 +70,11 @@ ShaderObject::~ShaderObject(void)
 	remove();
 }
 
+void ShaderObject::create()
+{
+	handle = glCreateProgram();
+}
+
 void ShaderObject::remove()
 {
 	//glUseProgram(0);
