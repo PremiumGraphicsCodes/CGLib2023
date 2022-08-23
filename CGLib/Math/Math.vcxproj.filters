@@ -5,5 +5,31 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glm.h" />
+    <ClInclude Include="Matrix2d.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix3d.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4d.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2d.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3d.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4d.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Matrix">
+      <UniqueIdentifier>{739158e5-32d4-49f7-8797-f8f109404f30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vector">
+      <UniqueIdentifier>{ef92b831-fb4d-4566-9c09-d2640b399cb1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

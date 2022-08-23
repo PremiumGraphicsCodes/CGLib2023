@@ -23,6 +23,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glm.h" />
+    <ClInclude Include="Matrix2d.h" />
+    <ClInclude Include="Matrix3d.h" />
+    <ClInclude Include="Matrix4d.h" />
+    <ClInclude Include="Vector2d.h" />
+    <ClInclude Include="Vector3d.h" />
+    <ClInclude Include="Vector4d.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
