@@ -5,10 +5,12 @@
     <ClInclude Include="VertexBufferObject.h" />
     <ClInclude Include="glew.h" />
     <ClInclude Include="TextureObject.h" />
+    <ClInclude Include="ShaderObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VertexBufferObject.cpp" />
     <ClCompile Include="TextureObject.cpp" />
+    <ClCompile Include="ShaderObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
