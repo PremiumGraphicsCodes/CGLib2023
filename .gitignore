@@ -26,3 +26,5 @@
 /CGLib/x64/Debug
 /CGLib/UISample/x64/Debug
 /CGLib/UISample/imgui.ini
+/CGLib/UISample/x64/Release
+/CGLib/x64/Release
