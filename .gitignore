@@ -11,3 +11,7 @@
 /packages
 /Shader/x64/Debug
 /UI/x64/Debug
+/Math/x64/Release
+/Shader/x64/Release
+/UI/x64/Release
+/x64/Release
