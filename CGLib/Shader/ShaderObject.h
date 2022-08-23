@@ -34,8 +34,6 @@ public:
 
 	void remove() override;
 
-	//bool link(const std::vector<std::unique_ptr<ShaderUnit>& shader);
-
 	void findUniformLocation(const std::string& str);
 
 	void findAttribLocation(const std::string& str);

@@ -12,12 +12,16 @@ namespace Crystal {
 class ShaderBuilder
 {
 public:
-	void build();
+	ShaderBuilder();
+
+	void build(const std::string& vsSource, const std::string& fsSource);
+
+	void buildFromFile(const std::string& vsFilePath, const std::string& fsFilePath);
 
 private:
 	void compile(const std::string& source, const ShaderUnit::Stage stage);
 
-	bool link();
+	void link();
 
 	std::vector< std::unique_ptr<ShaderUnit> > units;
 

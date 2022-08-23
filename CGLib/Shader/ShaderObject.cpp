@@ -18,47 +18,6 @@ using namespace Crystal::Math;
 using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
 
-namespace {
-	/*
-	std::string getShaderString() {
-		const GLubyte* str = glGetString(GL_RENDERER);
-		const GLubyte* vendor = glGetString(GL_VENDOR);
-		const GLubyte* glVersion = glGetString(GL_VERSION);
-		const GLubyte* glslVersion = glGetString(GL_SHADING_LANGUAGE_VERSION);
-		std::stringstream stream;
-		stream << str;
-		stream << vendor;
-		stream << glVersion;
-		stream << glslVersion;
-		return stream.str();
-	}
-	*/
-
-	namespace {
-		std::string getStrFromFile(const std::string& file)
-		{
-			std::ifstream stream(file);
-			if (stream.fail()) {
-				assert(false);
-				return "";
-			}
-			std::istreambuf_iterator<char> it(stream);
-			std::istreambuf_iterator<char> last;
-			return std::string(it, last);
-		}
-	}
-
-}
-
-/*
-bool ShaderUnit::dump(const std::string& filename)
-{
-std::ofstream stream(filename);
-stream <<
-}
-*/
-
-
 ShaderObject::ShaderObject(void) :
 	handle(-1),
 	isBuildOk(false)
@@ -82,50 +41,6 @@ void ShaderObject::remove()
 		glDeleteProgram(handle);
 	}
 }
-
-/*
-bool ShaderObject::link(const std::unique_ptr<ShaderUnit>& shader)
-{
-
-}
-
-bool ShaderObject::link(const std::vector<ShaderUnit>& shaders)
-{
-	clear();
-
-	assert(glGetError() == GL_NO_ERROR);
-
-	handle = glCreateProgram();
-	for (const auto& s : shaders) {
-		glAttachShader(handle, s.getID());
-	}
-
-	GLint success;
-	glLinkProgram(handle);
-	glGetProgramiv(handle, GL_LINK_STATUS, &success);
-
-	GLchar infoLog[2048];
-	glGetProgramInfoLog(handle, 2048, NULL, infoLog);
-	log += infoLog;
-
-	if (success == 0) {
-		return false;
-	}
-
-	assert(glGetError() == GL_NO_ERROR);
-
-	return true;
-}
-*/
-
-/*
-
-bool ShaderObject::buildFromFile(const std::string& vFile, const std::string& fFile)
-{
-	return build(::getStrFromFile(vFile), ::getStrFromFile(fFile));
-}
-	*/
-
 
 void ShaderObject::findUniformLocation(const std::string& str)
 {
