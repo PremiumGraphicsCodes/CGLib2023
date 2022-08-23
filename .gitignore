@@ -30,3 +30,5 @@
 /CGLib/x64/Release
 /RendererView/x64/Release
 /RendererView/imgui.ini
+/CGLib/Graphics/x64/Release
+/CGLib/Graphics/x64/Debug
