@@ -18,6 +18,8 @@ public:
 
 	void buildFromFile(const std::string& vsFilePath, const std::string& fsFilePath);
 
+	std::unique_ptr<ShaderObject> getShader() { return std::move(shader); }
+
 private:
 	void compile(const std::string& source, const ShaderUnit::Stage stage);
 

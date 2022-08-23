@@ -5,7 +5,7 @@
 using namespace Crystal::Shader;
 
 ShaderUnit::ShaderUnit(const Stage stage) :
-	stage(ShaderUnit::Stage::NONE)
+	stage(stage)
 {}
 
 ShaderUnit::~ShaderUnit()
