@@ -24,3 +24,5 @@
 /CGLib/packages
 /RendererView/x64/Debug
 /CGLib/x64/Debug
+/CGLib/UISample/x64/Debug
+/CGLib/UISample/imgui.ini
