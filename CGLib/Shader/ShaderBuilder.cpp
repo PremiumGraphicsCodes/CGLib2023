@@ -88,3 +88,66 @@ void ComputeShader::remove()
 		glDeleteShader(id);
 	}
 }
+
+void ShaderBuilder::build()
+{
+	shader = std::make_unique<ShaderObject>();
+	shader->create();
+
+	vertexShader.create();
+	compile(fsSource, vertexShader.getHandle());
+
+	fragmentShader.create();
+	compile(vsSource, fragmentShader.getHandle());
+}
+	
+bool ShaderBuilder::compile(const std::string& source, const GLuint id)
+{
+	const GLchar* strPtr[1];
+	strPtr[0] = source.c_str();
+	glShaderSource(id, 1, strPtr, NULL);
+
+	glCompileShader(id);
+
+	GLint success;
+	glGetShaderiv(id, GL_COMPILE_STATUS, &success);
+	GLchar infoLog[2048];
+	glGetShaderInfoLog(id, 2048, NULL, infoLog);
+	log += infoLog;
+	//assert( success != 0 );
+	//return ( success != 0 );
+
+	if (success == 0) {
+		return false;
+	}
+
+	if (glGetError() != GL_NO_ERROR) {
+		return false;
+	}
+	return true;
+
+}
+
+bool ShaderBuilder::link()
+{
+	assert(glGetError() == GL_NO_ERROR);
+
+	glAttachShader(shader->getHandle(), vertexShader.getHandle());
+	glAttachShader(shader->getHandle(), fragmentShader.getHandle());
+
+	GLint success;
+	glLinkProgram(shader->getHandle());
+	glGetProgramiv(shader->getHandle(), GL_LINK_STATUS, &success);
+
+	GLchar infoLog[2048];
+	glGetProgramInfoLog(shader->getHandle(), 2048, NULL, infoLog);
+	log += infoLog;
+
+	if (success == 0) {
+		return false;
+	}
+
+	assert(glGetError() == GL_NO_ERROR);
+
+	return true;
+}

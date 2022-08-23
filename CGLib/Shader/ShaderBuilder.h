@@ -2,6 +2,9 @@
 
 #include "IGLObject.h"
 #include "glew.h"
+#include "ShaderObject.h"
+#include <string>
+#include <memory>
 
 namespace Crystal {
 	namespace Shader {
@@ -74,18 +77,26 @@ private:
 	GLuint id;
 };
 
-/*
 class ShaderBuilder
 {
 public:
 	void build();
 
 private:
-	void compile();
+	bool compile(const std::string& source, const GLuint id);
 
-	void link();
+	bool link();
 
+	std::unique_ptr<ShaderObject> shader;
+
+	std::string vsSource;
+	std::string fsSource;
+
+	VertexShader vertexShader;
+	FragmentShader fragmentShader;
+
+	std::string log;
 };
-*/
+
 	}
 }
