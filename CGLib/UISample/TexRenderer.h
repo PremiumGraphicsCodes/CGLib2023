@@ -24,7 +24,6 @@ public:
 	Buffer buffer;
 
 private:
-	std::unique_ptr<Shader::ShaderObject> shader;
 };
 
 	}

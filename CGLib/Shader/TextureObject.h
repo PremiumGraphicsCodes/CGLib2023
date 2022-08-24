@@ -24,6 +24,8 @@ public:
 
 	void unbind() const;
 
+	void setUnit(const GLint unitNum);
+
 	GLuint getHandle() const { return handle; }
 
 private:

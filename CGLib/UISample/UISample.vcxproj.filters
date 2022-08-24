@@ -17,6 +17,12 @@
     <None Include="Point.fs">
       <Filter>Point</Filter>
     </None>
+    <None Include="Tex.fs">
+      <Filter>Tex</Filter>
+    </None>
+    <None Include="Tex.vs">
+      <Filter>Tex</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IRenderer.h" />

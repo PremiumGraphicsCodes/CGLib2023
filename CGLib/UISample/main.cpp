@@ -8,6 +8,7 @@
 #include "GLFW/glfw3.h"
 
 #include "PointRenderer.h"
+#include "TexRenderer.h"
 
 #include "../Shader/ShaderBuilder.h"
 
@@ -78,6 +79,23 @@ int main() {
 	renderer.setShader(sBuilder.getShader());
 	renderer.build();
 
+	sBuilder.buildFromFile("./Tex.vs", "./Tex.fs");
+
+	Crystal::UI::TexRenderer texRenderer;
+	texRenderer.setShader(sBuilder.getShader());
+	texRenderer.build();
+
+	Crystal::Shader::TextureObject tex;
+	tex.create();
+	Imageuc image(2, 2);
+	image.setColor(0, 0, ColorRGBAuc(0, 0, 0, 0));
+	image.setColor(0, 1, ColorRGBAuc(255, 0, 0, 0));
+	image.setColor(0, 1, ColorRGBAuc(0, 255, 0, 0));
+	image.setColor(1, 1, ColorRGBAuc(0, 0, 255, 0));
+
+	tex.send(image);
+	texRenderer.buffer.tex = &tex;
+
 	Crystal::Shader::VertexBufferObject positionVBO;
 	Crystal::Shader::VertexBufferObject colorVBO;
 	Crystal::Shader::VertexBufferObject sizeVBO;
@@ -132,7 +150,8 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
-		renderer.render();
+		//renderer.render();
+		texRenderer.render();
 
 		//onRender(width, height);
 

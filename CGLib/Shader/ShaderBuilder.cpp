@@ -25,6 +25,8 @@ ShaderBuilder::ShaderBuilder() :
 
 void ShaderBuilder::build(const std::string& vsSource, const std::string& fsSource)
 {
+	units.clear();
+
 	shader = std::make_unique<ShaderObject>();
 	shader->create();
 

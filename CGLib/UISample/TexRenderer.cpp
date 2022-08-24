@@ -16,39 +16,19 @@ namespace {
 		};
 	}
 
-	const std::string vsSource = R"(
-#version 150
-in vec2 position;
-out vec2 texCoord;
-void main(void) {
-	texCoord = (position + vec2(1.0,1.0))/2.0;
-	gl_Position = vec4(position, 0.0, 1.0);
-}
-)";
-
-	const std::string fsSource = R"(
-#version 150
-uniform sampler2D texture;
-in vec2 texCoord;
-out vec4 fragColor;
-void main(void) {
-	fragColor = texture2D(texture, texCoord);
-}
-)";
+	GLuint texLoc;
+	GLuint posLoc;
 }
 
 void TexRenderer::build()
 {
-	ShaderBuilder builder;
-	builder.build(vsSource, fsSource);
-	this->shader = builder.getShader();
-
+	texLoc = shader->findUniformLocation("texture");
+	posLoc = shader->findAttribLocation("position");
 }
 
 
 void TexRenderer::render()
 {
-	/*
 	const auto positions = ::toArray();
 
 	//glEnable(GL_DEPTH_TEST);
@@ -56,22 +36,19 @@ void TexRenderer::render()
 	shader->bind();
 	//glUseProgram(shader->getHandle());
 
-	buffer.tex->bind(0);
+	buffer.tex->setUnit(0);
 
-	//glUniform1i(shader->getUniformLocation("texture"), 0);
-	shader->sendUniform("texture", texture, 0);
+	shader->sendUniform(texLoc, 0);
 
-	shader->sendVertexAttribute2df("position", positions);
+	shader->sendVertexAttribute2df(posLoc, positions);
+	shader->bindOutput("fragColor");
 
 	glEnableVertexAttribArray(0);
 	glDrawArrays(GL_QUADS, 0, static_cast<GLsizei>(positions.size() / 2));
 	glDisableVertexAttribArray(0);
 
-	shader->bindOutput("fragColor");
 
-	texture.unbind();
 	//glDisable(GL_DEPTH_TEST);
 
 	shader->unbind();
-	*/
 }
