@@ -20,7 +20,7 @@ public:
 
 	void send(const Graphics::Imagef& image);
 
-	void bind(const int slotNumber) const;
+	void bind() const;
 
 	void unbind() const;
 

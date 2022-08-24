@@ -1,6 +1,5 @@
 #include "TextureObject.h"
 
-
 using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
 
@@ -21,16 +20,14 @@ void TextureObject::remove()
 	}
 }
 
-void TextureObject::bind(const int slotId) const
+void TextureObject::bind() const
 {
-	glActiveTexture(GL_TEXTURE0 + slotId);
 	glBindTexture(GL_TEXTURE_2D, handle);
 }
 
 void TextureObject::unbind() const
 {
 	glBindTexture(GL_TEXTURE_2D, 0);
-	glActiveTexture(GL_TEXTURE0);
 }
 
 void TextureObject::send(const Imageuc& image)
