@@ -36,11 +36,7 @@ public:
 
 	GLuint findAttribLocation(const std::string& str);
 
-	std::string getLog() const { return log; }
-
 	unsigned int getHandle() const { return handle; }
-
-	unsigned int getAttribLocation(const std::string& str);
 
 	void bind();
 
@@ -117,9 +113,6 @@ public:
 
 private:
 	GLuint handle;
-
-	bool isBuildOk;
-	std::string log;
 };
 
 
