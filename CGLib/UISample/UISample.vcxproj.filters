@@ -7,9 +7,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Point.fs" />
+    <None Include="Point.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PointRenderer.h" />
     <ClInclude Include="TexRenderer.h" />
+    <ClInclude Include="IRenderer.h" />
   </ItemGroup>
 </Project>

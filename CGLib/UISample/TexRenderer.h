@@ -1,5 +1,6 @@
 #pragma once
 
+#include "IRenderer.h"
 #include "../Math/Matrix4d.h"
 #include "../Shader/TextureObject.h"
 #include "../Shader/ShaderObject.h"
@@ -8,7 +9,7 @@
 namespace Crystal {
 	namespace UI {
 
-class TexRenderer
+class TexRenderer : public IRenderer
 {
 public:
 	struct Buffer
@@ -16,9 +17,9 @@ public:
 		Shader::TextureObject* tex;
 	};
 
-	void build();
+	void build() override;
 
-	void render();
+	void render() override;
 
 	Buffer buffer;
 

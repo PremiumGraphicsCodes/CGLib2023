@@ -149,6 +149,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Point.fs" />
+    <None Include="Point.vs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Graphics\Graphics.vcxproj">
@@ -165,6 +167,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IRenderer.h" />
     <ClInclude Include="PointRenderer.h" />
     <ClInclude Include="TexRenderer.h" />
   </ItemGroup>

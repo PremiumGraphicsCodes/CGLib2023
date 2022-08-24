@@ -9,6 +9,8 @@
 
 #include "PointRenderer.h"
 
+#include "../Shader/ShaderBuilder.h"
+
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
 #include <iostream>
@@ -69,7 +71,11 @@ int main() {
 	if (!glfwInit())
 		return 1;
 
+	Crystal::Shader::ShaderBuilder sBuilder;
+	sBuilder.buildFromFile("./Point.vs", "./Point.fs");
+
 	Crystal::UI::PointRenderer renderer;
+	renderer.setShader(sBuilder.getShader());
 	renderer.build();
 
 	Crystal::Shader::VertexBufferObject positionVBO;

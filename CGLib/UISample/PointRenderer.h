@@ -1,5 +1,6 @@
 #pragma once
 
+#include "IRenderer.h"
 #include "../Math/Matrix4d.h"
 #include "../Shader/ShaderObject.h"
 #include "../Shader/VertexBufferObject.h"
@@ -8,7 +9,7 @@
 namespace Crystal {
 	namespace UI {
 
-class PointRenderer
+class PointRenderer : public IRenderer
 {
 public:
 	struct Buffer
@@ -21,14 +22,12 @@ public:
 		int count = 0;
 	};
 
-	void build();
+	void build() override;
 
-	void render();
+	void render() override;
 
 	Buffer buffer;
 
-private:
-	std::unique_ptr<Shader::ShaderObject> shader;
 };
 
 	}
