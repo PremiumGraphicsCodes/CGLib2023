@@ -3,6 +3,7 @@
 #include "IGLObject.h"
 #include "glew.h"
 #include "ShaderObject.h"
+#include "ShaderUnit.h"
 #include <string>
 #include <memory>
 

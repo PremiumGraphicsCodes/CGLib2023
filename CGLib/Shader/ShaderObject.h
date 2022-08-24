@@ -13,12 +13,10 @@
 
 //#include "ShaderUnit.h"
 #include "IGLObject.h"
-#include "ShaderUnit.h"
 
 namespace Crystal {
 	namespace Shader {
 		class VertexBufferObject;
-		class ITextureObject;
 		class ShaderUnit;
 
 class ShaderObject : public IGLObject
@@ -36,7 +34,7 @@ public:
 
 	GLuint findUniformLocation(const std::string& str);
 
-	void findAttribLocation(const std::string& str);
+	GLuint findAttribLocation(const std::string& str);
 
 	std::string getLog() const { return log; }
 
@@ -62,29 +60,29 @@ public:
 
 	void sendUniform(const GLuint location, const float value);
 
-	void sendVertexAttribute1df(const std::string& name, const std::vector<float>& data);
+	void sendVertexAttribute1df(const GLuint location, const std::vector<float>& data);
 
-	void sendVertexAttribute2df(const std::string& name, const std::vector<float>& data);
+	void sendVertexAttribute2df(const GLuint location, const std::vector<float>& data);
 
-	void sendVertexAttribute3df(const std::string& name, const std::vector<float>& data);
+	void sendVertexAttribute3df(const GLuint location, const std::vector<float>& data);
 
-	void sendVertexAttribute4df(const std::string& name, const std::vector<float>& data);
+	void sendVertexAttribute4df(const GLuint location, const std::vector<float>& data);
 
-	void sendVertexAttribute1di(const std::string& name, const std::vector<int>& data);
+	void sendVertexAttribute1di(const GLuint location, const std::vector<int>& data);
 
-	void sendVertexAttribute1di(const std::string& name, const VertexBufferObject& vbo);
+	void sendVertexAttribute1di(const GLuint location, const VertexBufferObject& vbo);
 
-	void sendVertexAttribute1df(const std::string& name, const VertexBufferObject& vbo);
+	void sendVertexAttribute1df(const GLuint location, const VertexBufferObject& vbo);
 
-	void sendVertexAttribute2df(const std::string& name, const VertexBufferObject& vbo);
+	void sendVertexAttribute2df(const GLuint location, const VertexBufferObject& vbo);
 
-	void sendVertexAttribute3df(const std::string& name, const VertexBufferObject& vbo);
+	void sendVertexAttribute3df(const GLuint location, const VertexBufferObject& vbo);
 
-	void sendVertexAttribute4df(const std::string& name, const VertexBufferObject& vbo);
+	void sendVertexAttribute4df(const GLuint location, const VertexBufferObject& vbo);
 
-	void enableVertexAttribute(const std::string& name);
+	void enableVertexAttribute(const GLuint location);
 
-	void disableVertexAttribute(const std::string& name);
+	void disableVertexAttribute(const GLuint location);
 
 	void enableDepthTest();
 
@@ -122,7 +120,6 @@ private:
 
 	bool isBuildOk;
 	std::string log;
-	std::map< std::string, unsigned int > attribMap;
 };
 
 

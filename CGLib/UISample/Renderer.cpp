@@ -46,13 +46,20 @@ namespace {
 	constexpr auto modelViewMatrixLabel = "modelviewMatrix";
 	constexpr auto fragColorLabel = "fragColor";
 
-	struct Location{
+	struct Uniform {
 		GLuint projectionMatrix;
 		GLuint modelViewMatrix;
 	};
-	Location location;
-}
+	Uniform uniform;
 
+	struct VertexAttribute
+	{
+		GLuint position;
+		GLuint color;
+		GLuint size;
+	};
+	VertexAttribute va;
+}
 
 void Renderer::build()
 {
@@ -60,38 +67,29 @@ void Renderer::build()
 	builder.build(vsSource, fsSource);
 	this->shader = builder.getShader();
 
-	location.projectionMatrix = shader->findUniformLocation(::projectionMatrixLabel);
-	location.modelViewMatrix = shader->findUniformLocation(::modelViewMatrixLabel);
+	uniform.projectionMatrix = shader->findUniformLocation(::projectionMatrixLabel);
+	uniform.modelViewMatrix = shader->findUniformLocation(::modelViewMatrixLabel);
 
-	shader->findAttribLocation(::positionLabel);
-	shader->findAttribLocation(::colorLabel);
-	shader->findAttribLocation(::sizeLabel);
+	va.position = shader->findAttribLocation(::positionLabel);
+	va.color = shader->findAttribLocation(::colorLabel);
+	va.size = shader->findAttribLocation(::sizeLabel);
 }
 
 void Renderer::render()
 {
 	shader->bind();
 
+	shader->sendUniform(uniform.projectionMatrix, buffer.projectionMatrix);
+	shader->sendUniform(uniform.modelViewMatrix, buffer.modelViewMatrix);
 
-	shader->sendUniform(location.projectionMatrix, buffer.projectionMatrix);
-	shader->sendUniform(location.modelViewMatrix, buffer.modelViewMatrix);
-
-
-	//buffer.position->bind();
-
-	shader->sendVertexAttribute3df(::positionLabel, *buffer.position);
-	shader->sendVertexAttribute4df(::colorLabel, *buffer.color);
-	shader->sendVertexAttribute1df(::sizeLabel, *buffer.size);
-
-	assert(GL_NO_ERROR == glGetError());
+	shader->sendVertexAttribute3df(va.position, *buffer.position);
+	shader->sendVertexAttribute4df(va.color, *buffer.color);
+	shader->sendVertexAttribute1df(va.size, *buffer.size);
 
 	shader->enableDepthTest();
 	shader->enablePointSprite();
 
 	shader->drawPoints(buffer.count);
-
-	assert(GL_NO_ERROR == glGetError());
-
 
 	shader->bindOutput(::fragColorLabel);
 

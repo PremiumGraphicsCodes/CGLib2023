@@ -49,17 +49,11 @@ GLuint ShaderObject::findUniformLocation(const std::string& str)
 	return location;
 }
 
-void ShaderObject::findAttribLocation(const std::string& str)
+GLuint ShaderObject::findAttribLocation(const std::string& str)
 {
 	const auto location = glGetAttribLocation(handle, str.c_str());
 	assert(location != -1);
-	attribMap[str] = location;
-}
-
-unsigned int ShaderObject::getAttribLocation(const std::string& str)
-{
-	assert(attribMap.find(str) != attribMap.end());
-	return attribMap[str];
+	return location;
 }
 
 void ShaderObject::bind()
@@ -107,94 +101,79 @@ void ShaderObject::sendUniform(const GLuint location, const float value)
 	glUniform1f(location, value);
 }
 
-void ShaderObject::sendVertexAttribute1df(const std::string& name, const std::vector<float>& data)
+void ShaderObject::sendVertexAttribute1df(const GLuint location, const std::vector<float>& data)
 {
-	const auto location = getAttribLocation(name);
 	glVertexAttribPointer(location, 1, GL_FLOAT, GL_FALSE, 0, data.data());
 	//glEnableVertexAttribArray(location);
 }
 
-void ShaderObject::sendVertexAttribute2df(const std::string& name, const std::vector<float>& data)
+void ShaderObject::sendVertexAttribute2df(const GLuint location, const std::vector<float>& data)
 {
-	const auto location = getAttribLocation(name);
-	glVertexAttribPointer(getAttribLocation(name), 2, GL_FLOAT, GL_FALSE, 0, data.data());
+	glVertexAttribPointer(location, 2, GL_FLOAT, GL_FALSE, 0, data.data());
 }
 
-void ShaderObject::sendVertexAttribute3df(const std::string& name, const std::vector<float>& data)
+void ShaderObject::sendVertexAttribute3df(const GLuint location, const std::vector<float>& data)
 {
-	const auto location = getAttribLocation(name);
-	glVertexAttribPointer(getAttribLocation(name), 3, GL_FLOAT, GL_FALSE, 0, data.data());
-	//	glVertexAttribPointer(shader->getAttribLocation("position"), 3, GL_FLOAT, GL_FALSE, 0, positions.data());
+	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, 0, data.data());
 }
 
-void ShaderObject::sendVertexAttribute4df(const std::string& name, const std::vector<float>& data)
+void ShaderObject::sendVertexAttribute4df(const GLuint location, const std::vector<float>& data)
 {
-	const auto location = getAttribLocation(name);
 	glVertexAttribPointer(location, 4, GL_FLOAT, GL_FALSE, 0, data.data());
-	//glEnableVertexAttribArray(location);
 }
 
-void ShaderObject::sendVertexAttribute1di(const std::string& name, const std::vector<int>& data)
+void ShaderObject::sendVertexAttribute1di(const GLuint location, const std::vector<int>& data)
 {
-	const auto location = getAttribLocation(name);
-	glVertexAttribIPointer(getAttribLocation(name), 1, GL_INT, 0, data.data());
-	//	glVertexAttribPointer(shader->getAttribLocation("position"), 3, GL_FLOAT, GL_FALSE, 0, positions.data());
+	glVertexAttribIPointer(location, 1, GL_INT, 0, data.data());
 }
 
-void ShaderObject::sendVertexAttribute1di(const std::string& name, const VertexBufferObject& vbo)
+void ShaderObject::sendVertexAttribute1di(const GLuint location, const VertexBufferObject& vbo)
 {
 	vbo.bind();
-	auto location = getAttribLocation(name);
 	glEnableVertexAttribArray(location);
 	glVertexAttribIPointer(location, 1, GL_INT, 0, (GLvoid*)0);
 	vbo.unbind();
 }
 
-void ShaderObject::sendVertexAttribute1df(const std::string& name, const VertexBufferObject& vbo)
+void ShaderObject::sendVertexAttribute1df(const GLuint location, const VertexBufferObject& vbo)
 {
 	vbo.bind();
-	auto location = getAttribLocation(name);
 	glEnableVertexAttribArray(location);
 	glVertexAttribPointer(location, 1, GL_FLOAT, GL_FALSE, 1 * sizeof(GLfloat), (GLvoid*)0);
 	vbo.unbind();
 }
 
-void ShaderObject::sendVertexAttribute2df(const std::string& name, const VertexBufferObject& vbo)
+void ShaderObject::sendVertexAttribute2df(const GLuint location, const VertexBufferObject& vbo)
 {
 	vbo.bind();
-	auto location = getAttribLocation(name);
 	glEnableVertexAttribArray(location);
 	glVertexAttribPointer(location, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(GLfloat), (GLvoid*)0);
 	vbo.unbind();
 }
 
-void ShaderObject::sendVertexAttribute3df(const std::string& name, const VertexBufferObject& vbo)
+void ShaderObject::sendVertexAttribute3df(const GLuint location, const VertexBufferObject& vbo)
 {
 	vbo.bind();
-	auto location = getAttribLocation(name);
 	glEnableVertexAttribArray(location);
 	glVertexAttribPointer(location, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
 	vbo.unbind();
 }
 
-void ShaderObject::sendVertexAttribute4df(const std::string& name, const VertexBufferObject& vbo)
+void ShaderObject::sendVertexAttribute4df(const GLuint location, const VertexBufferObject& vbo)
 {
 	vbo.bind();
-	auto location = getAttribLocation(name);
 	glEnableVertexAttribArray(location);
 	glVertexAttribPointer(location, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)0);
 	vbo.unbind();
 }
 
-void ShaderObject::enableVertexAttribute(const std::string& name)
+void ShaderObject::enableVertexAttribute(const GLuint location)
 {
-	const auto location = getAttribLocation(name);
 	glEnableVertexAttribArray(location);
 }
 
-void ShaderObject::disableVertexAttribute(const std::string& name)
+void ShaderObject::disableVertexAttribute(const GLuint location)
 {
-	const auto location = getAttribLocation(name);
 	glDisableVertexAttribArray(location);
 }
 
