@@ -38,9 +38,65 @@ void main(void) {
 )";
 }
 
+namespace {
+	constexpr auto positionLabel = "position";
+	constexpr auto colorLabel = "color";
+	constexpr auto sizeLabel = "pointSize";
+	constexpr auto projectionMatrixLabel = "projectionMatrix";
+	constexpr auto modelViewMatrixLabel = "modelviewMatrix";
+	constexpr auto fragColorLabel = "fragColor";
+}
+
+
 void Renderer::build()
 {
 	ShaderBuilder builder;
 	builder.build(vsSource, fsSource);
 	this->shader = builder.getShader();
+
+	shader->findUniformLocation(::projectionMatrixLabel);
+	shader->findUniformLocation(::modelViewMatrixLabel);
+
+	shader->findAttribLocation(::positionLabel);
+	shader->findAttribLocation(::colorLabel);
+	shader->findAttribLocation(::sizeLabel);
+}
+
+void Renderer::render()
+{
+	assert(GL_NO_ERROR == glGetError());
+	shader->bind();
+	assert(GL_NO_ERROR == glGetError());
+
+
+	shader->sendUniform(::projectionMatrixLabel, buffer.projectionMatrix);
+	shader->sendUniform(::modelViewMatrixLabel, buffer.modelViewMatrix);
+
+	assert(GL_NO_ERROR == glGetError());
+
+
+	//buffer.position->bind();
+
+	shader->sendVertexAttribute3df(::positionLabel, *buffer.position);
+	shader->sendVertexAttribute4df(::colorLabel, *buffer.color);
+	shader->sendVertexAttribute1df(::sizeLabel, *buffer.size);
+
+	assert(GL_NO_ERROR == glGetError());
+
+	shader->enableDepthTest();
+	shader->enablePointSprite();
+
+	shader->drawPoints(buffer.count);
+
+	assert(GL_NO_ERROR == glGetError());
+
+
+	shader->bindOutput(::fragColorLabel);
+
+	shader->disablePointSprite();
+	shader->disableDepthTest();
+
+	shader->unbind();
+
+	assert(GL_NO_ERROR == glGetError());
 }

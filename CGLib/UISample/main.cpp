@@ -1,5 +1,6 @@
 #include "../ThirdParty/glew-2.2.0/include/GL/glew.h"
 
+#include "../Graphics/Camera.h"
 #include "../UI/imgui.h"
 #include "../UI/imgui_impl_glfw.h"
 #include "../UI/imgui_impl_opengl3.h"
@@ -11,6 +12,13 @@
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
 #include <iostream>
+
+using namespace Crystal::Math;
+using namespace Crystal::Graphics;
+
+namespace {
+	Camera camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0);
+}
 
 int main() {
 	if (!glfwInit()) {
@@ -64,6 +72,42 @@ int main() {
 	Crystal::UI::Renderer renderer;
 	renderer.build();
 
+	Crystal::Shader::VertexBufferObject positionVBO;
+	Crystal::Shader::VertexBufferObject colorVBO;
+	Crystal::Shader::VertexBufferObject sizeVBO;
+
+	positionVBO.create();
+	colorVBO.create();
+	sizeVBO.create();
+
+	assert(GL_NO_ERROR == glGetError());
+
+
+	std::vector<float> positions{ 0,0,0 };
+	std::vector<float> colors{ 1,1,1,1 };
+	std::vector<float> size{ 100 };
+	positionVBO.bind();
+	positionVBO.send(positions);
+	positionVBO.unbind();
+
+	assert(GL_NO_ERROR == glGetError());
+
+	colorVBO.bind();
+	colorVBO.send(colors);
+	colorVBO.unbind();
+
+	sizeVBO.bind();
+	sizeVBO.send(size);
+	sizeVBO.unbind();
+
+	assert(GL_NO_ERROR == glGetError());
+
+	renderer.buffer.position = &positionVBO;
+	renderer.buffer.color = &colorVBO;
+	renderer.buffer.size = &sizeVBO;
+	renderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
+	renderer.buffer.projectionMatrix = camera.getProjectionMatrix();
+	renderer.buffer.count = 1;
 	// onInit();
 
 	while (!glfwWindowShouldClose(window)) {
@@ -73,18 +117,12 @@ int main() {
 		ImGui::NewFrame();
 
 		if (ImGui::BeginMainMenuBar()) {
-			if (ImGui::BeginMenu("Renderer")) {
-				if (ImGui::MenuItem("SkyBox")) {
-					//::activeRenderer = &cubeMapRenderer;
+			if (ImGui::BeginMenu("AAA")) {
+				if (ImGui::MenuItem("BBB")) {
+					;
 				}
-				if (ImGui::MenuItem("Polygon")) {
-					//::activeRenderer = &polygonRenderer;
-				}
-				if (ImGui::MenuItem("PBLight")) {
-					//::activeRenderer = &pbLightRenderer;
-				}
-				if (ImGui::MenuItem("IBL")) {
-					//::activeRenderer = &iblRenderer;
+				if (ImGui::MenuItem("CCC")) {
+					;
 				}
 
 				ImGui::EndMenu();
@@ -92,18 +130,17 @@ int main() {
 			ImGui::EndMainMenuBar();
 		}
 
-		glClearColor(0, 0, 0, 0);
-		glClear(GL_COLOR_BUFFER_BIT);
-
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
 
+		glViewport(0, 0, width, height);
+		glClearColor(0, 0, 0, 0);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+
+		renderer.render();
+
 		//onRender(width, height);
-		//world->getRenderer()->render(*world->getCamera()->getCamera(), width, height);
-		//const auto animations = world->getAnimations();
-		//for (auto& a : animations) {
-		//	a->step();
-		//}
 
 		glFlush();
 
