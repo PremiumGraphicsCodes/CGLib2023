@@ -90,7 +90,7 @@ int main() {
 	Imageuc image(2, 2);
 	image.setColor(0, 0, ColorRGBAuc(0, 0, 0, 0));
 	image.setColor(0, 1, ColorRGBAuc(255, 0, 0, 0));
-	image.setColor(0, 1, ColorRGBAuc(0, 255, 0, 0));
+	image.setColor(1, 0, ColorRGBAuc(0, 255, 0, 0));
 	image.setColor(1, 1, ColorRGBAuc(0, 0, 255, 0));
 
 	tex.send(image);
