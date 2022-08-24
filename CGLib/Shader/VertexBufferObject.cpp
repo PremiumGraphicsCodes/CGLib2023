@@ -29,12 +29,16 @@ void VertexBufferObject::remove()
 
 void VertexBufferObject::send(const std::vector<int>& values)
 {
+	bind();
 	glBufferData(GL_ARRAY_BUFFER, sizeof(values[0]) * values.size(), values.data(), GL_STATIC_DRAW);
+	unbind();
 }
 
 void VertexBufferObject::send(const std::vector<float>& values)
 {
+	bind();
 	glBufferData(GL_ARRAY_BUFFER, sizeof(values[0]) * values.size(), values.data(), GL_STATIC_DRAW);
+	unbind();
 }
 
 void VertexBufferObject::bind() const

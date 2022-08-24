@@ -80,25 +80,13 @@ int main() {
 	colorVBO.create();
 	sizeVBO.create();
 
-	assert(GL_NO_ERROR == glGetError());
-
 
 	std::vector<float> positions{ 0,0,0 };
 	std::vector<float> colors{ 1,1,1,1 };
 	std::vector<float> size{ 100 };
-	positionVBO.bind();
 	positionVBO.send(positions);
-	positionVBO.unbind();
-
-	assert(GL_NO_ERROR == glGetError());
-
-	colorVBO.bind();
 	colorVBO.send(colors);
-	colorVBO.unbind();
-
-	sizeVBO.bind();
 	sizeVBO.send(size);
-	sizeVBO.unbind();
 
 	assert(GL_NO_ERROR == glGetError());
 
