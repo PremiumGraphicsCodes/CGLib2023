@@ -45,6 +45,12 @@ namespace {
 	constexpr auto projectionMatrixLabel = "projectionMatrix";
 	constexpr auto modelViewMatrixLabel = "modelviewMatrix";
 	constexpr auto fragColorLabel = "fragColor";
+
+	struct Location{
+		GLuint projectionMatrix;
+		GLuint modelViewMatrix;
+	};
+	Location location;
 }
 
 
@@ -54,8 +60,8 @@ void Renderer::build()
 	builder.build(vsSource, fsSource);
 	this->shader = builder.getShader();
 
-	shader->findUniformLocation(::projectionMatrixLabel);
-	shader->findUniformLocation(::modelViewMatrixLabel);
+	location.projectionMatrix = shader->findUniformLocation(::projectionMatrixLabel);
+	location.modelViewMatrix = shader->findUniformLocation(::modelViewMatrixLabel);
 
 	shader->findAttribLocation(::positionLabel);
 	shader->findAttribLocation(::colorLabel);
@@ -64,15 +70,11 @@ void Renderer::build()
 
 void Renderer::render()
 {
-	assert(GL_NO_ERROR == glGetError());
 	shader->bind();
-	assert(GL_NO_ERROR == glGetError());
 
 
-	shader->sendUniform(::projectionMatrixLabel, buffer.projectionMatrix);
-	shader->sendUniform(::modelViewMatrixLabel, buffer.modelViewMatrix);
-
-	assert(GL_NO_ERROR == glGetError());
+	shader->sendUniform(location.projectionMatrix, buffer.projectionMatrix);
+	shader->sendUniform(location.modelViewMatrix, buffer.modelViewMatrix);
 
 
 	//buffer.position->bind();

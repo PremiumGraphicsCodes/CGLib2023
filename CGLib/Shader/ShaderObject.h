@@ -34,15 +34,13 @@ public:
 
 	void remove() override;
 
-	void findUniformLocation(const std::string& str);
+	GLuint findUniformLocation(const std::string& str);
 
 	void findAttribLocation(const std::string& str);
 
 	std::string getLog() const { return log; }
 
 	unsigned int getHandle() const { return handle; }
-
-	unsigned int getUniformLocation(const std::string& str);
 
 	unsigned int getAttribLocation(const std::string& str);
 
@@ -54,17 +52,15 @@ public:
 
 	void disable(GLenum e);
 
-	void sendUniform(const std::string& name, const Math::Matrix3df& matrix);
+	void sendUniform(const GLuint location, const Math::Matrix3df& matrix);
 
-	void sendUniform(const std::string& name, const Math::Matrix4df& matrix);
+	void sendUniform(const GLuint location, const Math::Matrix4df& matrix);
 
-	void sendUniform(const std::string& name, const Math::Vector3df& vector);
+	void sendUniform(const GLuint location, const Math::Vector3df& vector);
 
-	void sendUniform(const std::string& name, const ITextureObject& texture, const int slot);
+	void sendUniform(const GLuint location, const int value);
 
-	void sendUniform(const std::string& name, const int value);
-
-	void sendUniform(const std::string& name, const float value);
+	void sendUniform(const GLuint location, const float value);
 
 	void sendVertexAttribute1df(const std::string& name, const std::vector<float>& data);
 
@@ -126,7 +122,6 @@ private:
 
 	bool isBuildOk;
 	std::string log;
-	std::map< std::string, unsigned int > uniformMap;
 	std::map< std::string, unsigned int > attribMap;
 };
 

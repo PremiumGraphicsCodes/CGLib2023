@@ -42,11 +42,11 @@ void ShaderObject::remove()
 	}
 }
 
-void ShaderObject::findUniformLocation(const std::string& str)
+GLuint ShaderObject::findUniformLocation(const std::string& str)
 {
 	const auto location = glGetUniformLocation(handle, str.c_str());
 	assert(location != -1);
-	uniformMap[str] = location;
+	return location;
 }
 
 void ShaderObject::findAttribLocation(const std::string& str)
@@ -54,12 +54,6 @@ void ShaderObject::findAttribLocation(const std::string& str)
 	const auto location = glGetAttribLocation(handle, str.c_str());
 	assert(location != -1);
 	attribMap[str] = location;
-}
-
-unsigned int ShaderObject::getUniformLocation(const std::string& str)
-{
-	assert(uniformMap.find(str) != uniformMap.end());
-	return uniformMap[str];
 }
 
 unsigned int ShaderObject::getAttribLocation(const std::string& str)
@@ -88,35 +82,29 @@ void ShaderObject::disable(GLenum e)
 	glDisable(e);
 }
 
-void ShaderObject::sendUniform(const std::string& name, const Matrix3df& matrix)
+void ShaderObject::sendUniform(const GLuint location, const Matrix3df& matrix)
 {
-	glUniformMatrix3fv(getUniformLocation(name), 1, GL_FALSE, &matrix[0][0]);
+	glUniformMatrix3fv(location, 1, GL_FALSE, &matrix[0][0]);
 }
 
-void ShaderObject::sendUniform(const std::string& name, const Matrix4df& matrix)
+void ShaderObject::sendUniform(const GLuint location, const Matrix4df& matrix)
 {
-	glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, &matrix[0][0]);
+	glUniformMatrix4fv(location, 1, GL_FALSE, &matrix[0][0]);
 }
 
-void ShaderObject::sendUniform(const std::string& name, const Vector3df& v)
+void ShaderObject::sendUniform(const GLuint location, const Vector3df& v)
 {
-	glUniform3fv(getUniformLocation(name), 1, &v[0]);
+	glUniform3fv(location, 1, &v[0]);
 }
 
-void ShaderObject::sendUniform(const std::string& name, const int value)
+void ShaderObject::sendUniform(const GLuint location, const int value)
 {
-	glUniform1i(getUniformLocation(name), value);
+	glUniform1i(location, value);
 }
 
-void ShaderObject::sendUniform(const std::string& name, const float value)
+void ShaderObject::sendUniform(const GLuint location, const float value)
 {
-	glUniform1f(getUniformLocation(name), value);
-}
-
-void ShaderObject::sendUniform(const std::string& name, const ITextureObject& texture, const int slot)
-{
-	const auto location = getUniformLocation(name);
-	glUniform1i(location, slot);
+	glUniform1f(location, value);
 }
 
 void ShaderObject::sendVertexAttribute1df(const std::string& name, const std::vector<float>& data)
