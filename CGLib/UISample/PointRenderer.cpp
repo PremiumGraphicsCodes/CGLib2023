@@ -1,4 +1,4 @@
-#include "Renderer.h"
+#include "PointRenderer.h"
 
 #include "../Shader/ShaderBuilder.h"
 
@@ -61,7 +61,7 @@ namespace {
 	VertexAttribute va;
 }
 
-void Renderer::build()
+void PointRenderer::build()
 {
 	ShaderBuilder builder;
 	builder.build(vsSource, fsSource);
@@ -75,7 +75,7 @@ void Renderer::build()
 	va.size = shader->findAttribLocation(::sizeLabel);
 }
 
-void Renderer::render()
+void PointRenderer::render()
 {
 	shader->bind();
 

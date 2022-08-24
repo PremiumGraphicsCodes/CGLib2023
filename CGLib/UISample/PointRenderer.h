@@ -8,7 +8,7 @@
 namespace Crystal {
 	namespace UI {
 
-class Renderer
+class PointRenderer
 {
 public:
 	struct Buffer

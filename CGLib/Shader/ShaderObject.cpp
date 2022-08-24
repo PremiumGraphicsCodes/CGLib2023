@@ -19,8 +19,7 @@ using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
 
 ShaderObject::ShaderObject(void) :
-	handle(-1),
-	isBuildOk(false)
+	handle(-1)
 {
 }
 

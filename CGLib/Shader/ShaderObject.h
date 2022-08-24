@@ -36,7 +36,7 @@ public:
 
 	GLuint findAttribLocation(const std::string& str);
 
-	unsigned int getHandle() const { return handle; }
+	GLuint getHandle() const { return handle; }
 
 	void bind();
 
@@ -105,11 +105,6 @@ public:
 	void bindOutput(const std::string& name, unsigned int number);
 
 	void setLineWidth(const float width);
-
-public:
-	//GLuint getHandle() const { return handle; }
-
-	bool isBuildOK() const { return isBuildOk; }
 
 private:
 	GLuint handle;
