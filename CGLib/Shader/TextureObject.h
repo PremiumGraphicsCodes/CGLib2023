@@ -24,12 +24,13 @@ public:
 
 	void unbind() const;
 
-	void setUnit(const GLint unitNum);
+	void setUnit(const GLint texUnit) { this->textureUnit = texUnit; }
 
 	GLuint getHandle() const { return handle; }
 
 private:
 	GLuint handle;
+	GLint textureUnit = 0;
 };
 
 	}

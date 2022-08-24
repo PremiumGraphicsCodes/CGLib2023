@@ -22,18 +22,14 @@ void TextureObject::remove()
 
 void TextureObject::bind() const
 {
+	glActiveTexture(GL_TEXTURE0 + textureUnit);
 	glBindTexture(GL_TEXTURE_2D, handle);
 }
 
 void TextureObject::unbind() const
 {
+	glActiveTexture(GL_TEXTURE0 + textureUnit);
 	glBindTexture(GL_TEXTURE_2D, 0);
-}
-
-void TextureObject::setUnit(const GLint unitNum)
-{
-	glActiveTexture(GL_TEXTURE0 + unitNum);
-	glBindTexture(GL_TEXTURE_2D, handle);
 }
 
 void TextureObject::send(const Imageuc& image)

@@ -38,6 +38,8 @@ void TexRenderer::render()
 
 	buffer.tex->setUnit(0);
 
+	buffer.tex->bind();
+
 	shader->sendUniform(texLoc, 0);
 
 	shader->sendVertexAttribute2df(posLoc, positions);
@@ -47,6 +49,8 @@ void TexRenderer::render()
 	glDrawArrays(GL_QUADS, 0, static_cast<GLsizei>(positions.size() / 2));
 	glDisableVertexAttribArray(0);
 
+
+	buffer.tex->unbind();
 
 	//glDisable(GL_DEPTH_TEST);
 
