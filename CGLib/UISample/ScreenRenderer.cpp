@@ -30,7 +30,6 @@ void ScreenRenderer::setActiveRenderer(const RenderingType type)
 	}
 }
 
-
 void ScreenRenderer::build()
 {
 	ShaderBuilder sBuilder;
@@ -61,26 +60,26 @@ void ScreenRenderer::build()
 
 	renderers.texRenderer.buffer.tex = &tex;
 
-	positionVBO.create();
-	colorVBO.create();
-	sizeVBO.create();
+	buffers.positionVBO.create();
+	buffers.colorVBO.create();
+	buffers.sizeVBO.create();
 
 	std::vector<float> positions{ 0,0,0, 1,0,0 };
 	std::vector<float> colors{ 1,1,1,1, 1,0,0,0 };
 	std::vector<float> size{ 100 };
-	positionVBO.send(positions);
-	colorVBO.send(colors);
-	sizeVBO.send(size);
+	buffers.positionVBO.send(positions);
+	buffers.colorVBO.send(colors);
+	buffers.sizeVBO.send(size);
 
-	renderers.pointRenderer.buffer.position = &positionVBO;
-	renderers.pointRenderer.buffer.color = &colorVBO;
-	renderers.pointRenderer.buffer.size = &sizeVBO;
+	renderers.pointRenderer.buffer.position = &buffers.positionVBO;
+	renderers.pointRenderer.buffer.color = &buffers.colorVBO;
+	renderers.pointRenderer.buffer.size = &buffers.sizeVBO;
 	renderers.pointRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
 	renderers.pointRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
 	renderers.pointRenderer.buffer.count = 1;
 
-	renderers.lineRenderer.buffer.position = &positionVBO;
-	renderers.lineRenderer.buffer.color = &colorVBO;
+	renderers.lineRenderer.buffer.position = &buffers.positionVBO;
+	renderers.lineRenderer.buffer.color = &buffers.colorVBO;
 	renderers.lineRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
 	renderers.lineRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
 	renderers.lineRenderer.buffer.indices = { 0, 1 };

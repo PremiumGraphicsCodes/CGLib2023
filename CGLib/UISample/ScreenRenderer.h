@@ -33,15 +33,18 @@ private:
 		Crystal::UI::LineRenderer lineRenderer;
 		Crystal::UI::TexRenderer texRenderer;
 	};
+
+	struct Buffers
+	{
+		Crystal::Shader::VertexBufferObject positionVBO;
+		Crystal::Shader::VertexBufferObject colorVBO;
+		Crystal::Shader::VertexBufferObject sizeVBO;
+	};
+
 	Renderers renderers;
-
-	Crystal::UI::IRenderer* activeRenderer;
-
-	Crystal::Shader::VertexBufferObject positionVBO;
-	Crystal::Shader::VertexBufferObject colorVBO;
-	Crystal::Shader::VertexBufferObject sizeVBO;
+	Buffers buffers;
+	IRenderer* activeRenderer;
 	Crystal::Shader::TextureObject tex;
-
 	Graphics::Camera camera;
 };
 
