@@ -16,16 +16,16 @@ namespace {
 	constexpr auto fragColorLabel = "fragColor";
 
 	struct UniformLoc {
-		Uniform projectionMatrix;
-		Uniform modelViewMatrix;
+		GLuint projectionMatrix;
+		GLuint modelViewMatrix;
 	};
 	UniformLoc uniform;
 
 	struct VertexAttributeLoc
 	{
-		VertexAttribute position;
-		VertexAttribute color;
-		VertexAttribute size;
+		GLuint position;
+		GLuint color;
+		GLuint size;
 	};
 	VertexAttributeLoc va;
 }
@@ -44,16 +44,18 @@ void PointRenderer::render()
 {
 	shader->bind();
 
-	uniform.projectionMatrix.send(buffer.projectionMatrix);
-	uniform.modelViewMatrix.send(buffer.modelViewMatrix);
+	Uniform projectionMatrix(uniform.projectionMatrix);
+	projectionMatrix.send(buffer.projectionMatrix);
+	Uniform modelviewMatrix(uniform.modelViewMatrix);
+	modelviewMatrix.send(buffer.modelViewMatrix);
 
-	va.position.sendVertexAttribute3df(*buffer.position);
-	va.color.sendVertexAttribute4df(*buffer.color);
-	va.size.sendVertexAttribute1df(*buffer.size);
+	VertexAttribute posAttr(va.position);
+	posAttr.sendVertexAttribute3df(*buffer.position);
+	VertexAttribute colAttr(va.color);
+	colAttr.sendVertexAttribute4df(*buffer.color);
+	VertexAttribute sizeAttr(va.size);
+	sizeAttr.sendVertexAttribute1df(*buffer.size);
 
-	va.position.bind();
-	va.color.bind();
-	va.size.bind();
 
 	shader->enable(GL_DEPTH_TEST);
 	shader->enable(GL_POINT_SPRITE);
@@ -66,10 +68,6 @@ void PointRenderer::render()
 	shader->disable(GL_DEPTH_TEST);
 	shader->disable(GL_POINT_SPRITE);
 	shader->disable(GL_VERTEX_PROGRAM_POINT_SIZE);
-
-	va.position.unbind();
-	va.color.unbind();
-	va.size.unbind();
 
 	shader->unbind();
 

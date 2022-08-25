@@ -36,18 +36,18 @@ void ShaderObject::remove()
 	}
 }
 
-Uniform ShaderObject::findUniformLocation(const std::string& str)
+GLuint ShaderObject::findUniformLocation(const std::string& str)
 {
 	const auto location = glGetUniformLocation(handle, str.c_str());
 	assert(location != -1);
-	return Uniform(location);
+	return location;
 }
 
-VertexAttribute ShaderObject::findAttribLocation(const std::string& str)
+GLuint ShaderObject::findAttribLocation(const std::string& str)
 {
 	const auto location = glGetAttribLocation(handle, str.c_str());
 	assert(location != -1);
-	return VertexAttribute(location);
+	return location;
 }
 
 void ShaderObject::bind()

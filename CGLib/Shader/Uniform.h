@@ -7,15 +7,15 @@
 #include "../Math/Matrix3d.h"
 #include "../Math/Matrix4d.h"
 
+#include "../Util/UnCopyable.h"
+
 namespace Crystal {
 	namespace Shader {
 		class TextureUnit;
 
-class Uniform
+class Uniform : private UnCopyable
 {
 public:
-	Uniform() = default;
-
 	explicit Uniform(const GLuint location) :
 		location(location)
 	{}

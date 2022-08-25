@@ -2,19 +2,24 @@
 
 #include "glew.h"
 #include "VertexBufferObject.h"
+#include "../Util/UnCopyable.h"
 #include <vector>
 
 namespace Crystal {
 	namespace Shader {
 
-class VertexAttribute
+class VertexAttribute : private UnCopyable
 {
 public:
-	VertexAttribute() = default;
-
 	explicit VertexAttribute(const GLuint location) :
 		location(location)
-	{}
+	{
+		bind();
+	}
+
+	~VertexAttribute() {
+		unbind();
+	}
 
 	void sendVertexAttribute1df(const std::vector<float>& data);
 
