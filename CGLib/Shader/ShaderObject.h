@@ -56,30 +56,6 @@ public:
 
 	void sendUniform(const GLuint location, const float value);
 
-	void sendVertexAttribute1df(const GLuint location, const std::vector<float>& data);
-
-	void sendVertexAttribute2df(const GLuint location, const std::vector<float>& data);
-
-	void sendVertexAttribute3df(const GLuint location, const std::vector<float>& data);
-
-	void sendVertexAttribute4df(const GLuint location, const std::vector<float>& data);
-
-	void sendVertexAttribute1di(const GLuint location, const std::vector<int>& data);
-
-	void sendVertexAttribute1di(const GLuint location, const VertexBufferObject& vbo);
-
-	void sendVertexAttribute1df(const GLuint location, const VertexBufferObject& vbo);
-
-	void sendVertexAttribute2df(const GLuint location, const VertexBufferObject& vbo);
-
-	void sendVertexAttribute3df(const GLuint location, const VertexBufferObject& vbo);
-
-	void sendVertexAttribute4df(const GLuint location, const VertexBufferObject& vbo);
-
-	void enableVertexAttribute(const GLuint location);
-
-	void disableVertexAttribute(const GLuint location);
-
 	void enableDepthTest();
 
 	void disableDepthTest();

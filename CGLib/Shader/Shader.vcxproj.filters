@@ -9,6 +9,7 @@
     <ClInclude Include="ShaderBuilder.h" />
     <ClInclude Include="ShaderUnit.h" />
     <ClInclude Include="TextureUnit.h" />
+    <ClInclude Include="VertexAttribute.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VertexBufferObject.cpp" />
@@ -17,6 +18,7 @@
     <ClCompile Include="ShaderBuilder.cpp" />
     <ClCompile Include="ShaderUnit.cpp" />
     <ClCompile Include="TextureUnit.cpp" />
+    <ClCompile Include="VertexAttribute.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

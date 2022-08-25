@@ -2,6 +2,8 @@
 
 #include "../Shader/ShaderBuilder.h"
 
+#include "../Shader/VertexAttribute.h"
+
 using namespace Crystal::Shader;
 using namespace Crystal::UI;
 
@@ -19,13 +21,13 @@ namespace {
 	};
 	Uniform uniform;
 
-	struct VertexAttribute
+	struct VertexAttributeLoc
 	{
 		GLuint position;
 		GLuint color;
 		GLuint size;
 	};
-	VertexAttribute va;
+	VertexAttributeLoc va;
 }
 
 void PointRenderer::link()
@@ -45,9 +47,13 @@ void PointRenderer::render()
 	shader->sendUniform(uniform.projectionMatrix, buffer.projectionMatrix);
 	shader->sendUniform(uniform.modelViewMatrix, buffer.modelViewMatrix);
 
-	shader->sendVertexAttribute3df(va.position, *buffer.position);
-	shader->sendVertexAttribute4df(va.color, *buffer.color);
-	shader->sendVertexAttribute1df(va.size, *buffer.size);
+	VertexAttribute posAttr(va.position);
+	VertexAttribute colAttr(va.color);
+	VertexAttribute sizeAttr(va.size);
+
+	posAttr.sendVertexAttribute3df(*buffer.position);
+	colAttr.sendVertexAttribute4df(*buffer.color);
+	sizeAttr.sendVertexAttribute1df(*buffer.size);
 
 	shader->enableDepthTest();
 	shader->enablePointSprite();

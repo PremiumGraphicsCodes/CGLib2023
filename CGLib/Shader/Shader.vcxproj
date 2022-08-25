@@ -158,6 +158,7 @@
     <ClInclude Include="ShaderUnit.h" />
     <ClInclude Include="TextureObject.h" />
     <ClInclude Include="TextureUnit.h" />
+    <ClInclude Include="VertexAttribute.h" />
     <ClInclude Include="VertexBufferObject.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +167,7 @@
     <ClCompile Include="ShaderUnit.cpp" />
     <ClCompile Include="TextureObject.cpp" />
     <ClCompile Include="TextureUnit.cpp" />
+    <ClCompile Include="VertexAttribute.cpp" />
     <ClCompile Include="VertexBufferObject.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,7 @@
 
 #include "../Shader/ShaderBuilder.h"
 #include "../Shader/TextureUnit.h"
+#include "../Shader/VertexAttribute.h"
 
 using namespace Crystal::Shader;
 using namespace Crystal::UI;
@@ -41,12 +42,15 @@ void TexRenderer::render()
 
 	shader->sendUniform(texLoc, 0);
 
-	shader->sendVertexAttribute2df(posLoc, positions);
+	VertexAttribute posAttr(posLoc);
+	posAttr.sendVertexAttribute2df(positions);
 	shader->bindOutput("fragColor");
 
-	glEnableVertexAttribArray(0);
+	posAttr.enableVertexAttribute();
+
 	glDrawArrays(GL_QUADS, 0, static_cast<GLsizei>(positions.size() / 2));
-	glDisableVertexAttribArray(0);
+	
+	posAttr.disableVertexAttribute();
 
 	texUnit.unbind();
 
