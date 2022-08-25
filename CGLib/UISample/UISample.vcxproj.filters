@@ -12,6 +12,9 @@
     <ClCompile Include="LineRenderer.cpp">
       <Filter>Line</Filter>
     </ClCompile>
+    <ClCompile Include="TriangleRenderer.cpp">
+      <Filter>Triangle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -33,6 +36,12 @@
     <None Include="Line.vs">
       <Filter>Line</Filter>
     </None>
+    <None Include="Triangle.vs">
+      <Filter>Triangle</Filter>
+    </None>
+    <None Include="Triangle.fs">
+      <Filter>Triangle</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IRenderer.h" />
@@ -46,6 +55,9 @@
     <ClInclude Include="LineRenderer.h">
       <Filter>Line</Filter>
     </ClInclude>
+    <ClInclude Include="TriangleRenderer.h">
+      <Filter>Triangle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Point">
@@ -56,6 +68,9 @@
     </Filter>
     <Filter Include="Line">
       <UniqueIdentifier>{06f23acd-604e-40ac-b6d1-e33196c009f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Triangle">
+      <UniqueIdentifier>{e32174da-02d8-4ce7-8bd1-eac83e6c49ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

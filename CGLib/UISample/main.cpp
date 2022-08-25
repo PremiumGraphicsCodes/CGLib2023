@@ -85,6 +85,9 @@ int main() {
 				if (ImGui::MenuItem("Line")) {
 					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Line);
 				}
+				if (ImGui::MenuItem("Triangle")) {
+					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Triangle);
+				}
 				if (ImGui::MenuItem("Tex")) {
 					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Tex);
 				}

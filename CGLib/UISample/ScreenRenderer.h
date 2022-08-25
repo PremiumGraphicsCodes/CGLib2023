@@ -4,6 +4,7 @@
 
 #include "PointRenderer.h"
 #include "LineRenderer.h"
+#include "TriangleRenderer.h"
 #include "TexRenderer.h"
 
 namespace Crystal {
@@ -17,6 +18,7 @@ public:
 	enum RenderingType {
 		Point,
 		Line,
+		Triangle,
 		Tex,
 	};
 
@@ -31,6 +33,7 @@ private:
 	{
 		Crystal::UI::PointRenderer pointRenderer;
 		Crystal::UI::LineRenderer lineRenderer;
+		Crystal::UI::TriangleRenderer triangleRenderer;
 		Crystal::UI::TexRenderer texRenderer;
 	};
 

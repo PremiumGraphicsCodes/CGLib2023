@@ -22,6 +22,9 @@ void ScreenRenderer::setActiveRenderer(const RenderingType type)
 	case RenderingType::Line :
 		this->activeRenderer = &renderers.lineRenderer;
 		break;
+	case RenderingType::Triangle :
+		this->activeRenderer = &renderers.triangleRenderer;
+		break;
 	case RenderingType::Tex :
 		this->activeRenderer = &renderers.texRenderer;
 		break;
@@ -41,6 +44,10 @@ void ScreenRenderer::build()
 	sBuilder.buildFromFile("./Line.vs", "./Line.fs");
 	renderers.lineRenderer.setShader(sBuilder.getShader());
 	renderers.lineRenderer.link();
+
+	sBuilder.buildFromFile("./Triangle.vs", "./Triangle.fs");
+	renderers.triangleRenderer.setShader(sBuilder.getShader());
+	renderers.triangleRenderer.link();
 
 	sBuilder.buildFromFile("./Tex.vs", "./Tex.fs");
 
@@ -64,8 +71,8 @@ void ScreenRenderer::build()
 	buffers.colorVBO.create();
 	buffers.sizeVBO.create();
 
-	std::vector<float> positions{ 0,0,0, 1,0,0 };
-	std::vector<float> colors{ 1,1,1,1, 1,0,0,0 };
+	std::vector<float> positions{ 0,0,0, 1,0,0, 0,1,0 };
+	std::vector<float> colors{ 1,1,1,1, 1,0,0,0, 0,1,0,0 };
 	std::vector<float> size{ 100 };
 	buffers.positionVBO.send(positions);
 	buffers.colorVBO.send(colors);
@@ -84,6 +91,12 @@ void ScreenRenderer::build()
 	renderers.lineRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
 	renderers.lineRenderer.buffer.indices = { 0, 1 };
 	renderers.lineRenderer.buffer.lineWidth = 10.0f;
+
+	renderers.triangleRenderer.buffer.position = &buffers.positionVBO;
+	renderers.triangleRenderer.buffer.color = &buffers.colorVBO;
+	renderers.triangleRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
+	renderers.triangleRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
+	renderers.triangleRenderer.buffer.indices = { 0, 1, 2 };
 }
 
 void ScreenRenderer::render(const int width, const int height)
