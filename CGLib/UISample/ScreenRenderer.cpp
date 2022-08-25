@@ -10,23 +10,23 @@ using namespace Crystal::UI;
 ScreenRenderer::ScreenRenderer() :
 	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1f, 10.0f)
 {
-	this->activeRenderer = &renderers.pointRenderer;
+	this->activeRenderer = &renderers.point;
 }
 
 void ScreenRenderer::setActiveRenderer(const RenderingType type)
 {
 	switch (type) {
 	case RenderingType::Point :
-		this->activeRenderer = &renderers.pointRenderer;
+		this->activeRenderer = &renderers.point;
 		break;
 	case RenderingType::Line :
-		this->activeRenderer = &renderers.lineRenderer;
+		this->activeRenderer = &renderers.line;
 		break;
 	case RenderingType::Triangle :
-		this->activeRenderer = &renderers.triangleRenderer;
+		this->activeRenderer = &renderers.triangle;
 		break;
 	case RenderingType::Tex :
-		this->activeRenderer = &renderers.texRenderer;
+		this->activeRenderer = &renderers.tex;
 		break;
 	default:
 		assert(false);
@@ -38,21 +38,21 @@ void ScreenRenderer::build()
 	ShaderBuilder sBuilder;
 	sBuilder.buildFromFile("./Point.vs", "./Point.fs");
 
-	renderers.pointRenderer.setShader(sBuilder.getShader());
-	renderers.pointRenderer.link();
+	renderers.point.setShader(sBuilder.getShader());
+	renderers.point.link();
 
 	sBuilder.buildFromFile("./Line.vs", "./Line.fs");
-	renderers.lineRenderer.setShader(sBuilder.getShader());
-	renderers.lineRenderer.link();
+	renderers.line.setShader(sBuilder.getShader());
+	renderers.line.link();
 
 	sBuilder.buildFromFile("./Triangle.vs", "./Triangle.fs");
-	renderers.triangleRenderer.setShader(sBuilder.getShader());
-	renderers.triangleRenderer.link();
+	renderers.triangle.setShader(sBuilder.getShader());
+	renderers.triangle.link();
 
 	sBuilder.buildFromFile("./Tex.vs", "./Tex.fs");
 
-	renderers.texRenderer.setShader(sBuilder.getShader());
-	renderers.texRenderer.link();
+	renderers.tex.setShader(sBuilder.getShader());
+	renderers.tex.link();
 
 	tex.create();
 	Imageuc image(2, 2);
@@ -65,7 +65,7 @@ void ScreenRenderer::build()
 	tex.setParameter(GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	tex.setParameter(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
-	renderers.texRenderer.buffer.tex = &tex;
+	renderers.tex.buffer.tex = &tex;
 
 	buffers.positionVBO.create();
 	buffers.colorVBO.create();
@@ -78,25 +78,25 @@ void ScreenRenderer::build()
 	buffers.colorVBO.send(colors);
 	buffers.sizeVBO.send(size);
 
-	renderers.pointRenderer.buffer.position = &buffers.positionVBO;
-	renderers.pointRenderer.buffer.color = &buffers.colorVBO;
-	renderers.pointRenderer.buffer.size = &buffers.sizeVBO;
-	renderers.pointRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
-	renderers.pointRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
-	renderers.pointRenderer.buffer.count = 1;
+	renderers.point.buffer.position = &buffers.positionVBO;
+	renderers.point.buffer.color = &buffers.colorVBO;
+	renderers.point.buffer.size = &buffers.sizeVBO;
+	renderers.point.buffer.modelViewMatrix = camera.getModelViewMatrix();
+	renderers.point.buffer.projectionMatrix = camera.getProjectionMatrix();
+	renderers.point.buffer.count = 1;
 
-	renderers.lineRenderer.buffer.position = &buffers.positionVBO;
-	renderers.lineRenderer.buffer.color = &buffers.colorVBO;
-	renderers.lineRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
-	renderers.lineRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
-	renderers.lineRenderer.buffer.indices = { 0, 1 };
-	renderers.lineRenderer.buffer.lineWidth = 10.0f;
+	renderers.line.buffer.position = &buffers.positionVBO;
+	renderers.line.buffer.color = &buffers.colorVBO;
+	renderers.line.buffer.modelViewMatrix = camera.getModelViewMatrix();
+	renderers.line.buffer.projectionMatrix = camera.getProjectionMatrix();
+	renderers.line.buffer.indices = { 0, 1 };
+	renderers.line.buffer.lineWidth = 10.0f;
 
-	renderers.triangleRenderer.buffer.position = &buffers.positionVBO;
-	renderers.triangleRenderer.buffer.color = &buffers.colorVBO;
-	renderers.triangleRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
-	renderers.triangleRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
-	renderers.triangleRenderer.buffer.indices = { 0, 1, 2 };
+	renderers.triangle.buffer.position = &buffers.positionVBO;
+	renderers.triangle.buffer.color = &buffers.colorVBO;
+	renderers.triangle.buffer.modelViewMatrix = camera.getModelViewMatrix();
+	renderers.triangle.buffer.projectionMatrix = camera.getProjectionMatrix();
+	renderers.triangle.buffer.indices = { 0, 1, 2 };
 }
 
 void ScreenRenderer::render(const int width, const int height)

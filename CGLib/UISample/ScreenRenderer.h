@@ -31,10 +31,10 @@ public:
 private:
 	struct Renderers
 	{
-		Crystal::UI::PointRenderer pointRenderer;
-		Crystal::UI::LineRenderer lineRenderer;
-		Crystal::UI::TriangleRenderer triangleRenderer;
-		Crystal::UI::TexRenderer texRenderer;
+		Crystal::UI::PointRenderer point;
+		Crystal::UI::LineRenderer line;
+		Crystal::UI::TriangleRenderer triangle;
+		Crystal::UI::TexRenderer tex;
 	};
 
 	struct Buffers
