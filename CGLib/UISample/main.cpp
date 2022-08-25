@@ -78,9 +78,12 @@ int main() {
 		ImGui::NewFrame();
 
 		if (ImGui::BeginMainMenuBar()) {
-			if (ImGui::BeginMenu("AAA")) {
+			if (ImGui::BeginMenu("Sample")) {
 				if (ImGui::MenuItem("Point")) {
 					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Point);
+				}
+				if (ImGui::MenuItem("Line")) {
+					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Line);
 				}
 				if (ImGui::MenuItem("Tex")) {
 					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Tex);

@@ -3,6 +3,7 @@
 #include "../Graphics/Camera.h"
 
 #include "PointRenderer.h"
+#include "LineRenderer.h"
 #include "TexRenderer.h"
 
 namespace Crystal {
@@ -15,6 +16,7 @@ public:
 
 	enum RenderingType {
 		Point,
+		Line,
 		Tex,
 	};
 
@@ -26,6 +28,7 @@ public:
 
 private:
 	Crystal::UI::PointRenderer renderer;
+	Crystal::UI::LineRenderer lineRenderer;
 	Crystal::UI::TexRenderer texRenderer;
 	Crystal::UI::IRenderer* activeRenderer;
 

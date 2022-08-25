@@ -19,6 +19,9 @@ void ScreenRenderer::setActiveRenderer(const RenderingType type)
 	case RenderingType::Point :
 		this->activeRenderer = &renderer;
 		break;
+	case RenderingType::Line :
+		this->activeRenderer = &lineRenderer;
+		break;
 	case RenderingType::Tex :
 		this->activeRenderer = &texRenderer;
 		break;
@@ -35,6 +38,10 @@ void ScreenRenderer::build()
 
 	renderer.setShader(sBuilder.getShader());
 	renderer.link();
+
+	sBuilder.buildFromFile("./Line.vs", "./Line.fs");
+	lineRenderer.setShader(sBuilder.getShader());
+	lineRenderer.link();
 
 	sBuilder.buildFromFile("./Tex.vs", "./Tex.fs");
 
@@ -58,8 +65,8 @@ void ScreenRenderer::build()
 	colorVBO.create();
 	sizeVBO.create();
 
-	std::vector<float> positions{ 0,0,0 };
-	std::vector<float> colors{ 1,1,1,1 };
+	std::vector<float> positions{ 0,0,0, 1,0,0 };
+	std::vector<float> colors{ 1,1,1,1, 1,0,0,0 };
 	std::vector<float> size{ 100 };
 	positionVBO.send(positions);
 	colorVBO.send(colors);
@@ -71,6 +78,13 @@ void ScreenRenderer::build()
 	renderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
 	renderer.buffer.projectionMatrix = camera.getProjectionMatrix();
 	renderer.buffer.count = 1;
+
+	lineRenderer.buffer.position = &positionVBO;
+	lineRenderer.buffer.color = &colorVBO;
+	lineRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
+	lineRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
+	lineRenderer.buffer.indices = { 0, 1 };
+	lineRenderer.buffer.lineWidth = 10.0f;
 }
 
 void ScreenRenderer::render(const int width, const int height)

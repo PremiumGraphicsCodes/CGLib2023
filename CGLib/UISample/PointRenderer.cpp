@@ -45,17 +45,18 @@ void PointRenderer::render()
 	shader->bind();
 
 	Uniform projectionMatrix(uniform.projectionMatrix);
-	projectionMatrix.send(buffer.projectionMatrix);
 	Uniform modelviewMatrix(uniform.modelViewMatrix);
+
+	projectionMatrix.send(buffer.projectionMatrix);
 	modelviewMatrix.send(buffer.modelViewMatrix);
 
 	VertexAttribute posAttr(va.position);
-	posAttr.sendVertexAttribute3df(*buffer.position);
 	VertexAttribute colAttr(va.color);
-	colAttr.sendVertexAttribute4df(*buffer.color);
 	VertexAttribute sizeAttr(va.size);
-	sizeAttr.sendVertexAttribute1df(*buffer.size);
 
+	posAttr.sendVertexAttribute3df(*buffer.position);
+	colAttr.sendVertexAttribute4df(*buffer.color);
+	sizeAttr.sendVertexAttribute1df(*buffer.size);
 
 	shader->enable(GL_DEPTH_TEST);
 	shader->enable(GL_POINT_SPRITE);

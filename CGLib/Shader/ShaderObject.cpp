@@ -2,15 +2,10 @@
 //#include "TextureObject.h"
 
 #include <cassert>
-#include <stdlib.h>
 
 #include "glew.h"
 
-#include "VertexBufferObject.h"
-#include "TextureObject.h"
-
 using namespace Crystal::Math;
-using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
 
 ShaderObject::ShaderObject(void) :

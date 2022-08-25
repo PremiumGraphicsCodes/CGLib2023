@@ -143,12 +143,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LineRenderer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PointRenderer.cpp" />
     <ClCompile Include="ScreenRenderer.cpp" />
     <ClCompile Include="TexRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Line.fs" />
+    <None Include="Line.vs" />
     <None Include="packages.config" />
     <None Include="Point.fs" />
     <None Include="Point.vs" />
@@ -171,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IRenderer.h" />
+    <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="PointRenderer.h" />
     <ClInclude Include="ScreenRenderer.h" />
     <ClInclude Include="TexRenderer.h" />

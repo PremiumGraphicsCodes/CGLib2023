@@ -9,6 +9,9 @@
       <Filter>Tex</Filter>
     </ClCompile>
     <ClCompile Include="ScreenRenderer.cpp" />
+    <ClCompile Include="LineRenderer.cpp">
+      <Filter>Line</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -24,6 +27,12 @@
     <None Include="Tex.vs">
       <Filter>Tex</Filter>
     </None>
+    <None Include="Line.fs">
+      <Filter>Line</Filter>
+    </None>
+    <None Include="Line.vs">
+      <Filter>Line</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IRenderer.h" />
@@ -34,6 +43,9 @@
       <Filter>Tex</Filter>
     </ClInclude>
     <ClInclude Include="ScreenRenderer.h" />
+    <ClInclude Include="LineRenderer.h">
+      <Filter>Line</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Point">
@@ -41,6 +53,9 @@
     </Filter>
     <Filter Include="Tex">
       <UniqueIdentifier>{eefedd87-1615-4166-ae10-ab044f33ac89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Line">
+      <UniqueIdentifier>{06f23acd-604e-40ac-b6d1-e33196c009f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
