@@ -5,7 +5,6 @@ using namespace Crystal::Shader;
 void VertexAttribute::sendVertexAttribute1df(const std::vector<float>& data)
 {
 	glVertexAttribPointer(location, 1, GL_FLOAT, GL_FALSE, 0, data.data());
-	//glEnableVertexAttribArray(location);
 }
 
 void VertexAttribute::sendVertexAttribute2df(const std::vector<float>& data)
@@ -63,12 +62,12 @@ void VertexAttribute::sendVertexAttribute4df(const VertexBufferObject& vbo)
 	vbo.unbind();
 }
 
-void VertexAttribute::enableVertexAttribute()
+void VertexAttribute::bind()
 {
 	glEnableVertexAttribArray(location);
 }
 
-void VertexAttribute::disableVertexAttribute()
+void VertexAttribute::unbind()
 {
 	glDisableVertexAttribArray(location);
 }

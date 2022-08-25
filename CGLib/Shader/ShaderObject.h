@@ -14,6 +14,7 @@
 //#include "ShaderUnit.h"
 #include "IGLObject.h"
 #include "VertexAttribute.h"
+#include "Uniform.h"
 
 namespace Crystal {
 	namespace Shader {
@@ -33,7 +34,7 @@ public:
 
 	void remove() override;
 
-	GLuint findUniformLocation(const std::string& str);
+	Uniform findUniformLocation(const std::string& str);
 
 	VertexAttribute findAttribLocation(const std::string& str);
 
@@ -46,16 +47,6 @@ public:
 	void enable(GLenum e);
 
 	void disable(GLenum e);
-
-	void sendUniform(const GLuint location, const Math::Matrix3df& matrix);
-
-	void sendUniform(const GLuint location, const Math::Matrix4df& matrix);
-
-	void sendUniform(const GLuint location, const Math::Vector3df& vector);
-
-	void sendUniform(const GLuint location, const int value);
-
-	void sendUniform(const GLuint location, const float value);
 
 	void enableDepthTest();
 

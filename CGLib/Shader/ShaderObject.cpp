@@ -4,11 +4,6 @@
 #include <cassert>
 #include <stdlib.h>
 
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-
 #include "glew.h"
 
 #include "VertexBufferObject.h"
@@ -41,11 +36,11 @@ void ShaderObject::remove()
 	}
 }
 
-GLuint ShaderObject::findUniformLocation(const std::string& str)
+Uniform ShaderObject::findUniformLocation(const std::string& str)
 {
 	const auto location = glGetUniformLocation(handle, str.c_str());
 	assert(location != -1);
-	return location;
+	return Uniform(location);
 }
 
 VertexAttribute ShaderObject::findAttribLocation(const std::string& str)
@@ -73,31 +68,6 @@ void ShaderObject::enable(GLenum e)
 void ShaderObject::disable(GLenum e)
 {
 	glDisable(e);
-}
-
-void ShaderObject::sendUniform(const GLuint location, const Matrix3df& matrix)
-{
-	glUniformMatrix3fv(location, 1, GL_FALSE, &matrix[0][0]);
-}
-
-void ShaderObject::sendUniform(const GLuint location, const Matrix4df& matrix)
-{
-	glUniformMatrix4fv(location, 1, GL_FALSE, &matrix[0][0]);
-}
-
-void ShaderObject::sendUniform(const GLuint location, const Vector3df& v)
-{
-	glUniform3fv(location, 1, &v[0]);
-}
-
-void ShaderObject::sendUniform(const GLuint location, const int value)
-{
-	glUniform1i(location, value);
-}
-
-void ShaderObject::sendUniform(const GLuint location, const float value)
-{
-	glUniform1f(location, value);
 }
 
 void ShaderObject::enableDepthTest()

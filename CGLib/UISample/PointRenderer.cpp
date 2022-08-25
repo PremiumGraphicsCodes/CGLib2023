@@ -15,11 +15,11 @@ namespace {
 	constexpr auto modelViewMatrixLabel = "modelviewMatrix";
 	constexpr auto fragColorLabel = "fragColor";
 
-	struct Uniform {
-		GLuint projectionMatrix;
-		GLuint modelViewMatrix;
+	struct UniformLoc {
+		Uniform projectionMatrix;
+		Uniform modelViewMatrix;
 	};
-	Uniform uniform;
+	UniformLoc uniform;
 
 	struct VertexAttributeLoc
 	{
@@ -44,16 +44,16 @@ void PointRenderer::render()
 {
 	shader->bind();
 
-	shader->sendUniform(uniform.projectionMatrix, buffer.projectionMatrix);
-	shader->sendUniform(uniform.modelViewMatrix, buffer.modelViewMatrix);
+	uniform.projectionMatrix.sendUniform(buffer.projectionMatrix);
+	uniform.modelViewMatrix.sendUniform(buffer.modelViewMatrix);
 
 	va.position.sendVertexAttribute3df(*buffer.position);
 	va.color.sendVertexAttribute4df(*buffer.color);
 	va.size.sendVertexAttribute1df(*buffer.size);
 
-	va.position.enableVertexAttribute();
-	va.color.enableVertexAttribute();
-	va.size.enableVertexAttribute();
+	va.position.bind();
+	va.color.bind();
+	va.size.bind();
 
 	shader->enableDepthTest();
 	shader->enablePointSprite();
@@ -65,9 +65,9 @@ void PointRenderer::render()
 	shader->disablePointSprite();
 	shader->disableDepthTest();
 
-	va.position.disableVertexAttribute();
-	va.color.disableVertexAttribute();
-	va.size.disableVertexAttribute();
+	va.position.unbind();
+	va.color.unbind();
+	va.size.unbind();
 
 	shader->unbind();
 

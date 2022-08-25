@@ -10,6 +10,7 @@
     <ClInclude Include="ShaderUnit.h" />
     <ClInclude Include="TextureUnit.h" />
     <ClInclude Include="VertexAttribute.h" />
+    <ClInclude Include="Uniform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VertexBufferObject.cpp" />
@@ -19,6 +20,7 @@
     <ClCompile Include="ShaderUnit.cpp" />
     <ClCompile Include="TextureUnit.cpp" />
     <ClCompile Include="VertexAttribute.cpp" />
+    <ClCompile Include="Uniform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

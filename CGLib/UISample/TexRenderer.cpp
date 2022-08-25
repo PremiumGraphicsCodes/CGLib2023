@@ -18,7 +18,7 @@ namespace {
 		};
 	}
 
-	GLuint texLoc;
+	Uniform texLoc;
 	VertexAttribute positionAttr;
 }
 
@@ -31,30 +31,24 @@ void TexRenderer::link()
 
 void TexRenderer::render()
 {
+	TextureUnit texUnit(0, buffer.tex);
+
 	const auto positions = ::toArray();
 
-	//glEnable(GL_DEPTH_TEST);
-
 	shader->bind();
-
-	TextureUnit texUnit(0, buffer.tex);
 	texUnit.bind();
 
-	shader->sendUniform(texLoc, 0);
+	texLoc.sendUniform(0);
 
-	//VertexAttribute posAttr(posLoc);
 	positionAttr.sendVertexAttribute2df(positions);
 	shader->bindOutput("fragColor");
 
-	positionAttr.enableVertexAttribute();
+	positionAttr.bind();
 
 	glDrawArrays(GL_QUADS, 0, static_cast<GLsizei>(positions.size() / 2));
 	
-	positionAttr.disableVertexAttribute();
+	positionAttr.unbind();
 
 	texUnit.unbind();
-
-	//glDisable(GL_DEPTH_TEST);
-
 	shader->unbind();
 }

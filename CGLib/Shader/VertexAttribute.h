@@ -36,9 +36,9 @@ public:
 
 	void sendVertexAttribute4df(const VertexBufferObject& vbo);
 
-	void enableVertexAttribute();
+	void bind();
 
-	void disableVertexAttribute();
+	void unbind();
 
 private:
 	GLuint location;
