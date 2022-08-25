@@ -17,7 +17,7 @@ public:
 		Shader::TextureObject* tex;
 	};
 
-	void build() override;
+	void link() override;
 
 	void render() override;
 

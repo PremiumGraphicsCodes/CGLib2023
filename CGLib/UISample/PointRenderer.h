@@ -22,7 +22,7 @@ public:
 		int count = 0;
 	};
 
-	void build() override;
+	void link() override;
 
 	void render() override;
 

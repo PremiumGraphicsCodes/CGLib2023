@@ -28,7 +28,7 @@ namespace {
 	VertexAttribute va;
 }
 
-void PointRenderer::build()
+void PointRenderer::link()
 {
 	uniform.projectionMatrix = shader->findUniformLocation(::projectionMatrixLabel);
 	uniform.modelViewMatrix = shader->findUniformLocation(::modelViewMatrixLabel);

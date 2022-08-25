@@ -11,7 +11,7 @@ class IRenderer
 public:
 	void setShader(std::unique_ptr<Shader::ShaderObject> shader) { this->shader = std::move(shader); }
 
-	virtual void build() = 0;
+	virtual void link() = 0;
 
 	virtual void render() = 0;
 

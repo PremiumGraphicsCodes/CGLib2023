@@ -20,7 +20,7 @@ namespace {
 	GLuint posLoc;
 }
 
-void TexRenderer::build()
+void TexRenderer::link()
 {
 	texLoc = shader->findUniformLocation("texture");
 	posLoc = shader->findAttribLocation("position");
