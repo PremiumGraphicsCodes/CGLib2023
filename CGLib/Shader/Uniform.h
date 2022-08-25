@@ -9,6 +9,7 @@
 
 namespace Crystal {
 	namespace Shader {
+		class TextureObject;
 
 class Uniform
 {
@@ -28,6 +29,8 @@ public:
 	void send(const int value);
 
 	void send(const float value);
+
+	void send(TextureObject* texture, const GLint unit);
 
 private:
 	GLuint location;

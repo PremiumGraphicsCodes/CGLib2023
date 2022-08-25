@@ -79,11 +79,11 @@ int main() {
 
 		if (ImGui::BeginMainMenuBar()) {
 			if (ImGui::BeginMenu("AAA")) {
-				if (ImGui::MenuItem("BBB")) {
-					;
+				if (ImGui::MenuItem("Point")) {
+					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Point);
 				}
-				if (ImGui::MenuItem("CCC")) {
-					;
+				if (ImGui::MenuItem("Tex")) {
+					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Tex);
 				}
 
 				ImGui::EndMenu();

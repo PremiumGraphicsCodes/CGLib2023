@@ -20,17 +20,16 @@ public:
 
 	void send(const Graphics::Imagef& image);
 
+	void setParameter(const GLenum type, const GLuint value);
+
 	void bind() const;
 
 	void unbind() const;
-
-	void setUnit(const GLint texUnit) { this->textureUnit = texUnit; }
 
 	GLuint getHandle() const { return handle; }
 
 private:
 	GLuint handle;
-	GLint textureUnit = 0;
 };
 
 	}

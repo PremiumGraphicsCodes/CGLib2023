@@ -1,7 +1,6 @@
 #include "TexRenderer.h"
 
 #include "../Shader/ShaderBuilder.h"
-#include "../Shader/TextureUnit.h"
 #include "../Shader/VertexAttribute.h"
 
 using namespace Crystal::Shader;
@@ -31,14 +30,11 @@ void TexRenderer::link()
 
 void TexRenderer::render()
 {
-	TextureUnit texUnit(0, buffer.tex);
-
 	const auto positions = ::toArray();
 
 	shader->bind();
-	texUnit.bind();
 
-	texLoc.send(0);
+	texLoc.send(buffer.tex, 0);
 
 	positionAttr.sendVertexAttribute2df(positions);
 	shader->bindOutput("fragColor");
@@ -49,6 +45,5 @@ void TexRenderer::render()
 	
 	positionAttr.unbind();
 
-	texUnit.unbind();
 	shader->unbind();
 }

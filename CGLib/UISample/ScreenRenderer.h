@@ -13,6 +13,13 @@ class ScreenRenderer
 public:
 	ScreenRenderer();
 
+	enum RenderingType {
+		Point,
+		Tex,
+	};
+
+	void setActiveRenderer(const RenderingType type);
+
 	void build();
 
 	void render(const int width, const int height);
@@ -20,6 +27,7 @@ public:
 private:
 	Crystal::UI::PointRenderer renderer;
 	Crystal::UI::TexRenderer texRenderer;
+	Crystal::UI::IRenderer* activeRenderer;
 
 	Crystal::Shader::VertexBufferObject positionVBO;
 	Crystal::Shader::VertexBufferObject colorVBO;

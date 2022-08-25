@@ -27,7 +27,6 @@ void TextureObject::bind() const
 
 void TextureObject::unbind() const
 {
-	glActiveTexture(GL_TEXTURE0 + textureUnit);
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
@@ -43,6 +42,14 @@ void TextureObject::send(const Imageuc& image)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 
 
+	glBindTexture(GL_TEXTURE_2D, 0);
+	assert(GL_NO_ERROR == glGetError());
+}
+
+void TextureObject::setParameter(const GLenum type, const GLuint value)
+{
+	glBindTexture(GL_TEXTURE_2D, handle);
+	glTexParameteri(GL_TEXTURE_2D, type, value);
 	glBindTexture(GL_TEXTURE_2D, 0);
 	assert(GL_NO_ERROR == glGetError());
 }

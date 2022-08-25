@@ -1,5 +1,8 @@
 #include "Uniform.h"
 
+#include "TextureObject.h"
+#include "TextureUnit.h"
+
 using namespace Crystal::Math;
 using namespace Crystal::Shader;
 
@@ -26,4 +29,11 @@ void Uniform::send(const int value)
 void Uniform::send(const float value)
 {
 	glUniform1f(location, value);
+}
+
+void Uniform::send(TextureObject* texture, const GLint unit)
+{
+	glActiveTexture(GL_TEXTURE0 + unit);
+	texture->bind();
+	glUniform1i(location, unit);
 }
