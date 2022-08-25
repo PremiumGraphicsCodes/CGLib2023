@@ -10,10 +10,9 @@ namespace Crystal {
 class TextureUnit : public UnCopyable
 {
 public:
-	TextureUnit(const GLint unit, TextureObject* texture) :
-		unit(unit),
-		texture(texture)
-	{}
+	TextureUnit(const GLint unit, TextureObject* texture);
+
+	~TextureUnit();
 
 	void setTexture(TextureObject* texture) { this->texture = texture; }
 

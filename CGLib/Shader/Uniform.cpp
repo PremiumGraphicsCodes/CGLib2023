@@ -31,9 +31,7 @@ void Uniform::send(const float value)
 	glUniform1f(location, value);
 }
 
-void Uniform::send(TextureObject* texture, const GLint unit)
+void Uniform::send(const TextureUnit& texUnit)
 {
-	glActiveTexture(GL_TEXTURE0 + unit);
-	texture->bind();
-	glUniform1i(location, unit);
+	glUniform1i(location, texUnit.getUnitNumber());
 }
