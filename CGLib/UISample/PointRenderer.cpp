@@ -44,8 +44,8 @@ void PointRenderer::render()
 {
 	shader->bind();
 
-	uniform.projectionMatrix.sendUniform(buffer.projectionMatrix);
-	uniform.modelViewMatrix.sendUniform(buffer.modelViewMatrix);
+	uniform.projectionMatrix.send(buffer.projectionMatrix);
+	uniform.modelViewMatrix.send(buffer.modelViewMatrix);
 
 	va.position.sendVertexAttribute3df(*buffer.position);
 	va.color.sendVertexAttribute4df(*buffer.color);

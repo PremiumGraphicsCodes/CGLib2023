@@ -19,15 +19,15 @@ public:
 		location(location)
 	{}
 
-	void sendUniform(const Math::Matrix3df& matrix);
+	void send(const Math::Matrix3df& matrix);
 
-	void sendUniform(const Math::Matrix4df& matrix);
+	void send(const Math::Matrix4df& matrix);
 
-	void sendUniform(const Math::Vector3df& vector);
+	void send(const Math::Vector3df& vector);
 
-	void sendUniform(const int value);
+	void send(const int value);
 
-	void sendUniform(const float value);
+	void send(const float value);
 
 private:
 	GLuint location;

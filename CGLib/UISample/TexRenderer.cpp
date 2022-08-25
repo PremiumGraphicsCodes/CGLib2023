@@ -38,7 +38,7 @@ void TexRenderer::render()
 	shader->bind();
 	texUnit.bind();
 
-	texLoc.sendUniform(0);
+	texLoc.send(0);
 
 	positionAttr.sendVertexAttribute2df(positions);
 	shader->bindOutput("fragColor");
