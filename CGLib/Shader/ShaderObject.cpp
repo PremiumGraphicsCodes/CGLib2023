@@ -70,28 +70,6 @@ void ShaderObject::disable(GLenum e)
 	glDisable(e);
 }
 
-void ShaderObject::enableDepthTest()
-{
-	glEnable(GL_DEPTH_TEST);
-}
-
-void ShaderObject::disableDepthTest()
-{
-	glDisable(GL_DEPTH_TEST);
-}
-
-void ShaderObject::enablePointSprite()
-{
-	glEnable(GL_POINT_SPRITE);
-	glEnable(GL_VERTEX_PROGRAM_POINT_SIZE);
-}
-
-void ShaderObject::disablePointSprite()
-{
-	glDisable(GL_VERTEX_PROGRAM_POINT_SIZE);
-	glDisable(GL_POINT_SPRITE);
-}
-
 void ShaderObject::drawPoints(const int count)
 {
 	glDrawArrays(GL_POINTS, 0, count);

@@ -48,14 +48,6 @@ public:
 
 	void disable(GLenum e);
 
-	void enableDepthTest();
-
-	void disableDepthTest();
-
-	void enablePointSprite();
-
-	void disablePointSprite();
-
 	void drawPoints(const int count);
 
 	void drawLines(const std::vector<unsigned int>& indices);

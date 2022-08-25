@@ -55,15 +55,17 @@ void PointRenderer::render()
 	va.color.bind();
 	va.size.bind();
 
-	shader->enableDepthTest();
-	shader->enablePointSprite();
+	shader->enable(GL_DEPTH_TEST);
+	shader->enable(GL_POINT_SPRITE);
+	shader->enable(GL_VERTEX_PROGRAM_POINT_SIZE);
 
 	shader->drawPoints(buffer.count);
 
 	shader->bindOutput(::fragColorLabel);
 
-	shader->disablePointSprite();
-	shader->disableDepthTest();
+	shader->disable(GL_DEPTH_TEST);
+	shader->disable(GL_POINT_SPRITE);
+	shader->disable(GL_VERTEX_PROGRAM_POINT_SIZE);
 
 	va.position.unbind();
 	va.color.unbind();
