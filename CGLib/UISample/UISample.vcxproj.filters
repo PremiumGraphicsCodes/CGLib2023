@@ -8,6 +8,7 @@
     <ClCompile Include="TexRenderer.cpp">
       <Filter>Tex</Filter>
     </ClCompile>
+    <ClCompile Include="ScreenRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -32,6 +33,7 @@
     <ClInclude Include="TexRenderer.h">
       <Filter>Tex</Filter>
     </ClInclude>
+    <ClInclude Include="ScreenRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Point">

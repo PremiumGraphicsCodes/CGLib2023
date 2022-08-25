@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PointRenderer.cpp" />
+    <ClCompile Include="ScreenRenderer.cpp" />
     <ClCompile Include="TexRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +172,7 @@
   <ItemGroup>
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="PointRenderer.h" />
+    <ClInclude Include="ScreenRenderer.h" />
     <ClInclude Include="TexRenderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
