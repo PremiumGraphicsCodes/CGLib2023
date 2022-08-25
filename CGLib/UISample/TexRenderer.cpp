@@ -1,6 +1,7 @@
 #include "TexRenderer.h"
 
 #include "../Shader/ShaderBuilder.h"
+#include "../Shader/TextureUnit.h"
 
 using namespace Crystal::Shader;
 using namespace Crystal::UI;
@@ -34,11 +35,9 @@ void TexRenderer::render()
 	//glEnable(GL_DEPTH_TEST);
 
 	shader->bind();
-	//glUseProgram(shader->getHandle());
 
-	buffer.tex->setUnit(0);
-
-	buffer.tex->bind();
+	TextureUnit texUnit(0, buffer.tex);
+	texUnit.bind();
 
 	shader->sendUniform(texLoc, 0);
 
@@ -49,8 +48,7 @@ void TexRenderer::render()
 	glDrawArrays(GL_QUADS, 0, static_cast<GLsizei>(positions.size() / 2));
 	glDisableVertexAttribArray(0);
 
-
-	buffer.tex->unbind();
+	texUnit.unbind();
 
 	//glDisable(GL_DEPTH_TEST);
 
