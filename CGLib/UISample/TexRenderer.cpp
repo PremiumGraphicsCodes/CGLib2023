@@ -19,13 +19,13 @@ namespace {
 	}
 
 	GLuint texLoc;
-	GLuint posLoc;
+	VertexAttribute positionAttr;
 }
 
 void TexRenderer::link()
 {
 	texLoc = shader->findUniformLocation("texture");
-	posLoc = shader->findAttribLocation("position");
+	positionAttr = shader->findAttribLocation("position");
 }
 
 
@@ -42,15 +42,15 @@ void TexRenderer::render()
 
 	shader->sendUniform(texLoc, 0);
 
-	VertexAttribute posAttr(posLoc);
-	posAttr.sendVertexAttribute2df(positions);
+	//VertexAttribute posAttr(posLoc);
+	positionAttr.sendVertexAttribute2df(positions);
 	shader->bindOutput("fragColor");
 
-	posAttr.enableVertexAttribute();
+	positionAttr.enableVertexAttribute();
 
 	glDrawArrays(GL_QUADS, 0, static_cast<GLsizei>(positions.size() / 2));
 	
-	posAttr.disableVertexAttribute();
+	positionAttr.disableVertexAttribute();
 
 	texUnit.unbind();
 

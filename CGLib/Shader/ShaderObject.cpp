@@ -48,11 +48,11 @@ GLuint ShaderObject::findUniformLocation(const std::string& str)
 	return location;
 }
 
-GLuint ShaderObject::findAttribLocation(const std::string& str)
+VertexAttribute ShaderObject::findAttribLocation(const std::string& str)
 {
 	const auto location = glGetAttribLocation(handle, str.c_str());
 	assert(location != -1);
-	return location;
+	return VertexAttribute(location);
 }
 
 void ShaderObject::bind()

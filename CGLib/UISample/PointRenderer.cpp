@@ -23,9 +23,9 @@ namespace {
 
 	struct VertexAttributeLoc
 	{
-		GLuint position;
-		GLuint color;
-		GLuint size;
+		VertexAttribute position;
+		VertexAttribute color;
+		VertexAttribute size;
 	};
 	VertexAttributeLoc va;
 }
@@ -47,13 +47,13 @@ void PointRenderer::render()
 	shader->sendUniform(uniform.projectionMatrix, buffer.projectionMatrix);
 	shader->sendUniform(uniform.modelViewMatrix, buffer.modelViewMatrix);
 
-	VertexAttribute posAttr(va.position);
-	VertexAttribute colAttr(va.color);
-	VertexAttribute sizeAttr(va.size);
+	va.position.sendVertexAttribute3df(*buffer.position);
+	va.color.sendVertexAttribute4df(*buffer.color);
+	va.size.sendVertexAttribute1df(*buffer.size);
 
-	posAttr.sendVertexAttribute3df(*buffer.position);
-	colAttr.sendVertexAttribute4df(*buffer.color);
-	sizeAttr.sendVertexAttribute1df(*buffer.size);
+	va.position.enableVertexAttribute();
+	va.color.enableVertexAttribute();
+	va.size.enableVertexAttribute();
 
 	shader->enableDepthTest();
 	shader->enablePointSprite();
@@ -64,6 +64,10 @@ void PointRenderer::render()
 
 	shader->disablePointSprite();
 	shader->disableDepthTest();
+
+	va.position.disableVertexAttribute();
+	va.color.disableVertexAttribute();
+	va.size.disableVertexAttribute();
 
 	shader->unbind();
 

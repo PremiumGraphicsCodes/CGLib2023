@@ -10,6 +10,8 @@ namespace Crystal {
 class VertexAttribute
 {
 public:
+	VertexAttribute() = default;
+
 	explicit VertexAttribute(const GLuint location) :
 		location(location)
 	{}

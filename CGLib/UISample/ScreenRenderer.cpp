@@ -60,6 +60,6 @@ void ScreenRenderer::render(const int width, const int height)
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderer.render();
-	//texRenderer.render();
+	//renderer.render();
+	texRenderer.render();
 }
