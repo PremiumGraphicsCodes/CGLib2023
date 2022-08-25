@@ -27,15 +27,19 @@ public:
 	void render(const int width, const int height);
 
 private:
-	Crystal::UI::PointRenderer renderer;
-	Crystal::UI::LineRenderer lineRenderer;
-	Crystal::UI::TexRenderer texRenderer;
+	struct Renderers
+	{
+		Crystal::UI::PointRenderer pointRenderer;
+		Crystal::UI::LineRenderer lineRenderer;
+		Crystal::UI::TexRenderer texRenderer;
+	};
+	Renderers renderers;
+
 	Crystal::UI::IRenderer* activeRenderer;
 
 	Crystal::Shader::VertexBufferObject positionVBO;
 	Crystal::Shader::VertexBufferObject colorVBO;
 	Crystal::Shader::VertexBufferObject sizeVBO;
-
 	Crystal::Shader::TextureObject tex;
 
 	Graphics::Camera camera;

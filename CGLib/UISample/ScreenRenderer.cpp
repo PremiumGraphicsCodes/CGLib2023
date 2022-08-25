@@ -8,22 +8,22 @@ using namespace Crystal::Shader;
 using namespace Crystal::UI;
 
 ScreenRenderer::ScreenRenderer() :
-	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
+	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1f, 10.0f)
 {
-	this->activeRenderer = &renderer;
+	this->activeRenderer = &renderers.pointRenderer;
 }
 
 void ScreenRenderer::setActiveRenderer(const RenderingType type)
 {
 	switch (type) {
 	case RenderingType::Point :
-		this->activeRenderer = &renderer;
+		this->activeRenderer = &renderers.pointRenderer;
 		break;
 	case RenderingType::Line :
-		this->activeRenderer = &lineRenderer;
+		this->activeRenderer = &renderers.lineRenderer;
 		break;
 	case RenderingType::Tex :
-		this->activeRenderer = &texRenderer;
+		this->activeRenderer = &renderers.texRenderer;
 		break;
 	default:
 		assert(false);
@@ -36,17 +36,17 @@ void ScreenRenderer::build()
 	ShaderBuilder sBuilder;
 	sBuilder.buildFromFile("./Point.vs", "./Point.fs");
 
-	renderer.setShader(sBuilder.getShader());
-	renderer.link();
+	renderers.pointRenderer.setShader(sBuilder.getShader());
+	renderers.pointRenderer.link();
 
 	sBuilder.buildFromFile("./Line.vs", "./Line.fs");
-	lineRenderer.setShader(sBuilder.getShader());
-	lineRenderer.link();
+	renderers.lineRenderer.setShader(sBuilder.getShader());
+	renderers.lineRenderer.link();
 
 	sBuilder.buildFromFile("./Tex.vs", "./Tex.fs");
 
-	texRenderer.setShader(sBuilder.getShader());
-	texRenderer.link();
+	renderers.texRenderer.setShader(sBuilder.getShader());
+	renderers.texRenderer.link();
 
 	tex.create();
 	Imageuc image(2, 2);
@@ -59,7 +59,7 @@ void ScreenRenderer::build()
 	tex.setParameter(GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	tex.setParameter(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
-	texRenderer.buffer.tex = &tex;
+	renderers.texRenderer.buffer.tex = &tex;
 
 	positionVBO.create();
 	colorVBO.create();
@@ -72,19 +72,19 @@ void ScreenRenderer::build()
 	colorVBO.send(colors);
 	sizeVBO.send(size);
 
-	renderer.buffer.position = &positionVBO;
-	renderer.buffer.color = &colorVBO;
-	renderer.buffer.size = &sizeVBO;
-	renderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
-	renderer.buffer.projectionMatrix = camera.getProjectionMatrix();
-	renderer.buffer.count = 1;
+	renderers.pointRenderer.buffer.position = &positionVBO;
+	renderers.pointRenderer.buffer.color = &colorVBO;
+	renderers.pointRenderer.buffer.size = &sizeVBO;
+	renderers.pointRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
+	renderers.pointRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
+	renderers.pointRenderer.buffer.count = 1;
 
-	lineRenderer.buffer.position = &positionVBO;
-	lineRenderer.buffer.color = &colorVBO;
-	lineRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
-	lineRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
-	lineRenderer.buffer.indices = { 0, 1 };
-	lineRenderer.buffer.lineWidth = 10.0f;
+	renderers.lineRenderer.buffer.position = &positionVBO;
+	renderers.lineRenderer.buffer.color = &colorVBO;
+	renderers.lineRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
+	renderers.lineRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
+	renderers.lineRenderer.buffer.indices = { 0, 1 };
+	renderers.lineRenderer.buffer.lineWidth = 10.0f;
 }
 
 void ScreenRenderer::render(const int width, const int height)
