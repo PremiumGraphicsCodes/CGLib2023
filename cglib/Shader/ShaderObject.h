@@ -34,9 +34,9 @@ public:
 
 	void remove() override;
 
-	Uniform findUniformLocation(const std::string& str);
+	GLuint findUniformLocation(const std::string& str);
 
-	VertexAttribute findAttribLocation(const std::string& str);
+	GLuint findAttribLocation(const std::string& str);
 
 	GLuint getHandle() const { return handle; }
 
