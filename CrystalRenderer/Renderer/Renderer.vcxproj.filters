@@ -3,9 +3,12 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="IRenderer.h" />
+    <ClInclude Include="SkyBoxRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SkyBoxRenderer.cpp" />
   </ItemGroup>
 </Project>
