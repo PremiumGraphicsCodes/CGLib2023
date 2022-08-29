@@ -27,7 +27,7 @@ namespace {
     struct UniformLoc
     {
         GLuint projectionMatrix;
-        GLuint modelviewMatrix;
+        GLuint modelMatrix;
         GLuint viewMatrix;
         GLuint albedo;
         GLuint metaric;
@@ -54,7 +54,7 @@ PBLightRenderer::PBLightRenderer()
 void PBLightRenderer::link()
 {
     uniforms.projectionMatrix = shader->findUniformLocation(::projectionMatrixLabel);
-    uniforms.modelviewMatrix = shader->findUniformLocation(::modelMatrixLabel);
+    uniforms.modelMatrix = shader->findUniformLocation(::modelMatrixLabel);
     uniforms.viewMatrix = shader->findUniformLocation(::viewMatrixLabel);
 
     uniforms.albedo = shader->findUniformLocation(::albedoLabel);
@@ -75,40 +75,47 @@ void PBLightRenderer::link()
 
 void PBLightRenderer::render()
 {
-    /*
     shader->bind();
     shader->bindOutput("FragColor");
 
     shader->enable(GL_DEPTH_TEST);
 
-    shader->sendUniform(::projectionMatrixLabel, buffer.projectionMatrix);
-    shader->sendUniform(::modelMatrixLabel, buffer.modelMatrix);
-    shader->sendUniform(::viewMatrixLabel, buffer.viewMatrix);
-    shader->sendUniform(::camerPosLabel, buffer.eyePosition);
+    Uniform projectionMatrix(uniforms.projectionMatrix);
+    Uniform modelMatrix(uniforms.modelMatrix);
+    Uniform viewMatrix(uniforms.viewMatrix);
+    Uniform cameraPos(uniforms.eyePos);
 
-    shader->sendUniform(::albedoLabel, buffer.albedo);
-    shader->sendUniform(::metaricLabel, buffer.metalic);
-    shader->sendUniform(::roughbessLabel, buffer.roughness);
-    shader->sendUniform(::aoLabel, buffer.ao);
+    //shader->sendUniform(::projectionMatrixLabel, buffer.projectionMatrix);
+    projectionMatrix.send(buffer.projectionMatrix);
+    modelMatrix.send(buffer.modelMatrix);
+    viewMatrix.send(buffer.viewMatrix);
+    cameraPos.send(buffer.eyePosition);
 
-    shader->sendUniform("lightPositions[0]", buffer.lightPosition);
-    shader->sendUniform("lightColors[0]", buffer.lightColor);
+    Uniform albedo(uniforms.albedo);
+    Uniform metalic(uniforms.metaric);
+    Uniform roughness(uniforms.roughness);
+    Uniform ao(uniforms.ao);
+    
+    albedo.send(buffer.albedo);
+    metalic.send(buffer.metalic);
+    roughness.send(buffer.roughness);
+    ao.send(buffer.ao);
 
-    shader->sendVertexAttribute3df(::positionLabel, buffer.position);
-    shader->sendVertexAttribute3df(::normalLabel, buffer.normal);
+    Uniform lightPos(uniforms.lightPos);
+    Uniform lightColor(uniforms.lightColor);
 
-    buffer.position.bind();
-    buffer.normal.bind();
-    shader->enableVertexAttribute(::positionLabel);
-    shader->enableVertexAttribute(::normalLabel);
+    lightPos.send(buffer.lightPosition);
+    lightColor.send(buffer.lightColor);
+
+    VertexAttribute posAttr(attrs.position);
+    VertexAttribute normalAttr(attrs.normal);
+
+    posAttr.sendVertexAttribute3df(*buffer.position);
+    normalAttr.sendVertexAttribute3df(*buffer.normal);
 
     shader->drawTriangles(buffer.indices);
-
-    shader->disableVertexAttribute(::positionLabel);
-    shader->disableVertexAttribute(::normalLabel);
 
     shader->disable(GL_DEPTH_TEST);
 
     shader->unbind();
-    */
 }

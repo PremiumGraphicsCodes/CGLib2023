@@ -19,6 +19,7 @@
     <ClInclude Include="ITextureObject.h">
       <Filter>TextureObject</Filter>
     </ClInclude>
+    <ClInclude Include="VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VertexBufferObject.cpp" />

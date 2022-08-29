@@ -3,6 +3,7 @@
 #include "CGLib/Shader/TextureObject.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
+#include "CGLib/Shader/VertexBuffer.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
@@ -16,26 +17,26 @@ void PBLightShader::build()
 	renderer.setShader(builder.getShader());
 	renderer.link();
 
-	/*
-	std::vector<float> ps = {
-	ps.push_back((0.0, 0.0, 0.0));
-	positions.add(Vector3dd(1.0, 0.0, 0.0));
-	positions.add(Vector3dd(1.0, 1.0, 0.0));
-	positions.add(Vector3dd(0.0, 1.0, 0.0));
-	}
+	VertexBuffer<float> vb;
+	vb.add(Vector3df(0.0, 0.0, 0.0));
+	vb.add(Vector3dd(1.0, 0.0, 0.0));
+	vb.add(Vector3dd(1.0, 1.0, 0.0));
+	vb.add(Vector3dd(0.0, 1.0, 0.0));
 
-	normals.add(Vector3dd(0, 0, 1));
-	normals.add(Vector3dd(0, 0, 1));
-	normals.add(Vector3dd(0, 0, 1));
-	normals.add(Vector3dd(0, 0, 1));
+	VertexBuffer<float> nb;
+	nb.add(Vector3dd(0, 0, 1));
+	nb.add(Vector3dd(0, 0, 1));
+	nb.add(Vector3dd(0, 0, 1));
+	nb.add(Vector3dd(0, 0, 1));
 
-	positions.send()
+	positions.create();
+	normals.create();
+
+	positions.send(vb.getData());
+	normals.send(nb.getData());
 
 	renderer.buffer.position = &positions;
 	renderer.buffer.normal = &normals;
-
-	renderer.buffer.position.send(positions.get());
-	renderer.buffer.normal.send(normals.get());
 
 	renderer.buffer.indices.push_back(0);
 	renderer.buffer.indices.push_back(1);
@@ -52,7 +53,6 @@ void PBLightShader::build()
 	renderer.buffer.roughness = 0.1;
 	renderer.buffer.metalic = 0.1;
 	renderer.buffer.ao = 0.1;
-	*/
 }
 
 void PBLightShader::render(const Camera& camera, const int width, const int height)

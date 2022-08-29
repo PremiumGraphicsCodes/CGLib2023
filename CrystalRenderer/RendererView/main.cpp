@@ -193,7 +193,8 @@ int main() {
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
 
-		skyBoxRenderer.render(camera, width, height);
+		//skyBoxRenderer.render(camera, width, height);
+		pbLightRenderer.render(camera, width, height);
         //onRender(width, height);
 		//world->getRenderer()->render(*world->getCamera()->getCamera(), width, height);
 		//const auto animations = world->getAnimations();
