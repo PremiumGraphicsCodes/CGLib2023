@@ -154,10 +154,12 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ColorRGBA.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="ImageFileReader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Image.cpp" />
+    <ClCompile Include="ImageFileReader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
