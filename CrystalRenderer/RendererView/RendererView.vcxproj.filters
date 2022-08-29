@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SkyBoxShader.cpp" />
+    <ClCompile Include="PBLightShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -10,5 +11,6 @@
   <ItemGroup>
     <ClInclude Include="SkyBoxShader.h" />
     <ClInclude Include="IScreenShader.h" />
+    <ClInclude Include="PBLightShader.h" />
   </ItemGroup>
 </Project>

@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 
+#include "PBLightShader.h"
 #include "SkyBoxShader.h"
 
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
@@ -153,6 +154,8 @@ int main() {
     if (!glfwInit())
         return 1;
 
+	Crystal::Renderer::PBLightShader pbLightRenderer;
+	pbLightRenderer.build();
 	Crystal::Renderer::SkyBoxShader skyBoxRenderer;
 	skyBoxRenderer.build();
 

@@ -7,17 +7,25 @@
     <ClInclude Include="SkyBoxRenderer.h">
       <Filter>SkyBox</Filter>
     </ClInclude>
+    <ClInclude Include="PBLightRenderer.h">
+      <Filter>PBLight</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SkyBoxRenderer.cpp">
       <Filter>SkyBox</Filter>
+    </ClCompile>
+    <ClCompile Include="PBLightRenderer.cpp">
+      <Filter>PBLight</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="SkyBox">
       <UniqueIdentifier>{da33b830-37e0-49e1-8c56-2addd43e618b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PBLight">
+      <UniqueIdentifier>{07631d63-a9fb-494a-b842-f36f89e69cb3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -26,6 +34,12 @@
     </None>
     <None Include="..\GLSL\SkyBox.vs">
       <Filter>SkyBox</Filter>
+    </None>
+    <None Include="..\GLSL\PBLight.fs">
+      <Filter>PBLight</Filter>
+    </None>
+    <None Include="..\GLSL\PBLight.vs">
+      <Filter>PBLight</Filter>
     </None>
   </ItemGroup>
 </Project>
