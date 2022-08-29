@@ -151,6 +151,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CGLib\Graphics\Graphics.vcxproj">
+      <Project>{33df6d05-9610-4794-a1cd-3bc1d86e6a8e}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\CGLib\Math\Math.vcxproj">
       <Project>{43f2d582-49b6-425d-bf27-6b3a9a9a0acb}</Project>
     </ProjectReference>
