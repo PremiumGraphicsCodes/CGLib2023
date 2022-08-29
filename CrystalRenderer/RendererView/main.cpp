@@ -1,10 +1,11 @@
-#include "GL/glew.h"
+#include "../../CGLib/Shader/glew.h"
 
-#include "UI/imgui.h"
-#include "UI/imgui_impl_glfw.h"
-#include "UI/imgui_impl_opengl3.h"
-#include <stdio.h>
+#include "../../CGLib/UI/imgui.h"
+#include "../../CGLib/UI/imgui_impl_glfw.h"
+#include "../../CGLib/UI/imgui_impl_opengl3.h"
 #include "GLFW/glfw3.h"
+
+#include <stdio.h>
 
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 

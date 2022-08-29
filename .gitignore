@@ -32,3 +32,6 @@
 /RendererView/imgui.ini
 /CGLib/Graphics/x64/Release
 /CGLib/Graphics/x64/Debug
+/CrystalRenderer/RendererView/x64
+/CrystalRenderer/RendererView/imgui.ini
+/CrystalRenderer/Renderer/x64

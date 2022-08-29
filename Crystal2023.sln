@@ -9,9 +9,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shader", "CGLib\Shader\Shad
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI", "CGLib\UI\UI.vcxproj", "{02B12DC2-D4AF-4FA1-A2F0-B51326D3C1E6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RendererView", "RendererView\RendererView.vcxproj", "{58BFBFA8-9FFD-46DA-BEC2-9CD4244CB82B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RendererView", "CrystalRenderer\RendererView\RendererView.vcxproj", "{58BFBFA8-9FFD-46DA-BEC2-9CD4244CB82B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graphics", "CGLib\Graphics\Graphics.vcxproj", "{33DF6D05-9610-4794-A1CD-3BC1D86E6A8E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Renderer", "CrystalRenderer\Renderer\Renderer.vcxproj", "{B4138991-BD60-465F-AB44-64D49A9382C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,14 @@ Global
 		{33DF6D05-9610-4794-A1CD-3BC1D86E6A8E}.Release|x64.Build.0 = Release|x64
 		{33DF6D05-9610-4794-A1CD-3BC1D86E6A8E}.Release|x86.ActiveCfg = Release|Win32
 		{33DF6D05-9610-4794-A1CD-3BC1D86E6A8E}.Release|x86.Build.0 = Release|Win32
+		{B4138991-BD60-465F-AB44-64D49A9382C3}.Debug|x64.ActiveCfg = Debug|x64
+		{B4138991-BD60-465F-AB44-64D49A9382C3}.Debug|x64.Build.0 = Debug|x64
+		{B4138991-BD60-465F-AB44-64D49A9382C3}.Debug|x86.ActiveCfg = Debug|Win32
+		{B4138991-BD60-465F-AB44-64D49A9382C3}.Debug|x86.Build.0 = Debug|Win32
+		{B4138991-BD60-465F-AB44-64D49A9382C3}.Release|x64.ActiveCfg = Release|x64
+		{B4138991-BD60-465F-AB44-64D49A9382C3}.Release|x64.Build.0 = Release|x64
+		{B4138991-BD60-465F-AB44-64D49A9382C3}.Release|x86.ActiveCfg = Release|Win32
+		{B4138991-BD60-465F-AB44-64D49A9382C3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
