@@ -1,14 +1,13 @@
 #pragma once
 
 #include "../Graphics/Image.h"
-#include "IGLObject.h"
+#include "ITextureObject.h"
 #include "glew.h"
 
 namespace Crystal {
 	namespace Shader {
 
-
-class TextureObject : public IGLObject
+class TextureObject : public ITextureObject
 {
 public:
 	~TextureObject();
@@ -21,7 +20,7 @@ public:
 
 	void send(const Graphics::Imagef& image);
 
-	void setParameter(const GLenum type, const GLuint value);
+	void setParameter(const GLenum type, const GLuint value) override;
 
 	void bind() const override;
 

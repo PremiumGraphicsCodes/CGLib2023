@@ -2,7 +2,7 @@
 
 #//include "../Graphics/Imagef.h"
 #include "../Graphics/Image.h"
-#include "IGLObject.h"
+#include "ITextureObject.h"
 
 #include "glew.h"
 
@@ -11,7 +11,7 @@
 namespace Crystal {
 	namespace Shader {
 
-class CubeMapTextureObject : public IGLObject
+class CubeMapTextureObject : public ITextureObject
 {
 public:
 	void create();
@@ -49,6 +49,8 @@ public:
 	void bind() const;// override;
 
 	void unbind() const; //override;
+
+	void setParameter(const GLenum type, const GLuint value) override;
 
 private:
 	GLuint handle;

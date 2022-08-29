@@ -154,6 +154,7 @@
     <ClInclude Include="CubeMapTextureObject.h" />
     <ClInclude Include="glew.h" />
     <ClInclude Include="IGLObject.h" />
+    <ClInclude Include="ITextureObject.h" />
     <ClInclude Include="ShaderBuilder.h" />
     <ClInclude Include="ShaderObject.h" />
     <ClInclude Include="ShaderUnit.h" />

@@ -3,7 +3,7 @@
 
 using namespace Crystal::Shader;
 
-TextureUnit::TextureUnit(const GLint unit, TextureObject* texture) :
+TextureUnit::TextureUnit(const GLint unit, ITextureObject* texture) :
 	unit(unit),
 	texture(texture)
 {

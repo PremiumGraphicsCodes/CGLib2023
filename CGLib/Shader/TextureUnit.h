@@ -1,20 +1,20 @@
 #pragma once
 
 #include "../Util/UnCopyable.h"
-#include "glew.h"
+#include "ITextureObject.h"
 
 namespace Crystal {
 	namespace Shader {
-		class TextureObject;
+		class ITextureObject;
 
 class TextureUnit : public UnCopyable
 {
 public:
-	TextureUnit(const GLint unit, TextureObject* texture);
+	TextureUnit(const GLint unit, ITextureObject* texture);
 
 	~TextureUnit();
 
-	void setTexture(TextureObject* texture) { this->texture = texture; }
+	//void setTexture(ITextureObject* texture) { this->texture = texture; }
 
 	void bind() const;
 
@@ -24,7 +24,7 @@ public:
 
 private:
 	GLint unit = 0;
-	TextureObject* texture;
+	ITextureObject* texture;
 };
 
 	}

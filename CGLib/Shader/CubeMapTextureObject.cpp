@@ -127,3 +127,11 @@ void CubeMapTextureObject::remove()
 {
 	glDeleteTextures(1, &handle);
 }
+
+void CubeMapTextureObject::setParameter(const GLenum type, const GLuint value)
+{
+	glBindTexture(GL_TEXTURE_CUBE_MAP, handle);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, type, value);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
+	assert(GL_NO_ERROR == glGetError());
+}

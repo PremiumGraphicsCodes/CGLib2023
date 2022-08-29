@@ -4,27 +4,43 @@
     <ClInclude Include="IGLObject.h" />
     <ClInclude Include="VertexBufferObject.h" />
     <ClInclude Include="glew.h" />
-    <ClInclude Include="TextureObject.h" />
     <ClInclude Include="ShaderObject.h" />
     <ClInclude Include="ShaderBuilder.h" />
     <ClInclude Include="ShaderUnit.h" />
     <ClInclude Include="TextureUnit.h" />
     <ClInclude Include="VertexAttribute.h" />
     <ClInclude Include="Uniform.h" />
-    <ClInclude Include="CubeMapTextureObject.h" />
+    <ClInclude Include="TextureObject.h">
+      <Filter>TextureObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeMapTextureObject.h">
+      <Filter>TextureObject</Filter>
+    </ClInclude>
+    <ClInclude Include="ITextureObject.h">
+      <Filter>TextureObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VertexBufferObject.cpp" />
-    <ClCompile Include="TextureObject.cpp" />
     <ClCompile Include="ShaderObject.cpp" />
     <ClCompile Include="ShaderBuilder.cpp" />
     <ClCompile Include="ShaderUnit.cpp" />
     <ClCompile Include="TextureUnit.cpp" />
     <ClCompile Include="VertexAttribute.cpp" />
     <ClCompile Include="Uniform.cpp" />
-    <ClCompile Include="CubeMapTextureObject.cpp" />
+    <ClCompile Include="TextureObject.cpp">
+      <Filter>TextureObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeMapTextureObject.cpp">
+      <Filter>TextureObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="TextureObject">
+      <UniqueIdentifier>{b3174c61-5c5d-4c42-98aa-185f9241b874}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
