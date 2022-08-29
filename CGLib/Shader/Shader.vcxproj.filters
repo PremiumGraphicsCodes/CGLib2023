@@ -20,6 +20,7 @@
       <Filter>TextureObject</Filter>
     </ClInclude>
     <ClInclude Include="VertexBuffer.h" />
+    <ClInclude Include="FrameBufferObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VertexBufferObject.cpp" />
@@ -35,6 +36,7 @@
     <ClCompile Include="CubeMapTextureObject.cpp">
       <Filter>TextureObject</Filter>
     </ClCompile>
+    <ClCompile Include="FrameBufferObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
