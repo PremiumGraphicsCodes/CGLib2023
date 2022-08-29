@@ -7,7 +7,7 @@
 namespace Crystal {
 	namespace Shader {
 
-class ShaderUnit : public IGLObject
+class ShaderUnit
 {
 public:
 	enum class Stage
@@ -25,9 +25,9 @@ public:
 
 	//void setSource(const std::string& source) { this->source = source; }
 
-	void create() override;
+	void create();
 
-	void remove() override;
+	void remove();
 
 	GLuint getHandle() const { return id; }
 

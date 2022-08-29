@@ -7,6 +7,7 @@
 namespace Crystal {
 	namespace Shader {
 
+
 class TextureObject : public IGLObject
 {
 public:
@@ -22,9 +23,9 @@ public:
 
 	void setParameter(const GLenum type, const GLuint value);
 
-	void bind() const;
+	void bind() const override;
 
-	void unbind() const;
+	void unbind() const override;
 
 	GLuint getHandle() const { return handle; }
 

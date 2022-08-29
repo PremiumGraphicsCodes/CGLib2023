@@ -1,7 +1,6 @@
 #include "SkyBoxRenderer.h"
 
-/*
-//#include "CameraShaderScene.h"
+#include "CGLib/Shader/TextureUnit.h"
 
 #include <sstream>
 
@@ -16,24 +15,19 @@ namespace {
 	constexpr auto modelViewMatrixLabel = "modelviewMatrix";
 	constexpr auto cubeMapTexLabel = "cubeMapTex";
 	constexpr auto fragColorLabel = "fragColor";
-}
 
-SkyBoxRenderer::SkyBoxRenderer()
-{
-}
+	struct UniformLoc {
+		GLuint projectionMatrix;
+		GLuint modelviewMatrix;
+		GLuint cubeMapTex;
+	};
 
-void SkyBoxRenderer::link()
-{
-	shader->findUniformLocation(::projectionMatrixLabel);
-	shader->findUniformLocation(::modelViewMatrixLabel);
-	shader->findUniformLocation(::cubeMapTexLabel);
+	struct AttribLoc {
+		GLuint position;
+	};
 
-	shader->findAttribLocation(::positionLabel);
-}
-
-void SkyBoxRenderer::render()
-{
-	shader->bind();
+	UniformLoc uniforms;
+	AttribLoc attributes;
 
 	std::vector<float> positions = {
 		// positions          
@@ -80,7 +74,36 @@ void SkyBoxRenderer::render()
 		 1.0f, -1.0f,  1.0f
 	};
 
-	shader->enableDepthTest();
+}
+
+SkyBoxRenderer::SkyBoxRenderer()
+{
+}
+
+void SkyBoxRenderer::link()
+{
+	uniforms.projectionMatrix = shader->findUniformLocation(::projectionMatrixLabel);
+	uniforms.modelviewMatrix = shader->findUniformLocation(::modelViewMatrixLabel);
+	uniforms.cubeMapTex = shader->findUniformLocation(::cubeMapTexLabel);
+
+	attributes.position = shader->findAttribLocation(::positionLabel);
+}
+
+void SkyBoxRenderer::render()
+{
+	/*
+	shader->bind();
+
+
+	shader->enable(GL_DEPTH_TEST);
+
+	TextureUnit texUnit(0, *buffer.cubeMapTexture);
+
+	Uniform projectionMatrix(uniforms.projectionMatrix);
+	Uniform modelviewMatrix(uniforms.modelviewMatrix);
+	Uniform cubeMapTex(uniforms.cubeMapTex);
+
+	Attr
 
 	shader->sendUniform(::projectionMatrixLabel, buffer.projectionMatrix);
 	shader->sendUniform(::modelViewMatrixLabel, buffer.modelViewMatrix);
@@ -101,9 +124,8 @@ void SkyBoxRenderer::render()
 
 	shader->unbind();
 
-	shader->disableDepthTest();
+	shader->disable(GL_DEPTH_TEST);
 
 	assert(GL_NO_ERROR == glGetError());
+	*/
 }
-
-*/

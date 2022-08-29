@@ -40,9 +40,9 @@ public:
 
 	GLuint getHandle() const { return handle; }
 
-	void bind();
+	void bind() const override;
 
-	void unbind();
+	void unbind() const override;
 
 	void enable(GLenum e);
 

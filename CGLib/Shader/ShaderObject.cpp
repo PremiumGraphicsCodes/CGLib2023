@@ -45,12 +45,12 @@ GLuint ShaderObject::findAttribLocation(const std::string& str)
 	return location;
 }
 
-void ShaderObject::bind()
+void ShaderObject::bind() const
 {
 	glUseProgram(getHandle());
 }
 
-void ShaderObject::unbind()
+void ShaderObject::unbind() const
 {
 	glUseProgram(0);
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-/*
 #include "IRenderer.h"
 
 #include "CGLib/Shader/CubeMapTextureObject.h"
@@ -36,4 +35,3 @@ private:
 
 	}
 }
-*/
