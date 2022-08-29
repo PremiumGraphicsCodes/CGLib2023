@@ -4,11 +4,28 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="IRenderer.h" />
-    <ClInclude Include="SkyBoxRenderer.h" />
+    <ClInclude Include="SkyBoxRenderer.h">
+      <Filter>SkyBox</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="SkyBoxRenderer.cpp" />
+    <ClCompile Include="SkyBoxRenderer.cpp">
+      <Filter>SkyBox</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SkyBox">
+      <UniqueIdentifier>{da33b830-37e0-49e1-8c56-2addd43e618b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\GLSL\SkyBox.fs">
+      <Filter>SkyBox</Filter>
+    </None>
+    <None Include="..\GLSL\SkyBox.vs">
+      <Filter>SkyBox</Filter>
+    </None>
   </ItemGroup>
 </Project>

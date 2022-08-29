@@ -179,6 +179,10 @@
       <Project>{e38d1457-c9dd-4670-95b0-1eee416ccffb}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\GLSL\SkyBox.fs" />
+    <None Include="..\GLSL\SkyBox.vs" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

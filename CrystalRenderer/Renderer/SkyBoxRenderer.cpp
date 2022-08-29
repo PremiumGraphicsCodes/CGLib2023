@@ -101,8 +101,12 @@ void SkyBoxRenderer::render()
 	Uniform modelviewMatrix(uniforms.modelviewMatrix);
 	Uniform cubeMapTex(uniforms.cubeMapTex);
 
+	projectionMatrix.send(buffer.projectionMatrix);
+	modelviewMatrix.send(buffer.modelViewMatrix);
+	cubeMapTex.send(texUnit);
+
 	VertexAttribute posAttr(attributes.position);
-	posAttr.sendVertexAttribute2df(positions);
+	posAttr.sendVertexAttribute3df(positions);
 
 	shader->drawTriangles(positions.size() / 3);
 
