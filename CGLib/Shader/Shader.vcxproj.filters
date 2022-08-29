@@ -11,6 +11,7 @@
     <ClInclude Include="TextureUnit.h" />
     <ClInclude Include="VertexAttribute.h" />
     <ClInclude Include="Uniform.h" />
+    <ClInclude Include="CubeMapTextureObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VertexBufferObject.cpp" />
@@ -21,6 +22,7 @@
     <ClCompile Include="TextureUnit.cpp" />
     <ClCompile Include="VertexAttribute.cpp" />
     <ClCompile Include="Uniform.cpp" />
+    <ClCompile Include="CubeMapTextureObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

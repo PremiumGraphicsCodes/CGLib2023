@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CubeMapTextureObject.h" />
     <ClInclude Include="glew.h" />
     <ClInclude Include="IGLObject.h" />
     <ClInclude Include="ShaderBuilder.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="VertexBufferObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CubeMapTextureObject.cpp" />
     <ClCompile Include="ShaderBuilder.cpp" />
     <ClCompile Include="ShaderObject.cpp" />
     <ClCompile Include="ShaderUnit.cpp" />
