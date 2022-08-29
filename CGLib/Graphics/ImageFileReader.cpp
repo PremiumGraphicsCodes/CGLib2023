@@ -9,7 +9,8 @@ bool ImageFileReader::read(const std::string& filepath)
 {
 	unsigned char* pixels;
 
-	pixels = stbi_load("hoge.png", &width, &height, &bpp, 0);
+	const auto str = filepath.c_str();
+	pixels = stbi_load(str, &width, &height, &bpp, 0);
 	if (pixels == nullptr) {
 		return false;
 	}

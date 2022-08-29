@@ -7,6 +7,8 @@
 
 #include <stdio.h>
 
+#include "SkyBoxShader.h"
+
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
 #include <iostream>
@@ -59,6 +61,9 @@ int main() {
     //glfwSetErrorCallback(glfw_error_callback);
     if (!glfwInit())
         return 1;
+
+	Crystal::Renderer::SkyBoxShader skyBoxRenderer;
+	skyBoxRenderer.build();
 
    // onInit();
 

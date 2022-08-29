@@ -7,7 +7,6 @@ using namespace Crystal::Shader;
 using namespace Crystal::Renderer;
 
 namespace {
-	/*
 	bool readCubeMap(CubeMapTextureObject& cubeMap)
 	{
 		std::array<Imageuc, 6> images;
@@ -16,6 +15,7 @@ namespace {
 		if (!reader.read("../../ThirdParty/forest-skyboxes/Brudslojan/posx.jpg")) {
 			return false;
 		}
+		/*
 		images[0] = reader.getImage();
 		if (!reader.read("../../ThirdParty/forest-skyboxes/Brudslojan/negx.jpg")) {
 			return false;
@@ -39,9 +39,9 @@ namespace {
 		images[5] = reader.getImage();
 		//		CubeMapTextureObject cubeMap;
 		cubeMap.create(images);
+		*/
 		return true;
 	}
-	*/
 }
 
 void SkyBoxShader::build()
@@ -60,12 +60,10 @@ void SkyBoxShader::build()
 	}
 
 	//status.add(skyBoxRenderer.build(factory));
+	*/
 
 	this->cubeMapTexture = std::make_unique<CubeMapTextureObject>();
 	readCubeMap(*this->cubeMapTexture);
-
-	return status;
-	*/
 }
 
 void SkyBoxShader::render(const Camera& camera, const int width, const int height)

@@ -10,7 +10,7 @@ namespace Crystal {
 class ITextureObject : public IGLObject
 {
 public:
-	virtual ~ITextureObject();
+	virtual ~ITextureObject() = default;
 
 	virtual void setParameter(const GLenum type, const GLuint value) = 0;
 
