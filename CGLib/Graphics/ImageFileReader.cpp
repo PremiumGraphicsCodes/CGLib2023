@@ -15,7 +15,7 @@ bool ImageFileReader::read(const std::string& filepath)
 		return false;
 	}
 
-	this->data.resize(width * height);
+	this->data.resize(width * height * bpp);
 	for (int i = 0; i < this->data.size(); ++i) {
 		this->data[i] = pixels[i];
 	}
@@ -26,6 +26,22 @@ bool ImageFileReader::read(const std::string& filepath)
 
 Imageuc ImageFileReader::toImage() const
 {
-	return Imageuc(width, height, this->data);
+	int i = 0;
+	Imageuc image(width, height);
+	for (int y = 0; y < height; ++y) {
+		for (int x = 0; x < width; ++x) {
+			const auto r = data[i];
+			const auto g = data[i + 1];
+			const auto b = data[i + 2];
+			if (bpp == 3) {
+				image.setColor(x, y, ColorRGBAuc(r, g, b, 255));
+			}
+			else if (bpp == 4) {
+				const auto a = data[i + 3];
+				image.setColor(x, y, ColorRGBAuc(r, g, b, a));
+			}
+			i += bpp;
+		}
+	}
+	return image;
 }
-

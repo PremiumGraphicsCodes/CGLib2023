@@ -1,6 +1,6 @@
 #include "SkyBoxShader.h"
 #include "CGLib/Graphics/ImageFileReader.h"
-
+#include "CGLib/Shader/ShaderBuilder.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
@@ -15,52 +15,40 @@ namespace {
 		if (!reader.read("../../ThirdParty/forest-skyboxes/Brudslojan/posx.jpg")) {
 			return false;
 		}
-		/*
-		images[0] = reader.getImage();
+		images[0] = reader.toImage();
 		if (!reader.read("../../ThirdParty/forest-skyboxes/Brudslojan/negx.jpg")) {
 			return false;
 		}
-		images[1] = reader.getImage();
+		images[1] = reader.toImage();
 		if (!reader.read("../../ThirdParty/forest-skyboxes/Brudslojan/posy.jpg")) {
 			return false;
 		}
-		images[2] = reader.getImage();
+		images[2] = reader.toImage();
 		if (!reader.read("../../ThirdParty/forest-skyboxes/Brudslojan/negy.jpg")) {
 			return false;
 		}
-		images[3] = reader.getImage();
+		images[3] = reader.toImage();
 		if (!reader.read("../../ThirdParty/forest-skyboxes/Brudslojan/posz.jpg")) {
 			return false;
 		}
-		images[4] = reader.getImage();
+		images[4] = reader.toImage();
 		if (!reader.read("../../ThirdParty/forest-skyboxes/Brudslojan/negz.jpg")) {
 			return false;
 		}
-		images[5] = reader.getImage();
-		//		CubeMapTextureObject cubeMap;
-		cubeMap.create(images);
-		*/
+		images[5] = reader.toImage();
+		cubeMap.create();
+		cubeMap.send(images);
 		return true;
 	}
 }
 
 void SkyBoxShader::build()
 {
-	/*
-	ShaderBuildStatus status;
-
-	{
-		std::unique_ptr<ShaderObject> shader = std::make_unique<ShaderObject>();
-		const auto isOk = shader->buildFromFile("../GLSL/SkyBox.vs", "../GLSL/SkyBox.fs");
-		if (!isOk) {
-			status.log += shader->getLog();
-		}
-		skyBoxRenderer.setShader(std::move(shader));
-		skyBoxRenderer.link();
-	}
-
-	//status.add(skyBoxRenderer.build(factory));
-	*/
+	ShaderBuilder builder;
+	builder.buildFromFile("../GLSL/SkyBox.vs", "../GLSL/SkyBox.fs");
+	auto shader = builder.getShader();
+	skyBoxRenderer.setShader(std::move(shader));
+	skyBoxRenderer.link();
 
 	this->cubeMapTexture = std::make_unique<CubeMapTextureObject>();
 	readCubeMap(*this->cubeMapTexture);
