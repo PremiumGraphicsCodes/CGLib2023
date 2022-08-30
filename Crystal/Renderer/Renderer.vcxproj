@@ -153,18 +153,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CubeMapRenderer.h" />
     <ClInclude Include="DFAlbedoRenderer.h" />
     <ClInclude Include="DFGeometryRenderer.h" />
     <ClInclude Include="DFLightRenderer.h" />
+    <ClInclude Include="IBLDiffuseRenderer.h" />
     <ClInclude Include="IRenderer.h" />
+    <ClInclude Include="IrradianceRenderer.h" />
     <ClInclude Include="PBLightRenderer.h" />
     <ClInclude Include="PointRenderer.h" />
     <ClInclude Include="SkyBoxRenderer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CubeMapRenderer.cpp" />
     <ClCompile Include="DFAlbedoRenderer.cpp" />
     <ClCompile Include="DFGeometryRenderer.cpp" />
     <ClCompile Include="DFLightRenderer.cpp" />
+    <ClCompile Include="IBLDiffuseRenderer.cpp" />
+    <ClCompile Include="IrradianceRenderer.cpp" />
     <ClCompile Include="PBLightRenderer.cpp" />
     <ClCompile Include="PointRenderer.cpp" />
     <ClCompile Include="SkyBoxRenderer.cpp" />
@@ -181,12 +187,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\GLSL\CubeMap.fs" />
+    <None Include="..\GLSL\CubeMap.vs" />
     <None Include="..\GLSL\DFAlbedo.fs" />
     <None Include="..\GLSL\DFAlbedo.vs" />
     <None Include="..\GLSL\DFGeometry.fs" />
     <None Include="..\GLSL\DFGeometry.vs" />
     <None Include="..\GLSL\DFLight.fs" />
     <None Include="..\GLSL\DFLight.vs" />
+    <None Include="..\GLSL\IBLDiffuse.fs" />
+    <None Include="..\GLSL\IBLDiffuse.vs" />
+    <None Include="..\GLSL\Irradiance.fs" />
+    <None Include="..\GLSL\Irradiance.vs" />
     <None Include="..\GLSL\PBLight.fs" />
     <None Include="..\GLSL\PBLight.vs" />
     <None Include="..\GLSL\Point.fs" />
