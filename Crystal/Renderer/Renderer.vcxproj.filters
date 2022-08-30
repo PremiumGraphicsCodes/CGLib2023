@@ -29,6 +29,9 @@
     <ClInclude Include="IBLDiffuseRenderer.h">
       <Filter>IBL\IBLDiffuse</Filter>
     </ClInclude>
+    <ClInclude Include="IBLSpecularRenderer.h">
+      <Filter>IBL\IBLSpecular</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
@@ -57,6 +60,9 @@
     </ClCompile>
     <ClCompile Include="IBLDiffuseRenderer.cpp">
       <Filter>IBL\IBLDiffuse</Filter>
+    </ClCompile>
+    <ClCompile Include="IBLSpecularRenderer.cpp">
+      <Filter>IBL\IBLSpecular</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +98,9 @@
     </Filter>
     <Filter Include="IBL\IBLDiffuse">
       <UniqueIdentifier>{97173ece-fa6f-4363-8014-420547a9bdec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IBL\IBLSpecular">
+      <UniqueIdentifier>{162a9bbc-76f0-4c56-b9c0-79476f08cacd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +157,12 @@
     </None>
     <None Include="..\GLSL\IBLDiffuse.vs">
       <Filter>IBL\IBLDiffuse</Filter>
+    </None>
+    <None Include="..\GLSL\IBLSpecular.fs">
+      <Filter>IBL\IBLSpecular</Filter>
+    </None>
+    <None Include="..\GLSL\IBLSpecular.vs">
+      <Filter>IBL\IBLSpecular</Filter>
     </None>
   </ItemGroup>
 </Project>

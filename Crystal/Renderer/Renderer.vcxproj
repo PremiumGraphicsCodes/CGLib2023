@@ -158,6 +158,7 @@
     <ClInclude Include="DFGeometryRenderer.h" />
     <ClInclude Include="DFLightRenderer.h" />
     <ClInclude Include="IBLDiffuseRenderer.h" />
+    <ClInclude Include="IBLSpecularRenderer.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IrradianceRenderer.h" />
     <ClInclude Include="PBLightRenderer.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="DFGeometryRenderer.cpp" />
     <ClCompile Include="DFLightRenderer.cpp" />
     <ClCompile Include="IBLDiffuseRenderer.cpp" />
+    <ClCompile Include="IBLSpecularRenderer.cpp" />
     <ClCompile Include="IrradianceRenderer.cpp" />
     <ClCompile Include="PBLightRenderer.cpp" />
     <ClCompile Include="PointRenderer.cpp" />
@@ -197,6 +199,8 @@
     <None Include="..\GLSL\DFLight.vs" />
     <None Include="..\GLSL\IBLDiffuse.fs" />
     <None Include="..\GLSL\IBLDiffuse.vs" />
+    <None Include="..\GLSL\IBLSpecular.fs" />
+    <None Include="..\GLSL\IBLSpecular.vs" />
     <None Include="..\GLSL\Irradiance.fs" />
     <None Include="..\GLSL\Irradiance.vs" />
     <None Include="..\GLSL\PBLight.fs" />
