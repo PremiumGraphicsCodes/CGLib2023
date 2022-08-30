@@ -21,12 +21,11 @@ public:
 		int count = 0;
 	};
 
-	virtual void link() = 0;
+	void link() override;
 
-	virtual void render() = 0;
+	void render() override;
 
 private:
-	Shader::ShaderObject* shader;
 };
 
 	}

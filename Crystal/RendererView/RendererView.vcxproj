@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PBLightShader.cpp" />
+    <ClCompile Include="PointShader.cpp" />
     <ClCompile Include="SkyBoxShader.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +173,7 @@
   <ItemGroup>
     <ClInclude Include="IScreenShader.h" />
     <ClInclude Include="PBLightShader.h" />
+    <ClInclude Include="PointShader.h" />
     <ClInclude Include="SkyBoxShader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

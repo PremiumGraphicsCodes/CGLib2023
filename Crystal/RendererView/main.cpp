@@ -9,6 +9,7 @@
 
 #include "PBLightShader.h"
 #include "SkyBoxShader.h"
+#include "PointShader.h"
 
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
@@ -34,6 +35,7 @@ namespace {
 
 	PBLightShader pbLightRenderer;
 	SkyBoxShader skyBoxRenderer;
+	PointShader pointRenderer;
 	IScreenShader* activeRenderer = &pbLightRenderer;
 
 
@@ -160,6 +162,7 @@ int main() {
     if (!glfwInit())
         return 1;
 
+	pointRenderer.build();
 	pbLightRenderer.build();
 	skyBoxRenderer.build();
 
