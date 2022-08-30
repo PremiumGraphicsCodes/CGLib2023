@@ -38,3 +38,7 @@
 /ThirdParty/forest-skyboxes
 /ThirdParty/hdr
 /Scene/x64/Debug
+/Crystal/Renderer/x64
+/Crystal/RendererView/x64
+/Crystal/RendererView/imgui.ini
+/Crystal/Scene/x64/Debug
