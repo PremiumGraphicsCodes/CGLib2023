@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="SkyBoxRenderer.h">
       <Filter>SkyBox</Filter>
@@ -10,14 +8,19 @@
     <ClInclude Include="PBLightRenderer.h">
       <Filter>PBLight</Filter>
     </ClInclude>
+    <ClInclude Include="PointRenderer.h">
+      <Filter>Point</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp" />
     <ClCompile Include="SkyBoxRenderer.cpp">
       <Filter>SkyBox</Filter>
     </ClCompile>
     <ClCompile Include="PBLightRenderer.cpp">
       <Filter>PBLight</Filter>
+    </ClCompile>
+    <ClCompile Include="PointRenderer.cpp">
+      <Filter>Point</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -26,6 +29,9 @@
     </Filter>
     <Filter Include="PBLight">
       <UniqueIdentifier>{07631d63-a9fb-494a-b842-f36f89e69cb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Point">
+      <UniqueIdentifier>{b1844bfe-1ad0-4dcd-8395-3b8d54cc8d6b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +46,12 @@
     </None>
     <None Include="..\GLSL\PBLight.vs">
       <Filter>PBLight</Filter>
+    </None>
+    <None Include="..\GLSL\Point.vs">
+      <Filter>Point</Filter>
+    </None>
+    <None Include="..\GLSL\Point.fs">
+      <Filter>Point</Filter>
     </None>
   </ItemGroup>
 </Project>
