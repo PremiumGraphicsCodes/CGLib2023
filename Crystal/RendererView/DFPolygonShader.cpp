@@ -2,6 +2,7 @@
 
 #include "CGLib/Graphics/ImageFileReader.h"
 #include "CGLib/Shader/ShaderBuilder.h"
+#include "CGLib/Shader/VertexBuffer.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
@@ -37,55 +38,54 @@ void DFPolygonShader::build()
 	lightRenderer.setShader(builder.getShader());
 	lightRenderer.link();
 
-	/*
-	this->fbo = std::make_unique<FrameBufferObject>();
-	this->fbo->build(512, 512);
+	this->fbo.create();
 
-	this->colorTexture = std::make_unique<TextureObject>();
-	this->colorTexture->create("");
-	this->colorTexture->send(Image(512, 512));
+	this->colorTexture.create();
+	this->colorTexture.send(Imageuc(512, 512));
 
-	//this->polygonTexture = factory.createTextureObject();
-	//this->polygonTexture->send(Imagef(512, 512));
+	this->polygonTexture.create();
+	this->polygonTexture.send(Imageuc(512, 512));// , 255));
 
-	this->polygonTexture = std::make_unique<TextureObject>();
-	this->polygonTexture->create("");
-	this->polygonTexture->send(Image(512, 512, 255));
+	this->polygonTexture.create();
+	this->positionTexture.send(Imagef(512, 512));
 
-	this->positionTexture = std::make_unique<TextureObject>();
-	this->polygonTexture->create("");
-	this->positionTexture->send(Imagef(512, 512));
+	this->normalTexture.create();
+	this->normalTexture.send(Imagef(512, 512));
 
-	this->normalTexture = std::make_unique<TextureObject>();
-	this->normalTexture->create("");
-	this->normalTexture->send(Imagef(512, 512));
+	this->shadedTexture.create();
+	this->shadedTexture.send(Imagef(512, 512));
 
-	this->shadedTexture = std::make_unique<TextureObject>();
-	this->shadedTexture->create("");
-	this->shadedTexture->send(Image(512, 512));
+	readTexture(this->polygonTexture);
 
-	readTexture(*this->polygonTexture);
+	{
+		Shader::VertexBuffer<float> pb;
+		pb.add(Vector3df(0.0, 0.0, 0.0));
+		pb.add(Vector3df(1.0, 0.0, 0.0));
+		pb.add(Vector3df(1.0, 1.0, 0.0));
+		pb.add(Vector3df(0.0, 1.0, 0.0));
+		this->positions.create();
+		this->positions.send(pb);
+	}
 
-	positions.add(Vector3dd(0.0, 0.0, 0.0));
-	positions.add(Vector3dd(1.0, 0.0, 0.0));
-	positions.add(Vector3dd(1.0, 1.0, 0.0));
-	positions.add(Vector3dd(0.0, 1.0, 0.0));
+	{
+		Shader::VertexBuffer<float> texCoords;
+		texCoords.add(Vector2df(0.0, 0.0));
+		texCoords.add(Vector2df(1.0, 0.0));
+		texCoords.add(Vector2df(1.0, 1.0));
+		texCoords.add(Vector2df(0.0, 1.0));
+		this->texCoords.create();
+		this->texCoords.send(texCoords);
+	}
 
-	texCoords.add(Vector2dd(0.0, 0.0));
-	texCoords.add(Vector2dd(1.0, 0.0));
-	texCoords.add(Vector2dd(1.0, 1.0));
-	texCoords.add(Vector2dd(0.0, 1.0));
-
-	normals.add(Vector3dd(0, 0, 1));
-	normals.add(Vector3dd(0, 0, 1));
-	normals.add(Vector3dd(0, 0, 1));
-	normals.add(Vector3dd(0, 0, 1));
-
-	albedoRenderer.buffer.position.build();
-	albedoRenderer.buffer.texCoord.build();
-
-	gRenderer.buffer.position.build();
-	gRenderer.buffer.normal.build();
+	{
+		Shader::VertexBuffer<float> normals;
+		normals.add(Vector3df(0, 0, 1));
+		normals.add(Vector3df(0, 0, 1));
+		normals.add(Vector3df(0, 0, 1));
+		normals.add(Vector3df(0, 0, 1));
+		this->normals.create();
+		this->normals.send(normals);
+	}
 
 	Crystal::Renderer::DFAlbedoRenderer::Buffer::FaceGroup fg1;
 	fg1.indices.push_back(0);
@@ -96,7 +96,7 @@ void DFPolygonShader::build()
 	fg1.indices.push_back(2);
 	fg1.indices.push_back(3);
 
-	fg1.texture = this->polygonTexture.get();
+	fg1.texture = &this->polygonTexture;
 	albedoRenderer.buffer.faceGroups.push_back(fg1);
 
 	gRenderer.buffer.indices = fg1.indices;
@@ -108,35 +108,31 @@ void DFPolygonShader::build()
 
 	//fg2.texture = this->polygonTexture;
 	//buffer.faceGroups.push_back(fg2);
-
-
-	return status;
-	*/
 }
 
 void DFPolygonShader::render(const Camera& camera, const int wwidth, const int hheight)
 {
-	/*
 	const int width = 512;
 	const int height = 512;
 	{
-		this->fbo->bind();
-		this->fbo->setTexture(*this->colorTexture);
+		//this->fbo->bind();
+		//this->fbo->setTexture(*this->colorTexture);
 
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		albedoRenderer.buffer.position.send(positions.get());
-		albedoRenderer.buffer.texCoord.send(texCoords.get());
+		albedoRenderer.buffer.position = &positions;
+		albedoRenderer.buffer.texCoord = &texCoords;
 		albedoRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
 		albedoRenderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
 
 		this->albedoRenderer.render();
 
-		this->fbo->unbind();
+		//this->fbo->unbind();
 	}
 
+	/*
 	{
 		this->fbo->bind();
 

@@ -19,15 +19,15 @@ void PBLightShader::build()
 
 	VertexBuffer<float> vb;
 	vb.add(Vector3df(0.0, 0.0, 0.0));
-	vb.add(Vector3dd(1.0, 0.0, 0.0));
-	vb.add(Vector3dd(1.0, 1.0, 0.0));
-	vb.add(Vector3dd(0.0, 1.0, 0.0));
+	vb.add(Vector3df(1.0, 0.0, 0.0));
+	vb.add(Vector3df(1.0, 1.0, 0.0));
+	vb.add(Vector3df(0.0, 1.0, 0.0));
 
 	VertexBuffer<float> nb;
-	nb.add(Vector3dd(0, 0, 1));
-	nb.add(Vector3dd(0, 0, 1));
-	nb.add(Vector3dd(0, 0, 1));
-	nb.add(Vector3dd(0, 0, 1));
+	nb.add(Vector3df(0, 0, 1));
+	nb.add(Vector3df(0, 0, 1));
+	nb.add(Vector3df(0, 0, 1));
+	nb.add(Vector3df(0, 0, 1));
 
 	positions.create();
 	normals.create();

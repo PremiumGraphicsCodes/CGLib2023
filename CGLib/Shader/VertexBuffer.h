@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../Math/Vector2d.h"
 #include "../Math/Vector3d.h"
 #include "../Graphics/ColorRGBA.h"
 #include <vector>
@@ -13,6 +14,11 @@ class VertexBuffer
 public:
 	void add(const T v) {
 		data.push_back(v);
+	}
+
+	void add(const Math::Vector2df& v) {
+		data.push_back(v.x);
+		data.push_back(v.y);
 	}
 
 	void add(const Math::Vector3df& v) {

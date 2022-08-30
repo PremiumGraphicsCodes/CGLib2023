@@ -1,5 +1,7 @@
 #include "DFAlbedoRenderer.h"
 
+#include "CGLib/Shader/TextureUnit.h"
+
 #include <sstream>
 
 using namespace Crystal::Shader;
@@ -38,35 +40,31 @@ void DFAlbedoRenderer::link()
 
 void DFAlbedoRenderer::render()
 {
-	/*
 	shader->bind();
 	shader->bindOutput("fragColor");
 
-	shader->enableDepthTest();
+	shader->enable(GL_DEPTH_TEST);
 
+	Uniform projectionMatrix(uniforms.projectionMatrix);
+	Uniform modelviewMatrix(uniforms.modelviewMatrix);
 
-	shader->sendUniform(::projectionMatrixLabel, buffer.projectionMatrix);
-	shader->sendUniform(::modelViewMatrixLabel, buffer.modelViewMatrix);
+	projectionMatrix.send(buffer.projectionMatrix);
+	modelviewMatrix.send(buffer.modelViewMatrix);
 
-	shader->sendVertexAttribute3df(::positionLabel, buffer.position);
-	shader->sendVertexAttribute2df(::texCoordLabel, buffer.texCoord);
-
-	shader->enableVertexAttribute(::positionLabel);
-	shader->enableVertexAttribute(::texCoordLabel);
+	VertexAttribute position(attributes.position);
+	VertexAttribute texCoord(attributes.texCoord);
+	position.sendVertexAttribute3df(*buffer.position);
+	texCoord.sendVertexAttribute2df(*buffer.texCoord);
 
 	for (const auto& fg : buffer.faceGroups) {
-		shader->sendUniform(::textureLabel, *fg.texture, 0);
-		fg.texture->bind(0);
+		TextureUnit texUnit(0, fg.texture);
+		Uniform tex(uniforms.texture);
+		tex.send(texUnit);
 		shader->drawTriangles(fg.indices);
-		fg.texture->unbind();
 	}
 
-	shader->disableVertexAttribute(::positionLabel);
-	shader->disableVertexAttribute(::texCoordLabel);
-
-	shader->disableDepthTest();
+	shader->disable(GL_DEPTH_TEST);
 
 
 	shader->unbind();
-	*/
 }

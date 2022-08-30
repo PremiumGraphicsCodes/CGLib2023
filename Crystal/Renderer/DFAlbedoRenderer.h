@@ -17,8 +17,8 @@ public:
 			std::vector<unsigned int> indices;
 		};
 
-		Shader::VertexBufferObject position;
-		Shader::VertexBufferObject texCoord;
+		Shader::VertexBufferObject* position;
+		Shader::VertexBufferObject* texCoord;
 		Math::Matrix4dd projectionMatrix;
 		Math::Matrix4dd modelViewMatrix;
 		std::vector<FaceGroup> faceGroups;

@@ -17,15 +17,15 @@ void PointShader::build()
 
 	VertexBuffer<float> vb;
 	vb.add(Vector3df(0.0, 0.0, 0.0));
-	vb.add(Vector3dd(0.1, 0.0, 0.0));
-	vb.add(Vector3dd(0.1, 0.1, 0.0));
-	vb.add(Vector3dd(0.0, 0.1, 0.0));
+	vb.add(Vector3df(0.1, 0.0, 0.0));
+	vb.add(Vector3df(0.1, 0.1, 0.0));
+	vb.add(Vector3df(0.0, 0.1, 0.0));
 
 	VertexBuffer<float> colorBuffer;
 	colorBuffer.add(ColorRGBAf(1, 0, 0, 1));
 	colorBuffer.add(ColorRGBAf(0, 1, 0, 1));
-	colorBuffer.add(Vector3dd(0, 0, 1));
-	colorBuffer.add(Vector3dd(0, 0, 1));
+	colorBuffer.add(Vector3df(0, 0, 1));
+	colorBuffer.add(Vector3df(0, 0, 1));
 
 	VertexBuffer<float> sizeBuffer;
 	sizeBuffer.add(100.0f);
