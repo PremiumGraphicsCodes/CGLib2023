@@ -17,42 +17,35 @@ void PointShader::build()
 
 	VertexBuffer<float> vb;
 	vb.add(Vector3df(0.0, 0.0, 0.0));
-	vb.add(Vector3dd(1.0, 0.0, 0.0));
-	vb.add(Vector3dd(1.0, 1.0, 0.0));
-	vb.add(Vector3dd(0.0, 1.0, 0.0));
+	vb.add(Vector3dd(0.1, 0.0, 0.0));
+	vb.add(Vector3dd(0.1, 0.1, 0.0));
+	vb.add(Vector3dd(0.0, 0.1, 0.0));
 
-	/*
-	VertexBuffer<float> nb;
-	nb.add(Vector3dd(0, 0, 1));
-	nb.add(Vector3dd(0, 0, 1));
-	nb.add(Vector3dd(0, 0, 1));
-	nb.add(Vector3dd(0, 0, 1));
+	VertexBuffer<float> colorBuffer;
+	colorBuffer.add(ColorRGBAf(1, 0, 0, 1));
+	colorBuffer.add(ColorRGBAf(0, 1, 0, 1));
+	colorBuffer.add(Vector3dd(0, 0, 1));
+	colorBuffer.add(Vector3dd(0, 0, 1));
+
+	VertexBuffer<float> sizeBuffer;
+	sizeBuffer.add(100.0f);
+	sizeBuffer.add(100.0f);
+	sizeBuffer.add(100.0f);
+	sizeBuffer.add(100.0f);
 
 	positions.create();
-	normals.create();
+	colors.create();
+	sizes.create();
 
 	positions.send(vb.getData());
-	normals.send(nb.getData());
+	colors.send(colorBuffer.getData());
+	sizes.send(sizeBuffer.getData());
 
 	renderer.buffer.position = &positions;
-	renderer.buffer.normal = &normals;
+	renderer.buffer.color = &colors;
+	renderer.buffer.size = &sizes;
 
-	renderer.buffer.indices.push_back(0);
-	renderer.buffer.indices.push_back(1);
-	renderer.buffer.indices.push_back(2);
-
-	renderer.buffer.indices.push_back(0);
-	renderer.buffer.indices.push_back(2);
-	renderer.buffer.indices.push_back(3);
-
-	renderer.buffer.lightPosition = Vector3dd(1, 1, 1);
-	renderer.buffer.lightColor = Vector3dd(1, 1, 1);
-
-	renderer.buffer.albedo = Vector3dd(1, 1, 1);
-	renderer.buffer.roughness = 0.1;
-	renderer.buffer.metalic = 0.1;
-	renderer.buffer.ao = 0.1;
-	*/
+	renderer.buffer.count = 4;
 }
 
 void PointShader::render(const Camera& camera, const int width, const int height)
@@ -62,11 +55,9 @@ void PointShader::render(const Camera& camera, const int width, const int height
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		//renderer.buffer.modelMatrix = camera.getModelMatrix();
-		//renderer.buffer.viewMatrix = camera.getViewMatrix();
-		//renderer.buffer.projectionMatrix = camera.getProjectionMatrix();
-		//renderer.buffer.eyePosition = camera.getEye();
+		renderer.buffer.modelViewMatrix = camera.getModelViewMatrix();
+		renderer.buffer.projectionMatrix = camera.getProjectionMatrix();
 
-		//this->renderer.render();
+		this->renderer.render();
 	}
 }

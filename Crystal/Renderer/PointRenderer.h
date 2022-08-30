@@ -25,6 +25,7 @@ public:
 
 	void render() override;
 
+	Buffer buffer;
 private:
 };
 

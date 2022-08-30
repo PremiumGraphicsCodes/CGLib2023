@@ -176,6 +176,9 @@ int main() {
 
 		if (ImGui::BeginMainMenuBar()) {
 			if (ImGui::BeginMenu("Renderer")) {
+				if (ImGui::MenuItem("Point")) {
+					::activeRenderer = &pointRenderer;
+				}
 				if (ImGui::MenuItem("SkyBox")) {
 					::activeRenderer = &skyBoxRenderer;
 				}
