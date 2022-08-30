@@ -11,6 +11,12 @@
     <ClInclude Include="PointRenderer.h">
       <Filter>Point</Filter>
     </ClInclude>
+    <ClInclude Include="DFAlbedoRenderer.h">
+      <Filter>Deffered</Filter>
+    </ClInclude>
+    <ClInclude Include="DFGeometryRenderer.h">
+      <Filter>Deffered</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
@@ -22,6 +28,9 @@
     <ClCompile Include="PointRenderer.cpp">
       <Filter>Point</Filter>
     </ClCompile>
+    <ClCompile Include="DFAlbedoRenderer.cpp">
+      <Filter>Deffered</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="SkyBox">
@@ -32,6 +41,9 @@
     </Filter>
     <Filter Include="Point">
       <UniqueIdentifier>{b1844bfe-1ad0-4dcd-8395-3b8d54cc8d6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Deffered">
+      <UniqueIdentifier>{768e54e3-b3d8-477b-8bfe-a84c574a7bbe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

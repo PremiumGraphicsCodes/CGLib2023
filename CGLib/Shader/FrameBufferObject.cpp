@@ -9,6 +9,13 @@ using namespace Crystal::Shader;
 void FrameBufferObject::create()
 {
 	glGenFramebuffers(1, &frameBuffer);
+
+	glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
+	glGenRenderbuffers(1, &depthBuffer);
+	glBindRenderbuffer(GL_RENDERBUFFER, depthBuffer);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 512, 512);
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthBuffer);
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
 /*
@@ -18,12 +25,6 @@ void FrameBufferObject::build(int width, int height)
 	this->height = height;
 	glGenFramebuffers(1, &frameBuffer);
 
-	glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
-	glGenRenderbuffers(1, &depthBuffer);
-	glBindRenderbuffer(GL_RENDERBUFFER, depthBuffer);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 512, 512);
-	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthBuffer);
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 	assert(GL_NO_ERROR == glGetError());
 }
@@ -52,14 +53,14 @@ void FrameBufferObject::setTexture(const ITextureObject& texture, unsigned int n
 }
 
 
-void FrameBufferObject::bind()
+void FrameBufferObject::bind() const
 {
 	glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
 	//glBindTexture(GL_TEXTURE_2D, texture.getId());
 	assert(GL_NO_ERROR == glGetError());
 }
 
-void FrameBufferObject::unbind()
+void FrameBufferObject::unbind() const
 {
 	//glBindTexture(GL_TEXTURE_2D, 0);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);

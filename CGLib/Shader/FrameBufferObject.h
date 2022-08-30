@@ -23,9 +23,11 @@ public:
 
 	void setTexture(const ITextureObject& texture, unsigned int number);
 
-	void bind();
+	void bind() const override;
 
-	void unbind();
+	void unbind() const override;
+
+	GLuint getHandle() const { return frameBuffer; }
 
 private:
 	GLuint frameBuffer;
