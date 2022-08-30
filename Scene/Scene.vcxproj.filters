@@ -4,10 +4,24 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="IScene.h" />
+    <ClInclude Include="ParticleSystemScene.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="IParticle.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="IScene.cpp" />
+    <ClCompile Include="ParticleSystemScene.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ParticleSystem">
+      <UniqueIdentifier>{db2c6048-4736-40f5-8e80-00acd522a8d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
