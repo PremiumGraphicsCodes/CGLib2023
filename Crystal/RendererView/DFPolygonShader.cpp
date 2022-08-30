@@ -1,7 +1,7 @@
 #include "DFPolygonShader.h"
 
-
 #include "CGLib/Graphics/ImageFileReader.h"
+#include "CGLib/Shader/ShaderBuilder.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
@@ -23,28 +23,19 @@ namespace {
 
 void DFPolygonShader::build()
 {
-	/*
-	ShaderBuildStatus status;
-
+	ShaderBuilder builder;
 	{
-		auto shader = std::make_unique<ShaderObject>();
-		const auto isOk = shader->buildFromFile("../GLSL/DFAlbedo.vs", "../GLSL/DFAlbedo.fs");
-		if (!isOk) {
-			status.log += shader->getLog();
-		}
-		albedoRenderer.setShader(std::move(shader));
+		builder.buildFromFile("../GLSL/DFAlbedo.vs", "../GLSL/DFAlbedo.fs");
+		albedoRenderer.setShader(builder.getShader());
 		albedoRenderer.link();
 	}
 	{
-		std::unique_ptr<ShaderObject> gShader = std::make_unique<ShaderObject>();
-		const auto isOk = gShader->buildFromFile("../GLSL/DFGeometry.vs", "../GLSL/DFGeometry.fs");
-		if (!isOk) {
-			status.log += gShader->getLog();
-		}
-		gRenderer.setShader(std::move(gShader));
+		builder.buildFromFile("../GLSL/DFGeometry.vs", "../GLSL/DFGeometry.fs");
+		gRenderer.setShader(builder.getShader());
 		gRenderer.link();
 	}
 
+	/*
 	{
 		std::unique_ptr<ShaderObject> shader = std::make_unique<ShaderObject>();
 		const auto isOk = shader->buildFromFile("../GLSL/DFLight.vs", "../GLSL/DFLight.fs");

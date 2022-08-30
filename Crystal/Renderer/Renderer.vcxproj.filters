@@ -12,10 +12,10 @@
       <Filter>Point</Filter>
     </ClInclude>
     <ClInclude Include="DFAlbedoRenderer.h">
-      <Filter>Deffered</Filter>
+      <Filter>Deffered\DFAlbedo</Filter>
     </ClInclude>
     <ClInclude Include="DFGeometryRenderer.h">
-      <Filter>Deffered</Filter>
+      <Filter>Deffered\DFGeometry</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -29,7 +29,10 @@
       <Filter>Point</Filter>
     </ClCompile>
     <ClCompile Include="DFAlbedoRenderer.cpp">
-      <Filter>Deffered</Filter>
+      <Filter>Deffered\DFAlbedo</Filter>
+    </ClCompile>
+    <ClCompile Include="DFGeometryRenderer.cpp">
+      <Filter>Deffered\DFGeometry</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,6 +47,12 @@
     </Filter>
     <Filter Include="Deffered">
       <UniqueIdentifier>{768e54e3-b3d8-477b-8bfe-a84c574a7bbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Deffered\DFAlbedo">
+      <UniqueIdentifier>{dff1e4fd-0ba8-4e3a-b556-127b48e68ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Deffered\DFGeometry">
+      <UniqueIdentifier>{02a2eaea-e421-4236-99fc-8829c0aec944}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +73,18 @@
     </None>
     <None Include="..\GLSL\Point.fs">
       <Filter>Point</Filter>
+    </None>
+    <None Include="..\GLSL\DFAlbedo.fs">
+      <Filter>Deffered\DFAlbedo</Filter>
+    </None>
+    <None Include="..\GLSL\DFAlbedo.vs">
+      <Filter>Deffered\DFAlbedo</Filter>
+    </None>
+    <None Include="..\GLSL\DFGeometry.fs">
+      <Filter>Deffered\DFGeometry</Filter>
+    </None>
+    <None Include="..\GLSL\DFGeometry.vs">
+      <Filter>Deffered\DFGeometry</Filter>
     </None>
   </ItemGroup>
 </Project>

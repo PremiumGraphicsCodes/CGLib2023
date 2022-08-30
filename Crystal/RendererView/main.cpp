@@ -10,6 +10,7 @@
 #include "PBLightShader.h"
 #include "SkyBoxShader.h"
 #include "PointShader.h"
+#include "DFPolygonShader.h"
 
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
@@ -36,6 +37,7 @@ namespace {
 	PBLightShader pbLightRenderer;
 	SkyBoxShader skyBoxRenderer;
 	PointShader pointRenderer;
+	DFPolygonShader dfRenderer;
 	IScreenShader* activeRenderer = &pbLightRenderer;
 
 
@@ -165,6 +167,7 @@ int main() {
 	pointRenderer.build();
 	pbLightRenderer.build();
 	skyBoxRenderer.build();
+	dfRenderer.build();
 
    // onInit();
 
@@ -184,6 +187,9 @@ int main() {
 				}
 				if (ImGui::MenuItem("PBLight")) {
 					::activeRenderer = &pbLightRenderer;
+				}
+				if (ImGui::MenuItem("DFPolygon")) {
+					::activeRenderer = &dfRenderer;
 				}
 				if (ImGui::MenuItem("IBL")) {
 					//::activeRenderer = &iblRenderer;
