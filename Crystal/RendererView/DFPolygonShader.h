@@ -5,6 +5,7 @@
 #include "CGLib/Shader/FrameBufferObject.h"
 #include "../Renderer/DFAlbedoRenderer.h"
 #include "../Renderer/DFGeometryRenderer.h"
+#include "../Renderer/DFLightRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {
@@ -19,7 +20,7 @@ public:
 private:
 	Renderer::DFAlbedoRenderer albedoRenderer;
 	Renderer::DFGeometryRenderer gRenderer;
-	//Renderer::DFLightRenderer lightRenderer;
+	Renderer::DFLightRenderer lightRenderer;
 
 	Shader::TextureObject colorTexture;
 	Shader::TextureObject polygonTexture;

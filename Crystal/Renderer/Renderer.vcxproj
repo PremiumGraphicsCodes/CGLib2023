@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="DFAlbedoRenderer.h" />
     <ClInclude Include="DFGeometryRenderer.h" />
+    <ClInclude Include="DFLightRenderer.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="PBLightRenderer.h" />
     <ClInclude Include="PointRenderer.h" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="DFAlbedoRenderer.cpp" />
     <ClCompile Include="DFGeometryRenderer.cpp" />
+    <ClCompile Include="DFLightRenderer.cpp" />
     <ClCompile Include="PBLightRenderer.cpp" />
     <ClCompile Include="PointRenderer.cpp" />
     <ClCompile Include="SkyBoxRenderer.cpp" />
@@ -183,6 +185,8 @@
     <None Include="..\GLSL\DFAlbedo.vs" />
     <None Include="..\GLSL\DFGeometry.fs" />
     <None Include="..\GLSL\DFGeometry.vs" />
+    <None Include="..\GLSL\DFLight.fs" />
+    <None Include="..\GLSL\DFLight.vs" />
     <None Include="..\GLSL\PBLight.fs" />
     <None Include="..\GLSL\PBLight.vs" />
     <None Include="..\GLSL\Point.fs" />

@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Box2d.cpp" />
     <ClCompile Include="Box3d.cpp" />
     <ClCompile Include="glm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Box2d.h" />
     <ClInclude Include="Box3d.h" />
     <ClInclude Include="glm.h" />
     <ClInclude Include="Matrix2d.h" />

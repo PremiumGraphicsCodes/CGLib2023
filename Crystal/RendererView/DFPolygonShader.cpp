@@ -24,28 +24,20 @@ namespace {
 void DFPolygonShader::build()
 {
 	ShaderBuilder builder;
-	{
-		builder.buildFromFile("../GLSL/DFAlbedo.vs", "../GLSL/DFAlbedo.fs");
-		albedoRenderer.setShader(builder.getShader());
-		albedoRenderer.link();
-	}
-	{
-		builder.buildFromFile("../GLSL/DFGeometry.vs", "../GLSL/DFGeometry.fs");
-		gRenderer.setShader(builder.getShader());
-		gRenderer.link();
-	}
+	
+	builder.buildFromFile("../GLSL/DFAlbedo.vs", "../GLSL/DFAlbedo.fs");
+	albedoRenderer.setShader(builder.getShader());
+	albedoRenderer.link();
+	
+	builder.buildFromFile("../GLSL/DFGeometry.vs", "../GLSL/DFGeometry.fs");
+	gRenderer.setShader(builder.getShader());
+	gRenderer.link();
+
+	builder.buildFromFile("../GLSL/DFLight.vs", "../GLSL/DFLight.fs");
+	lightRenderer.setShader(builder.getShader());
+	lightRenderer.link();
 
 	/*
-	{
-		std::unique_ptr<ShaderObject> shader = std::make_unique<ShaderObject>();
-		const auto isOk = shader->buildFromFile("../GLSL/DFLight.vs", "../GLSL/DFLight.fs");
-		if (!isOk) {
-			status.log += shader->getLog();
-		}
-		lightRenderer.setShader(std::move(shader));
-		lightRenderer.link();
-	}
-
 	this->fbo = std::make_unique<FrameBufferObject>();
 	this->fbo->build(512, 512);
 

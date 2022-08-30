@@ -17,6 +17,9 @@
     <ClInclude Include="DFGeometryRenderer.h">
       <Filter>Deffered\DFGeometry</Filter>
     </ClInclude>
+    <ClInclude Include="DFLightRenderer.h">
+      <Filter>Deffered\DFLight</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
@@ -33,6 +36,9 @@
     </ClCompile>
     <ClCompile Include="DFGeometryRenderer.cpp">
       <Filter>Deffered\DFGeometry</Filter>
+    </ClCompile>
+    <ClCompile Include="DFLightRenderer.cpp">
+      <Filter>Deffered\DFLight</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +59,9 @@
     </Filter>
     <Filter Include="Deffered\DFGeometry">
       <UniqueIdentifier>{02a2eaea-e421-4236-99fc-8829c0aec944}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Deffered\DFLight">
+      <UniqueIdentifier>{00b18e83-2e61-4bf2-b088-fe783ae70d32}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +94,12 @@
     </None>
     <None Include="..\GLSL\DFGeometry.vs">
       <Filter>Deffered\DFGeometry</Filter>
+    </None>
+    <None Include="..\GLSL\DFLight.fs">
+      <Filter>Deffered\DFLight</Filter>
+    </None>
+    <None Include="..\GLSL\DFLight.vs">
+      <Filter>Deffered\DFLight</Filter>
     </None>
   </ItemGroup>
 </Project>
