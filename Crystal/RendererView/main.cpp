@@ -18,6 +18,7 @@
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
+using namespace Crystal::Renderer;
 
 namespace {
 
@@ -30,6 +31,11 @@ namespace {
 	bool isRightDown;
 
 	Camera camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0);
+
+	PBLightShader pbLightRenderer;
+	SkyBoxShader skyBoxRenderer;
+	IScreenShader* activeRenderer = &pbLightRenderer;
+
 
 	Vector2df toScreenCoord(GLFWwindow* window, const double x, const double y) {
 		int width, height;
@@ -154,9 +160,7 @@ int main() {
     if (!glfwInit())
         return 1;
 
-	Crystal::Renderer::PBLightShader pbLightRenderer;
 	pbLightRenderer.build();
-	Crystal::Renderer::SkyBoxShader skyBoxRenderer;
 	skyBoxRenderer.build();
 
    // onInit();
@@ -170,13 +174,10 @@ int main() {
 		if (ImGui::BeginMainMenuBar()) {
 			if (ImGui::BeginMenu("Renderer")) {
 				if (ImGui::MenuItem("SkyBox")) {
-					//::activeRenderer = &cubeMapRenderer;
-				}
-				if (ImGui::MenuItem("Polygon")) {
-					//::activeRenderer = &polygonRenderer;
+					::activeRenderer = &skyBoxRenderer;
 				}
 				if (ImGui::MenuItem("PBLight")) {
-					//::activeRenderer = &pbLightRenderer;
+					::activeRenderer = &pbLightRenderer;
 				}
 				if (ImGui::MenuItem("IBL")) {
 					//::activeRenderer = &iblRenderer;
@@ -193,8 +194,8 @@ int main() {
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
 
+		activeRenderer->render(camera, width, height);
 		//skyBoxRenderer.render(camera, width, height);
-		pbLightRenderer.render(camera, width, height);
         //onRender(width, height);
 		//world->getRenderer()->render(*world->getCamera()->getCamera(), width, height);
 		//const auto animations = world->getAnimations();
