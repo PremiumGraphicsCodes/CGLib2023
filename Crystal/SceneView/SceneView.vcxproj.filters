@@ -9,5 +9,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="ParticleSystemPresenter.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ParticleSystem">
+      <UniqueIdentifier>{76303787-75f6-47a0-b26e-d857518f7298}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
