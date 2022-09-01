@@ -8,7 +8,7 @@ namespace Crystal {
 class IParticle
 {
 public:
-	virtual ~IParticle();
+	virtual ~IParticle() = default;
 
 	virtual Math::Vector3df getPosition() const = 0;
 };

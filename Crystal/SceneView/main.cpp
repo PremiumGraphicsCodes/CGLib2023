@@ -16,6 +16,8 @@
 
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
+#include "Renderer.h"
+
 #include <iostream>
 
 #include "CGLib/Math/Vector2d.h"
@@ -118,6 +120,21 @@ namespace {
 			prevCoord = coord;
 		}
 	}
+
+	struct Particle : public IParticle
+	{
+	public:
+		Particle(const Vector3df& p) {
+			this->pos = p;
+		}
+
+		Vector3df getPosition() const override {
+			return pos;
+		}
+
+	private:
+		Vector3df pos;
+	};
 }
 
 int main() {
@@ -166,8 +183,15 @@ int main() {
 
 	 // Setup window
 	 //glfwSetErrorCallback(glfw_error_callback);
-	if (!glfwInit())
+	if (!glfwInit()) {
 		return 1;
+	}
+
+	ParticleSystemScene psScene;
+	psScene.add(new Particle(Vector3df(0,0,0)));
+
+	Crystal::UI::Renderer renderer;
+	renderer.build();
 
 	//pointRenderer.build();
 	//pbLightRenderer.build();
@@ -195,11 +219,18 @@ int main() {
 			ImGui::EndMainMenuBar();
 		}
 
-		glClearColor(0, 0, 0, 0);
-		glClear(GL_COLOR_BUFFER_BIT);
+		//glClearColor(0, 0, 0, 0);
+		//glClear(GL_COLOR_BUFFER_BIT);
 
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
+
+		glViewport(0, 0, width, height);
+		glClearColor(0.0, 0.0, 0.0, 0.0);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+
+		renderer.render(camera, &psScene);
 
 		//activeRenderer->render(camera, width, height);
 		//skyBoxRenderer.render(camera, width, height);
