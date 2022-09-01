@@ -10,18 +10,12 @@ using namespace Crystal::UI;
 ScreenRenderer::ScreenRenderer() :
 	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1f, 10.0f)
 {
-	this->activeRenderer = &renderers.point;
+	this->activeRenderer = &renderers.triangle;
 }
 
 void ScreenRenderer::setActiveRenderer(const RenderingType type)
 {
 	switch (type) {
-	case RenderingType::Point :
-		this->activeRenderer = &renderers.point;
-		break;
-	case RenderingType::Line :
-		this->activeRenderer = &renderers.line;
-		break;
 	case RenderingType::Triangle :
 		this->activeRenderer = &renderers.triangle;
 		break;
@@ -36,14 +30,6 @@ void ScreenRenderer::setActiveRenderer(const RenderingType type)
 void ScreenRenderer::build()
 {
 	ShaderBuilder sBuilder;
-	sBuilder.buildFromFile("./Point.vs", "./Point.fs");
-
-	renderers.point.setShader(sBuilder.getShader());
-	renderers.point.link();
-
-	sBuilder.buildFromFile("./Line.vs", "./Line.fs");
-	renderers.line.setShader(sBuilder.getShader());
-	renderers.line.link();
 
 	sBuilder.buildFromFile("./Triangle.vs", "./Triangle.fs");
 	renderers.triangle.setShader(sBuilder.getShader());
@@ -77,20 +63,6 @@ void ScreenRenderer::build()
 	buffers.positionVBO.send(positions);
 	buffers.colorVBO.send(colors);
 	buffers.sizeVBO.send(size);
-
-	renderers.point.buffer.position = &buffers.positionVBO;
-	renderers.point.buffer.color = &buffers.colorVBO;
-	renderers.point.buffer.size = &buffers.sizeVBO;
-	renderers.point.buffer.modelViewMatrix = camera.getModelViewMatrix();
-	renderers.point.buffer.projectionMatrix = camera.getProjectionMatrix();
-	renderers.point.buffer.count = 1;
-
-	renderers.line.buffer.position = &buffers.positionVBO;
-	renderers.line.buffer.color = &buffers.colorVBO;
-	renderers.line.buffer.modelViewMatrix = camera.getModelViewMatrix();
-	renderers.line.buffer.projectionMatrix = camera.getProjectionMatrix();
-	renderers.line.buffer.indices = { 0, 1 };
-	renderers.line.buffer.lineWidth = 10.0f;
 
 	renderers.triangle.buffer.position = &buffers.positionVBO;
 	renderers.triangle.buffer.color = &buffers.colorVBO;

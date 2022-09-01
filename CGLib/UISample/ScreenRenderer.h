@@ -2,8 +2,6 @@
 
 #include "../Graphics/Camera.h"
 
-#include "PointRenderer.h"
-#include "LineRenderer.h"
 #include "TriangleRenderer.h"
 #include "TexRenderer.h"
 
@@ -31,8 +29,6 @@ public:
 private:
 	struct Renderers
 	{
-		Crystal::UI::PointRenderer point;
-		Crystal::UI::LineRenderer line;
 		Crystal::UI::TriangleRenderer triangle;
 		Crystal::UI::TexRenderer tex;
 	};

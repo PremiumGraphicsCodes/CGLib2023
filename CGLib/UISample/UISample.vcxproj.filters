@@ -2,39 +2,21 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PointRenderer.cpp">
-      <Filter>Point</Filter>
-    </ClCompile>
     <ClCompile Include="TexRenderer.cpp">
       <Filter>Tex</Filter>
     </ClCompile>
     <ClCompile Include="ScreenRenderer.cpp" />
-    <ClCompile Include="LineRenderer.cpp">
-      <Filter>Line</Filter>
-    </ClCompile>
     <ClCompile Include="TriangleRenderer.cpp">
       <Filter>Triangle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Point.vs">
-      <Filter>Point</Filter>
-    </None>
-    <None Include="Point.fs">
-      <Filter>Point</Filter>
-    </None>
     <None Include="Tex.fs">
       <Filter>Tex</Filter>
     </None>
     <None Include="Tex.vs">
       <Filter>Tex</Filter>
-    </None>
-    <None Include="Line.fs">
-      <Filter>Line</Filter>
-    </None>
-    <None Include="Line.vs">
-      <Filter>Line</Filter>
     </None>
     <None Include="Triangle.vs">
       <Filter>Triangle</Filter>
@@ -45,29 +27,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IRenderer.h" />
-    <ClInclude Include="PointRenderer.h">
-      <Filter>Point</Filter>
-    </ClInclude>
     <ClInclude Include="TexRenderer.h">
       <Filter>Tex</Filter>
     </ClInclude>
     <ClInclude Include="ScreenRenderer.h" />
-    <ClInclude Include="LineRenderer.h">
-      <Filter>Line</Filter>
-    </ClInclude>
     <ClInclude Include="TriangleRenderer.h">
       <Filter>Triangle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Point">
-      <UniqueIdentifier>{cf81686b-919f-4f1f-ba23-2040f3ebac63}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Tex">
       <UniqueIdentifier>{eefedd87-1615-4166-ae10-ab044f33ac89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Line">
-      <UniqueIdentifier>{06f23acd-604e-40ac-b6d1-e33196c009f2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Triangle">
       <UniqueIdentifier>{e32174da-02d8-4ce7-8bd1-eac83e6c49ab}</UniqueIdentifier>
