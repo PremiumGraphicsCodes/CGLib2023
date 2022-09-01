@@ -9,6 +9,7 @@
     <ClCompile Include="LineShader.cpp" />
     <ClCompile Include="TriangleShader.cpp" />
     <ClCompile Include="TexShader.cpp" />
+    <ClCompile Include="IBLShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
