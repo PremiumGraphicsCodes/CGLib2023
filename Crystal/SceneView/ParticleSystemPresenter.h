@@ -3,11 +3,12 @@
 #include "../Renderer/PointRenderer.h"
 #include "../Scene/ParticleSystemScene.h"
 #include "CGLib/Shader/VertexBuffer.h"
+#include "IPresenter.h"
 
 namespace Crystal {
 	namespace UI {
 
-class ParticleSystemPresenter
+class ParticleSystemPresenter : public IPresenter
 {
 public:
 	ParticleSystemPresenter(Scene::ParticleSystemScene* psScene, Crystal::Renderer::PointRenderer* renderer) :
@@ -16,11 +17,11 @@ public:
 	{
 	}
 
-	void build();
+	void build() override;
 
-	void send();
+	void send() override;
 
-	void render(const Graphics::Camera& camera);
+	void render(const Graphics::Camera& camera) override;
 
 private:
 	struct VBO {

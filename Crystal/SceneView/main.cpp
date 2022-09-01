@@ -1,7 +1,10 @@
 ﻿#include "../../CGLib/Shader/glew.h"
 
 #include "../Scene/ParticleSystemScene.h"
+#include "../Scene/WireFrameScene.h"
+
 #include "ParticleSystemPresenter.h"
+#include "WireFramePresenter.h"
 
 #include "../../CGLib/UI/imgui.h"
 #include "../../CGLib/UI/imgui_impl_glfw.h"
@@ -9,13 +12,6 @@
 #include "GLFW/glfw3.h"
 
 #include <stdio.h>
-
-//#include "PBLightShader.h"
-//#include "SkyBoxShader.h"
-//#include "PointShader.h"
-//#include "DFPolygonShader.h"
-
-//#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
 #include "Renderer.h"
 
@@ -39,12 +35,6 @@ namespace {
 	bool isRightDown;
 
 	Camera camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0);
-
-	//PBLightShader pbLightRenderer;
-	//SkyBoxShader skyBoxRenderer;
-	//PointShader pointRenderer;
-	//DFPolygonShader dfRenderer;
-	//IScreenShader* activeRenderer = &pbLightRenderer;
 
 	IScene scene;
 
@@ -136,6 +126,20 @@ namespace {
 	private:
 		Vector3df pos;
 	};
+
+	struct Vertex : public IVertex
+	{
+	public:
+		explicit Vertex(const Vector3df& p) : pos(p) {
+		}
+
+		Vector3df getPosition() const override {
+			return pos;
+		}
+
+	private:
+		Vector3df pos;
+	};
 }
 
 int main() {
@@ -198,6 +202,16 @@ int main() {
 	presenter.build();
 	presenter.send();
 
+	WireFrameScene wfScene;
+	wfScene.add(new Vertex(Vector3df(0, 0, 0)));
+	wfScene.add(new Vertex(Vector3df(1, 0, 0)));
+	wfScene.addIndex(0);
+	wfScene.addIndex(1);
+
+	Crystal::UI::WireFramePresenter wfPresenter(&wfScene, &renderer.line);
+	wfPresenter.build();
+	wfPresenter.send();
+
 	//pointRenderer.build();
 	//pbLightRenderer.build();
 	//skyBoxRenderer.build();
@@ -234,7 +248,8 @@ int main() {
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		presenter.render(camera);
+		//presenter.render(camera);
+		wfPresenter.render(camera);
 
 		//renderer.render(camera, &psScene);
 

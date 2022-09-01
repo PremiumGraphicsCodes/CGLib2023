@@ -3,11 +3,12 @@
 #include "../Renderer/LineRenderer.h"
 #include "../Scene/WireFrameScene.h"
 #include "CGLib/Shader/VertexBuffer.h"
+#include "IPresenter.h"
 
 namespace Crystal {
 	namespace UI {
 
-class WireFramePresenter
+class WireFramePresenter : public IPresenter
 {
 public:
 	WireFramePresenter(Scene::WireFrameScene* psScene, Crystal::Renderer::LineRenderer* renderer) :
@@ -16,11 +17,11 @@ public:
 	{
 	}
 
-	void build();
+	void build() override;
 
-	void send();
+	void send() override;
 
-	void render(const Graphics::Camera& camera);
+	void render(const Graphics::Camera& camera) override;
 
 private:
 	struct VBO {

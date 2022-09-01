@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Renderer/PointRenderer.h"
+#include "../Renderer/LineRenderer.h"
 #include "../Scene/ParticleSystemScene.h"
 #include "CGLib/Shader/VertexBuffer.h"
 #include "CGLib/Graphics/Camera.h"
@@ -19,6 +20,7 @@ public:
 	void render(const Graphics::Camera& camera);
 
 	Crystal::Renderer::PointRenderer point;
+	Crystal::Renderer::LineRenderer line;
 
 private:
 

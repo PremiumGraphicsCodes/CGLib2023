@@ -15,4 +15,8 @@ void Renderer::build()
 	builder.buildFromFile("../GLSL/Point.vs", "../GLSL/Point.fs");
 	point.setShader(builder.getShader());
 	point.link();
+
+	builder.buildFromFile("../GLSL/Line.vs", "../GLSL/Line.fs");
+	line.setShader(builder.getShader());
+	line.link();
 }
