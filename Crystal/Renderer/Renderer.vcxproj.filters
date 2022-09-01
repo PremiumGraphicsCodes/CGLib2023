@@ -35,6 +35,9 @@
     <ClInclude Include="LineRenderer.h">
       <Filter>Line</Filter>
     </ClInclude>
+    <ClInclude Include="TriangleRenderer.h">
+      <Filter>Triangle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
@@ -69,6 +72,9 @@
     </ClCompile>
     <ClCompile Include="LineRenderer.cpp">
       <Filter>Line</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangleRenderer.cpp">
+      <Filter>Triangle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +116,9 @@
     </Filter>
     <Filter Include="Line">
       <UniqueIdentifier>{e7bd4984-afcc-4cb3-b10e-5c4ed312d7ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Triangle">
+      <UniqueIdentifier>{7b348f21-9007-4e03-9d27-9f7ad0ea3db4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +187,12 @@
     </None>
     <None Include="..\GLSL\Line.vs">
       <Filter>Line</Filter>
+    </None>
+    <None Include="..\GLSL\Triangle.fs">
+      <Filter>Triangle</Filter>
+    </None>
+    <None Include="..\GLSL\Triangle.vs">
+      <Filter>Triangle</Filter>
     </None>
   </ItemGroup>
 </Project>
