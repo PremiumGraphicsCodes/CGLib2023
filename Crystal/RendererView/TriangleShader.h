@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Renderer/LineRenderer.h"
+#include "../Renderer/TriangleRenderer.h"
 
 #include "CGLib/Graphics/Camera.h"
 #include "IScreenShader.h"
@@ -8,7 +8,7 @@
 namespace Crystal {
 	namespace Renderer {
 
-class LineShader : public IScreenShader
+class TriangleShader : public IScreenShader
 {
 public:
 	void build() override;
@@ -16,10 +16,9 @@ public:
 	void render(const Graphics::Camera& camera, const int width, const int height) override;
 
 private:
-	Renderer::LineRenderer renderer;
+	Renderer::TriangleRenderer renderer;
 	Shader::VertexBufferObject positions;
 	Shader::VertexBufferObject colors;
-	Shader::VertexBufferObject sizes;
 };
 
 	}

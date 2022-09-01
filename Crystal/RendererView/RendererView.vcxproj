@@ -151,6 +151,7 @@
     <ClCompile Include="PBLightShader.cpp" />
     <ClCompile Include="PointShader.cpp" />
     <ClCompile Include="SkyBoxShader.cpp" />
+    <ClCompile Include="TriangleShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -179,6 +180,7 @@
     <ClInclude Include="PBLightShader.h" />
     <ClInclude Include="PointShader.h" />
     <ClInclude Include="SkyBoxShader.h" />
+    <ClInclude Include="TriangleShader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
