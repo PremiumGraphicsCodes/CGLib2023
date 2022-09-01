@@ -155,11 +155,14 @@
   <ItemGroup>
     <ClInclude Include="IParticle.h" />
     <ClInclude Include="IScene.h" />
+    <ClInclude Include="IVertex.h" />
     <ClInclude Include="ParticleSystemScene.h" />
+    <ClInclude Include="WireFrameScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IScene.cpp" />
     <ClCompile Include="ParticleSystemScene.cpp" />
+    <ClCompile Include="WireFrameScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

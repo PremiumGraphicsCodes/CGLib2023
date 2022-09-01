@@ -6,6 +6,9 @@
     <ClCompile Include="ParticleSystemPresenter.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
+    <ClCompile Include="WireFramePresenter.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -19,6 +22,9 @@
   <ItemGroup>
     <Filter Include="ParticleSystem">
       <UniqueIdentifier>{76303787-75f6-47a0-b26e-d857518f7298}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WireFrame">
+      <UniqueIdentifier>{f4b81234-5bd6-465f-b967-895c794bc8fb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

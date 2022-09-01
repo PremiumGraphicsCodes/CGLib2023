@@ -8,16 +8,28 @@
     <ClInclude Include="IParticle.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
+    <ClInclude Include="WireFrameScene.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="IVertex.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IScene.cpp" />
     <ClCompile Include="ParticleSystemScene.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
+    <ClCompile Include="WireFrameScene.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
       <UniqueIdentifier>{db2c6048-4736-40f5-8e80-00acd522a8d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WireFrame">
+      <UniqueIdentifier>{8d4a88ef-9013-4be9-bf75-e3c83cbc8a46}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

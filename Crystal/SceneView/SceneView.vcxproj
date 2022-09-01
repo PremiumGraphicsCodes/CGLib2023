@@ -145,6 +145,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleSystemPresenter.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="WireFramePresenter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
