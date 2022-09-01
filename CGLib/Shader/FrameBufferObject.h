@@ -11,10 +11,9 @@ namespace Crystal {
 
 class FrameBufferObject : public IGLObject
 {
-	//private:
-	//	FrameBufferObject() {};
-
 public:
+	~FrameBufferObject();
+
 	void create() override;
 
 	void remove() override;

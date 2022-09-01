@@ -22,5 +22,6 @@
     <ClInclude Include="LineShader.h" />
     <ClInclude Include="TriangleShader.h" />
     <ClInclude Include="TexShader.h" />
+    <ClInclude Include="IBLShader.h" />
   </ItemGroup>
 </Project>

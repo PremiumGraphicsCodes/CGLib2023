@@ -176,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DFPolygonShader.h" />
+    <ClInclude Include="IBLShader.h" />
     <ClInclude Include="IScreenShader.h" />
     <ClInclude Include="LineShader.h" />
     <ClInclude Include="PBLightShader.h" />

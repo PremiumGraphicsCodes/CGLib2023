@@ -6,6 +6,11 @@
 using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
 
+FrameBufferObject::~FrameBufferObject()
+{
+	remove();
+}
+
 void FrameBufferObject::create()
 {
 	glGenFramebuffers(1, &frameBuffer);

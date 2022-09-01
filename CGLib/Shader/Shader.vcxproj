@@ -156,6 +156,7 @@
     <ClInclude Include="glew.h" />
     <ClInclude Include="IGLObject.h" />
     <ClInclude Include="ITextureObject.h" />
+    <ClInclude Include="RenderBufferObject.h" />
     <ClInclude Include="ShaderBuilder.h" />
     <ClInclude Include="ShaderObject.h" />
     <ClInclude Include="ShaderUnit.h" />
@@ -169,6 +170,7 @@
   <ItemGroup>
     <ClCompile Include="CubeMapTextureObject.cpp" />
     <ClCompile Include="FrameBufferObject.cpp" />
+    <ClCompile Include="RenderBufferObject.cpp" />
     <ClCompile Include="ShaderBuilder.cpp" />
     <ClCompile Include="ShaderObject.cpp" />
     <ClCompile Include="ShaderUnit.cpp" />

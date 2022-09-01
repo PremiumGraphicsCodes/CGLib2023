@@ -20,7 +20,12 @@
       <Filter>TextureObject</Filter>
     </ClInclude>
     <ClInclude Include="VertexBuffer.h" />
-    <ClInclude Include="FrameBufferObject.h" />
+    <ClInclude Include="FrameBufferObject.h">
+      <Filter>FrameBufferObject</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderBufferObject.h">
+      <Filter>FrameBufferObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VertexBufferObject.cpp" />
@@ -36,7 +41,12 @@
     <ClCompile Include="CubeMapTextureObject.cpp">
       <Filter>TextureObject</Filter>
     </ClCompile>
-    <ClCompile Include="FrameBufferObject.cpp" />
+    <ClCompile Include="FrameBufferObject.cpp">
+      <Filter>FrameBufferObject</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderBufferObject.cpp">
+      <Filter>FrameBufferObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -44,6 +54,9 @@
   <ItemGroup>
     <Filter Include="TextureObject">
       <UniqueIdentifier>{b3174c61-5c5d-4c42-98aa-185f9241b874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameBufferObject">
+      <UniqueIdentifier>{a1ec54c2-791f-4ec2-bc38-75afef25d6c0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
