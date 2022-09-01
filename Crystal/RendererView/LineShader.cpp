@@ -15,44 +15,28 @@ void LineShader::build()
 	renderer.setShader(builder.getShader());
 	renderer.link();
 
-	/*
 	VertexBuffer<float> vb;
 	vb.add(Vector3df(0.0, 0.0, 0.0));
 	vb.add(Vector3df(0.1, 0.0, 0.0));
-	vb.add(Vector3df(0.1, 0.1, 0.0));
-	vb.add(Vector3df(0.0, 0.1, 0.0));
 
 	VertexBuffer<float> colorBuffer;
 	colorBuffer.add(ColorRGBAf(1, 0, 0, 1));
-	colorBuffer.add(ColorRGBAf(0, 1, 0, 1));
-	colorBuffer.add(Vector3df(0, 0, 1));
-	colorBuffer.add(Vector3df(0, 0, 1));
-
-	VertexBuffer<float> sizeBuffer;
-	sizeBuffer.add(100.0f);
-	sizeBuffer.add(100.0f);
-	sizeBuffer.add(100.0f);
-	sizeBuffer.add(100.0f);
+	colorBuffer.add(ColorRGBAf(0, 0, 1, 1));
 
 	positions.create();
 	colors.create();
-	sizes.create();
 
 	positions.send(vb.getData());
 	colors.send(colorBuffer.getData());
-	sizes.send(sizeBuffer.getData());
 
 	renderer.buffer.position = &positions;
 	renderer.buffer.color = &colors;
-	renderer.buffer.size = &sizes;
 
-	renderer.buffer.count = 4;
-	*/
+	renderer.buffer.indices = { 0,1 };
 }
 
 void LineShader::render(const Camera& camera, const int width, const int height)
 {
-	/*
 	{
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -63,5 +47,4 @@ void LineShader::render(const Camera& camera, const int width, const int height)
 
 		this->renderer.render();
 	}
-	*/
 }

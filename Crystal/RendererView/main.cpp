@@ -188,6 +188,9 @@ int main() {
 				if (ImGui::MenuItem("Point")) {
 					::activeRenderer = &pointRenderer;
 				}
+				if (ImGui::MenuItem("Line")) {
+					::activeRenderer = &lineRenderer;
+				}
 				if (ImGui::MenuItem("SkyBox")) {
 					::activeRenderer = &skyBoxRenderer;
 				}
