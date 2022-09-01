@@ -161,6 +161,7 @@
     <ClInclude Include="IBLSpecularRenderer.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IrradianceRenderer.h" />
+    <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="PBLightRenderer.h" />
     <ClInclude Include="PointRenderer.h" />
     <ClInclude Include="SkyBoxRenderer.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="IBLDiffuseRenderer.cpp" />
     <ClCompile Include="IBLSpecularRenderer.cpp" />
     <ClCompile Include="IrradianceRenderer.cpp" />
+    <ClCompile Include="LineRenderer.cpp" />
     <ClCompile Include="PBLightRenderer.cpp" />
     <ClCompile Include="PointRenderer.cpp" />
     <ClCompile Include="SkyBoxRenderer.cpp" />
@@ -203,6 +205,8 @@
     <None Include="..\GLSL\IBLSpecular.vs" />
     <None Include="..\GLSL\Irradiance.fs" />
     <None Include="..\GLSL\Irradiance.vs" />
+    <None Include="..\GLSL\Line.fs" />
+    <None Include="..\GLSL\Line.vs" />
     <None Include="..\GLSL\PBLight.fs" />
     <None Include="..\GLSL\PBLight.vs" />
     <None Include="..\GLSL\Point.fs" />

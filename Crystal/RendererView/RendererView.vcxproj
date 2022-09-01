@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DFPolygonShader.cpp" />
+    <ClCompile Include="LineShader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PBLightShader.cpp" />
     <ClCompile Include="PointShader.cpp" />
@@ -174,6 +175,7 @@
   <ItemGroup>
     <ClInclude Include="DFPolygonShader.h" />
     <ClInclude Include="IScreenShader.h" />
+    <ClInclude Include="LineShader.h" />
     <ClInclude Include="PBLightShader.h" />
     <ClInclude Include="PointShader.h" />
     <ClInclude Include="SkyBoxShader.h" />

@@ -7,9 +7,11 @@
 
 #include <stdio.h>
 
+#include "PointShader.h"
+#include "LineShader.h"
+
 #include "PBLightShader.h"
 #include "SkyBoxShader.h"
-#include "PointShader.h"
 #include "DFPolygonShader.h"
 
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
@@ -34,9 +36,11 @@ namespace {
 
 	Camera camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0);
 
+	PointShader pointRenderer;
+	LineShader lineRenderer;
+
 	PBLightShader pbLightRenderer;
 	SkyBoxShader skyBoxRenderer;
-	PointShader pointRenderer;
 	DFPolygonShader dfRenderer;
 	IScreenShader* activeRenderer = &pbLightRenderer;
 
@@ -161,10 +165,12 @@ int main() {
 
     // Setup window
     //glfwSetErrorCallback(glfw_error_callback);
-    if (!glfwInit())
-        return 1;
+   if (!glfwInit()) {
+	   return 1;
+   }
 
 	pointRenderer.build();
+	lineRenderer.build();
 	pbLightRenderer.build();
 	skyBoxRenderer.build();
 	dfRenderer.build();

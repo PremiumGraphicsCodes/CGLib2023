@@ -32,6 +32,9 @@
     <ClInclude Include="IBLSpecularRenderer.h">
       <Filter>IBL\IBLSpecular</Filter>
     </ClInclude>
+    <ClInclude Include="LineRenderer.h">
+      <Filter>Line</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
@@ -63,6 +66,9 @@
     </ClCompile>
     <ClCompile Include="IBLSpecularRenderer.cpp">
       <Filter>IBL\IBLSpecular</Filter>
+    </ClCompile>
+    <ClCompile Include="LineRenderer.cpp">
+      <Filter>Line</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +107,9 @@
     </Filter>
     <Filter Include="IBL\IBLSpecular">
       <UniqueIdentifier>{162a9bbc-76f0-4c56-b9c0-79476f08cacd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Line">
+      <UniqueIdentifier>{e7bd4984-afcc-4cb3-b10e-5c4ed312d7ef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +172,12 @@
     </None>
     <None Include="..\GLSL\IBLSpecular.vs">
       <Filter>IBL\IBLSpecular</Filter>
+    </None>
+    <None Include="..\GLSL\Line.fs">
+      <Filter>Line</Filter>
+    </None>
+    <None Include="..\GLSL\Line.vs">
+      <Filter>Line</Filter>
     </None>
   </ItemGroup>
 </Project>
