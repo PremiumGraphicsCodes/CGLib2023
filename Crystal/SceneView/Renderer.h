@@ -4,6 +4,7 @@
 #include "../Scene/ParticleSystemScene.h"
 #include "CGLib/Shader/VertexBuffer.h"
 #include "CGLib/Graphics/Camera.h"
+#include "ParticleSystemPresenter.h"
 
 namespace Crystal {
 	namespace UI {
@@ -13,22 +14,15 @@ class Renderer
 public:
 	void build();
 
-	void render(const Graphics::Camera& camera, Scene::ParticleSystemScene* scene);
+	//void add(ParticleSystemPresenter* presenter) { this->presenters.push_back(presenter); }
+
+	void render(const Graphics::Camera& camera);
+
+	Crystal::Renderer::PointRenderer point;
 
 private:
-	struct VBO {
-		Shader::VertexBufferObject point;
-		Shader::VertexBufferObject color;
-		Shader::VertexBufferObject size;
-	};
-	struct Buffer {
-		Shader::VertexBuffer<float> position;
-		Shader::VertexBuffer<float> color;
-		Shader::VertexBuffer<float> size;
-	};
-	//Buffer buffer;
-	VBO vbo;
-	Crystal::Renderer::PointRenderer point;
+
+	//std::vector<ParticleSystemPresenter*> presenters;
 };
 	}
 }

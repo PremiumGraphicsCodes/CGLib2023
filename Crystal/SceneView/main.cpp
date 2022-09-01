@@ -1,6 +1,7 @@
 ﻿#include "../../CGLib/Shader/glew.h"
 
 #include "../Scene/ParticleSystemScene.h"
+#include "ParticleSystemPresenter.h"
 
 #include "../../CGLib/UI/imgui.h"
 #include "../../CGLib/UI/imgui_impl_glfw.h"
@@ -187,11 +188,15 @@ int main() {
 		return 1;
 	}
 
+	Crystal::UI::Renderer renderer;
+	renderer.build();
+
 	ParticleSystemScene psScene;
 	psScene.add(new Particle(Vector3df(0,0,0)));
 
-	Crystal::UI::Renderer renderer;
-	renderer.build();
+	Crystal::UI::ParticleSystemPresenter presenter(&psScene, &renderer.point);
+	presenter.build();
+	presenter.send();
 
 	//pointRenderer.build();
 	//pbLightRenderer.build();
@@ -229,8 +234,9 @@ int main() {
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+		presenter.render(camera);
 
-		renderer.render(camera, &psScene);
+		//renderer.render(camera, &psScene);
 
 		//activeRenderer->render(camera, width, height);
 		//skyBoxRenderer.render(camera, width, height);

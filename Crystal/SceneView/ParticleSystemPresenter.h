@@ -4,7 +4,6 @@
 #include "../Scene/ParticleSystemScene.h"
 #include "CGLib/Shader/VertexBuffer.h"
 
-
 namespace Crystal {
 	namespace UI {
 
@@ -21,16 +20,16 @@ public:
 
 	void send();
 
-	void render();
+	void render(const Graphics::Camera& camera);
 
 private:
-	struct Buffer {
-		Shader::VertexBuffer<float> position;
-		Shader::VertexBuffer<float> color;
-		Shader::VertexBuffer<float> size;
+	struct VBO {
+		Shader::VertexBufferObject position;
+		Shader::VertexBufferObject color;
+		Shader::VertexBufferObject size;
 	};
-
-	Buffer buffer;
+	VBO vbo;
+	int count;
 
 	Scene::ParticleSystemScene* model;
 	Crystal::Renderer::PointRenderer* view;
