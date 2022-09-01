@@ -7,15 +7,12 @@
 #include <stdio.h>
 #include "GLFW/glfw3.h"
 
-#include "ScreenRenderer.h"
-
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
 #include <iostream>
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
-using namespace Crystal::UI;
 
 int main() {
 	if (!glfwInit()) {
@@ -63,11 +60,10 @@ int main() {
 
 	 // Setup window
 	 //glfwSetErrorCallback(glfw_error_callback);
-	if (!glfwInit())
+	if (!glfwInit()) {
 		return 1;
+	}
 
-	ScreenRenderer renderer;
-	renderer.build();
 
 	// onInit();
 
@@ -80,16 +76,12 @@ int main() {
 		if (ImGui::BeginMainMenuBar()) {
 			if (ImGui::BeginMenu("Sample")) {
 				if (ImGui::MenuItem("Point")) {
-					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Point);
 				}
 				if (ImGui::MenuItem("Line")) {
-					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Line);
 				}
 				if (ImGui::MenuItem("Triangle")) {
-					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Triangle);
 				}
 				if (ImGui::MenuItem("Tex")) {
-					renderer.setActiveRenderer(ScreenRenderer::RenderingType::Tex);
 				}
 
 				ImGui::EndMenu();
@@ -100,7 +92,7 @@ int main() {
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
 
-		renderer.render(width, height);
+		//renderer.render(width, height);
 
 		//onRender(width, height);
 

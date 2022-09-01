@@ -8,6 +8,7 @@
     <ClCompile Include="DFPolygonShader.cpp" />
     <ClCompile Include="LineShader.cpp" />
     <ClCompile Include="TriangleShader.cpp" />
+    <ClCompile Include="TexShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -20,5 +21,6 @@
     <ClInclude Include="DFPolygonShader.h" />
     <ClInclude Include="LineShader.h" />
     <ClInclude Include="TriangleShader.h" />
+    <ClInclude Include="TexShader.h" />
   </ItemGroup>
 </Project>

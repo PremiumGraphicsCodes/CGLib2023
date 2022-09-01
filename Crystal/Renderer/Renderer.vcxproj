@@ -165,6 +165,7 @@
     <ClInclude Include="PBLightRenderer.h" />
     <ClInclude Include="PointRenderer.h" />
     <ClInclude Include="SkyBoxRenderer.h" />
+    <ClInclude Include="TexRenderer.h" />
     <ClInclude Include="TriangleRenderer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +180,7 @@
     <ClCompile Include="PBLightRenderer.cpp" />
     <ClCompile Include="PointRenderer.cpp" />
     <ClCompile Include="SkyBoxRenderer.cpp" />
+    <ClCompile Include="TexRenderer.cpp" />
     <ClCompile Include="TriangleRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +217,8 @@
     <None Include="..\GLSL\Point.vs" />
     <None Include="..\GLSL\SkyBox.fs" />
     <None Include="..\GLSL\SkyBox.vs" />
+    <None Include="..\GLSL\Tex.fs" />
+    <None Include="..\GLSL\Tex.vs" />
     <None Include="..\GLSL\Triangle.fs" />
     <None Include="..\GLSL\Triangle.vs" />
   </ItemGroup>

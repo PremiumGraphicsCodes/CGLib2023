@@ -1,12 +1,12 @@
 #include "TexRenderer.h"
 
-#include "../Shader/ShaderBuilder.h"
-#include "../Shader/VertexAttribute.h"
+#include "CGLib/Shader/ShaderBuilder.h"
+#include "CGLib/Shader/VertexAttribute.h"
 
-#include "../Shader/TextureUnit.h"
+#include "CGLib/Shader/TextureUnit.h"
 
 using namespace Crystal::Shader;
-using namespace Crystal::UI;
+using namespace Crystal::Renderer;
 
 namespace {
 	std::vector<float> toArray()
@@ -46,6 +46,6 @@ void TexRenderer::render()
 	shader->bindOutput("fragColor");
 
 	glDrawArrays(GL_QUADS, 0, static_cast<GLsizei>(positions.size() / 2));
-	
+
 	shader->unbind();
 }

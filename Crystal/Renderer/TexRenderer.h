@@ -1,13 +1,10 @@
 #pragma once
 
 #include "IRenderer.h"
-#include "../Math/Matrix4d.h"
-#include "../Shader/TextureObject.h"
-#include "../Shader/ShaderObject.h"
-#include <memory>
+#include "CGLib/Shader/TextureObject.h"
 
 namespace Crystal {
-	namespace UI {
+	namespace Renderer {
 
 class TexRenderer : public IRenderer
 {

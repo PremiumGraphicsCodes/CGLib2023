@@ -144,16 +144,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ScreenRenderer.cpp" />
-    <ClCompile Include="TexRenderer.cpp" />
-    <ClCompile Include="TriangleRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Tex.fs" />
-    <None Include="Tex.vs" />
-    <None Include="Triangle.fs" />
-    <None Include="Triangle.vs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Graphics\Graphics.vcxproj">
@@ -171,9 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IRenderer.h" />
-    <ClInclude Include="ScreenRenderer.h" />
-    <ClInclude Include="TexRenderer.h" />
-    <ClInclude Include="TriangleRenderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

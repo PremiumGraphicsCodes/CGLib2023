@@ -2,45 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="TexRenderer.cpp">
-      <Filter>Tex</Filter>
-    </ClCompile>
-    <ClCompile Include="ScreenRenderer.cpp" />
-    <ClCompile Include="TriangleRenderer.cpp">
-      <Filter>Triangle</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Tex.fs">
-      <Filter>Tex</Filter>
-    </None>
-    <None Include="Tex.vs">
-      <Filter>Tex</Filter>
-    </None>
-    <None Include="Triangle.vs">
-      <Filter>Triangle</Filter>
-    </None>
-    <None Include="Triangle.fs">
-      <Filter>Triangle</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IRenderer.h" />
-    <ClInclude Include="TexRenderer.h">
-      <Filter>Tex</Filter>
-    </ClInclude>
-    <ClInclude Include="ScreenRenderer.h" />
-    <ClInclude Include="TriangleRenderer.h">
-      <Filter>Triangle</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Tex">
-      <UniqueIdentifier>{eefedd87-1615-4166-ae10-ab044f33ac89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Triangle">
-      <UniqueIdentifier>{e32174da-02d8-4ce7-8bd1-eac83e6c49ab}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
 </Project>

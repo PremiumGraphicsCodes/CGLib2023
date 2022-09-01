@@ -10,6 +10,7 @@
 #include "PointShader.h"
 #include "LineShader.h"
 #include "TriangleShader.h"
+#include "TexShader.h"
 
 #include "PBLightShader.h"
 #include "SkyBoxShader.h"
@@ -40,6 +41,7 @@ namespace {
 	PointShader pointRenderer;
 	LineShader lineRenderer;
 	TriangleShader triangleRenderer;
+	TexShader texRenderer;
 
 	PBLightShader pbLightRenderer;
 	SkyBoxShader skyBoxRenderer;
@@ -174,6 +176,7 @@ int main() {
 	pointRenderer.build();
 	lineRenderer.build();
 	triangleRenderer.build();
+	texRenderer.build();
 	pbLightRenderer.build();
 	skyBoxRenderer.build();
 	dfRenderer.build();
@@ -196,6 +199,9 @@ int main() {
 				}
 				if (ImGui::MenuItem("Triangle")) {
 					::activeRenderer = &triangleRenderer;
+				}
+				if (ImGui::MenuItem("Tex")) {
+					::activeRenderer = &texRenderer;
 				}
 				if (ImGui::MenuItem("SkyBox")) {
 					::activeRenderer = &skyBoxRenderer;
