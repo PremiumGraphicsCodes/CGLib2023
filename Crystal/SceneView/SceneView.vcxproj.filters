@@ -18,6 +18,9 @@
     <ClInclude Include="ParticleSystemPresenter.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
+    <ClInclude Include="WireFramePresenter.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">

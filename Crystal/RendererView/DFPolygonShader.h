@@ -6,6 +6,7 @@
 #include "../Renderer/DFAlbedoRenderer.h"
 #include "../Renderer/DFGeometryRenderer.h"
 #include "../Renderer/DFLightRenderer.h"
+#include "../Renderer/TexRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {
@@ -21,8 +22,9 @@ private:
 	Renderer::DFAlbedoRenderer albedoRenderer;
 	Renderer::DFGeometryRenderer gRenderer;
 	Renderer::DFLightRenderer lightRenderer;
+	Renderer::TexRenderer texRenderer;
 
-	Shader::TextureObject colorTexture;
+	Shader::TextureObject albedoTexture;
 	Shader::TextureObject polygonTexture;
 	Shader::TextureObject positionTexture;
 	Shader::TextureObject normalTexture;

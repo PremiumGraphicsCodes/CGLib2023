@@ -38,10 +38,14 @@ void DFPolygonShader::build()
 	lightRenderer.setShader(builder.getShader());
 	lightRenderer.link();
 
+	builder.buildFromFile("../GLSL/Tex.vs", "../GLSL/Tex.fs");
+	texRenderer.setShader(builder.getShader());
+	texRenderer.link();
+
 	this->fbo.create();
 
-	this->colorTexture.create();
-	this->colorTexture.send(Imageuc(512, 512));
+	this->albedoTexture.create();
+	this->albedoTexture.send(Imageuc(512, 512));
 
 	this->polygonTexture.create();
 	this->polygonTexture.send(Imageuc(512, 512));// , 255));
@@ -115,8 +119,8 @@ void DFPolygonShader::render(const Camera& camera, const int wwidth, const int h
 	const int width = 512;
 	const int height = 512;
 	{
-		//this->fbo->bind();
-		//this->fbo->setTexture(*this->colorTexture);
+		this->fbo.bind();
+		this->fbo.setTexture(this->albedoTexture);
 
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -129,7 +133,16 @@ void DFPolygonShader::render(const Camera& camera, const int wwidth, const int h
 
 		this->albedoRenderer.render();
 
-		//this->fbo->unbind();
+		this->fbo.unbind();
+	}
+
+	{
+		glViewport(0, 0, width, height);
+		glClearColor(0.0, 0.0, 0.0, 0.0);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		this->texRenderer.buffer.tex = &this->albedoTexture;
+		texRenderer.render();
 	}
 
 	/*

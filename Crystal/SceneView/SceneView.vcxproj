@@ -173,6 +173,7 @@
   <ItemGroup>
     <ClInclude Include="ParticleSystemPresenter.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="WireFramePresenter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
