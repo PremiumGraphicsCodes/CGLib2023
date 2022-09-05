@@ -52,10 +52,7 @@ public:
 
 	void setParameter(const GLenum type, const GLuint value) override;
 
-	GLuint getHandle() const override { return handle; }
-
 private:
-	GLuint handle;
 };
 
 	}

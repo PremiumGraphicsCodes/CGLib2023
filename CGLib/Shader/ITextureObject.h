@@ -14,7 +14,9 @@ public:
 
 	virtual void setParameter(const GLenum type, const GLuint value) = 0;
 
-private:
+	GLuint getHandle() const { return handle; }
+
+protected:
 	GLuint handle;
 };
 

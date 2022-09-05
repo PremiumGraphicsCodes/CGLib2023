@@ -50,6 +50,7 @@ void IBLShader::build()
 	textures.hdrTex.create();
 	sendHDRTexture(hdr, textures.hdrTex);
 
+	buffers.fbo.create();
 	buffers.rbo.create();
 
 	{
@@ -161,22 +162,28 @@ void IBLShader::build()
 
 void IBLShader::render(const Camera& camera, const int width, const int height)
 {
-	/*
 	{
 		buffers.fbo.bind();
-		//this->cubeMapTex.bind(0);
+		//this->textures.cubeMapTex.bind();
 
 		for (int i = 0; i < 6; ++i) {
 			glViewport(0, 0, 512, 512);
 			glClearColor(0.0, 0.0, 0.0, 0.0);
+
+			assert(GL_NO_ERROR == glGetError());
+
 			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, this->textures.cubeMapTex.getHandle(), 0);
+			assert(GL_NO_ERROR == glGetError());
+
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-			renderers.cubeMapRenderer.buffer.projectionMatrix = ::captureProjection;
-			renderers.cubeMapRenderer.buffer.viewMatrix = ::captureViews[i];
-			renderers.cubeMapRenderer.buffer.texture = &this->textures.hdrTex;
+			assert(GL_NO_ERROR == glGetError());
 
-			renderers.cubeMapRenderer.render();
+			renderers.cubeMap.buffer.projectionMatrix = ::captureProjection;
+			renderers.cubeMap.buffer.viewMatrix = ::captureViews[i];
+			renderers.cubeMap.buffer.texture = &this->textures.hdrTex;
+
+			renderers.cubeMap.render();
 		}
 
 		this->textures.cubeMapTex.unbind();
@@ -186,45 +193,43 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 	{
 		buffers.fbo.bind();
 
-		renderers.irradianceRenderer.buffer.cubeMapTex = &textures.cubeMapTex;
+		renderers.irradiance.buffer.cubeMapTex = &textures.cubeMapTex;
 
 		for (int i = 0; i < 6; ++i) {
 			glViewport(0, 0, 32, 32);
 			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, this->textures.irradianceTex.getHandle(), 0);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-			renderers.irradianceRenderer.buffer.projectionMatrix = ::captureProjection;
-			renderers.irradianceRenderer.buffer.viewMatrix = ::captureViews[i];
-			renderers.irradianceRenderer.buffer.cubeMapTex = &this->textures.cubeMapTex;
+			renderers.irradiance.buffer.projectionMatrix = ::captureProjection;
+			renderers.irradiance.buffer.viewMatrix = ::captureViews[i];
+			renderers.irradiance.buffer.cubeMapTex = &this->textures.cubeMapTex;
 
-			renderers.irradianceRenderer.render();
+			renderers.irradiance.render();
 		}
 
 		buffers.fbo.unbind();
 
 	}
-	*/
 
-	/*
 	{
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		diffuseRenderer.buffer.modelMatrix = camera.getModelMatrix();
-		diffuseRenderer.buffer.viewMatrix = camera.getViewMatrix();
-		diffuseRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
-		diffuseRenderer.buffer.eyePosition = camera.getEye();
-		diffuseRenderer.buffer.irradianceMapTex = &this->irradianceTex;
-		diffuseRenderer.buffer.position = &this->positionVBO;
-		diffuseRenderer.buffer.normal = &this->normalVBO;
-		diffuseRenderer.buffer.albedo = Vector3df(1, 0, 0);
-		diffuseRenderer.buffer.metalic = 0.7;
-		diffuseRenderer.buffer.ao = 0.5;
-		diffuseRenderer.buffer.indices = indices;
-		diffuseRenderer.render();
+		renderers.diffuse.buffer.modelMatrix = camera.getModelMatrix();
+		renderers.diffuse.buffer.viewMatrix = camera.getViewMatrix();
+		renderers.diffuse.buffer.projectionMatrix = camera.getProjectionMatrix();
+		renderers.diffuse.buffer.eyePosition = camera.getEye();
+		renderers.diffuse.buffer.irradianceMapTex = &this->textures.irradianceTex;
+		renderers.diffuse.buffer.position = &this->buffers.positionVBO;
+		renderers.diffuse.buffer.normal = &this->buffers.normalVBO;
+		renderers.diffuse.buffer.albedo = Vector3df(1, 0, 0);
+		renderers.diffuse.buffer.metalic = 0.7;
+		renderers.diffuse.buffer.ao = 0.5;
+		renderers.diffuse.buffer.indices = indices;
+		renderers.diffuse.render();
 	}
-	*/
 
+	/*
 	{
 //		buffers.fbo.bind();
 //		buffers.fbo.setTexture(this->textures.brdfLutTex);
@@ -235,6 +240,7 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		renderers.brdfLut.render();
 		//buffers.fbo.unbind();
 	}
+	*/
 
 	/*
 	{

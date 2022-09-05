@@ -26,10 +26,7 @@ public:
 
 	void unbind() const override;
 
-	GLuint getHandle() const { return handle; }
-
 private:
-	GLuint handle;
 };
 
 	}

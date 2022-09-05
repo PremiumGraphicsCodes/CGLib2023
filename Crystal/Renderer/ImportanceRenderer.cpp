@@ -76,7 +76,6 @@ void ImportanceRenderer::link()
 
 void ImportanceRenderer::render()
 {
-	/*
 	const Box3df cube(Vector3df(-1, -1, -1), Vector3df(1, 1, 1));
 	std::vector<float> positions = ::toGLArray(cube);
 
@@ -85,23 +84,20 @@ void ImportanceRenderer::render()
 	shader->bindOutput("FragColor");
 
 	TextureUnit texUnit(0, buffer.evnMapTex);
+	Uniform envMap(uniformLoc.envMapTex);
+	Uniform roughness(uniformLoc.roughness);
+	Uniform projectionMatrix(uniformLoc.projectionMatrix);
+	Uniform viewMatrix(uniformLoc.viewMatrix);
 
-	buffer.evnMapTex->bind(0);
+	envMap.send(texUnit);
+	roughness.send(buffer.roughness);
+	projectionMatrix.send(buffer.projectionMatrix);
+	viewMatrix.send(buffer.viewMatrix);
 
-	shader->sendUniform(::envMapTex, 0);
-	shader->sendUniform(::roughness, buffer.roughness);
-	shader->sendUniform(::projectionMatrix, buffer.projectionMatrix);
-	shader->sendUniform(::viewMatrix, buffer.viewMatrix);
+	VertexAttribute positionAttr(attrLoc.position);
+	positionAttr.sendVertexAttribute3df(positions);
 
-	shader->sendVertexAttribute3df(::positionLabel, positions);
-
-	glEnableVertexAttribArray(0);
 	shader->drawTriangles(positions.size() / 3);
-	glDisableVertexAttribArray(0);
-
-
-	buffer.evnMapTex->unbind();
 
 	shader->unbind();
-	*/
 }
