@@ -78,32 +78,32 @@ void IBLShader::build()
 	ShaderBuilder shaderBuilder;
 
 	shaderBuilder.buildFromFile("../GLSL/CubeMap.vs", "../GLSL/CubeMap.fs");
-	renderers.cubeMapRenderer.setShader(shaderBuilder.getShader());
-	renderers.cubeMapRenderer.link();
+	renderers.cubeMap.setShader(shaderBuilder.getShader());
+	renderers.cubeMap.link();
 
 	shaderBuilder.buildFromFile("../GLSL/Irradiance.vs", "../GLSL/Irradiance.fs");
-	renderers.irradianceRenderer.setShader(shaderBuilder.getShader());
-	renderers.irradianceRenderer.link();
+	renderers.irradiance.setShader(shaderBuilder.getShader());
+	renderers.irradiance.link();
 
 	shaderBuilder.buildFromFile("../GLSL/IBLDiffuse.vs", "../GLSL/IBLDiffuse.fs");
-	renderers.diffuseRenderer.setShader(shaderBuilder.getShader());
-	renderers.diffuseRenderer.link();
+	renderers.diffuse.setShader(shaderBuilder.getShader());
+	renderers.diffuse.link();
 
 	shaderBuilder.buildFromFile("../GLSL/BRDFLUT.vs", "../GLSL/BRDFLUT.fs");
-	renderers.brdfLutRenderer.setShader(shaderBuilder.getShader());
-	renderers.brdfLutRenderer.link();
+	renderers.brdfLut.setShader(shaderBuilder.getShader());
+	renderers.brdfLut.link();
 
 	shaderBuilder.buildFromFile("../GLSL/Importance.vs", "../GLSL/Importance.fs");
-	renderers.importanceRenderer.setShader(shaderBuilder.getShader());
-	renderers.importanceRenderer.link();
+	renderers.importance.setShader(shaderBuilder.getShader());
+	renderers.importance.link();
 
 	shaderBuilder.buildFromFile("../GLSL/IBLSpecular.vs", "../GLSL/IBLSpecular.fs");
-	renderers.specularRenderer.setShader(shaderBuilder.getShader());
-	renderers.specularRenderer.link();
+	renderers.specular.setShader(shaderBuilder.getShader());
+	renderers.specular.link();
 
 	shaderBuilder.buildFromFile("../GLSL/SkyBox.vs", "../GLSL/SkyBox.fs");
-	renderers.skyBoxRenderer.setShader(shaderBuilder.getShader());
-	renderers.skyBoxRenderer.link();
+	renderers.skyBox.setShader(shaderBuilder.getShader());
+	renderers.skyBox.link();
 
 	/*
 	{
@@ -232,7 +232,7 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		renderers.brdfLutRenderer.render();
+		renderers.brdfLut.render();
 		//buffers.fbo.unbind();
 	}
 

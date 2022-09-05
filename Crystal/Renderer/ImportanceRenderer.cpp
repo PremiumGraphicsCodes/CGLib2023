@@ -1,8 +1,10 @@
 #include "ImportanceRenderer.h"
 
 #include "CGLib/Math/Box3d.h"
+#include "CGLib/Shader/TextureUnit.h"
 
 using namespace Crystal::Math;
+using namespace Crystal::Shader;
 using namespace Crystal::Renderer;
 
 namespace {
@@ -12,9 +14,7 @@ namespace {
 	constexpr auto projectionMatrix = "projection";
 	constexpr auto viewMatrix = "view";
 
-	/*
-
-	std::vector<float> toGLArray(const Box3dd& volume)
+	std::vector<float> toGLArray(const Box3df& volume)
 	{
 		const auto v0 = volume.getPosition(0, 0, 0);
 		const auto v1 = volume.getPosition(1, 0, 0);
@@ -50,31 +50,41 @@ namespace {
 
 		return data;
 	}
-	*/
+
+	struct VertexAttrLoc {
+		GLuint position;
+	};
+	VertexAttrLoc attrLoc;
+
+	struct UniformLoc {
+		GLuint envMapTex;
+		GLuint roughness;
+		GLuint projectionMatrix;
+		GLuint viewMatrix;
+	};
+	UniformLoc uniformLoc;
 }
-
-
-ImportanceRenderer::ImportanceRenderer()
-{}
 
 void ImportanceRenderer::link()
 {
-	shader->findAttribLocation(::positionLabel);
-	shader->findUniformLocation(::roughness);
-	shader->findUniformLocation(::envMapTex);
-	shader->findUniformLocation(::projectionMatrix);
-	shader->findUniformLocation(::viewMatrix);
+	attrLoc.position = shader->findAttribLocation(::positionLabel);
+	uniformLoc.roughness = shader->findUniformLocation(::roughness);
+	uniformLoc.envMapTex = shader->findUniformLocation(::envMapTex);
+	uniformLoc.projectionMatrix = shader->findUniformLocation(::projectionMatrix);
+	uniformLoc.viewMatrix = shader->findUniformLocation(::viewMatrix);
 }
 
 void ImportanceRenderer::render()
 {
 	/*
-	const GLCube cube(Vector3df(-1, -1, -1), Vector3df(1, 1, 1));
-	std::vector<float> positions = cube.toGLArray();
+	const Box3df cube(Vector3df(-1, -1, -1), Vector3df(1, 1, 1));
+	std::vector<float> positions = ::toGLArray(cube);
 
 	shader->bind();
 
 	shader->bindOutput("FragColor");
+
+	TextureUnit texUnit(0, buffer.evnMapTex);
 
 	buffer.evnMapTex->bind(0);
 

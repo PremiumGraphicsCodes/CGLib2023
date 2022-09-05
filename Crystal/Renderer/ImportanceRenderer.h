@@ -18,8 +18,6 @@ public:
 		Math::Matrix4df viewMatrix;
 	};
 
-	ImportanceRenderer();
-
 	void link() override;
 
 	void render() override;

@@ -76,5 +76,21 @@ void Box3d<T>::add(const Box3d<T>& b)
 	this->max = Vector3d<T>(ex, ey, ez);
 }
 
+template<typename T>
+Vector3d<T> Box3d<T>::getLength() const
+{
+	return this->max - this->min;
+}
+
+template<typename T>
+Vector3d<T> Box3d<T>::getPosition(const T u, const T v, const T w) const
+{
+	const auto length = getLength();
+	const auto x = min.x + length.x * u;
+	const auto y = min.y + length.y * v;
+	const auto z = min.z + length.z * w;
+	return Vector3d<T>(x, y, z);
+}
+
 template class Box3d<float>;
 template class Box3d<double>;

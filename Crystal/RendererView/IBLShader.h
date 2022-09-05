@@ -27,15 +27,14 @@ public:
 private:
 	struct Renderers
 	{
-		Renderer::CubeMapRenderer cubeMapRenderer;
-		Renderer::IrradianceRenderer irradianceRenderer;
-		Renderer::IBLDiffuseRenderer diffuseRenderer;
-		Renderer::IBLSpecularRenderer specularRenderer;
-		Renderer::BRDFLUTRenderer brdfLutRenderer;
-		Renderer::ImportanceRenderer importanceRenderer;
-		Renderer::SkyBoxRenderer skyBoxRenderer;
+		Renderer::CubeMapRenderer cubeMap;
+		Renderer::IrradianceRenderer irradiance;
+		Renderer::IBLDiffuseRenderer diffuse;
+		Renderer::IBLSpecularRenderer specular;
+		Renderer::BRDFLUTRenderer brdfLut;
+		Renderer::ImportanceRenderer importance;
+		Renderer::SkyBoxRenderer skyBox;
 	};
-
 
 	struct Textures
 	{
