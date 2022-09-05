@@ -1,5 +1,8 @@
 #include "IBLSpecularRenderer.h"
 
+#include "CGLib/Shader/TextureUnit.h"
+
+using namespace Crystal::Shader;
 using namespace Crystal::Renderer;
 
 namespace {
@@ -19,6 +22,26 @@ namespace {
 
 	constexpr auto cameraPosLabel = "camPos";
 	constexpr auto fragColorLabel = "FragColor";
+
+	struct UniformLoc {
+		GLuint projectionMatrix;
+		GLuint modelMatrix;
+		GLuint viewMatrix;
+		GLuint albedo;
+		GLuint metalic;
+		GLuint ao;
+		GLuint irradiance;
+		GLuint importance;
+		GLuint brdfLutTex;
+		GLuint eyePos;
+	};
+	UniformLoc uniforms;
+
+	struct VertexAttrLoc {
+		GLuint position;
+		GLuint normal;
+	};
+	VertexAttrLoc attrs;
 }
 
 IBLSpecularRenderer::IBLSpecularRenderer()
@@ -27,64 +50,68 @@ IBLSpecularRenderer::IBLSpecularRenderer()
 
 void IBLSpecularRenderer::link()
 {
-	shader->findAttribLocation(::positionLabel);
-	shader->findAttribLocation(::normalLabel);
+	attrs.position = shader->findAttribLocation(::positionLabel);
+	attrs.normal = shader->findAttribLocation(::normalLabel);
 
-	shader->findUniformLocation(::projectionMatrixLabel);
-	shader->findUniformLocation(::modelMatrixLabel);
-	shader->findUniformLocation(::viewMatrixLabel);
+	uniforms.projectionMatrix = shader->findUniformLocation(::projectionMatrixLabel);
+	uniforms.modelMatrix = shader->findUniformLocation(::modelMatrixLabel);
+	uniforms.viewMatrix = shader->findUniformLocation(::viewMatrixLabel);
 
-	shader->findUniformLocation(::albedoLabel);
-	shader->findUniformLocation(::metalicLabel);
-	shader->findUniformLocation(::ambientOcclusionLabel);
-	shader->findUniformLocation(::irradianceMapLabel);
-	shader->findUniformLocation(::importanceMapLabel);
-	shader->findUniformLocation(::brdfLutTexLabel);
-	shader->findUniformLocation(::cameraPosLabel);
+	uniforms.albedo = shader->findUniformLocation(::albedoLabel);
+	uniforms.metalic = shader->findUniformLocation(::metalicLabel);
+	uniforms.ao = shader->findUniformLocation(::ambientOcclusionLabel);
+	uniforms.irradiance = shader->findUniformLocation(::irradianceMapLabel);
+	uniforms.importance = shader->findUniformLocation(::importanceMapLabel);
+	uniforms.brdfLutTex = shader->findUniformLocation(::brdfLutTexLabel);
+	uniforms.eyePos = shader->findUniformLocation(::cameraPosLabel);
 }
 
 void IBLSpecularRenderer::render()
 {
-	/*
 	shader->bind();
 	shader->bindOutput(::fragColorLabel);
 
-	buffer.irradianceMapTex->bind(0);
-	buffer.importanceMapTex->bind(1);
-	buffer.brdfLutTex->bind(2);
+	TextureUnit irradianceTex(0, buffer.irradianceMapTex);
+	TextureUnit importanceTex(1, buffer.importanceMapTex);
+	TextureUnit lutTex(2, buffer.brdfLutTex);
 
-	shader->sendUniform(::irradianceMapLabel, 0);
-	shader->sendUniform(::importanceMapLabel, 1);
-	shader->sendUniform(::brdfLutTexLabel, 2);
+	Uniform irradianceTexUniform(uniforms.irradiance);
+	irradianceTexUniform.send(irradianceTex);
 
-	shader->sendUniform(::projectionMatrixLabel, buffer.projectionMatrix);
-	shader->sendUniform(::modelMatrixLabel, buffer.modelMatrix);
-	shader->sendUniform(::viewMatrixLabel, buffer.viewMatrix);
-	shader->sendUniform(::cameraPosLabel, buffer.eyePosition);
+	Uniform importanceTexUniform(uniforms.importance);
+	importanceTexUniform.send(importanceTex);
 
-	shader->sendVertexAttribute3df(::positionLabel, *buffer.position);
-	shader->sendVertexAttribute3df(::normalLabel, *buffer.normal);
+	Uniform lutTexUniform(uniforms.brdfLutTex);
+	lutTexUniform.send(lutTex);
 
-	shader->sendUniform(::albedoLabel, buffer.albedo);
-	shader->sendUniform(::metalicLabel, buffer.metalic);
-	shader->sendUniform(::ambientOcclusionLabel, buffer.ao);
+	Uniform projectionMatrix(uniforms.projectionMatrix);
+	projectionMatrix.send(buffer.projectionMatrix);
 
-	buffer.position->bind();
-	buffer.normal->bind();
-	shader->enableVertexAttribute(::positionLabel);
-	shader->enableVertexAttribute(::normalLabel);
+	Uniform modelMatrix(uniforms.modelMatrix);
+	modelMatrix.send(buffer.modelMatrix);
+
+	Uniform viewMatrix(uniforms.viewMatrix);
+	viewMatrix.send(buffer.viewMatrix);
+
+	Uniform eyePos(uniforms.eyePos);
+	eyePos.send(buffer.eyePosition);
+
+	Uniform albedo(uniforms.albedo);
+	albedo.send(buffer.albedo);
+
+	Uniform metaric(uniforms.metalic);
+	metaric.send(buffer.metalic);
+
+	Uniform ao(uniforms.ao);
+	ao.send(buffer.ao);
+
+	VertexAttribute positions(attrs.position);
+	positions.sendVertexAttribute3df(*buffer.position);
+
+	VertexAttribute normals(attrs.normal);
+	normals.sendVertexAttribute3df(*buffer.normal);
 
 	shader->drawTriangles(buffer.indices);
 
-	shader->disableVertexAttribute(::positionLabel);
-	shader->disableVertexAttribute(::normalLabel);
-
-	buffer.position->unbind();
-	buffer.normal->unbind();
-
-	buffer.irradianceMapTex->unbind();
-	buffer.importanceMapTex->unbind();
-
 	shader->unbind();
-	*/
 }

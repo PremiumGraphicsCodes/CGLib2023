@@ -196,7 +196,6 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		buffers.fbo.unbind();
 	}
 
-	/*
 	{
 		buffers.fbo.bind();
 		//buffers.fbo.setTexture(textures.irradianceTex);
@@ -227,9 +226,7 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		buffers.fbo.unbind();
 
 	}
-	*/
 
-	/*
 	{
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -247,22 +244,18 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		renderers.diffuse.buffer.indices = indices;
 		renderers.diffuse.render();
 	}
-	*/
 
-	/*
 	{
-//		buffers.fbo.bind();
-//		buffers.fbo.setTexture(this->textures.brdfLutTex);
+		buffers.fbo.bind();
+		buffers.fbo.setTexture(this->textures.brdfLutTex);
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		renderers.brdfLut.render();
-		//buffers.fbo.unbind();
+		buffers.fbo.unbind();
 	}
-	*/
 
-	/*
 	{
 		buffers.fbo.bind();
 
@@ -280,21 +273,20 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 
 			const auto roughness = (float)mip / (float)(maxMipLevels - 1);
 
-			renderers.importanceRenderer.buffer.evnMapTex = &textures.cubeMapTex;
-			renderers.importanceRenderer.buffer.projectionMatrix = ::captureProjection;
-			renderers.importanceRenderer.buffer.roughness = roughness;
+			renderers.importance.buffer.evnMapTex = &textures.cubeMapTex;
+			renderers.importance.buffer.projectionMatrix = ::captureProjection;
+			renderers.importance.buffer.roughness = roughness;
 
 			for (unsigned int i = 0; i < 6; ++i) {
-				renderers.importanceRenderer.buffer.viewMatrix = ::captureViews[i];
+				renderers.importance.buffer.viewMatrix = ::captureViews[i];
 				glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, textures.importanceTex.getHandle(), mip);
 
 				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-				renderers.importanceRenderer.render();
+				renderers.importance.render();
 			}
 		}
 		buffers.fbo.unbind();
 	}
-	*/
 
 	/*
 		{
@@ -303,10 +295,11 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			renderers.skyBox.buffer.modelViewMatrix = glm::mat4(glm::mat3(camera.getModelViewMatrix()));
 			renderers.skyBox.buffer.projectionMatrix = camera.getProjectionMatrix();
-			renderers.skyBox.buffer.cubeMapTexture = &this->textures.cubeMapTex;
+			renderers.skyBox.buffer.cubeMapTexture = &this->textures.irradianceTex;
 			renderers.skyBox.render();
 		}
 		*/
+		/*
 	{
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -314,28 +307,27 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		renderers.tex.buffer.tex = &textures.hdrTex;
 		renderers.tex.render();
 	}
+	*/
 
-	/*
 	{
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		renderers.specularRenderer.buffer.position = &buffers.positionVBO;
-		renderers.specularRenderer.buffer.normal = &buffers.normalVBO;
-		renderers.specularRenderer.buffer.indices = this->indices;
-		renderers.specularRenderer.buffer.eyePosition = camera.getEye();
-		renderers.specularRenderer.buffer.viewMatrix = camera.getViewMatrix();
-		renderers.specularRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
-		renderers.specularRenderer.buffer.modelMatrix = camera.getModelMatrix();
-		renderers.specularRenderer.buffer.metalic = 0.1;
-		renderers.specularRenderer.buffer.ao = 0.1;
-		renderers.specularRenderer.buffer.albedo = Vector3df(1, 1, 1);
-		renderers.specularRenderer.buffer.importanceMapTex = &this->textures.importanceTex;
-		renderers.specularRenderer.buffer.irradianceMapTex = &this->textures.irradianceTex;
-		renderers.specularRenderer.buffer.brdfLutTex = &this->textures.brdfLutTex;
+		renderers.specular.buffer.position = &buffers.positionVBO;
+		renderers.specular.buffer.normal = &buffers.normalVBO;
+		renderers.specular.buffer.indices = this->indices;
+		renderers.specular.buffer.eyePosition = camera.getEye();
+		renderers.specular.buffer.viewMatrix = camera.getViewMatrix();
+		renderers.specular.buffer.projectionMatrix = camera.getProjectionMatrix();
+		renderers.specular.buffer.modelMatrix = camera.getModelMatrix();
+		renderers.specular.buffer.metalic = 0.1;
+		renderers.specular.buffer.ao = 0.1;
+		renderers.specular.buffer.albedo = Vector3df(1, 1, 1);
+		renderers.specular.buffer.importanceMapTex = &this->textures.importanceTex;
+		renderers.specular.buffer.irradianceMapTex = &this->textures.irradianceTex;
+		renderers.specular.buffer.brdfLutTex = &this->textures.brdfLutTex;
 
-		renderers.specularRenderer.render();
+		renderers.specular.render();
 	}
-	*/
 }
