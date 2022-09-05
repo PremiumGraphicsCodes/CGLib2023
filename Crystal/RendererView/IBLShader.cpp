@@ -89,13 +89,11 @@ void IBLShader::build()
 	renderers.diffuseRenderer.setShader(shaderBuilder.getShader());
 	renderers.diffuseRenderer.link();
 
-	/*
-	{
-		auto shader = shaderBuilder.build("../GLSL/BRDFLUT.vs", "../GLSL/BRDFLUT.fs");
-		renderers.brdfLutRenderer.setShader(std::move(shader));
-		renderers.brdfLutRenderer.link();
-	}
+	shaderBuilder.buildFromFile("../GLSL/BRDFLUT.vs", "../GLSL/BRDFLUT.fs");
+	renderers.brdfLutRenderer.setShader(shaderBuilder.getShader());
+	renderers.brdfLutRenderer.link();
 
+	/*
 	{
 		auto shader = shaderBuilder.build("../GLSL/Importance.vs", "../GLSL/Importance.fs");
 		renderers.importanceRenderer.setShader(std::move(shader));
@@ -171,6 +169,7 @@ void IBLShader::build()
 
 void IBLShader::render(const Camera& camera, const int width, const int height)
 {
+	/*
 	{
 		buffers.fbo.bind();
 		//this->cubeMapTex.bind(0);
@@ -212,7 +211,7 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		buffers.fbo.unbind();
 
 	}
-
+	*/
 
 	/*
 	{
@@ -234,18 +233,16 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 	}
 	*/
 
-	/*
 	{
-		buffers.fbo.bind();
-		buffers.fbo.setTexture(this->textures.brdfLutTex);
+//		buffers.fbo.bind();
+//		buffers.fbo.setTexture(this->textures.brdfLutTex);
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		renderers.brdfLutRenderer.render();
-		buffers.fbo.unbind();
+		//buffers.fbo.unbind();
 	}
-	*/
 
 	/*
 	{

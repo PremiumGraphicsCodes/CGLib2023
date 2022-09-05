@@ -41,6 +41,9 @@
     <ClInclude Include="TexRenderer.h">
       <Filter>Texture</Filter>
     </ClInclude>
+    <ClInclude Include="BRDFLUTRenderer.h">
+      <Filter>IBL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
@@ -81,6 +84,9 @@
     </ClCompile>
     <ClCompile Include="TexRenderer.cpp">
       <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="BRDFLUTRenderer.cpp">
+      <Filter>IBL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +214,12 @@
     </None>
     <None Include="..\GLSL\Tex.vs">
       <Filter>Texture</Filter>
+    </None>
+    <None Include="..\GLSL\BRDFLUT.fs">
+      <Filter>IBL</Filter>
+    </None>
+    <None Include="..\GLSL\BRDFLUT.vs">
+      <Filter>IBL</Filter>
     </None>
   </ItemGroup>
 </Project>
