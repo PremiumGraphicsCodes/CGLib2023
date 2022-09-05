@@ -93,25 +93,17 @@ void IBLShader::build()
 	renderers.brdfLutRenderer.setShader(shaderBuilder.getShader());
 	renderers.brdfLutRenderer.link();
 
-	/*
-	{
-		auto shader = shaderBuilder.build("../GLSL/Importance.vs", "../GLSL/Importance.fs");
-		renderers.importanceRenderer.setShader(std::move(shader));
-		renderers.importanceRenderer.link();
-	}
+	shaderBuilder.buildFromFile("../GLSL/Importance.vs", "../GLSL/Importance.fs");
+	renderers.importanceRenderer.setShader(shaderBuilder.getShader());
+	renderers.importanceRenderer.link();
 
-	{
-		auto shader = shaderBuilder.build("../GLSL/IBLSpecular.vs", "../GLSL/IBLSpecular.fs");
-		renderers.specularRenderer.setShader(std::move(shader));
-		renderers.specularRenderer.link();
-	}
+	shaderBuilder.buildFromFile("../GLSL/IBLSpecular.vs", "../GLSL/IBLSpecular.fs");
+	renderers.specularRenderer.setShader(shaderBuilder.getShader());
+	renderers.specularRenderer.link();
 
-	{
-		auto shader = shaderBuilder.build("../GLSL/SkyBox.vs", "../GLSL/SkyBox.fs");
-		renderers.skyBoxRenderer.setShader(std::move(shader));
-		renderers.skyBoxRenderer.link();
-	}
-	*/
+	shaderBuilder.buildFromFile("../GLSL/SkyBox.vs", "../GLSL/SkyBox.fs");
+	renderers.skyBoxRenderer.setShader(shaderBuilder.getShader());
+	renderers.skyBoxRenderer.link();
 
 	/*
 	{

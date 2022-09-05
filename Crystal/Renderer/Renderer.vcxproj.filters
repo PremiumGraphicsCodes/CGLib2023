@@ -42,7 +42,10 @@
       <Filter>Texture</Filter>
     </ClInclude>
     <ClInclude Include="BRDFLUTRenderer.h">
-      <Filter>IBL</Filter>
+      <Filter>IBL\BRDFLUT</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportanceRenderer.h">
+      <Filter>IBL\Importance</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -86,7 +89,10 @@
       <Filter>Texture</Filter>
     </ClCompile>
     <ClCompile Include="BRDFLUTRenderer.cpp">
-      <Filter>IBL</Filter>
+      <Filter>IBL\BRDFLUT</Filter>
+    </ClCompile>
+    <ClCompile Include="ImportanceRenderer.cpp">
+      <Filter>IBL\Importance</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +140,12 @@
     </Filter>
     <Filter Include="Texture">
       <UniqueIdentifier>{5a2fa6a2-cd48-4fda-abf2-398cf6f6d757}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IBL\BRDFLUT">
+      <UniqueIdentifier>{7b866ebe-5117-4495-834a-111b7d5e6373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IBL\Importance">
+      <UniqueIdentifier>{72e26a17-a02f-4d43-9aed-9794ec5917cd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -215,11 +227,17 @@
     <None Include="..\GLSL\Tex.vs">
       <Filter>Texture</Filter>
     </None>
-    <None Include="..\GLSL\BRDFLUT.fs">
-      <Filter>IBL</Filter>
-    </None>
     <None Include="..\GLSL\BRDFLUT.vs">
-      <Filter>IBL</Filter>
+      <Filter>IBL\BRDFLUT</Filter>
+    </None>
+    <None Include="..\GLSL\BRDFLUT.fs">
+      <Filter>IBL\BRDFLUT</Filter>
+    </None>
+    <None Include="..\GLSL\Importance.fs">
+      <Filter>IBL\Importance</Filter>
+    </None>
+    <None Include="..\GLSL\Importance.vs">
+      <Filter>IBL\Importance</Filter>
     </None>
   </ItemGroup>
 </Project>

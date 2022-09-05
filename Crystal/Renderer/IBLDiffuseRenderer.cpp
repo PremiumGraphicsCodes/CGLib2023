@@ -1,5 +1,7 @@
 #include "IBLDiffuseRenderer.h"
+#include "CGLib/Shader/TextureUnit.h"
 
+using namespace Crystal::Shader;
 using namespace Crystal::Renderer;
 
 namespace {
@@ -16,32 +18,52 @@ namespace {
 	constexpr auto irradianceMapLabel = "irradianceMap";
 	constexpr auto cameraPosLabel = "camPos";
 	constexpr auto fragColorLabel = "FragColor";
+
+	struct AttributeLoc {
+		GLuint position;
+		GLuint normal;
+	};
+	AttributeLoc attrLoc;
+
+	struct UniformLocs {
+		GLuint projectionMatrix;
+		GLuint modelMatrix;
+		GLuint viewMatrix;
+		GLuint albedo;
+		GLuint metalic;
+		GLuint ao;
+		GLuint irradiance;
+		GLuint eyePos;
+	};
+	UniformLocs uniforms;
 }
 
 void IBLDiffuseRenderer::link()
 {
-	shader->findAttribLocation(::positionLabel);
-	shader->findAttribLocation(::normalLabel);
+	attrLoc.position = shader->findAttribLocation(::positionLabel);
+	attrLoc.normal = shader->findAttribLocation(::normalLabel);
 
-	shader->findUniformLocation(::projectionMatrixLabel);
-	shader->findUniformLocation(::modelMatrixLabel);
-	shader->findUniformLocation(::viewMatrixLabel);
+	uniforms.projectionMatrix = shader->findUniformLocation(::projectionMatrixLabel);
+	uniforms.modelMatrix = shader->findUniformLocation(::modelMatrixLabel);
+	uniforms.viewMatrix = shader->findUniformLocation(::viewMatrixLabel);
 
-	shader->findUniformLocation(::albedoLabel);
-	shader->findUniformLocation(::metalicLabel);
-	shader->findUniformLocation(::ambientOcclusionLabel);
-	shader->findUniformLocation(::irradianceMapLabel);
-	shader->findUniformLocation(::cameraPosLabel);
+	uniforms.albedo = shader->findUniformLocation(::albedoLabel);
+	uniforms.metalic = shader->findUniformLocation(::metalicLabel);
+	uniforms.ao = shader->findUniformLocation(::ambientOcclusionLabel);
+	uniforms.irradiance = shader->findUniformLocation(::irradianceMapLabel);
+	uniforms.eyePos = shader->findUniformLocation(::cameraPosLabel);
 }
 
 void IBLDiffuseRenderer::render()
 {
-	/*
 	shader->bind();
 	shader->bindOutput(::fragColorLabel);
 
-	buffer.irradianceMapTex->bind(0);
+	/*
+	TextureUnit texUnit(0, buffer.irradianceMapTex);
 
+	Uniform irradiance(uniforms.irradiance);
+	irradiance.send(texUnit);
 	shader->sendUniform(::irradianceMapLabel, 0);
 
 	shader->sendUniform(::projectionMatrixLabel, buffer.projectionMatrix);
@@ -70,7 +92,7 @@ void IBLDiffuseRenderer::render()
 	buffer.normal->unbind();
 
 	buffer.irradianceMapTex->unbind();
+	*/
 
 	shader->unbind();
-	*/
 }

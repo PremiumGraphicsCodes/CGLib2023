@@ -10,7 +10,9 @@
 #include "../Renderer/IBLDiffuseRenderer.h"
 #include "../Renderer/IBLSpecularRenderer.h"
 #include "../Renderer/BRDFLUTRenderer.h"
+#include "../Renderer/ImportanceRenderer.h"
 #include "../Renderer/TexRenderer.h"
+#include "../Renderer/SkyBoxRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {
@@ -30,8 +32,8 @@ private:
 		Renderer::IBLDiffuseRenderer diffuseRenderer;
 		Renderer::IBLSpecularRenderer specularRenderer;
 		Renderer::BRDFLUTRenderer brdfLutRenderer;
-//				Renderer::ImportanceRenderer importanceRenderer;
-//				Renderer::SkyBoxRenderer skyBoxRenderer;
+		Renderer::ImportanceRenderer importanceRenderer;
+		Renderer::SkyBoxRenderer skyBoxRenderer;
 	};
 
 
