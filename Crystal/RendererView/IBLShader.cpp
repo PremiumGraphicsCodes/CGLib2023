@@ -3,6 +3,8 @@
 #include "CGLib/Shader/ShaderBuilder.h"
 //#include "../CrystalRenderer/HDRImage.h"
 
+#include "CGLib/Shader/VertexBuffer.h"
+
 #include "CGLib/Graphics/ImageFileReader.h"
 
 #include "CGLib/ThirdParty/glm-0.9.9.8/glm/gtc/matrix_transform.hpp"
@@ -44,9 +46,10 @@ namespace
 
 void IBLShader::build()
 {
-	ImageFileReader reader;
-	Imagef hdr;
+	HDRImageFileReader reader;
 	reader.read("../../ThirdParty/hdr/newport_loft.hdr");
+
+	Imagef hdr = reader.toImage();
 	textures.hdrTex.create();
 	sendHDRTexture(hdr, textures.hdrTex);
 
@@ -106,23 +109,28 @@ void IBLShader::build()
 	renderers.skyBox.setShader(shaderBuilder.getShader());
 	renderers.skyBox.link();
 
-	/*
+	shaderBuilder.buildFromFile("../GLSL/Tex.vs", "../GLSL/Tex.fs");
+	renderers.tex.setShader(shaderBuilder.getShader());
+	renderers.tex.link();
+
 	{
-		positions.add(Vector3dd(0.0, 0.0, 0.0));
-		positions.add(Vector3dd(1.0, 0.0, 0.0));
-		positions.add(Vector3dd(1.0, 1.0, 0.0));
-		positions.add(Vector3dd(0.0, 1.0, 0.0));
+		VertexBuffer<float> positions;
+		positions.add(Vector3df(0.0, 0.0, 0.0));
+		positions.add(Vector3df(1.0, 0.0, 0.0));
+		positions.add(Vector3df(1.0, 1.0, 0.0));
+		positions.add(Vector3df(0.0, 1.0, 0.0));
 
-		normals.add(Vector3dd(0, 0, 1));
-		normals.add(Vector3dd(0, 0, 1));
-		normals.add(Vector3dd(0, 0, 1));
-		normals.add(Vector3dd(0, 0, 1));
+		VertexBuffer<float> normals;
+		normals.add(Vector3df(0, 0, 1));
+		normals.add(Vector3df(0, 0, 1));
+		normals.add(Vector3df(0, 0, 1));
+		normals.add(Vector3df(0, 0, 1));
 
-		buffers.positionVBO.build();
-		buffers.positionVBO.send(positions.get());
+		buffers.positionVBO.create();
+		buffers.positionVBO.send(positions);
 
-		buffers.normalVBO.build();
-		buffers.normalVBO.send(normals.get());
+		buffers.normalVBO.create();
+		buffers.normalVBO.send(normals);
 
 		indices.push_back(0);
 		indices.push_back(1);
@@ -132,7 +140,6 @@ void IBLShader::build()
 		indices.push_back(2);
 		indices.push_back(3);
 	}
-	*/
 
 	{
 		std::array<Graphics::Imageuc, 6> images;
@@ -173,7 +180,6 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 			assert(GL_NO_ERROR == glGetError());
 
 			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, this->textures.cubeMapTex.getHandle(), 0);
-			assert(GL_NO_ERROR == glGetError());
 
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -190,14 +196,22 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		buffers.fbo.unbind();
 	}
 
+	/*
 	{
 		buffers.fbo.bind();
+		//buffers.fbo.setTexture(textures.irradianceTex);
+
+		assert(GL_NO_ERROR == glGetError());
+
 
 		renderers.irradiance.buffer.cubeMapTex = &textures.cubeMapTex;
 
 		for (int i = 0; i < 6; ++i) {
 			glViewport(0, 0, 32, 32);
 			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, this->textures.irradianceTex.getHandle(), 0);
+
+			assert(GL_NO_ERROR == glGetError());
+
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			renderers.irradiance.buffer.projectionMatrix = ::captureProjection;
@@ -205,12 +219,17 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 			renderers.irradiance.buffer.cubeMapTex = &this->textures.cubeMapTex;
 
 			renderers.irradiance.render();
+
+			assert(GL_NO_ERROR == glGetError());
 		}
 
+		//this->textures.importanceTex.unbind();
 		buffers.fbo.unbind();
 
 	}
+	*/
 
+	/*
 	{
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -228,6 +247,7 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		renderers.diffuse.buffer.indices = indices;
 		renderers.diffuse.render();
 	}
+	*/
 
 	/*
 	{
@@ -277,16 +297,23 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 	*/
 
 	/*
+		{
+			glViewport(0, 0, width, height);
+			glClearColor(0.0, 0.0, 0.0, 0.0);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			renderers.skyBox.buffer.modelViewMatrix = glm::mat4(glm::mat3(camera.getModelViewMatrix()));
+			renderers.skyBox.buffer.projectionMatrix = camera.getProjectionMatrix();
+			renderers.skyBox.buffer.cubeMapTexture = &this->textures.cubeMapTex;
+			renderers.skyBox.render();
+		}
+		*/
 	{
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		renderers.skyBoxRenderer.buffer.modelViewMatrix = glm::mat4(glm::mat3(camera.getModelViewMatrix()));
-		renderers.skyBoxRenderer.buffer.projectionMatrix = camera.getProjectionMatrix();
-		renderers.skyBoxRenderer.buffer.cubeMapTexture = &this->importanceTex;
-		renderers.skyBoxRenderer.render();
+		renderers.tex.buffer.tex = &textures.hdrTex;
+		renderers.tex.render();
 	}
-	*/
 
 	/*
 	{

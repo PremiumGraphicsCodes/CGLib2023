@@ -19,5 +19,20 @@ private:
 	int bpp;
 	std::vector<unsigned char> data;
 };
+
+class HDRImageFileReader
+{
+public:
+	bool read(const std::string& filepath);
+
+	Graphics::Imagef toImage() const;
+
+private:
+	int width;
+	int height;
+	int bpp;
+	std::vector<float> data;
+
+};
 	}
 }

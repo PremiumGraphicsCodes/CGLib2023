@@ -59,40 +59,39 @@ void IBLDiffuseRenderer::render()
 	shader->bind();
 	shader->bindOutput(::fragColorLabel);
 
-	/*
 	TextureUnit texUnit(0, buffer.irradianceMapTex);
 
 	Uniform irradiance(uniforms.irradiance);
 	irradiance.send(texUnit);
-	shader->sendUniform(::irradianceMapLabel, 0);
 
-	shader->sendUniform(::projectionMatrixLabel, buffer.projectionMatrix);
-	shader->sendUniform(::modelMatrixLabel, buffer.modelMatrix);
-	shader->sendUniform(::viewMatrixLabel, buffer.viewMatrix);
-	shader->sendUniform(::cameraPosLabel, buffer.eyePosition);
+	Uniform projectionMatrix(uniforms.projectionMatrix);
+	projectionMatrix.send(buffer.projectionMatrix);
 
-	shader->sendVertexAttribute3df(::positionLabel, *buffer.position);
-	shader->sendVertexAttribute3df(::normalLabel, *buffer.normal);
+	Uniform modelMatrix(uniforms.modelMatrix);
+	modelMatrix.send(buffer.modelMatrix);
 
-	shader->sendUniform(::albedoLabel, buffer.albedo);
-	shader->sendUniform(::metalicLabel, buffer.metalic);
-	shader->sendUniform(::ambientOcclusionLabel, buffer.ao);
+	Uniform viewMatrix(uniforms.viewMatrix);
+	viewMatrix.send(buffer.viewMatrix);
 
-	buffer.position->bind();
-	buffer.normal->bind();
-	shader->enableVertexAttribute(::positionLabel);
-	shader->enableVertexAttribute(::normalLabel);
+	Uniform eyePos(uniforms.eyePos);
+	eyePos.send(buffer.eyePosition);
+
+	Uniform albedo(uniforms.albedo);
+	albedo.send(buffer.albedo);
+
+	Uniform metalic(uniforms.metalic);
+	metalic.send(buffer.metalic);
+
+	Uniform ao(uniforms.ao);
+	ao.send(buffer.ao);
+
+	VertexAttribute positions(attrLoc.position);
+	positions.sendVertexAttribute3df(*buffer.position);
+
+	VertexAttribute normals(attrLoc.normal);
+	normals.sendVertexAttribute3df(*buffer.normal);
 
 	shader->drawTriangles(buffer.indices);
-
-	shader->disableVertexAttribute(::positionLabel);
-	shader->disableVertexAttribute(::normalLabel);
-
-	buffer.position->unbind();
-	buffer.normal->unbind();
-
-	buffer.irradianceMapTex->unbind();
-	*/
 
 	shader->unbind();
 }

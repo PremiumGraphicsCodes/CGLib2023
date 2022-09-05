@@ -34,6 +34,7 @@ private:
 		Renderer::BRDFLUTRenderer brdfLut;
 		Renderer::ImportanceRenderer importance;
 		Renderer::SkyBoxRenderer skyBox;
+		Renderer::TexRenderer tex;
 	};
 
 	struct Textures
