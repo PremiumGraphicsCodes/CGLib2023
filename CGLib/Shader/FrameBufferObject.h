@@ -2,13 +2,11 @@
 
 #include "glew.h"
 #include "IGLObject.h"
-
-#include "../Graphics/Image.h"
+#include "RenderBufferObject.h"
 
 namespace Crystal {
 	namespace Shader {
 		class ITextureObject;
-		class CubeMapTextureObject;
 
 class FrameBufferObject : public IGLObject
 {
@@ -30,6 +28,8 @@ public:
 	void unbind() const override;
 
 	GLuint getHandle() const { return frameBuffer; }
+
+	void setRenderBuffer(const GLenum attachment, RenderBufferObject* rbo);
 
 private:
 	GLuint frameBuffer;

@@ -23,6 +23,12 @@ void FrameBufferObject::create()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
+void FrameBufferObject::setRenderBuffer(const GLenum attachment, RenderBufferObject* rbo)
+{
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, attachment, GL_RENDERBUFFER, rbo->getHandle());
+}
+
+
 /*
 void FrameBufferObject::build(int width, int height)
 {
