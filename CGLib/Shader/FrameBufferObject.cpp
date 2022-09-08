@@ -14,13 +14,6 @@ FrameBufferObject::~FrameBufferObject()
 void FrameBufferObject::create()
 {
 	glGenFramebuffers(1, &frameBuffer);
-
-	glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
-	glGenRenderbuffers(1, &depthBuffer);
-	glBindRenderbuffer(GL_RENDERBUFFER, depthBuffer);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 512, 512);
-	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthBuffer);
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
 void FrameBufferObject::setRenderBuffer(const GLenum attachment, RenderBufferObject* rbo)
@@ -43,7 +36,7 @@ void FrameBufferObject::build(int width, int height)
 
 void FrameBufferObject::remove()
 {
-	glDeleteRenderbuffers(1, &depthBuffer);
+	//glDeleteRenderbuffers(1, &depthBuffer);
 	glDeleteFramebuffers(1, &frameBuffer);
 }
 

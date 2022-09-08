@@ -33,7 +33,7 @@ public:
 
 private:
 	GLuint frameBuffer;
-	GLuint depthBuffer;
+	//GLuint depthBuffer;
 };
 
 	}

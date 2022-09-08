@@ -43,6 +43,13 @@ void DFPolygonShader::build()
 	texRenderer.link();
 
 	this->fbo.create();
+	this->fbo.bind();
+	depth.create();
+	depth.bind();
+	depth.setStorage(GL_DEPTH_COMPONENT, 512, 512);
+	fbo.setRenderBuffer(GL_DEPTH_ATTACHMENT, &depth);
+	depth.unbind();
+	fbo.unbind();
 
 	this->albedoTexture.create();
 	this->albedoTexture.send(Imageuc(512, 512));

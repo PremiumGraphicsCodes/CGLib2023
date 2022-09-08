@@ -34,7 +34,7 @@ private:
 	Shader::VertexBufferObject normals;
 
 	Shader::FrameBufferObject fbo;
-
+	Shader::RenderBufferObject depth;
 };
 
 	}

@@ -54,6 +54,14 @@ void IBLShader::build()
 	sendHDRTexture(hdr, textures.hdrTex);
 
 	buffers.fbo.create();
+	buffers.fbo.bind();
+	buffers.depth.create();
+	buffers.depth.bind();
+	buffers.depth.setStorage(GL_DEPTH_COMPONENT, 512, 512);
+	buffers.fbo.setRenderBuffer(GL_DEPTH_ATTACHMENT, &buffers.depth);
+	buffers.depth.unbind();
+	buffers.fbo.unbind();
+
 	buffers.rbo.create();
 
 	{

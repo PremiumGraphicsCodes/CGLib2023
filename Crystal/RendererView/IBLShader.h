@@ -49,6 +49,7 @@ private:
 	struct Buffers
 	{
 		Shader::FrameBufferObject fbo;
+		Shader::RenderBufferObject depth;
 		Shader::RenderBufferObject rbo;
 		Shader::VertexBufferObject positionVBO;
 		Shader::VertexBufferObject normalVBO;
