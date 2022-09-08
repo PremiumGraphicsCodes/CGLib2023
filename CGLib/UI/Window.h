@@ -22,12 +22,12 @@ public:
 
 	void add(IWindow* panel) { this->panels.push_back(panel); }
 
-	GLFWwindow* getGLFWWindow() const { return window; }
-
 protected:
 	virtual void onInit() {};
 
 	virtual void onRender() {};
+
+	GLFWwindow* getGLFWWindow() const { return window; }
 
 private:
 	std::vector< IMenu* > menus;

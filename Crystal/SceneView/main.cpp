@@ -142,106 +142,45 @@ namespace {
 	};
 }
 
-int main() {
-	if (!glfwInit()) {
-		return false;
+#include "CGLib/UI/Window.h"
+
+class App : public Crystal::UI::Window
+{
+public:
+	App() :
+		Crystal::UI::Window("Hello")
+	{
 	}
 
-	//glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	//glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	auto window = glfwCreateWindow(1280, 720, "Hello", NULL, NULL);
-	glfwMakeContextCurrent(window);
-	//	gl3wInit();
+	void onInit() override
+	{
+		renderer.build();
 
-	const auto e = glewInit();
-	if (e != GLEW_OK) {
-		return false;
+		psScene.add(new Particle(Vector3df(0, 0, 0)));
+
+		this->presenter = std::make_unique<Crystal::UI::ParticleSystemPresenter>(&psScene, &renderer.point);
+		presenter->build();
+		presenter->send();
+
+		wfScene.add(new Vertex(Vector3df(0, 0, 0)));
+		wfScene.add(new Vertex(Vector3df(1, 0, 0)));
+		wfScene.addIndex(0);
+		wfScene.addIndex(1);
+
+		this->wfPresenter = std::make_unique<Crystal::UI::WireFramePresenter>(&wfScene, &renderer.line);
+		wfPresenter->build();
+		wfPresenter->send();
+
+		auto window = getGLFWWindow();
+		glfwSetMouseButtonCallback(window, onMouse);
+		glfwSetCursorPosCallback(window, onMouseMove);
+
 	}
 
-
-	// Setup ImGui binding
-	//ImGui_ImplGlfwGL3_Init(window, true);
-
-	const char* glsl_version = "#version 130";
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;  // Enable Keyboard Controls
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;   // Enable Gamepad Controls
-
-	// Setup Dear ImGui style
-	ImGui::StyleColorsDark();
-	//ImGui::StyleColorsClassic();
-
-	// Setup Platform/Renderer bindings
-	ImGui_ImplGlfw_InitForOpenGL(window, true);
-	ImGui_ImplOpenGL3_Init(glsl_version);
-
-
-	// glfwSetScrollCallback(window, onWheel);
-	glfwSetMouseButtonCallback(window, onMouse);
-	glfwSetCursorPosCallback(window, onMouseMove);
-
-	// glfwSetWindowCloseCallback(window, onClose);
-
-
-	 // Setup window
-	 //glfwSetErrorCallback(glfw_error_callback);
-	if (!glfwInit()) {
-		return 1;
-	}
-
-	Crystal::UI::Renderer renderer;
-	renderer.build();
-
-	ParticleSystemScene psScene;
-	psScene.add(new Particle(Vector3df(0,0,0)));
-
-	auto presenter = std::make_unique<Crystal::UI::ParticleSystemPresenter>(&psScene, &renderer.point);
-	presenter->build();
-	presenter->send();
-
-	WireFrameScene wfScene;
-	wfScene.add(new Vertex(Vector3df(0, 0, 0)));
-	wfScene.add(new Vertex(Vector3df(1, 0, 0)));
-	wfScene.addIndex(0);
-	wfScene.addIndex(1);
-
-	auto wfPresenter = std::make_unique<Crystal::UI::WireFramePresenter>(&wfScene, &renderer.line);
-	wfPresenter->build();
-	wfPresenter->send();
-
-	//pointRenderer.build();
-	//pbLightRenderer.build();
-	//skyBoxRenderer.build();
-	//dfRenderer.build();
-
-	// onInit();
-
-	while (!glfwWindowShouldClose(window)) {
-		// Start the Dear ImGui frame
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
-
-		if (ImGui::BeginMainMenuBar()) {
-			if (ImGui::BeginMenu("Scene")) {
-				if (ImGui::MenuItem("Point")) {
-					auto psScene = new ParticleSystemScene();
-					scene.addScene(psScene);
-					//::activeRenderer = &pointRenderer;
-				}
-
-				ImGui::EndMenu();
-			}
-			ImGui::EndMainMenuBar();
-		}
-
-		//glClearColor(0, 0, 0, 0);
-		//glClear(GL_COLOR_BUFFER_BIT);
-
+	void onRender()
+	{
 		int width, height;
+		auto window = getGLFWWindow();
 		glfwGetWindowSize(window, &width, &height);
 
 		glViewport(0, 0, width, height);
@@ -251,29 +190,20 @@ int main() {
 		//presenter.render(camera);
 		wfPresenter->render(camera);
 
-		//renderer.render(camera, &psScene);
-
-		//activeRenderer->render(camera, width, height);
-		//skyBoxRenderer.render(camera, width, height);
-		//onRender(width, height);
-		//world->getRenderer()->render(*world->getCamera()->getCamera(), width, height);
-		//const auto animations = world->getAnimations();
-		//for (auto& a : animations) {
-		//	a->step();
-		//}
-
-		glFlush();
-
-		ImGui::Render();
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-		glfwSwapBuffers(window);
-		glfwPollEvents();
 	}
 
-	// Cleanup
-	ImGui_ImplOpenGL3_Shutdown();
-	ImGui_ImplGlfw_Shutdown();
+private:
+	Crystal::UI::Renderer renderer;
+	ParticleSystemScene psScene;
+	WireFrameScene wfScene;
 
-	ImGui::DestroyContext();
-	glfwTerminate();
+	std::unique_ptr<Crystal::UI::ParticleSystemPresenter> presenter;
+	std::unique_ptr<Crystal::UI::WireFramePresenter> wfPresenter;
+};
+
+int main() {
+	App app;
+	app.init();
+
+	app.show();
 }
