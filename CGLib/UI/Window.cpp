@@ -52,6 +52,7 @@ bool Window::init()
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init(glsl_version);
 
+	onInit();
 
 	return true;
 }
@@ -81,6 +82,7 @@ void Window::show()
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
 
+		onRender();
 		//world->getRenderer()->render(*world->getCamera()->getCamera(), width, height);
 
 		//const auto animations = world->getAnimations();

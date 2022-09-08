@@ -198,9 +198,9 @@ int main() {
 	ParticleSystemScene psScene;
 	psScene.add(new Particle(Vector3df(0,0,0)));
 
-	Crystal::UI::ParticleSystemPresenter presenter(&psScene, &renderer.point);
-	presenter.build();
-	presenter.send();
+	auto presenter = std::make_unique<Crystal::UI::ParticleSystemPresenter>(&psScene, &renderer.point);
+	presenter->build();
+	presenter->send();
 
 	WireFrameScene wfScene;
 	wfScene.add(new Vertex(Vector3df(0, 0, 0)));
@@ -208,9 +208,9 @@ int main() {
 	wfScene.addIndex(0);
 	wfScene.addIndex(1);
 
-	Crystal::UI::WireFramePresenter wfPresenter(&wfScene, &renderer.line);
-	wfPresenter.build();
-	wfPresenter.send();
+	auto wfPresenter = std::make_unique<Crystal::UI::WireFramePresenter>(&wfScene, &renderer.line);
+	wfPresenter->build();
+	wfPresenter->send();
 
 	//pointRenderer.build();
 	//pbLightRenderer.build();
@@ -249,7 +249,7 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		//presenter.render(camera);
-		wfPresenter.render(camera);
+		wfPresenter->render(camera);
 
 		//renderer.render(camera, &psScene);
 
