@@ -269,8 +269,9 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 		for (unsigned int mip = 0; mip < maxMipLevels; mip++) {
 			const unsigned int mipWidth = 128 * std::pow(0.5, mip);
 			const unsigned int mipHeight = 128 * std::pow(0.5, mip);
-			glBindRenderbuffer(GL_RENDERBUFFER, buffers.rbo.getHandle());
-			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, mipWidth, mipHeight);
+
+			buffers.rbo.bind();
+			buffers.rbo.setStorage(GL_DEPTH_COMPONENT24, mipWidth, mipHeight);
 
 			glViewport(0, 0, mipWidth, mipHeight);
 

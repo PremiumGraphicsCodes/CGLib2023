@@ -21,6 +21,8 @@ public:
 
 	GLuint getHandle() const override { return handle; }
 
+	void setStorage(const GLenum format, const GLsizei width, const GLsizei height);
+
 private:
 	GLuint handle;
 };

@@ -26,3 +26,8 @@ void RenderBufferObject::unbind() const
 {
 	glBindRenderbuffer(GL_RENDERBUFFER, 0);
 }
+
+void RenderBufferObject::setStorage(const GLenum format, const GLsizei width, const GLsizei height)
+{
+	glRenderbufferStorage(GL_RENDERBUFFER, format, width, height);
+}
