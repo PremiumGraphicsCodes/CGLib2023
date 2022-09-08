@@ -178,6 +178,7 @@
     <ClInclude Include="IntView.h" />
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="IWindow.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoolView.cpp" />
@@ -191,6 +192,7 @@
     <ClCompile Include="imgui_stdlib.cpp" />
     <ClCompile Include="imgui_widgets.cpp" />
     <ClCompile Include="IntView.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
