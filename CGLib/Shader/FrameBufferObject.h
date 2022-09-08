@@ -8,6 +8,7 @@
 namespace Crystal {
 	namespace Shader {
 		class ITextureObject;
+		class CubeMapTextureObject;
 
 class FrameBufferObject : public IGLObject
 {
@@ -21,6 +22,8 @@ public:
 	void setTexture(const ITextureObject& texture);
 
 	void setTexture(const ITextureObject& texture, unsigned int number);
+
+	void setTexture(const ITextureObject& texture, const GLenum attachment, const GLenum target);
 
 	void bind() const override;
 

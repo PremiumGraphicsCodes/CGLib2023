@@ -57,6 +57,11 @@ void FrameBufferObject::setTexture(const ITextureObject& texture, unsigned int n
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + number, GL_TEXTURE_2D, texture.getHandle(), 0);
 }
 
+void FrameBufferObject::setTexture(const ITextureObject& texture, const GLenum attachment, const GLenum target)
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, attachment, target, texture.getHandle(), 0);
+}
 
 void FrameBufferObject::bind() const
 {

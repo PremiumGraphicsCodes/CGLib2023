@@ -67,16 +67,17 @@ void IBLShader::build()
 	}
 
 	textures.irradianceTex.create();
-	glBindTexture(GL_TEXTURE_CUBE_MAP, textures.irradianceTex.getHandle());
+	textures.irradianceTex.bind();
+	//glBindTexture(GL_TEXTURE_CUBE_MAP, textures.irradianceTex.getHandle());
 	for (unsigned int i = 0; i < 6; ++i)
 	{
 		glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB16F, 32, 32, 0, GL_RGB, GL_FLOAT, nullptr);
 	}
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	textures.irradianceTex.setParameter(GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	textures.irradianceTex.setParameter(GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	textures.irradianceTex.setParameter(GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+	textures.irradianceTex.setParameter(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	textures.irradianceTex.setParameter(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	textures.irradianceTex.unbind();
 
 	ShaderBuilder shaderBuilder;
@@ -171,19 +172,13 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 {
 	{
 		buffers.fbo.bind();
-		//this->textures.cubeMapTex.bind();
 
 		for (int i = 0; i < 6; ++i) {
 			glViewport(0, 0, 512, 512);
 			glClearColor(0.0, 0.0, 0.0, 0.0);
-
-			assert(GL_NO_ERROR == glGetError());
-
-			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, this->textures.cubeMapTex.getHandle(), 0);
-
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-			assert(GL_NO_ERROR == glGetError());
+			buffers.fbo.setTexture(this->textures.cubeMapTex, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i);
 
 			renderers.cubeMap.buffer.projectionMatrix = ::captureProjection;
 			renderers.cubeMap.buffer.viewMatrix = ::captureViews[i];
@@ -207,9 +202,7 @@ void IBLShader::render(const Camera& camera, const int width, const int height)
 
 		for (int i = 0; i < 6; ++i) {
 			glViewport(0, 0, 32, 32);
-			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, this->textures.irradianceTex.getHandle(), 0);
-
-			assert(GL_NO_ERROR == glGetError());
+			buffers.fbo.setTexture(this->textures.irradianceTex, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i);
 
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
