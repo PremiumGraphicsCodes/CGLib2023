@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CGLib/Math/Vector2d.h"
+#include "../Math/Vector2d.h"
 
 #include "IUICtrl.h"
 #include <memory>
