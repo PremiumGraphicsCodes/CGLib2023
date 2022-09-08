@@ -124,6 +124,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>../../;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -141,6 +142,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>../../;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -160,22 +162,28 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoolView.h" />
+    <ClInclude Include="Canvas.h" />
     <ClInclude Include="FloatView.h" />
     <ClInclude Include="imconfig.h" />
+    <ClInclude Include="IMenu.h" />
     <ClInclude Include="imgui.h" />
     <ClInclude Include="imgui_impl_glfw.h" />
     <ClInclude Include="imgui_impl_opengl3.h" />
     <ClInclude Include="imgui_internal.h" />
     <ClInclude Include="imgui_stdlib.h" />
+    <ClInclude Include="IMouseListener.h" />
     <ClInclude Include="imstb_rectpack.h" />
     <ClInclude Include="imstb_textedit.h" />
     <ClInclude Include="imstb_truetype.h" />
     <ClInclude Include="IntView.h" />
+    <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="IWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoolView.cpp" />
+    <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="FloatView.cpp" />
+    <ClCompile Include="IMenu.cpp" />
     <ClCompile Include="imgui.cpp" />
     <ClCompile Include="imgui_draw.cpp" />
     <ClCompile Include="imgui_impl_glfw.cpp" />
