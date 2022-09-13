@@ -34,7 +34,6 @@
     <ClInclude Include="IntView.h" />
     <ClInclude Include="IMouseListener.h" />
     <ClInclude Include="IUICtrl.h" />
-    <ClInclude Include="Canvas.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -58,7 +57,6 @@
     <ClCompile Include="BoolView.cpp" />
     <ClCompile Include="FloatView.cpp" />
     <ClCompile Include="IntView.cpp" />
-    <ClCompile Include="Canvas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

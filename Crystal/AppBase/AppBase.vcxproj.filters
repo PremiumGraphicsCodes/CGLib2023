@@ -3,10 +3,12 @@
   <ItemGroup>
     <ClInclude Include="Window.h" />
     <ClInclude Include="IMenu.h" />
+    <ClInclude Include="Canvas.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="IMenu.cpp" />
+    <ClCompile Include="Canvas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
