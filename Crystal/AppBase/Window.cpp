@@ -1,11 +1,11 @@
 #include "Window.h"
 
-#include "../ThirdParty/glew-2.2.0/include/GL/glew.h"
+#include "CGLib/ThirdParty/glew-2.2.0/include/GL/glew.h"
 #include "GLFW/glfw3.h"
 
-#include "../UI/imgui.h"
-#include "../UI/imgui_impl_glfw.h"
-#include "../UI/imgui_impl_opengl3.h"
+#include "CGLib/UI/imgui.h"
+#include "CGLib/UI/imgui_impl_glfw.h"
+#include "CGLib/UI/imgui_impl_opengl3.h"
 
 using namespace Crystal::UI;
 
