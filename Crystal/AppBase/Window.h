@@ -8,11 +8,12 @@ struct GLFWwindow;
 
 namespace Crystal {
 	namespace UI {
+		class Canvas;
 
 		class Window
 		{
 		public:
-			Window(const std::string& title);
+			Window(const std::string& title, Canvas* canvas);
 
 			bool init();
 
@@ -34,6 +35,7 @@ namespace Crystal {
 			std::vector< IWindow* > panels;
 			GLFWwindow* window;
 			std::string title;
+			Canvas* canvas;
 		};
 
 	}

@@ -1,17 +1,83 @@
 #include "Window.h"
 
+#include "CGLib/Math/Vector2d.h"
 #include "CGLib/ThirdParty/glew-2.2.0/include/GL/glew.h"
 #include "GLFW/glfw3.h"
+#include "Canvas.h"
 
 #include "CGLib/UI/imgui.h"
 #include "CGLib/UI/imgui_impl_glfw.h"
 #include "CGLib/UI/imgui_impl_opengl3.h"
 
+using namespace Crystal::Math;
 using namespace Crystal::UI;
 
-Window::Window(const std::string& title) :
+namespace {
+	Canvas* canvas;
+
+	void glfw_error_callback(int error, const char* description)
+	{
+		fprintf(stderr, "Glfw Error %d: %s\n", error, description);
+	}
+
+	bool isLeftDown;
+	bool isRightDown;
+
+	Vector2df toScreenCoord(GLFWwindow* window, const double x, const double y) {
+		int width, height;
+		glfwGetWindowSize(window, &width, &height);
+		const auto xx = x / (float)width;
+		const auto yy = 1.0 - y / (float)height;
+		return Vector2df(xx, yy);
+	}
+
+	void onMouse(GLFWwindow* window, int button, int action, int mods) {
+		if (ImGui::IsMouseHoveringAnyWindow()) {
+			return;
+		}
+
+		double x, y;
+		glfwGetCursorPos(window, &x, &y);
+		const auto& coord = toScreenCoord(window, x, y);
+		if (button == GLFW_MOUSE_BUTTON_LEFT) {
+			if (action == GLFW_PRESS) {
+				canvas->onLeftButtonDown(coord);
+				isLeftDown = true;
+			}
+			else if (action == GLFW_RELEASE) {
+				canvas->onLeftButtonUp(coord);
+				isLeftDown = false;
+			}
+		}
+		else if (button == GLFW_MOUSE_BUTTON_RIGHT) {
+			if (action == GLFW_PRESS) {
+				canvas->onRightButtonDown(coord);
+				isRightDown = true;
+			}
+			else if (action == GLFW_RELEASE) {
+				canvas->onRightButtonUp(coord);
+				isRightDown = false;
+			}
+		}
+	}
+
+
+	void onMouseMove(GLFWwindow* window, double xpos, double ypos)
+	{
+		const auto& coord = toScreenCoord(window, xpos, ypos);
+		if (isLeftDown) {
+			canvas->onLeftDragging(coord);
+		}
+		else if (isRightDown) {
+			canvas->onRightDragging(coord);
+		}
+	}
+}
+
+Window::Window(const std::string& title, Canvas* canvas) :
 	title(title)
 {
+	::canvas = canvas;
 }
 
 bool Window::init()
@@ -51,6 +117,9 @@ bool Window::init()
 	// Setup Platform/Renderer bindings
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init(glsl_version);
+
+	glfwSetMouseButtonCallback(window, onMouse);
+	glfwSetCursorPosCallback(window, onMouseMove);
 
 	onInit();
 

@@ -9,7 +9,10 @@
 #include "../../CGLib/UI/imgui.h"
 #include "../../CGLib/UI/imgui_impl_glfw.h"
 #include "../../CGLib/UI/imgui_impl_opengl3.h"
+#include "Crystal/AppBase/Canvas.h"
 #include "GLFW/glfw3.h"
+
+#include "Crystal/AppBase/CameraUICtrl.h"
 
 #include <stdio.h>
 
@@ -25,93 +28,6 @@ using namespace Crystal::Graphics;
 //using namespace Crystal::Renderer;
 
 namespace {
-
-	void glfw_error_callback(int error, const char* description)
-	{
-		fprintf(stderr, "Glfw Error %d: %s\n", error, description);
-	}
-
-	bool isLeftDown;
-	bool isRightDown;
-
-	Camera camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0);
-
-	IScene scene;
-
-
-	Vector2df toScreenCoord(GLFWwindow* window, const double x, const double y) {
-		int width, height;
-		glfwGetWindowSize(window, &width, &height);
-		const auto xx = x / (float)width;
-		const auto yy = 1.0 - y / (float)height;
-		return Vector2df(xx, yy);
-	}
-
-	Vector2df prevCoord(0, 0);
-
-	void onMouse(GLFWwindow* window, int button, int action, int mods) {
-		if (ImGui::IsMouseHoveringAnyWindow()) {
-			return;
-		}
-
-		double x, y;
-		glfwGetCursorPos(window, &x, &y);
-		const auto& coord = toScreenCoord(window, x, y);
-		if (button == GLFW_MOUSE_BUTTON_LEFT) {
-			if (action == GLFW_PRESS) {
-				prevCoord = coord;
-				//canvas->onLeftButtonDown(coord);
-				isLeftDown = true;
-			}
-			else if (action == GLFW_RELEASE) {
-				//canvas->onLeftButtonUp(coord);
-				isLeftDown = false;
-			}
-		}
-		else if (button == GLFW_MOUSE_BUTTON_RIGHT) {
-			if (action == GLFW_PRESS) {
-				prevCoord = coord;
-				//canvas->onRightButtonDown(coord);
-				isRightDown = true;
-			}
-			else if (action == GLFW_RELEASE) {
-				//canvas->onRightButtonUp(coord);
-				isRightDown = false;
-			}
-		}
-	}
-
-
-	void onMouseMove(GLFWwindow* window, double xpos, double ypos)
-	{
-		const auto& coord = toScreenCoord(window, xpos, ypos);
-		if (isLeftDown) {
-			const auto diff = (coord - prevCoord) * 1.0f;
-			camera.setEye(camera.getEye() + Vector3df(diff, 0.0));
-			camera.setTarget(camera.getTarget() + Vector3df(diff, 0.0));
-			prevCoord = coord;
-			//canvas->onLeftDragging(coord);
-		}
-		else if (isRightDown) {
-			const auto diff = prevCoord - coord;
-			//const auto bb = world->getBoundingBox();
-			const auto scale = 1.0;//glm::distance(bb.getMin(), bb.getMax()) * 0.1;
-
-			const auto& matrix = camera.getRotationMatrix();
-			const auto v = glm::transpose(Matrix3dd(matrix)) * Vector3dd(diff, 0.0);
-
-			{
-				const Vector3df t = v;
-				const auto& eye = camera.getEye();
-				const auto& target = camera.getTarget();
-				const auto& up = camera.getUp();
-				camera.lookAt(eye + t, target, up);
-			}
-
-			prevCoord = coord;
-		}
-	}
-
 	struct Particle : public IParticle
 	{
 	public:
@@ -148,12 +64,17 @@ class App : public Crystal::UI::Window
 {
 public:
 	App() :
-		Crystal::UI::Window("Hello")
+		Crystal::UI::Window("Hello", &canvas),
+		camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0),
+		cameraUICtrl(&camera)
 	{
+
 	}
 
 	void onInit() override
 	{
+		canvas.setUICtrl(&cameraUICtrl);
+
 		renderer.build();
 
 		psScene.add(new Particle(Vector3df(0, 0, 0)));
@@ -172,8 +93,6 @@ public:
 		wfPresenter->send();
 
 		auto window = getGLFWWindow();
-		glfwSetMouseButtonCallback(window, onMouse);
-		glfwSetCursorPosCallback(window, onMouseMove);
 
 	}
 
@@ -194,6 +113,9 @@ public:
 
 private:
 	Crystal::UI::Renderer renderer;
+	Crystal::UI::Canvas canvas;
+	Crystal::UI::CameraUICtrl cameraUICtrl;
+	Crystal::Graphics::Camera camera;
 	ParticleSystemScene psScene;
 	WireFrameScene wfScene;
 
