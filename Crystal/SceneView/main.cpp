@@ -24,6 +24,7 @@ using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::Graphics;
 //using namespace Crystal::Renderer;
+using namespace Crystal::UI;
 
 namespace {
 	struct Particle : public IParticle
@@ -120,6 +121,17 @@ private:
 
 	Crystal::Graphics::Camera camera;
 };
+
+/*
+class ParticleSystemMenu : IMenu
+{
+	explicit ParticleSystemMenu(const std::string& name) :
+		IMenu(name)
+	{
+		add(new MenuItem)
+	}
+};
+*/
 
 int main() {
 	auto renderer = std::make_unique<Renderer>();

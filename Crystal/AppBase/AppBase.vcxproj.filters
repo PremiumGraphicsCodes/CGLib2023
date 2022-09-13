@@ -8,12 +8,14 @@
     <ClInclude Include="IMouseListener.h" />
     <ClInclude Include="CameraUICtrl.h" />
     <ClInclude Include="IRenderer.h" />
+    <ClInclude Include="IMenuItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="IMenu.cpp" />
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="CameraUICtrl.cpp" />
+    <ClCompile Include="IMenuItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
