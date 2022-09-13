@@ -147,7 +147,6 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleSystemPresenter.cpp" />
-    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="WireFramePresenter.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -179,7 +178,6 @@
   <ItemGroup>
     <ClInclude Include="IPresenter.h" />
     <ClInclude Include="ParticleSystemPresenter.h" />
-    <ClInclude Include="Renderer.h" />
     <ClInclude Include="WireFramePresenter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

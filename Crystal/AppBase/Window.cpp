@@ -121,7 +121,6 @@ bool Window::init()
 	glfwSetMouseButtonCallback(window, onMouse);
 	glfwSetCursorPosCallback(window, onMouseMove);
 
-	onInit();
 
 	return true;
 }
@@ -151,7 +150,7 @@ void Window::show()
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
 
-		onRender();
+		::canvas->render(width, height);
 		//world->getRenderer()->render(*world->getCamera()->getCamera(), width, height);
 
 		//const auto animations = world->getAnimations();

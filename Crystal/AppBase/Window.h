@@ -23,19 +23,12 @@ namespace Crystal {
 
 			void add(IWindow* panel) { this->panels.push_back(panel); }
 
-		protected:
-			virtual void onInit() {};
-
-			virtual void onRender() {};
-
-			GLFWwindow* getGLFWWindow() const { return window; }
-
 		private:
 			std::vector< IMenu* > menus;
 			std::vector< IWindow* > panels;
 			GLFWwindow* window;
 			std::string title;
-			Canvas* canvas;
+			//Canvas* canvas;
 		};
 
 	}

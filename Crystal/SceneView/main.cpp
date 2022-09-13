@@ -5,10 +5,6 @@
 
 #include "ParticleSystemPresenter.h"
 #include "WireFramePresenter.h"
-
-#include "../../CGLib/UI/imgui.h"
-#include "../../CGLib/UI/imgui_impl_glfw.h"
-#include "../../CGLib/UI/imgui_impl_opengl3.h"
 #include "Crystal/AppBase/Canvas.h"
 #include "GLFW/glfw3.h"
 
@@ -16,7 +12,9 @@
 
 #include <stdio.h>
 
-#include "Renderer.h"
+#include "../Renderer/PointRenderer.h"
+#include "../Renderer/LineRenderer.h"
+
 
 #include <iostream>
 
@@ -59,27 +57,30 @@ namespace {
 }
 
 #include "Crystal/AppBase/Window.h"
+#include "Crystal/AppBase/IRenderer.h"
+#include "CGLib/Shader/ShaderBuilder.h"
 
-class App : public Crystal::UI::Window
+class Renderer : public Crystal::UI::ISRenderer
 {
 public:
-	App() :
-		Crystal::UI::Window("Hello", &canvas),
-		camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0),
-		cameraUICtrl(&camera)
+	Renderer() :
+		camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
+	{}
+
+	void init() override
 	{
+		Crystal::Shader::ShaderBuilder builder;
+		builder.buildFromFile("../GLSL/Point.vs", "../GLSL/Point.fs");
+		point.setShader(builder.getShader());
+		point.link();
 
-	}
-
-	void onInit() override
-	{
-		canvas.setUICtrl(&cameraUICtrl);
-
-		renderer.build();
+		builder.buildFromFile("../GLSL/Line.vs", "../GLSL/Line.fs");
+		line.setShader(builder.getShader());
+		line.link();
 
 		psScene.add(new Particle(Vector3df(0, 0, 0)));
 
-		this->presenter = std::make_unique<Crystal::UI::ParticleSystemPresenter>(&psScene, &renderer.point);
+		this->presenter = std::make_unique<Crystal::UI::ParticleSystemPresenter>(&psScene, &point);
 		presenter->build();
 		presenter->send();
 
@@ -88,20 +89,14 @@ public:
 		wfScene.addIndex(0);
 		wfScene.addIndex(1);
 
-		this->wfPresenter = std::make_unique<Crystal::UI::WireFramePresenter>(&wfScene, &renderer.line);
+		this->wfPresenter = std::make_unique<Crystal::UI::WireFramePresenter>(&wfScene, &line);
 		wfPresenter->build();
 		wfPresenter->send();
 
-		auto window = getGLFWWindow();
-
 	}
 
-	void onRender()
+	void render(const int width, const int height) override
 	{
-		int width, height;
-		auto window = getGLFWWindow();
-		glfwGetWindowSize(window, &width, &height);
-
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -111,21 +106,32 @@ public:
 
 	}
 
+	Crystal::Graphics::Camera* getCamera() { return &camera; }
+
 private:
-	Crystal::UI::Renderer renderer;
-	Crystal::UI::Canvas canvas;
-	Crystal::UI::CameraUICtrl cameraUICtrl;
-	Crystal::Graphics::Camera camera;
 	ParticleSystemScene psScene;
 	WireFrameScene wfScene;
 
 	std::unique_ptr<Crystal::UI::ParticleSystemPresenter> presenter;
 	std::unique_ptr<Crystal::UI::WireFramePresenter> wfPresenter;
+
+	Crystal::Renderer::PointRenderer point;
+	Crystal::Renderer::LineRenderer line;
+
+	Crystal::Graphics::Camera camera;
 };
 
 int main() {
-	App app;
+	auto renderer = std::make_unique<Renderer>();
+
+	auto uiCtrl = std::make_unique<Crystal::UI::CameraUICtrl>(renderer->getCamera());
+	Crystal::UI::Canvas canvas;
+	canvas.setRenderer(std::move(renderer));
+	canvas.setUICtrl(std::move(uiCtrl));
+	Crystal::UI::Window app("Hello", &canvas);
 	app.init();
+	canvas.getRenderer()->init();
+	
 
 	app.show();
 }
