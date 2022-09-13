@@ -59,6 +59,7 @@ namespace {
 
 #include "Crystal/AppBase/Window.h"
 #include "Crystal/AppBase/IRenderer.h"
+#include "Crystal/AppBase/MenuItem.h"
 #include "CGLib/Shader/ShaderBuilder.h"
 
 class Renderer : public Crystal::UI::IRenderer
@@ -122,13 +123,34 @@ private:
 	Crystal::Graphics::Camera camera;
 };
 
-/*
-class ParticleSystemMenu : IMenu
+class ParticleSystemMenu : public IMenu
 {
+public:
 	explicit ParticleSystemMenu(const std::string& name) :
 		IMenu(name)
 	{
-		add(new MenuItem)
+		add(new MenuItem("Sphere", []() {}));
+
+		/*
+			add(new MenuItem("SpaceHash", [world, canvas, control]() {
+				control->setWindow(new SpaceHashView("SpaceHash", world, canvas));
+				}));
+				*/
+	}
+};
+
+/*
+class ControlPanel : public IWindow
+{
+public:
+	explicit ControlPanel(const std::string& name) :
+		IWindow(name)
+	{
+	}
+
+	void onShow() override
+	{
+
 	}
 };
 */
@@ -140,6 +162,9 @@ int main() {
 	Crystal::UI::Canvas canvas(std::move(uiCtrl), std::move(renderer));
 	Crystal::UI::Window app("Hello", &canvas);
 	app.init();
+
+	app.add(new ParticleSystemMenu("ParticleSystem"));
+	//app.add(new ControlPanel("Panel"));
 	
 	app.show();
 }

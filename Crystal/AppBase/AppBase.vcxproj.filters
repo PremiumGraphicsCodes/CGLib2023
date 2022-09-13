@@ -9,6 +9,7 @@
     <ClInclude Include="CameraUICtrl.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IMenuItem.h" />
+    <ClInclude Include="MenuItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
