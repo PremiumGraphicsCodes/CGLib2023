@@ -32,6 +32,10 @@
     <ClInclude Include="BoolView.h" />
     <ClInclude Include="FloatView.h" />
     <ClInclude Include="IntView.h" />
+    <ClInclude Include="Vector3dView.h">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Box3dView.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -55,6 +59,10 @@
     <ClCompile Include="BoolView.cpp" />
     <ClCompile Include="FloatView.cpp" />
     <ClCompile Include="IntView.cpp" />
+    <ClCompile Include="Vector3dView.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Box3dView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -62,6 +70,12 @@
   <ItemGroup>
     <Filter Include="imgui">
       <UniqueIdentifier>{bebee693-702a-4333-8614-f8d7dbb8fc9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vector">
+      <UniqueIdentifier>{c80a7d08-d040-4953-a92b-f572e6b84a92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Matrix">
+      <UniqueIdentifier>{c5740881-4a40-4b4e-87dc-fd125ead8acf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
