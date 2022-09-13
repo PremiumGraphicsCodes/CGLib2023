@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Math/Vector2d.h"
+#include "CGLib/Math/Vector2d.h"
 
 namespace Crystal {
 	namespace UI {

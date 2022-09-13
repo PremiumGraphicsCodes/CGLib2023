@@ -154,6 +154,8 @@
   <ItemGroup>
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="IMenu.h" />
+    <ClInclude Include="IMouseListener.h" />
+    <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>

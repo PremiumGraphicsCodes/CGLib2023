@@ -4,6 +4,8 @@
     <ClInclude Include="Window.h" />
     <ClInclude Include="IMenu.h" />
     <ClInclude Include="Canvas.h" />
+    <ClInclude Include="IUICtrl.h" />
+    <ClInclude Include="IMouseListener.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />

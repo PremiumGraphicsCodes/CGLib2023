@@ -2,7 +2,7 @@
 
 #include "CGLib/Math/Vector2d.h"
 
-#include "CGLib/UI/IUICtrl.h"
+#include "IUICtrl.h"
 #include <memory>
 
 namespace Crystal {

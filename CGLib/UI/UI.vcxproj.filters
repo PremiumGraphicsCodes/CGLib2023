@@ -32,8 +32,6 @@
     <ClInclude Include="BoolView.h" />
     <ClInclude Include="FloatView.h" />
     <ClInclude Include="IntView.h" />
-    <ClInclude Include="IMouseListener.h" />
-    <ClInclude Include="IUICtrl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
