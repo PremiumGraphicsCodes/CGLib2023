@@ -15,6 +15,12 @@ class Canvas : public IMouseListener
 public:
 	Canvas();
 
+	Canvas(std::unique_ptr<IUICtrl> ctrl, std::unique_ptr<IRenderer> renderer) :
+		ctrl(std::move(ctrl)),
+		renderer(std::move(renderer))
+	{
+	}
+
 	virtual ~Canvas() {}
 
 	void setUICtrl(std::unique_ptr<IUICtrl> ctrl) { this->ctrl = std::move(ctrl); }

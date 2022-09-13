@@ -121,6 +121,7 @@ bool Window::init()
 	glfwSetMouseButtonCallback(window, onMouse);
 	glfwSetCursorPosCallback(window, onMouseMove);
 
+	::canvas->getRenderer()->init();
 
 	return true;
 }

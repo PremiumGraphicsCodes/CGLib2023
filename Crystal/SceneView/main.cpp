@@ -123,15 +123,11 @@ private:
 
 int main() {
 	auto renderer = std::make_unique<Renderer>();
-
 	auto uiCtrl = std::make_unique<Crystal::UI::CameraUICtrl>(renderer->getCamera());
-	Crystal::UI::Canvas canvas;
-	canvas.setRenderer(std::move(renderer));
-	canvas.setUICtrl(std::move(uiCtrl));
+
+	Crystal::UI::Canvas canvas(std::move(uiCtrl), std::move(renderer));
 	Crystal::UI::Window app("Hello", &canvas);
 	app.init();
-	canvas.getRenderer()->init();
 	
-
 	app.show();
 }
