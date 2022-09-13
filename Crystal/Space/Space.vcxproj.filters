@@ -2,8 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="ZOrderCurve3d.h" />
+    <ClInclude Include="ZOrderCurve2d.h" />
+    <ClInclude Include="MarchingCubesTable.h" />
+    <ClInclude Include="LinearOctreeIndex.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
+    <ClCompile Include="ZOrderCurve2d.cpp" />
+    <ClCompile Include="LinearOctreeIndex.cpp" />
   </ItemGroup>
 </Project>
