@@ -6,10 +6,10 @@
 namespace Crystal {
 	namespace UI {
 
-class ISRenderer
+class IRenderer
 {
 public:
-	ISRenderer() = default;
+	IRenderer() = default;
 
 	virtual void init() = 0;
 

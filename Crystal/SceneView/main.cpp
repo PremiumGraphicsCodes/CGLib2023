@@ -60,7 +60,7 @@ namespace {
 #include "Crystal/AppBase/IRenderer.h"
 #include "CGLib/Shader/ShaderBuilder.h"
 
-class Renderer : public Crystal::UI::ISRenderer
+class Renderer : public Crystal::UI::IRenderer
 {
 public:
 	Renderer() :

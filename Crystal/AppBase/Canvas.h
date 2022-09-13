@@ -19,7 +19,7 @@ public:
 
 	void setUICtrl(std::unique_ptr<IUICtrl> ctrl) { this->ctrl = std::move(ctrl); }
 
-	void setRenderer(std::unique_ptr<ISRenderer> renderer) { this->renderer = std::move(renderer); }
+	void setRenderer(std::unique_ptr<IRenderer> renderer) { this->renderer = std::move(renderer); }
 
 	virtual void onLeftButtonDown(const Math::Vector2df& position) override;
 
@@ -45,11 +45,11 @@ public:
 		this->renderer->render(width, height);
 	}
 
-	ISRenderer* getRenderer() { return renderer.get(); }
+	IRenderer* getRenderer() { return renderer.get(); }
 
 private:
 	std::unique_ptr<IUICtrl> ctrl;
-	std::unique_ptr<ISRenderer> renderer;
+	std::unique_ptr<IRenderer> renderer;
 };
 
 	}
