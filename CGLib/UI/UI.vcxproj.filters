@@ -39,6 +39,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="IOkCancelView.h" />
+    <ClInclude Include="IView.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">

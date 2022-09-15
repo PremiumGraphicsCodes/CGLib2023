@@ -178,6 +178,7 @@
     <ClInclude Include="imstb_truetype.h" />
     <ClInclude Include="IntView.h" />
     <ClInclude Include="IOkCancelView.h" />
+    <ClInclude Include="IView.h" />
     <ClInclude Include="IWindow.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="Vector3dView.h" />

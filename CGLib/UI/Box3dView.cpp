@@ -4,7 +4,7 @@ using namespace Crystal::Math;
 using namespace Crystal::UI;
 
 Box3dView::Box3dView(const std::string& name) :
-	IWindow(name),
+	IView(name),
 	minView("Min", Vector3dd(0, 0, 0)),
 	maxView("Max", Vector3dd(1, 1, 1))
 {
@@ -13,7 +13,7 @@ Box3dView::Box3dView(const std::string& name) :
 }
 
 Box3dView::Box3dView(const std::string& name, const Box3df& value) :
-	IWindow(name),
+	IView(name),
 	minView("Min", value.getMin()),
 	maxView("Max", value.getMax())
 {

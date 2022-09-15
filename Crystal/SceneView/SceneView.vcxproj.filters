@@ -2,6 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PSBoxView.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -10,5 +14,11 @@
     <Filter Include="ParticleSystem">
       <UniqueIdentifier>{3aabb37e-9e84-402f-9986-e02e2e901a47}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PSBoxView.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
 </Project>
