@@ -9,6 +9,7 @@
 #include "GLFW/glfw3.h"
 
 #include "Crystal/AppBase/CameraUICtrl.h"
+#include "Crystal/AppBase/Panel.h"
 
 #include <stdio.h>
 
@@ -164,7 +165,7 @@ int main() {
 	app.init();
 
 	app.add(new ParticleSystemMenu("ParticleSystem"));
-	//app.add(new ControlPanel("Panel"));
+	app.add(new Panel("Control"));
 	
 	app.show();
 }
