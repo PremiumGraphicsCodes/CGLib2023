@@ -63,10 +63,29 @@ namespace {
 #include "Crystal/AppBase/MenuItem.h"
 #include "CGLib/Shader/ShaderBuilder.h"
 
+class World
+{
+public:
+	void init()
+	{
+		psScene.add(new Particle(Vector3df(0, 0, 0)));
+
+		wfScene.add(new Vertex(Vector3df(0, 0, 0)));
+		wfScene.add(new Vertex(Vector3df(1, 0, 0)));
+		wfScene.addIndex(0);
+		wfScene.addIndex(1);
+	}
+
+public:
+	ParticleSystemScene psScene;
+	WireFrameScene wfScene;
+};
+
 class Renderer : public Crystal::UI::IRenderer
 {
 public:
-	Renderer() :
+	explicit Renderer(World* world) :
+		world(world),
 		camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
 	{}
 
@@ -81,18 +100,11 @@ public:
 		line.setShader(builder.getShader());
 		line.link();
 
-		psScene.add(new Particle(Vector3df(0, 0, 0)));
-
-		this->presenter = std::make_unique<Crystal::UI::ParticleSystemPresenter>(&psScene, &point);
+		this->presenter = std::make_unique<Crystal::UI::ParticleSystemPresenter>(&world->psScene, &point);
 		presenter->build();
 		presenter->send();
 
-		wfScene.add(new Vertex(Vector3df(0, 0, 0)));
-		wfScene.add(new Vertex(Vector3df(1, 0, 0)));
-		wfScene.addIndex(0);
-		wfScene.addIndex(1);
-
-		this->wfPresenter = std::make_unique<Crystal::UI::WireFramePresenter>(&wfScene, &line);
+		this->wfPresenter = std::make_unique<Crystal::UI::WireFramePresenter>(&world->wfScene, &line);
 		wfPresenter->build();
 		wfPresenter->send();
 
@@ -112,9 +124,7 @@ public:
 	Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:
-	ParticleSystemScene psScene;
-	WireFrameScene wfScene;
-
+	World* world;
 	std::unique_ptr<Crystal::UI::ParticleSystemPresenter> presenter;
 	std::unique_ptr<Crystal::UI::WireFramePresenter> wfPresenter;
 
@@ -157,7 +167,10 @@ public:
 */
 
 int main() {
-	auto renderer = std::make_unique<Renderer>();
+	World world;
+	world.init();
+
+	auto renderer = std::make_unique<Renderer>(&world);
 	auto uiCtrl = std::make_unique<Crystal::UI::CameraUICtrl>(renderer->getCamera());
 
 	Crystal::UI::Canvas canvas(std::move(uiCtrl), std::move(renderer));
