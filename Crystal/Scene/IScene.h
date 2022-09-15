@@ -6,12 +6,13 @@
 #include "CGLib/Math/Box3d.h"
 #include "CGLib/Graphics/Camera.h"
 
-//#include "IPresenter.h"
+#include "IPresenter.h"
+#include "CGLib/Util/UnCopyable.h"
 
 namespace Crystal {
 	namespace Scene {
 
-class IScene
+class IScene : private UnCopyable
 {
 public:
 	IScene();
@@ -64,7 +65,7 @@ public:
 
 	bool isLeaf() const { return children.empty(); }
 
-	//virtual IPresenter* getPresenter() = 0;
+	virtual IPresenter* getPresenter() { return nullptr; }
 
 protected:
 	std::string name;

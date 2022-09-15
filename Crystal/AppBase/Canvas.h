@@ -15,9 +15,9 @@ class Canvas : public IMouseListener
 public:
 	Canvas();
 
-	Canvas(std::unique_ptr<IUICtrl> ctrl, std::unique_ptr<IRenderer> renderer) :
+	Canvas(std::unique_ptr<IUICtrl> ctrl, IRenderer* renderer) :
 		ctrl(std::move(ctrl)),
-		renderer(std::move(renderer))
+		renderer(renderer)
 	{
 	}
 
@@ -25,7 +25,7 @@ public:
 
 	void setUICtrl(std::unique_ptr<IUICtrl> ctrl) { this->ctrl = std::move(ctrl); }
 
-	void setRenderer(std::unique_ptr<IRenderer> renderer) { this->renderer = std::move(renderer); }
+	void setRenderer(IRenderer* renderer) { this->renderer = renderer; }
 
 	virtual void onLeftButtonDown(const Math::Vector2df& position) override;
 
@@ -51,11 +51,11 @@ public:
 		this->renderer->render(width, height);
 	}
 
-	IRenderer* getRenderer() { return renderer.get(); }
+	IRenderer* getRenderer() { return renderer; }
 
 private:
 	std::unique_ptr<IUICtrl> ctrl;
-	std::unique_ptr<IRenderer> renderer;
+	IRenderer* renderer;
 };
 
 	}

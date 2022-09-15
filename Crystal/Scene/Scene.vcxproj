@@ -154,14 +154,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="IParticle.h" />
+    <ClInclude Include="IPresenter.h" />
     <ClInclude Include="IScene.h" />
     <ClInclude Include="IVertex.h" />
+    <ClInclude Include="ParticleSystemPresenter.h" />
     <ClInclude Include="ParticleSystemScene.h" />
+    <ClInclude Include="WireFramePresenter.h" />
     <ClInclude Include="WireFrameScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IScene.cpp" />
+    <ClCompile Include="ParticleSystemPresenter.cpp" />
     <ClCompile Include="ParticleSystemScene.cpp" />
+    <ClCompile Include="WireFramePresenter.cpp" />
     <ClCompile Include="WireFrameScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -3,7 +3,7 @@
 #include "CGLib/Graphics/Camera.h"
 
 namespace Crystal {
-	namespace UI {
+	namespace Scene {
 
 class IPresenter
 {

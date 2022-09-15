@@ -1,12 +1,12 @@
 #pragma once
 
 #include "../Renderer/PointRenderer.h"
-#include "../Scene/ParticleSystemScene.h"
 #include "CGLib/Shader/VertexBuffer.h"
 #include "IPresenter.h"
 
 namespace Crystal {
-	namespace UI {
+	namespace Scene {
+		class ParticleSystemScene;
 
 class ParticleSystemPresenter : public IPresenter
 {

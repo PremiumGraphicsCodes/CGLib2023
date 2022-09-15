@@ -1,7 +1,7 @@
 #include "WireFramePresenter.h"
 
 using namespace Crystal::Graphics;
-using namespace Crystal::UI;
+using namespace Crystal::Scene;
 
 void WireFramePresenter::build()
 {

@@ -14,6 +14,13 @@
     <ClInclude Include="IVertex.h">
       <Filter>WireFrame</Filter>
     </ClInclude>
+    <ClInclude Include="IPresenter.h" />
+    <ClInclude Include="ParticleSystemPresenter.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="WireFramePresenter.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IScene.cpp" />
@@ -21,6 +28,12 @@
       <Filter>ParticleSystem</Filter>
     </ClCompile>
     <ClCompile Include="WireFrameScene.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemPresenter.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="WireFramePresenter.cpp">
       <Filter>WireFrame</Filter>
     </ClCompile>
   </ItemGroup>

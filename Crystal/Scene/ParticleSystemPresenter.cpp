@@ -1,7 +1,8 @@
 #include "ParticleSystemPresenter.h"
+#include "ParticleSystemScene.h"
 
 using namespace Crystal::Graphics;
-using namespace Crystal::UI;
+using namespace Crystal::Scene;
 
 void ParticleSystemPresenter::build()
 {

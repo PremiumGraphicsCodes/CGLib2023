@@ -3,8 +3,6 @@
 #include "../Scene/ParticleSystemScene.h"
 #include "../Scene/WireFrameScene.h"
 
-#include "ParticleSystemPresenter.h"
-#include "WireFramePresenter.h"
 #include "Crystal/AppBase/Canvas.h"
 #include "GLFW/glfw3.h"
 
@@ -66,19 +64,23 @@ namespace {
 class World
 {
 public:
+
+
 	void init()
 	{
-		psScene.add(new Particle(Vector3df(0, 0, 0)));
 
+		/*
 		wfScene.add(new Vertex(Vector3df(0, 0, 0)));
 		wfScene.add(new Vertex(Vector3df(1, 0, 0)));
 		wfScene.addIndex(0);
 		wfScene.addIndex(1);
+		*/
+		//rootScene.addScene(&psScene);
 	}
 
 public:
-	ParticleSystemScene psScene;
-	WireFrameScene wfScene;
+
+	//WireFrameScene wfScene;
 };
 
 class Renderer : public Crystal::UI::IRenderer
@@ -88,6 +90,7 @@ public:
 		world(world),
 		camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
 	{}
+
 
 	void init() override
 	{
@@ -100,15 +103,25 @@ public:
 		line.setShader(builder.getShader());
 		line.link();
 
-		this->presenter = std::make_unique<Crystal::UI::ParticleSystemPresenter>(&world->psScene, &point);
-		presenter->build();
-		presenter->send();
+		/*
 
 		this->wfPresenter = std::make_unique<Crystal::UI::WireFramePresenter>(&world->wfScene, &line);
 		wfPresenter->build();
 		wfPresenter->send();
-
+		*/
 	}
+
+	void addParticleSystem()
+	{
+		psScene.add(new Particle(Vector3df(0, 0, 0)));
+
+		auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(&psScene, &point);
+		presenter->build();
+		presenter->send();
+		psScene.setPresenter(std::move(presenter));
+		rootScene.addScene(&psScene);
+	}
+
 
 	void render(const int width, const int height) override
 	{
@@ -116,8 +129,12 @@ public:
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+		auto children = rootScene.getChildren();
+		for (auto c : children) {
+			c->getPresenter()->render(camera);
+		}
 		//presenter.render(camera);
-		wfPresenter->render(camera);
+		//wfPresenter->render(camera);
 
 	}
 
@@ -125,13 +142,15 @@ public:
 
 private:
 	World* world;
-	std::unique_ptr<Crystal::UI::ParticleSystemPresenter> presenter;
-	std::unique_ptr<Crystal::UI::WireFramePresenter> wfPresenter;
 
 	Crystal::Renderer::PointRenderer point;
 	Crystal::Renderer::LineRenderer line;
 
 	Crystal::Graphics::Camera camera;
+
+	IScene rootScene;
+	ParticleSystemScene psScene;
+
 };
 
 class ParticleSystemMenu : public IMenu
@@ -150,32 +169,18 @@ public:
 	}
 };
 
-/*
-class ControlPanel : public IWindow
-{
-public:
-	explicit ControlPanel(const std::string& name) :
-		IWindow(name)
-	{
-	}
-
-	void onShow() override
-	{
-
-	}
-};
-*/
-
 int main() {
 	World world;
 	world.init();
 
-	auto renderer = std::make_unique<Renderer>(&world);
-	auto uiCtrl = std::make_unique<Crystal::UI::CameraUICtrl>(renderer->getCamera());
+	Renderer renderer(&world);
+	auto uiCtrl = std::make_unique<Crystal::UI::CameraUICtrl>(renderer.getCamera());
 
-	Crystal::UI::Canvas canvas(std::move(uiCtrl), std::move(renderer));
+	Crystal::UI::Canvas canvas(std::move(uiCtrl), &renderer);
 	Crystal::UI::Window app("Hello", &canvas);
 	app.init();
+
+	renderer.addParticleSystem();
 
 	app.add(new ParticleSystemMenu("ParticleSystem"));
 	app.add(new Panel("Control"));
