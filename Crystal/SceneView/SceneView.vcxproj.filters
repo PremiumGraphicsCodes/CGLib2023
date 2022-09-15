@@ -6,4 +6,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ParticleSystem">
+      <UniqueIdentifier>{3aabb37e-9e84-402f-9986-e02e2e901a47}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
 </Project>
