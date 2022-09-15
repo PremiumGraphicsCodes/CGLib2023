@@ -23,17 +23,17 @@ void PSBoxView::onOk()
 {
 	const auto box = boxView.getValue();
 
+	auto scene = new ParticleSystemScene();
+
 	std::mt19937 mt{ std::random_device{}() };
 	std::uniform_real_distribution<double> dist(0.0, 1.0);
 	for (int i = 0; i < countView.getValue(); ++i) {
 		const auto u = dist(mt);
 		const auto v = dist(mt);
 		const auto w = dist(mt);
-		box.getPosition(u, v, w);
+		const auto pos = box.getPosition(u, v, w);
+		scene->add(new Particle(pos));
 	}
-
-	auto scene = new ParticleSystemScene();
-	scene->add(new Particle(Vector3df(0, 0, 0)));
 
 	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, &renderer->point);
 	presenter->build();

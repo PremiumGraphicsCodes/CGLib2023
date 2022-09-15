@@ -21,7 +21,7 @@ void ParticleSystemPresenter::send()
 	for (auto p : particles) {
 		position.add(p->getPosition());
 		color.add(ColorRGBAf(1, 0, 0, 0));
-		size.add(100);
+		size.add(1);
 	}
 
 	vbo.position.send(position);
