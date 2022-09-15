@@ -1,10 +1,8 @@
-﻿#include "../../CGLib/Shader/glew.h"
-
+﻿
 #include "../Scene/ParticleSystemScene.h"
 #include "../Scene/WireFrameScene.h"
 
 #include "Crystal/AppBase/Canvas.h"
-#include "GLFW/glfw3.h"
 
 #include "Crystal/AppBase/CameraUICtrl.h"
 #include "CGLib/UI/Panel.h"
@@ -29,37 +27,6 @@ using namespace Crystal::Scene;
 using namespace Crystal::Graphics;
 //using namespace Crystal::Renderer;
 using namespace Crystal::UI;
-
-namespace {
-	struct Particle : public IParticle
-	{
-	public:
-		Particle(const Vector3df& p) {
-			this->pos = p;
-		}
-
-		Vector3df getPosition() const override {
-			return pos;
-		}
-
-	private:
-		Vector3df pos;
-	};
-
-	struct Vertex : public IVertex
-	{
-	public:
-		explicit Vertex(const Vector3df& p) : pos(p) {
-		}
-
-		Vector3df getPosition() const override {
-			return pos;
-		}
-
-	private:
-		Vector3df pos;
-	};
-}
 
 class Renderer : public Crystal::UI::IRenderer
 {
