@@ -19,7 +19,7 @@ public:
 
 	void setPresenter(std::unique_ptr<ParticleSystemPresenter> p) { this->presenter = std::move(p); }
 
-	IPresenter* getPresenter() { return presenter.get(); }
+	IPresenter* getPresenter() override { return presenter.get(); }
 
 private:
 	std::vector<IParticle*> particles;

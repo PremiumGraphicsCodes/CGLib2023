@@ -69,18 +69,10 @@ public:
 	void init()
 	{
 
-		/*
-		wfScene.add(new Vertex(Vector3df(0, 0, 0)));
-		wfScene.add(new Vertex(Vector3df(1, 0, 0)));
-		wfScene.addIndex(0);
-		wfScene.addIndex(1);
-		*/
-		//rootScene.addScene(&psScene);
 	}
 
 public:
 
-	//WireFrameScene wfScene;
 };
 
 class Renderer : public Crystal::UI::IRenderer
@@ -103,12 +95,6 @@ public:
 		line.setShader(builder.getShader());
 		line.link();
 
-		/*
-
-		this->wfPresenter = std::make_unique<Crystal::UI::WireFramePresenter>(&world->wfScene, &line);
-		wfPresenter->build();
-		wfPresenter->send();
-		*/
 	}
 
 	void addParticleSystem()
@@ -122,6 +108,22 @@ public:
 		rootScene.addScene(&psScene);
 	}
 
+	void addWireFrame()
+	{
+		wfScene.add(new Vertex(Vector3df(0, 0, 0)));
+		wfScene.add(new Vertex(Vector3df(1, 0, 0)));
+		wfScene.addIndex(0);
+		wfScene.addIndex(1);
+
+
+		auto wfPresenter = std::make_unique<Crystal::Scene::WireFramePresenter>(&wfScene, &line);
+		wfPresenter->build();
+		wfPresenter->send();
+		wfScene.setPresenter(std::move(wfPresenter));
+
+		rootScene.addScene(&wfScene);
+
+	}
 
 	void render(const int width, const int height) override
 	{
@@ -150,6 +152,7 @@ private:
 
 	IScene rootScene;
 	ParticleSystemScene psScene;
+	WireFrameScene wfScene;
 
 };
 
@@ -181,6 +184,7 @@ int main() {
 	app.init();
 
 	renderer.addParticleSystem();
+	renderer.addWireFrame();
 
 	app.add(new ParticleSystemMenu("ParticleSystem"));
 	app.add(new Panel("Control"));

@@ -1,12 +1,12 @@
 #pragma once
 
 #include "../Renderer/LineRenderer.h"
-#include "../Scene/WireFrameScene.h"
 #include "CGLib/Shader/VertexBuffer.h"
 #include "IPresenter.h"
 
 namespace Crystal {
 	namespace Scene {
+		class WireFrameScene;
 
 class WireFramePresenter : public IPresenter
 {

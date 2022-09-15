@@ -2,6 +2,7 @@
 
 #include "IScene.h"
 #include "IVertex.h"
+#include "WireFramePresenter.h"
 #include <vector>
 
 namespace Crystal {
@@ -19,9 +20,14 @@ public:
 
 	std::vector<unsigned int> getIndices() const { return indices; }
 
+	void setPresenter(std::unique_ptr<WireFramePresenter> p) { this->presenter = std::move(p); }
+
+	IPresenter* getPresenter() override { return presenter.get(); }
+
 private:
 	std::vector<unsigned int> indices;
 	std::vector<IVertex*> vertices;
+	std::unique_ptr<WireFramePresenter> presenter;
 };
 
 	}

@@ -1,5 +1,7 @@
 #include "WireFramePresenter.h"
 
+#include "../Scene/WireFrameScene.h"
+
 using namespace Crystal::Graphics;
 using namespace Crystal::Scene;
 
