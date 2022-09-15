@@ -7,12 +7,17 @@
 #include "GLFW/glfw3.h"
 
 #include "Crystal/AppBase/CameraUICtrl.h"
-#include "Crystal/AppBase/Panel.h"
+#include "CGLib/UI/Panel.h"
 
 #include <stdio.h>
 
 #include "../Renderer/PointRenderer.h"
 #include "../Renderer/LineRenderer.h"
+
+#include "Crystal/AppBase/Window.h"
+#include "Crystal/AppBase/IRenderer.h"
+#include "Crystal/AppBase/MenuItem.h"
+#include "CGLib/Shader/ShaderBuilder.h"
 
 
 #include <iostream>
@@ -56,30 +61,10 @@ namespace {
 	};
 }
 
-#include "Crystal/AppBase/Window.h"
-#include "Crystal/AppBase/IRenderer.h"
-#include "Crystal/AppBase/MenuItem.h"
-#include "CGLib/Shader/ShaderBuilder.h"
-
-class World
-{
-public:
-
-
-	void init()
-	{
-
-	}
-
-public:
-
-};
-
 class Renderer : public Crystal::UI::IRenderer
 {
 public:
-	explicit Renderer(World* world) :
-		world(world),
+	explicit Renderer() :
 		camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
 	{}
 
@@ -127,6 +112,7 @@ public:
 
 	void render(const int width, const int height) override
 	{
+		assert(GL_NO_ERROR == glGetError());
 		glViewport(0, 0, width, height);
 		glClearColor(0.0, 0.0, 0.0, 0.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -137,14 +123,13 @@ public:
 		}
 		//presenter.render(camera);
 		//wfPresenter->render(camera);
+		assert(GL_NO_ERROR == glGetError());
 
 	}
 
 	Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:
-	World* world;
-
 	Crystal::Renderer::PointRenderer point;
 	Crystal::Renderer::LineRenderer line;
 
@@ -173,10 +158,7 @@ public:
 };
 
 int main() {
-	World world;
-	world.init();
-
-	Renderer renderer(&world);
+	Renderer renderer;
 	auto uiCtrl = std::make_unique<Crystal::UI::CameraUICtrl>(renderer.getCamera());
 
 	Crystal::UI::Canvas canvas(std::move(uiCtrl), &renderer);

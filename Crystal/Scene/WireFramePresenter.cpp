@@ -34,6 +34,7 @@ void WireFramePresenter::render(const Camera& camera)
 	view->buffer.indices = indices;
 	view->buffer.modelViewMatrix = camera.getModelViewMatrix();
 	view->buffer.projectionMatrix = camera.getProjectionMatrix();
+	view->buffer.lineWidth = 1.0f;
 
 	view->render();
 }

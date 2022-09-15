@@ -36,6 +36,9 @@
       <Filter>Vector</Filter>
     </ClInclude>
     <ClInclude Include="Box3dView.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="Panel.h" />
+    <ClInclude Include="IOkCancelView.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -63,6 +66,8 @@
       <Filter>Vector</Filter>
     </ClCompile>
     <ClCompile Include="Box3dView.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Panel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -10,7 +10,6 @@
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IMenuItem.h" />
     <ClInclude Include="MenuItem.h" />
-    <ClInclude Include="Panel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -18,7 +17,6 @@
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="CameraUICtrl.cpp" />
     <ClCompile Include="IMenuItem.cpp" />
-    <ClCompile Include="Panel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

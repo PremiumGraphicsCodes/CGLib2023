@@ -40,6 +40,9 @@ void LineRenderer::render()
 {
 	shader->bind();
 
+	assert(GL_NO_ERROR == glGetError());
+
+
 	shader->enable(GL_DEPTH_TEST);
 
 	Uniform projection(uniformLoc.projection);
@@ -63,6 +66,9 @@ void LineRenderer::render()
 	shader->setLineWidth(1);
 
 	shader->disable(GL_DEPTH_TEST);
+
+	assert(GL_NO_ERROR == glGetError());
+
 
 	shader->unbind();
 }

@@ -1,6 +1,6 @@
 #include "Panel.h"
 
-#include "CGLib/UI/imgui.h"
+#include "imgui.h"
 
 using namespace Crystal::UI;
 

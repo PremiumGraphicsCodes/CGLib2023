@@ -161,7 +161,6 @@
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="MenuItem.h" />
-    <ClInclude Include="Panel.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -169,7 +168,6 @@
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="IMenu.cpp" />
     <ClCompile Include="IMenuItem.cpp" />
-    <ClCompile Include="Panel.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
