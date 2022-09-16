@@ -31,7 +31,7 @@ void WFLineView::onOk()
 	scene->addIndex(0);
 	scene->addIndex(1);
 
-	auto wfPresenter = std::make_unique<Crystal::Scene::WireFramePresenter>(scene, &renderer->line);
+	auto wfPresenter = std::make_unique<Crystal::Scene::WireFramePresenter>(scene, renderer->getLineRenderer());
 	wfPresenter->build();
 	wfPresenter->send();
 	scene->setPresenter(std::move(wfPresenter));

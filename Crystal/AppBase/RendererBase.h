@@ -34,14 +34,17 @@ public:
 
 	virtual void render(const int width, const int height) override;
 
-	Crystal::Graphics::Camera* getCamera() { return &camera; }
+	Graphics::Camera* getCamera() { return &camera; }
 
-	Crystal::Renderer::PointRenderer point;
-	Crystal::Renderer::LineRenderer line;
+	Renderer::PointRenderer* getPointRenderer() { return &point; }
+
+	Renderer::LineRenderer* getLineRenderer() { return &line; }
 
 private:
 	IWorld* world;
-	Crystal::Graphics::Camera camera;
+	Graphics::Camera camera;
+	Renderer::PointRenderer point;
+	Renderer::LineRenderer line;
 
 };
 

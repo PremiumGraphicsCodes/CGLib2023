@@ -37,7 +37,7 @@ void PSBoxView::onOk()
 		scene->add(new Particle(pos));
 	}
 
-	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, &renderer->point);
+	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, renderer->getPointRenderer());
 	presenter->build();
 	presenter->send();
 	scene->setPresenter(std::move(presenter));
