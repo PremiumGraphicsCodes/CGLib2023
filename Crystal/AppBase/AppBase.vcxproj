@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CameraMenu.h" />
     <ClInclude Include="CameraUICtrl.h" />
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="IMenu.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CameraMenu.cpp" />
     <ClCompile Include="CameraUICtrl.cpp" />
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="IMenu.cpp" />

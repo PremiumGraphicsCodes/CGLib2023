@@ -14,7 +14,7 @@ class CameraUICtrl : public IUICtrl
 public:
 	explicit CameraUICtrl(Graphics::Camera* camera);
 
-	virtual ~CameraUICtrl() {}
+	~CameraUICtrl() {}
 
 	virtual void onLeftButtonDown(const Math::Vector2df& position) override;
 
