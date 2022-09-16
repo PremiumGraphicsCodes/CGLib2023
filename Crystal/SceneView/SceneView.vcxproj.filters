@@ -12,6 +12,9 @@
     <ClCompile Include="WireFrameMenu.cpp">
       <Filter>WireFrame</Filter>
     </ClCompile>
+    <ClCompile Include="WFLineView.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -33,6 +36,9 @@
       <Filter>ParticleSystem</Filter>
     </ClInclude>
     <ClInclude Include="WireFrameMenu.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="WFLineView.h">
       <Filter>WireFrame</Filter>
     </ClInclude>
   </ItemGroup>

@@ -28,24 +28,6 @@ void Renderer::init()
 	line.link();
 }
 
-/*
-void Renderer::addWireFrame()
-{
-	wfScene.add(new Vertex(Vector3df(0, 0, 0)));
-	wfScene.add(new Vertex(Vector3df(1, 0, 0)));
-	wfScene.addIndex(0);
-	wfScene.addIndex(1);
-
-
-	auto wfPresenter = std::make_unique<Crystal::Scene::WireFramePresenter>(&wfScene, &line);
-	wfPresenter->build();
-	wfPresenter->send();
-	wfScene.setPresenter(std::move(wfPresenter));
-
-	rootScene.addScene(&wfScene);
-}
-*/
-
 
 void Renderer::render(const int width, const int height)
 {

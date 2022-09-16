@@ -2,16 +2,14 @@
 
 #include "CGLib/UI/Panel.h"
 #include "Crystal/AppBase/MenuItem.h"
-#include "PSBoxView.h"
+#include "WFLineView.h"
 
 using namespace Crystal::UI;
 
 WireFrameMenu::WireFrameMenu(const std::string& name, Panel* control, World* world, Renderer* renderer) :
 	IMenu(name)
 {
-	/*
-	add(new MenuItem("Sphere", [&control, &world, &renderer]() {
-		control->add(new PSBoxView("PSBox", world, renderer));
+	add(new MenuItem("Line", [&control, &world, &renderer]() {
+		control->add(new WFLineView("WFLine", world, renderer));
 		}));
-		*/
 }

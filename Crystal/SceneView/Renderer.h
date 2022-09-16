@@ -14,12 +14,9 @@ namespace Crystal {
 class World : public Crystal::UI::IWorld
 {
 public:
-	void addWireFrame();
-
 	void add(Scene::IScene* scene);
 
 	Scene::IScene rootScene;
-	Crystal::Scene::WireFrameScene wfScene;
 };
 
 class Renderer : public Crystal::UI::IRenderer
