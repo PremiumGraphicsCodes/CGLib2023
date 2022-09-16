@@ -165,7 +165,9 @@
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="ParticleSystemMenu.h" />
     <ClInclude Include="PSBoxView.h" />
+    <ClInclude Include="WFLineView.h" />
     <ClInclude Include="Window.h" />
+    <ClInclude Include="WireFrameMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CameraMenu.cpp" />
@@ -177,7 +179,9 @@
     <ClCompile Include="IWorld.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp" />
     <ClCompile Include="PSBoxView.cpp" />
+    <ClCompile Include="WFLineView.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WireFrameMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,27 +2,8 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="WireFrameMenu.cpp">
-      <Filter>WireFrame</Filter>
-    </ClCompile>
-    <ClCompile Include="WFLineView.cpp">
-      <Filter>WireFrame</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="WireFrame">
-      <UniqueIdentifier>{19a1b704-0f2b-452d-bab9-857e81dcfdcc}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="WireFrameMenu.h">
-      <Filter>WireFrame</Filter>
-    </ClInclude>
-    <ClInclude Include="WFLineView.h">
-      <Filter>WireFrame</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

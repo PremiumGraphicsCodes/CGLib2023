@@ -1,11 +1,11 @@
 ﻿#include "Crystal/AppBase/Canvas.h"
 #include "Crystal/AppBase/Window.h"
 #include "Crystal/AppBase/ParticleSystemMenu.h"
+#include "Crystal/AppBase/WireFrameMenu.h"
 #include "Crystal/AppBase/IWorld.h"
 
 #include "CGLib/UI/Panel.h"
 
-#include "WireFrameMenu.h"
 
 
 using namespace Crystal::Math;

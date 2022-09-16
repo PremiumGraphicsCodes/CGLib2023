@@ -146,8 +146,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="WFLineView.cpp" />
-    <ClCompile Include="WireFrameMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -174,10 +172,6 @@
     <ProjectReference Include="..\Scene\Scene.vcxproj">
       <Project>{8f772d35-8835-4288-941e-867f4e7e7f8f}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="WFLineView.h" />
-    <ClInclude Include="WireFrameMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

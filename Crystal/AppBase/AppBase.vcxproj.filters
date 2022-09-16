@@ -18,6 +18,12 @@
     <ClInclude Include="PSBoxView.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
+    <ClInclude Include="WFLineView.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="WireFrameMenu.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -34,6 +40,12 @@
     <ClCompile Include="PSBoxView.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
+    <ClCompile Include="WFLineView.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="WireFrameMenu.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -41,6 +53,9 @@
   <ItemGroup>
     <Filter Include="ParticleSystem">
       <UniqueIdentifier>{8c0db8a3-468e-4913-be1e-8f35131d3efc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WireFrame">
+      <UniqueIdentifier>{30ad21b2-e4f0-4367-8587-ab4daaa5ad07}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
