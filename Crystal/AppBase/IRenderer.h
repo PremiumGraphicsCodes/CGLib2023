@@ -9,11 +9,12 @@
 
 namespace Crystal {
 	namespace UI {
+		class IWorld;
 
 class IRenderer
 {
 public:
-	IRenderer();
+	IRenderer(IWorld* world);
 
 	~IRenderer() = default;
 
@@ -21,7 +22,7 @@ public:
 
 	virtual void onInit() = 0;
 
-	virtual void render(const int width, const int height) = 0;
+	virtual void render(const int width, const int height);
 
 	Crystal::Graphics::Camera* getCamera() { return &camera; }
 
@@ -29,6 +30,7 @@ public:
 	Crystal::Renderer::LineRenderer line;
 
 private:
+	IWorld* world;
 	Crystal::Graphics::Camera camera;
 
 };

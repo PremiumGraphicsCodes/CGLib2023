@@ -1,19 +1,12 @@
-﻿
-#include "Crystal/AppBase/Canvas.h"
-
-#include "Crystal/AppBase/CameraUICtrl.h"
-#include "CGLib/UI/Panel.h"
-
+﻿#include "Crystal/AppBase/Canvas.h"
 #include "Crystal/AppBase/Window.h"
+
+#include "CGLib/UI/Panel.h"
 
 #include "ParticleSystemMenu.h"
 #include "WireFrameMenu.h"
 
 #include "Renderer.h"
-
-#include <iostream>
-
-#include "CGLib/Math/Vector2d.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -29,9 +22,6 @@ int main() {
 	Crystal::UI::Canvas canvas(&renderer);
 	Crystal::UI::Window app("Hello", &canvas);
 	app.init();
-
-	//renderer.addParticleSystem();
-	//renderer.addWireFrame();
 
 	auto control = new Panel("Control");
 

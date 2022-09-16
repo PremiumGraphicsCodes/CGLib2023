@@ -23,8 +23,6 @@ public:
 
 	void onInit() override;
 
-	void render(const int width, const int height);
-
 private:
 	World* world;
 
