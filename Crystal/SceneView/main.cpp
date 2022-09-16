@@ -4,20 +4,12 @@
 #include "Crystal/AppBase/CameraUICtrl.h"
 #include "CGLib/UI/Panel.h"
 
-#include <stdio.h>
-
-#include "../Renderer/PointRenderer.h"
-#include "../Renderer/LineRenderer.h"
-
 #include "Crystal/AppBase/Window.h"
-#include "Crystal/AppBase/IRenderer.h"
-#include "Crystal/AppBase/MenuItem.h"
 
 #include "ParticleSystemMenu.h"
+#include "WireFrameMenu.h"
 
 #include "Renderer.h"
-
-#include "PSBoxView.h"
 
 #include <iostream>
 
@@ -45,6 +37,7 @@ int main() {
 	auto control = new Panel("Control");
 
 	app.add(new ParticleSystemMenu("ParticleSystem", control, &world, &renderer));
+	app.add(new WireFrameMenu("WireFrame", control, &world, &renderer));
 	app.add(control);
 	
 	app.show();

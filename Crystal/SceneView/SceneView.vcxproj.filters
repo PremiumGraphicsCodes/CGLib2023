@@ -9,6 +9,9 @@
     <ClCompile Include="ParticleSystemMenu.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
+    <ClCompile Include="WireFrameMenu.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -16,6 +19,9 @@
   <ItemGroup>
     <Filter Include="ParticleSystem">
       <UniqueIdentifier>{3aabb37e-9e84-402f-9986-e02e2e901a47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WireFrame">
+      <UniqueIdentifier>{19a1b704-0f2b-452d-bab9-857e81dcfdcc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -25,6 +31,9 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ParticleSystemMenu.h">
       <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="WireFrameMenu.h">
+      <Filter>WireFrame</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

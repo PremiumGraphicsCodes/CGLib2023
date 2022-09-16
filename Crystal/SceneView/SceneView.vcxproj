@@ -149,6 +149,7 @@
     <ClCompile Include="ParticleSystemMenu.cpp" />
     <ClCompile Include="PSBoxView.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="WireFrameMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -180,6 +181,7 @@
     <ClInclude Include="ParticleSystemMenu.h" />
     <ClInclude Include="PSBoxView.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="WireFrameMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

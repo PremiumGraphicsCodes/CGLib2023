@@ -8,10 +8,10 @@ namespace Crystal {
 		class World;
 		class Renderer;
 
-class ParticleSystemMenu : public IMenu
+class WireFrameMenu : public IMenu
 {
 public:
-	ParticleSystemMenu(const std::string& name, Panel* control, World* world, Renderer* renderer);
+	WireFrameMenu(const std::string& name, Panel* control, World* world, Renderer* renderer);
 
 };
 
