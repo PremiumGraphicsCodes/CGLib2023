@@ -47,7 +47,8 @@ public:
 };
 
 int main() {
-	Renderer renderer;
+	World world;
+	Renderer renderer(&world);
 	auto uiCtrl = std::make_unique<Crystal::UI::CameraUICtrl>(renderer.getCamera());
 
 	Crystal::UI::Canvas canvas(std::move(uiCtrl), &renderer);

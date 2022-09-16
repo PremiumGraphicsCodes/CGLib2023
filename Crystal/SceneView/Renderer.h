@@ -6,13 +6,20 @@
 #include "Crystal/Renderer/PointRenderer.h"
 #include "Crystal/Renderer/LineRenderer.h"
 
+#include "Crystal/AppBase/IWorld.h"
+
 namespace Crystal {
 	namespace UI {
+
+class World : public Crystal::UI::IWorld
+{
+public:
+};
 
 class Renderer : public Crystal::UI::IRenderer
 {
 public:
-	explicit Renderer();
+	explicit Renderer(World* world);
 
 
 	void init() override;
@@ -29,7 +36,7 @@ public:
 	Crystal::Renderer::LineRenderer line;
 
 private:
-
+	World* world;
 	Crystal::Graphics::Camera camera;
 
 	Scene::IScene rootScene;

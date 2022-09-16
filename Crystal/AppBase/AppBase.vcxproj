@@ -161,6 +161,7 @@
     <ClInclude Include="IMouseListener.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IUICtrl.h" />
+    <ClInclude Include="IWorld.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>

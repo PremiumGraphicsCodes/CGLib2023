@@ -6,7 +6,8 @@ using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-Renderer::Renderer() :
+Renderer::Renderer(World* world) :
+	world(world),
 	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
 {}
 

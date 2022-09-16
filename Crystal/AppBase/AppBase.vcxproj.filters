@@ -11,6 +11,7 @@
     <ClInclude Include="IMenuItem.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="CameraMenu.h" />
+    <ClInclude Include="IWorld.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
