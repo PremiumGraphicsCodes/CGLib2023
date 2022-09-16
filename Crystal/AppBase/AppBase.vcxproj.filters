@@ -24,6 +24,9 @@
     <ClInclude Include="WireFrameMenu.h">
       <Filter>WireFrame</Filter>
     </ClInclude>
+    <ClInclude Include="PMBoxView.h">
+      <Filter>PolygonMesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -46,6 +49,9 @@
     <ClCompile Include="WireFrameMenu.cpp">
       <Filter>WireFrame</Filter>
     </ClCompile>
+    <ClCompile Include="PMBoxView.cpp">
+      <Filter>PolygonMesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -56,6 +62,9 @@
     </Filter>
     <Filter Include="WireFrame">
       <UniqueIdentifier>{30ad21b2-e4f0-4367-8587-ab4daaa5ad07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolygonMesh">
+      <UniqueIdentifier>{9d8c7dde-21ae-4853-b32c-370755284e63}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

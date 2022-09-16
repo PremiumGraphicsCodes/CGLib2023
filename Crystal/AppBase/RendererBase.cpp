@@ -22,6 +22,10 @@ void RendererBase::init()
 	line.setShader(builder.getShader());
 	line.link();
 
+	builder.buildFromFile("../GLSL/Triangle.vs", "../GLSL/Triangle.fs");
+	triangle.setShader(builder.getShader());
+	triangle.link();
+
 	onInit();
 }
 

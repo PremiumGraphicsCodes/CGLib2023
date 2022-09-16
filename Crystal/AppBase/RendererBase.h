@@ -4,6 +4,7 @@
 
 #include "Crystal/Renderer/PointRenderer.h"
 #include "Crystal/Renderer/LineRenderer.h"
+#include "Crystal/Renderer/TriangleRenderer.h"
 
 #include <memory>
 
@@ -40,12 +41,14 @@ public:
 
 	Renderer::LineRenderer* getLineRenderer() { return &line; }
 
+	Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
+
 private:
 	IWorld* world;
 	Graphics::Camera camera;
 	Renderer::PointRenderer point;
 	Renderer::LineRenderer line;
-
+	Renderer::TriangleRenderer triangle;
 };
 
 
