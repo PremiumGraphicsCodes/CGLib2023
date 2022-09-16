@@ -3,7 +3,6 @@
 #include "CGLib/Math/Vector2d.h"
 
 #include "IUICtrl.h"
-#include "IRenderer.h"
 #include <memory>
 
 namespace Crystal {

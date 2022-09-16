@@ -4,6 +4,7 @@
 #include "CGLib/ThirdParty/glew-2.2.0/include/GL/glew.h"
 #include "GLFW/glfw3.h"
 #include "Canvas.h"
+#include "RendererBase.h"
 
 #include "CGLib/UI/imgui.h"
 #include "CGLib/UI/imgui_impl_glfw.h"
@@ -74,7 +75,7 @@ namespace {
 	}
 }
 
-Window::Window(const std::string& title, Canvas* canvas, IRenderer* renderer) :
+Window::Window(const std::string& title, Canvas* canvas, RendererBase* renderer) :
 	title(title),
 	renderer(renderer)
 {

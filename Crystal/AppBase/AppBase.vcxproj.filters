@@ -7,7 +7,7 @@
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="IMouseListener.h" />
     <ClInclude Include="CameraUICtrl.h" />
-    <ClInclude Include="IRenderer.h" />
+    <ClInclude Include="RendererBase.h" />
     <ClInclude Include="IMenuItem.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="CameraMenu.h" />
@@ -33,7 +33,7 @@
     <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="CameraMenu.cpp" />
     <ClCompile Include="IWorld.cpp" />
-    <ClCompile Include="IRenderer.cpp" />
+    <ClCompile Include="RendererBase.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>

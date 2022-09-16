@@ -7,12 +7,12 @@
 namespace Crystal {
 	namespace UI {
 		class IWorld;
-		class IRenderer;
+		class RendererBase;
 
 class PSBoxView : public IOkCancelView
 {
 public:
-	explicit PSBoxView(const std::string& name, IWorld* world, IRenderer* renderer);
+	explicit PSBoxView(const std::string& name, IWorld* world, RendererBase* renderer);
 
 	void onOk() override;
 
@@ -20,7 +20,7 @@ private:
 	Box3dView boxView;
 	IntView countView;
 	IWorld* world;
-	IRenderer* renderer;
+	RendererBase* renderer;
 };
 
 	}

@@ -11,12 +11,12 @@ namespace Crystal {
 	namespace UI {
 		class IWorld;
 
-class IRenderer
+class RendererBase
 {
 public:
-	IRenderer(IWorld* world);
+	RendererBase(IWorld* world);
 
-	~IRenderer() = default;
+	~RendererBase() = default;
 
 	void init();
 

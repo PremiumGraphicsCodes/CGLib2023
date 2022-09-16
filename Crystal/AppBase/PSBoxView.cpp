@@ -1,7 +1,7 @@
 #include "PSBoxView.h"
 
 #include "Crystal/Scene/ParticleSystemScene.h"
-#include "IRenderer.h"
+#include "RendererBase.h"
 #include "IWorld.h"
 
 #include <random>
@@ -10,7 +10,7 @@ using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-PSBoxView::PSBoxView(const std::string& name, IWorld* world, IRenderer* renderer) :
+PSBoxView::PSBoxView(const std::string& name, IWorld* world, RendererBase* renderer) :
 	IOkCancelView(name),
 	boxView("Box"),
 	countView("Count", 10000),

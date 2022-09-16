@@ -27,7 +27,7 @@ using namespace Crystal::Renderer;
 
 namespace {
 
-	class Renderer : public Crystal::UI::IRenderer
+	class Renderer : public Crystal::UI::RendererBase
 	{
 	public:
 		Renderer() :

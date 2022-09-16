@@ -7,12 +7,12 @@
 namespace Crystal {
 	namespace UI {
 		class IWorld;
-		class IRenderer;
+		class RendererBase;
 
 class WFLineView : public IOkCancelView
 {
 public:
-	explicit WFLineView(const std::string& name, IWorld* world, IRenderer* renderer);
+	explicit WFLineView(const std::string& name, IWorld* world, RendererBase* renderer);
 
 	void onOk() override;
 
@@ -20,7 +20,7 @@ private:
 	Line3dView lineView;
 	//IntView countView;
 	IWorld* world;
-	IRenderer* renderer;
+	RendererBase* renderer;
 };
 
 	}

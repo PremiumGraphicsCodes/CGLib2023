@@ -159,7 +159,7 @@
     <ClInclude Include="IMenu.h" />
     <ClInclude Include="IMenuItem.h" />
     <ClInclude Include="IMouseListener.h" />
-    <ClInclude Include="IRenderer.h" />
+    <ClInclude Include="RendererBase.h" />
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="IWorld.h" />
     <ClInclude Include="MenuItem.h" />
@@ -175,7 +175,7 @@
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="IMenu.cpp" />
     <ClCompile Include="IMenuItem.cpp" />
-    <ClCompile Include="IRenderer.cpp" />
+    <ClCompile Include="RendererBase.cpp" />
     <ClCompile Include="IWorld.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp" />
     <ClCompile Include="PSBoxView.cpp" />

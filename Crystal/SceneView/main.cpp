@@ -6,6 +6,7 @@
 
 #include "CGLib/UI/Panel.h"
 
+#include "Crystal/AppBase/RendererBase.h"
 
 
 using namespace Crystal::Math;
@@ -20,11 +21,11 @@ namespace {
 		public:
 	};
 
-	class Renderer : public Crystal::UI::IRenderer
+	class Renderer : public Crystal::UI::RendererBase
 	{
 	public:
 		explicit Renderer(World* world) :
-			IRenderer(world)
+			RendererBase(world)
 		{}
 
 		void onInit() override

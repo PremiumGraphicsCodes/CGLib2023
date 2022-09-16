@@ -1,4 +1,4 @@
-#include "IRenderer.h"
+#include "RendererBase.h"
 #include "IWorld.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
@@ -6,12 +6,12 @@
 using namespace Crystal::Math;
 using namespace Crystal::UI;
 
-IRenderer::IRenderer(IWorld* world) :
+RendererBase::RendererBase(IWorld* world) :
 	world(world),
 	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
 {}
 
-void IRenderer::init()
+void RendererBase::init()
 {
 	Crystal::Shader::ShaderBuilder builder;
 	builder.buildFromFile("../GLSL/Point.vs", "../GLSL/Point.fs");
@@ -25,7 +25,7 @@ void IRenderer::init()
 	onInit();
 }
 
-void IRenderer::render(const int width, const int height)
+void RendererBase::render(const int width, const int height)
 {
 	assert(GL_NO_ERROR == glGetError());
 	glViewport(0, 0, width, height);
