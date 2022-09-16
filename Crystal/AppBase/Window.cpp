@@ -74,8 +74,9 @@ namespace {
 	}
 }
 
-Window::Window(const std::string& title, Canvas* canvas) :
-	title(title)
+Window::Window(const std::string& title, Canvas* canvas, IRenderer* renderer) :
+	title(title),
+	renderer(renderer)
 {
 	::canvas = canvas;
 }
@@ -121,7 +122,7 @@ bool Window::init()
 	glfwSetMouseButtonCallback(window, onMouse);
 	glfwSetCursorPosCallback(window, onMouseMove);
 
-	::canvas->getRenderer()->init();
+	renderer->init();
 
 	return true;
 }
@@ -151,7 +152,7 @@ void Window::show()
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
 
-		::canvas->render(width, height);
+		renderer->render(width, height);
 		//world->getRenderer()->render(*world->getCamera()->getCamera(), width, height);
 
 		//const auto animations = world->getAnimations();

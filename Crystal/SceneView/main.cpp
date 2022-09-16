@@ -37,12 +37,15 @@ namespace {
 	};
 }
 
+#include "Crystal/AppBase/CameraUICtrl.h"
+
 int main() {
 	World world;
 	Renderer renderer(&world);
 
-	Crystal::UI::Canvas canvas(&renderer);
-	Crystal::UI::Window app("Hello", &canvas);
+	Crystal::UI::Canvas canvas;
+	canvas.setUICtrl(std::make_unique<CameraUICtrl>(renderer.getCamera()));
+	Crystal::UI::Window app("Hello", &canvas, &renderer);
 	app.init();
 
 	auto control = new Panel("Control");

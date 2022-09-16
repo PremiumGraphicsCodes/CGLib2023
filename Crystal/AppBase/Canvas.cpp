@@ -8,12 +8,6 @@ Canvas::Canvas()
 {
 }
 
-Canvas::Canvas(IRenderer* renderer) :
-	renderer(renderer)
-{
-	this->ctrl = std::make_unique<Crystal::UI::CameraUICtrl>(renderer->getCamera());
-}
-
 void Canvas::onLeftButtonDown(const Vector2df& position)
 {
 	ctrl->onLeftButtonDown(position);

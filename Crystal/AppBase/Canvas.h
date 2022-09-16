@@ -15,13 +15,9 @@ class Canvas : public IMouseListener
 public:
 	Canvas();
 
-	explicit Canvas(IRenderer* renderer);
-
 	virtual ~Canvas() {}
 
 	void setUICtrl(std::unique_ptr<IUICtrl> ctrl) { this->ctrl = std::move(ctrl); }
-
-	void setRenderer(IRenderer* renderer) { this->renderer = renderer; }
 
 	virtual void onLeftButtonDown(const Math::Vector2df& position) override;
 
@@ -43,15 +39,8 @@ public:
 
 	virtual void onWheel(const float scale) override;
 
-	void render(const int width, const int height) {
-		this->renderer->render(width, height);
-	}
-
-	IRenderer* getRenderer() { return renderer; }
-
 private:
 	std::unique_ptr<IUICtrl> ctrl;
-	IRenderer* renderer;
 };
 
 	}
