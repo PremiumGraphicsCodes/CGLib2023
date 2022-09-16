@@ -159,6 +159,8 @@
     <ClInclude Include="IVertex.h" />
     <ClInclude Include="ParticleSystemPresenter.h" />
     <ClInclude Include="ParticleSystemScene.h" />
+    <ClInclude Include="PolygonMeshPresenter.h" />
+    <ClInclude Include="PolygonMeshScene.h" />
     <ClInclude Include="WireFramePresenter.h" />
     <ClInclude Include="WireFrameScene.h" />
   </ItemGroup>
@@ -166,6 +168,8 @@
     <ClCompile Include="IScene.cpp" />
     <ClCompile Include="ParticleSystemPresenter.cpp" />
     <ClCompile Include="ParticleSystemScene.cpp" />
+    <ClCompile Include="PolygonMeshPresenter.cpp" />
+    <ClCompile Include="PolygonMeshScene.cpp" />
     <ClCompile Include="WireFramePresenter.cpp" />
     <ClCompile Include="WireFrameScene.cpp" />
   </ItemGroup>
