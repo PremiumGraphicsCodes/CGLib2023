@@ -24,7 +24,7 @@ void Renderer::render(const int width, const int height)
 
 	auto children = world->rootScene.getChildren();
 	for (auto c : children) {
-		c->getPresenter()->render(*world->getCamera());
+		c->getPresenter()->render(*getCamera());
 	}
 	//presenter.render(camera);
 	//wfPresenter->render(camera);

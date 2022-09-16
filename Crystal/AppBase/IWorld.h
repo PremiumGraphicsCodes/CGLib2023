@@ -17,10 +17,9 @@ public:
 
 	Scene::IScene rootScene;
 
-	Crystal::Graphics::Camera* getCamera() { return &camera; }
+	//Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:
-	Crystal::Graphics::Camera camera;
 
 };
 	}

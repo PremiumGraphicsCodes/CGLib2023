@@ -1,10 +1,17 @@
 #include "Canvas.h"
+#include "CameraUICtrl.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::UI;
 
 Canvas::Canvas()
 {
+}
+
+Canvas::Canvas(IRenderer* renderer) :
+	renderer(renderer)
+{
+	this->ctrl = std::make_unique<Crystal::UI::CameraUICtrl>(renderer->getCamera());
 }
 
 void Canvas::onLeftButtonDown(const Vector2df& position)

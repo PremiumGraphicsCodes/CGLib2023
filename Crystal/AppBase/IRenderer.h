@@ -13,7 +13,9 @@ namespace Crystal {
 class IRenderer
 {
 public:
-	IRenderer() = default;
+	IRenderer();
+
+	~IRenderer() = default;
 
 	void init();
 
@@ -21,8 +23,13 @@ public:
 
 	virtual void render(const int width, const int height) = 0;
 
+	Crystal::Graphics::Camera* getCamera() { return &camera; }
+
 	Crystal::Renderer::PointRenderer point;
 	Crystal::Renderer::LineRenderer line;
+
+private:
+	Crystal::Graphics::Camera camera;
 
 };
 

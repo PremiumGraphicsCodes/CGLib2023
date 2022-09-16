@@ -5,8 +5,7 @@ using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-IWorld::IWorld() :
-	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
+IWorld::IWorld()
 {}
 
 void IWorld::add(IScene* scene)
