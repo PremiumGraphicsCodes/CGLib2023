@@ -1,12 +1,12 @@
 ﻿#include "Crystal/AppBase/Canvas.h"
 #include "Crystal/AppBase/Window.h"
 #include "Crystal/AppBase/ParticleSystemMenu.h"
+#include "Crystal/AppBase/IWorld.h"
 
 #include "CGLib/UI/Panel.h"
 
 #include "WireFrameMenu.h"
 
-#include "Renderer.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -14,6 +14,28 @@ using namespace Crystal::Graphics;
 //using namespace Crystal::Renderer;
 using namespace Crystal::UI;
 
+namespace {
+	class World : public Crystal::UI::IWorld
+	{
+		public:
+	};
+
+	class Renderer : public Crystal::UI::IRenderer
+	{
+	public:
+		explicit Renderer(World* world) :
+			IRenderer(world)
+		{}
+
+		void onInit() override
+		{
+
+		}
+
+	private:
+
+	};
+}
 
 int main() {
 	World world;

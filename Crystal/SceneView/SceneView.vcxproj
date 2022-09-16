@@ -146,7 +146,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="WFLineView.cpp" />
     <ClCompile Include="WireFrameMenu.cpp" />
   </ItemGroup>
@@ -177,7 +176,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Renderer.h" />
     <ClInclude Include="WFLineView.h" />
     <ClInclude Include="WireFrameMenu.h" />
   </ItemGroup>

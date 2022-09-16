@@ -1,7 +1,8 @@
 #include "WFLineView.h"
 
 #include "Crystal/Scene/WireFrameScene.h"
-#include "Renderer.h"
+#include "Crystal/AppBase/IRenderer.h"
+#include "Crystal/AppBase/IWorld.h"
 
 //#include <random>
 
@@ -9,7 +10,7 @@ using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-WFLineView::WFLineView(const std::string& name, World* world, Renderer* renderer) :
+WFLineView::WFLineView(const std::string& name, IWorld* world, IRenderer* renderer) :
 	IOkCancelView(name),
 	lineView("Line"),
 	//countView("Count", 10000),
