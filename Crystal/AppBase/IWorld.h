@@ -15,11 +15,12 @@ public:
 
 	void add(Scene::IScene* scene);
 
-	Scene::IScene rootScene;
+	Scene::IScene* getRootScene() { return &rootScene; }
 
 	//Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:
+	Scene::IScene rootScene;
 
 };
 	}
