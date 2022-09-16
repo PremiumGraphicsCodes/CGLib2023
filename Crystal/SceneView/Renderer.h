@@ -14,6 +14,12 @@ namespace Crystal {
 class World : public Crystal::UI::IWorld
 {
 public:
+	void addWireFrame();
+
+	void add(Scene::IScene* scene);
+
+	Scene::IScene rootScene;
+	Crystal::Scene::WireFrameScene wfScene;
 };
 
 class Renderer : public Crystal::UI::IRenderer
@@ -21,12 +27,7 @@ class Renderer : public Crystal::UI::IRenderer
 public:
 	explicit Renderer(World* world);
 
-
 	void init() override;
-
-	void addWireFrame();
-
-	void add(Scene::IScene* scene);
 
 	void render(const int width, const int height);
 
@@ -38,10 +39,6 @@ public:
 private:
 	World* world;
 	Crystal::Graphics::Camera camera;
-
-	Scene::IScene rootScene;
-	//ParticleSystemScene psScene;
-	Crystal::Scene::WireFrameScene wfScene;
 
 };
 

@@ -40,5 +40,5 @@ void PSBoxView::onOk()
 	presenter->build();
 	presenter->send();
 	scene->setPresenter(std::move(presenter));
-	renderer->add(scene);
+	world->add(scene);
 }

@@ -40,7 +40,7 @@ int main() {
 	app.init();
 
 	//renderer.addParticleSystem();
-	renderer.addWireFrame();
+	//renderer.addWireFrame();
 
 	auto control = new Panel("Control");
 
