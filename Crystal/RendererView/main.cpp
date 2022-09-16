@@ -14,7 +14,7 @@
 
 #include "CGLib/Math/Vector2d.h"
 
-#include "Crystal/AppBase/IRenderer.h"
+#include "Crystal/AppBase/RendererBase.h"
 #include "Crystal/AppBase/MenuItem.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
 #include "Crystal/AppBase/Canvas.h"
@@ -27,7 +27,7 @@ using namespace Crystal::Renderer;
 
 namespace {
 
-	class Renderer : public Crystal::UI::RendererBase
+	class Renderer : public Crystal::UI::IRenderer
 	{
 	public:
 		Renderer() :
@@ -94,10 +94,10 @@ namespace {
 
 int main() {
 	Renderer renderer;
-	auto uiCtrl = std::make_unique<Crystal::UI::CameraUICtrl>(&renderer.camera);
 
-	Crystal::UI::Canvas canvas(std::move(uiCtrl), &renderer);
-	Crystal::UI::Window app("Hello", &canvas);
+	Crystal::UI::Canvas canvas;
+	canvas.setUICtrl(std::make_unique<Crystal::UI::CameraUICtrl>(&renderer.camera));
+	Crystal::UI::Window app("Hello", &canvas, &renderer);
 	app.init();
 	app.add(new RendererMenu("Renderer", &renderer));
 

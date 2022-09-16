@@ -17,7 +17,7 @@ public:
 		Math::Matrix4dd projectionMatrix;
 		Math::Matrix4dd modelViewMatrix;
 		std::vector<unsigned int> indices;
-		GLfloat lineWidth;
+		GLfloat lineWidth = 1.0f;
 	};
 
 	void link() override;
