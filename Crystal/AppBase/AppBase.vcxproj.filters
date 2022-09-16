@@ -12,6 +12,12 @@
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="CameraMenu.h" />
     <ClInclude Include="IWorld.h" />
+    <ClInclude Include="ParticleSystemMenu.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="PSBoxView.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -22,8 +28,19 @@
     <ClCompile Include="CameraMenu.cpp" />
     <ClCompile Include="IWorld.cpp" />
     <ClCompile Include="IRenderer.cpp" />
+    <ClCompile Include="ParticleSystemMenu.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="PSBoxView.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ParticleSystem">
+      <UniqueIdentifier>{8c0db8a3-468e-4913-be1e-8f35131d3efc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

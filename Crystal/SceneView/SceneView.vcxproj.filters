@@ -2,13 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PSBoxView.cpp">
-      <Filter>ParticleSystem</Filter>
-    </ClCompile>
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="ParticleSystemMenu.cpp">
-      <Filter>ParticleSystem</Filter>
-    </ClCompile>
     <ClCompile Include="WireFrameMenu.cpp">
       <Filter>WireFrame</Filter>
     </ClCompile>
@@ -20,21 +14,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="ParticleSystem">
-      <UniqueIdentifier>{3aabb37e-9e84-402f-9986-e02e2e901a47}</UniqueIdentifier>
-    </Filter>
     <Filter Include="WireFrame">
       <UniqueIdentifier>{19a1b704-0f2b-452d-bab9-857e81dcfdcc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PSBoxView.h">
-      <Filter>ParticleSystem</Filter>
-    </ClInclude>
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="ParticleSystemMenu.h">
-      <Filter>ParticleSystem</Filter>
-    </ClInclude>
     <ClInclude Include="WireFrameMenu.h">
       <Filter>WireFrame</Filter>
     </ClInclude>

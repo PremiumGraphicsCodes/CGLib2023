@@ -163,6 +163,8 @@
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="IWorld.h" />
     <ClInclude Include="MenuItem.h" />
+    <ClInclude Include="ParticleSystemMenu.h" />
+    <ClInclude Include="PSBoxView.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +175,8 @@
     <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="IRenderer.cpp" />
     <ClCompile Include="IWorld.cpp" />
+    <ClCompile Include="ParticleSystemMenu.cpp" />
+    <ClCompile Include="PSBoxView.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>

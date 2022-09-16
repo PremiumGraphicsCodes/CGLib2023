@@ -5,13 +5,13 @@
 namespace Crystal {
 	namespace UI {
 		class Panel;
-		class World;
-		class Renderer;
+		class IWorld;
+		class IRenderer;
 
 class ParticleSystemMenu : public IMenu
 {
 public:
-	ParticleSystemMenu(const std::string& name, Panel* control, World* world, Renderer* renderer);
+	ParticleSystemMenu(const std::string& name, Panel* control, IWorld* world, IRenderer* renderer);
 
 };
 
