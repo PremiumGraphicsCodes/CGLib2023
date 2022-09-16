@@ -14,9 +14,6 @@ namespace Crystal {
 class World : public Crystal::UI::IWorld
 {
 public:
-	void add(Scene::IScene* scene);
-
-	Scene::IScene rootScene;
 };
 
 class Renderer : public Crystal::UI::IRenderer
@@ -28,14 +25,11 @@ public:
 
 	void render(const int width, const int height);
 
-	Crystal::Graphics::Camera* getCamera() { return &camera; }
-
 	Crystal::Renderer::PointRenderer point;
 	Crystal::Renderer::LineRenderer line;
 
 private:
 	World* world;
-	Crystal::Graphics::Camera camera;
 
 };
 

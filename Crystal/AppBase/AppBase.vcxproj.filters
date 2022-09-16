@@ -20,6 +20,7 @@
     <ClCompile Include="CameraUICtrl.cpp" />
     <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="CameraMenu.cpp" />
+    <ClCompile Include="IWorld.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

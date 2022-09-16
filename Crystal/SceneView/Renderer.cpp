@@ -6,14 +6,9 @@ using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-void World::add(IScene* scene)
-{
-	rootScene.addScene(scene);
-}
 
 Renderer::Renderer(World* world) :
-	world(world),
-	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
+	world(world)
 {}
 
 void Renderer::init()
@@ -38,7 +33,7 @@ void Renderer::render(const int width, const int height)
 
 	auto children = world->rootScene.getChildren();
 	for (auto c : children) {
-		c->getPresenter()->render(camera);
+		c->getPresenter()->render(*world->getCamera());
 	}
 	//presenter.render(camera);
 	//wfPresenter->render(camera);
