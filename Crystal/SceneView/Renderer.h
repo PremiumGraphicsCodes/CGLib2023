@@ -21,12 +21,9 @@ class Renderer : public Crystal::UI::IRenderer
 public:
 	explicit Renderer(World* world);
 
-	void init() override;
+	void onInit() override;
 
 	void render(const int width, const int height);
-
-	Crystal::Renderer::PointRenderer point;
-	Crystal::Renderer::LineRenderer line;
 
 private:
 	World* world;

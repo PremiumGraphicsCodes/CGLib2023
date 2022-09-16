@@ -10,6 +10,7 @@ ParticleSystemMenu::ParticleSystemMenu(const std::string& name, Panel* control, 
 	IMenu(name)
 {
 	add(new MenuItem("Sphere", [&control, &world, &renderer]() {
+		control->clear();
 		control->add(new PSBoxView("PSBox", world, renderer));
 		}));
 }

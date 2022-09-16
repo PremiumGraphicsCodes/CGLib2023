@@ -171,6 +171,7 @@
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="IMenu.cpp" />
     <ClCompile Include="IMenuItem.cpp" />
+    <ClCompile Include="IRenderer.cpp" />
     <ClCompile Include="IWorld.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>

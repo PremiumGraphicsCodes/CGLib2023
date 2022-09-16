@@ -11,18 +11,9 @@ Renderer::Renderer(World* world) :
 	world(world)
 {}
 
-void Renderer::init()
+void Renderer::onInit()
 {
-	Crystal::Shader::ShaderBuilder builder;
-	builder.buildFromFile("../GLSL/Point.vs", "../GLSL/Point.fs");
-	point.setShader(builder.getShader());
-	point.link();
-
-	builder.buildFromFile("../GLSL/Line.vs", "../GLSL/Line.fs");
-	line.setShader(builder.getShader());
-	line.link();
 }
-
 
 void Renderer::render(const int width, const int height)
 {

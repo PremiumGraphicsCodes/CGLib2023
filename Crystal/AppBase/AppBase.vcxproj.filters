@@ -21,6 +21,7 @@
     <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="CameraMenu.cpp" />
     <ClCompile Include="IWorld.cpp" />
+    <ClCompile Include="IRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
