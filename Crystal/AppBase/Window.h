@@ -9,12 +9,12 @@ struct GLFWwindow;
 namespace Crystal {
 	namespace UI {
 		class Canvas;
-		class RendererBase;
+		class IRenderer;
 
 		class Window
 		{
 		public:
-			Window(const std::string& title, Canvas* canvas, RendererBase* renderer);
+			Window(const std::string& title, Canvas* canvas, IRenderer* renderer);
 
 			bool init();
 
@@ -29,7 +29,7 @@ namespace Crystal {
 			std::vector< IWindow* > panels;
 			GLFWwindow* window;
 			std::string title;
-			RendererBase* renderer;
+			IRenderer* renderer;
 			//Canvas* canvas;
 		};
 

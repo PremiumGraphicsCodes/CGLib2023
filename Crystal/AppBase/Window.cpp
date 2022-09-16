@@ -75,7 +75,7 @@ namespace {
 	}
 }
 
-Window::Window(const std::string& title, Canvas* canvas, RendererBase* renderer) :
+Window::Window(const std::string& title, Canvas* canvas, IRenderer* renderer) :
 	title(title),
 	renderer(renderer)
 {

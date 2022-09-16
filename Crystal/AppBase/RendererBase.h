@@ -11,18 +11,28 @@ namespace Crystal {
 	namespace UI {
 		class IWorld;
 
-class RendererBase
+class IRenderer
+{
+public:
+	~IRenderer() = default;
+
+	virtual void init() = 0;
+
+	virtual void render(const int width, const int height) = 0;
+};
+
+class RendererBase : public IRenderer
 {
 public:
 	RendererBase(IWorld* world);
 
 	~RendererBase() = default;
 
-	void init();
+	void init() override;
 
 	virtual void onInit() = 0;
 
-	virtual void render(const int width, const int height);
+	virtual void render(const int width, const int height) override;
 
 	Crystal::Graphics::Camera* getCamera() { return &camera; }
 
