@@ -6,6 +6,9 @@
       <Filter>ParticleSystem</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="ParticleSystemMenu.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -20,5 +23,8 @@
       <Filter>ParticleSystem</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="ParticleSystemMenu.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

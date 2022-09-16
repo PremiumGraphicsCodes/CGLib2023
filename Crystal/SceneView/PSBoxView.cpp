@@ -9,10 +9,11 @@ using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-PSBoxView::PSBoxView(const std::string& name, Renderer* renderer) :
+PSBoxView::PSBoxView(const std::string& name, World* world, Renderer* renderer) :
 	IOkCancelView(name),
 	boxView("Box"),
 	countView("Count", 10000),
+	world(world),
 	renderer(renderer)
 {
 	add(&boxView);

@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ParticleSystemMenu.cpp" />
     <ClCompile Include="PSBoxView.cpp" />
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
@@ -176,6 +177,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ParticleSystemMenu.h" />
     <ClInclude Include="PSBoxView.h" />
     <ClInclude Include="Renderer.h" />
   </ItemGroup>

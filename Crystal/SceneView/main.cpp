@@ -13,6 +13,8 @@
 #include "Crystal/AppBase/IRenderer.h"
 #include "Crystal/AppBase/MenuItem.h"
 
+#include "ParticleSystemMenu.h"
+
 #include "Renderer.h"
 
 #include "PSBoxView.h"
@@ -28,24 +30,6 @@ using namespace Crystal::Graphics;
 using namespace Crystal::UI;
 
 
-class ParticleSystemMenu : public IMenu
-{
-public:
-	explicit ParticleSystemMenu(const std::string& name, Panel* control, Renderer* renderer) :
-		IMenu(name)
-	{
-		add(new MenuItem("Sphere", [&control, &renderer]() {
-			control->add(new PSBoxView("PSBox", renderer));
-			}));
-
-		/*
-			add(new MenuItem("SpaceHash", [world, canvas, control]() {
-				control->setWindow(new SpaceHashView("SpaceHash", world, canvas));
-				}));
-				*/
-	}
-};
-
 int main() {
 	World world;
 	Renderer renderer(&world);
@@ -60,7 +44,7 @@ int main() {
 
 	auto control = new Panel("Control");
 
-	app.add(new ParticleSystemMenu("ParticleSystem", control, &renderer));
+	app.add(new ParticleSystemMenu("ParticleSystem", control, &world, &renderer));
 	app.add(control);
 	
 	app.show();
