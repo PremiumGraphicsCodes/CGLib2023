@@ -13,7 +13,6 @@ void PolygonMeshPresenter::build()
 
 void PolygonMeshPresenter::send()
 {
-	/*
 	Shader::VertexBuffer<float> position;
 	Shader::VertexBuffer<float> color;
 
@@ -25,20 +24,23 @@ void PolygonMeshPresenter::send()
 
 	vbo.position.send(position);
 	vbo.color.send(color);
-	indices = model->getIndices();
-	*/
+
+	const auto faces = model->getFaces();
+	for (const auto& f : faces) {
+		indices.push_back(f.v0);
+		indices.push_back(f.v1);
+		indices.push_back(f.v2);
+	}
 }
 
 void PolygonMeshPresenter::render(const Camera& camera)
 {
-	/*
 	view->buffer.position = &vbo.position;
 	view->buffer.color = &vbo.color;
 	view->buffer.indices = indices;
 	view->buffer.modelViewMatrix = camera.getModelViewMatrix();
 	view->buffer.projectionMatrix = camera.getProjectionMatrix();
-	view->buffer.lineWidth = 1.0f;
+	//view->buffer.lineWidth = 1.0f;
 
 	view->render();
-	*/
 }

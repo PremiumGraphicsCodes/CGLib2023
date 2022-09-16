@@ -19,13 +19,13 @@ public:
 		int v2;
 	};
 
-	void add(IVertex* v);
+	void add(IVertex* v) { this->vertices.push_back(v); }
 
 	std::vector<IVertex*> getVertices() const { return vertices; }
 
-	//void addIndex(const unsigned int index) { this->indices.push_back(index); }
+	void addFace(const Face& face) { this->faces.push_back(face); }
 
-	//std::vector<unsigned int> getIndices() const { return indices; }
+	std::vector<Face> getFaces() const { return faces; }
 
 	void setPresenter(std::unique_ptr<PolygonMeshPresenter> p) { this->presenter = std::move(p); }
 
