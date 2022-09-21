@@ -167,6 +167,7 @@
     <ClInclude Include="Box3dView.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ColorMapView.h" />
+    <ClInclude Include="Float4View.h" />
     <ClInclude Include="FloatView.h" />
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui.h" />
@@ -183,6 +184,8 @@
     <ClInclude Include="IWindow.h" />
     <ClInclude Include="Line3dView.h" />
     <ClInclude Include="Matrix2dView.h" />
+    <ClInclude Include="Matrix3dView.h" />
+    <ClInclude Include="Matrix4dView.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="Vector3dView.h" />
   </ItemGroup>
@@ -191,6 +194,7 @@
     <ClCompile Include="Box3dView.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ColorMapView.cpp" />
+    <ClCompile Include="Float4View.cpp" />
     <ClCompile Include="FloatView.cpp" />
     <ClCompile Include="imgui.cpp" />
     <ClCompile Include="imgui_draw.cpp" />
@@ -201,6 +205,8 @@
     <ClCompile Include="IntView.cpp" />
     <ClCompile Include="Line3dView.cpp" />
     <ClCompile Include="Matrix2dView.cpp" />
+    <ClCompile Include="Matrix3dView.cpp" />
+    <ClCompile Include="Matrix4dView.cpp" />
     <ClCompile Include="Panel.cpp" />
     <ClCompile Include="Vector3dView.cpp" />
   </ItemGroup>

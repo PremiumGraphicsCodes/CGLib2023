@@ -8,6 +8,8 @@
 #include "GLFW/glfw3.h"
 
 #include "../UI/Matrix2dView.h"
+#include "../UI/Matrix3dView.h"
+#include "../UI/Matrix4dView.h"
 #include "../UI/Panel.h"
 #include "../UI/ColorMapView.h"
 
@@ -71,7 +73,8 @@ int main() {
 	Crystal::UI::Panel panel("Panel");
 	Crystal::UI::ColorMapView colorMap("ColorMap");
 	Crystal::UI::Matrix2dView matrix2d("Matrix2d");
-
+	Crystal::UI::Matrix3dView matrix3d("Matrix3d");
+	Crystal::UI::Matrix4dView matrix4d("Matrix4d");
 	// onInit();
 
 	while (!glfwWindowShouldClose(window)) {
@@ -98,6 +101,15 @@ int main() {
 					panel.clear();
 					panel.add(&matrix2d);
 				}
+				if (ImGui::MenuItem("Matrix3d")) {
+					panel.clear();
+					panel.add(&matrix3d);
+				}
+				if (ImGui::MenuItem("Matrix4d")) {
+					panel.clear();
+					panel.add(&matrix4d);
+				}
+
 
 				ImGui::EndMenu();
 			}
@@ -125,6 +137,7 @@ int main() {
 		glfwPollEvents();
 	}
 
+	matrix4d.clear();
 	panel.clear();
 
 	// Cleanup

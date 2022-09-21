@@ -45,6 +45,13 @@
     <ClInclude Include="Matrix2dView.h">
       <Filter>Matrix</Filter>
     </ClInclude>
+    <ClInclude Include="Matrix3dView.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4dView.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Float4View.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -77,6 +84,13 @@
     <ClCompile Include="Line3dView.cpp" />
     <ClCompile Include="ColorMapView.cpp" />
     <ClCompile Include="Matrix2dView.cpp">
+      <Filter>Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix3dView.cpp">
+      <Filter>Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Float4View.cpp" />
+    <ClCompile Include="Matrix4dView.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
   </ItemGroup>
