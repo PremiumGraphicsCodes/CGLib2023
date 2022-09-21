@@ -8,7 +8,7 @@ using namespace Crystal::UI;
 
 RendererBase::RendererBase(WorldBase* world) :
 	world(world),
-	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1, 10.0)
+	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1f, 10.0f)
 {}
 
 void RendererBase::init()

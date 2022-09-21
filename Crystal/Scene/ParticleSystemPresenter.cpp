@@ -28,7 +28,7 @@ void ParticleSystemPresenter::send()
 	vbo.color.send(color);
 	vbo.size.send(size);
 
-	count = particles.size();
+	count = static_cast<int>( particles.size() );
 }
 
 void ParticleSystemPresenter::render(const Graphics::Camera& camera)
