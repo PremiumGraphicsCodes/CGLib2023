@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Space", "Crystal\Space\Spac
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceView", "Crystal\SpaceView\SpaceView.vcxproj", "{BFC55E53-739B-46B1-B23C-E2148C00F06D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathTest", "CGLib\MathTest\MathTest.vcxproj", "{0F492A31-197C-43BE-896D-C4768BD37D05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{BFC55E53-739B-46B1-B23C-E2148C00F06D}.Release|x64.Build.0 = Release|x64
 		{BFC55E53-739B-46B1-B23C-E2148C00F06D}.Release|x86.ActiveCfg = Release|Win32
 		{BFC55E53-739B-46B1-B23C-E2148C00F06D}.Release|x86.Build.0 = Release|Win32
+		{0F492A31-197C-43BE-896D-C4768BD37D05}.Debug|x64.ActiveCfg = Debug|x64
+		{0F492A31-197C-43BE-896D-C4768BD37D05}.Debug|x64.Build.0 = Debug|x64
+		{0F492A31-197C-43BE-896D-C4768BD37D05}.Debug|x86.ActiveCfg = Debug|Win32
+		{0F492A31-197C-43BE-896D-C4768BD37D05}.Debug|x86.Build.0 = Debug|Win32
+		{0F492A31-197C-43BE-896D-C4768BD37D05}.Release|x64.ActiveCfg = Release|x64
+		{0F492A31-197C-43BE-896D-C4768BD37D05}.Release|x64.Build.0 = Release|x64
+		{0F492A31-197C-43BE-896D-C4768BD37D05}.Release|x86.ActiveCfg = Release|Win32
+		{0F492A31-197C-43BE-896D-C4768BD37D05}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
