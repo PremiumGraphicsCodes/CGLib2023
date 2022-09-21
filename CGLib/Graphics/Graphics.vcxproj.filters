@@ -1,14 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="ColorRGBA.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ImageFileReader.h" />
+    <ClInclude Include="ColorConverter.h">
+      <Filter>Color</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorHSV.h">
+      <Filter>Color</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorMap.h">
+      <Filter>Color</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRGB.h">
+      <Filter>Color</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRGBA.h">
+      <Filter>Color</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorTable.h">
+      <Filter>Color</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ImageFileReader.cpp" />
+    <ClCompile Include="ColorMap.cpp">
+      <Filter>Color</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorTable.cpp">
+      <Filter>Color</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Color">
+      <UniqueIdentifier>{3901cacf-275a-4f6c-baa2-80e2b0e9f085}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
