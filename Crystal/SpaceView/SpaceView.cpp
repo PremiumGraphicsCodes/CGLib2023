@@ -3,11 +3,12 @@
 #include "Crystal/AppBase/ParticleSystemMenu.h"
 #include "Crystal/AppBase/WireFrameMenu.h"
 #include "Crystal/AppBase/IWorld.h"
+#include "Crystal/AppBase/RendererBase.h"
+#include "Crystal/AppBase/CameraUICtrl.h"
 
 #include "CGLib/UI/Panel.h"
 
-#include "Crystal/AppBase/RendererBase.h"
-#include "Crystal/AppBase/CameraUICtrl.h"
+#include "SpaceMenu.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -51,6 +52,7 @@ int main() {
 
 	app.add(new ParticleSystemMenu("ParticleSystem", control, &world, &renderer));
 	app.add(new WireFrameMenu("WireFrame", control, &world, &renderer));
+	app.add(new SpaceMenu("Space", control, &world, &renderer));
 	app.add(control);
 
 	app.show();
