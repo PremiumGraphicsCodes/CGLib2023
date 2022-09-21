@@ -3,4 +3,7 @@
   <ItemGroup>
     <ClCompile Include="SpaceView.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>

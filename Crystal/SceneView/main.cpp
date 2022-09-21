@@ -7,7 +7,7 @@
 #include "CGLib/UI/Panel.h"
 
 #include "Crystal/AppBase/RendererBase.h"
-
+#include "Crystal/AppBase/CameraUICtrl.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -37,8 +37,6 @@ namespace {
 
 	};
 }
-
-#include "Crystal/AppBase/CameraUICtrl.h"
 
 int main() {
 	World world;
