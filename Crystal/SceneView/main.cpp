@@ -1,6 +1,6 @@
 ﻿#include "Crystal/AppBase/Canvas.h"
 #include "Crystal/AppBase/Window.h"
-#include "Crystal/AppBase/ParticleSystemMenu.h"
+#include "Crystal/AppBase/ShapeMenu.h"
 #include "Crystal/AppBase/WireFrameMenu.h"
 #include "Crystal/AppBase/WorldBase.h"
 #include "Crystal/AppBase/RendererBase.h"
@@ -52,8 +52,7 @@ int main() {
 
 	window.add(new CameraMenu("Camera", &world, &renderer));
 
-	window.add(new ParticleSystemMenu("ParticleSystem", control, &world, &renderer));
-	window.add(new WireFrameMenu("WireFrame", control, &world, &renderer));
+	window.add(new ShapeMenu("Shape", &world, &renderer, control));
 	window.add(control);
 	
 	window.show();

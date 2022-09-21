@@ -9,7 +9,7 @@ using namespace Crystal::UI;
 WireFrameMenu::WireFrameMenu(const std::string& name, Panel* control, WorldBase* world, RendererBase* renderer) :
 	IMenu(name)
 {
-	add(new MenuItem("Line", [&control, &world, &renderer]() {
+	add(new MenuItem("Line", [control, world, renderer]() {
 		control->clear();
 		control->add(new WFLineView("WFLine", world, renderer));
 		}));

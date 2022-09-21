@@ -13,21 +13,24 @@
     <ClInclude Include="CameraMenu.h" />
     <ClInclude Include="WorldBase.h" />
     <ClInclude Include="ParticleSystemMenu.h">
-      <Filter>ParticleSystem</Filter>
+      <Filter>Shape\ParticleSystem</Filter>
     </ClInclude>
     <ClInclude Include="PSBoxView.h">
-      <Filter>ParticleSystem</Filter>
+      <Filter>Shape\ParticleSystem</Filter>
     </ClInclude>
     <ClInclude Include="WFLineView.h">
-      <Filter>WireFrame</Filter>
+      <Filter>Shape\WireFrame</Filter>
     </ClInclude>
     <ClInclude Include="WireFrameMenu.h">
-      <Filter>WireFrame</Filter>
+      <Filter>Shape\WireFrame</Filter>
     </ClInclude>
     <ClInclude Include="PMBoxView.h">
-      <Filter>PolygonMesh</Filter>
+      <Filter>Shape\PolygonMesh</Filter>
     </ClInclude>
     <ClInclude Include="SceneSelectView.h" />
+    <ClInclude Include="ShapeMenu.h">
+      <Filter>Shape</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -39,34 +42,40 @@
     <ClCompile Include="WorldBase.cpp" />
     <ClCompile Include="RendererBase.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp">
-      <Filter>ParticleSystem</Filter>
+      <Filter>Shape\ParticleSystem</Filter>
     </ClCompile>
     <ClCompile Include="PSBoxView.cpp">
-      <Filter>ParticleSystem</Filter>
+      <Filter>Shape\ParticleSystem</Filter>
     </ClCompile>
     <ClCompile Include="WFLineView.cpp">
-      <Filter>WireFrame</Filter>
+      <Filter>Shape\WireFrame</Filter>
     </ClCompile>
     <ClCompile Include="WireFrameMenu.cpp">
-      <Filter>WireFrame</Filter>
+      <Filter>Shape\WireFrame</Filter>
     </ClCompile>
     <ClCompile Include="PMBoxView.cpp">
-      <Filter>PolygonMesh</Filter>
+      <Filter>Shape\PolygonMesh</Filter>
     </ClCompile>
     <ClCompile Include="SceneSelectView.cpp" />
+    <ClCompile Include="ShapeMenu.cpp">
+      <Filter>Shape</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="ParticleSystem">
+    <Filter Include="Shape">
+      <UniqueIdentifier>{338bf742-22c6-4816-8d20-98770656bd2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\ParticleSystem">
       <UniqueIdentifier>{8c0db8a3-468e-4913-be1e-8f35131d3efc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="WireFrame">
-      <UniqueIdentifier>{30ad21b2-e4f0-4367-8587-ab4daaa5ad07}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="PolygonMesh">
+    <Filter Include="Shape\PolygonMesh">
       <UniqueIdentifier>{9d8c7dde-21ae-4853-b32c-370755284e63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\WireFrame">
+      <UniqueIdentifier>{30ad21b2-e4f0-4367-8587-ab4daaa5ad07}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
