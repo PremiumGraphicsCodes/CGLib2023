@@ -9,5 +9,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpaceMenu.h" />
+    <ClInclude Include="SpaceHashView.h" />
   </ItemGroup>
 </Project>

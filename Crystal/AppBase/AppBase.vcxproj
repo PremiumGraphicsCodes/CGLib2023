@@ -162,6 +162,7 @@
     <ClInclude Include="PMBoxView.h" />
     <ClInclude Include="RendererBase.h" />
     <ClInclude Include="IUICtrl.h" />
+    <ClInclude Include="SceneSelectView.h" />
     <ClInclude Include="WorldBase.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="ParticleSystemMenu.h" />
@@ -178,6 +179,7 @@
     <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="PMBoxView.cpp" />
     <ClCompile Include="RendererBase.cpp" />
+    <ClCompile Include="SceneSelectView.cpp" />
     <ClCompile Include="WorldBase.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp" />
     <ClCompile Include="PSBoxView.cpp" />

@@ -27,6 +27,7 @@
     <ClInclude Include="PMBoxView.h">
       <Filter>PolygonMesh</Filter>
     </ClInclude>
+    <ClInclude Include="SceneSelectView.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -52,6 +53,7 @@
     <ClCompile Include="PMBoxView.cpp">
       <Filter>PolygonMesh</Filter>
     </ClCompile>
+    <ClCompile Include="SceneSelectView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
