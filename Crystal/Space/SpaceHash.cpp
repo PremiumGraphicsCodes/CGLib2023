@@ -1,6 +1,7 @@
 #include "SpaceHash.h"
 
 #include <bitset>
+#include <algorithm>
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;
@@ -21,14 +22,14 @@ void SpaceHash::add(const Vector3df& position)
 {
 	const auto& index = toIndex(position);
 	const auto hashIndex = toHash(index);
-	positions.push_back(position);
-	const auto ix = static_cast<int>( positions.size() );
+	const auto ix = static_cast<int>(positions.size());
 	table[hashIndex].push_back(ix);
+	positions.push_back(position);
 }
 
-std::vector<int> SpaceHash::findNeighborIndices(const Vector3df& position)
+std::list<int> SpaceHash::findNeighborIndices(const Vector3df& position)
 {
-	std::vector<int> results;
+	std::list<int> results;
 
 	const auto& index = toIndex(position);
 	for (int i = index[0] - 1; i <= index[0] + 1; ++i) {
@@ -38,11 +39,13 @@ std::vector<int> SpaceHash::findNeighborIndices(const Vector3df& position)
 				const auto& hash = toHash(index);
 				const auto& indices = table[hash];
 				for (const auto i : indices) {
+					/*
 					const auto ix = toIndex(position);
 					if (ix != index) {
 						continue;
 					}
-					const auto p = positions[i];
+					*/
+					const auto& p = positions[i];
 					const double d2 = getDistanceSquared<float>(p, position);
 					if (d2 < divideLength * divideLength) {
 						results.push_back(i);
@@ -51,6 +54,9 @@ std::vector<int> SpaceHash::findNeighborIndices(const Vector3df& position)
 			}
 		}
 	}
+
+	results.sort();
+	results.unique();
 
 	return results;
 }

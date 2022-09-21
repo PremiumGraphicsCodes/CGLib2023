@@ -16,7 +16,7 @@ public:
 
 	void add(const Math::Vector3df& position);
 
-	std::vector<int> findNeighborIndices(const Math::Vector3df& position);
+	std::list<int> findNeighborIndices(const Math::Vector3df& position);
 
 	//bool isEmpty(const Math::Vector3df& pos) const;
 
