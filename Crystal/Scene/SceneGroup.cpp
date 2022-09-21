@@ -1,9 +1,9 @@
-#include "RootScene.h"
+#include "SceneGroup.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
 
-Box3df RootScene::getBoundingBox() const
+Box3df SceneGroup::getBoundingBox() const
 {
 	Box3df bb = Box3df::createDegeneratedBox();
 	for (auto c : children) {

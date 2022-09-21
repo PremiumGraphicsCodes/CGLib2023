@@ -27,7 +27,7 @@
     <ClInclude Include="PolygonMeshPresenter.h">
       <Filter>PolygonMesh</Filter>
     </ClInclude>
-    <ClInclude Include="RootScene.h" />
+    <ClInclude Include="SceneGroup.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneBase.cpp" />
@@ -49,7 +49,7 @@
     <ClCompile Include="PolygonMeshScene.cpp">
       <Filter>PolygonMesh</Filter>
     </ClCompile>
-    <ClCompile Include="RootScene.cpp" />
+    <ClCompile Include="SceneGroup.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">

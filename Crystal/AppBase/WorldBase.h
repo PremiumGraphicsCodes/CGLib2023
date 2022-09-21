@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CGLib/Util/UnCopyable.h"
-#include "Crystal/Scene/RootScene.h"
+#include "Crystal/Scene/SceneGroup.h"
 
 namespace Crystal {
 	namespace UI {
@@ -13,12 +13,12 @@ public:
 
 	virtual ~WorldBase() = default;
 
-	Scene::RootScene* getRootScene() { return &rootScene; }
+	Scene::SceneGroup* getRootScene() { return &rootScene; }
 
 	//Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:
-	Scene::RootScene rootScene;
+	Scene::SceneGroup rootScene;
 
 };
 	}
