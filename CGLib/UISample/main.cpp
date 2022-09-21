@@ -7,6 +7,10 @@
 #include <stdio.h>
 #include "GLFW/glfw3.h"
 
+#include "../UI/Matrix2dView.h"
+#include "../UI/Panel.h"
+#include "../UI/ColorMapView.h"
+
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
 #include <iostream>
@@ -64,6 +68,9 @@ int main() {
 		return 1;
 	}
 
+	Crystal::UI::Panel panel("Panel");
+	Crystal::UI::ColorMapView colorMap("ColorMap");
+	Crystal::UI::Matrix2dView matrix2d("Matrix2d");
 
 	// onInit();
 
@@ -83,14 +90,21 @@ int main() {
 				}
 				if (ImGui::MenuItem("Tex")) {
 				}
+				if (ImGui::MenuItem("ColorMap")) {
+					panel.clear();
+					panel.add(&colorMap);
+				}
+				if (ImGui::MenuItem("Matrix2d")) {
+					panel.clear();
+					panel.add(&matrix2d);
+				}
 
 				ImGui::EndMenu();
 			}
 			ImGui::EndMainMenuBar();
 		}
 
-		int width, height;
-		glfwGetWindowSize(window, &width, &height);
+		panel.show();
 
 		//renderer.render(width, height);
 
@@ -99,10 +113,19 @@ int main() {
 		glFlush();
 
 		ImGui::Render();
+
+		int width, height;
+		glfwGetWindowSize(window, &width, &height);
+		glViewport(0, 0, width, height);
+		glClearColor(0, 0, 0, 0);
+		glClear(GL_COLOR_BUFFER_BIT);
+
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
+
+	panel.clear();
 
 	// Cleanup
 	ImGui_ImplOpenGL3_Shutdown();

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "glm.h"
+
 namespace Crystal {
 	namespace Math {
 
