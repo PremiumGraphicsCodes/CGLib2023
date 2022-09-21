@@ -36,5 +36,5 @@ void WFLineView::onOk()
 	wfPresenter->send();
 	scene->setPresenter(std::move(wfPresenter));
 
-	world->add(scene);
+	world->getRootScene()->addScene(scene);
 }

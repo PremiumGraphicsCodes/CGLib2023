@@ -1,28 +1,28 @@
-#include "IScene.h"
+#include "SceneBase.h"
 
 using namespace Crystal::Scene;
 
-IScene::IScene() :
+SceneBase::SceneBase() :
 	id(-1),
 	parent(nullptr)
 {}
 
-IScene::IScene(const int id) :
+SceneBase::SceneBase(const int id) :
 	id(id),
 	parent(nullptr)
 {}
 
-IScene::IScene(const int id, const std::string& name) :
+SceneBase::SceneBase(const int id, const std::string& name) :
 	id(id),
 	name(name),
 	parent(nullptr)
 {}
 
-IScene::~IScene()
+SceneBase::~SceneBase()
 {
 }
 
-void IScene::clear()
+void SceneBase::clear()
 {
 	for (const auto& c : children) {
 		c->clear();
@@ -30,13 +30,13 @@ void IScene::clear()
 	children.clear();
 }
 
-void IScene::addScene(IScene* scene)
+void SceneBase::addScene(SceneBase* scene)
 {
 	scene->parent = this;
 	this->children.push_back(scene);
 }
 
-IScene* IScene::findSceneById(int id)
+SceneBase* SceneBase::findSceneById(int id)
 {
 	if (id == this->id) {
 		return this;
@@ -50,7 +50,7 @@ IScene* IScene::findSceneById(int id)
 	return nullptr;
 }
 
-void IScene::deleteSceneById(int id)
+void SceneBase::deleteSceneById(int id)
 {
 	for (auto c : children) {
 		if (c->getId() == id) {
@@ -61,7 +61,7 @@ void IScene::deleteSceneById(int id)
 	}
 }
 
-IScene* IScene::findSceneByName(const std::string& name)
+SceneBase* SceneBase::findSceneByName(const std::string& name)
 {
 	if (name == this->name) {
 		return this;
@@ -74,7 +74,7 @@ IScene* IScene::findSceneByName(const std::string& name)
 	return nullptr;
 }
 
-IScene* IScene::getRoot()
+SceneBase* SceneBase::getRoot()
 {
 	auto p = this;
 	while (!p->isRoot()) {

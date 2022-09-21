@@ -13,8 +13,6 @@ public:
 
 	virtual ~WorldBase() = default;
 
-	void add(Scene::IScene* scene);
-
 	Scene::RootScene* getRootScene() { return &rootScene; }
 
 	//Crystal::Graphics::Camera* getCamera() { return &camera; }

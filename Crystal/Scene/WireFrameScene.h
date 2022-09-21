@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IScene.h"
+#include "SceneBase.h"
 #include "IVertex.h"
 #include "WireFramePresenter.h"
 #include <vector>
@@ -9,7 +9,7 @@ namespace Crystal {
 	namespace Scene {
 		class IVertex;
 
-class WireFrameScene : public IScene
+class WireFrameScene : public SceneBase
 {
 public:
 	void add(IVertex* v);

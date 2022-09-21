@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IScene.h"
+#include "SceneBase.h"
 #include "IParticle.h"
 #include "ParticleSystemPresenter.h"
 #include <vector>
@@ -8,7 +8,7 @@
 namespace Crystal {
 	namespace Scene {
 
-class ParticleSystemScene : public IScene
+class ParticleSystemScene : public SceneBase
 {
 public:
 	ParticleSystemScene();

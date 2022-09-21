@@ -3,25 +3,24 @@
 #include <list>
 #include <string>
 
-#include "CGLib/Math/Box3d.h"
-#include "CGLib/Graphics/Camera.h"
-
 #include "IPresenter.h"
+
+#include "CGLib/Math/Box3d.h"
 #include "CGLib/Util/UnCopyable.h"
 
 namespace Crystal {
 	namespace Scene {
 
-class IScene : private UnCopyable
+class SceneBase : private UnCopyable
 {
 public:
-	IScene();
+	SceneBase();
 
-	explicit IScene(const int id);
+	explicit SceneBase(const int id);
 
-	IScene(const int id, const std::string& name);
+	SceneBase(const int id, const std::string& name);
 
-	virtual ~IScene();
+	virtual ~SceneBase();
 
 	void clear();
 
@@ -37,11 +36,11 @@ public:
 
 	//virtual SceneType getType() const = 0;
 
-	void addScene(IScene* scene);
+	void addScene(SceneBase* scene);
 
-	IScene* findSceneById(int id);
+	SceneBase* findSceneById(int id);
 
-	IScene* findSceneByName(const std::string& name);
+	SceneBase* findSceneByName(const std::string& name);
 
 	void deleteSceneById(int id);
 
@@ -57,11 +56,11 @@ public:
 
 	bool isRoot() const { return parent == nullptr; }
 
-	IScene* getParent() const { return parent; }
+	SceneBase* getParent() const { return parent; }
 
-	IScene* getRoot();
+	SceneBase* getRoot();
 
-	std::list<IScene*> getChildren() const { return children; }
+	std::list<SceneBase*> getChildren() const { return children; }
 
 	bool isLeaf() const { return children.empty(); }
 
@@ -70,8 +69,8 @@ public:
 protected:
 	std::string name;
 	int id;
-	std::list<IScene*> children;
-	IScene* parent;
+	std::list<SceneBase*> children;
+	SceneBase* parent;
 };
 
 	}

@@ -155,7 +155,7 @@
   <ItemGroup>
     <ClInclude Include="IParticle.h" />
     <ClInclude Include="IPresenter.h" />
-    <ClInclude Include="IScene.h" />
+    <ClInclude Include="SceneBase.h" />
     <ClInclude Include="IVertex.h" />
     <ClInclude Include="ParticleSystemPresenter.h" />
     <ClInclude Include="ParticleSystemScene.h" />
@@ -166,7 +166,7 @@
     <ClInclude Include="WireFrameScene.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IScene.cpp" />
+    <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="ParticleSystemPresenter.cpp" />
     <ClCompile Include="ParticleSystemScene.cpp" />
     <ClCompile Include="PolygonMeshPresenter.cpp" />
