@@ -5,10 +5,12 @@
     <ClInclude Include="ZOrderCurve2d.h" />
     <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="LinearOctreeIndex.h" />
+    <ClInclude Include="SpaceHash.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
     <ClCompile Include="ZOrderCurve2d.cpp" />
     <ClCompile Include="LinearOctreeIndex.cpp" />
+    <ClCompile Include="SpaceHash.cpp" />
   </ItemGroup>
 </Project>
