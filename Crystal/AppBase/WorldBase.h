@@ -6,12 +6,12 @@
 namespace Crystal {
 	namespace UI {
 
-class IWorld : private UnCopyable
+class WorldBase : private UnCopyable
 {
 public:
-	IWorld();
+	WorldBase();
 
-	virtual ~IWorld() = default;
+	virtual ~WorldBase() = default;
 
 	void add(Scene::IScene* scene);
 

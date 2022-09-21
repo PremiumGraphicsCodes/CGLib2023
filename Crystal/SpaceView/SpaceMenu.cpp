@@ -6,7 +6,7 @@
 
 using namespace Crystal::UI;
 
-SpaceMenu::SpaceMenu(const std::string& name, Panel* control, IWorld* world, RendererBase* renderer) :
+SpaceMenu::SpaceMenu(const std::string& name, Panel* control, WorldBase* world, RendererBase* renderer) :
 	IMenu(name)
 {
 	add(new MenuItem("SpaceHash", [&control, &world, &renderer]() {

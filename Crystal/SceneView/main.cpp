@@ -2,12 +2,12 @@
 #include "Crystal/AppBase/Window.h"
 #include "Crystal/AppBase/ParticleSystemMenu.h"
 #include "Crystal/AppBase/WireFrameMenu.h"
-#include "Crystal/AppBase/IWorld.h"
+#include "Crystal/AppBase/WorldBase.h"
+#include "Crystal/AppBase/RendererBase.h"
+#include "Crystal/AppBase/CameraUICtrl.h"
 
 #include "CGLib/UI/Panel.h"
 
-#include "Crystal/AppBase/RendererBase.h"
-#include "Crystal/AppBase/CameraUICtrl.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -16,7 +16,7 @@ using namespace Crystal::Graphics;
 using namespace Crystal::UI;
 
 namespace {
-	class World : public Crystal::UI::IWorld
+	class World : public Crystal::UI::WorldBase
 	{
 		public:
 	};

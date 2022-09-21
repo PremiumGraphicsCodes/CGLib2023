@@ -6,7 +6,7 @@
 
 using namespace Crystal::UI;
 
-ParticleSystemMenu::ParticleSystemMenu(const std::string& name, Panel* control, IWorld* world, RendererBase* renderer) :
+ParticleSystemMenu::ParticleSystemMenu(const std::string& name, Panel* control, WorldBase* world, RendererBase* renderer) :
 	IMenu(name)
 {
 	add(new MenuItem("Sphere", [&control, &world, &renderer]() {

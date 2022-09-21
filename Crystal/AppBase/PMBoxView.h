@@ -5,19 +5,19 @@
 
 namespace Crystal {
 	namespace UI {
-		class IWorld;
+		class WorldBase;
 		class RendererBase;
 
 class PMBoxView : public IOkCancelView
 {
 public:
-	explicit PMBoxView(const std::string& name, IWorld* world, RendererBase* renderer);
+	explicit PMBoxView(const std::string& name, WorldBase* world, RendererBase* renderer);
 
 	void onOk() override;
 
 private:
 	Box3dView boxView;
-	IWorld* world;
+	WorldBase* world;
 	RendererBase* renderer;
 };
 

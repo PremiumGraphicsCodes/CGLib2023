@@ -10,7 +10,7 @@
 
 namespace Crystal {
 	namespace UI {
-		class IWorld;
+		class WorldBase;
 
 class IRenderer
 {
@@ -25,7 +25,7 @@ public:
 class RendererBase : public IRenderer
 {
 public:
-	RendererBase(IWorld* world);
+	RendererBase(WorldBase* world);
 
 	~RendererBase() = default;
 
@@ -44,7 +44,7 @@ public:
 	Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
 
 private:
-	IWorld* world;
+	WorldBase* world;
 	Graphics::Camera camera;
 	Renderer::PointRenderer point;
 	Renderer::LineRenderer line;

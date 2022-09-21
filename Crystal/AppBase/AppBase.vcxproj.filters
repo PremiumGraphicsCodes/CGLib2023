@@ -11,7 +11,7 @@
     <ClInclude Include="IMenuItem.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="CameraMenu.h" />
-    <ClInclude Include="IWorld.h" />
+    <ClInclude Include="WorldBase.h" />
     <ClInclude Include="ParticleSystemMenu.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
@@ -35,7 +35,7 @@
     <ClCompile Include="CameraUICtrl.cpp" />
     <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="CameraMenu.cpp" />
-    <ClCompile Include="IWorld.cpp" />
+    <ClCompile Include="WorldBase.cpp" />
     <ClCompile Include="RendererBase.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp">
       <Filter>ParticleSystem</Filter>

@@ -1,14 +1,14 @@
-#include "IWorld.h"
+#include "WorldBase.h"
 #include "Crystal/Scene/IScene.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-IWorld::IWorld()
+WorldBase::WorldBase()
 {}
 
-void IWorld::add(IScene* scene)
+void WorldBase::add(IScene* scene)
 {
 	rootScene.addScene(scene);
 }

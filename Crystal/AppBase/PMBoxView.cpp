@@ -1,13 +1,13 @@
 #include "PMBoxView.h"
 #include "Crystal/Scene/PolygonMeshScene.h"
 #include "RendererBase.h"
-#include "IWorld.h"
+#include "WorldBase.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-PMBoxView::PMBoxView(const std::string& name, IWorld* world, RendererBase* renderer) :
+PMBoxView::PMBoxView(const std::string& name, WorldBase* world, RendererBase* renderer) :
 	IOkCancelView(name),
 	boxView("Box"),
 	world(world),
