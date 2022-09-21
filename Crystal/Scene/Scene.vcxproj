@@ -161,6 +161,7 @@
     <ClInclude Include="ParticleSystemScene.h" />
     <ClInclude Include="PolygonMeshPresenter.h" />
     <ClInclude Include="PolygonMeshScene.h" />
+    <ClInclude Include="RootScene.h" />
     <ClInclude Include="WireFramePresenter.h" />
     <ClInclude Include="WireFrameScene.h" />
   </ItemGroup>
@@ -170,6 +171,7 @@
     <ClCompile Include="ParticleSystemScene.cpp" />
     <ClCompile Include="PolygonMeshPresenter.cpp" />
     <ClCompile Include="PolygonMeshScene.cpp" />
+    <ClCompile Include="RootScene.cpp" />
     <ClCompile Include="WireFramePresenter.cpp" />
     <ClCompile Include="WireFrameScene.cpp" />
   </ItemGroup>

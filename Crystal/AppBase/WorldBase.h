@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CGLib/Util/UnCopyable.h"
-#include "Crystal/Scene/IScene.h"
+#include "Crystal/Scene/RootScene.h"
 
 namespace Crystal {
 	namespace UI {
@@ -15,12 +15,12 @@ public:
 
 	void add(Scene::IScene* scene);
 
-	Scene::IScene* getRootScene() { return &rootScene; }
+	Scene::RootScene* getRootScene() { return &rootScene; }
 
 	//Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:
-	Scene::IScene rootScene;
+	Scene::RootScene rootScene;
 
 };
 	}

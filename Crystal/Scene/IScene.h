@@ -53,7 +53,7 @@ public:
 
 	//std::list<IScene*> findScenes(SceneType type);
 
-	virtual Math::Box3dd getBoundingBox() const { return Math::Box3dd::createDegeneratedBox(); }
+	virtual Math::Box3df getBoundingBox() const { return Math::Box3df::createDegeneratedBox(); }
 
 	bool isRoot() const { return parent == nullptr; }
 

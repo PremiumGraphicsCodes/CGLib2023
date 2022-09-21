@@ -26,7 +26,7 @@ void CameraMenu::onFit()
 	const auto dist = static_cast<float>(glm::distance(boundingBox.getMin(), boundingBox.getMax()));
 	camera->setNear(dist * 0.1f);
 	camera->setFar(dist * 10.0f);
-	camera->lookAt(boundingBox.getCenter() - Vector3dd(0, 0, dist * 0.5), boundingBox.getCenter(), Vector3df(0, 1, 0));
+	camera->lookAt(boundingBox.getCenter() - Vector3df(0, 0, dist * 0.5), boundingBox.getCenter(), Vector3df(0, 1, 0));
 }
 
 void CameraMenu::onXY()

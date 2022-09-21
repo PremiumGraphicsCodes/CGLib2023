@@ -21,6 +21,8 @@ public:
 
 	IPresenter* getPresenter() override { return presenter.get(); }
 
+	Math::Box3df getBoundingBox() const override;
+
 private:
 	std::vector<IParticle*> particles;
 	std::unique_ptr<ParticleSystemPresenter> presenter;
