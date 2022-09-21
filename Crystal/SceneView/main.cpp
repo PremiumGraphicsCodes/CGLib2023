@@ -5,6 +5,7 @@
 #include "Crystal/AppBase/WorldBase.h"
 #include "Crystal/AppBase/RendererBase.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
+#include "Crystal/AppBase/CameraMenu.h"
 
 #include "CGLib/UI/Panel.h"
 
@@ -44,14 +45,16 @@ int main() {
 
 	Crystal::UI::Canvas canvas;
 	canvas.setUICtrl(std::make_unique<CameraUICtrl>(renderer.getCamera()));
-	Crystal::UI::Window app("Hello", &canvas, &renderer);
-	app.init();
+	Crystal::UI::Window window("Hello", &canvas, &renderer);
+	window.init();
 
 	auto control = new Panel("Control");
 
-	app.add(new ParticleSystemMenu("ParticleSystem", control, &world, &renderer));
-	app.add(new WireFrameMenu("WireFrame", control, &world, &renderer));
-	app.add(control);
+	window.add(new CameraMenu("Camera", &world, &renderer));
+
+	window.add(new ParticleSystemMenu("ParticleSystem", control, &world, &renderer));
+	window.add(new WireFrameMenu("WireFrame", control, &world, &renderer));
+	window.add(control);
 	
-	app.show();
+	window.show();
 }

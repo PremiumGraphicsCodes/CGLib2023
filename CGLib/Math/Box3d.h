@@ -30,6 +30,8 @@ public:
 
 	Vector3d<T> getPosition(const T u, const T v, const T w) const;
 
+	Vector3d<T> getCenter() const;
+
 private:
 	Vector3d<T> min;
 	Vector3d<T> max;

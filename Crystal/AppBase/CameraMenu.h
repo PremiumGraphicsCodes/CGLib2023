@@ -4,11 +4,13 @@
 
 namespace Crystal {
 	namespace UI {
+		class WorldBase;
+		class RendererBase;
 
 class CameraMenu : public IMenu
 {
 public:
-	CameraMenu(const std::string& name);
+	CameraMenu(const std::string& name, WorldBase* world, RendererBase* renderer);
 
 private:
 	void onFit();
@@ -18,6 +20,9 @@ private:
 	void onYZ();
 
 	void onZX();
+
+	WorldBase* world;
+	RendererBase* renderer;
 };
 
 	}

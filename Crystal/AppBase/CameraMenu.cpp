@@ -2,10 +2,16 @@
 #include "Canvas.h"
 #include "MenuItem.h"
 
+#include "WorldBase.h"
+#include "RendererBase.h"
+
+using namespace Crystal::Math;
 using namespace Crystal::UI;
 
-CameraMenu::CameraMenu(const std::string& name) :
-	IMenu(name)
+CameraMenu::CameraMenu(const std::string& name, WorldBase* world, RendererBase* renderer) :
+	IMenu(name),
+	world(world),
+	renderer(renderer)
 {
 	add(new MenuItem("Fit", [&] { onFit(); }));
 	add(new MenuItem("XY", [&] { onXY(); }));
@@ -15,16 +21,12 @@ CameraMenu::CameraMenu(const std::string& name) :
 
 void CameraMenu::onFit()
 {
-	/*
-	const auto boundingBox = world->getBoundingBox();
-		auto camera = world->getCamera()->getCamera();
-		const auto& dist = static_cast<float>(glm::distance(boundingBox.getMin(), boundingBox.getMax()));
-		camera->setNear(dist * 0.1f);
-		camera->setFar(dist * 10.0f);
-		camera->lookAt(boundingBox.getCenter() - Vector3dd(0, 0, dist * 0.5), boundingBox.getCenter(), Vector3dd(0, 1, 0));
-		//world->getCamera()->getPresenter()->updateView();
-		return true;
-		*/
+	const auto boundingBox = world->getRootScene()->getBoundingBox();
+	auto camera = renderer->getCamera();
+	const auto dist = static_cast<float>(glm::distance(boundingBox.getMin(), boundingBox.getMax()));
+	camera->setNear(dist * 0.1f);
+	camera->setFar(dist * 10.0f);
+	camera->lookAt(boundingBox.getCenter() - Vector3dd(0, 0, dist * 0.5), boundingBox.getCenter(), Vector3df(0, 1, 0));
 }
 
 void CameraMenu::onXY()

@@ -92,5 +92,11 @@ Vector3d<T> Box3d<T>::getPosition(const T u, const T v, const T w) const
 	return Vector3d<T>(x, y, z);
 }
 
+template<typename T>
+Vector3d<T> Box3d<T>::getCenter() const
+{
+	return getPosition(0.5, 0.5, 0.5);
+}
+
 template class Box3d<float>;
 template class Box3d<double>;
