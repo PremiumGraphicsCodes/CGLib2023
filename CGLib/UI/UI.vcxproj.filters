@@ -41,6 +41,7 @@
     <ClInclude Include="IOkCancelView.h" />
     <ClInclude Include="IView.h" />
     <ClInclude Include="Line3dView.h" />
+    <ClInclude Include="ColorMapView.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -71,6 +72,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Panel.cpp" />
     <ClCompile Include="Line3dView.cpp" />
+    <ClCompile Include="ColorMapView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Image.h" />
     <ClInclude Include="Camera.h" />
-    <ClInclude Include="ImageFileReader.h" />
     <ClInclude Include="ColorConverter.h">
       <Filter>Color</Filter>
     </ClInclude>
@@ -22,21 +20,37 @@
     <ClInclude Include="ColorTable.h">
       <Filter>Color</Filter>
     </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageFileReader.h">
+      <Filter>Image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Image.cpp" />
     <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="ImageFileReader.cpp" />
     <ClCompile Include="ColorMap.cpp">
       <Filter>Color</Filter>
     </ClCompile>
     <ClCompile Include="ColorTable.cpp">
       <Filter>Color</Filter>
     </ClCompile>
+    <ClCompile Include="ColorConverter.cpp">
+      <Filter>Color</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageFileReader.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Color">
       <UniqueIdentifier>{3901cacf-275a-4f6c-baa2-80e2b0e9f085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image">
+      <UniqueIdentifier>{20eb9198-d942-4e8d-8bf0-f5716f1fff66}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

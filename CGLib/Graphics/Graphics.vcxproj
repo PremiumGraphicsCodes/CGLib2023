@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ColorConverter.cpp" />
     <ClCompile Include="ColorMap.cpp" />
     <ClCompile Include="ColorTable.cpp" />
     <ClCompile Include="Image.cpp" />

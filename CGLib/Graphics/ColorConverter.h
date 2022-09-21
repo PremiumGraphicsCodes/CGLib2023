@@ -7,15 +7,10 @@ namespace Crystal {
 
 class ColorConverter
 {
-	static ColorRGBf convertHSVtoRGBf(const ColorHSV& hsv)
-	{
-		return ColorRGBf();
-	}
+public:
+	static ColorRGBf convertHSVtoRGBf(const ColorHSV& hsv);
 
-	static ColorRGBuc convertHSVToRGBuc(const ColorHSV& hsv)
-	{
-		return ColorRGBuc();
-	}
+	static ColorRGBuc convertHSVToRGBuc(const ColorHSV& hsv);
 
 	static ColorHSV conertRGBToHSV(const ColorRGBf& rgb)
 	{

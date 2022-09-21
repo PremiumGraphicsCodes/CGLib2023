@@ -6,35 +6,38 @@
 namespace Crystal {
 	namespace Graphics {
 
-		class ColorHSV
-		{
-		public:
-			ColorHSV();
+class ColorHSV
+{
+public:
+	ColorHSV() :
+		h(0.0),
+		s(0.0),
+		v(0.0)
+	{}
 
-			ColorHSV(const float h, const float s, const float v);
+	ColorHSV(const float h, const float s, const float v) :
+		h(h),
+		s(s),
+		v(v)
+	{}
 
-			float getH() const { return h; }
+	float getH() const { return h; }
 
-			float getS() const { return s; }
+	float getS() const { return s; }
 
-			float getV() const { return v; }
+	float getV() const { return v; }
 
-			void setH(const float h) { this->h = h; }
+	void setH(const float h) { this->h = h; }
 
-			void setS(const float s) { this->s = s; }
+	void setS(const float s) { this->s = s; }
 
-			void setV(const float v) { this->v = v; }
+	void setV(const float v) { this->v = v; }
 
-			//bool isSame(const ColorHSV& rhs, const double tolerance) const;
+private:
+	float h;
+	float s;
+	float v;
+};
 
-			ColorRGBf toColorRGBf() const;
-
-			ColorRGBuc toColorRGBuc() const;
-
-		private:
-			float h;
-			float s;
-			float v;
-		};
 	}
 }
