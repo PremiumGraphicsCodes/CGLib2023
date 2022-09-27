@@ -73,6 +73,11 @@ namespace {
 			canvas->onRightDragging(coord);
 		}
 	}
+
+	void onMouseWheel(GLFWwindow* window, double xoffset, double yoffset)
+	{
+		canvas->onWheel(yoffset);
+	}
 }
 
 Window::Window(const std::string& title, Canvas* canvas, IRenderer* renderer) :
@@ -122,6 +127,7 @@ bool Window::init()
 
 	glfwSetMouseButtonCallback(window, onMouse);
 	glfwSetCursorPosCallback(window, onMouseMove);
+	glfwSetScrollCallback(window, onMouseWheel);
 
 	renderer->init();
 

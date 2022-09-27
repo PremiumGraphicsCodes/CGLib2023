@@ -61,13 +61,11 @@ void CameraUICtrl::onRightDragging(const Vector2df& position)
 
 void CameraUICtrl::onWheel(const float dx)
 {
-	/*
-	const auto bs = world->getBoundingBox();
-	const auto length = (float)glm::distance(bs.getMin(), bs.getMax()) * 0.1f;
-	const auto camera = world->getCamera()->getCamera();
-	const auto f = camera->getForward();
-	camera->setEye(camera->getEye() + f * dx * length);
-	camera->setTarget(camera->getTarget() + f * dx * length);
+	//const auto bs = world->getBoundingBox();
+	//const auto length = 1.0f;//(float)glm::distance(bs.getMin(), bs.getMax()) * 0.1f;
+	//const auto f = camera->getForward();
+	camera->zoom(dx / 100.0f);
+	//camera->setEye(camera->getEye() + f * dx * length);
+	//camera->setTarget(camera->getTarget() + f * dx * length);
 	//world->getCamera()->getCamera()->zoom(dx / 100.0f);
-	*/
 }

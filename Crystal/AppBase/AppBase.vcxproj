@@ -160,6 +160,7 @@
     <ClInclude Include="IMenuItem.h" />
     <ClInclude Include="IMouseListener.h" />
     <ClInclude Include="PMBoxView.h" />
+    <ClInclude Include="PSSphereView.h" />
     <ClInclude Include="RendererBase.h" />
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="SceneSelectView.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="IMenu.cpp" />
     <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="PMBoxView.cpp" />
+    <ClCompile Include="PSSphereView.cpp" />
     <ClCompile Include="RendererBase.cpp" />
     <ClCompile Include="SceneSelectView.cpp" />
     <ClCompile Include="ShapeMenu.cpp" />
