@@ -42,6 +42,7 @@
     <ClInclude Include="IVolume3d.h">
       <Filter>Interface</Filter>
     </ClInclude>
+    <ClInclude Include="Ray3d.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Matrix">
