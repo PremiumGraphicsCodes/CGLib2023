@@ -6,6 +6,7 @@
 #include "Crystal/AppBase/RendererBase.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
 #include "Crystal/AppBase/CameraMenu.h"
+#include "Crystal/AppBase/SceneListPanel.h"
 
 #include "CGLib/UI/Panel.h"
 
@@ -54,6 +55,8 @@ int main() {
 
 	window.add(new ShapeMenu("Shape", &world, &renderer, control));
 	window.add(control);
+
+	window.add(new SceneListPanel("SceneList", &world));
 	
 	window.show();
 }

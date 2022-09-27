@@ -6,4 +6,7 @@ using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
 WorldBase::WorldBase()
-{}
+{
+	rootScene.setId(getNextId());
+	rootScene.setName("Root");
+}

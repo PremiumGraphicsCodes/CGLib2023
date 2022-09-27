@@ -27,6 +27,7 @@ void PSBoxView::onOk()
 
 	auto scene = new ParticleSystemScene();
 	scene->setId(world->getNextId());
+	scene->setName("PSBox");
 
 	std::mt19937 mt{ std::random_device{}() };
 	std::uniform_real_distribution<float> dist(0.0, 1.0);

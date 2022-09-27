@@ -34,6 +34,7 @@
     <ClInclude Include="PSSphereView.h">
       <Filter>Shape\ParticleSystem</Filter>
     </ClInclude>
+    <ClInclude Include="SceneListPanel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -66,6 +67,7 @@
     <ClCompile Include="PSSphereView.cpp">
       <Filter>Shape\ParticleSystem</Filter>
     </ClCompile>
+    <ClCompile Include="SceneListPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
