@@ -15,11 +15,13 @@ public:
 
 	Scene::SceneGroup* getRootScene() { return &rootScene; }
 
+	int getNextId() { return nextId++; }
+
 	//Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:
 	Scene::SceneGroup rootScene;
-
+	int nextId = 0;
 };
 	}
 }

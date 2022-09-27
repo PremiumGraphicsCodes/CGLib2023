@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="SpaceHashView.cpp" />
     <ClCompile Include="SpaceMenu.cpp" />
     <ClCompile Include="SpaceView.cpp" />
   </ItemGroup>

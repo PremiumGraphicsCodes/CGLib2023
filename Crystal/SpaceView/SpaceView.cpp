@@ -1,7 +1,7 @@
 ﻿#include "Crystal/AppBase/Canvas.h"
 #include "Crystal/AppBase/Window.h"
-#include "Crystal/AppBase/ParticleSystemMenu.h"
-#include "Crystal/AppBase/WireFrameMenu.h"
+#include "Crystal/AppBase/CameraMenu.h"
+#include "Crystal/AppBase/ShapeMenu.h"
 #include "Crystal/AppBase/WorldBase.h"
 #include "Crystal/AppBase/RendererBase.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
@@ -50,8 +50,8 @@ int main() {
 
 	auto control = new Panel("Control");
 
-	app.add(new ParticleSystemMenu("ParticleSystem", control, &world, &renderer));
-	app.add(new WireFrameMenu("WireFrame", control, &world, &renderer));
+	app.add(new ShapeMenu("Camera", &world, &renderer, control));
+	app.add(new ShapeMenu("Shape", &world, &renderer, control));
 	app.add(new SpaceMenu("Space", control, &world, &renderer));
 	app.add(control);
 

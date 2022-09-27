@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="SpaceView.cpp" />
     <ClCompile Include="SpaceMenu.cpp" />
+    <ClCompile Include="SpaceHashView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
