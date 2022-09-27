@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="IndexedParticle.h" />
+    <ClInclude Include="IndexedSortBasedSeacher.h" />
     <ClInclude Include="LinearOctreeIndex.h" />
     <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="SpaceHash.h" />
@@ -162,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IndexedParticle.cpp" />
+    <ClCompile Include="IndexedSortBasedSearcher.cpp" />
     <ClCompile Include="LinearOctreeIndex.cpp" />
     <ClCompile Include="SpaceHash.cpp" />
     <ClCompile Include="ZOrderCurve2d.cpp" />

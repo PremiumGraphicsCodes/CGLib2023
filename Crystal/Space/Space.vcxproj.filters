@@ -9,6 +9,9 @@
     <ClInclude Include="IndexedParticle.h">
       <Filter>Indexed</Filter>
     </ClInclude>
+    <ClInclude Include="IndexedSortBasedSeacher.h">
+      <Filter>Indexed</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
@@ -16,6 +19,9 @@
     <ClCompile Include="LinearOctreeIndex.cpp" />
     <ClCompile Include="SpaceHash.cpp" />
     <ClCompile Include="IndexedParticle.cpp">
+      <Filter>Indexed</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexedSortBasedSearcher.cpp">
       <Filter>Indexed</Filter>
     </ClCompile>
   </ItemGroup>
