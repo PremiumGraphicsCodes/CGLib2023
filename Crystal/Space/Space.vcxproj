@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="IndexedParticle.h" />
     <ClInclude Include="LinearOctreeIndex.h" />
     <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="SpaceHash.h" />
@@ -160,6 +161,7 @@
     <ClInclude Include="ZOrderCurve3d.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="IndexedParticle.cpp" />
     <ClCompile Include="LinearOctreeIndex.cpp" />
     <ClCompile Include="SpaceHash.cpp" />
     <ClCompile Include="ZOrderCurve2d.cpp" />

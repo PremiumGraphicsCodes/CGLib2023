@@ -6,11 +6,22 @@
     <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="LinearOctreeIndex.h" />
     <ClInclude Include="SpaceHash.h" />
+    <ClInclude Include="IndexedParticle.h">
+      <Filter>Indexed</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
     <ClCompile Include="ZOrderCurve2d.cpp" />
     <ClCompile Include="LinearOctreeIndex.cpp" />
     <ClCompile Include="SpaceHash.cpp" />
+    <ClCompile Include="IndexedParticle.cpp">
+      <Filter>Indexed</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Indexed">
+      <UniqueIdentifier>{3ddb502a-48bc-435d-8514-6531f33ef1a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

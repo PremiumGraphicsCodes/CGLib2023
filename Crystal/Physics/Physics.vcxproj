@@ -155,10 +155,12 @@
   <ItemGroup>
     <ClInclude Include="CSPHFluid.h" />
     <ClInclude Include="CSPHParticle.h" />
+    <ClInclude Include="CSPHSolver.h" />
     <ClInclude Include="SPHKernel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CSPHParticle.cpp" />
+    <ClCompile Include="CSPHSolver.cpp" />
     <ClCompile Include="SPHKernel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -8,10 +8,16 @@
     <ClInclude Include="CSPHFluid.h">
       <Filter>CSPH</Filter>
     </ClInclude>
+    <ClInclude Include="CSPHSolver.h">
+      <Filter>CSPH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
     <ClCompile Include="CSPHParticle.cpp">
+      <Filter>CSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="CSPHSolver.cpp">
       <Filter>CSPH</Filter>
     </ClCompile>
   </ItemGroup>
