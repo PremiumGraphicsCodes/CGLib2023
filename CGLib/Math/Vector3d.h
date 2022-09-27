@@ -18,5 +18,11 @@ static T getDistanceSquared(const Vector3d<T>& lhs, const Vector3d<T>& rhs)
 	return glm::dot(v,v);
 }
 
+template<typename T>
+static T getDistance(const Vector3d<T>& lhs, const Vector3d<T>& rhs)
+{
+	return std::sqrt(getDistanceSquared(lhs, rhs));
+}
+
 	}
 }

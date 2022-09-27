@@ -153,9 +153,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CSPHFluid.h" />
+    <ClInclude Include="CSPHParticle.h" />
     <ClInclude Include="SPHKernel.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CSPHParticle.cpp" />
     <ClCompile Include="SPHKernel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
