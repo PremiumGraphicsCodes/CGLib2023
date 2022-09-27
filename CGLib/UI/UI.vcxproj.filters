@@ -52,6 +52,7 @@
       <Filter>Matrix</Filter>
     </ClInclude>
     <ClInclude Include="Float4View.h" />
+    <ClInclude Include="Sphere3dView.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -93,6 +94,7 @@
     <ClCompile Include="Matrix4dView.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
+    <ClCompile Include="Sphere3dView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

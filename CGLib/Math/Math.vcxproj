@@ -29,6 +29,9 @@
     <ClInclude Include="Box2d.h" />
     <ClInclude Include="Box3d.h" />
     <ClInclude Include="glm.h" />
+    <ClInclude Include="ICurve3d.h" />
+    <ClInclude Include="ISurface3d.h" />
+    <ClInclude Include="IVolume3d.h" />
     <ClInclude Include="Line3d.h" />
     <ClInclude Include="Matrix2d.h" />
     <ClInclude Include="Matrix3d.h" />

@@ -33,6 +33,15 @@
     <ClInclude Include="Box2d.h" />
     <ClInclude Include="Line3d.h" />
     <ClInclude Include="Sphere3d.h" />
+    <ClInclude Include="ICurve3d.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ISurface3d.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="IVolume3d.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Matrix">
@@ -40,6 +49,9 @@
     </Filter>
     <Filter Include="Vector">
       <UniqueIdentifier>{ef92b831-fb4d-4566-9c09-d2640b399cb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{076a7b39-adab-428f-a0e5-4732f024c972}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

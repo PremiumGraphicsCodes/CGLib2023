@@ -187,6 +187,7 @@
     <ClInclude Include="Matrix3dView.h" />
     <ClInclude Include="Matrix4dView.h" />
     <ClInclude Include="Panel.h" />
+    <ClInclude Include="Sphere3dView.h" />
     <ClInclude Include="Vector3dView.h" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +209,7 @@
     <ClCompile Include="Matrix3dView.cpp" />
     <ClCompile Include="Matrix4dView.cpp" />
     <ClCompile Include="Panel.cpp" />
+    <ClCompile Include="Sphere3dView.cpp" />
     <ClCompile Include="Vector3dView.cpp" />
   </ItemGroup>
   <ItemGroup>
