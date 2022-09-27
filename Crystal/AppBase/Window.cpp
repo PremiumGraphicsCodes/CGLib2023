@@ -76,7 +76,7 @@ namespace {
 
 	void onMouseWheel(GLFWwindow* window, double xoffset, double yoffset)
 	{
-		canvas->onWheel(yoffset);
+		canvas->onWheel(static_cast<float>(yoffset));
 	}
 }
 

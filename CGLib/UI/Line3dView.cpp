@@ -14,8 +14,8 @@ Line3dView::Line3dView(const std::string& name) :
 
 Line3dView::Line3dView(const std::string& name, const Line3df& value) :
 	IView(name),
-	startView("Start", Vector3df(0, 0, 0)),
-	endView("End", Vector3df(1, 0, 0))
+	startView("Start", value.getStart()),
+	endView("End", value.getEnd())
 {
 	add(&startView);
 	add(&endView);

@@ -2,11 +2,12 @@
 
 #include <string>
 #include <list>
+#include "../Util/UnCopyable.h"
 
 namespace Crystal {
 	namespace UI {
 
-class IWindow
+class IWindow : private UnCopyable
 {
 protected:
 	explicit IWindow(const std::string& name) :
