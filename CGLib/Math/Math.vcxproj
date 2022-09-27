@@ -23,6 +23,7 @@
     <ClCompile Include="Box3d.cpp" />
     <ClCompile Include="glm.cpp" />
     <ClCompile Include="Line3d.cpp" />
+    <ClCompile Include="Sphere3d.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box2d.h" />
@@ -34,6 +35,7 @@
     <ClInclude Include="Matrix4d.h" />
     <ClInclude Include="pi.h" />
     <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Sphere3d.h" />
     <ClInclude Include="Vector2d.h" />
     <ClInclude Include="Vector3d.h" />
     <ClInclude Include="Vector4d.h" />

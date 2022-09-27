@@ -5,6 +5,7 @@
     <ClCompile Include="Box3d.cpp" />
     <ClCompile Include="Box2d.cpp" />
     <ClCompile Include="Line3d.cpp" />
+    <ClCompile Include="Sphere3d.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glm.h" />
@@ -31,6 +32,7 @@
     <ClInclude Include="Box3d.h" />
     <ClInclude Include="Box2d.h" />
     <ClInclude Include="Line3d.h" />
+    <ClInclude Include="Sphere3d.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Matrix">
