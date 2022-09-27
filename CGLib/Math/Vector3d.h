@@ -12,6 +12,18 @@ using Vector3df = Vector3d<float>;
 using Vector3dd = Vector3d<double>;
 
 template<typename T>
+static T getLengthSquared(const Vector3d<T>& v)
+{
+	return v.x * v.x + v.y * v.y + v.z * v.z;
+}
+
+template<typename T>
+static T getLength(const Vector3d<T>& v)
+{
+	return std::sqrt(getLengthSquared(v));
+}
+
+template<typename T>
 static T getDistanceSquared(const Vector3d<T>& lhs, const Vector3d<T>& rhs)
 {
 	const auto v = rhs - lhs;
