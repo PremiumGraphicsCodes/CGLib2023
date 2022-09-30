@@ -6,22 +6,26 @@
 namespace Crystal {
 	namespace Math {
 
-class Rectangle3d : public ISurface3dd
+template<typename T>
+class Rectangle3d : public ISurface3d<T>
 {
 public:
 	Rectangle3d();
 
-	Rectangle3d(const Vector3dd& origin, const Vector3dd& uvec, const Vector3dd& vvec);
+	Rectangle3d(const Vector3d<T>& origin, const Vector3d<T>& uvec, const Vector3d<T>& vvec);
 
-	Vector3dd getPosition(const double u, const double v) const override;
+	Vector3d<T> getPosition(const T u, const T v) const override;
 
-	Vector3dd getNormal() const;
+	Vector3d<T> getNormal() const;
 
 private:
-	Vector3dd origin;
-	Vector3dd uvec;
-	Vector3dd vvec;
+	Vector3d<T> origin;
+	Vector3d<T> uvec;
+	Vector3d<T> vvec;
 };
+
+using Rectangle3df = Rectangle3d<float>;
+using Rectangle3dd = Rectangle3d<double>;
 
 	}
 }
