@@ -8,9 +8,6 @@
     <ClInclude Include="WireFrameScene.h">
       <Filter>WireFrame</Filter>
     </ClInclude>
-    <ClInclude Include="IVertex.h">
-      <Filter>WireFrame</Filter>
-    </ClInclude>
     <ClInclude Include="IPresenter.h" />
     <ClInclude Include="ParticleSystemPresenter.h">
       <Filter>ParticleSystem</Filter>

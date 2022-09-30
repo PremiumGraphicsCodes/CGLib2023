@@ -155,7 +155,6 @@
   <ItemGroup>
     <ClInclude Include="IPresenter.h" />
     <ClInclude Include="SceneBase.h" />
-    <ClInclude Include="IVertex.h" />
     <ClInclude Include="ParticleSystemPresenter.h" />
     <ClInclude Include="ParticleSystemScene.h" />
     <ClInclude Include="PolygonMeshPresenter.h" />

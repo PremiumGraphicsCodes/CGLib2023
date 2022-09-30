@@ -3,6 +3,7 @@
 #include "../Scene/PolygonMeshScene.h"
 
 using namespace Crystal::Graphics;
+using namespace Crystal::Shape;
 using namespace Crystal::Scene;
 
 void PolygonMeshPresenter::build()

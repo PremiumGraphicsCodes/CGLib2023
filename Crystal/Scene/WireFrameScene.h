@@ -1,20 +1,22 @@
 #pragma once
 
 #include "SceneBase.h"
-#include "IVertex.h"
+#include "CGLib/Shape/IVertex.h"
 #include "WireFramePresenter.h"
 #include <vector>
 
 namespace Crystal {
-	namespace Scene {
+	namespace Shape {
 		class IVertex;
+	}
+	namespace Scene {
 
 class WireFrameScene : public SceneBase
 {
 public:
-	void add(IVertex* v);
+	void add(Shape::IVertex* v);
 
-	std::vector<IVertex*> getVertices() const { return vertices; }
+	std::vector<Shape::IVertex*> getVertices() const { return vertices; }
 
 	void addIndex(const unsigned int index) { this->indices.push_back(index); }
 
@@ -26,7 +28,7 @@ public:
 
 private:
 	std::vector<unsigned int> indices;
-	std::vector<IVertex*> vertices;
+	std::vector<Shape::IVertex*> vertices;
 	std::unique_ptr<WireFramePresenter> presenter;
 };
 
