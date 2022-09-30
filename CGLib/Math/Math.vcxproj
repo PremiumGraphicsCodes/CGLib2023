@@ -25,6 +25,7 @@
     <ClCompile Include="glm.cpp" />
     <ClCompile Include="Line3d.cpp" />
     <ClCompile Include="Plane3d.cpp" />
+    <ClCompile Include="Rectangle3d.cpp" />
     <ClCompile Include="Sphere3d.cpp" />
     <ClCompile Include="Triangle3d.cpp" />
   </ItemGroup>
@@ -42,6 +43,7 @@
     <ClInclude Include="Matrix4d.h" />
     <ClInclude Include="pi.h" />
     <ClInclude Include="Plane3d.h" />
+    <ClInclude Include="Rectangle3d.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Ray3d.h" />
     <ClInclude Include="Sphere3d.h" />
