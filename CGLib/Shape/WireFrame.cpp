@@ -3,14 +3,13 @@
 using namespace Crystal::Math;
 using namespace Crystal::Shape;
 
-void WireFrame::add(IVertex* v)
+void WireFrame::add(std::unique_ptr<IVertex> v)
 {
-	this->vertices.push_back(v);
+	this->vertices.push_back(std::move(v));
 }
 
 void WireFrame::addEdge(const Edge& edge)
 {
-	this->indices.push_back(edge.startIndex);
-	this->indices.push_back(edge.endIndex);
+	this->edges.push_back(edge);
 }
 

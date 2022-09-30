@@ -1,12 +1,15 @@
 #pragma once
 
 #include <vector>
+#include <memory>
+
 #include "IVertex.h"
+#include "IShape.h"
 
 namespace Crystal {
 	namespace Shape {
 
-class WireFrame
+class WireFrame : public IShape
 {
 public:
 	struct Edge
@@ -22,17 +25,17 @@ public:
 		unsigned int endIndex;
 	};
 
-	void add(Shape::IVertex* v);
+	void add(std::unique_ptr<Shape::IVertex> v);
 
-	std::vector<Shape::IVertex*> getVertices() const { return vertices; }
+	const std::vector<std::unique_ptr<Shape::IVertex>>& getVertices() const { return vertices; }
 
 	void addEdge(const Edge& edge);
 
-	std::vector<unsigned int> getIndices() const { return indices; }
+	std::vector<Edge> getEdges() const { return edges; }
 
 private:
-	std::vector<unsigned int> indices;
-	std::vector<Shape::IVertex*> vertices;
+	std::vector<Edge> edges;
+	std::vector<std::unique_ptr<Shape::IVertex>> vertices;
 
 };
 	}

@@ -17,15 +17,21 @@ void WireFramePresenter::send()
 	Shader::VertexBuffer<float> color;
 
 	auto shape = model->getShape();
-	const auto vertices = shape->getVertices();
-	for (auto p : vertices) {
+	const auto& vertices = shape->getVertices();
+	for (auto& p : vertices) {
 		position.add(p->getPosition());
 		color.add(ColorRGBAf(1, 0, 0, 0));
 	}
 
 	vbo.position.send(position);
 	vbo.color.send(color);
-	indices = shape->getIndices();
+
+	const auto edges = shape->getEdges();
+	this->indices.clear();
+	for (const auto& e : edges) {
+		 this->indices.push_back( e.startIndex );
+		 this->indices.push_back(e.endIndex);
+	}
 }
 
 void WireFramePresenter::render(const Camera& camera)

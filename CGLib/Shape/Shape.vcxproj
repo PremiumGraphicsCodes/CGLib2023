@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="IParticle.h" />
+    <ClInclude Include="IShape.h" />
     <ClInclude Include="IVertex.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="PolygonMesh.h" />

@@ -19,6 +19,7 @@
     <ClInclude Include="WireFrameBuilder.h">
       <Filter>WireFrame</Filter>
     </ClInclude>
+    <ClInclude Include="IShape.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
