@@ -27,6 +27,9 @@
     <ClCompile Include="IndexedSortBasedSearcher.cpp">
       <Filter>Indexed</Filter>
     </ClCompile>
+    <ClCompile Include="IntersectionCalculator.cpp">
+      <Filter>Intersection</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Indexed">

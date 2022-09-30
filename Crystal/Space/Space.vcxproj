@@ -165,6 +165,7 @@
   <ItemGroup>
     <ClCompile Include="IndexedParticle.cpp" />
     <ClCompile Include="IndexedSortBasedSearcher.cpp" />
+    <ClCompile Include="IntersectionCalculator.cpp" />
     <ClCompile Include="LinearOctreeIndex.cpp" />
     <ClCompile Include="SpaceHash.cpp" />
     <ClCompile Include="ZOrderCurve2d.cpp" />
