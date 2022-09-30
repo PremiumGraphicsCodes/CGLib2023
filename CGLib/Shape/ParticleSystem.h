@@ -2,23 +2,24 @@
 
 #include "../Math/Box3d.h"
 #include "IParticle.h"
+#include "IShape.h"
 #include <vector>
+#include <memory>
 
 namespace Crystal {
 	namespace Shape {
 
-class ParticleSystem
+class ParticleSystem : public IShape
 {
 public:
-	void add(Shape::IParticle* particle);
+	void add(std::unique_ptr<Shape::IParticle> particle);
 
-	std::vector<Shape::IParticle*> getParticles() const { return particles; }
+	const std::vector<std::unique_ptr<IParticle>>& getParticles() const { return particles; }
 
 	Math::Box3df getBoundingBox() const;
 
 private:
-
-	std::vector<Shape::IParticle*> particles;
+	std::vector<std::unique_ptr<IParticle>> particles;
 };
 
 	}

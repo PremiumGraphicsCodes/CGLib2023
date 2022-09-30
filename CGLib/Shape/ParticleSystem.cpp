@@ -3,9 +3,9 @@
 using namespace Crystal::Math;
 using namespace Crystal::Shape;
 
-void ParticleSystem::add(IParticle* particle)
+void ParticleSystem::add(std::unique_ptr<IParticle> particle)
 {
-	this->particles.push_back(particle);
+	this->particles.push_back(std::move(particle));
 }
 
 Box3df ParticleSystem::getBoundingBox() const
@@ -14,7 +14,7 @@ Box3df ParticleSystem::getBoundingBox() const
 		return Box3df::createDegeneratedBox();
 	}
 	Math::Box3df bb(particles.front()->getPosition());
-	for (auto p : particles) {
+	for (auto& p : particles) {
 		bb.add(p->getPosition());
 	}
 	return bb;

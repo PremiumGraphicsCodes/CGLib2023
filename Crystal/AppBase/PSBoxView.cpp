@@ -38,7 +38,7 @@ void PSBoxView::onOk()
 		const auto v = dist(mt);
 		const auto w = dist(mt);
 		const auto pos = box.getPosition(u, v, w);
-		shape->add(new Particle(pos));
+		shape->add(std::make_unique<Particle>(pos));
 	}
 	scene->setShape(std::move(shape));
 
