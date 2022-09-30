@@ -3,5 +3,9 @@
   <ItemGroup>
     <ClInclude Include="IParticle.h" />
     <ClInclude Include="IVertex.h" />
+    <ClInclude Include="WireFrame.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WireFrame.cpp" />
   </ItemGroup>
 </Project>
