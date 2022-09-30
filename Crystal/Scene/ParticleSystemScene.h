@@ -1,7 +1,7 @@
 #pragma once
 
 #include "SceneBase.h"
-#include "CGLib/Shape/IParticle.h"
+#include "CGLib/Shape/ParticleSystem.h"
 #include "ParticleSystemPresenter.h"
 #include <vector>
 
@@ -13,18 +13,18 @@ class ParticleSystemScene : public SceneBase
 public:
 	ParticleSystemScene();
 
-	void add(Shape::IParticle* particle);
-
-	std::vector<Shape::IParticle*> getParticles() const { return particles; }
+	void setShape(std::unique_ptr<Shape::ParticleSystem> shape) { this->shape = std::move(shape); }
 
 	void setPresenter(std::unique_ptr<ParticleSystemPresenter> p) { this->presenter = std::move(p); }
+
+	Shape::ParticleSystem* getShape() { return shape.get(); }
 
 	IPresenter* getPresenter() override { return presenter.get(); }
 
 	Math::Box3df getBoundingBox() const override;
 
 private:
-	std::vector<Shape::IParticle*> particles;
+	std::unique_ptr<Shape::ParticleSystem> shape;
 	std::unique_ptr<ParticleSystemPresenter> presenter;
 
 };

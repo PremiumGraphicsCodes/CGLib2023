@@ -1,11 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="IParticle.h" />
-    <ClInclude Include="IVertex.h" />
-    <ClInclude Include="WireFrame.h" />
+    <ClInclude Include="IParticle.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="IVertex.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="WireFrame.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WireFrame.cpp" />
+    <Filter Include="ParticleSystem">
+      <UniqueIdentifier>{3691b901-8292-4a66-af38-afc69a0bb4a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WireFrame">
+      <UniqueIdentifier>{a57deecd-7c58-4f86-b927-41dfceb48dba}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WireFrame.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

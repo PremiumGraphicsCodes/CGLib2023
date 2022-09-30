@@ -17,7 +17,7 @@ void ParticleSystemPresenter::send()
 	Shader::VertexBuffer<float> color;
 	Shader::VertexBuffer<float> size;
 
-	const auto particles = model->getParticles();
+	const auto particles = model->getShape()->getParticles();
 	for (auto p : particles) {
 		position.add(p->getPosition());
 		color.add(ColorRGBAf(1, 0, 0, 0));

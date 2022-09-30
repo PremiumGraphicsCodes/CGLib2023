@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="IParticle.h" />
     <ClInclude Include="IVertex.h" />
+    <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="WireFrame.h" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +162,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="WireFrame.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

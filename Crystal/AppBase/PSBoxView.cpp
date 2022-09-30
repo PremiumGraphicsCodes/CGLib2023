@@ -27,6 +27,7 @@ void PSBoxView::onOk()
 	const auto box = boxView.getValue();
 
 	auto scene = new ParticleSystemScene();
+	auto shape = std::make_unique<ParticleSystem>();
 	scene->setId(world->getNextId());
 	scene->setName("PSBox");
 
@@ -37,8 +38,9 @@ void PSBoxView::onOk()
 		const auto v = dist(mt);
 		const auto w = dist(mt);
 		const auto pos = box.getPosition(u, v, w);
-		scene->add(new Particle(pos));
+		shape->add(new Particle(pos));
 	}
+	scene->setShape(std::move(shape));
 
 	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, renderer->getPointRenderer());
 	presenter->build();
