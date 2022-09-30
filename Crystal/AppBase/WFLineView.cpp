@@ -30,8 +30,7 @@ void WFLineView::onOk()
 	auto shape = std::make_unique<WireFrame>();
 	shape->add(new Vertex(Vector3df(0, 0, 0)));
 	shape->add(new Vertex(Vector3df(1, 0, 0)));
-	shape->addIndex(0);
-	shape->addIndex(1);
+	shape->addEdge(WireFrame::Edge(0, 1));
 	scene->setShape(std::move(shape));
 
 	auto wfPresenter = std::make_unique<Crystal::Scene::WireFramePresenter>(scene, renderer->getLineRenderer());
