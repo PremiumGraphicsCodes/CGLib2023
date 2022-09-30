@@ -6,6 +6,7 @@
     <ClCompile Include="Box2d.cpp" />
     <ClCompile Include="Line3d.cpp" />
     <ClCompile Include="Sphere3d.cpp" />
+    <ClCompile Include="Plane3d.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glm.h" />
@@ -43,6 +44,7 @@
       <Filter>Interface</Filter>
     </ClInclude>
     <ClInclude Include="Ray3d.h" />
+    <ClInclude Include="Plane3d.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Matrix">

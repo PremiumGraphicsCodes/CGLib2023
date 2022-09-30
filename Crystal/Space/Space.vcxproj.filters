@@ -12,6 +12,9 @@
     <ClInclude Include="IndexedSortBasedSeacher.h">
       <Filter>Indexed</Filter>
     </ClInclude>
+    <ClInclude Include="IntersectionCalculator.h">
+      <Filter>Intersection</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
@@ -28,6 +31,12 @@
   <ItemGroup>
     <Filter Include="Indexed">
       <UniqueIdentifier>{3ddb502a-48bc-435d-8514-6531f33ef1a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Distance">
+      <UniqueIdentifier>{f61fa733-682c-4d91-94a4-9014928370b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Intersection">
+      <UniqueIdentifier>{e16a81c3-75fb-4aed-b581-7bae88a93311}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
