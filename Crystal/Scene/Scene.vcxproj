@@ -153,7 +153,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="IParticle.h" />
     <ClInclude Include="IPresenter.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="IVertex.h" />
@@ -174,6 +173,11 @@
     <ClCompile Include="SceneGroup.cpp" />
     <ClCompile Include="WireFramePresenter.cpp" />
     <ClCompile Include="WireFrameScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CGLib\Shape\Shape.vcxproj">
+      <Project>{6a17c2ee-6107-45a8-a72c-6b8b55136abf}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

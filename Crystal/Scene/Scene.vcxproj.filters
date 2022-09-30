@@ -5,9 +5,6 @@
     <ClInclude Include="ParticleSystemScene.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
-    <ClInclude Include="IParticle.h">
-      <Filter>ParticleSystem</Filter>
-    </ClInclude>
     <ClInclude Include="WireFrameScene.h">
       <Filter>WireFrame</Filter>
     </ClInclude>

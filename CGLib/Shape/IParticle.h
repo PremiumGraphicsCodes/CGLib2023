@@ -1,9 +1,9 @@
 #pragma once
 
-#include "CGLib/Math/Vector3d.h"
+#include "../Math/Vector3d.h"
 
 namespace Crystal {
-	namespace Scene {
+	namespace Shape {
 
 class IParticle
 {
