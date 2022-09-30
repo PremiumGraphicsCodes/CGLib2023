@@ -8,6 +8,7 @@
     <ClCompile Include="Sphere3d.cpp" />
     <ClCompile Include="Plane3d.cpp" />
     <ClCompile Include="Triangle3d.cpp" />
+    <ClCompile Include="Ellipsoid3d.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glm.h" />
