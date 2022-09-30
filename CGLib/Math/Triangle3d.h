@@ -6,24 +6,30 @@
 namespace Crystal {
 	namespace Math {
 
+template <typename T>
 class Triangle3d
 {
 public:
-Triangle3d();
+	Triangle3d();
 
-explicit Triangle3d(const std::array<Vector3dd, 3>& vertices);
+	explicit Triangle3d(const std::array<Vector3d<T>, 3>& vertices);
 
-Triangle3d(const Vector3dd& v1, const Vector3dd& v2, const Vector3dd& v3);
+	//Triangle3d(const Vector3dd& v1, const Vector3dd& v2, const Vector3dd& v3);
 
-Vector3dd getNormal() const;
+	Vector3d<T> getNormal() const;
 
-std::array<Vector3dd, 3> getVertices() const { return vertices; }
+	T getArea() const;
 
-bool isSame(const Triangle3d& rhs, const double tolerance) const;
+	std::array<Vector3d<T>, 3> getVertices() const { return vertices; }
+
+	bool isSame(const Triangle3d<T>& rhs, const T tolerance) const;
 
 private:
-std::array<Vector3dd, 3> vertices;
+	std::array<Vector3d<T>, 3> vertices;
 };
+
+using Triangle3df = Triangle3d<float>;
+using Triabgle3dd = Triangle3d<double>;
 
 	}
 }
