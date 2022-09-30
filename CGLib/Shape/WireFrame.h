@@ -5,6 +5,7 @@
 
 #include "IVertex.h"
 #include "IShape.h"
+#include "../Math/Box3d.h"
 
 namespace Crystal {
 	namespace Shape {
@@ -34,6 +35,8 @@ public:
 	void addEdge(const Edge& edge);
 
 	std::vector<Edge> getEdges() const { return edges; }
+
+	Math::Box3df getBoundingBox() const;
 
 private:
 	std::vector<Edge> edges;

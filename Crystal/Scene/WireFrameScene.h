@@ -21,6 +21,8 @@ public:
 
 	IPresenter* getPresenter() override { return presenter.get(); }
 
+	Math::Box3df getBoundingBox() const override { return shape->getBoundingBox(); }
+
 private:
 	std::unique_ptr<Shape::WireFrame> shape;
 	std::unique_ptr<WireFramePresenter> presenter;

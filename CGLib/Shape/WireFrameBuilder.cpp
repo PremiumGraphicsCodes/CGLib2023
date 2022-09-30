@@ -29,7 +29,7 @@ void WireFrameBuilder::add(const ISurface3d<float>& surface, const int unum, con
 		const float u = i / static_cast<float>(unum);
 		std::vector<int> g;
 		for (int j = 0; j <= vnum; ++j) {
-			const float v = i / static_cast<float>(vnum);
+			const float v = j / static_cast<float>(vnum);
 			g.push_back( createPosition(surface.getPosition(u, v)));
 		}
 		grid.push_back(g);
