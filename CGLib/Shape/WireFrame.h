@@ -36,7 +36,7 @@ public:
 
 	std::vector<Edge> getEdges() const { return edges; }
 
-	Math::Box3df getBoundingBox() const;
+	Math::Box3df getBoundingBox() const override;
 
 private:
 	std::vector<Edge> edges;

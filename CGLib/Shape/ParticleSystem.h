@@ -16,7 +16,7 @@ public:
 
 	const std::vector<std::unique_ptr<IParticle>>& getParticles() const { return particles; }
 
-	Math::Box3df getBoundingBox() const;
+	Math::Box3df getBoundingBox() const override;
 
 private:
 	std::vector<std::unique_ptr<IParticle>> particles;

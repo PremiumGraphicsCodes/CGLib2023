@@ -1,12 +1,13 @@
 #pragma once
 
 #include "IVertex.h"
+#include "IShape.h"
 #include <vector>
 
 namespace Crystal {
 	namespace Shape {
 
-class PolygonMesh
+class PolygonMesh : public IShape
 {
 public:
 	struct Face
@@ -23,6 +24,8 @@ public:
 	void addFace(const Face& face) { this->faces.push_back(face); }
 
 	std::vector<Face> getFaces() const { return faces; }
+
+	Math::Box3df getBoundingBox() const override;
 
 private:
 	std::vector<Face> faces;
