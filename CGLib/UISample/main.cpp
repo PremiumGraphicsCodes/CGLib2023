@@ -137,7 +137,6 @@ int main() {
 		glfwPollEvents();
 	}
 
-	matrix4d.clear();
 	panel.clear();
 
 	// Cleanup

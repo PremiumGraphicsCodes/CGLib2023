@@ -14,11 +14,7 @@ protected:
 		name(name)
 	{}
 
-	virtual ~IWindow() {
-		for (auto c : children) {
-			delete c;
-		}
-	};
+	virtual ~IWindow() {};
 
 public:
 	void add(IWindow* child) { children.push_back(child); }
