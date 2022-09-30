@@ -16,6 +16,9 @@
     <ClInclude Include="PolygonMesh.h">
       <Filter>PolygonMesh</Filter>
     </ClInclude>
+    <ClInclude Include="WireFrameBuilder.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
@@ -37,6 +40,9 @@
     </ClCompile>
     <ClCompile Include="PolygonMesh.cpp">
       <Filter>PolygonMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="WireFrameBuilder.cpp">
+      <Filter>WireFrame</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
