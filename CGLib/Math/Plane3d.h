@@ -5,29 +5,33 @@
 namespace Crystal {
 	namespace Math {
 
+template<typename T>
 class Plane3d
 {
 public:
 	Plane3d();
 
-	Plane3d(const Vector3dd& origin, const Vector3dd& normal);
+	Plane3d(const Vector3d<T>& origin, const Vector3d<T>& normal);
 
-	Plane3d(const double d, const Vector3dd& normal);
+	//Plane3d(const T d, const Vector3d<T>& normal);
 
-	Vector3dd getOrigin() const { return origin; }
+	Vector3d<T> getOrigin() const { return origin; }
 
-	Vector3dd getNormal() const { return normal; }
+	Vector3d<T> getNormal() const { return normal; }
 
-	double getDistance(const Vector3dd& position) const;
+	T getDistance(const Vector3d<T>& position) const;
 
-	bool isSame(const Plane3d& rhs, const double tolerance) const;
+	//bool isSame(const Plane3d& rhs, const double tolerance) const;
 
-	double calculateD() const;
+	//double calculateD() const;
 
 private:
-	Vector3dd origin;
-	Vector3dd normal;
+	Vector3d<T> origin;
+	Vector3d<T> normal;
 };
+
+using Plane3df = Plane3d<float>;
+using Plane3dd = Plane3d<double>;
 
 	}
 }
