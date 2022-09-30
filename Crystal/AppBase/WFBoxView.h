@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CGLib/UI/IOkCancelView.h"
-#include "CGLib/UI/Sphere3dView.h"
+#include "CGLib/UI/Box3dView.h"
 #include "CGLib/UI/IntView.h"
 
 namespace Crystal {
@@ -10,17 +10,18 @@ namespace Crystal {
 class WorldBase;
 class RendererBase;
 
-class WFSphereView : public IOkCancelView
+class WFBoxView : public IOkCancelView
 {
 public:
-	WFSphereView(const std::string& name, WorldBase* world, RendererBase* renderer);
+	WFBoxView(const std::string& name, WorldBase* world, RendererBase* renderer);
 
 	void onOk() override;
 
 private:
-	Sphere3dView sphereView;
+	Box3dView boxView;
 	IntView uNumView;
 	IntView vNumView;
+	IntView wNumView;
 	WorldBase* world;
 	RendererBase* renderer;
 };

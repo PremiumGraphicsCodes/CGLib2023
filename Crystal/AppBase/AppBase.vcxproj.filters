@@ -38,6 +38,9 @@
     <ClInclude Include="WFSphereView.h">
       <Filter>Shape\WireFrame</Filter>
     </ClInclude>
+    <ClInclude Include="WFBoxView.h">
+      <Filter>Shape\WireFrame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -72,6 +75,9 @@
     </ClCompile>
     <ClCompile Include="SceneListPanel.cpp" />
     <ClCompile Include="WFSphereView.cpp">
+      <Filter>Shape\WireFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="WFBoxView.cpp">
       <Filter>Shape\WireFrame</Filter>
     </ClCompile>
   </ItemGroup>

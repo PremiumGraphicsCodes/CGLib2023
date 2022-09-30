@@ -25,7 +25,7 @@ public:
 
 	void add(const Math::ISurface3d<float>& surface, const int unum, const int vnum);
 
-	//void add(const Math::IVolume3d<float>& volume, const int unum, const int vnun, const int wnum);
+	void add(const Math::IVolume3d<float>& volume, const int unum, const int vnun, const int wnum);
 
 	std::unique_ptr<WireFrame> toWireFrame();
 

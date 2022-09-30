@@ -12,7 +12,7 @@ namespace Crystal {
 class WFLineView : public IOkCancelView
 {
 public:
-	explicit WFLineView(const std::string& name, WorldBase* world, RendererBase* renderer);
+	WFLineView(const std::string& name, WorldBase* world, RendererBase* renderer);
 
 	void onOk() override;
 

@@ -1,4 +1,4 @@
-#include "WFSphereView.h"
+#include "WFBoxView.h"
 #include "Crystal/AppBase/RendererBase.h"
 #include "Crystal/AppBase/WorldBase.h"
 #include "Crystal/Scene/WireFrameScene.h"
@@ -9,26 +9,28 @@ using namespace Crystal::Shape;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-WFSphereView::WFSphereView(const std::string& name, WorldBase* world, RendererBase* renderer) :
+WFBoxView::WFBoxView(const std::string& name, WorldBase* world, RendererBase* renderer) :
 	IOkCancelView(name),
-	sphereView("Sphere"),
-	uNumView("UNum", 12),
-	vNumView("VNum", 12),
+	boxView("Box"),
+	uNumView("UNum", 1),
+	vNumView("VNum", 1),
+	wNumView("WNum", 1),
 	world(world),
 	renderer(renderer)
 {
-	add(&sphereView);
+	add(&boxView);
 	add(&uNumView);
 	add(&vNumView);
+	add(&wNumView);
 }
 
-void WFSphereView::onOk()
+void WFBoxView::onOk()
 {
-	const auto sphere = sphereView.getValue();
+	const auto box = boxView.getValue();
 
 	auto scene = new WireFrameScene();
 	WireFrameBuilder wfBuilder;
-	wfBuilder.add(sphere, uNumView.getValue(), vNumView.getValue());
+	wfBuilder.add(box, uNumView.getValue(), vNumView.getValue(), wNumView.getValue());
 	scene->setShape(std::move(wfBuilder.toWireFrame()));
 
 	auto wfPresenter = std::make_unique<Crystal::Scene::WireFramePresenter>(scene, renderer->getLineRenderer());
