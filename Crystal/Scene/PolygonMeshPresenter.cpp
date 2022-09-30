@@ -17,7 +17,9 @@ void PolygonMeshPresenter::send()
 	Shader::VertexBuffer<float> position;
 	Shader::VertexBuffer<float> color;
 
-	const auto vertices = model->getVertices();
+	auto shape = model->getShape();
+
+	const auto vertices = shape->getVertices();
 	for (auto p : vertices) {
 		position.add(p->getPosition());
 		color.add(ColorRGBAf(1, 0, 0, 0));
@@ -26,7 +28,7 @@ void PolygonMeshPresenter::send()
 	vbo.position.send(position);
 	vbo.color.send(color);
 
-	const auto faces = model->getFaces();
+	const auto faces = shape->getFaces();
 	for (const auto& f : faces) {
 		indices.push_back(f.v0);
 		indices.push_back(f.v1);

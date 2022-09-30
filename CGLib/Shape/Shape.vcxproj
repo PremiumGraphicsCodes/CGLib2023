@@ -154,6 +154,7 @@
     <ClInclude Include="IParticle.h" />
     <ClInclude Include="IVertex.h" />
     <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="PolygonMesh.h" />
     <ClInclude Include="WireFrame.h" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="PolygonMesh.cpp" />
     <ClCompile Include="WireFrame.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
