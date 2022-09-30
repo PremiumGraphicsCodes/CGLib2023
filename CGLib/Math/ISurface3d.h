@@ -13,7 +13,7 @@ public:
 
 	virtual Vector3d<T> getPosition(const T u, const T v) const = 0;
 
-	virtual Vector3d<T> getNormal(const T u, const T v) const = 0;
+	//virtual Vector3d<T> getNormal(const T u, const T v) const = 0;
 };
 
 using ISurface3df = ISurface3d<float>;
