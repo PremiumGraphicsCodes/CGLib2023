@@ -166,6 +166,7 @@
     <ClInclude Include="SceneListPanel.h" />
     <ClInclude Include="SceneSelectView.h" />
     <ClInclude Include="ShapeMenu.h" />
+    <ClInclude Include="WFSphereView.h" />
     <ClInclude Include="WorldBase.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="ParticleSystemMenu.h" />
@@ -186,6 +187,7 @@
     <ClCompile Include="SceneListPanel.cpp" />
     <ClCompile Include="SceneSelectView.cpp" />
     <ClCompile Include="ShapeMenu.cpp" />
+    <ClCompile Include="WFSphereView.cpp" />
     <ClCompile Include="WorldBase.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp" />
     <ClCompile Include="PSBoxView.cpp" />

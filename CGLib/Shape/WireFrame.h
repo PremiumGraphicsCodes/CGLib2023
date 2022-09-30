@@ -25,9 +25,11 @@ public:
 		unsigned int endIndex;
 	};
 
-	void add(std::unique_ptr<Shape::IVertex> v);
+	WireFrame() = default;
 
-	const std::vector<std::unique_ptr<Shape::IVertex>>& getVertices() const { return vertices; }
+	void add(std::unique_ptr<IVertex> v);
+
+	const std::vector<std::unique_ptr<IVertex>>& getVertices() const { return vertices; }
 
 	void addEdge(const Edge& edge);
 

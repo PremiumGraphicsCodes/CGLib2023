@@ -35,6 +35,9 @@
       <Filter>Shape\ParticleSystem</Filter>
     </ClInclude>
     <ClInclude Include="SceneListPanel.h" />
+    <ClInclude Include="WFSphereView.h">
+      <Filter>Shape\WireFrame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -68,6 +71,9 @@
       <Filter>Shape\ParticleSystem</Filter>
     </ClCompile>
     <ClCompile Include="SceneListPanel.cpp" />
+    <ClCompile Include="WFSphereView.cpp">
+      <Filter>Shape\WireFrame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
