@@ -168,6 +168,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Circle3dView.h" />
     <ClInclude Include="ColorMapView.h" />
+    <ClInclude Include="Ellipse3dView.h" />
     <ClInclude Include="Float4View.h" />
     <ClInclude Include="FloatView.h" />
     <ClInclude Include="imconfig.h" />
@@ -198,6 +199,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Circle3dView.cpp" />
     <ClCompile Include="ColorMapView.cpp" />
+    <ClCompile Include="Ellipse3dView.cpp" />
     <ClCompile Include="Float4View.cpp" />
     <ClCompile Include="FloatView.cpp" />
     <ClCompile Include="imgui.cpp" />

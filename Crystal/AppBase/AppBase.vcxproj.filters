@@ -41,6 +41,9 @@
     <ClInclude Include="WFBoxView.h">
       <Filter>Shape\WireFrame</Filter>
     </ClInclude>
+    <ClInclude Include="WFEllipseView.h">
+      <Filter>Shape\WireFrame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />

@@ -5,11 +5,17 @@ using namespace Crystal::UI;
 
 Sphere3dView::Sphere3dView(const std::string& name) :
 	IView(name),
-	center("Center", Math::Vector3dd(0, 0, 0)),
-	radius("Radius", 1.0)
+	center("Center"),
+	radius("Radius")
 {
 	add(&center);
 	add(&radius);
+}
+
+Sphere3dView::Sphere3dView(const std::string& name, const Sphere3df& value) :
+	Sphere3dView(name)
+{
+	setValue(value);
 }
 
 Sphere3df Sphere3dView::getValue() const

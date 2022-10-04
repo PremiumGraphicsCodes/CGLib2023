@@ -167,6 +167,7 @@
     <ClInclude Include="SceneSelectView.h" />
     <ClInclude Include="ShapeMenu.h" />
     <ClInclude Include="WFBoxView.h" />
+    <ClInclude Include="WFEllipseView.h" />
     <ClInclude Include="WFSphereView.h" />
     <ClInclude Include="WorldBase.h" />
     <ClInclude Include="MenuItem.h" />

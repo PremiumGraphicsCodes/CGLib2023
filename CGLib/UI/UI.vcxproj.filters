@@ -55,6 +55,7 @@
     <ClInclude Include="Sphere3dView.h" />
     <ClInclude Include="Ray3dView.h" />
     <ClInclude Include="Circle3dView.h" />
+    <ClInclude Include="Ellipse3dView.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -99,6 +100,7 @@
     <ClCompile Include="Sphere3dView.cpp" />
     <ClCompile Include="Ray3dView.cpp" />
     <ClCompile Include="Circle3dView.cpp" />
+    <ClCompile Include="Ellipse3dView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
