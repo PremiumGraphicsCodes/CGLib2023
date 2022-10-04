@@ -45,6 +45,14 @@ bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const
 }
 
 template<typename T>
+bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Triangle3d<T>& triangle, const T tolerance)
+{
+	assert(false);
+	return false;
+}
+
+
+template<typename T>
 bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Rectancle3d<T>& quad, const T tolerance)
 {
 	assert(false);

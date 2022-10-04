@@ -34,6 +34,7 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="IndexedSortBasedSearcherTest.cpp" />
+    <ClCompile Include="IntersectionCalculatorTest.cpp" />
     <ClCompile Include="SpaceHashTest.cpp" />
   </ItemGroup>
   <ItemGroup>

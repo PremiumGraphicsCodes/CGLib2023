@@ -31,9 +31,7 @@ public:
 
 	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Plane3d<T>& plane, const T tolerance);
 
-	/*
-	bool calculateIntersection(const Math::Ray3df& ray, const Math::Triangle3d& triangle, const double tolerance);
-	*/
+	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
 
 	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Rectancle3d<T>& quad, const T tolerance);
 
