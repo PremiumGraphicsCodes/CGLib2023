@@ -23,16 +23,17 @@ namespace Crystal {
 	namespace Space {
 
 template<typename T>
-class IntersectionCalculator
+class DistanceCalculator
 {
 public:
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Sphere3d<T>& sphere, const T tolerance);
+	T calculate(const Math::Ray3d<T>& ray, const Math::Sphere3d<T>& sphere);
 
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Plane3d<T>& plane, const T tolerance);
+	/*
+	T calculate(const Math::Ray3d<T>& ray, const Math::Plane3d<T>& plane, const T tolerance);
 
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
+	T calculate(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
 
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Rectancle3d<T>& quad, const T tolerance);
+	T calculate(const Math::Ray3d<T>& ray, const Math::Rectancle3d<T>& quad, const T tolerance);
 
 	/*
 	bool calculateIntersection(const Math::Ray3df& ray, const Math::Box3df& box, const double tolerance);
@@ -48,10 +49,6 @@ public:
 	bool calculateIntersection(const Math::Triangle3d& lhs, const Math::Triangle3d& rhs, const double tolerance);
 	*/
 
-	std::vector<Math::Vector3d<T>> getIntersections() const { return intersections; }
-
-private:
-	std::vector<Math::Vector3d<T>> intersections;
 };
 	}
 }

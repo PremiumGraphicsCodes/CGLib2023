@@ -15,6 +15,9 @@
     <ClInclude Include="IntersectionCalculator.h">
       <Filter>Intersection</Filter>
     </ClInclude>
+    <ClInclude Include="DistanceCalculator.h">
+      <Filter>Distance</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
@@ -29,6 +32,9 @@
     </ClCompile>
     <ClCompile Include="IntersectionCalculator.cpp">
       <Filter>Intersection</Filter>
+    </ClCompile>
+    <ClCompile Include="DistanceCalculator.cpp">
+      <Filter>Distance</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

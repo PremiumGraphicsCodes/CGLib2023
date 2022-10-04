@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DistanceCalculator.h" />
     <ClInclude Include="IndexedParticle.h" />
     <ClInclude Include="IndexedSortBasedSeacher.h" />
     <ClInclude Include="IntersectionCalculator.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="ZOrderCurve3d.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DistanceCalculator.cpp" />
     <ClCompile Include="IndexedParticle.cpp" />
     <ClCompile Include="IndexedSortBasedSearcher.cpp" />
     <ClCompile Include="IntersectionCalculator.cpp" />
