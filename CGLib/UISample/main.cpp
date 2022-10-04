@@ -96,24 +96,19 @@ int main() {
 				if (ImGui::MenuItem("Tex")) {
 				}
 				if (ImGui::MenuItem("ColorMap")) {
-					panel.clear();
-					panel.add(&colorMap);
+					panel.setChild(&colorMap);
 				}
 				if (ImGui::MenuItem("Matrix2d")) {
-					panel.clear();
-					panel.add(&matrix2d);
+					panel.setChild(&matrix2d);
 				}
 				if (ImGui::MenuItem("Matrix3d")) {
-					panel.clear();
-					panel.add(&matrix3d);
+					panel.setChild(&matrix3d);
 				}
 				if (ImGui::MenuItem("Matrix4d")) {
-					panel.clear();
-					panel.add(&matrix4d);
+					panel.setChild(&matrix4d);
 				}
 				if (ImGui::MenuItem("Circle3d")) {
-					panel.clear();
-					panel.add(&circle3d);
+					panel.setChild(&circle3d);
 				}
 
 

@@ -14,6 +14,11 @@ public:
 
 	//virtual ~Panel() = default;
 
+	void setChild(IWindow* window) {
+		this->children.clear();
+		this->children.push_back(window);
+	}
+
 	void onShow() override;
 
 private:

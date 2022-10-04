@@ -2,7 +2,6 @@
 
 #include "IView.h"
 #include "Vector3dView.h"
-#include "FloatView.h"
 
 #include "../Math/Ellipse3d.h"
 

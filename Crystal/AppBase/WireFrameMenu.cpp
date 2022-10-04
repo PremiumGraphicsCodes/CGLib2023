@@ -14,19 +14,15 @@ WireFrameMenu::WireFrameMenu(const std::string& name, Panel* control, WorldBase*
 	IMenu(name)
 {
 	add(new MenuItem("Line", [control, world, renderer]() {
-		control->clear();
-		control->add(new WFLineView("WFLine", world, renderer));
+		control->setChild(new WFLineView("WFLine", world, renderer));
 		}));
 	add(new MenuItem("Box", [control, world, renderer]() {
-		control->clear();
-		control->add(new WFBoxView("WFBox", world, renderer));
+		control->setChild(new WFBoxView("WFBox", world, renderer));
 		}));
 	add(new MenuItem("Sphere", [control, world, renderer]() {
-		control->clear();
-		control->add(new WFSphereView("WFSphere", world, renderer));
+		control->setChild(new WFSphereView("WFSphere", world, renderer));
 		}));
 	add(new MenuItem("Ellipse", [control, world, renderer]() {
-		control->clear();
-		control->add(new WFEllipseView("WFEllipse", world, renderer));
+		control->setChild(new WFEllipseView("WFEllipse", world, renderer));
 		}));
 }
