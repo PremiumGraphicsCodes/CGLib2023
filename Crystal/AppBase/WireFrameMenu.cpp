@@ -6,6 +6,7 @@
 #include "WFLineView.h"
 #include "WFBoxView.h"
 #include "WFSphereView.h"
+#include "WFEllipseView.h"
 
 using namespace Crystal::UI;
 
@@ -23,5 +24,9 @@ WireFrameMenu::WireFrameMenu(const std::string& name, Panel* control, WorldBase*
 	add(new MenuItem("Sphere", [control, world, renderer]() {
 		control->clear();
 		control->add(new WFSphereView("WFSphere", world, renderer));
+		}));
+	add(new MenuItem("Ellipse", [control, world, renderer]() {
+		control->clear();
+		control->add(new WFEllipseView("WFEllipse", world, renderer));
 		}));
 }

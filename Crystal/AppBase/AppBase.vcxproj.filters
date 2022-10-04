@@ -83,6 +83,9 @@
     <ClCompile Include="WFBoxView.cpp">
       <Filter>Shape\WireFrame</Filter>
     </ClCompile>
+    <ClCompile Include="WFEllipseView.cpp">
+      <Filter>Shape\WireFrame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,4 +1,5 @@
 #include "Ellipse3d.h"
+#include "pi.h"
 
 using namespace Crystal::Math;
 
@@ -18,10 +19,22 @@ Ellipse3d<T>::Ellipse3d(const Vector3d<T>& center, const Vector3d<T>& uvec, cons
 }
 
 template<typename T>
+Vector3d<T> Ellipse3d<T>::getPosition(const T u) const
+{
+	const auto angle = T(2) * u * T(PI);
+
+	auto uu = std::cos(angle) * uvec;
+	auto vv = std::sin(angle) * vvec;
+	return center + uu + vv;
+}
+
+template<typename T>
 Vector3d<T> Ellipse3d<T>::getPosition(const T u, const T v) const
 {
-	auto uu = u * uvec;
-	auto vv = v * vvec;
+	const auto angle = T(2) * u * T(PI);
+
+	auto uu = std::cos(angle) * uvec * v;
+	auto vv = std::sin(angle) * vvec * v;
 	return center + uu + vv;
 }
 

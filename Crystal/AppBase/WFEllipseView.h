@@ -18,7 +18,7 @@ public:
 	void onOk() override;
 
 private:
-	Ellipse3dView sphereView;
+	Ellipse3dView ellipseView;
 	IntView uNumView;
 	IntView vNumView;
 	WorldBase* world;
