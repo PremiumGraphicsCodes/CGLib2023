@@ -47,6 +47,9 @@
     <ClInclude Include="WFEllipsoidView.h">
       <Filter>Shape\WireFrame</Filter>
     </ClInclude>
+    <ClInclude Include="WFCylinderView.h">
+      <Filter>Shape\WireFrame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -90,6 +93,9 @@
       <Filter>Shape\WireFrame</Filter>
     </ClCompile>
     <ClCompile Include="WFEllipsoidView.cpp">
+      <Filter>Shape\WireFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="WFCylinderView.cpp">
       <Filter>Shape\WireFrame</Filter>
     </ClCompile>
   </ItemGroup>

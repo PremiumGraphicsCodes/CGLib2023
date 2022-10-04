@@ -8,6 +8,7 @@
 #include "WFSphereView.h"
 #include "WFEllipseView.h"
 #include "WFEllipsoidView.h"
+#include "WFCylinderView.h"
 
 using namespace Crystal::UI;
 
@@ -28,5 +29,8 @@ WireFrameMenu::WireFrameMenu(const std::string& name, Panel* control, WorldBase*
 		}));
 	add(new MenuItem("Ellipsoid", [control, world, renderer]() {
 		control->setChild(new WFEllipsoidView("WFEllipsoid", world, renderer));
+		}));
+	add(new MenuItem("Cylinder", [control, world, renderer]() {
+		control->setChild(new WFCylinderView("WFCylinder", world, renderer));
 		}));
 }
