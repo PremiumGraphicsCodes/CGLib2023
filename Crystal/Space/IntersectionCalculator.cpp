@@ -2,6 +2,7 @@
 
 #include "CGLib/Math/Ray3d.h"
 #include "CGLib/Math/Sphere3d.h"
+#include "CGLib/Math/Plane3d.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;
@@ -28,6 +29,45 @@ bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const
 	}
 	return false;
 }
+
+template<typename T>
+bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Plane3d<T>& plane, const T tolerance)
+{
+	const auto distance = plane.getDistance(ray.getOrigin());
+
+	if (distance > -tolerance)
+	{
+		const auto i = ray.getPosition(distance);
+		intersections.push_back(i);
+		return true;
+	}
+	return false;
+}
+
+template<typename T>
+bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Rectancle3d<T>& quad, const T tolerance)
+{
+	assert(false);
+	/*
+	const auto& plane = quad.toPlane();
+
+	IntersectionCalculator innerAlgo;
+	if (!innerAlgo.calculateIntersection(ray, plane, tolerance)) {
+		return false;
+	}
+
+	auto s = innerAlgo.getIntersections()[0].position;
+	if (quad.isInside(s)) {
+		Intersection intersection;
+		intersection.position = s;
+		intersection.normal = quad.getNormal();
+		intersections.push_back(intersection);
+		return true;
+	}
+	*/
+	return false;
+}
+
 
 template class IntersectionCalculator<float>;
 template class IntersectionCalculator<double>;

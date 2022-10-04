@@ -15,6 +15,8 @@ namespace Crystal {
 		class Plane3d;
 		template<typename T>
 		class Triangle3d;
+		template<typename T>
+		class Rectancle3d;
 		//class Quad3d;
 		template<typename T>
 		class Box3d;
@@ -27,13 +29,15 @@ class IntersectionCalculator
 public:
 	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Sphere3d<T>& sphere, const T tolerance);
 
+	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Plane3d<T>& plane, const T tolerance);
+
 	/*
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Plane3d& plane, const T tolerance);
-
 	bool calculateIntersection(const Math::Ray3df& ray, const Math::Triangle3d& triangle, const double tolerance);
+	*/
 
-	bool calculateIntersection(const Math::Ray3df& ray, const Math::Quad3d& quad, const double tolerance);
+	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Rectancle3d<T>& quad, const T tolerance);
 
+	/*
 	bool calculateIntersection(const Math::Ray3df& ray, const Math::Box3df& box, const double tolerance);
 
 	bool calculateIntersection(const Math::Line3df& line, const Math::Plane3d& plane, const double tolerance);

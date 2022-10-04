@@ -22,6 +22,7 @@
     <ClCompile Include="Box2d.cpp" />
     <ClCompile Include="Box3d.cpp" />
     <ClCompile Include="Circle3d.cpp" />
+    <ClCompile Include="Ellipse3d.cpp" />
     <ClCompile Include="Ellipsoid3d.cpp" />
     <ClCompile Include="glm.cpp" />
     <ClCompile Include="Line3d.cpp" />
@@ -34,6 +35,7 @@
     <ClInclude Include="Box2d.h" />
     <ClInclude Include="Box3d.h" />
     <ClInclude Include="Circle3d.h" />
+    <ClInclude Include="Ellipse3d.h" />
     <ClInclude Include="Ellipsoid3d.h" />
     <ClInclude Include="glm.h" />
     <ClInclude Include="ICurve3d.h" />
