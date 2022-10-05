@@ -34,6 +34,8 @@ public:
 
 	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
 
+	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Box3d<T>& box, const T tolerance);
+
 	//T calculate(const Math::Ray3d<T>& ray, const Math::Rectancle3d<T>& quad, const T tolerance);
 
 	/*

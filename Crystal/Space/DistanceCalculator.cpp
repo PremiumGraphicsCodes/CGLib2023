@@ -3,6 +3,7 @@
 #include "CGLib/Math/Ray3d.h"
 #include "CGLib/Math/Sphere3d.h"
 #include "CGLib/Math/Triangle3d.h"
+#include "CGLib/Math/Box3d.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;
@@ -74,6 +75,53 @@ std::vector<T> DistanceCalculator<T>::calculate(const Ray3d<T>& ray, const Trian
 	const auto param = Vector3d<T>(t, u, v);
 	return { param.x };
 }
+
+// ref https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-box-intersection
+template<typename T>
+std::vector<T> DistanceCalculator<T>::calculate(const Ray3d<T>& ray, const Box3d<T>& box, const T tolerance)
+{
+	// tmin, tmax -> parameter
+	const auto origin = ray.getOrigin();
+	const auto dir = ray.getDirection();
+
+	const auto min = box.getMin();
+	const auto max = box.getMax();
+	auto tmin = (min.x - origin.x) / dir.x;
+	auto tmax = (max.x - origin.x) / dir.x;
+
+	if (tmin > tmax) std::swap(tmin, tmax);
+
+	auto tymin = (min.y - origin.y) / dir.y;
+	auto tymax = (max.y - origin.y) / dir.y;
+
+	if (tymin > tymax) std::swap(tymin, tymax);
+
+	if ((tmin > tymax) || (tymin > tmax))
+		return {};
+
+	if (tymin > tmin)
+		tmin = tymin;
+
+	if (tymax < tmax)
+		tmax = tymax;
+
+	auto tzmin = (min.z - origin.z) / dir.z;
+	auto tzmax = (max.z - origin.z) / dir.z;
+
+	if (tzmin > tzmax) std::swap(tzmin, tzmax);
+
+	if ((tmin > tzmax) || (tzmin > tmax))
+		return {};
+
+	if (tzmin > tmin)
+		tmin = tzmin;
+
+	if (tzmax < tmax)
+		tmax = tzmax;
+
+	return { tmin, tmax };
+}
+
 
 template class DistanceCalculator<float>;
 template class DistanceCalculator<double>;

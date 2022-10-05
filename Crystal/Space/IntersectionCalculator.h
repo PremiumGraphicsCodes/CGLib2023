@@ -16,7 +16,7 @@ namespace Crystal {
 		template<typename T>
 		class Triangle3d;
 		template<typename T>
-		class Rectancle3d;
+		class Rectangle3d;
 		template<typename T>
 		class Box3d;
 	}
@@ -32,7 +32,7 @@ public:
 
 	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
 
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Rectancle3d<T>& quad, const T tolerance);
+	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Rectangle3d<T>& quad, const T tolerance);
 
 	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Box3d<T>& box, const T tolerance);
 
