@@ -32,6 +32,8 @@ public:
 
 	Vector3d<T> getCenter() const;
 
+	bool contains(const Vector3d<T>& p, const T tolerance) const;
+
 private:
 	Vector3d<T> min;
 	Vector3d<T> max;

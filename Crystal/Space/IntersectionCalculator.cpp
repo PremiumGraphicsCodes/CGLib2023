@@ -14,48 +14,54 @@ using namespace Crystal::Math;
 using namespace Crystal::Space;
 
 namespace {
-	/*
-bool Triangle3d::isInside(const Vector3dd& p) const
-{
-	const auto& n = getNormal();
 
-	const auto a = vertices[0] - p;
-	const auto b = vertices[1] - p;
-	const auto c = vertices[2] - p;
-
-	const auto d = vertices[1] - vertices[0];
-	const auto e = vertices[2] - vertices[1];
-	const auto f = vertices[0] - vertices[2];
-
-	const auto& v1 = glm::cross(a, d);
-	if (glm::dot(v1, n) < 0.0) {
-		return false;
-	}
-	const auto& v2 = glm::cross(b, e);
-	if (glm::dot(v2, n) < 0.0) {
-		return false;
-	}
-	const auto& v3 = glm::cross(c, f);
-	if (glm::dot(v3, n) < 0.0) {
-		return false;
-	}
-	return true;
-}
-*/
-	/*
-	bool Quad3d::isInside(const Vector3dd& p) const
+	template<typename T>
+	bool isInside(const Vector3d<T>& p, const Triangle3d<T>& triangle)
 	{
-		const auto& n = getNormal();
+		const auto& n = triangle.getNormal();
+		const auto& vertices = triangle.getVertices();
 
-		const auto a = getV0() - p;
-		const auto b = getV1() - p;
-		const auto c = getV2() - p;
-		const auto d = getV3() - p;
+		const auto a = vertices[0] - p;
+		const auto b = vertices[1] - p;
+		const auto c = vertices[2] - p;
 
-		const auto aa = getV1() - getV0();
-		const auto bb = getV2() - getV1();
-		const auto cc = getV3() - getV2();
-		const auto dd = getV0() - getV3();
+		const auto d = vertices[1] - vertices[0];
+		const auto e = vertices[2] - vertices[1];
+		const auto f = vertices[0] - vertices[2];
+
+		const auto& v1 = glm::cross(a, d);
+		if (glm::dot(v1, n) < 0.0) {
+			return false;
+		}
+		const auto& v2 = glm::cross(b, e);
+		if (glm::dot(v2, n) < 0.0) {
+			return false;
+		}
+		const auto& v3 = glm::cross(c, f);
+		if (glm::dot(v3, n) < 0.0) {
+			return false;
+		}
+		return true;
+	}
+
+	template<typename T>
+	bool isInside(const Vector3d<T>& p, const Rectangle3d<T>& quad)
+	{
+		const auto& n = quad.getNormal();
+		const auto p0 = quad.getPosition(0,0);
+		const auto p1 = quad.getPosition(1, 0);
+		const auto p2 = quad.getPosition(0, 1);
+		const auto p3 = quad.getPosition(1, 1);
+
+		const auto a = p0 - p;
+		const auto b = p1 - p;
+		const auto c = p2 - p;
+		const auto d = p3 - p;
+
+		const auto aa = p1 - p0;
+		const auto bb = p2 - p1;
+		const auto cc = p3 - p2;
+		const auto dd = p0 - p3;
 
 		const auto& v1 = glm::cross(a, aa);
 		if (glm::dot(v1, n) < 0.0) {
@@ -75,7 +81,6 @@ bool Triangle3d::isInside(const Vector3dd& p) const
 		}
 		return true;
 	}
-	*/
 }
 
 template<typename T>
@@ -108,50 +113,47 @@ std::vector<T> IntersectionCalculator<T>::calculate(const Ray3d<T>& ray, const P
 }
 
 template<typename T>
-bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Triangle3d<T>& triangle, const T tolerance)
+std::vector<T> IntersectionCalculator<T>::calculate(const Ray3d<T>& ray, const Triangle3d<T>& triangle, const T tolerance)
 {
-	const auto p = DistanceCalculator<T>::calculate(ray, triangle, tolerance);
-	if (p.empty()) {
-		return false;
+	const auto ps = DistanceCalculator<T>::calculate(ray, triangle, tolerance);
+	std::vector<T> inners;
+	for (auto p : ps) {
+		const auto pos = ray.getPosition(p);
+		if (::isInside(pos, triangle)) {
+			inners.push_back(p);
+		}
 	}
-
-	intersections.push_back(ray.getPosition(p[0]));
-	return true;
+	return inners;
 }
 
 template<typename T>
-bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Rectangle3d<T>& quad, const T tolerance)
+std::vector<T> IntersectionCalculator<T>::calculate(const Ray3d<T>& ray, const Rectangle3d<T>& quad, const T tolerance)
 {
 	const auto& plane = Plane3d<T>(quad.getPosition(0.0, 0.0), quad.getNormal());
 
-	if(IntersectionCalculator::calculate(ray, plane, tolerance).empty()) {
-		return false;
+	const auto ps = IntersectionCalculator::calculate(ray, plane, tolerance);
+	std::vector<T> inners;
+	for (auto p : ps) {
+		const auto pos = ray.getPosition(p);
+		if (::isInside(pos, quad)) {
+			inners.push_back(p);
+		}
 	}
-
-	/*
-	auto s = innerAlgo.getIntersections()[0];
-	if (quad.isInside(s)) {
-		Intersection intersection;
-		intersection.position = s;
-		intersection.normal = quad.getNormal();
-		intersections.push_back(intersection);
-		return true;
-	}
-	*/
-	return false;
+	return inners;
 }
 
 template<typename T>
-bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Box3d<T>& box, const T tolerance)
+std::vector<T> IntersectionCalculator<T>::calculate(const Ray3d<T>& ray, const Box3d<T>& box, const T tolerance)
 {
-	const auto p = DistanceCalculator<T>::calculate(ray, box, tolerance);
-	if (p.empty()) {
-		return false;
+	const auto ps = DistanceCalculator<T>::calculate(ray, box, tolerance);
+	std::vector<T> inners;
+	for (auto p : ps) {
+		const auto pos = ray.getPosition(p);
+		if (box.contains(pos, tolerance)) {
+			inners.push_back(p);
+		}
 	}
-	intersections.push_back(ray.getPosition(p[0]));
-	intersections.push_back(ray.getPosition(p[1]));
-	return true;
-
+	return inners;
 }
 
 template<typename T>

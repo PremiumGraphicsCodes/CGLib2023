@@ -48,11 +48,9 @@ TEST(IntersectionCalculatorTest, TestRayAndTriangle)
 
 	{
 		const Ray3df ray(Vector3df(1, 1, 1), Vector3df(0, 0, -1));
-		EXPECT_TRUE(algo.calculateIntersection(ray, triangle, tolerance));
-		const auto& intersections = algo.getIntersections();
-		EXPECT_EQ(1, intersections.size());
-		const auto& i = intersections[0];
-		EXPECT_TRUE(areSame( Vector3df(1, 1, 0), i, tolerance));
+		const auto found = algo.calculate(ray, triangle, tolerance);
+		EXPECT_EQ(1, found.size());
+		EXPECT_FLOAT_EQ(1.0f, found[0]);
 	}
 
 	/*
@@ -66,14 +64,15 @@ TEST(IntersectionCalculatorTest, TestRayAndTriangle)
 TEST(IntersectionCalculatorTest, TestRayAndBox)
 {
 	IntersectionCalculator<float> algo;
-	const Ray3df ray(Vector3dd(-5, 5, 5), Vector3dd(20, 0, 0));
+	const Ray3df ray(Vector3dd(-5, 5, 5), Vector3dd(1, 0, 0));
 
 	const Box3df box1(Vector3dd(0, 0, 0), Vector3dd(10, 10, 10));
-	EXPECT_TRUE(algo.calculateIntersection(ray, box1, tolerance));
-	EXPECT_EQ(2, algo.getIntersections().size());
-	EXPECT_TRUE(::areSame(Vector3df(0, 5, 5), algo.getIntersections()[0], tolerance));
-	EXPECT_TRUE(::areSame(Vector3df(10, 5, 5), algo.getIntersections()[1], tolerance));
+	const auto i = algo.calculate(ray, box1, 1.0e-3);
+	EXPECT_EQ(2, i.size());
+	EXPECT_FLOAT_EQ( 5.0f, i[0]);
+	EXPECT_FLOAT_EQ(15.0f, i[1]);
+//	EXPECT_TRUE(::areSame(Vector3df(10, 5, 5), algo.getIntersections()[1], tolerance));
 
-	const Box3df box2(Vector3df(50, 50, 50), Vector3df(100, 100, 100));
-	EXPECT_FALSE(algo.calculateIntersection(ray, box2, tolerance));
+//	const Box3df box2(Vector3df(50, 50, 50), Vector3df(100, 100, 100));
+//	EXPECT_FALSE(algo.calculateIntersection(ray, box2, tolerance));
 }

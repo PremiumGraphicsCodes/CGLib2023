@@ -98,5 +98,17 @@ Vector3d<T> Box3d<T>::getCenter() const
 	return getPosition(0.5, 0.5, 0.5);
 }
 
+template<typename T>
+bool Box3d<T>::contains(const Vector3d<T>& p, const T tolerance) const
+{
+	const auto min = this->min - tolerance;
+	const auto max = this->max + tolerance;
+	return
+		min.x < p.x && p.x < max.x &&
+		min.y < p.y && p.y < max.y &&
+		min.z < p.z && p.z < max.z;
+}
+
+
 template class Box3d<float>;
 template class Box3d<double>;

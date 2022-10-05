@@ -30,11 +30,11 @@ public:
 
 	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Plane3d<T>& plane, const T tolerance);
 
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
+	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
 
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Rectangle3d<T>& quad, const T tolerance);
+	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Rectangle3d<T>& quad, const T tolerance);
 
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Box3d<T>& box, const T tolerance);
+	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Box3d<T>& box, const T tolerance);
 
 	bool calculateIntersection(const Math::Line3d<T>& line, const Math::Plane3d<T> plane, const T tolerance);
 
