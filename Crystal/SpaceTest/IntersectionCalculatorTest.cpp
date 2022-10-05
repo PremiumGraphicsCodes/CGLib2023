@@ -21,10 +21,9 @@ namespace {
 
 TEST(IntersectionCalculatorTest, TestRayAndSphere)
 {
-	IntersectionCalculator<float> c;
 	Ray3df ray(Vector3df(0,0,0), Vector3df(1,0,0));
 	Sphere3df sphere(Vector3df(10, 0, 0), 1.0f);
-	const auto found = c.calculate(ray, sphere, tolerance);
+	const auto found = IntersectionCalculator<float>::calculate(ray, sphere, tolerance);
 	EXPECT_EQ(found.size(), 2);
 	EXPECT_FLOAT_EQ(9.0f, found[0]);
 	EXPECT_FLOAT_EQ(11.0f, found[1]);
@@ -32,10 +31,9 @@ TEST(IntersectionCalculatorTest, TestRayAndSphere)
 
 TEST(IntersectionCalculatorTest, TestRayAndPlane)
 {
-	IntersectionCalculator<float> c;
 	Ray3df ray(Vector3df(0, 0, 0), Vector3df(1, 0, 0));
 	Plane3df plane(Vector3df(10, 0, 0), Vector3df(-1, 0, 0));
-	const auto found = c.calculate(ray, plane, tolerance);
+	const auto found = IntersectionCalculator<float>::calculate(ray, plane, tolerance);
 	EXPECT_EQ(found.size(), 1);
 	Vector3df expected(10, 0, 0);
 	EXPECT_FLOAT_EQ(10.0f, found[0]);
@@ -43,12 +41,11 @@ TEST(IntersectionCalculatorTest, TestRayAndPlane)
 
 TEST(IntersectionCalculatorTest, TestRayAndTriangle)
 {
-	IntersectionCalculator<float> algo;
 	const auto& triangle = getTriangle();
 
 	{
 		const Ray3df ray(Vector3df(1, 1, 1), Vector3df(0, 0, -1));
-		const auto found = algo.calculate(ray, triangle, tolerance);
+		const auto found = IntersectionCalculator<float>::calculate(ray, triangle, tolerance);
 		EXPECT_EQ(1, found.size());
 		EXPECT_FLOAT_EQ(1.0f, found[0]);
 	}
@@ -63,11 +60,10 @@ TEST(IntersectionCalculatorTest, TestRayAndTriangle)
 
 TEST(IntersectionCalculatorTest, TestRayAndBox)
 {
-	IntersectionCalculator<float> algo;
 	const Ray3df ray(Vector3dd(-5, 5, 5), Vector3dd(1, 0, 0));
 
 	const Box3df box1(Vector3dd(0, 0, 0), Vector3dd(10, 10, 10));
-	const auto i = algo.calculate(ray, box1, 1.0e-3);
+	const auto i = IntersectionCalculator<float>::calculate(ray, box1, 1.0e-6);
 	EXPECT_EQ(2, i.size());
 	EXPECT_FLOAT_EQ( 5.0f, i[0]);
 	EXPECT_FLOAT_EQ(15.0f, i[1]);

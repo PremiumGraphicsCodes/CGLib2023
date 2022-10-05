@@ -157,26 +157,25 @@ std::vector<T> IntersectionCalculator<T>::calculate(const Ray3d<T>& ray, const B
 }
 
 template<typename T>
-bool IntersectionCalculator<T>::calculateIntersection(const Math::Line3d<T>& line, const Math::Plane3d<T> plane, const T tolerance)
+std::vector<T> IntersectionCalculator<T>::calculate(const Line3d<T>& line, const Plane3d<T> plane, const T tolerance)
 {
 	// 線分の始点が三角系の裏側にあれば、当たらない
 	const auto planeToStart = plane.getDistance(line.getStart());	// 線分の始点と平面の距離
 	if (planeToStart <= tolerance) {
-		return false;
+		return {};
 	}
 
 	// 線分の終点が三角系の表側にあれば、当たらない
 	const auto planeToEnd = plane.getDistance(line.getEnd());	// 線分の終点と平面の距離
 	if (planeToEnd >= -tolerance) {
-		return false;
+		return {};
 	}
 
 	// 直線と平面との交点を取る
 	const auto denom = planeToStart - planeToEnd;
 	const auto param = planeToStart / denom;
 
-	intersections.push_back(line.getPosition(param));
-	return true;
+	return { param };
 }
 
 

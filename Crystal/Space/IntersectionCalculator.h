@@ -36,7 +36,7 @@ public:
 
 	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Box3d<T>& box, const T tolerance);
 
-	bool calculateIntersection(const Math::Line3d<T>& line, const Math::Plane3d<T> plane, const T tolerance);
+	static std::vector<T> calculate(const Math::Line3d<T>& line, const Math::Plane3d<T> plane, const T tolerance);
 
 	/*
 	bool calculateIntersection(const Math::Line3df& line, const Math::Sphere3df& sphere, const double tolerance);
@@ -48,10 +48,7 @@ public:
 	bool calculateIntersection(const Math::Triangle3d& lhs, const Math::Triangle3d& rhs, const double tolerance);
 	*/
 
-	std::vector<Math::Vector3d<T>> getIntersections() const { return intersections; }
-
 private:
-	std::vector<Math::Vector3d<T>> intersections;
 };
 	}
 }
