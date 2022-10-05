@@ -26,14 +26,15 @@ template<typename T>
 class DistanceCalculator
 {
 public:
-	T calculate(const Math::Ray3d<T>& ray, const Math::Sphere3d<T>& sphere);
+	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Sphere3d<T>& sphere, const T tolerance);
 
 	/*
 	T calculate(const Math::Ray3d<T>& ray, const Math::Plane3d<T>& plane, const T tolerance);
+	*/
 
-	T calculate(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
+	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
 
-	T calculate(const Math::Ray3d<T>& ray, const Math::Rectancle3d<T>& quad, const T tolerance);
+	//T calculate(const Math::Ray3d<T>& ray, const Math::Rectancle3d<T>& quad, const T tolerance);
 
 	/*
 	bool calculateIntersection(const Math::Ray3df& ray, const Math::Box3df& box, const double tolerance);
