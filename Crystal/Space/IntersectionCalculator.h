@@ -26,9 +26,9 @@ template<typename T>
 class IntersectionCalculator
 {
 public:
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Sphere3d<T>& sphere, const T tolerance);
+	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Sphere3d<T>& sphere, const T tolerance);
 
-	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Plane3d<T>& plane, const T tolerance);
+	static std::vector<T> calculate(const Math::Ray3d<T>& ray, const Math::Plane3d<T>& plane, const T tolerance);
 
 	bool calculateIntersection(const Math::Ray3d<T>& ray, const Math::Triangle3d<T>& triangle, const T tolerance);
 

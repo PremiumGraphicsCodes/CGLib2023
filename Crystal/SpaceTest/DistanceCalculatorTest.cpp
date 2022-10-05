@@ -13,6 +13,7 @@ TEST(DistanceCalculatorTest, TestRayAndSphere)
 	Ray3df ray(Vector3df(0, 0, 0), Vector3df(1, 0, 0));
 	Sphere3df sphere(Vector3df(10, 0, 0), 1.0f);
 	const auto d = c.calculate(ray, sphere, 1.0e-9f);
-	EXPECT_EQ(d.size(), 1);
-	EXPECT_FLOAT_EQ(d[0], 9.0);
+	EXPECT_EQ(d.size(), 2);
+	EXPECT_FLOAT_EQ(d[0],  9.0f);
+	EXPECT_FLOAT_EQ(d[1], 11.0f);
 }

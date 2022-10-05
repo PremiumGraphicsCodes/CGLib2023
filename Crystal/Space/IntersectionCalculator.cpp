@@ -79,34 +79,32 @@ bool Triangle3d::isInside(const Vector3dd& p) const
 }
 
 template<typename T>
-bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Sphere3d<T>& sphere, const T tolerance)
+std::vector<T> IntersectionCalculator<T>::calculate(const Ray3d<T>& ray, const Sphere3d<T>& sphere, const T tolerance)
 {
 	const auto p = DistanceCalculator<T>::calculate(ray, sphere, tolerance);
 	if (p.empty()) {
-		return false;
+		return {};
 	}
+	return p;
+	/*
 	const auto intersectionDistance = p[0];
 	if (intersectionDistance > tolerance) {
-		const auto& i = ray.getPosition(intersectionDistance);
-		//const auto& normal = glm::normalize(i - sphere.getCenter());
-		intersections.push_back(i);
-		return true;
+		//const auto& i = ray.getPosition(intersectionDistance);
+		return { intersectionDistance };
 	}
-	return false;
+	return {};
+	*/
 }
 
 template<typename T>
-bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Plane3d<T>& plane, const T tolerance)
+std::vector<T> IntersectionCalculator<T>::calculate(const Ray3d<T>& ray, const Plane3d<T>& plane, const T tolerance)
 {
 	const auto distance = plane.getDistance(ray.getOrigin());
 
-	if (distance > -tolerance)
-	{
-		const auto i = ray.getPosition(distance);
-		intersections.push_back(i);
-		return true;
+	if (distance > -tolerance) {
+		return { distance };
 	}
-	return false;
+	return {};
 }
 
 template<typename T>
@@ -121,14 +119,12 @@ bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const
 	return true;
 }
 
-
 template<typename T>
 bool IntersectionCalculator<T>::calculateIntersection(const Ray3d<T>& ray, const Rectangle3d<T>& quad, const T tolerance)
 {
 	const auto& plane = Plane3d<T>(quad.getPosition(0.0, 0.0), quad.getNormal());
 
-	IntersectionCalculator innerAlgo;
-	if (!innerAlgo.calculateIntersection(ray, plane, tolerance)) {
+	if(IntersectionCalculator::calculate(ray, plane, tolerance).empty()) {
 		return false;
 	}
 

@@ -24,11 +24,10 @@ TEST(IntersectionCalculatorTest, TestRayAndSphere)
 	IntersectionCalculator<float> c;
 	Ray3df ray(Vector3df(0,0,0), Vector3df(1,0,0));
 	Sphere3df sphere(Vector3df(10, 0, 0), 1.0f);
-	const auto found = c.calculateIntersection(ray, sphere, tolerance);
-	EXPECT_TRUE(found);
-	const auto actual = c.getIntersections()[0];
-	Vector3df expected(9, 0, 0);
-	EXPECT_TRUE(areSame(expected, actual, tolerance));
+	const auto found = c.calculate(ray, sphere, tolerance);
+	EXPECT_EQ(found.size(), 2);
+	EXPECT_FLOAT_EQ(9.0f, found[0]);
+	EXPECT_FLOAT_EQ(11.0f, found[1]);
 }
 
 TEST(IntersectionCalculatorTest, TestRayAndPlane)
@@ -36,11 +35,10 @@ TEST(IntersectionCalculatorTest, TestRayAndPlane)
 	IntersectionCalculator<float> c;
 	Ray3df ray(Vector3df(0, 0, 0), Vector3df(1, 0, 0));
 	Plane3df plane(Vector3df(10, 0, 0), Vector3df(-1, 0, 0));
-	const auto found = c.calculateIntersection(ray, plane, tolerance);
-	EXPECT_TRUE(found);
+	const auto found = c.calculate(ray, plane, tolerance);
+	EXPECT_EQ(found.size(), 1);
 	Vector3df expected(10, 0, 0);
-	const auto actual = c.getIntersections()[0];
-	EXPECT_TRUE(areSame(expected, actual, tolerance));
+	EXPECT_FLOAT_EQ(10.0f, found[0]);
 }
 
 TEST(IntersectionCalculatorTest, TestRayAndTriangle)

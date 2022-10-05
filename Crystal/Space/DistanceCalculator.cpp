@@ -21,8 +21,7 @@ std::vector<T> DistanceCalculator<T>::calculate(const Ray3d<T>& ray, const Spher
 		return {};
 	}
 	const auto t1 = std::sqrt(sphereRadiusSquared - distanceSquared);
-	const auto intersectionDistance = t0 > t1 + tolerance ? t0 - t1 : t0 + t1;
-	return { intersectionDistance };
+	return { t0 - t1, t0 + t1 };
 }
 
 template<typename T>
