@@ -5,6 +5,7 @@
 #include "CGLib/Math/Sphere3d.h"
 #include "CGLib/Math/Plane3d.h"
 #include "CGLib/Math/Triangle3d.h"
+#include "CGLib/Math/Box3d.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;
@@ -62,4 +63,19 @@ TEST(IntersectionCalculatorTest, TestRayAndTriangle)
 		EXPECT_FALSE(algo.calculateIntersection(ray, triangle, tolerance));
 	}
 	*/
+}
+
+TEST(IntersectionCalculatorTest, TestRayAndBox)
+{
+	IntersectionCalculator<float> algo;
+	const Ray3df ray(Vector3dd(-5, 5, 5), Vector3dd(20, 0, 0));
+
+	const Box3df box1(Vector3dd(0, 0, 0), Vector3dd(10, 10, 10));
+	EXPECT_TRUE(algo.calculateIntersection(ray, box1, tolerance));
+	EXPECT_EQ(2, algo.getIntersections().size());
+	EXPECT_TRUE(::areSame(Vector3df(0, 5, 5), algo.getIntersections()[0], tolerance));
+	EXPECT_TRUE(::areSame(Vector3df(10, 5, 5), algo.getIntersections()[1], tolerance));
+
+	const Box3df box2(Vector3df(50, 50, 50), Vector3df(100, 100, 100));
+	EXPECT_FALSE(algo.calculateIntersection(ray, box2, tolerance));
 }
