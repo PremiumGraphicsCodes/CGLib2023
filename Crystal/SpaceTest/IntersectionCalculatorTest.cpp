@@ -6,6 +6,7 @@
 #include "CGLib/Math/Plane3d.h"
 #include "CGLib/Math/Triangle3d.h"
 #include "CGLib/Math/Box3d.h"
+#include "CGLib/Math/Line3d.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;
@@ -63,7 +64,7 @@ TEST(IntersectionCalculatorTest, TestRayAndBox)
 	const Ray3df ray(Vector3dd(-5, 5, 5), Vector3dd(1, 0, 0));
 
 	const Box3df box1(Vector3dd(0, 0, 0), Vector3dd(10, 10, 10));
-	const auto i = IntersectionCalculator<float>::calculate(ray, box1, 1.0e-6);
+	const auto i = IntersectionCalculator<float>::calculate(ray, box1, 1.0e-6f);
 	EXPECT_EQ(2, i.size());
 	EXPECT_FLOAT_EQ( 5.0f, i[0]);
 	EXPECT_FLOAT_EQ(15.0f, i[1]);
@@ -71,4 +72,14 @@ TEST(IntersectionCalculatorTest, TestRayAndBox)
 
 //	const Box3df box2(Vector3df(50, 50, 50), Vector3df(100, 100, 100));
 //	EXPECT_FALSE(algo.calculateIntersection(ray, box2, tolerance));
+}
+
+TEST(IntersectionCalculatorTest, TestLineAndSphere)
+{
+	Line3df line(Vector3df(0, 0, 0), Vector3df(10, 0, 0));
+	Sphere3df sphere(Vector3df(10, 0, 0), 1.0f);
+	const auto found = IntersectionCalculator<float>::calculate(line, sphere, tolerance);
+	EXPECT_EQ(found.size(), 1);
+	EXPECT_FLOAT_EQ(0.9f, found[0]);
+	//EXPECT_FLOAT_EQ(11.0f, found[1]);
 }

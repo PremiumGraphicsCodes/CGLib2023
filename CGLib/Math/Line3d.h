@@ -22,6 +22,8 @@ public:
 
 	Vector3d<T> getPosition(const T u) const override { return start + getDirection() * u; }
 
+	T getLength() const { return getDistance(start, end); }
+
 private:
 	Math::Vector3d<T> start;
 	Math::Vector3d<T> end;

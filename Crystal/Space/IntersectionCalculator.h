@@ -38,9 +38,9 @@ public:
 
 	static std::vector<T> calculate(const Math::Line3d<T>& line, const Math::Plane3d<T> plane, const T tolerance);
 
-	/*
-	bool calculateIntersection(const Math::Line3df& line, const Math::Sphere3df& sphere, const double tolerance);
+	static std::vector<T> calculate(const Math::Line3d<T>& line, const Math::Sphere3d<T>& sphere, const T tolerance);
 
+	/*
 	bool calculateIntersection(const Math::Line3df& line, const Math::Triangle3d& triangle, const double tolerance);
 
 	bool calculateIntersection(const Math::Line3df& line, const Math::Quad3d& quad, const double tolerance);

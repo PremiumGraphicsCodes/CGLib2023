@@ -174,6 +174,37 @@ std::vector<T> IntersectionCalculator<T>::calculate(const Line3d<T>& line, const
 	return { param };
 }
 
+template<typename T>
+std::vector<T> IntersectionCalculator<T>::calculate(const Line3d<T>& line, const Sphere3d<T>& sphere, const T tolerance)
+{
+	const auto& dir = glm::normalize(line.getDirection());
+	const auto diff = sphere.getCenter() - line.getStart();
+	const auto t0 = glm::dot(diff, dir);
+	const auto dSquared = dot(diff, diff) - t0 * t0;
+	const auto sphereRadiusSquared = sphere.getRadius() * sphere.getRadius();
+	if (dSquared > sphereRadiusSquared) {
+		return {};
+	}
+	auto t1 = sqrt(sphereRadiusSquared - dSquared);
+	if (t0 < t1 + tolerance) {
+		t1 = -t1;
+	}
+	const auto l = line.getLength();
+	const auto p0 = (t0 - t1) / l;
+	const auto p1 = (t0 + t1) / l;
+	std::vector<T> inners;
+	if (0.0 < p0 && p0 <= 1.0) {
+		if (sphere.contains(line.getPosition(p0), tolerance)) {
+			inners.push_back(p0);
+		}
+	}
+	if (0.0 < p1 && p1 <= 1.0) {
+		if (sphere.contains(line.getPosition(p1), tolerance)) {
+			inners.push_back(p1);
+		}
+	}
+	return inners;
+}
 
 template class IntersectionCalculator<float>;
 template class IntersectionCalculator<double>;
