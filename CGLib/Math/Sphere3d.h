@@ -2,6 +2,7 @@
 
 #include "Vector3d.h"
 #include "ISurface3d.h"
+#include "IVolume3d.h"
 
 namespace Crystal {
 	namespace Math {
@@ -10,7 +11,7 @@ template<typename T>
 class Box3d;
 
 template<typename T>
-class Sphere3d : public ISurface3d<T>
+class Sphere3d : public ISurface3d<T>, public IVolume3d<T>
 {
 public:
 	Sphere3d();
@@ -19,7 +20,7 @@ public:
 
 	Vector3d<T> getPosition(const T u, const T v) const override;
 
-	Vector3d<T> getPosition(const T u, const T v, const T w) const; //const override;
+	Vector3d<T> getPosition(const T u, const T v, const T w) const override;
 
 	Vector3d<T> getNormal(const T u, const T v) const;// const override;
 
@@ -28,6 +29,8 @@ public:
 	T getRadius() const { return radius; }
 
 	Box3d<T> getBoundingBox() const;
+
+	bool contains(const Vector3d<T>& p, const T tolerance) const;
 
 private:
 	Vector3d<T> center;

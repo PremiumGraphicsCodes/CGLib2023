@@ -86,19 +86,15 @@ namespace {
 template<typename T>
 std::vector<T> IntersectionCalculator<T>::calculate(const Ray3d<T>& ray, const Sphere3d<T>& sphere, const T tolerance)
 {
-	const auto p = DistanceCalculator<T>::calculate(ray, sphere, tolerance);
-	if (p.empty()) {
-		return {};
+	const auto ps = DistanceCalculator<T>::calculate(ray, sphere, tolerance);
+	std::vector<T> inners;
+	for (auto p : ps) {
+		const auto pos = ray.getPosition(p);
+		if (sphere.contains(pos, tolerance)) {
+			inners.push_back(p);
+		}
 	}
-	return p;
-	/*
-	const auto intersectionDistance = p[0];
-	if (intersectionDistance > tolerance) {
-		//const auto& i = ray.getPosition(intersectionDistance);
-		return { intersectionDistance };
-	}
-	return {};
-	*/
+	return inners;
 }
 
 template<typename T>

@@ -50,5 +50,13 @@ Box3d<T> Sphere3d<T>::getBoundingBox() const
 	return Box3d<T>(min, max);
 }
 
+template<typename T>
+bool Sphere3d<T>::contains(const Vector3d<T>& p, const T tolerance) const
+{
+	const auto r = radius + tolerance;
+	return ::getDistanceSquared(p, center) < r * r;
+}
+
+
 template class Sphere3d<float>;
 template class Sphere3d<double>;

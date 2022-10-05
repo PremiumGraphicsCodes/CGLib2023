@@ -11,7 +11,7 @@ using namespace Crystal::Math;
 using namespace Crystal::Space;
 
 namespace {
-	const float tolerance = 1.0e-9f;
+	const float tolerance = 1.0e-6f;
 
 	Triangle3df getTriangle()
 	{
