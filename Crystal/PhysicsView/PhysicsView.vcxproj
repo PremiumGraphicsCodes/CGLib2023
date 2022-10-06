@@ -145,6 +145,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CSPHFluidPresenter.cpp" />
+    <ClCompile Include="CSPHFluidScene.cpp" />
     <ClCompile Include="PhysicsView.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +183,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSPHFluidPresenter.h" />
+    <ClInclude Include="CSPHFluidScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

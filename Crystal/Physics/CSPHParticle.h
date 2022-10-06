@@ -71,7 +71,7 @@ public:
 
 	//bool isBoundary() const { return fluid->isBoundary; }
 
-	Math::Vector3dd getPosition() const { return position; }
+	Math::Vector3df getPosition() const { return position; }
 
 	float getDiameter() const { return radius * 2.0f; }
 

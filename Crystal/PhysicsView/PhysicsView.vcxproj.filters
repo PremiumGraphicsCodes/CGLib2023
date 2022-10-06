@@ -2,8 +2,14 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="PhysicsView.cpp" />
+    <ClCompile Include="CSPHFluidScene.cpp" />
+    <ClCompile Include="CSPHFluidPresenter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSPHFluidScene.h" />
+    <ClInclude Include="CSPHFluidPresenter.h" />
   </ItemGroup>
 </Project>
