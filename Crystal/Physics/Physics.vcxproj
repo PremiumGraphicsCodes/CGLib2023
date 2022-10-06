@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CSPHBoundarySolver.cpp" />
+    <ClCompile Include="CSPHFluid.cpp" />
     <ClCompile Include="CSPHParticle.cpp" />
     <ClCompile Include="CSPHSolver.cpp" />
     <ClCompile Include="SPHKernel.cpp" />

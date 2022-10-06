@@ -18,8 +18,6 @@ public:
 
 	std::list<CSPHParticle*> getParticles() const { return particles; }
 
-	void clearParticles();
-
 	Math::Box3df getBoundingBox() const;
 
 	float getDensity() const { return density; }

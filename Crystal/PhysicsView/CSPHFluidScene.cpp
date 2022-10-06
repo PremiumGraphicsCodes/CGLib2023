@@ -13,6 +13,5 @@ CSPHFluidScene::CSPHFluidScene()
 
 Box3df CSPHFluidScene::getBoundingBox() const
 {
-	return Box3df();
-	//return shape->getBoundingBox();
+	return fluid->getBoundingBox();
 }

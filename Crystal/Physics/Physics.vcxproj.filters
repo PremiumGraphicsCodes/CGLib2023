@@ -26,6 +26,9 @@
     <ClCompile Include="CSPHBoundarySolver.cpp">
       <Filter>CSPH</Filter>
     </ClCompile>
+    <ClCompile Include="CSPHFluid.cpp">
+      <Filter>CSPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CSPH">

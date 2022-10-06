@@ -2,14 +2,33 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="PhysicsView.cpp" />
-    <ClCompile Include="CSPHFluidScene.cpp" />
-    <ClCompile Include="CSPHFluidPresenter.cpp" />
+    <ClCompile Include="CSPHFluidPresenter.cpp">
+      <Filter>CSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="CSPHFluidScene.cpp">
+      <Filter>CSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="CSPHFluidView.cpp">
+      <Filter>CSPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CSPHFluidScene.h" />
-    <ClInclude Include="CSPHFluidPresenter.h" />
+    <ClInclude Include="CSPHFluidPresenter.h">
+      <Filter>CSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="CSPHFluidScene.h">
+      <Filter>CSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="CSPHFluidView.h">
+      <Filter>CSPH</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CSPH">
+      <UniqueIdentifier>{94989af5-e6f4-432b-bccb-598608f81b65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
