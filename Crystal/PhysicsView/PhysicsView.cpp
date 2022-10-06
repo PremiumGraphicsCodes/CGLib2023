@@ -1,20 +1,59 @@
-﻿// PhysicsView.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
-//
+﻿#include "Crystal/AppBase/Canvas.h"
+#include "Crystal/AppBase/Window.h"
+#include "Crystal/AppBase/CameraMenu.h"
+#include "Crystal/AppBase/ShapeMenu.h"
+#include "Crystal/AppBase/WorldBase.h"
+#include "Crystal/AppBase/RendererBase.h"
+#include "Crystal/AppBase/CameraUICtrl.h"
 
-#include <iostream>
+#include "CGLib/UI/Panel.h"
 
-int main()
-{
-    std::cout << "Hello World!\n";
+//#include "SpaceMenu.h"
+
+using namespace Crystal::Math;
+using namespace Crystal::Scene;
+using namespace Crystal::Graphics;
+//using namespace Crystal::Renderer;
+using namespace Crystal::UI;
+
+namespace {
+	class World : public Crystal::UI::WorldBase
+	{
+	public:
+	};
+
+	class Renderer : public Crystal::UI::RendererBase
+	{
+	public:
+		explicit Renderer(World* world) :
+			RendererBase(world)
+		{}
+
+		void onInit() override
+		{
+
+		}
+
+	private:
+
+	};
 }
 
-// プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
-// プログラムのデバッグ: F5 または [デバッグ] > [デバッグの開始] メニュー
+int main() {
+	World world;
+	Renderer renderer(&world);
 
-// 作業を開始するためのヒント: 
-//    1. ソリューション エクスプローラー ウィンドウを使用してファイルを追加/管理します 
-//   2. チーム エクスプローラー ウィンドウを使用してソース管理に接続します
-//   3. 出力ウィンドウを使用して、ビルド出力とその他のメッセージを表示します
-//   4. エラー一覧ウィンドウを使用してエラーを表示します
-//   5. [プロジェクト] > [新しい項目の追加] と移動して新しいコード ファイルを作成するか、[プロジェクト] > [既存の項目の追加] と移動して既存のコード ファイルをプロジェクトに追加します
-//   6. 後ほどこのプロジェクトを再び開く場合、[ファイル] > [開く] > [プロジェクト] と移動して .sln ファイルを選択します
+	Crystal::UI::Canvas canvas;
+	canvas.setUICtrl(std::make_unique<CameraUICtrl>(renderer.getCamera()));
+	Crystal::UI::Window app("Hello", &canvas, &renderer);
+	app.init();
+
+	auto control = new Panel("Control");
+
+	app.add(new CameraMenu("Camera", &world, &renderer));
+	app.add(new ShapeMenu("Shape", &world, &renderer, control));
+	//app.add(new SpaceMenu("Space", control, &world, &renderer));
+	app.add(control);
+
+	app.show();
+}
