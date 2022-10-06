@@ -33,6 +33,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClCompile Include="CompactSpaceHashTest.cpp" />
     <ClCompile Include="DistanceCalculatorTest.cpp" />
     <ClCompile Include="IndexedSortBasedSearcherTest.cpp" />
     <ClCompile Include="IntersectionCalculatorTest.cpp" />

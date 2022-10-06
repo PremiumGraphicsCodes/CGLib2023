@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CompactSpaceHash.h" />
     <ClInclude Include="DistanceCalculator.h" />
     <ClInclude Include="IndexedParticle.h" />
     <ClInclude Include="IndexedSortBasedSeacher.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="ZOrderCurve3d.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CompactSpaceHash.cpp" />
     <ClCompile Include="DistanceCalculator.cpp" />
     <ClCompile Include="IndexedParticle.cpp" />
     <ClCompile Include="IndexedSortBasedSearcher.cpp" />

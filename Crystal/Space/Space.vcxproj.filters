@@ -5,7 +5,6 @@
     <ClInclude Include="ZOrderCurve2d.h" />
     <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="LinearOctreeIndex.h" />
-    <ClInclude Include="SpaceHash.h" />
     <ClInclude Include="IndexedParticle.h">
       <Filter>Indexed</Filter>
     </ClInclude>
@@ -18,12 +17,17 @@
     <ClInclude Include="DistanceCalculator.h">
       <Filter>Distance</Filter>
     </ClInclude>
+    <ClInclude Include="CompactSpaceHash.h">
+      <Filter>SpaceHash</Filter>
+    </ClInclude>
+    <ClInclude Include="SpaceHash.h">
+      <Filter>SpaceHash</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
     <ClCompile Include="ZOrderCurve2d.cpp" />
     <ClCompile Include="LinearOctreeIndex.cpp" />
-    <ClCompile Include="SpaceHash.cpp" />
     <ClCompile Include="IndexedParticle.cpp">
       <Filter>Indexed</Filter>
     </ClCompile>
@@ -36,6 +40,12 @@
     <ClCompile Include="DistanceCalculator.cpp">
       <Filter>Distance</Filter>
     </ClCompile>
+    <ClCompile Include="SpaceHash.cpp">
+      <Filter>SpaceHash</Filter>
+    </ClCompile>
+    <ClCompile Include="CompactSpaceHash.cpp">
+      <Filter>SpaceHash</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Indexed">
@@ -46,6 +56,9 @@
     </Filter>
     <Filter Include="Intersection">
       <UniqueIdentifier>{e16a81c3-75fb-4aed-b581-7bae88a93311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SpaceHash">
+      <UniqueIdentifier>{95f2c85d-ef80-4d60-ad35-a61e7ccc8e59}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
