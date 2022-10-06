@@ -3,6 +3,7 @@
 #include "Crystal/Scene/SceneBase.h"
 #include "CSPHFluidPresenter.h"
 #include "../Physics/CSPHFluid.h"
+#include "../Physics/CSPHSolver.h"
 #include <vector>
 
 namespace Crystal {
@@ -26,6 +27,8 @@ public:
 private:
 	std::unique_ptr<CSPHFluid> fluid;
 	std::unique_ptr<CSPHFluidPresenter> presenter;
+	//std::unique_ptr<CSPHSolver> solver;
+
 };
 
 	}

@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="IAnimator.h" />
     <ClInclude Include="IPresenter.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="ParticleSystemPresenter.h" />

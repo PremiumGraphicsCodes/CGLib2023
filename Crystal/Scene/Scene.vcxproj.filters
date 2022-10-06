@@ -22,6 +22,7 @@
       <Filter>PolygonMesh</Filter>
     </ClInclude>
     <ClInclude Include="SceneGroup.h" />
+    <ClInclude Include="IAnimator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneBase.cpp" />

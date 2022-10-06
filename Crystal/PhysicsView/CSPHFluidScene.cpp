@@ -15,3 +15,9 @@ Box3df CSPHFluidScene::getBoundingBox() const
 {
 	return fluid->getBoundingBox();
 }
+
+void CSPHFluidScene::step()
+{
+	solver->simulate(solver->getT)
+	//fluid->
+}

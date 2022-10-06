@@ -3,6 +3,7 @@
 #include "CGLib/Math/Vector2d.h"
 #include "CGLib/ThirdParty/glew-2.2.0/include/GL/glew.h"
 #include "GLFW/glfw3.h"
+#include "WorldBase.h"
 #include "Canvas.h"
 #include "RendererBase.h"
 
@@ -80,8 +81,9 @@ namespace {
 	}
 }
 
-Window::Window(const std::string& title, Canvas* canvas, IRenderer* renderer) :
+Window::Window(const std::string& title, WorldBase* world, Canvas* canvas, IRenderer* renderer) :
 	title(title),
+	world(world),
 	renderer(renderer)
 {
 	::canvas = canvas;
@@ -160,6 +162,8 @@ void Window::show()
 		glfwGetWindowSize(window, &width, &height);
 
 		renderer->render(width, height);
+
+		world->step();
 		//world->getRenderer()->render(*world->getCamera()->getCamera(), width, height);
 
 		//const auto animations = world->getAnimations();

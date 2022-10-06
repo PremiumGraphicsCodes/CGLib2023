@@ -45,7 +45,7 @@ int main() {
 
 	Crystal::UI::Canvas canvas;
 	canvas.setUICtrl(std::make_unique<CameraUICtrl>(renderer.getCamera()));
-	Crystal::UI::Window app("Hello", &canvas, &renderer);
+	Crystal::UI::Window app("Hello", &world, &canvas, &renderer);
 	app.init();
 
 	auto control = new Panel("Control");

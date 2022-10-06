@@ -66,6 +66,8 @@ public:
 
 	virtual IPresenter* getPresenter() { return nullptr; }
 
+	//virtual void step() {};
+
 protected:
 	std::string name;
 	int id;

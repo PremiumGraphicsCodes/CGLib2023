@@ -2,6 +2,7 @@
 
 #include "CGLib/Util/UnCopyable.h"
 #include "Crystal/Scene/SceneGroup.h"
+#include "Crystal/Scene/IAnimator.h"
 
 namespace Crystal {
 	namespace UI {
@@ -17,10 +18,15 @@ public:
 
 	int getNextId() { return nextId++; }
 
+	void step();
+
+	//void addAnimator(Scene::IAnimator* animator) { animators.push_back(animator); }
+
 	//Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:
 	Scene::SceneGroup rootScene;
+	std::list<Scene::IAnimator*> animators;
 	int nextId = 0;
 };
 	}

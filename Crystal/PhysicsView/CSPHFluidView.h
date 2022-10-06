@@ -24,7 +24,6 @@ private:
 
 private:
 	Physics::CSPHFluidScene* fluidScene;
-	Physics::CSPHSolver* solver;
 	Button startButton;
 	Button resetButton;
 	//Button nextButton;

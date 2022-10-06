@@ -10,3 +10,10 @@ WorldBase::WorldBase()
 	rootScene.setId(getNextId());
 	rootScene.setName("Root");
 }
+
+void WorldBase::step()
+{
+	for (auto a : animators) {
+		a->step();
+	}
+}
