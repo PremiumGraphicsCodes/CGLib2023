@@ -50,7 +50,7 @@ int main() {
 
 	auto control = new Panel("Control");
 
-	app.add(new ShapeMenu("Camera", &world, &renderer, control));
+	app.add(new CameraMenu("Camera", &world, &renderer));
 	app.add(new ShapeMenu("Shape", &world, &renderer, control));
 	app.add(new SpaceMenu("Space", control, &world, &renderer));
 	app.add(control);

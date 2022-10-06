@@ -6,7 +6,7 @@ using namespace Crystal::UI;
 Sphere3dView::Sphere3dView(const std::string& name) :
 	IView(name),
 	center("Center"),
-	radius("Radius")
+	radius("Radius", 1.0f)
 {
 	add(&center);
 	add(&radius);
