@@ -29,6 +29,14 @@ public:
 	float getTensionCoe() const { return tensionCoe; }
 
 	float getEffectLength() const { return effectLength; }
+	
+	void setDensity(const float d) { this->density = d; }
+
+	void setPressureCoe(const float c) { this->pressureCoe = c; }
+
+	void setVicosityCoe(const float c) { this->viscosityCoe = c; }
+
+	void setEffectLength(const float l) { this->effectLength = l; }
 
 	bool isBoundary;
 

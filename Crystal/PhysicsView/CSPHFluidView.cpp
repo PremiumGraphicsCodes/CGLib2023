@@ -47,27 +47,27 @@ void CSPHFluidView::onOk()
 
 void CSPHFluidView::onReset()
 {
-	/*
-	this->fluidScene->clearParticles();
+	auto fluid = std::make_unique<CSPHFluid>();
+	this->fluidScene->setFluid(std::move(fluid));
 
-	const auto radius = 1.0;
+	const auto radius = 1.0f;
 	const auto length = radius * 2.0;
-	::sphConstant.pressureCoe = pressureCoeView.getValue();
-	::sphConstant.viscosityCoe = viscosityView.getValue();
-	::sphConstant.effectLength = (length * 1.25);
-	simulator->setEffectLenth(::sphConstant.effectLength);
-	::sphConstant.density = densityView.getValue();
-	simulator->setTimeStep(timeStepView.getValue());
-	simulator->setBoundary(boundaryView.getValue());
-	simulator->setExternalForce(Vector3df(0.0, -9.8, 0.0));
+	const auto effectLength = length * 1.25;
+	fluid->setPressureCoe( pressureCoeView.getValue() );
+	fluid->setVicosityCoe( viscosityView.getValue() );
+	fluid->setEffectLength(effectLength);
+	solver->setEffectLenth(effectLength);
+	fluid->setDensity( densityView.getValue() );
+	solver->setTimeStep(timeStepView.getValue());
+	solver->setBoundary(boundaryView.getValue());
+	solver->setExternalForce(Vector3df(0.0, -9.8, 0.0));
 
 	for (int i = 0; i < 10; ++i) {
 		for (int j = 0; j < 5; ++j) {
 			for (int k = 0; k < 10; ++k) {
-				auto mp = new CSPHParticle(Vector3dd(i * length, j * length, k * length), radius, &sphConstant);
-				fluidScene->addParticle(mp);
+				auto mp = std::make_unique<CSPHParticle>(Vector3df(i * length, j * length, k * length), radius, fluid.get());
+				fluid->addParticle(std::move(mp));
 			}
 		}
 	}
-	*/
 }
