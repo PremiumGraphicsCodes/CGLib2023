@@ -23,6 +23,7 @@
     <ClInclude Include="SpaceHash.h">
       <Filter>SpaceHash</Filter>
     </ClInclude>
+    <ClInclude Include="ZIndexedSearcher.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
@@ -46,6 +47,7 @@
     <ClCompile Include="CompactSpaceHash.cpp">
       <Filter>SpaceHash</Filter>
     </ClCompile>
+    <ClCompile Include="ZIndexedSearcher.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Indexed">

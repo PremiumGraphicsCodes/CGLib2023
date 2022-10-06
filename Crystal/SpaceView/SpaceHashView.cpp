@@ -24,13 +24,13 @@ SpaceHashView::SpaceHashView(const std::string& name, WorldBase* world, Renderer
 void SpaceHashView::onOk()
 {
 	auto psScene = world->getRootScene()->findSceneById<ParticleSystemScene*>(psSelectView.getId());
-	const auto particles = psScene->getParticles();
+	const auto& particles = psScene->getShape()->getParticles();
 	SpaceHash spaceHash(searchRadiusView.getValue(), particles.size());
-	for (const auto p : particles) {
+	for (const auto& p : particles) {
 		spaceHash.add(p->getPosition());
 	}
 	int totalIndicesCount = 0;
-	for (const auto p : particles) {
+	for (const auto& p : particles) {
 		const auto indices = spaceHash.findNeighborIndices(p->getPosition());
 		totalIndicesCount += indices.size();
 	}

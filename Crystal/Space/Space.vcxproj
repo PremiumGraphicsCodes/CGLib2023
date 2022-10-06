@@ -161,6 +161,7 @@
     <ClInclude Include="LinearOctreeIndex.h" />
     <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="SpaceHash.h" />
+    <ClInclude Include="ZIndexedSearcher.h" />
     <ClInclude Include="ZOrderCurve2d.h" />
     <ClInclude Include="ZOrderCurve3d.h" />
   </ItemGroup>
@@ -172,6 +173,7 @@
     <ClCompile Include="IntersectionCalculator.cpp" />
     <ClCompile Include="LinearOctreeIndex.cpp" />
     <ClCompile Include="SpaceHash.cpp" />
+    <ClCompile Include="ZIndexedSearcher.cpp" />
     <ClCompile Include="ZOrderCurve2d.cpp" />
     <ClCompile Include="ZOrderCurve3d.cpp" />
   </ItemGroup>
