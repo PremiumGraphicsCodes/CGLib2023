@@ -20,6 +20,9 @@
       <Filter>WireFrame</Filter>
     </ClInclude>
     <ClInclude Include="IShape.h" />
+    <ClInclude Include="ParticleSystemBuilder.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
@@ -44,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="WireFrameBuilder.cpp">
       <Filter>WireFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemBuilder.cpp">
+      <Filter>ParticleSystem</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -18,7 +18,9 @@ public:
 
 private:
 	Box3dView boxView;
-	IntView countView;
+	IntView uNumView;
+	IntView vNumView;
+	IntView wNumView;
 	WorldBase* world;
 	RendererBase* renderer;
 };

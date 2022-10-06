@@ -1,10 +1,9 @@
 #include "PSBoxView.h"
 
 #include "Crystal/Scene/ParticleSystemScene.h"
+#include "CGLib/Shape/ParticleSystemBuilder.h"
 #include "RendererBase.h"
 #include "WorldBase.h"
-
-#include <random>
 
 using namespace Crystal::Math;
 using namespace Crystal::Shape;
@@ -14,12 +13,16 @@ using namespace Crystal::UI;
 PSBoxView::PSBoxView(const std::string& name, WorldBase* world, RendererBase* renderer) :
 	IOkCancelView(name),
 	boxView("Box"),
-	countView("Count", 10000),
+	uNumView("UNum", 10),
+	vNumView("VNum", 10),
+	wNumView("WNum", 10),
 	world(world),
 	renderer(renderer)
 {
 	add(&boxView);
-	add(&countView);
+	add(&uNumView);
+	add(&vNumView);
+	add(&wNumView);
 }
 
 void PSBoxView::onOk()
@@ -27,20 +30,9 @@ void PSBoxView::onOk()
 	const auto box = boxView.getValue();
 
 	auto scene = new ParticleSystemScene();
-	auto shape = std::make_unique<ParticleSystem>();
-	scene->setId(world->getNextId());
-	scene->setName("PSBox");
-
-	std::mt19937 mt{ std::random_device{}() };
-	std::uniform_real_distribution<float> dist(0.0, 1.0);
-	for (int i = 0; i < countView.getValue(); ++i) {
-		const auto u = dist(mt);
-		const auto v = dist(mt);
-		const auto w = dist(mt);
-		const auto pos = box.getPosition(u, v, w);
-		shape->add(std::make_unique<Particle>(pos));
-	}
-	scene->setShape(std::move(shape));
+	ParticleSystemBuilder builder;
+	builder.add(box, uNumView.getValue(), vNumView.getValue(), wNumView.getValue());
+	scene->setShape(std::move(builder.toParticleSystem()));
 
 	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, renderer->getPointRenderer());
 	presenter->build();
