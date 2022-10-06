@@ -79,14 +79,13 @@ void CompactSpaceHash::add(const Vector3df& position)
 	}
 }
 
-/*
-std::vector<IParticle*> CompactSpaceHash3d::findNeighbors(IParticle* particle)
+std::vector<int> CompactSpaceHash::findNeighborIndices(const int positionIndex)
 {
-	const auto position = particle->getPosition();
+	const auto position = positions[positionIndex]; //particle->getPosition();
 
 	const auto index = toIndex(position);
 
-	std::vector<IParticle*> neighbors;
+	std::vector<int> neighbors;
 	neighbors.reserve(64);
 
 	for (int i = -1; i <= 1; ++i) {
@@ -102,14 +101,15 @@ std::vector<IParticle*> CompactSpaceHash3d::findNeighbors(IParticle* particle)
 				if (iter == cells.end()) {
 					continue;
 				}
-				const auto& particles = (*iter)->particles;
-				for (auto p : particles) {
-					if (p == particle) {
+				const auto& indices = (*iter)->particleIndices;
+				for (const auto ix2 : indices) {
+					if (positionIndex == ix2) {
 						continue;
 					}
-					const double d2 = Math::getDistanceSquared(p->getPosition(), particle->getPosition());
+					const auto position2 = positions[ix2];
+					const double d2 = Math::getDistanceSquared(position, position2);
 					if (d2 < divideLength * divideLength) {
-						neighbors.push_back(p);
+						neighbors.push_back(ix2);
 					}
 				}
 			}
@@ -117,7 +117,6 @@ std::vector<IParticle*> CompactSpaceHash3d::findNeighbors(IParticle* particle)
 	}
 	return neighbors;
 }
-*/
 
 /*
 std::vector<IParticle*> CompactSpaceHash3d::findNeighbors(const Vector3dd& position)
@@ -152,13 +151,15 @@ std::vector<IParticle*> CompactSpaceHash3d::findNeighbors(const Vector3dd& posit
 	}
 	return neighbors;
 }
+*/
 
-std::vector<IParticle*> CompactSpaceHash3d::find(const Math::Vector3dd& positions) const
+std::vector<int> CompactSpaceHash::find(const int index) const
 {
-	return find(toIndex(positions));
+	const auto& p = positions[index];
+	return find(toIndex(p));
 }
 
-std::vector<IParticle*> CompactSpaceHash3d::find(const std::array<int, 3>& index) const
+std::vector<int> CompactSpaceHash::find(const std::array<int, 3>& index) const
 {
 	const auto hash = toHash(index);
 	const auto& cells = table[hash];
@@ -167,10 +168,8 @@ std::vector<IParticle*> CompactSpaceHash3d::find(const std::array<int, 3>& index
 	if (iter == cells.end()) {
 		return {};
 	}
-	return (*iter)->particles;
+	return (*iter)->particleIndices;
 }
-*/
-
 
 std::array<int, 3> CompactSpaceHash::toIndex(const Vector3df& pos) const
 {

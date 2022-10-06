@@ -33,15 +33,15 @@ public:
 
 	void add(const Math::Vector3df& position);
 
+	std::vector<int> findNeighborIndices(const int index);
+
 	/*
-	std::vector<int> findNeighbors(const int index);
-
 	std::vector<int> findNeighbors(const Math::Vector3df& position);
+	*/
 
-	std::vector<int> find(const Math::Vector3dd& positions) const;
+	std::vector<int> find(const int index) const;
 
 	std::vector<int> find(const std::array<int, 3>& position) const;
-	*/
 
 	std::array<int, 3> toIndex(const Math::Vector3df& pos) const;
 

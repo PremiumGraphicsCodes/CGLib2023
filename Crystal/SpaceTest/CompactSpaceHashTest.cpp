@@ -9,7 +9,8 @@ TEST(CompactSpaceHashTest, TestGetNeighborIndices)
 {
 	CompactSpaceHash spaceHash(1.0, 100);
 	spaceHash.add(Vector3df(0, 0, 0));
+	spaceHash.add(Vector3df(0.5, 0, 0));
 
-	//const auto actual = spaceHash.findNeighborIndices(Vector3df(0, 0, 0));
-	//EXPECT_EQ(1, actual.size());
+	const auto actual = spaceHash.findNeighborIndices(0);
+	EXPECT_EQ(1, actual.size());
 }
