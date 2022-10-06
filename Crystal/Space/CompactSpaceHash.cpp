@@ -118,12 +118,11 @@ std::vector<int> CompactSpaceHash::findNeighborIndices(const int positionIndex)
 	return neighbors;
 }
 
-/*
-std::vector<IParticle*> CompactSpaceHash3d::findNeighbors(const Vector3dd& position)
+std::vector<int> CompactSpaceHash::findNeighborIndices(const Vector3df& position)
 {
 	const auto index = toIndex(position);
 
-	std::vector<IParticle*> neighbors;
+	std::vector<int> neighbors;
 	neighbors.reserve(64);
 
 	for (int i = -1; i <= 1; ++i) {
@@ -139,11 +138,12 @@ std::vector<IParticle*> CompactSpaceHash3d::findNeighbors(const Vector3dd& posit
 				if (iter == cells.end()) {
 					continue;
 				}
-				const auto& particles = (*iter)->particles;
-				for (auto p : particles) {
-					const double d2 = Math::getDistanceSquared(p->getPosition(), position);
+				const auto& particleIndices = (*iter)->particleIndices;
+				for (const auto ix2 : particleIndices) {
+					const auto p2 = positions[ix2];
+					const double d2 = Math::getDistanceSquared(position, p2);
 					if (d2 < divideLength * divideLength) {
-						neighbors.push_back(p);
+						neighbors.push_back(ix2);
 					}
 				}
 			}
@@ -151,7 +151,6 @@ std::vector<IParticle*> CompactSpaceHash3d::findNeighbors(const Vector3dd& posit
 	}
 	return neighbors;
 }
-*/
 
 std::vector<int> CompactSpaceHash::find(const int index) const
 {

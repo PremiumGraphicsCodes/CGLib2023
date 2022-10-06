@@ -15,7 +15,7 @@ namespace Crystal {
 class ZIndexedParticle
 {
 public:
-	ZIndexedParticle(const unsigned int zIndex, const Math::Vector3dd& position) :
+	ZIndexedParticle(const unsigned int zIndex, const Math::Vector3df& position) :
 		zIndex(zIndex),
 		position(position)
 	{}
@@ -30,31 +30,31 @@ public:
 	}
 	*/
 
-	Math::Vector3dd getPosition() { return position; }
+	Math::Vector3df getPosition() { return position; }
 
 	int index;
 
 private:
 	unsigned int zIndex;
-	Math::Vector3dd position;
+	Math::Vector3df position;
 };
 
-class ZIndexedSearchAlgo : private UnCopyable
+class ZIndexedSearcher : private UnCopyable
 {
 public:
-	explicit ZIndexedSearchAlgo(const double searchRadius, const Math::Vector3dd& minPosition);
+	explicit ZIndexedSearcher(const float searchRadius, const Math::Vector3df& minPosition);
 
-	void add(const Math::Vector3dd& position);
+	void add(const Math::Vector3df& position);
 
 	void sort();
 
-	std::list<int> findNeighbors(const Math::Vector3dd& position);
+	std::list<int> findNeighbors(const Math::Vector3df& position);
 
-	std::array<unsigned int, 3> toIndex(const Math::Vector3dd& position) const;
+	std::array<unsigned int, 3> toIndex(const Math::Vector3df& position) const;
 
 private:
-	double searchRadius;
-	Math::Vector3dd minPosition;
+	float searchRadius;
+	Math::Vector3df minPosition;
 	std::vector<ZIndexedParticle> points;
 	ZOrderCurve3d curve;
 };

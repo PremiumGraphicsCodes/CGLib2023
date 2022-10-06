@@ -35,9 +35,7 @@ public:
 
 	std::vector<int> findNeighborIndices(const int index);
 
-	/*
-	std::vector<int> findNeighbors(const Math::Vector3df& position);
-	*/
+	std::vector<int> findNeighborIndices(const Math::Vector3df& position);
 
 	std::vector<int> find(const int index) const;
 

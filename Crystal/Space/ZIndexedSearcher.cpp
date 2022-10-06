@@ -7,12 +7,12 @@
 using namespace Crystal::Math;
 using namespace Crystal::Space;
 
-ZIndexedSearchAlgo::ZIndexedSearchAlgo(const double searchRadius, const Vector3dd& minPosition) :
+ZIndexedSearcher::ZIndexedSearcher(const float searchRadius, const Vector3df& minPosition) :
 	searchRadius(searchRadius),
 	minPosition(minPosition)
 {}
 
-void ZIndexedSearchAlgo::add(const Vector3dd& position)
+void ZIndexedSearcher::add(const Vector3df& position)
 {
 	const auto ix = toIndex(position);
 	const auto index = curve.encode(ix);
@@ -20,7 +20,7 @@ void ZIndexedSearchAlgo::add(const Vector3dd& position)
 	points.push_back(zip);
 }
 
-void ZIndexedSearchAlgo::sort()
+void ZIndexedSearcher::sort()
 {
 	//points.sort();
 	for (int i = 0; i < points.size(); ++i) {
@@ -29,7 +29,7 @@ void ZIndexedSearchAlgo::sort()
 	std::sort(points.begin(), points.end());
 }
 
-std::list<int> ZIndexedSearchAlgo::findNeighbors(const Math::Vector3dd& position)
+std::list<int> ZIndexedSearcher::findNeighbors(const Math::Vector3df& position)
 {
 	//const auto position = points[ix].getPosition();
 	const auto index = toIndex(position);
@@ -38,11 +38,11 @@ std::list<int> ZIndexedSearchAlgo::findNeighbors(const Math::Vector3dd& position
 	//std::advance(iter, ix);
 
 	const auto curveStartIndex = curve.encode({ index[0] - 1, index[1] - 1, index[2] - 1 });
-	ZIndexedParticle dummyStart(curveStartIndex, Vector3dd(0, 0, 0));
+	ZIndexedParticle dummyStart(curveStartIndex, Vector3df(0, 0, 0));
 	const auto rangedFirstIter = std::lower_bound(points.begin(), points.end(), dummyStart);
 
 	const auto curveEndIndex = curve.encode({ index[0] + 1, index[1] + 1, index[2] + 1 });
-	ZIndexedParticle dummyEnd(curveEndIndex, Vector3dd(0, 0, 0));
+	ZIndexedParticle dummyEnd(curveEndIndex, Vector3df(0, 0, 0));
 	const auto rangedEndIter = std::lower_bound(rangedFirstIter, points.end(), dummyEnd);
 
 	std::list<int> results;
@@ -55,7 +55,7 @@ std::list<int> ZIndexedSearchAlgo::findNeighbors(const Math::Vector3dd& position
 				const auto kk = index[2] + k;
 				const auto rawIndex = toIndex({ ii, jj, kk });
 				const auto curveIndex = curve.encode(rawIndex);
-				ZIndexedParticle dummy(curveIndex, Vector3dd(0, 0, 0));
+				ZIndexedParticle dummy(curveIndex, Vector3df(0, 0, 0));
 				auto firstIter = std::lower_bound(rangedFirstIter, rangedEndIter, dummy);
 				auto secondIter = std::upper_bound(firstIter, rangedEndIter, dummy);
 				for (auto iter = firstIter; iter != secondIter; ++iter) {
@@ -73,7 +73,7 @@ std::list<int> ZIndexedSearchAlgo::findNeighbors(const Math::Vector3dd& position
 }
 
 
-std::array<unsigned int, 3> ZIndexedSearchAlgo::toIndex(const Vector3dd& position) const
+std::array<unsigned int, 3> ZIndexedSearcher::toIndex(const Vector3df& position) const
 {
 	const auto p = position - minPosition;
 	const auto ix = static_cast<unsigned int>(p.x / searchRadius) + 1; // avoid negative index.

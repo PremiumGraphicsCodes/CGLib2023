@@ -4,6 +4,7 @@
     <ClCompile Include="SpaceView.cpp" />
     <ClCompile Include="SpaceMenu.cpp" />
     <ClCompile Include="SpaceHashView.cpp" />
+    <ClCompile Include="CompactSpaceHashView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -11,5 +12,6 @@
   <ItemGroup>
     <ClInclude Include="SpaceMenu.h" />
     <ClInclude Include="SpaceHashView.h" />
+    <ClInclude Include="CompactSpaceHashView.h" />
   </ItemGroup>
 </Project>
