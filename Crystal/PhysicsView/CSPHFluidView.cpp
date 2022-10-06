@@ -1,5 +1,7 @@
 #include "CSPHFluidView.h"
 
+#include "CSPHFluidPresenter.h"
+
 using namespace Crystal::Math;
 //using namespace Crystal::Shape;
 using namespace Crystal::Scene;
@@ -33,11 +35,16 @@ CSPHFluidView::CSPHFluidView(const std::string& name, WorldBase* world, Renderer
 void CSPHFluidView::onOk()
 {
 	fluidScene = new CSPHFluidScene();
+	auto preseter = std::make_unique<CSPHFluidPresenter>(fluidScene, renderer->getPointRenderer());
+	preseter->build();
+	fluidScene->setPresenter(std::move(preseter));
+
 	world->getRootScene()->addScene(fluidScene);
 
-	fluidScene->getPresenter()->build();
+	//fluidScene->getPresenter()->build();
 
 	animator = new CSPHAnimator();
+	animator->setScene(fluidScene);
 	world->addAnimator(animator);
 
 	this->onReset();
@@ -48,7 +55,6 @@ void CSPHFluidView::onOk()
 void CSPHFluidView::onReset()
 {
 	auto fluid = std::make_unique<CSPHFluid>();
-	this->fluidScene->setFluid(std::move(fluid));
 
 	const auto radius = 1.0f;
 	const auto length = radius * 2.0;
@@ -56,11 +62,7 @@ void CSPHFluidView::onReset()
 	fluid->setPressureCoe( pressureCoeView.getValue() );
 	fluid->setVicosityCoe( viscosityView.getValue() );
 	fluid->setEffectLength(effectLength);
-	//solver->setEffectLenth(effectLength);
 	fluid->setDensity( densityView.getValue() );
-	//solver->setTimeStep(timeStepView.getValue());
-	//solver->setBoundary(boundaryView.getValue());
-	//solver->setExternalForce(Vector3df(0.0, -9.8, 0.0));
 
 	for (int i = 0; i < 10; ++i) {
 		for (int j = 0; j < 5; ++j) {
@@ -70,4 +72,15 @@ void CSPHFluidView::onReset()
 			}
 		}
 	}
+
+	auto solver = std::make_unique<CSPHSolver>();
+	solver->setEffectLenth(effectLength);
+	solver->setTimeStep(timeStepView.getValue());
+	solver->setBoundary(boundaryView.getValue());
+	solver->setExternalForce(Vector3df(0.0, -9.8, 0.0));
+
+	solver->add(fluid.get());
+
+	this->fluidScene->setFluid(std::move(fluid));
+	this->animator->setSolver(std::move(solver));
 }

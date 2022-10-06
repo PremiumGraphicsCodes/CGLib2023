@@ -17,9 +17,11 @@ public:
 
 	void add(CSPHFluid* particle) { this->fluids.push_back(particle); }
 
-	void simulate(const float timeStep);
+	void simulate();
 
 	void setExternalForce(const Math::Vector3df& force) { this->externalForce = force; }
+
+	void setTimeStep(const float timeStep) { this->timeStep = timeStep; }
 
 	//std::vector<CSPHParticle*> getParticles() const { return particles; }
 
@@ -33,6 +35,7 @@ private:
 	std::vector<CSPHFluid*> fluids;
 	Math::Vector3df externalForce;
 	Math::Box3df boundary;
+	float timeStep;
 };
 
 	}

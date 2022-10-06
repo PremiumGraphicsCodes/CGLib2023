@@ -9,7 +9,7 @@ using namespace Crystal::Math;
 using namespace Crystal::Space;
 using namespace Crystal::Physics;
 
-void CSPHSolver::simulate(const float timeStep)
+void CSPHSolver::simulate()
 {
 	std::vector<CSPHParticle*> particles;
 

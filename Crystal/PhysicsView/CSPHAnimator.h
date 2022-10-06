@@ -6,6 +6,7 @@
 
 namespace Crystal {
 	namespace Physics {
+		class CSPHFluidScene;
 
 class CSPHAnimator : public Scene::IAnimator
 {
@@ -14,11 +15,13 @@ public:
 
 	void setSolver(std::unique_ptr<CSPHSolver> solver) { this->solver = std::move(solver); }
 
+	void setScene(CSPHFluidScene* scene) { this->scene = scene; }
+
 	void step() override;
 
 private:
 	std::unique_ptr<CSPHSolver> solver;
-	float timeStep;
+	CSPHFluidScene* scene;
 	//solver->add(fluidScene->getFluid());
 
 };
