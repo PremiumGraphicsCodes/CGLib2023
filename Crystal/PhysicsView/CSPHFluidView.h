@@ -6,8 +6,7 @@
 
 #include "Crystal/AppBase/SceneSelectView.h"
 #include "CSPHFluidScene.h"
-
-#include "../Physics/CSPHSolver.h"
+#include "CSPHAnimator.h"
 
 namespace Crystal {
 	namespace UI {
@@ -24,6 +23,7 @@ private:
 
 private:
 	Physics::CSPHFluidScene* fluidScene;
+	Physics::CSPHAnimator* animator;
 	Button startButton;
 	Button resetButton;
 	//Button nextButton;

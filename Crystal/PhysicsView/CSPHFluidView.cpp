@@ -37,8 +37,8 @@ void CSPHFluidView::onOk()
 
 	fluidScene->getPresenter()->build();
 
-	solver = new CSPHSolver();
-	solver->add(fluidScene->getFluid());
+	animator = new CSPHAnimator();
+	world->addAnimator(animator);
 
 	this->onReset();
 
@@ -56,11 +56,11 @@ void CSPHFluidView::onReset()
 	fluid->setPressureCoe( pressureCoeView.getValue() );
 	fluid->setVicosityCoe( viscosityView.getValue() );
 	fluid->setEffectLength(effectLength);
-	solver->setEffectLenth(effectLength);
+	//solver->setEffectLenth(effectLength);
 	fluid->setDensity( densityView.getValue() );
-	solver->setTimeStep(timeStepView.getValue());
-	solver->setBoundary(boundaryView.getValue());
-	solver->setExternalForce(Vector3df(0.0, -9.8, 0.0));
+	//solver->setTimeStep(timeStepView.getValue());
+	//solver->setBoundary(boundaryView.getValue());
+	//solver->setExternalForce(Vector3df(0.0, -9.8, 0.0));
 
 	for (int i = 0; i < 10; ++i) {
 		for (int j = 0; j < 5; ++j) {

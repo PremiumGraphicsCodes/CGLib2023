@@ -20,7 +20,7 @@ public:
 
 	void step();
 
-	//void addAnimator(Scene::IAnimator* animator) { animators.push_back(animator); }
+	void addAnimator(Scene::IAnimator* animator) { animators.push_back(animator); }
 
 	//Crystal::Graphics::Camera* getCamera() { return &camera; }
 

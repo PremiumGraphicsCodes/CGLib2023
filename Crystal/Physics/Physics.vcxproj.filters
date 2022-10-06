@@ -14,6 +14,9 @@
     <ClInclude Include="CSPHBoundarySolver.h">
       <Filter>CSPH</Filter>
     </ClInclude>
+    <ClInclude Include="PBSPHFluid.h">
+      <Filter>PBSPH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -33,6 +36,9 @@
   <ItemGroup>
     <Filter Include="CSPH">
       <UniqueIdentifier>{e1c0684a-f6d1-4f99-8455-9f98af32ac25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PBSPH">
+      <UniqueIdentifier>{5e93185a-2ed2-45fd-951a-543593d8ea4a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

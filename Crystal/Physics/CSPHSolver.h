@@ -12,16 +12,12 @@ namespace Crystal {
 class CSPHSolver : private UnCopyable
 {
 public:
-	CSPHSolver() : timeStep(0.001f)
+	CSPHSolver()
 	{}
 
 	void add(CSPHFluid* particle) { this->fluids.push_back(particle); }
 
 	void simulate(const float timeStep);
-
-	void setTimeStep(const float timeStep) { this->timeStep = timeStep; }
-
-	//int getTimeStep() const { return timeStep; }
 
 	void setExternalForce(const Math::Vector3df& force) { this->externalForce = force; }
 
@@ -32,7 +28,6 @@ public:
 	void setEffectLenth(const float length) { this->effectLength = length; }
 
 private:
-	float timeStep;
 	float effectLength = 1.25f;
 	//SPHKernel kernel;
 	std::vector<CSPHFluid*> fluids;

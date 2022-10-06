@@ -14,6 +14,9 @@
     <ClCompile Include="PhysicsMenu.cpp">
       <Filter>CSPH</Filter>
     </ClCompile>
+    <ClCompile Include="CSPHAnimator.cpp">
+      <Filter>CSPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -29,6 +32,9 @@
       <Filter>CSPH</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsMenu.h">
+      <Filter>CSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="CSPHAnimator.h">
       <Filter>CSPH</Filter>
     </ClInclude>
   </ItemGroup>

@@ -157,6 +157,7 @@
     <ClInclude Include="CSPHFluid.h" />
     <ClInclude Include="CSPHParticle.h" />
     <ClInclude Include="CSPHSolver.h" />
+    <ClInclude Include="PBSPHFluid.h" />
     <ClInclude Include="SPHKernel.h" />
   </ItemGroup>
   <ItemGroup>
