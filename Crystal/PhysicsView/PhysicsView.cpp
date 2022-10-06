@@ -6,6 +6,8 @@
 #include "Crystal/AppBase/RendererBase.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
 
+#include "PhysicsMenu.h"
+
 #include "CGLib/UI/Panel.h"
 
 //#include "SpaceMenu.h"
@@ -52,7 +54,7 @@ int main() {
 
 	app.add(new CameraMenu("Camera", &world, &renderer));
 	app.add(new ShapeMenu("Shape", &world, &renderer, control));
-	//app.add(new SpaceMenu("Space", control, &world, &renderer));
+	app.add(new PhysicsMenu("Physics", &world, &renderer, control));
 	app.add(control);
 
 	app.show();

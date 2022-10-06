@@ -14,8 +14,11 @@ void CSPHSolver::simulate(const float timeStep)
 	std::vector<CSPHParticle*> particles;
 
 	for (auto fluid : fluids) {
-		const auto ps = fluid->getParticles();
-		particles.insert(particles.end(), ps.begin(), ps.end());
+		const auto& ps = fluid->getParticles();
+		//particles.insert(particles.end(), ps.begin(), ps.end());
+		for (auto& p : ps) {
+			particles.push_back(p.get());
+		}
 	}
 
 	SPHKernel kernel(effectLength);

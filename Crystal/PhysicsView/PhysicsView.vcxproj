@@ -148,6 +148,7 @@
     <ClCompile Include="CSPHFluidPresenter.cpp" />
     <ClCompile Include="CSPHFluidScene.cpp" />
     <ClCompile Include="CSPHFluidView.cpp" />
+    <ClCompile Include="PhysicsMenu.cpp" />
     <ClCompile Include="PhysicsView.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +190,7 @@
     <ClInclude Include="CSPHFluidPresenter.h" />
     <ClInclude Include="CSPHFluidScene.h" />
     <ClInclude Include="CSPHFluidView.h" />
+    <ClInclude Include="PhysicsMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

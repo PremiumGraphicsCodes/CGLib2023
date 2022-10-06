@@ -14,9 +14,9 @@ public:
 
 	~CSPHFluid() {}
 
-	void addParticle(CSPHParticle* mp) { particles.push_back(mp); }
+	void addParticle(std::unique_ptr<CSPHParticle> mp) { particles.push_back(std::move(mp)); }
 
-	std::list<CSPHParticle*> getParticles() const { return particles; }
+	const std::list<std::unique_ptr<CSPHParticle>>& getParticles() const { return particles; }
 
 	Math::Box3df getBoundingBox() const;
 
@@ -41,7 +41,7 @@ private:
 
 
 private:
-	std::list<CSPHParticle*> particles;
+	std::list<std::unique_ptr<CSPHParticle>> particles;
 };
 
 	}

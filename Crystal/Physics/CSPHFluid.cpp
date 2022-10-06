@@ -13,7 +13,7 @@ CSPHFluid::CSPHFluid()
 Box3df CSPHFluid::getBoundingBox() const
 {
 	auto bb = Box3df::createDegeneratedBox();
-	for (auto p : particles) {
+	for (const auto& p : particles) {
 		bb.add(p->getPosition());
 	}
 	return bb;
