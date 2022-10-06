@@ -153,12 +153,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CSPHBoundarySolver.h" />
     <ClInclude Include="CSPHFluid.h" />
     <ClInclude Include="CSPHParticle.h" />
     <ClInclude Include="CSPHSolver.h" />
     <ClInclude Include="SPHKernel.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CSPHBoundarySolver.cpp" />
     <ClCompile Include="CSPHParticle.cpp" />
     <ClCompile Include="CSPHSolver.cpp" />
     <ClCompile Include="SPHKernel.cpp" />

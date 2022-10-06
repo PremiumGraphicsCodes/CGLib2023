@@ -17,8 +17,6 @@ public:
 
 	void add(CSPHFluid* particle) { this->fluids.push_back(particle); }
 
-	void clear();
-
 	void simulate(const float timeStep);
 
 	void setTimeStep(const float timeStep) { this->timeStep = timeStep; }
@@ -29,7 +27,7 @@ public:
 
 	//std::vector<CSPHParticle*> getParticles() const { return particles; }
 
-	void setBoundary(const Math::Box3dd& boundary) { this->boundary = boundary; }
+	void setBoundary(const Math::Box3df& boundary) { this->boundary = boundary; }
 
 	void setEffectLenth(const float length) { this->effectLength = length; }
 
@@ -39,7 +37,7 @@ private:
 	//SPHKernel kernel;
 	std::vector<CSPHFluid*> fluids;
 	Math::Vector3df externalForce;
-	Math::Box3dd boundary;
+	Math::Box3df boundary;
 };
 
 	}

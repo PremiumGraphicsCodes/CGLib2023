@@ -11,6 +11,9 @@
     <ClInclude Include="CSPHSolver.h">
       <Filter>CSPH</Filter>
     </ClInclude>
+    <ClInclude Include="CSPHBoundarySolver.h">
+      <Filter>CSPH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -18,6 +21,9 @@
       <Filter>CSPH</Filter>
     </ClCompile>
     <ClCompile Include="CSPHSolver.cpp">
+      <Filter>CSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="CSPHBoundarySolver.cpp">
       <Filter>CSPH</Filter>
     </ClCompile>
   </ItemGroup>

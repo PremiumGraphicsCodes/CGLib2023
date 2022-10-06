@@ -1,21 +1,16 @@
 #include "CSPHSolver.h"
 #include "CSPHParticle.h"
-//#include "CSPHBoundarySolver.h"
+#include "CSPHBoundarySolver.h"
 #include "CSPHFluid.h"
 
-//#include "../../../CrystalSpace/CrystalSpace/IndexedSortSearchAlgo.h"
+#include "Crystal/Space/IndexedSortBasedSeacher.h"
 
 using namespace Crystal::Math;
+using namespace Crystal::Space;
 using namespace Crystal::Physics;
-
-void CSPHSolver::clear()
-{
-	//timeStep = 0.001;
-}
 
 void CSPHSolver::simulate(const float timeStep)
 {
-	/*
 	std::vector<CSPHParticle*> particles;
 
 	for (auto fluid : fluids) {
@@ -28,23 +23,21 @@ void CSPHSolver::simulate(const float timeStep)
 		p->setKernel(&kernel);
 	}
 
-	//kernel.setEffectLength(fluids.front()->)
-
 	for (auto particle : particles) {
 		particle->init();
 	}
 
-	IndexedSortSearchAlgo algo(effectLength);
+	IndexedSortBasedSearcher algo(effectLength);
 	for (auto p : particles) {
-		algo.add(p);
+		algo.add(p->getPosition());
 	}
-	algo.createPairs();
+	algo.search();
 	const auto& pairs = algo.getPairs();
 
 #pragma omp parallel for
 	for (int i = 0; i < static_cast<int>(pairs.size()); ++i) {
-		auto p1 = static_cast<CSPHParticle*>(pairs[i].first);
-		auto p2 = static_cast<CSPHParticle*>(pairs[i].second);
+		auto p1 = particles[ pairs[i].first ];
+		auto p2 = particles[ pairs[i].second ];
 		p1->addDensity(*p2);
 		p2->addDensity(*p1);
 	}
@@ -55,8 +48,8 @@ void CSPHSolver::simulate(const float timeStep)
 
 #pragma omp parallel for
 	for (int i = 0; i < static_cast<int>(pairs.size()); ++i) {
-		auto p1 = static_cast<CSPHParticle*>(pairs[i].first);
-		auto p2 = static_cast<CSPHParticle*>(pairs[i].second);
+		auto p1 = particles[ pairs[i].first ];
+		auto p2 = particles[ pairs[i].second ];
 		p1->solvePressureForce(*p2);
 		p2->solvePressureForce(*p1);
 		p1->solveViscosityForce(*p2);
@@ -74,6 +67,7 @@ void CSPHSolver::simulate(const float timeStep)
 		p->forwardTime(timeStep);
 	}
 
+	/*
 	for (auto fluid : fluids) {
 		fluid->getPresenter()->updateView();
 	}
