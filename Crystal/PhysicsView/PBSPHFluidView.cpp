@@ -1,4 +1,4 @@
-#include "PBSPHFluidSimulationView.h"
+#include "PBSPHFluidView.h"
 
 #include "PBSPHFluidScene.h"
 #include "../Physics/PBSPHSolver.h"
@@ -9,7 +9,7 @@ using namespace Crystal::Scene;
 using namespace Crystal::UI;
 using namespace Crystal::Physics;
 
-PBSPHFluidSimulationView::PBSPHFluidSimulationView(const std::string& name, WorldBase* model, RendererBase* renderer) :
+PBSPHFluidView::PBSPHFluidView(const std::string& name, WorldBase* model, RendererBase* renderer) :
 	IOkCancelView(name),
 	startButton("Start"),
 	resetButton("Reset"),
@@ -34,7 +34,7 @@ PBSPHFluidSimulationView::PBSPHFluidSimulationView(const std::string& name, Worl
 	add(&vicsocityView);
 }
 
-void PBSPHFluidSimulationView::onOk()
+void PBSPHFluidView::onOk()
 {
 	/*
 	auto world = getWorld();
@@ -58,7 +58,7 @@ void PBSPHFluidSimulationView::onOk()
 	*/
 }
 
-void PBSPHFluidSimulationView::onReset()
+void PBSPHFluidView::onReset()
 {
 	/*
 	//this->simulator->clear();

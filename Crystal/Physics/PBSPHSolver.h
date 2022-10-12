@@ -38,7 +38,7 @@ private:
 
 	float calculateTimeStep(const std::vector<PBSPHParticle*>& particles);
 
-		};
+};
 
 	}
 }

@@ -5,6 +5,7 @@
 #include "SPHKernel.h"
 #include "PBSPHParticle.h"
 #include <list>
+#include <memory>
 
 namespace Crystal {
 	namespace Physics {
@@ -16,9 +17,9 @@ public:
 
 	~PBSPHFluid();
 
-	void addParticle(PBSPHParticle* mp) { particles.push_back(mp); }
+	void addParticle(std::unique_ptr<PBSPHParticle> mp) { particles.push_back(std::move(mp)); }
 
-	std::list<PBSPHParticle*> getParticles() const { return particles; }
+	std::list<std::unique_ptr<PBSPHParticle>>& getParticles() { return particles; }
 
 	Math::Box3df getBoundingBox() const;
 
@@ -43,7 +44,7 @@ public:
 	void setIsBoundary(const bool b) { _isBoundary = b; }
 
 private:
-	std::list<PBSPHParticle*> particles;
+	std::list<std::unique_ptr<PBSPHParticle>> particles;
 	SPHKernel kernel;
 	float restDensity;
 	float stiffness;

@@ -27,8 +27,10 @@ void PBSPHSolver::simulate(const float maxTimeStep, const int maxIter)
 {
 	std::vector<PBSPHParticle*> particles;
 	for (auto fluid : fluids) {
-		const auto ps = fluid->getParticles();
-		particles.insert(particles.end(), ps.begin(), ps.end());
+		const auto& ps = fluid->getParticles();
+		for (auto& p : ps) {
+			particles.push_back(p.get());
+		}
 	}
 
 	for (auto p : particles) {

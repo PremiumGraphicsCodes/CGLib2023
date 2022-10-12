@@ -13,10 +13,10 @@ namespace Crystal {
 	}
 	namespace UI {
 
-class PBSPHFluidSimulationView : public IOkCancelView
+class PBSPHFluidView : public IOkCancelView
 {
 public:
-	PBSPHFluidSimulationView(const std::string& name, WorldBase* model, RendererBase* renderer);
+	PBSPHFluidView(const std::string& name, WorldBase* model, RendererBase* renderer);
 
 private:
 	void onOk() override;

@@ -21,7 +21,7 @@ PBSPHFluid::~PBSPHFluid()
 Box3df PBSPHFluid::getBoundingBox() const
 {
 	Box3df bb = Box3df::createDegeneratedBox();
-	for (auto p : particles) {
+	for (const auto& p : particles) {
 		bb.add(p->getPosition());
 	}
 	return bb;

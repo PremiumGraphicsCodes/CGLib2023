@@ -14,7 +14,7 @@
     <ClCompile Include="CSPHAnimator.cpp">
       <Filter>CSPH</Filter>
     </ClCompile>
-    <ClCompile Include="PBSPHFluidSimulationView.cpp">
+    <ClCompile Include="PBSPHFluidView.cpp">
       <Filter>PBSPH</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsMenu.cpp" />
@@ -41,7 +41,7 @@
     <ClInclude Include="CSPHAnimator.h">
       <Filter>CSPH</Filter>
     </ClInclude>
-    <ClInclude Include="PBSPHFluidSimulationView.h">
+    <ClInclude Include="PBSPHFluidView.h">
       <Filter>PBSPH</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsMenu.h" />
