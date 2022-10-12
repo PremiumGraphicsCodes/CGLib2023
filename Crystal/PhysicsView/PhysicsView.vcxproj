@@ -149,6 +149,9 @@
     <ClCompile Include="CSPHFluidPresenter.cpp" />
     <ClCompile Include="CSPHFluidScene.cpp" />
     <ClCompile Include="CSPHFluidView.cpp" />
+    <ClCompile Include="PBSPHFluidPresenter.cpp" />
+    <ClCompile Include="PBSPHFluidScene.cpp" />
+    <ClCompile Include="PBSPHFluidSimulationView.cpp" />
     <ClCompile Include="PhysicsMenu.cpp" />
     <ClCompile Include="PhysicsView.cpp" />
   </ItemGroup>
@@ -192,6 +195,9 @@
     <ClInclude Include="CSPHFluidPresenter.h" />
     <ClInclude Include="CSPHFluidScene.h" />
     <ClInclude Include="CSPHFluidView.h" />
+    <ClInclude Include="PBSPHFluidPresenter.h" />
+    <ClInclude Include="PBSPHFluidScene.h" />
+    <ClInclude Include="PBSPHFluidSimulationView.h" />
     <ClInclude Include="PhysicsMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

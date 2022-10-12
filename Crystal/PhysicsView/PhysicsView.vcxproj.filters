@@ -11,11 +11,18 @@
     <ClCompile Include="CSPHFluidView.cpp">
       <Filter>CSPH</Filter>
     </ClCompile>
-    <ClCompile Include="PhysicsMenu.cpp">
-      <Filter>CSPH</Filter>
-    </ClCompile>
     <ClCompile Include="CSPHAnimator.cpp">
       <Filter>CSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="PBSPHFluidSimulationView.cpp">
+      <Filter>PBSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsMenu.cpp" />
+    <ClCompile Include="PBSPHFluidPresenter.cpp">
+      <Filter>PBSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="PBSPHFluidScene.cpp">
+      <Filter>PBSPH</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -31,16 +38,26 @@
     <ClInclude Include="CSPHFluidView.h">
       <Filter>CSPH</Filter>
     </ClInclude>
-    <ClInclude Include="PhysicsMenu.h">
-      <Filter>CSPH</Filter>
-    </ClInclude>
     <ClInclude Include="CSPHAnimator.h">
       <Filter>CSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="PBSPHFluidSimulationView.h">
+      <Filter>PBSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsMenu.h" />
+    <ClInclude Include="PBSPHFluidScene.h">
+      <Filter>PBSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="PBSPHFluidPresenter.h">
+      <Filter>PBSPH</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CSPH">
       <UniqueIdentifier>{94989af5-e6f4-432b-bccb-598608f81b65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PBSPH">
+      <UniqueIdentifier>{d3a591a3-1480-42eb-b7ba-744141408cca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

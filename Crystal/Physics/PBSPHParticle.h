@@ -75,7 +75,7 @@ public:
 
 	Math::Vector3df getPredictPosition() const { return predictPosition; }
 
-	Math::Vector3dd getPosition() const { return position; }
+	Math::Vector3df getPosition() const { return position; }
 
 	void calculatePressure(const PBSPHParticle& rhs);
 

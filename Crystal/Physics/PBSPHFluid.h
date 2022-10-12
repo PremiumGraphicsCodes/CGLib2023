@@ -3,11 +3,11 @@
 #include "CGLib/Util/UnCopyable.h"
 #include "CGLib/Math/Box3d.h"
 #include "SPHKernel.h"
+#include "PBSPHParticle.h"
 #include <list>
 
 namespace Crystal {
 	namespace Physics {
-		class PBSPHParticle;
 
 class PBSPHFluid : private UnCopyable
 {
