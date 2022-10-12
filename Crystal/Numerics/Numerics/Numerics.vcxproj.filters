@@ -4,10 +4,12 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Converter.h" />
+    <ClInclude Include="SVD.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Numerics.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Converter.cpp" />
+    <ClCompile Include="SVD.cpp" />
   </ItemGroup>
 </Project>
