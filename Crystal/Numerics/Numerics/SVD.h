@@ -23,7 +23,6 @@ public:
 	Result calculate(const Math::Matrix2dd& lhs);
 };
 
-/*
 class SVD3d
 {
 	struct Result
@@ -37,6 +36,5 @@ class SVD3d
 
 	Result calculateJacobi(const Math::Matrix3dd& lhs);
 };
-*/
 	}
 }
