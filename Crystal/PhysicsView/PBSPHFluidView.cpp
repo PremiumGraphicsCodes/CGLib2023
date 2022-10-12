@@ -80,4 +80,5 @@ void PBSPHFluidView::onReset()
 
 	this->fluidScene->setFluid(std::move(fluid));
 	this->animator->setSolver(std::move(solver));
+	this->animator->setTimeStep(timeStepView.getValue());
 }
