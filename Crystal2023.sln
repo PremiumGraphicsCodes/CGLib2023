@@ -39,6 +39,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shape", "CGLib\Shape\Shape.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhysicsView", "Crystal\PhysicsView\PhysicsView.vcxproj", "{4EB8123B-F6E6-4027-AB9D-4930C58FF327}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Numerics", "Crystal\Numerics\Numerics\Numerics.vcxproj", "{65CA69AD-6106-4F1B-BACA-9C10359C31F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -191,6 +193,14 @@ Global
 		{4EB8123B-F6E6-4027-AB9D-4930C58FF327}.Release|x64.Build.0 = Release|x64
 		{4EB8123B-F6E6-4027-AB9D-4930C58FF327}.Release|x86.ActiveCfg = Release|Win32
 		{4EB8123B-F6E6-4027-AB9D-4930C58FF327}.Release|x86.Build.0 = Release|Win32
+		{65CA69AD-6106-4F1B-BACA-9C10359C31F5}.Debug|x64.ActiveCfg = Debug|x64
+		{65CA69AD-6106-4F1B-BACA-9C10359C31F5}.Debug|x64.Build.0 = Debug|x64
+		{65CA69AD-6106-4F1B-BACA-9C10359C31F5}.Debug|x86.ActiveCfg = Debug|Win32
+		{65CA69AD-6106-4F1B-BACA-9C10359C31F5}.Debug|x86.Build.0 = Debug|Win32
+		{65CA69AD-6106-4F1B-BACA-9C10359C31F5}.Release|x64.ActiveCfg = Release|x64
+		{65CA69AD-6106-4F1B-BACA-9C10359C31F5}.Release|x64.Build.0 = Release|x64
+		{65CA69AD-6106-4F1B-BACA-9C10359C31F5}.Release|x86.ActiveCfg = Release|Win32
+		{65CA69AD-6106-4F1B-BACA-9C10359C31F5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
