@@ -22,8 +22,7 @@ public:
 private:
 	std::unique_ptr<CSPHSolver> solver;
 	CSPHFluidScene* scene;
-	//solver->add(fluidScene->getFluid());
-
 };
+
 	}
 }

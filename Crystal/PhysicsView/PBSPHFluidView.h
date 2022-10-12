@@ -5,6 +5,7 @@
 #include "CGLib/UI/Box3dView.h"
 #include "Crystal/AppBase/WorldBase.h"
 #include "Crystal/AppBase/RendererBase.h"
+#include "PBSPHAnimator.h"
 
 namespace Crystal {
 	namespace Physics {
@@ -26,7 +27,7 @@ private:
 private:
 	Physics::PBSPHSolver* simulator;
 	Physics::PBSPHFluidScene* fluidScene;
-	//	Physics::PBFluidScene* boundaryScene;
+	Physics::PBSPHAnimator* animator;
 	Button startButton;
 	Button resetButton;
 	FloatView timeStepView;
@@ -36,6 +37,8 @@ private:
 	FloatView stiffnessView;
 	FloatView vicsocityView;
 	Box3dView boundaryView;
+	WorldBase* model;
+	RendererBase* renderer;
 };
 
 	}

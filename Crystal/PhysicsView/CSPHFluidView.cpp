@@ -41,15 +41,11 @@ void CSPHFluidView::onOk()
 
 	world->getRootScene()->addScene(fluidScene);
 
-	//fluidScene->getPresenter()->build();
-
 	animator = new CSPHAnimator();
 	animator->setScene(fluidScene);
 	world->addAnimator(animator);
 
 	this->onReset();
-
-	//getWorld()->addAnimation(simulator);
 }
 
 void CSPHFluidView::onReset()

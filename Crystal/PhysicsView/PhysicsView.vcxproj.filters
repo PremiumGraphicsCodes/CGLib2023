@@ -24,6 +24,9 @@
     <ClCompile Include="PBSPHFluidScene.cpp">
       <Filter>PBSPH</Filter>
     </ClCompile>
+    <ClCompile Include="PBSPHAnimator.cpp">
+      <Filter>PBSPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -49,6 +52,9 @@
       <Filter>PBSPH</Filter>
     </ClInclude>
     <ClInclude Include="PBSPHFluidPresenter.h">
+      <Filter>PBSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="PBSPHAnimator.h">
       <Filter>PBSPH</Filter>
     </ClInclude>
   </ItemGroup>

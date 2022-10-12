@@ -11,6 +11,8 @@ using namespace Crystal::Physics;
 
 PBSPHFluidView::PBSPHFluidView(const std::string& name, WorldBase* model, RendererBase* renderer) :
 	IOkCancelView(name),
+	model(model),
+	renderer(renderer),
 	startButton("Start"),
 	resetButton("Reset"),
 	timeStepView("TimeStep", 0.01f),
@@ -36,51 +38,46 @@ PBSPHFluidView::PBSPHFluidView(const std::string& name, WorldBase* model, Render
 
 void PBSPHFluidView::onOk()
 {
-	/*
-	auto world = getWorld();
+	this->fluidScene = new PBSPHFluidScene();
 
-	this->fluidScene = new PBFluidScene(getWorld()->getNextSceneId(), "Fluid");
-	//this->boundaryScene = new PBFluidScene(getWorld()->getNextSceneId(), "Boundary");
-	this->simulator = new PBSPHSolver();
+	auto presenter = std::make_unique<PBSPHFluidPresenter>(fluidScene, renderer->getPointRenderer());
+	presenter->build();
+	this->fluidScene->setPresenter(std::move(presenter));
 
-	onReset();
+	model->getRootScene()->addScene(fluidScene);
 
-	getWorld()->getScenes()->addScene(this->fluidScene);
-	auto newId = this->fluidScene->getId();
-	this->fluidScene->getPresenter()->createView(world->getRenderer());
+	animator = new PBSPHAnimator();
+	animator->setScene(fluidScene);
+	model->addAnimator(animator);
 
-	simulator->add(this->fluidScene);
-	//simulator->add(this->boundaryScene);
-
-	simulator->setExternalForce(Vector3df(0.0, -9.8, 0.0));
-
-	getWorld()->addAnimation(simulator);
-	*/
+	this->onReset();
 }
 
 void PBSPHFluidView::onReset()
 {
-	/*
-	//this->simulator->clear();
-	this->fluidScene->clearParticles();
-	this->fluidScene->setEffectLength(this->effectLengthView.getValue());
-	this->fluidScene->setRestDensity(this->densityView.getValue());
-	this->fluidScene->setStiffness(this->stiffnessView.getValue());
-	this->fluidScene->setVicsosity(this->vicsocityView.getValue());
+	auto fluid = std::make_unique<PBSPHFluid>();
+	fluid->setEffectLength(this->effectLengthView.getValue());
+	fluid->setRestDensity(this->densityView.getValue());
+	fluid->setStiffness(this->stiffnessView.getValue());
+	fluid->setVicsosity(this->vicsocityView.getValue());
 
 	const auto radius = 1.0;
 	const auto length = radius * 2.0;
 	for (int i = 0; i < 20; ++i) {
 		for (int j = 0; j < 20; ++j) {
 			for (int k = 0; k < 20; ++k) {
-				auto mp = new PBSPHParticle(Vector3dd(i * length, j * length, k * length), radius, this->fluidScene);
-				this->fluidScene->addParticle(mp);
+				auto mp = std::make_unique<PBSPHParticle>(Vector3df(i * length, j * length, k * length), radius, fluid.get());
+				fluid->addParticle(std::move(mp));
 			}
 		}
 	}
 
+	auto solver = std::make_unique<PBSPHSolver>();
+	solver->setTimeStep(timeStepView.getValue());
+	solver->setBoundary(boundaryView.getValue());
+	solver->setExternalForce(Vector3df(0.0f, -9.8f, 0.0f));
+	solver->add(fluid.get());
 
-	simulator->setBoundary(boundaryView.getValue());
-	simulator->setTimeStep(timeStepView.getValue());
-	*/
+	this->fluidScene->setFluid(std::move(fluid));
+	this->animator->setSolver(std::move(solver));
 }
