@@ -17,6 +17,9 @@
     <ClInclude Include="PBSPHFluid.h">
       <Filter>PBSPH</Filter>
     </ClInclude>
+    <ClInclude Include="PBSPHParticle.h">
+      <Filter>PBSPH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -31,6 +34,12 @@
     </ClCompile>
     <ClCompile Include="CSPHFluid.cpp">
       <Filter>CSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="PBSPHParticle.cpp">
+      <Filter>PBSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="PBSPHFluid.cpp">
+      <Filter>PBSPH</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

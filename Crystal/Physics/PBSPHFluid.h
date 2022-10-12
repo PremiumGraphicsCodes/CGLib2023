@@ -9,12 +9,12 @@ namespace Crystal {
 	namespace Physics {
 		class PBSPHParticle;
 
-class PBFluid : private UnCopyable
+class PBSPHFluid : private UnCopyable
 {
 public:
-	PBFluid();
+	PBSPHFluid();
 
-	~PBFluid();
+	~PBSPHFluid();
 
 	void addParticle(PBSPHParticle* mp) { particles.push_back(mp); }
 
