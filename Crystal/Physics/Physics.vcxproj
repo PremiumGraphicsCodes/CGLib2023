@@ -159,6 +159,7 @@
     <ClInclude Include="CSPHSolver.h" />
     <ClInclude Include="PBSPHFluid.h" />
     <ClInclude Include="PBSPHParticle.h" />
+    <ClInclude Include="PBSPHSolver.h" />
     <ClInclude Include="SPHKernel.h" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +169,7 @@
     <ClCompile Include="CSPHSolver.cpp" />
     <ClCompile Include="PBSPHFluid.cpp" />
     <ClCompile Include="PBSPHParticle.cpp" />
+    <ClCompile Include="PBSPHSolver.cpp" />
     <ClCompile Include="SPHKernel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
