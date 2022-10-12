@@ -2,7 +2,7 @@
 #include "PBSPHFluid.h"
 #include "PBSPHParticle.h"
 
-//#include "PBSPHBoundarySolver.h"
+#include "PBSPHBoundarySolver.h"
 
 #include "Crystal/Space/IndexedSortBasedSeacher.h"
 
@@ -37,13 +37,11 @@ void PBSPHSolver::simulate(const float maxTimeStep, const int maxIter)
 
 	const auto dt = maxTimeStep;//calculateTimeStep(particles);
 
-	/*
 	PBSPHBoundarySolver boundarySolver(boundary);
 	for (auto p : particles) {
 		p->addExternalForce(externalForce);
 		p->predictPosition_(dt);
 	}
-	*/
 
 	const auto searchLength = fluids.front()->getKernel()->getEffectLength() * 1.1f;
 	IndexedSortBasedSearcher finder(searchLength);
@@ -85,7 +83,7 @@ void PBSPHSolver::simulate(const float maxTimeStep, const int maxIter)
 			p2->calculatePressure(*p1);
 		}
 
-		//boundarySolver.calculatePressure(particles);
+		boundarySolver.calculatePressure(particles);
 
 		for (int i = 0; i < particles.size(); ++i) {
 			const auto p = particles[i];
@@ -96,7 +94,7 @@ void PBSPHSolver::simulate(const float maxTimeStep, const int maxIter)
 	for (int i = 0; i < particles.size(); ++i) {
 		particles[i]->xvisc = Vector3df(0, 0, 0);
 	}
-	//boundarySolver.calculateViscosity(particles);
+	boundarySolver.calculateViscosity(particles);
 	for (int i = 0; i < pairs.size(); ++i) {
 		const auto p1 = particles[pairs[i].first];
 		const auto p2 = particles[pairs[i].second];

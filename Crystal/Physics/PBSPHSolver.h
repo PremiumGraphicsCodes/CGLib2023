@@ -23,7 +23,7 @@ public:
 
 	void simulate(const float dt, const int maxIter);
 
-	void setBoundary(const Math::Box3dd& boundary) { this->boundary = boundary; }
+	void setBoundary(const Math::Box3df& boundary) { this->boundary = boundary; }
 
 	void setExternalForce(const Math::Vector3df& force) { this->externalForce = force; }
 
@@ -31,7 +31,7 @@ public:
 
 private:
 	std::vector<PBSPHFluid*> fluids;
-	Math::Box3dd boundary;
+	Math::Box3df boundary;
 	Math::Vector3df externalForce;
 	float maxTimeStep;
 	//float effectLength;
