@@ -8,6 +8,7 @@
 #define PCH_H
 
 // プリコンパイルするヘッダーをここに追加します
-//#include "framework.h"
+#include "../ThirdParty/eigen-3.4.0/Eigen/Core"
+#include "../ThirdParty/eigen-3.4.0/Eigen/Dense"
 
 #endif //PCH_H

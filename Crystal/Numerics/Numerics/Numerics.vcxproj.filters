@@ -4,10 +4,12 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Converter.h" />
     <ClInclude Include="SVD.h" />
+    <ClInclude Include="SVD3d.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Converter.cpp" />
     <ClCompile Include="SVD.cpp" />
+    <ClCompile Include="SVD3d.cpp" />
   </ItemGroup>
 </Project>
