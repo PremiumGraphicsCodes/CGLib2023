@@ -1,18 +1,17 @@
 #include "pch.h"
 
-#include "../Numerics/SVD.h"
+#include "../Numerics/SVD2d.h"
 
 #include "CGLib/Math/pi.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Numerics;
 
-
 namespace {
 	constexpr auto tolerance = 1.0e-6;
 }
 
-TEST(SVDTest, TestSolve2x2)
+TEST(SVD2dTest, TestCalculate)
 {
 	{
 		Matrix2dd m(1, 2, 2, 3);

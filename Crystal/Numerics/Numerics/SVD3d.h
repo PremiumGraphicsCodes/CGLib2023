@@ -8,6 +8,7 @@ namespace Crystal {
 
 class SVD3d
 {
+public:
 	struct Result
 	{
 		bool isOk;
