@@ -193,6 +193,7 @@
     <ClInclude Include="Panel.h" />
     <ClInclude Include="Ray3dView.h" />
     <ClInclude Include="Sphere3dView.h" />
+    <ClInclude Include="tinyfiledialogs.h" />
     <ClInclude Include="Vector3dView.h" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +221,7 @@
     <ClCompile Include="Panel.cpp" />
     <ClCompile Include="Ray3dView.cpp" />
     <ClCompile Include="Sphere3dView.cpp" />
+    <ClCompile Include="tinyfiledialogs.cpp" />
     <ClCompile Include="Vector3dView.cpp" />
   </ItemGroup>
   <ItemGroup>

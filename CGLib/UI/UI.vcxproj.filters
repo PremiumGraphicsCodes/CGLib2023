@@ -58,6 +58,9 @@
     <ClInclude Include="Ellipse3dView.h" />
     <ClInclude Include="Ellipsoid3dView.h" />
     <ClInclude Include="Cylinder3dView.h" />
+    <ClInclude Include="tinyfiledialogs.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -105,6 +108,9 @@
     <ClCompile Include="Ellipse3dView.cpp" />
     <ClCompile Include="Ellipsoid3dView.cpp" />
     <ClCompile Include="Cylinder3dView.cpp" />
+    <ClCompile Include="tinyfiledialogs.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -118,6 +124,9 @@
     </Filter>
     <Filter Include="Matrix">
       <UniqueIdentifier>{c5740881-4a40-4b4e-87dc-fd125ead8acf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog">
+      <UniqueIdentifier>{ae6de1c7-88c3-4b17-849a-99511af13db8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
