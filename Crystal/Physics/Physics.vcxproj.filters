@@ -29,6 +29,12 @@
     <ClInclude Include="MVPFluid.h">
       <Filter>MVP</Filter>
     </ClInclude>
+    <ClInclude Include="MVPMassParticle.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
+    <ClInclude Include="MVPVolumeParticle.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -57,6 +63,12 @@
       <Filter>PBSPH</Filter>
     </ClCompile>
     <ClCompile Include="MVPFluid.cpp">
+      <Filter>MVP</Filter>
+    </ClCompile>
+    <ClCompile Include="MVPVolumeParticle.cpp">
+      <Filter>MVP</Filter>
+    </ClCompile>
+    <ClCompile Include="MVPMassParticle.cpp">
       <Filter>MVP</Filter>
     </ClCompile>
   </ItemGroup>

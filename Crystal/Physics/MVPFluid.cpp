@@ -1,5 +1,7 @@
 #include "MVPFluid.h"
 
+#include "MVPVolumeParticle.h"
+
 #include <algorithm>
 #include <iterator>
 
@@ -17,7 +19,6 @@ MVPFluid::~MVPFluid()
 {
 }
 
-/*
 Box3df MVPFluid::getBoundingBox() const
 {
 	Box3df bb = Box3df::createDegeneratedBox();
@@ -27,7 +28,7 @@ Box3df MVPFluid::getBoundingBox() const
 	return bb;
 }
 
-void IMVPFluidScene::removeDegeneratedVolumes()
+void MVPFluid::removeDegeneratedVolumes()
 {
 	this->particles.sort();
 	std::list<MVPVolumeParticle*> vps;
@@ -49,7 +50,7 @@ void IMVPFluidScene::removeDegeneratedVolumes()
 	removeExpired();
 }
 
-void IMVPFluidScene::removeExpired()
+void MVPFluid::removeExpired()
 {
 	std::list<MVPVolumeParticle*> vps;
 	if (lifeLimit != -1) {
@@ -72,7 +73,7 @@ void IMVPFluidScene::removeExpired()
 	}
 }
 
-MVPVolumeParticle* IMVPFluidScene::create(const Vector3df& position, const float radius, const float weight, const float temperature)
+MVPVolumeParticle* MVPFluid::create(const Vector3df& position, const float radius, const float weight, const float temperature)
 {
 	auto vp = new MVPVolumeParticle(radius, position);
 	auto mp = new MVPMassParticle(vp, Vector3dd(0, 0, 0), weight);
@@ -87,4 +88,3 @@ MVPVolumeParticle* IMVPFluidScene::create(const Vector3df& position, const float
 	//	restMass *= 1.5;
 	//	selfMass = unum * vnum * wnum * weight;
 }
-*/
