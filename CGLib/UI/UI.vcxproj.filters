@@ -29,18 +29,13 @@
       <Filter>imgui</Filter>
     </ClInclude>
     <ClInclude Include="IWindow.h" />
-    <ClInclude Include="BoolView.h" />
-    <ClInclude Include="FloatView.h" />
-    <ClInclude Include="IntView.h" />
     <ClInclude Include="Vector3dView.h">
       <Filter>Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Box3dView.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="IOkCancelView.h" />
     <ClInclude Include="IView.h" />
-    <ClInclude Include="Line3dView.h" />
     <ClInclude Include="ColorMapView.h" />
     <ClInclude Include="Matrix2dView.h">
       <Filter>Matrix</Filter>
@@ -51,20 +46,57 @@
     <ClInclude Include="Matrix4dView.h">
       <Filter>Matrix</Filter>
     </ClInclude>
-    <ClInclude Include="Float4View.h" />
-    <ClInclude Include="Sphere3dView.h" />
-    <ClInclude Include="Ray3dView.h" />
-    <ClInclude Include="Circle3dView.h" />
-    <ClInclude Include="Ellipse3dView.h" />
-    <ClInclude Include="Ellipsoid3dView.h" />
-    <ClInclude Include="Cylinder3dView.h" />
     <ClInclude Include="tinyfiledialogs.h">
       <Filter>Dialog</Filter>
     </ClInclude>
     <ClInclude Include="FileOpenView.h">
       <Filter>Dialog</Filter>
     </ClInclude>
-    <ClInclude Include="StringView.h" />
+    <ClInclude Include="Box3dView.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle3dView.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Cylinder3dView.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Ellipse3dView.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Ellipsoid3dView.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Line3dView.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray3dView.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere3dView.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="BoolView.h">
+      <Filter>BuiltIn</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatView.h">
+      <Filter>BuiltIn</Filter>
+    </ClInclude>
+    <ClInclude Include="Float4View.h">
+      <Filter>BuiltIn</Filter>
+    </ClInclude>
+    <ClInclude Include="IntView.h">
+      <Filter>BuiltIn</Filter>
+    </ClInclude>
+    <ClInclude Include="StringView.h">
+      <Filter>BuiltIn</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSaveView.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryView.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -85,16 +117,11 @@
     <ClCompile Include="imgui_widgets.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
-    <ClCompile Include="BoolView.cpp" />
-    <ClCompile Include="FloatView.cpp" />
-    <ClCompile Include="IntView.cpp" />
     <ClCompile Include="Vector3dView.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
-    <ClCompile Include="Box3dView.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Panel.cpp" />
-    <ClCompile Include="Line3dView.cpp" />
     <ClCompile Include="ColorMapView.cpp" />
     <ClCompile Include="Matrix2dView.cpp">
       <Filter>Matrix</Filter>
@@ -102,21 +129,58 @@
     <ClCompile Include="Matrix3dView.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
-    <ClCompile Include="Float4View.cpp" />
     <ClCompile Include="Matrix4dView.cpp">
       <Filter>Matrix</Filter>
     </ClCompile>
-    <ClCompile Include="Sphere3dView.cpp" />
-    <ClCompile Include="Ray3dView.cpp" />
-    <ClCompile Include="Circle3dView.cpp" />
-    <ClCompile Include="Ellipse3dView.cpp" />
-    <ClCompile Include="Ellipsoid3dView.cpp" />
-    <ClCompile Include="Cylinder3dView.cpp" />
     <ClCompile Include="tinyfiledialogs.cpp">
       <Filter>Dialog</Filter>
     </ClCompile>
-    <ClCompile Include="StringView.cpp" />
     <ClCompile Include="FileOpenView.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Box3dView.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle3dView.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Cylinder3dView.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Ellipse3dView.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Ellipsoid3dView.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Line3dView.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray3dView.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere3dView.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="BoolView.cpp">
+      <Filter>BuiltIn</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatView.cpp">
+      <Filter>BuiltIn</Filter>
+    </ClCompile>
+    <ClCompile Include="Float4View.cpp">
+      <Filter>BuiltIn</Filter>
+    </ClCompile>
+    <ClCompile Include="IntView.cpp">
+      <Filter>BuiltIn</Filter>
+    </ClCompile>
+    <ClCompile Include="StringView.cpp">
+      <Filter>BuiltIn</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSaveView.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryView.cpp">
       <Filter>Dialog</Filter>
     </ClCompile>
   </ItemGroup>
@@ -135,6 +199,12 @@
     </Filter>
     <Filter Include="Dialog">
       <UniqueIdentifier>{ae6de1c7-88c3-4b17-849a-99511af13db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{e5cf75d4-31e7-4e36-a14d-32213cb1dbdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BuiltIn">
+      <UniqueIdentifier>{83e68056-3809-4617-8126-988e7b8d249a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
