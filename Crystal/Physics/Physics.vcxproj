@@ -157,7 +157,9 @@
     <ClInclude Include="CSPHFluid.h" />
     <ClInclude Include="CSPHParticle.h" />
     <ClInclude Include="CSPHSolver.h" />
+    <ClInclude Include="MVPBoundarySolver.h" />
     <ClInclude Include="MVPFluid.h" />
+    <ClInclude Include="MVPFluidSolver.h" />
     <ClInclude Include="MVPMassParticle.h" />
     <ClInclude Include="MVPVolumeParticle.h" />
     <ClInclude Include="PBSPHBoundarySolver.h" />
@@ -171,6 +173,7 @@
     <ClCompile Include="CSPHFluid.cpp" />
     <ClCompile Include="CSPHParticle.cpp" />
     <ClCompile Include="CSPHSolver.cpp" />
+    <ClCompile Include="MVPBoundarySolver.cpp" />
     <ClCompile Include="MVPFluid.cpp" />
     <ClCompile Include="MVPMassParticle.cpp" />
     <ClCompile Include="MVPVolumeParticle.cpp" />

@@ -35,6 +35,12 @@
     <ClInclude Include="MVPVolumeParticle.h">
       <Filter>MVP</Filter>
     </ClInclude>
+    <ClInclude Include="MVPFluidSolver.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
+    <ClInclude Include="MVPBoundarySolver.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -69,6 +75,9 @@
       <Filter>MVP</Filter>
     </ClCompile>
     <ClCompile Include="MVPMassParticle.cpp">
+      <Filter>MVP</Filter>
+    </ClCompile>
+    <ClCompile Include="MVPBoundarySolver.cpp">
       <Filter>MVP</Filter>
     </ClCompile>
   </ItemGroup>
