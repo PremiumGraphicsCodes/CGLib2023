@@ -13,58 +13,55 @@ namespace Crystal {
 		class MVPVolumeParticle;
 		class MVPFluid;
 
-		class MVPFluidSolver
-		{
-		public:
-			MVPFluidSolver();
+class MVPFluidSolver
+{
+public:
+	MVPFluidSolver();
 
-			explicit MVPFluidSolver(const int id);
+	explicit MVPFluidSolver(const int id);
 
-			void setupBoundaries();
+	void setupBoundaries();
 
-			void clear();
+	void clear();
 
-			void addFluidScene(MVPFluidScene* scene);
+	void addFluidScene(MVPFluid* scene);
 
-			void addBoundaryScene(MVPFluidScene* scene);
+	void addBoundaryScene(MVPFluid* scene);
 
-			void addEmitterScene(MVPFluidEmitterScene* scene);
+	//void addEmitterScene(MVPFluidEmitterScene* scene);
 
-			void addBoundary(CSGBoundaryScene* scene);
+	void addBoundary(const Math::Box3df& box);
 
-			void setMaxTimeStep(const float maxTimeStep) { this->maxTimeStep = maxTimeStep; }
+	void setMaxTimeStep(const float maxTimeStep) { this->maxTimeStep = maxTimeStep; }
 
-			void setEffectLength(const float effectLength) { this->effectLength = effectLength; }
+	void setEffectLength(const float effectLength) { this->effectLength = effectLength; }
 
-			void setExternalForce(const Math::Vector3df& externalForce) { this->externalForce = externalForce; }
+	void setExternalForce(const Math::Vector3df& externalForce) { this->externalForce = externalForce; }
 
-			void setBuoyancy(const Math::Vector3df& buoyancy) { this->buoyancy = buoyancy; }
+	void setBuoyancy(const Math::Vector3df& buoyancy) { this->buoyancy = buoyancy; }
 
-			void simulate();
+	void simulate();
 
-			void step() override;
+	int getTimeStep() const { return currentTimeStep; }
 
-			int getTimeStep() const { return currentTimeStep; }
+	std::list<MVPFluid*> getFluids() const { return fluids; }
 
-			std::list<MVPFluidScene*> getFluids() const { return fluids; }
+	//std::list<MVPFluidEmitterScene*> getEmitters() const { return emitters; }
 
-			std::list<MVPFluidEmitterScene*> getEmitters() const { return emitters; }
+	//std::vector<Math::Triangle3d> getTriangles() const { return triangles; }
 
-			//std::vector<Math::Triangle3d> getTriangles() const { return triangles; }
+private:
 
-		private:
+	float calculateTimeStep(const std::vector<MVPVolumeParticle*>& particles);
 
-			float calculateTimeStep(const std::vector<MVPVolumeParticle*>& particles);
-
-			std::list<MVPFluid*> fluids;
-			//std::list<MVPMassParticle*> tinyParticles;
-			MVPBoundarySolver boundarySolver;
-			float effectLength = 2.0f;
-			float maxTimeStep = 0.03f;
-			int currentTimeStep = 0;
-			Math::Vector3df externalForce;
-			Math::Vector3df buoyancy;
-		};
+	std::list<MVPFluid*> fluids;
+	MVPBoundarySolver boundarySolver;
+	float effectLength = 2.0f;
+	float maxTimeStep = 0.03f;
+	int currentTimeStep = 0;
+	Math::Vector3df externalForce;
+	Math::Vector3df buoyancy;
+};
 
 	}
 }

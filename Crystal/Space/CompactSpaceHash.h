@@ -33,6 +33,8 @@ public:
 
 	void add(const Math::Vector3df& position);
 
+	void remove(const int index);
+
 	std::vector<int> findNeighborIndices(const int index);
 
 	std::vector<int> findNeighborIndices(const Math::Vector3df& position);

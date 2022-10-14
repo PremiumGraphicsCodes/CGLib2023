@@ -54,7 +54,7 @@ void CompactSpaceHash::clear()
 
 void CompactSpaceHash::add(const Vector3df& position)
 {
-	const auto ix = this->positions.size();
+	const auto ix = static_cast<int>( this->positions.size() );
 	this->positions.push_back(position);
 
 	const auto& index = toIndex(position);
@@ -78,6 +78,20 @@ void CompactSpaceHash::add(const Vector3df& position)
 		(*iter)->particleIndices.push_back(ix);
 	}
 }
+
+void CompactSpaceHash::remove(const int i)
+{
+	const auto& index = toIndex( positions[i] );
+	const auto hashIndex = toHash(index);
+	const auto cellId = toZIndex(index);
+
+	auto& cells = table[hashIndex];
+	auto iter = std::find_if(cells.begin(), cells.end(), [cellId](CompactSpaceCell* cell) { return cell->cellId == cellId; });
+	assert(iter != cells.end());
+	auto& ps = (*iter)->particleIndices;
+	ps.erase(std::remove(ps.begin(), ps.end(), i), ps.end());
+}
+
 
 std::vector<int> CompactSpaceHash::findNeighborIndices(const int positionIndex)
 {
