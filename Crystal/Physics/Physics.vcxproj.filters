@@ -26,6 +26,9 @@
     <ClInclude Include="PBSPHBoundarySolver.h">
       <Filter>PBSPH</Filter>
     </ClInclude>
+    <ClInclude Include="MVPFluid.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -53,6 +56,9 @@
     <ClCompile Include="PBSPHBoundarySolver.cpp">
       <Filter>PBSPH</Filter>
     </ClCompile>
+    <ClCompile Include="MVPFluid.cpp">
+      <Filter>MVP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CSPH">
@@ -60,6 +66,9 @@
     </Filter>
     <Filter Include="PBSPH">
       <UniqueIdentifier>{5e93185a-2ed2-45fd-951a-543593d8ea4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVP">
+      <UniqueIdentifier>{09cdb36e-490b-45c6-a4fc-f358fd518a95}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
