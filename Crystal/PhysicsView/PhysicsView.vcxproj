@@ -149,6 +149,7 @@
     <ClCompile Include="CSPHFluidPresenter.cpp" />
     <ClCompile Include="CSPHFluidScene.cpp" />
     <ClCompile Include="CSPHFluidView.cpp" />
+    <ClCompile Include="MVPSamplerView.cpp" />
     <ClCompile Include="PBSPHAnimator.cpp" />
     <ClCompile Include="PBSPHFluidPresenter.cpp" />
     <ClCompile Include="PBSPHFluidScene.cpp" />

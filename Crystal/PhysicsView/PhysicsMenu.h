@@ -1,17 +1,17 @@
 #pragma once
 
 #include "Crystal/AppBase/IMenu.h"
+#include "World.h"
+#include "Renderer.h"
 
 namespace Crystal {
 	namespace UI {
-		class WorldBase;
-		class RendererBase;
 		class Panel;
 
 class PhysicsMenu : public IMenu
 {
 public:
-	PhysicsMenu(const std::string& name, WorldBase* world, RendererBase* renderer, Panel* control);
+	PhysicsMenu(const std::string& name, World* world, Renderer* renderer, Panel* control);
 };
 
 	}

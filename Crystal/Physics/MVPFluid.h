@@ -14,7 +14,7 @@ public:
 
 	~MVPFluid();
 
-	void addParticle(MVPVolumeParticle* mp);
+	//void addParticle(MVPVolumeParticle* mp);
 	/*
 {
 	mp->setPressureCoe(this->pressureCoe);

@@ -4,32 +4,26 @@
 #include "CGLib/UI/IView.h"
 
 #include "World.h"
+#include "Renderer.h"
 
 namespace Crystal {
 	namespace UI {
 
-		/*
-		class MVPSamplerView : public IView
-		{
-		public:
-			MVPSamplerView(const std::string& name, Scene::World* model, Canvas* canvas);
+class MVPSamplerView : public IView
+{
+public:
+	MVPSamplerView(const std::string& name, World* model, Renderer* renderer);
 
-		private:
-			void onSplit();
+private:
+	void onSplit();
 
-			void onMerge();
+	void onMerge();
 
-		private:
-			//void split();
-
-			//void merge();
-
-			Scene::World* world;
-			Canvas* canvas;
-			Button splitButton;
-			Button mergeButton;
-		};
-		*/
+	World* world;
+	Renderer* renderer;
+	Button splitButton;
+	Button mergeButton;
+};
 
 	}
 }

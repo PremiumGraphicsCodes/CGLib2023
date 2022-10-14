@@ -83,7 +83,7 @@ void MVPSampler::merge(const std::list<MVPFluid*>& fluids, const double searchRa
 					m->setParent(target);
 				}
 				target->setRestMass(masses[0]->getMass() * 8.0f * 1.25f);
-				fluid->addParticle(target);
+				fluid->add(target);
 			}
 		}
 	}
