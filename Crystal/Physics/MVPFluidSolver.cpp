@@ -4,6 +4,7 @@
 #include "MVPVolumeParticle.h"
 
 #include "MVPFluid.h"
+#include "MVPSampler.h"
 
 #include "Crystal/Space/CompactSpaceHash.h"
 
@@ -14,7 +15,6 @@ using namespace Crystal::Shape;
 using namespace Crystal::Space;
 using namespace Crystal::Physics;
 
-/*
 MVPFluidSolver::MVPFluidSolver() :
 	externalForce(0.0, -9.8f, 0.0),
 	buoyancy(0.0f, 0.0f, 0.0f)
@@ -51,12 +51,14 @@ void MVPFluidSolver::addBoundaryScene(MVPFluid* scene)
 void MVPFluidSolver::simulate()
 {
 	std::vector<MVPVolumeParticle*> fluidParticles;
-	std::list<IMVPFluidScene*> allFluids(this->fluids.begin(), this->fluids.end());
+	std::list<MVPFluid*> allFluids(this->fluids.begin(), this->fluids.end());
 
+	/*
 	for (auto emitter : emitters) {
 		emitter->emitParticle(currentTimeStep);
 		allFluids.push_back(emitter);
 	}
+	*/
 
 	if (allFluids.empty()) {
 		return;
@@ -83,9 +85,9 @@ void MVPFluidSolver::simulate()
 
 	const auto hashSize = fluidParticles.size();
 	const auto searchRadius = effectLength;
-	CompactSpaceHash3d spaceHash(searchRadius, static_cast<int>(hashSize));
+	CompactSpaceHash spaceHash(searchRadius, static_cast<int>(hashSize));
 	for (auto particle : fluidParticles) {
-		spaceHash.add(particle);
+		spaceHash.add(particle->getPosition());
 	}
 
 	//boundarySolver.setup(searchRadius);
@@ -93,19 +95,21 @@ void MVPFluidSolver::simulate()
 #pragma omp parallel for
 	for (int i = 0; i < fluidParticles.size(); ++i) {
 		const auto particle = fluidParticles[i];
-		const auto& neighbors = spaceHash.findNeighbors(particle);
+		const auto& neighbors = spaceHash.findNeighborIndices(i);
 		for (auto n : neighbors) {
-			particle->addNeighbor(static_cast<MVPVolumeParticle*>(n));
+			particle->addNeighbor(fluidParticles[n]);
 		}
-		const auto staticNeighbors = boundarySolver.findNeighbors(particle->getPositionf());
+		const auto staticNeighbors = boundarySolver.findNeighbors(particle->getPosition());
 		for (auto n : staticNeighbors) {
-			particle->addNeighbor(static_cast<MVPVolumeParticle*>(n));
+			particle->addNeighbor(fluidParticles[n]);
 		}
 	}
 
+	/*
 	for (auto particle : fluidParticles) {
 		boundarySolver.createGphosts(particle);
 	}
+	*/
 
 	double time = 0.0;
 	while (time < maxTimeStep) {
@@ -211,4 +215,3 @@ float MVPFluidSolver::calculateTimeStep(const std::vector<MVPVolumeParticle*>& p
 	return maxTimeStep;
 	//return std::min(dt, maxTimeStep);
 }
-*/
