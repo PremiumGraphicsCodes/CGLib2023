@@ -13,6 +13,7 @@
 #include "../UI/Panel.h"
 #include "../UI/ColorMapView.h"
 #include "../UI/Circle3dView.h"
+#include "../UI/FileOpenView.h"
 
 //#include "Crystal/ThirdParty/glew-2.1.0/include/GL/glew.h"
 
@@ -77,6 +78,7 @@ int main() {
 	Crystal::UI::Matrix3dView matrix3d("Matrix3d");
 	Crystal::UI::Matrix4dView matrix4d("Matrix4d");
 	Crystal::UI::Circle3dView circle3d("Circle3d");
+	Crystal::UI::FileOpenView fileOpen("FileOpen");
 	// onInit();
 
 	while (!glfwWindowShouldClose(window)) {
@@ -109,6 +111,9 @@ int main() {
 				}
 				if (ImGui::MenuItem("Circle3d")) {
 					panel.setChild(&circle3d);
+				}
+				if (ImGui::MenuItem("FileOpen")) {
+					panel.setChild(&fileOpen);
 				}
 
 

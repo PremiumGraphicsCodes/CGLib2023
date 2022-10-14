@@ -61,6 +61,10 @@
     <ClInclude Include="tinyfiledialogs.h">
       <Filter>Dialog</Filter>
     </ClInclude>
+    <ClInclude Include="FileOpenView.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="StringView.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -109,6 +113,10 @@
     <ClCompile Include="Ellipsoid3dView.cpp" />
     <ClCompile Include="Cylinder3dView.cpp" />
     <ClCompile Include="tinyfiledialogs.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="StringView.cpp" />
+    <ClCompile Include="FileOpenView.cpp">
       <Filter>Dialog</Filter>
     </ClCompile>
   </ItemGroup>
