@@ -196,11 +196,14 @@
     <ClInclude Include="CSPHFluidPresenter.h" />
     <ClInclude Include="CSPHFluidScene.h" />
     <ClInclude Include="CSPHFluidView.h" />
+    <ClInclude Include="MVPSamplerView.h" />
     <ClInclude Include="PBSPHAnimator.h" />
     <ClInclude Include="PBSPHFluidPresenter.h" />
     <ClInclude Include="PBSPHFluidScene.h" />
     <ClInclude Include="PBSPHFluidView.h" />
     <ClInclude Include="PhysicsMenu.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -57,6 +57,11 @@
     <ClInclude Include="PBSPHAnimator.h">
       <Filter>PBSPH</Filter>
     </ClInclude>
+    <ClInclude Include="MVPSamplerView.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h" />
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CSPH">
@@ -64,6 +69,9 @@
     </Filter>
     <Filter Include="PBSPH">
       <UniqueIdentifier>{d3a591a3-1480-42eb-b7ba-744141408cca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVP">
+      <UniqueIdentifier>{95401368-80d9-45dd-9713-e4739b193b77}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
