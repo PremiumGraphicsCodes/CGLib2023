@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="FluidRenderer.cpp" />
+    <ClCompile Include="SSFR.cpp" />
     <ClCompile Include="ParticleDepthRenderer.cpp">
       <Filter>ParticleDepth</Filter>
     </ClCompile>
@@ -10,6 +10,9 @@
     </ClCompile>
     <ClCompile Include="AbsorptionRenderer.cpp">
       <Filter>Absorption</Filter>
+    </ClCompile>
+    <ClCompile Include="ThicknessRenderer.cpp">
+      <Filter>Thickness</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -27,29 +30,29 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GLSL\ParticleDepth.glfs">
-      <Filter>ParticleDepth</Filter>
-    </None>
-    <None Include="GLSL\ParticleDepth.glvs">
-      <Filter>ParticleDepth</Filter>
-    </None>
-    <None Include="GLSL\BilateralFilter.glfs">
-      <Filter>BilateralFilter</Filter>
-    </None>
-    <None Include="GLSL\BilateralFilter.glvs">
-      <Filter>BilateralFilter</Filter>
-    </None>
     <None Include="GLSL\SSAbsorption.glfs">
       <Filter>Absorption</Filter>
     </None>
     <None Include="GLSL\SSAbsorption.glvs">
       <Filter>Absorption</Filter>
     </None>
-    <None Include="GLSL\SSThickness.glfs">
+    <None Include="..\GLSL\ParticleDepth.glfs">
+      <Filter>ParticleDepth</Filter>
+    </None>
+    <None Include="..\GLSL\ParticleDepth.glvs">
+      <Filter>ParticleDepth</Filter>
+    </None>
+    <None Include="..\GLSL\SSThickness.glfs">
       <Filter>Thickness</Filter>
     </None>
-    <None Include="GLSL\SSThickness.glvs">
+    <None Include="..\GLSL\SSThickness.glvs">
       <Filter>Thickness</Filter>
+    </None>
+    <None Include="..\GLSL\BilateralFilter.glfs">
+      <Filter>BilateralFilter</Filter>
+    </None>
+    <None Include="..\GLSL\BilateralFilter.glvs">
+      <Filter>BilateralFilter</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -62,5 +65,9 @@
     <ClInclude Include="AbsorptionRenderer.h">
       <Filter>Absorption</Filter>
     </ClInclude>
+    <ClInclude Include="ThicknessRenderer.h">
+      <Filter>Thickness</Filter>
+    </ClInclude>
+    <ClInclude Include="SSFR.h" />
   </ItemGroup>
 </Project>

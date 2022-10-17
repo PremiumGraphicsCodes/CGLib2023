@@ -1,9 +1,13 @@
 #pragma once
 #include "World.h"
 #include "Crystal/AppBase/RendererBase.h"
+#include "../FluidRenderer/SSFR.h"
+#include "../FluidRenderer/ParticleDepthRenderer.h"
+#include "../FluidRenderer/ThicknessRenderer.h"
 
 namespace Crystal{
 	namespace UI {
+
 		class Renderer : public Crystal::UI::RendererBase
 		{
 		public:
@@ -24,6 +28,9 @@ namespace Crystal{
 			Crystal::Renderer::LineRenderer line;
 			Crystal::Renderer::TriangleRenderer triangle;
 
+			Crystal::Renderer::SSFRenderer ssfr;
+			Crystal::Renderer::ParticleDepthRenderer particleDepth;
+			Crystal::Renderer::ThicknessRenderer thickness;
 		};
 	}
 }

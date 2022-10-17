@@ -19,4 +19,11 @@ void Renderer::onInit()
 	triangle.setShader(builder.getShader());
 	triangle.link();
 
+	builder.buildFromFile("../GLSL/ParticleDepth.glvs", "../GLSL/ParticleDepth.glfs");
+	particleDepth.setShader(builder.getShader());
+	particleDepth.link();
+
+	builder.buildFromFile("../GLSL/SSThickness.glvs", "../GLSL/SSThickness.glfs");
+	thickness.setShader(builder.getShader());
+	thickness.link();
 }

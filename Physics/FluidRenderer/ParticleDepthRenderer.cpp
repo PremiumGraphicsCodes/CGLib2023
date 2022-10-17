@@ -4,13 +4,11 @@ using namespace Crystal::Shader;
 using namespace Crystal::Renderer;
 
 namespace {
-	/*
 	constexpr auto positionLabel = "position";
-	constexpr auto colorLabel = "color";
 	constexpr auto sizeLabel = "pointSize";
 	constexpr auto projectionMatrixLabel = "projectionMatrix";
 	constexpr auto modelViewMatrixLabel = "modelviewMatrix";
-	constexpr auto fragColorLabel = "fragColor";
+	//constexpr auto fragColorLabel = "fragColor";
 
 	struct UniformLoc {
 		GLuint projectionMatrix;
@@ -24,19 +22,15 @@ namespace {
 		GLuint size;
 	};
 	VertexAttr va;
-	*/
 }
 
 void ParticleDepthRenderer::link()
 {
-	/*
 	uniform.projectionMatrix = shader->findUniformLocation(::projectionMatrixLabel);
 	uniform.modelviewMatrix = shader->findUniformLocation(::modelViewMatrixLabel);
 
 	va.position = shader->findAttribLocation(::positionLabel);
-	va.color = shader->findAttribLocation(::colorLabel);
 	va.size = shader->findAttribLocation(::sizeLabel);
-	*/
 }
 
 void ParticleDepthRenderer::render()
