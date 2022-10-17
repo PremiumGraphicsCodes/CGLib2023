@@ -22,6 +22,9 @@
     <Filter Include="Absorption">
       <UniqueIdentifier>{f8248923-38a6-45bd-a69f-172d6b1d10ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Thickness">
+      <UniqueIdentifier>{8fda793a-52b9-4ce6-bf27-95dd1d70a7e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="GLSL\ParticleDepth.glfs">
@@ -41,6 +44,12 @@
     </None>
     <None Include="GLSL\SSAbsorption.glvs">
       <Filter>Absorption</Filter>
+    </None>
+    <None Include="GLSL\SSThickness.glfs">
+      <Filter>Thickness</Filter>
+    </None>
+    <None Include="GLSL\SSThickness.glvs">
+      <Filter>Thickness</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -37,18 +37,9 @@ public:
 
 	Graphics::Camera* getCamera() { return &camera; }
 
-	Renderer::PointRenderer* getPointRenderer() { return &point; }
-
-	Renderer::LineRenderer* getLineRenderer() { return &line; }
-
-	Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
-
 private:
 	WorldBase* world;
 	Graphics::Camera camera;
-	Renderer::PointRenderer point;
-	Renderer::LineRenderer line;
-	Renderer::TriangleRenderer triangle;
 };
 
 

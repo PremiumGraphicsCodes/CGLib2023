@@ -5,13 +5,13 @@
 namespace Crystal {
 	namespace UI {
 		class Panel;
-		class WorldBase;
-		class RendererBase;
+		class World;
+		class Renderer;
 
 class WireFrameMenu : public IMenu
 {
 public:
-	WireFrameMenu(const std::string& name, Panel* control, WorldBase* world, RendererBase* renderer);
+	WireFrameMenu(const std::string& name, Panel* control, World* world, Renderer* renderer);
 
 };
 

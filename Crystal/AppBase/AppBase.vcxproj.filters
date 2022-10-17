@@ -12,44 +12,8 @@
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="CameraMenu.h" />
     <ClInclude Include="WorldBase.h" />
-    <ClInclude Include="ParticleSystemMenu.h">
-      <Filter>Shape\ParticleSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="PSBoxView.h">
-      <Filter>Shape\ParticleSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="WFLineView.h">
-      <Filter>Shape\WireFrame</Filter>
-    </ClInclude>
-    <ClInclude Include="WireFrameMenu.h">
-      <Filter>Shape\WireFrame</Filter>
-    </ClInclude>
-    <ClInclude Include="PMBoxView.h">
-      <Filter>Shape\PolygonMesh</Filter>
-    </ClInclude>
     <ClInclude Include="SceneSelectView.h" />
-    <ClInclude Include="ShapeMenu.h">
-      <Filter>Shape</Filter>
-    </ClInclude>
-    <ClInclude Include="PSSphereView.h">
-      <Filter>Shape\ParticleSystem</Filter>
-    </ClInclude>
     <ClInclude Include="SceneListPanel.h" />
-    <ClInclude Include="WFSphereView.h">
-      <Filter>Shape\WireFrame</Filter>
-    </ClInclude>
-    <ClInclude Include="WFBoxView.h">
-      <Filter>Shape\WireFrame</Filter>
-    </ClInclude>
-    <ClInclude Include="WFEllipseView.h">
-      <Filter>Shape\WireFrame</Filter>
-    </ClInclude>
-    <ClInclude Include="WFEllipsoidView.h">
-      <Filter>Shape\WireFrame</Filter>
-    </ClInclude>
-    <ClInclude Include="WFCylinderView.h">
-      <Filter>Shape\WireFrame</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -60,60 +24,10 @@
     <ClCompile Include="CameraMenu.cpp" />
     <ClCompile Include="WorldBase.cpp" />
     <ClCompile Include="RendererBase.cpp" />
-    <ClCompile Include="ParticleSystemMenu.cpp">
-      <Filter>Shape\ParticleSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="PSBoxView.cpp">
-      <Filter>Shape\ParticleSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="WFLineView.cpp">
-      <Filter>Shape\WireFrame</Filter>
-    </ClCompile>
-    <ClCompile Include="WireFrameMenu.cpp">
-      <Filter>Shape\WireFrame</Filter>
-    </ClCompile>
-    <ClCompile Include="PMBoxView.cpp">
-      <Filter>Shape\PolygonMesh</Filter>
-    </ClCompile>
     <ClCompile Include="SceneSelectView.cpp" />
-    <ClCompile Include="ShapeMenu.cpp">
-      <Filter>Shape</Filter>
-    </ClCompile>
-    <ClCompile Include="PSSphereView.cpp">
-      <Filter>Shape\ParticleSystem</Filter>
-    </ClCompile>
     <ClCompile Include="SceneListPanel.cpp" />
-    <ClCompile Include="WFSphereView.cpp">
-      <Filter>Shape\WireFrame</Filter>
-    </ClCompile>
-    <ClCompile Include="WFBoxView.cpp">
-      <Filter>Shape\WireFrame</Filter>
-    </ClCompile>
-    <ClCompile Include="WFEllipseView.cpp">
-      <Filter>Shape\WireFrame</Filter>
-    </ClCompile>
-    <ClCompile Include="WFEllipsoidView.cpp">
-      <Filter>Shape\WireFrame</Filter>
-    </ClCompile>
-    <ClCompile Include="WFCylinderView.cpp">
-      <Filter>Shape\WireFrame</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Shape">
-      <UniqueIdentifier>{338bf742-22c6-4816-8d20-98770656bd2f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Shape\ParticleSystem">
-      <UniqueIdentifier>{8c0db8a3-468e-4913-be1e-8f35131d3efc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Shape\PolygonMesh">
-      <UniqueIdentifier>{9d8c7dde-21ae-4853-b32c-370755284e63}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Shape\WireFrame">
-      <UniqueIdentifier>{30ad21b2-e4f0-4367-8587-ab4daaa5ad07}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
 </Project>

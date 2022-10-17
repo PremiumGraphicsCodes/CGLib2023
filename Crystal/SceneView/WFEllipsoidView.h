@@ -7,13 +7,13 @@
 namespace Crystal {
 	namespace UI {
 
-class WorldBase;
-class RendererBase;
+class World;
+class Renderer;
 
 class WFEllipsoidView : public IOkCancelView
 {
 public:
-	WFEllipsoidView(const std::string& name, WorldBase* world, RendererBase* renderer);
+	WFEllipsoidView(const std::string& name, World* world, Renderer* renderer);
 
 	void onOk() override;
 
@@ -21,8 +21,8 @@ private:
 	Ellipsoid3dView ellipsoidView;
 	IntView uNumView;
 	IntView vNumView;
-	WorldBase* world;
-	RendererBase* renderer;
+	World* world;
+	Renderer* renderer;
 };
 
 	}

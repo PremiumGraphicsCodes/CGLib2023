@@ -2,15 +2,15 @@
 
 #include "Crystal/Scene/ParticleSystemScene.h"
 #include "CGLib/Shape/ParticleSystemBuilder.h"
-#include "RendererBase.h"
-#include "WorldBase.h"
+#include "Renderer.h"
+#include "World.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Shape;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-PSBoxView::PSBoxView(const std::string& name, WorldBase* world, RendererBase* renderer) :
+PSBoxView::PSBoxView(const std::string& name, World* world, Renderer* renderer) :
 	IOkCancelView(name),
 	boxView("Box"),
 	uNumView("UNum", 10),

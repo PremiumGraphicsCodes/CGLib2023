@@ -1,6 +1,6 @@
 #include "WFEllipsoidView.h"
-#include "Crystal/AppBase/RendererBase.h"
-#include "Crystal/AppBase/WorldBase.h"
+#include "Renderer.h"
+#include "World.h"
 #include "Crystal/Scene/WireFrameScene.h"
 #include "CGLib/Shape/WireFrameBuilder.h"
 
@@ -9,7 +9,7 @@ using namespace Crystal::Shape;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-WFEllipsoidView::WFEllipsoidView(const std::string& name, WorldBase* world, RendererBase* renderer) :
+WFEllipsoidView::WFEllipsoidView(const std::string& name, World* world, Renderer* renderer) :
 	IOkCancelView(name),
 	ellipsoidView("Ellipsoid"),
 	uNumView("UNum", 12),

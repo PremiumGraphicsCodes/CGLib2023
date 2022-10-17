@@ -165,6 +165,8 @@
     <None Include="GLSL\ParticleDepth.glvs" />
     <None Include="GLSL\SSAbsorption.glfs" />
     <None Include="GLSL\SSAbsorption.glvs" />
+    <None Include="GLSL\SSThickness.glfs" />
+    <None Include="GLSL\SSThickness.glvs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbsorptionRenderer.h" />

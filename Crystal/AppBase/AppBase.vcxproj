@@ -159,25 +159,13 @@
     <ClInclude Include="IMenu.h" />
     <ClInclude Include="IMenuItem.h" />
     <ClInclude Include="IMouseListener.h" />
-    <ClInclude Include="PMBoxView.h" />
-    <ClInclude Include="PSSphereView.h" />
     <ClInclude Include="RendererBase.h" />
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="SceneListPanel.h" />
     <ClInclude Include="SceneSelectView.h" />
-    <ClInclude Include="ShapeMenu.h" />
-    <ClInclude Include="WFBoxView.h" />
-    <ClInclude Include="WFCylinderView.h" />
-    <ClInclude Include="WFEllipseView.h" />
-    <ClInclude Include="WFEllipsoidView.h" />
-    <ClInclude Include="WFSphereView.h" />
     <ClInclude Include="WorldBase.h" />
     <ClInclude Include="MenuItem.h" />
-    <ClInclude Include="ParticleSystemMenu.h" />
-    <ClInclude Include="PSBoxView.h" />
-    <ClInclude Include="WFLineView.h" />
     <ClInclude Include="Window.h" />
-    <ClInclude Include="WireFrameMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CameraMenu.cpp" />
@@ -185,23 +173,11 @@
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="IMenu.cpp" />
     <ClCompile Include="IMenuItem.cpp" />
-    <ClCompile Include="PMBoxView.cpp" />
-    <ClCompile Include="PSSphereView.cpp" />
     <ClCompile Include="RendererBase.cpp" />
     <ClCompile Include="SceneListPanel.cpp" />
     <ClCompile Include="SceneSelectView.cpp" />
-    <ClCompile Include="ShapeMenu.cpp" />
-    <ClCompile Include="WFBoxView.cpp" />
-    <ClCompile Include="WFCylinderView.cpp" />
-    <ClCompile Include="WFEllipseView.cpp" />
-    <ClCompile Include="WFEllipsoidView.cpp" />
-    <ClCompile Include="WFSphereView.cpp" />
     <ClCompile Include="WorldBase.cpp" />
-    <ClCompile Include="ParticleSystemMenu.cpp" />
-    <ClCompile Include="PSBoxView.cpp" />
-    <ClCompile Include="WFLineView.cpp" />
     <ClCompile Include="Window.cpp" />
-    <ClCompile Include="WireFrameMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -7,13 +7,13 @@
 namespace Crystal {
 	namespace UI {
 
-class WorldBase;
-class RendererBase;
+class World;
+class Renderer;
 
 class WFSphereView : public IOkCancelView
 {
 public:
-	WFSphereView(const std::string& name, WorldBase* world, RendererBase* renderer);
+	WFSphereView(const std::string& name, World* world, Renderer* renderer);
 
 	void onOk() override;
 
@@ -21,8 +21,8 @@ private:
 	Sphere3dView sphereView;
 	IntView uNumView;
 	IntView vNumView;
-	WorldBase* world;
-	RendererBase* renderer;
+	World* world;
+	Renderer* renderer;
 };
 
 	}

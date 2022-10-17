@@ -12,7 +12,7 @@
 
 using namespace Crystal::UI;
 
-WireFrameMenu::WireFrameMenu(const std::string& name, Panel* control, WorldBase* world, RendererBase* renderer) :
+WireFrameMenu::WireFrameMenu(const std::string& name, Panel* control, World* world, Renderer* renderer) :
 	IMenu(name)
 {
 	add(new MenuItem("Line", [control, world, renderer]() {

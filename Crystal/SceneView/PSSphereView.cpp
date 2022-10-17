@@ -1,8 +1,8 @@
 #include "PSSphereView.h"
 
 #include "Crystal/Scene/ParticleSystemScene.h"
-#include "RendererBase.h"
-#include "WorldBase.h"
+#include "Renderer.h"
+#include "World.h"
 
 #include <random>
 
@@ -11,7 +11,7 @@ using namespace Crystal::Shape;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-PSSphereView::PSSphereView(const std::string& name, WorldBase* world, RendererBase* renderer) :
+PSSphereView::PSSphereView(const std::string& name, World* world, Renderer* renderer) :
 	IOkCancelView(name),
 	sphereView("Box"),
 	countView("Count", 10000),

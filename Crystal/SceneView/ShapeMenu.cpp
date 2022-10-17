@@ -5,7 +5,7 @@
 
 using namespace Crystal::UI;
 
-ShapeMenu::ShapeMenu(const std::string& name, WorldBase* world, RendererBase* renderer, Panel* control) :
+ShapeMenu::ShapeMenu(const std::string& name, World* world, Renderer* renderer, Panel* control) :
 	IMenu(name)
 {
 	add(new ParticleSystemMenu("ParticleSystem", control, world, renderer));
