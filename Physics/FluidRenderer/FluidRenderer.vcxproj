@@ -153,28 +153,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AbsorptionRenderer.cpp" />
+    <ClCompile Include="SSAbsorptionRenderer.cpp" />
     <ClCompile Include="BilateralFilterRenderer.cpp" />
     <ClCompile Include="SSFR.cpp" />
     <ClCompile Include="ParticleDepthRenderer.cpp" />
-    <ClCompile Include="ThicknessRenderer.cpp" />
+    <ClCompile Include="SSNormalRenderer.cpp" />
+    <ClCompile Include="SSThicknessRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\GLSL\BilateralFilter.glfs" />
     <None Include="..\GLSL\BilateralFilter.glvs" />
     <None Include="..\GLSL\ParticleDepth.glfs" />
     <None Include="..\GLSL\ParticleDepth.glvs" />
+    <None Include="..\GLSL\SSNormal.glfs" />
+    <None Include="..\GLSL\SSNormal.glvs" />
     <None Include="..\GLSL\SSThickness.glfs" />
     <None Include="..\GLSL\SSThickness.glvs" />
     <None Include="GLSL\SSAbsorption.glfs" />
     <None Include="GLSL\SSAbsorption.glvs" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbsorptionRenderer.h" />
+    <ClInclude Include="SSAbsorptionRenderer.h" />
     <ClInclude Include="BilateralFilterRenderer.h" />
     <ClInclude Include="ParticleDepthRenderer.h" />
     <ClInclude Include="SSFR.h" />
-    <ClInclude Include="ThicknessRenderer.h" />
+    <ClInclude Include="SSNormalRenderer.h" />
+    <ClInclude Include="SSThicknessRenderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

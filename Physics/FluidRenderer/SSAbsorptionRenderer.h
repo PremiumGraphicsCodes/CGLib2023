@@ -6,7 +6,7 @@
 namespace Crystal {
 	namespace Renderer {
 
-class AbsorptionRenderer : public IRenderer
+class SSAbsorptionRenderer : public IRenderer
 {
 public:
 	struct Buffer {

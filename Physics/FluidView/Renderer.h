@@ -3,7 +3,7 @@
 #include "Crystal/AppBase/RendererBase.h"
 #include "../FluidRenderer/SSFR.h"
 #include "../FluidRenderer/ParticleDepthRenderer.h"
-#include "../FluidRenderer/ThicknessRenderer.h"
+#include "../FluidRenderer/SSThicknessRenderer.h"
 
 namespace Crystal{
 	namespace UI {
@@ -30,7 +30,7 @@ namespace Crystal{
 
 			Crystal::Renderer::SSFRenderer ssfr;
 			Crystal::Renderer::ParticleDepthRenderer particleDepth;
-			Crystal::Renderer::ThicknessRenderer thickness;
+			Crystal::Renderer::SSThicknessRenderer thickness;
 		};
 	}
 }

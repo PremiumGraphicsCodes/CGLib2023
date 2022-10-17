@@ -5,7 +5,7 @@
 namespace Crystal {
 	namespace Renderer {
 
-class ThicknessRenderer : public IRenderer
+class SSThicknessRenderer : public IRenderer
 {
 public:
 	void link() override;
