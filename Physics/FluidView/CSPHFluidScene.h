@@ -2,7 +2,7 @@
 
 #include "Crystal/Scene/SceneBase.h"
 #include "CSPHFluidPresenter.h"
-#include "../Physics/CSPHFluid.h"
+#include "../Fluid/CSPHFluid.h"
 #include <vector>
 
 namespace Crystal {

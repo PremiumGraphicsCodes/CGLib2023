@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Crystal/Scene/IAnimator.h"
-#include "../Physics/CSPHSolver.h"
+#include "../Fluid/CSPHSolver.h"
 #include <memory>
 
 namespace Crystal {

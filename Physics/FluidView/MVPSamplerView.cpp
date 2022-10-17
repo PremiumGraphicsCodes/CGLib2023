@@ -1,7 +1,7 @@
 #include "MVPSamplerView.h"
-#include "../Physics/MVPFluid.h"
-#include "../Physics/MVPSampler.h"
-#include "../Physics/MVPVolumeParticle.h"
+#include "../Fluid/MVPFluid.h"
+#include "../Fluid/MVPSampler.h"
+#include "../Fluid/MVPVolumeParticle.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;

@@ -24,6 +24,7 @@
     <ProjectGuid>{4eb8123b-f6e6-4027-ab9d-4930c58ff327}</ProjectGuid>
     <RootNamespace>PhysicsView</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>FluidView</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -185,7 +186,7 @@
     <ProjectReference Include="..\..\Crystal\Space\Space.vcxproj">
       <Project>{9530d9d5-3a0e-4d2f-a151-44836e69854c}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Physics\Physics.vcxproj">
+    <ProjectReference Include="..\Fluid\Physics.vcxproj">
       <Project>{f978fd4b-f39b-4e94-93b4-f9ef0a90d71e}</Project>
     </ProjectReference>
   </ItemGroup>

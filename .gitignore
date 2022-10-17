@@ -69,3 +69,6 @@
 /Crystal/Numerics/Numerics/x64/Debug
 /Crystal/Numerics/Numerics/x64/Release
 /Crystal/Numerics/NumericsTest/x64/Debug
+/Physics/Fluid/x64
+/Physics/FluidView/x64
+/Physics/FluidView/imgui.ini

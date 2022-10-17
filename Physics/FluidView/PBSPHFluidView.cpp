@@ -1,8 +1,8 @@
 #include "PBSPHFluidView.h"
 
 #include "PBSPHFluidScene.h"
-#include "../Physics/PBSPHSolver.h"
-#include "../Physics/PBSPHParticle.h"
+#include "../Fluid/PBSPHSolver.h"
+#include "../Fluid/PBSPHParticle.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
