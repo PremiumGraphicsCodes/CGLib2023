@@ -8,6 +8,9 @@
     <ClCompile Include="BilateralFilterRenderer.cpp">
       <Filter>BilateralFilter</Filter>
     </ClCompile>
+    <ClCompile Include="AbsorptionRenderer.cpp">
+      <Filter>Absorption</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleDepth">
@@ -15,6 +18,9 @@
     </Filter>
     <Filter Include="BilateralFilter">
       <UniqueIdentifier>{e053c457-03bf-4501-9612-64abfd63a73b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Absorption">
+      <UniqueIdentifier>{f8248923-38a6-45bd-a69f-172d6b1d10ae}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,6 +36,12 @@
     <None Include="GLSL\BilateralFilter.glvs">
       <Filter>BilateralFilter</Filter>
     </None>
+    <None Include="GLSL\SSAbsorption.glfs">
+      <Filter>Absorption</Filter>
+    </None>
+    <None Include="GLSL\SSAbsorption.glvs">
+      <Filter>Absorption</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ParticleDepthRenderer.h">
@@ -37,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="BilateralFilterRenderer.h">
       <Filter>BilateralFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="AbsorptionRenderer.h">
+      <Filter>Absorption</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

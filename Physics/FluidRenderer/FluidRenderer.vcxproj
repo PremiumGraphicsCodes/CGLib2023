@@ -152,6 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbsorptionRenderer.cpp" />
     <ClCompile Include="BilateralFilterRenderer.cpp" />
     <ClCompile Include="FluidRenderer.cpp" />
     <ClCompile Include="ParticleDepthRenderer.cpp" />
@@ -161,8 +162,11 @@
     <None Include="GLSL\BilateralFilter.glvs" />
     <None Include="GLSL\ParticleDepth.glfs" />
     <None Include="GLSL\ParticleDepth.glvs" />
+    <None Include="GLSL\SSAbsorption.glfs" />
+    <None Include="GLSL\SSAbsorption.glvs" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbsorptionRenderer.h" />
     <ClInclude Include="BilateralFilterRenderer.h" />
     <ClInclude Include="ParticleDepthRenderer.h" />
   </ItemGroup>
