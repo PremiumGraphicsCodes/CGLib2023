@@ -13,5 +13,6 @@
     <ClInclude Include="SpaceMenu.h" />
     <ClInclude Include="SpaceHashView.h" />
     <ClInclude Include="CompactSpaceHashView.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
 </Project>
