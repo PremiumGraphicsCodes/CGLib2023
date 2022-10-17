@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -151,10 +151,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BRDFLUTRenderer.h" />
+    <ClInclude Include="DFAlbedoRenderer.h" />
+    <ClInclude Include="DFGeometryRenderer.h" />
+    <ClInclude Include="DFLightRenderer.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="IBLDiffuseRenderer.h" />
+    <ClInclude Include="IBLSpecularRenderer.h" />
+    <ClInclude Include="ImportanceRenderer.h" />
+    <ClInclude Include="IrradianceRenderer.h" />
+    <ClInclude Include="PBLightRenderer.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BRDFLUTRenderer.cpp" />
+    <ClCompile Include="DFAlbedoRenderer.cpp" />
+    <ClCompile Include="DFGeometryRenderer.cpp" />
+    <ClCompile Include="DFLightRenderer.cpp" />
+    <ClCompile Include="IBLDiffuseRenderer.cpp" />
+    <ClCompile Include="IBLSpecularRenderer.cpp" />
+    <ClCompile Include="ImportanceRenderer.cpp" />
+    <ClCompile Include="IrradianceRenderer.cpp" />
+    <ClCompile Include="PBLightRenderer.cpp" />
     <ClCompile Include="PBRenderer.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

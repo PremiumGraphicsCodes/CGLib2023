@@ -6,10 +6,10 @@
 #include "TriangleShader.h"
 #include "TexShader.h"
 
-#include "PBLightShader.h"
 #include "SkyBoxShader.h"
-#include "DFPolygonShader.h"
-#include "IBLShader.h"
+//#include "PBLightShader.h"
+//#include "DFPolygonShader.h"
+//#include "IBLShader.h"
 
 
 #include "CGLib/Math/Vector2d.h"
@@ -46,10 +46,10 @@ namespace {
 			lineRenderer.build();
 			triangleRenderer.build();
 			texRenderer.build();
-			pbLightRenderer.build();
+			//pbLightRenderer.build();
 			skyBoxRenderer.build();
-			dfRenderer.build();
-			iblRenderer.build();
+			//dfRenderer.build();
+			//iblRenderer.build();
 
 			activeRenderer = &pointRenderer;
 		}
@@ -71,11 +71,13 @@ namespace {
 		TriangleShader triangleRenderer;
 		TexShader texRenderer;
 
-		PBLightShader pbLightRenderer;
 		SkyBoxShader skyBoxRenderer;
+		/*
+		PBLightShader pbLightRenderer;
 		DFPolygonShader dfRenderer;
 		IBLShader iblRenderer;
-		IScreenShader* activeRenderer = &pbLightRenderer;
+		*/
+		IScreenShader* activeRenderer = &pointRenderer;
 
 	};
 
@@ -90,9 +92,9 @@ namespace {
 			add(new Crystal::UI::MenuItem("Triangle", [&renderer]() { renderer->activeRenderer = &renderer->triangleRenderer; }));
 			add(new Crystal::UI::MenuItem("Tex", [&renderer]() { renderer->activeRenderer = &renderer->texRenderer; }));
 			add(new Crystal::UI::MenuItem("SkyBox", [&renderer]() { renderer->activeRenderer = &renderer->skyBoxRenderer; }));
-			add(new Crystal::UI::MenuItem("PBLight", [&renderer]() { renderer->activeRenderer = &renderer->pbLightRenderer; }));
-			add(new Crystal::UI::MenuItem("DFPolygon", [&renderer]() { renderer->activeRenderer = &renderer->dfRenderer; }));
-			add(new Crystal::UI::MenuItem("IBL", [&renderer]() { renderer->activeRenderer = &renderer->iblRenderer; }));
+			//add(new Crystal::UI::MenuItem("PBLight", [&renderer]() { renderer->activeRenderer = &renderer->pbLightRenderer; }));
+			//add(new Crystal::UI::MenuItem("DFPolygon", [&renderer]() { renderer->activeRenderer = &renderer->dfRenderer; }));
+			//add(new Crystal::UI::MenuItem("IBL", [&renderer]() { renderer->activeRenderer = &renderer->iblRenderer; }));
 		}
 	};
 }

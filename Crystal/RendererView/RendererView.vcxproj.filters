@@ -3,13 +3,10 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SkyBoxShader.cpp" />
-    <ClCompile Include="PBLightShader.cpp" />
     <ClCompile Include="PointShader.cpp" />
-    <ClCompile Include="DFPolygonShader.cpp" />
     <ClCompile Include="LineShader.cpp" />
     <ClCompile Include="TriangleShader.cpp" />
     <ClCompile Include="TexShader.cpp" />
-    <ClCompile Include="IBLShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -17,12 +14,9 @@
   <ItemGroup>
     <ClInclude Include="SkyBoxShader.h" />
     <ClInclude Include="IScreenShader.h" />
-    <ClInclude Include="PBLightShader.h" />
     <ClInclude Include="PointShader.h" />
-    <ClInclude Include="DFPolygonShader.h" />
     <ClInclude Include="LineShader.h" />
     <ClInclude Include="TriangleShader.h" />
     <ClInclude Include="TexShader.h" />
-    <ClInclude Include="IBLShader.h" />
   </ItemGroup>
 </Project>

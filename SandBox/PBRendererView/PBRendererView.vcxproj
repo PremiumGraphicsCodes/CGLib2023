@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{58bfbfa8-9ffd-46da-bec2-9cd4244cb82b}</ProjectGuid>
-    <RootNamespace>RendererView</RootNamespace>
+    <ProjectGuid>{b3854359-d518-4571-9700-2c247d43fa09}</ProjectGuid>
+    <RootNamespace>PBRendererView</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -116,13 +116,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../../;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\CGLib\ThirdParty\glew-2.2.0\lib\Release\x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,70 +130,18 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../..;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\CGLib\ThirdParty\glew-2.2.0\lib\Release\x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LineShader.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="PointShader.cpp" />
-    <ClCompile Include="SkyBoxShader.cpp" />
-    <ClCompile Include="TexShader.cpp" />
-    <ClCompile Include="TriangleShader.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\CGLib\Graphics\Graphics.vcxproj">
-      <Project>{33df6d05-9610-4794-a1cd-3bc1d86e6a8e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CGLib\Math\Math.vcxproj">
-      <Project>{43f2d582-49b6-425d-bf27-6b3a9a9a0acb}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CGLib\Shader\Shader.vcxproj">
-      <Project>{e38d1457-c9dd-4670-95b0-1eee416ccffb}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CGLib\UI\UI.vcxproj">
-      <Project>{02b12dc2-d4af-4fa1-a2f0-b51326d3c1e6}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\AppBase\AppBase.vcxproj">
-      <Project>{66a1065b-73e5-4862-af0f-add2efa732e1}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Renderer\Renderer.vcxproj">
-      <Project>{b4138991-bd60-465f-ab44-64d49a9382c3}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Scene\Scene.vcxproj">
-      <Project>{8f772d35-8835-4288-941e-867f4e7e7f8f}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="IScreenShader.h" />
-    <ClInclude Include="LineShader.h" />
-    <ClInclude Include="PointShader.h" />
-    <ClInclude Include="SkyBoxShader.h" />
-    <ClInclude Include="TexShader.h" />
-    <ClInclude Include="TriangleShader.h" />
+    <ClCompile Include="PBRendererView.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\glew.redist.1.9.0.1\build\native\glew.redist.targets" Condition="Exists('..\packages\glew.redist.1.9.0.1\build\native\glew.redist.targets')" />
-    <Import Project="..\packages\glew.1.9.0.1\build\native\glew.targets" Condition="Exists('..\packages\glew.1.9.0.1\build\native\glew.targets')" />
-    <Import Project="..\packages\glfw.3.3.8\build\native\glfw.targets" Condition="Exists('..\packages\glfw.3.3.8\build\native\glfw.targets')" />
-    <Import Project="..\..\packages\glfw.3.3.8\build\native\glfw.targets" Condition="Exists('..\..\packages\glfw.3.3.8\build\native\glfw.targets')" />
   </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\glfw.3.3.8\build\native\glfw.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\glfw.3.3.8\build\native\glfw.targets'))" />
-  </Target>
 </Project>

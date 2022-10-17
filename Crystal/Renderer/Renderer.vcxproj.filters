@@ -5,32 +5,8 @@
     <ClInclude Include="SkyBoxRenderer.h">
       <Filter>SkyBox</Filter>
     </ClInclude>
-    <ClInclude Include="PBLightRenderer.h">
-      <Filter>PBLight</Filter>
-    </ClInclude>
     <ClInclude Include="PointRenderer.h">
       <Filter>Point</Filter>
-    </ClInclude>
-    <ClInclude Include="DFAlbedoRenderer.h">
-      <Filter>Deffered\DFAlbedo</Filter>
-    </ClInclude>
-    <ClInclude Include="DFGeometryRenderer.h">
-      <Filter>Deffered\DFGeometry</Filter>
-    </ClInclude>
-    <ClInclude Include="DFLightRenderer.h">
-      <Filter>Deffered\DFLight</Filter>
-    </ClInclude>
-    <ClInclude Include="CubeMapRenderer.h">
-      <Filter>IBL\CubeMap</Filter>
-    </ClInclude>
-    <ClInclude Include="IrradianceRenderer.h">
-      <Filter>IBL\Irradiance</Filter>
-    </ClInclude>
-    <ClInclude Include="IBLDiffuseRenderer.h">
-      <Filter>IBL\IBLDiffuse</Filter>
-    </ClInclude>
-    <ClInclude Include="IBLSpecularRenderer.h">
-      <Filter>IBL\IBLSpecular</Filter>
     </ClInclude>
     <ClInclude Include="LineRenderer.h">
       <Filter>Line</Filter>
@@ -41,43 +17,13 @@
     <ClInclude Include="TexRenderer.h">
       <Filter>Texture</Filter>
     </ClInclude>
-    <ClInclude Include="BRDFLUTRenderer.h">
-      <Filter>IBL\BRDFLUT</Filter>
-    </ClInclude>
-    <ClInclude Include="ImportanceRenderer.h">
-      <Filter>IBL\Importance</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
       <Filter>SkyBox</Filter>
     </ClCompile>
-    <ClCompile Include="PBLightRenderer.cpp">
-      <Filter>PBLight</Filter>
-    </ClCompile>
     <ClCompile Include="PointRenderer.cpp">
       <Filter>Point</Filter>
-    </ClCompile>
-    <ClCompile Include="DFAlbedoRenderer.cpp">
-      <Filter>Deffered\DFAlbedo</Filter>
-    </ClCompile>
-    <ClCompile Include="DFGeometryRenderer.cpp">
-      <Filter>Deffered\DFGeometry</Filter>
-    </ClCompile>
-    <ClCompile Include="DFLightRenderer.cpp">
-      <Filter>Deffered\DFLight</Filter>
-    </ClCompile>
-    <ClCompile Include="CubeMapRenderer.cpp">
-      <Filter>IBL\CubeMap</Filter>
-    </ClCompile>
-    <ClCompile Include="IrradianceRenderer.cpp">
-      <Filter>IBL\Irradiance</Filter>
-    </ClCompile>
-    <ClCompile Include="IBLDiffuseRenderer.cpp">
-      <Filter>IBL\IBLDiffuse</Filter>
-    </ClCompile>
-    <ClCompile Include="IBLSpecularRenderer.cpp">
-      <Filter>IBL\IBLSpecular</Filter>
     </ClCompile>
     <ClCompile Include="LineRenderer.cpp">
       <Filter>Line</Filter>
@@ -88,49 +34,13 @@
     <ClCompile Include="TexRenderer.cpp">
       <Filter>Texture</Filter>
     </ClCompile>
-    <ClCompile Include="BRDFLUTRenderer.cpp">
-      <Filter>IBL\BRDFLUT</Filter>
-    </ClCompile>
-    <ClCompile Include="ImportanceRenderer.cpp">
-      <Filter>IBL\Importance</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="SkyBox">
       <UniqueIdentifier>{da33b830-37e0-49e1-8c56-2addd43e618b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PBLight">
-      <UniqueIdentifier>{07631d63-a9fb-494a-b842-f36f89e69cb3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Point">
       <UniqueIdentifier>{b1844bfe-1ad0-4dcd-8395-3b8d54cc8d6b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Deffered">
-      <UniqueIdentifier>{768e54e3-b3d8-477b-8bfe-a84c574a7bbe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Deffered\DFAlbedo">
-      <UniqueIdentifier>{dff1e4fd-0ba8-4e3a-b556-127b48e68ce5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Deffered\DFGeometry">
-      <UniqueIdentifier>{02a2eaea-e421-4236-99fc-8829c0aec944}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Deffered\DFLight">
-      <UniqueIdentifier>{00b18e83-2e61-4bf2-b088-fe783ae70d32}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="IBL">
-      <UniqueIdentifier>{57a6e49a-d0a7-4b73-9efa-f4beb0d2ea56}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="IBL\CubeMap">
-      <UniqueIdentifier>{312b45fc-002d-4b77-b930-4b4f3dbff941}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="IBL\Irradiance">
-      <UniqueIdentifier>{3c490d48-2bd4-4930-89aa-00dc06f28a8a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="IBL\IBLDiffuse">
-      <UniqueIdentifier>{97173ece-fa6f-4363-8014-420547a9bdec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="IBL\IBLSpecular">
-      <UniqueIdentifier>{162a9bbc-76f0-4c56-b9c0-79476f08cacd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Line">
       <UniqueIdentifier>{e7bd4984-afcc-4cb3-b10e-5c4ed312d7ef}</UniqueIdentifier>
@@ -141,12 +51,6 @@
     <Filter Include="Texture">
       <UniqueIdentifier>{5a2fa6a2-cd48-4fda-abf2-398cf6f6d757}</UniqueIdentifier>
     </Filter>
-    <Filter Include="IBL\BRDFLUT">
-      <UniqueIdentifier>{7b866ebe-5117-4495-834a-111b7d5e6373}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="IBL\Importance">
-      <UniqueIdentifier>{72e26a17-a02f-4d43-9aed-9794ec5917cd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\GLSL\SkyBox.fs">
@@ -155,59 +59,11 @@
     <None Include="..\GLSL\SkyBox.vs">
       <Filter>SkyBox</Filter>
     </None>
-    <None Include="..\GLSL\PBLight.fs">
-      <Filter>PBLight</Filter>
-    </None>
-    <None Include="..\GLSL\PBLight.vs">
-      <Filter>PBLight</Filter>
-    </None>
     <None Include="..\GLSL\Point.vs">
       <Filter>Point</Filter>
     </None>
     <None Include="..\GLSL\Point.fs">
       <Filter>Point</Filter>
-    </None>
-    <None Include="..\GLSL\DFAlbedo.fs">
-      <Filter>Deffered\DFAlbedo</Filter>
-    </None>
-    <None Include="..\GLSL\DFAlbedo.vs">
-      <Filter>Deffered\DFAlbedo</Filter>
-    </None>
-    <None Include="..\GLSL\DFGeometry.fs">
-      <Filter>Deffered\DFGeometry</Filter>
-    </None>
-    <None Include="..\GLSL\DFGeometry.vs">
-      <Filter>Deffered\DFGeometry</Filter>
-    </None>
-    <None Include="..\GLSL\DFLight.fs">
-      <Filter>Deffered\DFLight</Filter>
-    </None>
-    <None Include="..\GLSL\DFLight.vs">
-      <Filter>Deffered\DFLight</Filter>
-    </None>
-    <None Include="..\GLSL\CubeMap.fs">
-      <Filter>IBL\CubeMap</Filter>
-    </None>
-    <None Include="..\GLSL\CubeMap.vs">
-      <Filter>IBL\CubeMap</Filter>
-    </None>
-    <None Include="..\GLSL\Irradiance.fs">
-      <Filter>IBL\Irradiance</Filter>
-    </None>
-    <None Include="..\GLSL\Irradiance.vs">
-      <Filter>IBL\Irradiance</Filter>
-    </None>
-    <None Include="..\GLSL\IBLDiffuse.fs">
-      <Filter>IBL\IBLDiffuse</Filter>
-    </None>
-    <None Include="..\GLSL\IBLDiffuse.vs">
-      <Filter>IBL\IBLDiffuse</Filter>
-    </None>
-    <None Include="..\GLSL\IBLSpecular.fs">
-      <Filter>IBL\IBLSpecular</Filter>
-    </None>
-    <None Include="..\GLSL\IBLSpecular.vs">
-      <Filter>IBL\IBLSpecular</Filter>
     </None>
     <None Include="..\GLSL\Line.fs">
       <Filter>Line</Filter>
@@ -226,18 +82,6 @@
     </None>
     <None Include="..\GLSL\Tex.vs">
       <Filter>Texture</Filter>
-    </None>
-    <None Include="..\GLSL\BRDFLUT.vs">
-      <Filter>IBL\BRDFLUT</Filter>
-    </None>
-    <None Include="..\GLSL\BRDFLUT.fs">
-      <Filter>IBL\BRDFLUT</Filter>
-    </None>
-    <None Include="..\GLSL\Importance.fs">
-      <Filter>IBL\Importance</Filter>
-    </None>
-    <None Include="..\GLSL\Importance.vs">
-      <Filter>IBL\Importance</Filter>
     </None>
   </ItemGroup>
 </Project>
