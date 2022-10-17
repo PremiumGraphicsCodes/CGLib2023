@@ -10,11 +10,13 @@
 
 namespace Crystal {
 	namespace UI {
+		class World;
+		class Renderer;
 
 class CSPHFluidView : public IOkCancelView
 {
 public:
-	CSPHFluidView(const std::string& name, WorldBase* model, RendererBase* renderer);
+	CSPHFluidView(const std::string& name, World* model, Renderer* renderer);
 
 private:
 	void onOk() override;
@@ -32,8 +34,8 @@ private:
 	FloatView timeStepView;
 	FloatView densityView;
 	Box3dView boundaryView;
-	WorldBase* world;
-	RendererBase* renderer;
+	World* world;
+	Renderer* renderer;
 };
 
 	}

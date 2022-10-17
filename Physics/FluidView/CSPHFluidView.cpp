@@ -1,6 +1,8 @@
 #include "CSPHFluidView.h"
 
 #include "CSPHFluidPresenter.h"
+#include "World.h"
+#include "Renderer.h"
 
 using namespace Crystal::Math;
 //using namespace Crystal::Shape;
@@ -9,7 +11,7 @@ using namespace Crystal::UI;
 using namespace Crystal::Physics;
 
 
-CSPHFluidView::CSPHFluidView(const std::string& name, WorldBase* world, RendererBase* renderer) :
+CSPHFluidView::CSPHFluidView(const std::string& name, World* world, Renderer* renderer) :
 	IOkCancelView(name),
 	startButton("Start"),
 	resetButton("Reset"),

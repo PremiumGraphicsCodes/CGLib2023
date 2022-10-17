@@ -3,8 +3,8 @@
 #include "CGLib/UI/IOkCancelView.h"
 #include "CGLib/UI/FloatView.h"
 #include "CGLib/UI/Box3dView.h"
-#include "Crystal/AppBase/WorldBase.h"
-#include "Crystal/AppBase/RendererBase.h"
+#include "World.h"
+#include "Renderer.h"
 #include "PBSPHAnimator.h"
 
 namespace Crystal {
@@ -17,7 +17,7 @@ namespace Crystal {
 class PBSPHFluidView : public IOkCancelView
 {
 public:
-	PBSPHFluidView(const std::string& name, WorldBase* model, RendererBase* renderer);
+	PBSPHFluidView(const std::string& name, World* model, Renderer* renderer);
 
 private:
 	void onOk() override;
@@ -37,8 +37,8 @@ private:
 	FloatView stiffnessView;
 	FloatView vicsocityView;
 	Box3dView boundaryView;
-	WorldBase* model;
-	RendererBase* renderer;
+	World* model;
+	Renderer* renderer;
 };
 
 	}

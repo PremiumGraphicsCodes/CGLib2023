@@ -30,6 +30,7 @@
     <ClCompile Include="MVPSamplerView.cpp">
       <Filter>MVP</Filter>
     </ClCompile>
+    <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

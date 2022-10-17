@@ -157,6 +157,7 @@
     <ClCompile Include="PBSPHFluidView.cpp" />
     <ClCompile Include="PhysicsMenu.cpp" />
     <ClCompile Include="PhysicsView.cpp" />
+    <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CGLib\Graphics\Graphics.vcxproj">

@@ -9,7 +9,7 @@ using namespace Crystal::Scene;
 using namespace Crystal::UI;
 using namespace Crystal::Physics;
 
-PBSPHFluidView::PBSPHFluidView(const std::string& name, WorldBase* model, RendererBase* renderer) :
+PBSPHFluidView::PBSPHFluidView(const std::string& name, World* model, Renderer* renderer) :
 	IOkCancelView(name),
 	model(model),
 	renderer(renderer),
