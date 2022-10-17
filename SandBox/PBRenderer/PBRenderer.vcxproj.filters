@@ -26,4 +26,26 @@
     <ClCompile Include="IrradianceRenderer.cpp" />
     <ClCompile Include="PBLightRenderer.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\GLSL\BRDFLUT.fs" />
+    <None Include="..\GLSL\BRDFLUT.vs" />
+    <None Include="..\GLSL\DFAlbedo.fs" />
+    <None Include="..\GLSL\DFAlbedo.vs" />
+    <None Include="..\GLSL\DFGeometry.fs" />
+    <None Include="..\GLSL\DFGeometry.vs" />
+    <None Include="..\GLSL\DFLight.fs" />
+    <None Include="..\GLSL\DFLight.vs" />
+    <None Include="..\GLSL\IBLDiffuse.fs" />
+    <None Include="..\GLSL\IBLDiffuse.vs" />
+    <None Include="..\GLSL\IBLSpecular.fs" />
+    <None Include="..\GLSL\IBLSpecular.vs" />
+    <None Include="..\GLSL\Importance.fs" />
+    <None Include="..\GLSL\Importance.vs" />
+    <None Include="..\GLSL\Irradiance.fs" />
+    <None Include="..\GLSL\Irradiance.vs" />
+    <None Include="..\GLSL\PBLight.fs" />
+    <None Include="..\GLSL\PBLight.vs" />
+    <None Include="..\GLSL\ShadowDepth.fs" />
+    <None Include="..\GLSL\ShadowDepth.vs" />
+  </ItemGroup>
 </Project>

@@ -75,3 +75,7 @@
 /Physics/FluidRenderer/x64/Debug
 /SandBox/PBRenderer/x64/Debug
 /SandBox/PBRendererView/x64/Debug
+/Crystal/Numerics/NumericsTest/x64/Release
+/Physics/FluidRenderer/x64/Release
+/SandBox/PBRenderer/x64/Release
+/SandBox/PBRendererView/x64/Release
