@@ -2,5 +2,35 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="FluidRenderer.cpp" />
+    <ClCompile Include="ParticleDepthRenderer.cpp">
+      <Filter>ParticleDepth</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ParticleDepth">
+      <UniqueIdentifier>{55bed720-e9cf-49de-b0f1-d364ab4ea126}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BilateralFilter">
+      <UniqueIdentifier>{e053c457-03bf-4501-9612-64abfd63a73b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GLSL\ParticleDepth.glfs">
+      <Filter>ParticleDepth</Filter>
+    </None>
+    <None Include="GLSL\ParticleDepth.glvs">
+      <Filter>ParticleDepth</Filter>
+    </None>
+    <None Include="GLSL\BilateralFilter.glfs">
+      <Filter>BilateralFilter</Filter>
+    </None>
+    <None Include="GLSL\BilateralFilter.glvs">
+      <Filter>BilateralFilter</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ParticleDepthRenderer.h">
+      <Filter>ParticleDepth</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
