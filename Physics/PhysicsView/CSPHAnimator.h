@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Scene/IAnimator.h"
+#include "Crystal/Scene/IAnimator.h"
 #include "../Physics/CSPHSolver.h"
 #include <memory>
 

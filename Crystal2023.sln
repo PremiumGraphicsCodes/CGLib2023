@@ -33,17 +33,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceTest", "Crystal\SpaceT
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicsTest", "CGLib\GraphicsTest\GraphicsTest.vcxproj", "{CCD27D9B-E370-4859-A08F-D3A610E78D69}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Physics", "Crystal\Physics\Physics.vcxproj", "{F978FD4B-F39B-4E94-93B4-F9EF0A90D71E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Physics", "Physics\Physics\Physics.vcxproj", "{F978FD4B-F39B-4E94-93B4-F9EF0A90D71E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shape", "CGLib\Shape\Shape.vcxproj", "{6A17C2EE-6107-45A8-A72C-6B8B55136ABF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhysicsView", "Crystal\PhysicsView\PhysicsView.vcxproj", "{4EB8123B-F6E6-4027-AB9D-4930C58FF327}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhysicsView", "Physics\PhysicsView\PhysicsView.vcxproj", "{4EB8123B-F6E6-4027-AB9D-4930C58FF327}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Numerics", "Crystal\Numerics\Numerics\Numerics.vcxproj", "{65CA69AD-6106-4F1B-BACA-9C10359C31F5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NumericsTest", "Crystal\Numerics\NumericsTest\NumericsTest.vcxproj", "{28A8AB21-19F3-489E-A183-FF61776D9E69}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluidRenderer", "Crystal\FluidRenderer\FluidRenderer.vcxproj", "{D9FE5F33-E69C-4E6A-8EBD-EC95458CE7B8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluidRenderer", "Physics\FluidRenderer\FluidRenderer.vcxproj", "{D9FE5F33-E69C-4E6A-8EBD-EC95458CE7B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

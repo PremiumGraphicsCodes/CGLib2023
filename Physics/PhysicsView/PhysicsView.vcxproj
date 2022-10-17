@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d9fe5f33-e69c-4e6a-8ebd-ec95458ce7b8}</ProjectGuid>
-    <RootNamespace>FluidRenderer</RootNamespace>
+    <ProjectGuid>{4eb8123b-f6e6-4027-ab9d-4930c58ff327}</ProjectGuid>
+    <RootNamespace>PhysicsView</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -86,14 +86,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>
-      </SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -103,14 +100,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>
-      </SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -120,15 +114,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>../../;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>
-      </SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\CGLib\ThirdParty\glew-2.2.0\lib\Release\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,33 +131,89 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>../../;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>
-      </SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\CGLib\ThirdParty\glew-2.2.0\lib\Release\x64</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
+    <ClCompile Include="CSPHAnimator.cpp" />
+    <ClCompile Include="CSPHFluidPresenter.cpp" />
+    <ClCompile Include="CSPHFluidScene.cpp" />
+    <ClCompile Include="CSPHFluidView.cpp" />
+    <ClCompile Include="MVPSamplerView.cpp" />
+    <ClCompile Include="PBSPHAnimator.cpp" />
+    <ClCompile Include="PBSPHFluidPresenter.cpp" />
+    <ClCompile Include="PBSPHFluidScene.cpp" />
+    <ClCompile Include="PBSPHFluidView.cpp" />
+    <ClCompile Include="PhysicsMenu.cpp" />
+    <ClCompile Include="PhysicsView.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FluidRenderer.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ProjectReference Include="..\..\CGLib\Graphics\Graphics.vcxproj">
+      <Project>{33df6d05-9610-4794-a1cd-3bc1d86e6a8e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CGLib\Math\Math.vcxproj">
+      <Project>{43f2d582-49b6-425d-bf27-6b3a9a9a0acb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CGLib\Shader\Shader.vcxproj">
+      <Project>{e38d1457-c9dd-4670-95b0-1eee416ccffb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CGLib\Shape\Shape.vcxproj">
+      <Project>{6a17c2ee-6107-45a8-a72c-6b8b55136abf}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CGLib\UI\UI.vcxproj">
+      <Project>{02b12dc2-d4af-4fa1-a2f0-b51326d3c1e6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Crystal\AppBase\AppBase.vcxproj">
+      <Project>{66a1065b-73e5-4862-af0f-add2efa732e1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Crystal\Renderer\Renderer.vcxproj">
+      <Project>{b4138991-bd60-465f-ab44-64d49a9382c3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Crystal\Scene\Scene.vcxproj">
+      <Project>{8f772d35-8835-4288-941e-867f4e7e7f8f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Crystal\Space\Space.vcxproj">
+      <Project>{9530d9d5-3a0e-4d2f-a151-44836e69854c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Physics\Physics.vcxproj">
+      <Project>{f978fd4b-f39b-4e94-93b4-f9ef0a90d71e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSPHAnimator.h" />
+    <ClInclude Include="CSPHFluidPresenter.h" />
+    <ClInclude Include="CSPHFluidScene.h" />
+    <ClInclude Include="CSPHFluidView.h" />
+    <ClInclude Include="MVPSamplerView.h" />
+    <ClInclude Include="PBSPHAnimator.h" />
+    <ClInclude Include="PBSPHFluidPresenter.h" />
+    <ClInclude Include="PBSPHFluidScene.h" />
+    <ClInclude Include="PBSPHFluidView.h" />
+    <ClInclude Include="PhysicsMenu.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\packages\glfw.3.3.8\build\native\glfw.targets" Condition="Exists('..\..\packages\glfw.3.3.8\build\native\glfw.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\glfw.3.3.8\build\native\glfw.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\glfw.3.3.8\build\native\glfw.targets'))" />
+  </Target>
 </Project>
