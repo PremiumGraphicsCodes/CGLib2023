@@ -3,10 +3,10 @@
 #include "IScreenShader.h"
 
 #include "CGLib/Shader/FrameBufferObject.h"
-#include "../Renderer/DFAlbedoRenderer.h"
-#include "../Renderer/DFGeometryRenderer.h"
-#include "../Renderer/DFLightRenderer.h"
-#include "../Renderer/TexRenderer.h"
+#include "../PBRenderer/DFAlbedoRenderer.h"
+#include "../PBRenderer/DFGeometryRenderer.h"
+#include "../PBRenderer/DFLightRenderer.h"
+#include "Crystal/Renderer/TexRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {

@@ -116,10 +116,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../../</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\CGLib\ThirdParty\glew-2.2.0\lib\Release\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,7 +142,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DFPolygonShader.cpp" />
+    <ClCompile Include="IBLShader.cpp" />
+    <ClCompile Include="PBLightShader.cpp" />
     <ClCompile Include="PBRendererView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DFPolygonShader.h" />
+    <ClInclude Include="IBLShader.h" />
+    <ClInclude Include="IScreenShader.h" />
+    <ClInclude Include="PBLightShader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CGLib\Graphics\Graphics.vcxproj">
+      <Project>{33df6d05-9610-4794-a1cd-3bc1d86e6a8e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CGLib\Math\Math.vcxproj">
+      <Project>{43f2d582-49b6-425d-bf27-6b3a9a9a0acb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CGLib\Shader\Shader.vcxproj">
+      <Project>{e38d1457-c9dd-4670-95b0-1eee416ccffb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Crystal\Renderer\Renderer.vcxproj">
+      <Project>{b4138991-bd60-465f-ab44-64d49a9382c3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PBRenderer\PBRenderer.vcxproj">
+      <Project>{fb804cbf-8aae-410f-b25c-10505a2eafe7}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

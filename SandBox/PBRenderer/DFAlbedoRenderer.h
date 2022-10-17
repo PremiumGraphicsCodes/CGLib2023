@@ -2,7 +2,7 @@
 
 #include "CGLib/Shader/TextureObject.h"
 #include "CGLib/Shader/VertexBufferObject.h"
-#include "IRenderer.h"
+#include "Crystal/Renderer/IRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {

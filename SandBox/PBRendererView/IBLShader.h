@@ -5,14 +5,14 @@
 #include "CGLib/Shader/FrameBufferObject.h"
 #include "CGLib/Shader/RenderBufferObject.h"
 
-#include "../Renderer/CubeMapRenderer.h"
-#include "../Renderer/IrradianceRenderer.h"
-#include "../Renderer/IBLDiffuseRenderer.h"
-#include "../Renderer/IBLSpecularRenderer.h"
-#include "../Renderer/BRDFLUTRenderer.h"
-#include "../Renderer/ImportanceRenderer.h"
-#include "../Renderer/TexRenderer.h"
-#include "../Renderer/SkyBoxRenderer.h"
+#include "Crystal/Renderer/CubeMapRenderer.h"
+#include "../PBRenderer/IrradianceRenderer.h"
+#include "../PBRenderer/IBLDiffuseRenderer.h"
+#include "../PBRenderer/IBLSpecularRenderer.h"
+#include "../PBRenderer/BRDFLUTRenderer.h"
+#include "../PBRenderer/ImportanceRenderer.h"
+#include "Crystal/Renderer/TexRenderer.h"
+#include "Crystal/Renderer/SkyBoxRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {

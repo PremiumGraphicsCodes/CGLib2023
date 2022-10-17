@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IRenderer.h"
+#include "Crystal/Renderer/IRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {

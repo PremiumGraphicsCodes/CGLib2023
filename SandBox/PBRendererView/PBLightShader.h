@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Renderer/PBLightRenderer.h"
+#include "../PBRenderer/PBLightRenderer.h"
 
 #include "CGLib/Graphics/Camera.h"
 #include "IScreenShader.h"
