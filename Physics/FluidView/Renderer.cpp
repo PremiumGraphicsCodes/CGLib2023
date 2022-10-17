@@ -2,11 +2,12 @@
 
 #include "CGLib/Shader/ShaderBuilder.h"
 
+using namespace Crystal::Shader;
 using namespace Crystal::UI;
 
 void Renderer::onInit()
 {
-	Crystal::Shader::ShaderBuilder builder;
+	ShaderBuilder builder;
 	builder.buildFromFile("../GLSL/Point.vs", "../GLSL/Point.fs");
 	point.setShader(builder.getShader());
 	point.link();
@@ -26,4 +27,12 @@ void Renderer::onInit()
 	builder.buildFromFile("../GLSL/SSThickness.glvs", "../GLSL/SSThickness.glfs");
 	thickness.setShader(builder.getShader());
 	thickness.link();
+
+	builder.buildFromFile("../GLSL/SSReflection.glvs", "../GLSL/SSReflection.glfs");
+	reflection.setShader(builder.getShader());
+	reflection.link();
+
+	builder.buildFromFile("../GLSL/SSFluid.glvs", "../GLSL/SSFluid.glfs");
+	fluid.setShader(builder.getShader());
+	fluid.link();
 }

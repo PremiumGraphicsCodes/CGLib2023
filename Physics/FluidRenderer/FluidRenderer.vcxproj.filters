@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="SSFR.cpp" />
     <ClCompile Include="ParticleDepthRenderer.cpp">
       <Filter>ParticleDepth</Filter>
     </ClCompile>
@@ -16,6 +15,12 @@
     </ClCompile>
     <ClCompile Include="SSNormalRenderer.cpp">
       <Filter>SSNormal</Filter>
+    </ClCompile>
+    <ClCompile Include="SSReflectionRenderer.cpp">
+      <Filter>SSReflection</Filter>
+    </ClCompile>
+    <ClCompile Include="SSFluidRenderer.cpp">
+      <Filter>SSFluid</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +38,12 @@
     </Filter>
     <Filter Include="SSThickness">
       <UniqueIdentifier>{8fda793a-52b9-4ce6-bf27-95dd1d70a7e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSReflection">
+      <UniqueIdentifier>{2f2459d2-6632-4dac-9d6d-913f081f5f93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSFluid">
+      <UniqueIdentifier>{48f66445-dfce-4b3b-9258-10e3db0fc80c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +77,18 @@
     <None Include="..\GLSL\SSNormal.glvs">
       <Filter>SSNormal</Filter>
     </None>
+    <None Include="..\GLSL\SSReflection.glfs">
+      <Filter>SSReflection</Filter>
+    </None>
+    <None Include="..\GLSL\SSReflection.glvs">
+      <Filter>SSReflection</Filter>
+    </None>
+    <None Include="..\GLSL\SSFluid.glfs">
+      <Filter>SSFluid</Filter>
+    </None>
+    <None Include="..\GLSL\SSFluid.glvs">
+      <Filter>SSFluid</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ParticleDepthRenderer.h">
@@ -80,9 +103,14 @@
     <ClInclude Include="SSThicknessRenderer.h">
       <Filter>SSThickness</Filter>
     </ClInclude>
-    <ClInclude Include="SSFR.h" />
     <ClInclude Include="SSNormalRenderer.h">
       <Filter>SSNormal</Filter>
+    </ClInclude>
+    <ClInclude Include="SSReflectionRenderer.h">
+      <Filter>SSReflection</Filter>
+    </ClInclude>
+    <ClInclude Include="SSFluidRenderer.h">
+      <Filter>SSFluid</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

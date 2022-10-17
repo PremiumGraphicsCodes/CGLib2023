@@ -5,7 +5,7 @@
 namespace Crystal {
 	namespace Renderer {
 
-		class SSFRenderer : public IRenderer
+		class SSFluidRenderer : public IRenderer
 		{
 		public:
 			struct Buffer
