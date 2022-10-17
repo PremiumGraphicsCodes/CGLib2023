@@ -20,12 +20,18 @@
 #include "Crystal/AppBase/Canvas.h"
 #include "Crystal/AppBase/Window.h"
 
+#include "Crystal/AppBase/WorldBase.h"
+
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
 using namespace Crystal::Renderer;
 
 namespace {
+	class World : public Crystal::UI::WorldBase
+	{
+
+	};
 
 	class Renderer : public Crystal::UI::IRenderer
 	{
@@ -93,11 +99,12 @@ namespace {
 
 
 int main() {
+	World world;
 	Renderer renderer;
 
 	Crystal::UI::Canvas canvas;
 	canvas.setUICtrl(std::make_unique<Crystal::UI::CameraUICtrl>(&renderer.camera));
-	Crystal::UI::Window app("Hello", &canvas, &renderer);
+	Crystal::UI::Window app("Hello", &world, &canvas, &renderer);
 	app.init();
 	app.add(new RendererMenu("Renderer", &renderer));
 
