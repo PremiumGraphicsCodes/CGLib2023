@@ -15,9 +15,11 @@ public:
 	{
 		Shader::VertexBufferObject* position;
 		Shader::VertexBufferObject* size;
-		Shader::VertexBufferObject* color;
-		Math::Matrix4df projectionMatrix;
-		Math::Matrix4df modelViewMatrix;
+		Shader::VertexBufferObject* uvec;
+		Shader::VertexBufferObject* vvec;
+		Shader::VertexBufferObject* wvec;
+		Math::Matrix4dd projectionMatrix;
+		Math::Matrix4dd modelViewMatrix;
 		int count = 0;
 	};
 

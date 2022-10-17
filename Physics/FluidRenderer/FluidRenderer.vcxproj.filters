@@ -5,6 +5,9 @@
     <ClCompile Include="ParticleDepthRenderer.cpp">
       <Filter>ParticleDepth</Filter>
     </ClCompile>
+    <ClCompile Include="BilateralFilterRenderer.cpp">
+      <Filter>BilateralFilter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleDepth">
@@ -31,6 +34,9 @@
   <ItemGroup>
     <ClInclude Include="ParticleDepthRenderer.h">
       <Filter>ParticleDepth</Filter>
+    </ClInclude>
+    <ClInclude Include="BilateralFilterRenderer.h">
+      <Filter>BilateralFilter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

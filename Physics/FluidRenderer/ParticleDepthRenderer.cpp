@@ -4,6 +4,7 @@ using namespace Crystal::Shader;
 using namespace Crystal::Renderer;
 
 namespace {
+	/*
 	constexpr auto positionLabel = "position";
 	constexpr auto colorLabel = "color";
 	constexpr auto sizeLabel = "pointSize";
@@ -23,6 +24,7 @@ namespace {
 		GLuint size;
 	};
 	VertexAttr va;
+	*/
 }
 
 void ParticleDepthRenderer::link()
