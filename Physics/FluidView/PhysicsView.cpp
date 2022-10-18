@@ -25,13 +25,13 @@ int main() {
 	Renderer renderer(&world);
 
 	Crystal::UI::Canvas canvas;
-	canvas.setUICtrl(std::make_unique<CameraUICtrl>(renderer.getCamera()));
+	canvas.setUICtrl(std::make_unique<CameraUICtrl>(world.getCamera()));
 	Crystal::UI::Window app("Hello", &world, &canvas, &renderer);
 	app.init();
 
 	auto control = new Panel("Control");
 
-	app.add(new CameraMenu("Camera", &world, &renderer));
+	app.add(new CameraMenu("Camera", &world));
 	app.add(new PhysicsMenu("Physics", &world, &renderer, control));
 	app.add(control);
 
