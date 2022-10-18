@@ -8,15 +8,30 @@
 
 namespace Crystal {
 	namespace UI {
+		class World;
 
 class Renderer : public IRenderer
 {
 public:
+	enum Target {
+		DFPolygon,
+		IBL,
+		PBLight,
+	};
+
+	explicit Renderer(World* world) :
+		world(world)
+	{}
+
 	void init() override;
 
-	void render(const int width, const int height) override {}
+	void setTarget(const Target target);
+
+	void render(const int width, const int height) override;
 
 private:
+	World* world;
+	Crystal::Renderer::IScreenShader* active;
 	Crystal::Renderer::DFPolygonShader polygon;
 	Crystal::Renderer::IBLShader ibl;
 	Crystal::Renderer::PBLightShader pbLight;

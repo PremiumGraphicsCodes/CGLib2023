@@ -17,7 +17,7 @@ using namespace Crystal::UI;
 
 int main() {
 	World world;
-	Renderer renderer;
+	Renderer renderer(&world);
 
 	Crystal::UI::Canvas canvas;
 	canvas.setUICtrl(std::make_unique<CameraUICtrl>(world.getCamera()));
