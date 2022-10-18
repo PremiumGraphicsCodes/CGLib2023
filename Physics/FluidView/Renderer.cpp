@@ -22,6 +22,7 @@ void Renderer::init()
 	triangle.link();
 	*/
 
+	/*
 	builder.buildFromFile("../GLSL/ParticleDepth.glvs", "../GLSL/ParticleDepth.glfs");
 	particleDepth.setShader(builder.getShader());
 	particleDepth.link();
@@ -37,6 +38,7 @@ void Renderer::init()
 	builder.buildFromFile("../GLSL/SSFluid.glvs", "../GLSL/SSFluid.glfs");
 	fluid.setShader(builder.getShader());
 	fluid.link();
+	*/
 }
 
 void Renderer::render(const int width, const int height)

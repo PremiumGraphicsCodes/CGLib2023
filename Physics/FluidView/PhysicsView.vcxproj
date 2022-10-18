@@ -187,9 +187,6 @@
     <ProjectReference Include="..\..\Crystal\Space\Space.vcxproj">
       <Project>{9530d9d5-3a0e-4d2f-a151-44836e69854c}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\FluidRenderer\FluidRenderer.vcxproj">
-      <Project>{d9fe5f33-e69c-4e6a-8ebd-ec95458ce7b8}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\Fluid\Physics.vcxproj">
       <Project>{f978fd4b-f39b-4e94-93b4-f9ef0a90d71e}</Project>
     </ProjectReference>

@@ -2,10 +2,10 @@
 #include "World.h"
 #include "Crystal/AppBase/IRenderer.h"
 #include "Crystal/Renderer/PointRenderer.h"
-#include "../FluidRenderer/ParticleDepthRenderer.h"
-#include "../FluidRenderer/SSThicknessRenderer.h"
-#include "../FluidRenderer/SSReflectionRenderer.h"
-#include "../FluidRenderer/SSFluidRenderer.h"
+//#include "../FluidRenderer/ParticleDepthRenderer.h"
+//#include "../FluidRenderer/SSThicknessRenderer.h"
+//#include "../FluidRenderer/SSReflectionRenderer.h"
+//#include "../FluidRenderer/SSFluidRenderer.h"
 
 namespace Crystal{
 	namespace UI {
@@ -34,10 +34,10 @@ private:
 	//Crystal::Renderer::LineRenderer line;
 	//Crystal::Renderer::TriangleRenderer triangle;
 
-	Crystal::Renderer::ParticleDepthRenderer particleDepth;
-	Crystal::Renderer::SSThicknessRenderer thickness;
-	Crystal::Renderer::SSReflectionRenderer reflection;
-	Crystal::Renderer::SSFluidRenderer fluid;
+	//Crystal::Renderer::ParticleDepthRenderer particleDepth;
+	//Crystal::Renderer::SSThicknessRenderer thickness;
+	//Crystal::Renderer::SSReflectionRenderer reflection;
+	//Crystal::Renderer::SSFluidRenderer fluid;
 };
 
 	}
