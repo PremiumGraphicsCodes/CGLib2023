@@ -1,7 +1,6 @@
 ﻿#include "Crystal/AppBase/Canvas.h"
 #include "Crystal/AppBase/Window.h"
 #include "Crystal/AppBase/CameraMenu.h"
-#include "Crystal/AppBase/RendererBase.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
 
 #include "PhysicsMenu.h"

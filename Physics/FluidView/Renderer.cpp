@@ -12,6 +12,7 @@ void Renderer::init()
 	point.setShader(builder.getShader());
 	point.link();
 
+	/*
 	builder.buildFromFile("../GLSL/Line.vs", "../GLSL/Line.fs");
 	line.setShader(builder.getShader());
 	line.link();
@@ -19,6 +20,7 @@ void Renderer::init()
 	builder.buildFromFile("../GLSL/Triangle.vs", "../GLSL/Triangle.fs");
 	triangle.setShader(builder.getShader());
 	triangle.link();
+	*/
 
 	builder.buildFromFile("../GLSL/ParticleDepth.glvs", "../GLSL/ParticleDepth.glfs");
 	particleDepth.setShader(builder.getShader());

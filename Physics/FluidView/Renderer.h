@@ -1,6 +1,7 @@
 #pragma once
 #include "World.h"
-#include "Crystal/AppBase/RendererBase.h"
+#include "Crystal/AppBase/IRenderer.h"
+#include "Crystal/Renderer/PointRenderer.h"
 #include "../FluidRenderer/ParticleDepthRenderer.h"
 #include "../FluidRenderer/SSThicknessRenderer.h"
 #include "../FluidRenderer/SSReflectionRenderer.h"
@@ -22,16 +23,16 @@ public:
 
 	Crystal::Renderer::PointRenderer* getPointRenderer() { return &point; }
 
-	Crystal::Renderer::LineRenderer* getLineRenderer() { return &line; }
+	//Crystal::Renderer::LineRenderer* getLineRenderer() { return &line; }
 
-	Crystal::Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
+	//Crystal::Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
 
 private:
 	World* world;
 
 	Crystal::Renderer::PointRenderer point;
-	Crystal::Renderer::LineRenderer line;
-	Crystal::Renderer::TriangleRenderer triangle;
+	//Crystal::Renderer::LineRenderer line;
+	//Crystal::Renderer::TriangleRenderer triangle;
 
 	Crystal::Renderer::ParticleDepthRenderer particleDepth;
 	Crystal::Renderer::SSThicknessRenderer thickness;

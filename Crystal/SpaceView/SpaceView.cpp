@@ -2,7 +2,6 @@
 #include "Crystal/AppBase/Window.h"
 #include "Crystal/AppBase/CameraMenu.h"
 #include "Crystal/AppBase/WorldBase.h"
-#include "Crystal/AppBase/RendererBase.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
 
 #include "CGLib/UI/Panel.h"
