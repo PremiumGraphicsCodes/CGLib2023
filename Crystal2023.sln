@@ -46,9 +46,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluidRenderer", "Physics\FluidRenderer\FluidRenderer.vcxproj", "{D9FE5F33-E69C-4E6A-8EBD-EC95458CE7B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SandBox", "SandBox", "{88256F3B-B2D3-4B4C-8F5C-D459728C6F10}"
-	ProjectSection(SolutionItems) = preProject
-		SandBox\PBRenderer\pch.cpp = SandBox\PBRenderer\pch.cpp
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Physics", "Physics", "{BE8EED1F-16F8-4BC0-BB16-0E5BCC27998B}"
 EndProject

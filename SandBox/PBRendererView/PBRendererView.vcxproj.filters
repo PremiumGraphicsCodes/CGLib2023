@@ -11,5 +11,10 @@
     <ClInclude Include="IBLShader.h" />
     <ClInclude Include="PBLightShader.h" />
     <ClInclude Include="IScreenShader.h" />
+    <ClInclude Include="World.h" />
+    <ClInclude Include="Renderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
