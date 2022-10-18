@@ -7,7 +7,7 @@
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="IMouseListener.h" />
     <ClInclude Include="CameraUICtrl.h" />
-    <ClInclude Include="RendererBase.h" />
+    <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IMenuItem.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="CameraMenu.h" />
@@ -23,7 +23,6 @@
     <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="CameraMenu.cpp" />
     <ClCompile Include="WorldBase.cpp" />
-    <ClCompile Include="RendererBase.cpp" />
     <ClCompile Include="SceneSelectView.cpp" />
     <ClCompile Include="SceneListPanel.cpp" />
   </ItemGroup>

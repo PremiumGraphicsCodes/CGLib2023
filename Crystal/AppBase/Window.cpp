@@ -5,7 +5,7 @@
 #include "GLFW/glfw3.h"
 #include "WorldBase.h"
 #include "Canvas.h"
-#include "RendererBase.h"
+#include "IRenderer.h"
 
 #include "CGLib/UI/imgui.h"
 #include "CGLib/UI/imgui_impl_glfw.h"

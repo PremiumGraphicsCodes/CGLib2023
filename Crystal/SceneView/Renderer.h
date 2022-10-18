@@ -1,6 +1,6 @@
 #pragma once
 #include "World.h"
-#include "Crystal/AppBase/RendererBase.h"
+#include "Crystal/AppBase/IRenderer.h"
 #include "Crystal/Renderer/PointRenderer.h"
 #include "Crystal/Renderer/LineRenderer.h"
 #include "Crystal/Renderer/TriangleRenderer.h"

@@ -3,7 +3,6 @@
 #include "MenuItem.h"
 
 #include "WorldBase.h"
-#include "RendererBase.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::UI;

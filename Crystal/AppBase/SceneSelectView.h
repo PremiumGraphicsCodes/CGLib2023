@@ -6,7 +6,6 @@
 #include "CGLib/UI/Button.h"
 
 #include "WorldBase.h"
-#include "RendererBase.h"
 
 namespace Crystal {
 	namespace UI {

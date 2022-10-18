@@ -5,7 +5,6 @@
 namespace Crystal {
 	namespace UI {
 		class WorldBase;
-		class RendererBase;
 
 class CameraMenu : public IMenu
 {
@@ -22,7 +21,6 @@ private:
 	void onZX();
 
 	WorldBase* world;
-	RendererBase* renderer;
 };
 
 	}
