@@ -5,6 +5,7 @@
     <ClCompile Include="DFPolygonShader.cpp" />
     <ClCompile Include="IBLShader.cpp" />
     <ClCompile Include="PBLightShader.cpp" />
+    <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DFPolygonShader.h" />

@@ -12,6 +12,7 @@
     <ClInclude Include="ImportanceRenderer.h" />
     <ClInclude Include="IrradianceRenderer.h" />
     <ClInclude Include="PBLightRenderer.h" />
+    <ClInclude Include="CubeMapRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PBRenderer.cpp" />
@@ -25,6 +26,7 @@
     <ClCompile Include="ImportanceRenderer.cpp" />
     <ClCompile Include="IrradianceRenderer.cpp" />
     <ClCompile Include="PBLightRenderer.cpp" />
+    <ClCompile Include="CubeMapRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\GLSL\BRDFLUT.fs" />

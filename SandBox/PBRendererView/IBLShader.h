@@ -5,7 +5,7 @@
 #include "CGLib/Shader/FrameBufferObject.h"
 #include "CGLib/Shader/RenderBufferObject.h"
 
-#include "Crystal/Renderer/CubeMapRenderer.h"
+#include "../PBRenderer/CubeMapRenderer.h"
 #include "../PBRenderer/IrradianceRenderer.h"
 #include "../PBRenderer/IBLDiffuseRenderer.h"
 #include "../PBRenderer/IBLSpecularRenderer.h"

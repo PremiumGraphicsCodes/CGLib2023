@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BRDFLUTRenderer.h" />
+    <ClInclude Include="CubeMapRenderer.h" />
     <ClInclude Include="DFAlbedoRenderer.h" />
     <ClInclude Include="DFGeometryRenderer.h" />
     <ClInclude Include="DFLightRenderer.h" />
@@ -167,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BRDFLUTRenderer.cpp" />
+    <ClCompile Include="CubeMapRenderer.cpp" />
     <ClCompile Include="DFAlbedoRenderer.cpp" />
     <ClCompile Include="DFGeometryRenderer.cpp" />
     <ClCompile Include="DFLightRenderer.cpp" />
