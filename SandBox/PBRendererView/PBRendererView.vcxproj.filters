@@ -6,6 +6,7 @@
     <ClCompile Include="IBLShader.cpp" />
     <ClCompile Include="PBLightShader.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="PBRMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DFPolygonShader.h" />
@@ -14,6 +15,7 @@
     <ClInclude Include="IScreenShader.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="PBRMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

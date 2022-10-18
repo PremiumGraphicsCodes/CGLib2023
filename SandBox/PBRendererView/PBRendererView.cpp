@@ -4,7 +4,7 @@
 #include "Crystal/AppBase/WorldBase.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
 
-#include "CGLib/UI/Panel.h"
+#include "PBRMenu.h"
 
 #include "World.h"
 #include "Renderer.h"
@@ -12,7 +12,6 @@
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::Graphics;
-//using namespace Crystal::Renderer;
 using namespace Crystal::UI;
 
 
@@ -25,11 +24,8 @@ int main() {
 	Crystal::UI::Window app("Hello", &world, &canvas, &renderer);
 	app.init();
 
-	auto control = new Panel("Control");
-
 	app.add(new CameraMenu("Camera", &world));
-	//app.add(new SpaceMenu("Space", control, &world, &renderer));
-	app.add(control);
+	app.add(new PBRMenu("PBR", &world, &renderer));
 
 	app.show();
 }

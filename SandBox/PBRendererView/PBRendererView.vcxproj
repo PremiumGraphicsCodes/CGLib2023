@@ -149,6 +149,7 @@
     <ClCompile Include="IBLShader.cpp" />
     <ClCompile Include="PBLightShader.cpp" />
     <ClCompile Include="PBRendererView.cpp" />
+    <ClCompile Include="PBRMenu.cpp" />
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="IBLShader.h" />
     <ClInclude Include="IScreenShader.h" />
     <ClInclude Include="PBLightShader.h" />
+    <ClInclude Include="PBRMenu.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
