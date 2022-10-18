@@ -14,7 +14,7 @@ namespace Crystal {
 class SceneSelectView : public IView
 {
 public:
-	SceneSelectView(const std::string& name, WorldBase* model, RendererBase* renderer);
+	SceneSelectView(const std::string& name, WorldBase* model);
 
 	int getId() const { return idView.getValue(); }
 

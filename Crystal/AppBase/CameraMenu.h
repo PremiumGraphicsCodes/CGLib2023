@@ -10,7 +10,7 @@ namespace Crystal {
 class CameraMenu : public IMenu
 {
 public:
-	CameraMenu(const std::string& name, WorldBase* world, RendererBase* renderer);
+	CameraMenu(const std::string& name, WorldBase* world);
 
 private:
 	void onFit();

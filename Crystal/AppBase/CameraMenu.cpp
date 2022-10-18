@@ -8,10 +8,9 @@
 using namespace Crystal::Math;
 using namespace Crystal::UI;
 
-CameraMenu::CameraMenu(const std::string& name, WorldBase* world, RendererBase* renderer) :
+CameraMenu::CameraMenu(const std::string& name, WorldBase* world) :
 	IMenu(name),
-	world(world),
-	renderer(renderer)
+	world(world)
 {
 	add(new MenuItem("Fit", [&] { onFit(); }));
 	add(new MenuItem("XY", [&] { onXY(); }));

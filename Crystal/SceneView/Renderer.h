@@ -8,26 +8,29 @@
 namespace Crystal{
 	namespace UI {
 
-		class Renderer : public Crystal::UI::RendererBase
-		{
-		public:
-			explicit Renderer(World* world) :
-				RendererBase(world)
-			{}
+class Renderer : public Crystal::UI::IRenderer
+{
+public:
+	explicit Renderer(World* world) :
+		world(world)
+	{}
 
-			void onInit() override;
+	void init() override;
 
-			Crystal::Renderer::PointRenderer* getPointRenderer() { return &point; }
+	void render(const int width, const int height) override;
 
-			Crystal::Renderer::LineRenderer* getLineRenderer() { return &line; }
+	Crystal::Renderer::PointRenderer* getPointRenderer() { return &point; }
 
-			Crystal::Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
+	Crystal::Renderer::LineRenderer* getLineRenderer() { return &line; }
 
-		private:
-			Crystal::Renderer::PointRenderer point;
-			Crystal::Renderer::LineRenderer line;
-			Crystal::Renderer::TriangleRenderer triangle;
+	Crystal::Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
 
-		};
+private:
+	World* world;
+	Crystal::Renderer::PointRenderer point;
+	Crystal::Renderer::LineRenderer line;
+	Crystal::Renderer::TriangleRenderer triangle;
+};
+
 	}
 }

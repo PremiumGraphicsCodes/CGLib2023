@@ -22,23 +22,5 @@ public:
 	virtual void render(const int width, const int height) = 0;
 };
 
-class RendererBase : public IRenderer
-{
-public:
-	RendererBase(WorldBase* world);
-
-	~RendererBase() = default;
-
-	void init() override;
-
-	virtual void onInit() = 0;
-
-	virtual void render(const int width, const int height) override;
-
-private:
-	WorldBase* world;
-};
-
-
 	}
 }
