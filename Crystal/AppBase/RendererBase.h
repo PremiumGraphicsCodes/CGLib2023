@@ -35,11 +35,8 @@ public:
 
 	virtual void render(const int width, const int height) override;
 
-	Graphics::Camera* getCamera() { return &camera; }
-
 private:
 	WorldBase* world;
-	Graphics::Camera camera;
 };
 
 

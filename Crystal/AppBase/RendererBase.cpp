@@ -7,8 +7,7 @@ using namespace Crystal::Math;
 using namespace Crystal::UI;
 
 RendererBase::RendererBase(WorldBase* world) :
-	world(world),
-	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1f, 10.0f)
+	world(world)
 {}
 
 void RendererBase::init()
@@ -25,7 +24,7 @@ void RendererBase::render(const int width, const int height)
 
 	auto children = world->getRootScene()->getChildren();
 	for (auto c : children) {
-		c->getPresenter()->render(*getCamera());
+		c->getPresenter()->render(*world->getCamera());
 	}
 	//presenter.render(camera);
 	//wfPresenter->render(camera);

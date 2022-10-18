@@ -22,7 +22,7 @@ CameraMenu::CameraMenu(const std::string& name, WorldBase* world, RendererBase* 
 void CameraMenu::onFit()
 {
 	const auto boundingBox = world->getRootScene()->getBoundingBox();
-	auto camera = renderer->getCamera();
+	auto camera = world->getCamera();
 	const auto dist = static_cast<float>(glm::distance(boundingBox.getMin(), boundingBox.getMax()));
 	camera->setNear(dist * 0.1f);
 	camera->setFar(dist * 10.0f);
