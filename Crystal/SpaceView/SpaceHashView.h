@@ -6,21 +6,21 @@
 
 namespace Crystal {
 	namespace UI {
-		class WorldBase;
-		class RendererBase;
+		class World;
+		class Renderer;
 
 class SpaceHashView : public IOkCancelView
 {
 public:
-	explicit SpaceHashView(const std::string& name, WorldBase* world, RendererBase* renderer);
+	explicit SpaceHashView(const std::string& name, World* world, Renderer* renderer);
 
 	void onOk() override;
 
 private:
 	SceneSelectView psSelectView;
 	FloatView searchRadiusView;
-	WorldBase* world;
-	RendererBase* renderer;
+	World* world;
+	Renderer* renderer;
 };
 
 	}

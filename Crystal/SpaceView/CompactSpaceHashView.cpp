@@ -3,6 +3,7 @@
 #include "Crystal/Scene/ParticleSystemScene.h"
 
 #include "../Space/CompactSpaceHash.h"
+#include "World.h"
 #include <iostream>
 
 using namespace Crystal::Math;
@@ -10,9 +11,9 @@ using namespace Crystal::Scene;
 using namespace Crystal::UI;
 using namespace Crystal::Space;
 
-CompactSpaceHashView::CompactSpaceHashView(const std::string& name, WorldBase* world, RendererBase* renderer) :
+CompactSpaceHashView::CompactSpaceHashView(const std::string& name, World* world, Renderer* renderer) :
 	IOkCancelView(name),
-	psSelectView("ParticleSystem", world, renderer),
+	psSelectView("ParticleSystem", world),
 	searchRadiusView("SearchRadius", 1.0f),
 	world(world),
 	renderer(renderer)

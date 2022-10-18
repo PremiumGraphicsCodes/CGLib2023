@@ -8,20 +8,24 @@ namespace Crystal {
 		public:
 		};
 
-		class Renderer : public Crystal::UI::RendererBase
+		class Renderer : public IRenderer
 		{
 		public:
 			explicit Renderer(World* world) :
-				RendererBase(world)
+				world(world)
 			{}
 
-			void onInit() override
+			void init() override
 			{
 
 			}
 
-		private:
+			void render(const int width, const int height) override
+			{
+			}
 
+		private:
+			World* world;
 		};
 	}
 }
