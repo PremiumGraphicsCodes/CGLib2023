@@ -63,6 +63,7 @@ void ShaderBuilder::compile(const std::string& source, const ShaderUnit::Stage s
 	//return ( success != 0 );
 
 	if (success == 0) {
+		assert(false);
 		isOk = false;
 	}
 

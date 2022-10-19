@@ -6,9 +6,12 @@ using namespace Crystal::Renderer;
 namespace {
 	constexpr auto positionLabel = "position";
 	constexpr auto sizeLabel = "pointSize";
+	constexpr auto uvecLabel = "uvec";
+	constexpr auto vvecLabel = "vvec";
+	constexpr auto wvecLabel = "wvec";
 	constexpr auto projectionMatrixLabel = "projectionMatrix";
 	constexpr auto modelViewMatrixLabel = "modelviewMatrix";
-	//constexpr auto fragColorLabel = "fragColor";
+	constexpr auto fragColorLabel = "fragColor";
 
 	struct UniformLoc {
 		GLuint projectionMatrix;
@@ -18,8 +21,10 @@ namespace {
 
 	struct VertexAttr {
 		GLuint position;
-		GLuint color;
 		GLuint size;
+		GLuint uvec;
+		GLuint vvec;
+		GLuint wvec;
 	};
 	VertexAttr va;
 }
@@ -31,11 +36,13 @@ void ParticleDepthRenderer::link()
 
 	va.position = shader->findAttribLocation(::positionLabel);
 	va.size = shader->findAttribLocation(::sizeLabel);
+	va.uvec = shader->findAttribLocation(::uvecLabel);
+	va.vvec = shader->findAttribLocation(::vvecLabel);
+	va.wvec = shader->findAttribLocation(::wvecLabel);
 }
 
 void ParticleDepthRenderer::render()
 {
-	/*
 	shader->bind();
 
 	Uniform projectionMatrix(uniform.projectionMatrix);
@@ -45,12 +52,16 @@ void ParticleDepthRenderer::render()
 	modelviewMatrix.send(buffer.modelViewMatrix);
 
 	VertexAttribute posAttr(va.position);
-	VertexAttribute colAttr(va.color);
 	VertexAttribute sizeAttr(va.size);
+	VertexAttribute uvecAttr(va.uvec);
+	VertexAttribute vvecAttr(va.vvec);
+	VertexAttribute wvecAttr(va.wvec);
 
 	posAttr.sendVertexAttribute3df(*buffer.position);
-	colAttr.sendVertexAttribute4df(*buffer.color);
 	sizeAttr.sendVertexAttribute1df(*buffer.size);
+	uvecAttr.sendVertexAttribute3df(*buffer.uvec);
+	vvecAttr.sendVertexAttribute3df(*buffer.vvec);
+	wvecAttr.sendVertexAttribute3df(*buffer.wvec);
 
 	shader->enable(GL_DEPTH_TEST);
 	shader->enable(GL_POINT_SPRITE);
@@ -67,5 +78,4 @@ void ParticleDepthRenderer::render()
 	shader->unbind();
 
 	assert(GL_NO_ERROR == glGetError());
-	*/
 }
