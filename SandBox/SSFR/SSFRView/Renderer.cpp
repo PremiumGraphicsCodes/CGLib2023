@@ -1,6 +1,7 @@
 #include "Renderer.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
+#include "CGLib/Graphics/ImageFileReader.h"
 #include "World.h"
 
 using namespace Crystal::Graphics;
@@ -8,9 +9,50 @@ using namespace Crystal::Renderer;
 using namespace Crystal::Shader;
 using namespace Crystal::UI;
 
+namespace {
+	bool readCubeMap(CubeMapTextureObject& cubeMap)
+	{
+		std::array<Imageuc, 6> images;
+
+		ImageFileReader reader;
+		if (!reader.read("../../../ThirdParty/forest-skyboxes/Brudslojan/posx.jpg")) {
+			return false;
+		}
+		images[0] = reader.toImage();
+		if (!reader.read("../../../ThirdParty/forest-skyboxes/Brudslojan/negx.jpg")) {
+			return false;
+		}
+		images[1] = reader.toImage();
+		if (!reader.read("../../../ThirdParty/forest-skyboxes/Brudslojan/posy.jpg")) {
+			return false;
+		}
+		images[2] = reader.toImage();
+		if (!reader.read("../../../ThirdParty/forest-skyboxes/Brudslojan/negy.jpg")) {
+			return false;
+		}
+		images[3] = reader.toImage();
+		if (!reader.read("../../../ThirdParty/forest-skyboxes/Brudslojan/posz.jpg")) {
+			return false;
+		}
+		images[4] = reader.toImage();
+		if (!reader.read("../../../ThirdParty/forest-skyboxes/Brudslojan/negz.jpg")) {
+			return false;
+		}
+		images[5] = reader.toImage();
+		cubeMap.create();
+		cubeMap.send(images);
+		return true;
+	}
+}
+
 void Renderer::init()
 {
 	ShaderBuilder builder;
+
+	builder.buildFromFile("../GLSL/SkyBox.vs", "../GLSL/SkyBox.fs");
+	renderers.skyBox.setShader(builder.getShader());
+	renderers.skyBox.link();
+
 	builder.buildFromFile("../GLSL/ParticleDepth.glvs", "../GLSL/ParticleDepth.glfs");
 	renderers.depth.setShader(builder.getShader());
 	renderers.depth.link();
@@ -67,6 +109,10 @@ void Renderer::init()
 	buffer.pointCount = 1;
 
 	this->fbo.create();
+
+	this->textures.background.create();
+	this->textures.background.send(Imageuc(512, 512));
+
 	this->textures.depthTexture.create();
 	this->textures.depthTexture.send(Imageuc(512, 512));
 
@@ -81,12 +127,15 @@ void Renderer::init()
 
 	this->textures.absorptionTexture.create();
 	this->textures.absorptionTexture.send(Imageuc(512, 512));
+
+	readCubeMap(this->textures.cubeMap);
 }
 
 void Renderer::render(const int width, const int height)
 {
 	assert(GL_NO_ERROR == glGetError());
 
+	renderBackGround(*world->getCamera());
 	renderDepth(*world->getCamera());
 	filterDepth();
 	renderThickness(*world->getCamera());
@@ -97,12 +146,33 @@ void Renderer::render(const int width, const int height)
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderers.tex.buffer.tex = &this->textures.absorptionTexture; //&this->textures.filteredDepthTexture;
+	renderers.tex.buffer.tex = &this->textures.background; //&this->textures.filteredDepthTexture;
 	renderers.tex.render();
 
 	//presenter.render(camera);
 	//wfPresenter->render(camera);
 	assert(GL_NO_ERROR == glGetError());
+}
+
+void Renderer::renderBackGround(const Camera& camera)
+{
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.background);
+	//this->texture->bind(0);
+
+	glViewport(0, 0, textures.depthTexture.getWidth(), textures.depthTexture.getHeight());
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	SkyBoxRenderer::Buffer buffer;
+	buffer.cubeMapTexture = &this->textures.cubeMap;
+	buffer.modelViewMatrix = glm::mat4(glm::mat3(camera.getModelViewMatrix()));//camera.getModelViewMatrix();
+	buffer.projectionMatrix = camera.getProjectionMatrix();
+
+	renderers.skyBox.buffer = buffer;
+	renderers.skyBox.render();
+
+	this->fbo.unbind();
 }
 
 void Renderer::renderDepth(const Camera& camera)

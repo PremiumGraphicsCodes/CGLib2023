@@ -6,6 +6,7 @@
 #include "CGLib/Shader/FrameBufferObject.h"
 #include "Crystal/Renderer/TexRenderer.h"
 
+#include "Crystal/Renderer/SkyBoxRenderer.h"
 #include "../FluidRenderer/ParticleDepthRenderer.h"
 #include "../FluidRenderer/SSThicknessRenderer.h"
 #include "../FluidRenderer/SSReflectionRenderer.h"
@@ -45,11 +46,12 @@ private:
 		Shader::TextureObject reflectedTexture;
 		Shader::TextureObject refractedTexture;
 		Shader::TextureObject texture;
+		Shader::CubeMapTextureObject cubeMap;
 	};
 
 	struct Renderers
 	{
-		//Shader::SkyBoxRenderer skyBoxRenderer;
+		Crystal::Renderer::SkyBoxRenderer skyBox;
 		Crystal::Renderer::ParticleDepthRenderer depth;
 		Crystal::Renderer::SSThicknessRenderer thickness;
 		Crystal::Renderer::BilateralFilterRenderer bilateralFilter;
