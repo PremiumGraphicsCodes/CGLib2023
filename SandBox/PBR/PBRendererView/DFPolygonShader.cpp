@@ -13,7 +13,7 @@ namespace {
 	bool readTexture(TextureObject& cubeMap)
 	{
 		ImageFileReader reader;
-		if (!reader.read("../../ThirdParty/forest-skyboxes/Brudslojan/posx.jpg")) {
+		if (!reader.read("../../../ThirdParty/forest-skyboxes/Brudslojan/posx.jpg")) {
 			return false;
 		}
 		cubeMap.send(reader.toImage());

@@ -47,7 +47,7 @@ namespace
 void IBLShader::build()
 {
 	HDRImageFileReader reader;
-	reader.read("../../ThirdParty/hdr/newport_loft.hdr");
+	reader.read("../../../ThirdParty/hdr/newport_loft.hdr");
 
 	Imagef hdr = reader.toImage();
 	textures.hdrTex.create();
