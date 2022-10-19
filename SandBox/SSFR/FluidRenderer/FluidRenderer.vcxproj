@@ -167,6 +167,8 @@
     <None Include="..\GLSL\BilateralFilter.glvs" />
     <None Include="..\GLSL\ParticleDepth.glfs" />
     <None Include="..\GLSL\ParticleDepth.glvs" />
+    <None Include="..\GLSL\SSAbsorption.glfs" />
+    <None Include="..\GLSL\SSAbsorption.glvs" />
     <None Include="..\GLSL\SSFluid.glfs" />
     <None Include="..\GLSL\SSFluid.glvs" />
     <None Include="..\GLSL\SSNormal.glfs" />
@@ -175,8 +177,6 @@
     <None Include="..\GLSL\SSReflection.glvs" />
     <None Include="..\GLSL\SSThickness.glfs" />
     <None Include="..\GLSL\SSThickness.glvs" />
-    <None Include="GLSL\SSAbsorption.glfs" />
-    <None Include="GLSL\SSAbsorption.glvs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SSAbsorptionRenderer.h" />

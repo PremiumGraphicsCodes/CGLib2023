@@ -12,6 +12,7 @@
 #include "../FluidRenderer/SSFluidRenderer.h"
 #include "../FluidRenderer/BilateralFilterRenderer.h"
 #include "../FluidRenderer/SSNormalRenderer.h"
+#include "../FluidRenderer/SSAbsorptionRenderer.h"
 
 namespace Crystal {
 	namespace UI {
@@ -56,7 +57,7 @@ private:
 		//SSFRReflectionRenderer reflectionRenderer;
 		//SSFRRefractionRenderer refractionRenderer;
 		//SSFRDeferredRenderer deferredRenderer;
-		//SSFRAbsorptionRenderer absorptionRenderer;
+		Crystal::Renderer::SSAbsorptionRenderer absorption;
 		//SSFRFluidRenderer fluidRenderer;
 		Crystal::Renderer::TexRenderer tex;
 	};
@@ -98,7 +99,7 @@ private:
 
 	void renderComposition(const Graphics::Camera& camera);
 
-	void renderAbsorption(const Graphics::Camera& camera);
+	void renderAbsorption();
 };
 
 	}

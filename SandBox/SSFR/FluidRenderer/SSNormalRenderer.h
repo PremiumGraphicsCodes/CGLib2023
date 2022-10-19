@@ -1,19 +1,27 @@
 #pragma once
 
 #include "Crystal/Renderer/IRenderer.h"
+#include "CGLib/Shader/TextureObject.h"
 
 namespace Crystal {
 	namespace Renderer {
 
-		class SSNormalRenderer : public IRenderer
-		{
-		public:
-			void link() override;
+class SSNormalRenderer : public IRenderer
+{
+public:
+	struct Buffer
+	{
+		Math::Matrix4dd projectionMatrix;
+		Shader::TextureObject* depthTexture;
+	};
 
-			void render() override;
+	void link() override;
 
-		private:
-		};
+	void render() override;
+
+	Buffer buffer;
+private:
+};
 
 	}
 }

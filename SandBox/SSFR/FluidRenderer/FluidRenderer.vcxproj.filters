@@ -47,12 +47,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GLSL\SSAbsorption.glfs">
-      <Filter>SSAbsorption</Filter>
-    </None>
-    <None Include="GLSL\SSAbsorption.glvs">
-      <Filter>SSAbsorption</Filter>
-    </None>
     <None Include="..\GLSL\ParticleDepth.glfs">
       <Filter>ParticleDepth</Filter>
     </None>
@@ -88,6 +82,12 @@
     </None>
     <None Include="..\GLSL\SSFluid.glvs">
       <Filter>SSFluid</Filter>
+    </None>
+    <None Include="..\GLSL\SSAbsorption.glfs">
+      <Filter>SSAbsorption</Filter>
+    </None>
+    <None Include="..\GLSL\SSAbsorption.glvs">
+      <Filter>SSAbsorption</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -36,6 +36,10 @@ void Renderer::init()
 	renderers.bilateralFilter.setShader(builder.getShader());
 	renderers.bilateralFilter.link();
 
+	builder.buildFromFile("../GLSL/SSAbsorption.glvs", "../GLSL/SSAbsorption.glfs");
+	renderers.absorption.setShader(builder.getShader());
+	renderers.absorption.link();
+
 	builder.buildFromFile("../GLSL/Tex.vs", "../GLSL/Tex.fs");
 	renderers.tex.setShader(builder.getShader());
 	renderers.tex.link();
@@ -71,6 +75,12 @@ void Renderer::init()
 
 	this->textures.thicknessTexture.create();
 	this->textures.thicknessTexture.send(Imageuc(512, 512));
+
+	this->textures.normalTexture.create();
+	this->textures.normalTexture.send(Imageuc(512, 512));
+
+	this->textures.absorptionTexture.create();
+	this->textures.absorptionTexture.send(Imageuc(512, 512));
 }
 
 void Renderer::render(const int width, const int height)
@@ -80,12 +90,14 @@ void Renderer::render(const int width, const int height)
 	renderDepth(*world->getCamera());
 	filterDepth();
 	renderThickness(*world->getCamera());
+	renderNormal(*world->getCamera());
+	renderAbsorption();
 
 	glViewport(0, 0, width, height);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderers.tex.buffer.tex = &this->textures.thicknessTexture; //&this->textures.filteredDepthTexture;
+	renderers.tex.buffer.tex = &this->textures.absorptionTexture; //&this->textures.filteredDepthTexture;
 	renderers.tex.render();
 
 	//presenter.render(camera);
@@ -156,6 +168,42 @@ void Renderer::renderThickness(const Graphics::Camera& camera)
 	renderers.thickness.buffer = buffer;
 
 	renderers.thickness.render();
+
+	this->fbo.unbind();
+}
+
+void Renderer::renderNormal(const Camera& camera)
+{
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.normalTexture);
+
+	glViewport(0, 0, textures.depthTexture.getWidth(), textures.depthTexture.getHeight());
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	SSNormalRenderer::Buffer buffer;
+	buffer.depthTexture = &this->textures.filteredDepthTexture;
+	buffer.projectionMatrix = camera.getProjectionMatrix();
+	renderers.normal.buffer = buffer;
+	renderers.normal.render();
+
+	this->fbo.unbind();
+}
+
+void Renderer::renderAbsorption()
+{
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.absorptionTexture);
+
+	glViewport(0, 0, textures.depthTexture.getWidth(), textures.depthTexture.getHeight());
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	SSAbsorptionRenderer::Buffer buffer;
+	buffer.volumeTexture = &this->textures.thicknessTexture;
+	renderers.absorption.buffer = buffer;
+
+	renderers.absorption.render();
 
 	this->fbo.unbind();
 }
