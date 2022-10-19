@@ -1,5 +1,7 @@
 #include "SSDefferedRenderer.h"
 
+#include "CGLib/Shader/TextureUnit.h"
+
 using namespace Crystal::Renderer;
 
 using namespace Crystal::Math;
@@ -81,18 +83,46 @@ void SSDefferedRenderer::link()
 
 void SSDefferedRenderer::render()
 {
-	/*
 	assert(GL_NO_ERROR == glGetError());
 
 	const auto positions = ::toArray();
 
 	shader->bind();
 
-	TextureUnit texUnit(0, buffer.volumeTexture);
+	TextureUnit depthTexUnit(0, buffer.depthTexture);
+	TextureUnit normalTexUnit(1, buffer.normalTexture);
 
-	Uniform texUniform(volumeTexLoc);
-	texUniform.send(texUnit);
+	Uniform depthTexUniform(uniformLoc.depthTex);
+	depthTexUniform.send(depthTexUnit);
+	Uniform normalTexUniform(uniformLoc.normalTex);
+	normalTexUniform.send(normalTexUnit);
 
+	Uniform projection(uniformLoc.projectionMatrix);
+	Uniform eyePos(uniformLoc.eyePos);
+
+	Uniform lightPos(uniformLoc.lightPos);
+	Uniform lightAmbient(uniformLoc.lightAmbient);
+	Uniform lightDiffuse(uniformLoc.lightDiffuse);
+	Uniform lightSpecular(uniformLoc.lightSpecular);
+
+	Uniform materialAmbient(uniformLoc.materialAmbient);
+	Uniform materialDiffuse(uniformLoc.materialDiffuse);
+	Uniform materialSpecular(uniformLoc.materialSpecular);
+	Uniform materialShininess(uniformLoc.materialShininess);
+
+	projection.send(buffer.projectionMatrix);
+	eyePos.send(buffer.eyePosition);
+
+	lightPos.send(buffer.lights[0].pos);
+	lightAmbient.send(buffer.lights[0].ambient);
+	lightDiffuse.send(buffer.lights[0].diffuse);
+	lightSpecular.send(buffer.lights[0].specular);
+
+	materialAmbient.send(buffer.materials[0].ambient);
+	materialDiffuse.send(buffer.materials[0].diffuse);
+	materialSpecular.send(buffer.materials[0].specular);
+	materialShininess.send(buffer.materials[0].shininess);
+	
 	VertexAttribute posAttr(vaLoc.position);
 	posAttr.sendVertexAttribute2df(positions);
 
@@ -103,5 +133,4 @@ void SSDefferedRenderer::render()
 	shader->unbind();
 
 	assert(GL_NO_ERROR == glGetError());
-	*/
 }

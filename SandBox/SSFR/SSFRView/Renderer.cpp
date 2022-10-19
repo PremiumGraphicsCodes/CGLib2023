@@ -4,6 +4,7 @@
 #include "CGLib/Graphics/ImageFileReader.h"
 #include "World.h"
 
+using namespace Crystal::Math;
 using namespace Crystal::Graphics;
 using namespace Crystal::Renderer;
 using namespace Crystal::Shader;
@@ -161,6 +162,7 @@ void Renderer::render(const int width, const int height)
 	filterDepth();
 	renderThickness(camera);
 	renderNormal(camera);
+	renderDeffered(camera);
 	renderAbsorption();
 	renderReflection(camera);
 	renderRefraction(camera);
@@ -169,7 +171,7 @@ void Renderer::render(const int width, const int height)
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderers.tex.buffer.tex = &this->textures.refractedTexture; //&this->textures.filteredDepthTexture;
+	renderers.tex.buffer.tex = &this->textures.shadedTexture; //&this->textures.filteredDepthTexture;
 	renderers.tex.render();
 
 	//presenter.render(camera);
@@ -279,6 +281,41 @@ void Renderer::renderNormal(const Camera& camera)
 	buffer.projectionMatrix = camera.getProjectionMatrix();
 	renderers.normal.buffer = buffer;
 	renderers.normal.render();
+
+	this->fbo.unbind();
+}
+
+void Renderer::renderDeffered(const Camera& camera)
+{
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.shadedTexture);
+
+	glViewport(0, 0, textures.depthTexture.getWidth(), textures.depthTexture.getHeight());
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	SSDefferedRenderer::Material material;
+	material.ambient = Vector3df(0, 0, 0);
+	material.diffuse = Vector3df(0, 0.1, 0);
+	material.specular = Vector3df(0, 0, 1);
+	material.shininess = 1.0f;
+
+	SSDefferedRenderer::Light light;
+	light.pos = Vector3df(100, 100, 100);
+	light.ambient = Vector3df(1, 0, 0);
+	light.diffuse = Vector3df(0, 0.1, 0);
+	light.specular = Vector3df(0, 0, 1);
+
+	SSDefferedRenderer::Buffer buffer;
+	buffer.eyePosition = camera.getEye();
+	buffer.projectionMatrix = camera.getProjectionMatrix();
+	buffer.depthTexture = &this->textures.filteredDepthTexture;
+	buffer.normalTexture = &this->textures.normalTexture;
+	buffer.materials.push_back(material);
+	buffer.lights.push_back(light);
+
+	renderers.deffered.buffer = buffer;
+	renderers.deffered.render();
 
 	this->fbo.unbind();
 }
