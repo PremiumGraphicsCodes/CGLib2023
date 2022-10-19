@@ -3,6 +3,8 @@
 #include "Crystal/AppBase/IRenderer.h"
 
 #include "CGLib/Graphics/Camera.h"
+#include "CGLib/Shader/FrameBufferObject.h"
+#include "Crystal/Renderer/TexRenderer.h"
 
 #include "../FluidRenderer/ParticleDepthRenderer.h"
 #include "../FluidRenderer/SSThicknessRenderer.h"
@@ -30,16 +32,16 @@ private:
 
 	struct Textures
 	{
-		Shader::TextureObject* background;
-		Shader::TextureObject* depthTexture;
-		Shader::TextureObject* normalTexture;
-		Shader::TextureObject* filteredDepthTexture;
-		Shader::TextureObject* thicknessTexture;
-		Shader::TextureObject* absorptionTexture;
-		Shader::TextureObject* shadedTexture;
-		Shader::TextureObject* reflectedTexture;
-		Shader::TextureObject* refractedTexture;
-		Shader::TextureObject* texture;
+		Shader::TextureObject background;
+		Shader::TextureObject depthTexture;
+		Shader::TextureObject normalTexture;
+		Shader::TextureObject filteredDepthTexture;
+		Shader::TextureObject thicknessTexture;
+		Shader::TextureObject absorptionTexture;
+		Shader::TextureObject shadedTexture;
+		Shader::TextureObject reflectedTexture;
+		Shader::TextureObject refractedTexture;
+		Shader::TextureObject texture;
 	};
 
 	struct Renderers
@@ -54,6 +56,7 @@ private:
 		//SSFRDeferredRenderer deferredRenderer;
 		//SSFRAbsorptionRenderer absorptionRenderer;
 		//SSFRFluidRenderer fluidRenderer;
+		Crystal::Renderer::TexRenderer tex;
 	};
 
 	struct Buffer
@@ -71,6 +74,8 @@ private:
 	Buffer buffer;
 	Textures textures;
 	Renderers renderers;
+
+	Shader::FrameBufferObject fbo;
 
 private:
 	void renderBackGround(const Graphics::Camera& camera);

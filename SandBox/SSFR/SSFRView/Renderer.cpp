@@ -3,6 +3,7 @@
 #include "CGLib/Shader/ShaderBuilder.h"
 #include "World.h"
 
+using namespace Crystal::Graphics;
 using namespace Crystal::Renderer;
 using namespace Crystal::Shader;
 using namespace Crystal::UI;
@@ -28,6 +29,10 @@ void Renderer::init()
 	fluid.link();
 	*/
 
+	builder.buildFromFile("../GLSL/Tex.vs", "../GLSL/Tex.fs");
+	renderers.tex.setShader(builder.getShader());
+	renderers.tex.link();
+
 	std::vector<float> positions = { 0.0f, 0.0f, 0.0f };
 	buffer.position.create();
 	buffer.position.send(positions);
@@ -49,28 +54,36 @@ void Renderer::init()
 	buffer.wvec.send(wvecs);
 
 	buffer.pointCount = 1;
+
+	this->fbo.create();
+	this->textures.depthTexture.create();
+	this->textures.depthTexture.send(Imageuc(512, 512));
 }
 
 void Renderer::render(const int width, const int height)
 {
 	assert(GL_NO_ERROR == glGetError());
+
+	renderDepth(*world->getCamera());
+
 	glViewport(0, 0, width, height);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderDepth(*world->getCamera());
+	renderers.tex.buffer.tex = &this->textures.depthTexture;
+	renderers.tex.render();
 
 	//presenter.render(camera);
 	//wfPresenter->render(camera);
 	assert(GL_NO_ERROR == glGetError());
 }
 
-void Crystal::UI::Renderer::renderDepth(const Graphics::Camera& camera)
+void Renderer::renderDepth(const Graphics::Camera& camera)
 {
-	//this->fbo->bind();
-	//this->fbo->setTexture(*this->textures.depthTexture);
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.depthTexture);
 
-	//glViewport(0, 0, textures.depthTexture->getWidth(), textures.depthTexture->getHeight());
+	glViewport(0, 0, 512, 512);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -87,5 +100,5 @@ void Crystal::UI::Renderer::renderDepth(const Graphics::Camera& camera)
 
 	renderers.depth.render();
 
-	//this->fbo->unbind();
+	this->fbo.unbind();
 }
