@@ -10,6 +10,7 @@
 #include "../FluidRenderer/ParticleDepthRenderer.h"
 #include "../FluidRenderer/SSThicknessRenderer.h"
 #include "../FluidRenderer/SSReflectionRenderer.h"
+#include "../FluidRenderer/SSRefractionRenderer.h"
 #include "../FluidRenderer/SSFluidRenderer.h"
 #include "../FluidRenderer/BilateralFilterRenderer.h"
 #include "../FluidRenderer/SSNormalRenderer.h"
@@ -57,10 +58,9 @@ private:
 		Crystal::Renderer::BilateralFilterRenderer bilateralFilter;
 		Crystal::Renderer::SSNormalRenderer normal;
 		Crystal::Renderer::SSReflectionRenderer reflection;
-		//SSFRRefractionRenderer refractionRenderer;
+		Crystal::Renderer::SSRefractionRenderer refraction;
 		//SSFRDeferredRenderer deferredRenderer;
 		Crystal::Renderer::SSAbsorptionRenderer absorption;
-		//SSFRFluidRenderer fluidRenderer;
 		Crystal::Renderer::TexRenderer tex;
 	};
 

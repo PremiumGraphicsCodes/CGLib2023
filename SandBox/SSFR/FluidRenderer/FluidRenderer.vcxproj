@@ -160,23 +160,26 @@
     <ClCompile Include="ParticleDepthRenderer.cpp" />
     <ClCompile Include="SSNormalRenderer.cpp" />
     <ClCompile Include="SSReflectionRenderer.cpp" />
+    <ClCompile Include="SSRefractionRenderer.cpp" />
     <ClCompile Include="SSThicknessRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\GLSL\BilateralFilter.glfs" />
-    <None Include="..\GLSL\BilateralFilter.glvs" />
-    <None Include="..\GLSL\ParticleDepth.glfs" />
-    <None Include="..\GLSL\ParticleDepth.glvs" />
-    <None Include="..\GLSL\SSAbsorption.glfs" />
-    <None Include="..\GLSL\SSAbsorption.glvs" />
+    <None Include="..\GLSL\BilateralFilter.fs" />
+    <None Include="..\GLSL\BilateralFilter.vs" />
+    <None Include="..\GLSL\ParticleDepth.fs" />
+    <None Include="..\GLSL\ParticleDepth.vs" />
+    <None Include="..\GLSL\SSAbsorption.fs" />
+    <None Include="..\GLSL\SSAbsorption.vs" />
     <None Include="..\GLSL\SSFluid.glfs" />
     <None Include="..\GLSL\SSFluid.glvs" />
-    <None Include="..\GLSL\SSNormal.glfs" />
-    <None Include="..\GLSL\SSNormal.glvs" />
-    <None Include="..\GLSL\SSReflection.glfs" />
-    <None Include="..\GLSL\SSReflection.glvs" />
-    <None Include="..\GLSL\SSThickness.glfs" />
-    <None Include="..\GLSL\SSThickness.glvs" />
+    <None Include="..\GLSL\SSNormal.fs" />
+    <None Include="..\GLSL\SSNormal.vs" />
+    <None Include="..\GLSL\SSReflection.fs" />
+    <None Include="..\GLSL\SSReflection.vs" />
+    <None Include="..\GLSL\SSRefraction.fs" />
+    <None Include="..\GLSL\SSRefraction.vs" />
+    <None Include="..\GLSL\SSThickness.fs" />
+    <None Include="..\GLSL\SSThickness.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SSAbsorptionRenderer.h" />
@@ -185,6 +188,7 @@
     <ClInclude Include="SSFluidRenderer.h" />
     <ClInclude Include="SSNormalRenderer.h" />
     <ClInclude Include="SSReflectionRenderer.h" />
+    <ClInclude Include="SSRefractionRenderer.h" />
     <ClInclude Include="SSThicknessRenderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

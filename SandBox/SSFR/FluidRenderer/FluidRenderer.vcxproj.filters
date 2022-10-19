@@ -22,6 +22,9 @@
     <ClCompile Include="SSFluidRenderer.cpp">
       <Filter>SSFluid</Filter>
     </ClCompile>
+    <ClCompile Include="SSRefractionRenderer.cpp">
+      <Filter>SSRefraction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleDepth">
@@ -45,36 +48,39 @@
     <Filter Include="SSFluid">
       <UniqueIdentifier>{48f66445-dfce-4b3b-9258-10e3db0fc80c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SSRefraction">
+      <UniqueIdentifier>{22b850e2-2c70-4b62-b298-50bfe4755321}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\GLSL\ParticleDepth.glfs">
+    <None Include="..\GLSL\ParticleDepth.fs">
       <Filter>ParticleDepth</Filter>
     </None>
-    <None Include="..\GLSL\ParticleDepth.glvs">
+    <None Include="..\GLSL\ParticleDepth.vs">
       <Filter>ParticleDepth</Filter>
     </None>
-    <None Include="..\GLSL\SSThickness.glfs">
+    <None Include="..\GLSL\SSThickness.fs">
       <Filter>SSThickness</Filter>
     </None>
-    <None Include="..\GLSL\SSThickness.glvs">
+    <None Include="..\GLSL\SSThickness.vs">
       <Filter>SSThickness</Filter>
     </None>
-    <None Include="..\GLSL\BilateralFilter.glfs">
+    <None Include="..\GLSL\BilateralFilter.fs">
       <Filter>BilateralFilter</Filter>
     </None>
-    <None Include="..\GLSL\BilateralFilter.glvs">
+    <None Include="..\GLSL\BilateralFilter.vs">
       <Filter>BilateralFilter</Filter>
     </None>
-    <None Include="..\GLSL\SSNormal.glfs">
+    <None Include="..\GLSL\SSNormal.fs">
       <Filter>SSNormal</Filter>
     </None>
-    <None Include="..\GLSL\SSNormal.glvs">
+    <None Include="..\GLSL\SSNormal.vs">
       <Filter>SSNormal</Filter>
     </None>
-    <None Include="..\GLSL\SSReflection.glfs">
+    <None Include="..\GLSL\SSReflection.fs">
       <Filter>SSReflection</Filter>
     </None>
-    <None Include="..\GLSL\SSReflection.glvs">
+    <None Include="..\GLSL\SSReflection.vs">
       <Filter>SSReflection</Filter>
     </None>
     <None Include="..\GLSL\SSFluid.glfs">
@@ -83,11 +89,17 @@
     <None Include="..\GLSL\SSFluid.glvs">
       <Filter>SSFluid</Filter>
     </None>
-    <None Include="..\GLSL\SSAbsorption.glfs">
+    <None Include="..\GLSL\SSAbsorption.fs">
       <Filter>SSAbsorption</Filter>
     </None>
-    <None Include="..\GLSL\SSAbsorption.glvs">
+    <None Include="..\GLSL\SSAbsorption.vs">
       <Filter>SSAbsorption</Filter>
+    </None>
+    <None Include="..\GLSL\SSRefraction.fs">
+      <Filter>SSRefraction</Filter>
+    </None>
+    <None Include="..\GLSL\SSRefraction.vs">
+      <Filter>SSRefraction</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +123,9 @@
     </ClInclude>
     <ClInclude Include="SSFluidRenderer.h">
       <Filter>SSFluid</Filter>
+    </ClInclude>
+    <ClInclude Include="SSRefractionRenderer.h">
+      <Filter>SSRefraction</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

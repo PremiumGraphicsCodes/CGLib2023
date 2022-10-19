@@ -53,33 +53,31 @@ void Renderer::init()
 	renderers.skyBox.setShader(builder.getShader());
 	renderers.skyBox.link();
 
-	builder.buildFromFile("../GLSL/ParticleDepth.glvs", "../GLSL/ParticleDepth.glfs");
+	builder.buildFromFile("../GLSL/ParticleDepth.vs", "../GLSL/ParticleDepth.fs");
 	renderers.depth.setShader(builder.getShader());
 	renderers.depth.link();
 
-	builder.buildFromFile("../GLSL/SSThickness.glvs", "../GLSL/SSThickness.glfs");
+	builder.buildFromFile("../GLSL/SSThickness.vs", "../GLSL/SSThickness.fs");
 	renderers.thickness.setShader(builder.getShader());
 	renderers.thickness.link();
 
-	builder.buildFromFile("../GLSL/SSNormal.glvs", "../GLSL/SSNormal.glfs");
+	builder.buildFromFile("../GLSL/SSNormal.vs", "../GLSL/SSNormal.fs");
 	renderers.normal.setShader(builder.getShader());
 	renderers.normal.link();
 
-	builder.buildFromFile("../GLSL/SSReflection.glvs", "../GLSL/SSReflection.glfs");
+	builder.buildFromFile("../GLSL/SSReflection.vs", "../GLSL/SSReflection.fs");
 	renderers.reflection.setShader(builder.getShader());
 	renderers.reflection.link();
 
-	/*
-	builder.buildFromFile("../GLSL/SSFluid.glvs", "../GLSL/SSFluid.glfs");
-	fluid.setShader(builder.getShader());
-	fluid.link();
-	*/
+	builder.buildFromFile("../GLSL/SSRefraction.vs", "../GLSL/SSRefraction.fs");
+	renderers.refraction.setShader(builder.getShader());
+	renderers.refraction.link();
 
-	builder.buildFromFile("../GLSL/BilateralFilter.glvs", "../GLSL/BilateralFilter.glfs");
+	builder.buildFromFile("../GLSL/BilateralFilter.vs", "../GLSL/BilateralFilter.fs");
 	renderers.bilateralFilter.setShader(builder.getShader());
 	renderers.bilateralFilter.link();
 
-	builder.buildFromFile("../GLSL/SSAbsorption.glvs", "../GLSL/SSAbsorption.glfs");
+	builder.buildFromFile("../GLSL/SSAbsorption.vs", "../GLSL/SSAbsorption.fs");
 	renderers.absorption.setShader(builder.getShader());
 	renderers.absorption.link();
 
@@ -131,6 +129,9 @@ void Renderer::init()
 
 	this->textures.reflectedTexture.create();
 	this->textures.reflectedTexture.send(Imageuc(512, 512));
+
+	this->textures.refractedTexture.create();
+	this->textures.refractedTexture.send(Imageuc(512, 512));
 
 	readCubeMap(this->textures.cubeMap);
 }
@@ -305,4 +306,8 @@ void Renderer::renderReflection(const Graphics::Camera& camera)
 	renderers.reflection.render();
 
 	this->fbo.unbind();
+}
+
+void Renderer::renderRefraction(const Graphics::Camera& camera)
+{
 }
