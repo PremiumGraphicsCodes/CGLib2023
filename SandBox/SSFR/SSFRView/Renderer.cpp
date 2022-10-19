@@ -166,12 +166,13 @@ void Renderer::render(const int width, const int height)
 	renderAbsorption();
 	renderReflection(camera);
 	renderRefraction(camera);
+	renderComposition(camera);
 
 	glViewport(0, 0, width, height);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderers.tex.buffer.tex = &this->textures.shadedTexture; //&this->textures.filteredDepthTexture;
+	renderers.tex.buffer.tex = &this->textures.composite; //&this->textures.filteredDepthTexture;
 	renderers.tex.render();
 
 	//presenter.render(camera);
@@ -380,5 +381,26 @@ void Renderer::renderRefraction(const Graphics::Camera& camera)
 	renderers.refraction.render();
 
 	this->fbo.unbind();
+}
 
+void Renderer::renderComposition(const Camera& camera)
+{
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.composite);
+
+	glViewport(0, 0, textures.depthTexture.getWidth(), textures.depthTexture.getHeight());
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	SSCompositeRenderer::Buffer fluidBuffer;
+	fluidBuffer.depthTexture = &this->textures.filteredDepthTexture;
+	fluidBuffer.absorptionTexture = &this->textures.absorptionTexture;
+	fluidBuffer.surfaceTexture = &this->textures.shadedTexture;
+	fluidBuffer.refractionTexture = &this->textures.refractedTexture;//this->shadedTexture; //this->filteredDepthTexture;
+	fluidBuffer.reflectionTexture = &this->textures.reflectedTexture;
+	fluidBuffer.backGroundTexture = &this->textures.background;
+	renderers.composite.buffer = fluidBuffer;
+	renderers.composite.render();
+
+	this->fbo.unbind();
 }

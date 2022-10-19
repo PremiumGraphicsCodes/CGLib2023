@@ -101,9 +101,9 @@ private:
 
 	void renderRefraction(const Graphics::Camera& camera);
 
-	void renderComposition(const Graphics::Camera& camera);
-
 	void renderAbsorption();
+
+	void renderComposition(const Graphics::Camera& camera);
 };
 
 	}
