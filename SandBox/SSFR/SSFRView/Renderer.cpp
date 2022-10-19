@@ -15,11 +15,14 @@ void Renderer::init()
 	renderers.depth.setShader(builder.getShader());
 	renderers.depth.link();
 
-	/*
 	builder.buildFromFile("../GLSL/SSThickness.glvs", "../GLSL/SSThickness.glfs");
-	thickness.setShader(builder.getShader());
-	thickness.link();
+	renderers.thickness.setShader(builder.getShader());
+	renderers.thickness.link();
 
+	builder.buildFromFile("../GLSL/SSNormal.glvs", "../GLSL/SSNormal.glfs");
+	renderers.normal.setShader(builder.getShader());
+	renderers.normal.link();
+	/*
 	builder.buildFromFile("../GLSL/SSReflection.glvs", "../GLSL/SSReflection.glfs");
 	reflection.setShader(builder.getShader());
 	reflection.link();
@@ -65,6 +68,9 @@ void Renderer::init()
 
 	this->textures.filteredDepthTexture.create();
 	this->textures.filteredDepthTexture.send(Imageuc(512, 512));
+
+	this->textures.thicknessTexture.create();
+	this->textures.thicknessTexture.send(Imageuc(512, 512));
 }
 
 void Renderer::render(const int width, const int height)
@@ -73,12 +79,13 @@ void Renderer::render(const int width, const int height)
 
 	renderDepth(*world->getCamera());
 	filterDepth();
+	renderThickness(*world->getCamera());
 
 	glViewport(0, 0, width, height);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderers.tex.buffer.tex = &this->textures.filteredDepthTexture;
+	renderers.tex.buffer.tex = &this->textures.thicknessTexture; //&this->textures.filteredDepthTexture;
 	renderers.tex.render();
 
 	//presenter.render(camera);
@@ -124,6 +131,31 @@ void Renderer::filterDepth()
 	buffer.texture = &this->textures.depthTexture;
 	renderers.bilateralFilter.buffer = buffer;
 	renderers.bilateralFilter.render();
+
+	this->fbo.unbind();
+}
+
+void Renderer::renderThickness(const Graphics::Camera& camera)
+{
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.thicknessTexture);
+
+	glViewport(0, 0, textures.depthTexture.getWidth(), textures.depthTexture.getHeight());
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	SSThicknessRenderer::Buffer buffer;
+	buffer.projectionMatrix = camera.getProjectionMatrix();
+	buffer.modelviewMatrix = camera.getModelViewMatrix();
+	buffer.position = &this->buffer.position;
+	buffer.pointSize = &this->buffer.pointSize;
+	buffer.pointCount = this->buffer.pointCount;
+	buffer.uvec = &this->buffer.uvec;
+	buffer.vvec = &this->buffer.vvec;
+	buffer.wvec = &this->buffer.wvec;
+	renderers.thickness.buffer = buffer;
+
+	renderers.thickness.render();
 
 	this->fbo.unbind();
 }

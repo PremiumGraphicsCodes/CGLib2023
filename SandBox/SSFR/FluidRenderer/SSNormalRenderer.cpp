@@ -12,3 +12,7 @@ namespace {
 void Crystal::Renderer::SSNormalRenderer::link()
 {
 }
+
+void Crystal::Renderer::SSNormalRenderer::render()
+{
+}
