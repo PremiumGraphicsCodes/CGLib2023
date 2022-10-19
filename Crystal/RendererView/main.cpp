@@ -14,7 +14,7 @@
 
 #include "CGLib/Math/Vector2d.h"
 
-#include "Crystal/AppBase/RendererBase.h"
+#include "Crystal/AppBase/IRenderer.h"
 #include "Crystal/AppBase/MenuItem.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
 #include "Crystal/AppBase/Canvas.h"
