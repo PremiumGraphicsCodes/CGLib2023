@@ -6,6 +6,16 @@ using namespace Crystal::Math;
 using namespace Crystal::Shader;
 
 namespace {
+	std::vector<float> toArray()
+	{
+		return{
+			-1,  1,
+			-1, -1,
+			1, -1,
+			1, 1
+		};
+	}
+
 	constexpr auto ProjectionMatrixLabel = "projectionMatrix";
 
 	constexpr auto DepthTexLabel = "depthTex";
@@ -23,30 +33,75 @@ namespace {
 
 	constexpr auto EyePositionLabel = "eyePosition";
 	constexpr auto PositionLabel = "position";
+
+	struct UniformLoc {
+		GLuint projectionMatrix;
+		GLuint depthTex;
+		GLuint normalTex;
+		GLuint lightPos;
+		GLuint lightAmbient;
+		GLuint lightDiffuse;
+		GLuint lightSpecular;
+		GLuint materialAmbient;
+		GLuint materialDiffuse;
+		GLuint materialSpecular;
+		GLuint materialShininess;
+		GLuint eyePos;
+	};
+
+	struct VertexAttrLoc {
+		GLuint position;
+	};
+
+	UniformLoc uniformLoc;
+	VertexAttrLoc vaLoc;
 }
 
 void SSDefferedRenderer::link()
 {
-	shader->findUniformLocation(::ProjectionMatrixLabel);
+	uniformLoc.projectionMatrix = shader->findUniformLocation(::ProjectionMatrixLabel);
 
-	shader->findUniformLocation(::DepthTexLabel);
-	shader->findUniformLocation(::NormalTexLabel);
+	uniformLoc.depthTex = shader->findUniformLocation(::DepthTexLabel);
+	uniformLoc.normalTex = shader->findUniformLocation(::NormalTexLabel);
 
-	shader->findUniformLocation(::LightPosLabel);
-	shader->findUniformLocation(::LightAmbientLabel);
-	shader->findUniformLocation(::LightDiffuseLabel);
-	shader->findUniformLocation(::LightSpecularLabel);
+	uniformLoc.lightPos = shader->findUniformLocation(::LightPosLabel);
+	uniformLoc.lightAmbient = shader->findUniformLocation(::LightAmbientLabel);
+	uniformLoc.lightDiffuse = shader->findUniformLocation(::LightDiffuseLabel);
+	uniformLoc.lightSpecular = shader->findUniformLocation(::LightSpecularLabel);
 
-	shader->findUniformLocation(::MaterialAmbientLabel);
-	shader->findUniformLocation(::MaterialDiffuseLabel);
-	shader->findUniformLocation(::MaterialSpecularLabel);
-	shader->findUniformLocation(::MaterialShininessLabel);
+	uniformLoc.materialAmbient = shader->findUniformLocation(::MaterialAmbientLabel);
+	uniformLoc.materialDiffuse = shader->findUniformLocation(::MaterialDiffuseLabel);
+	uniformLoc.materialSpecular = shader->findUniformLocation(::MaterialSpecularLabel);
+	uniformLoc.materialShininess = shader->findUniformLocation(::MaterialShininessLabel);
 
-	shader->findUniformLocation(::EyePositionLabel);
+	uniformLoc.eyePos = shader->findUniformLocation(::EyePositionLabel);
 
-	shader->findAttribLocation(::PositionLabel);
+	vaLoc.position = shader->findAttribLocation(::PositionLabel);
 }
 
 void SSDefferedRenderer::render()
 {
+	/*
+	assert(GL_NO_ERROR == glGetError());
+
+	const auto positions = ::toArray();
+
+	shader->bind();
+
+	TextureUnit texUnit(0, buffer.volumeTexture);
+
+	Uniform texUniform(volumeTexLoc);
+	texUniform.send(texUnit);
+
+	VertexAttribute posAttr(vaLoc.position);
+	posAttr.sendVertexAttribute2df(positions);
+
+	shader->bindOutput("fragColor");
+
+	glDrawArrays(GL_QUADS, 0, static_cast<GLsizei>(positions.size() / 2));
+
+	shader->unbind();
+
+	assert(GL_NO_ERROR == glGetError());
+	*/
 }

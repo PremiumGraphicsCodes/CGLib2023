@@ -11,11 +11,11 @@
 #include "../SSFR/SSThicknessRenderer.h"
 #include "../SSFR/SSReflectionRenderer.h"
 #include "../SSFR/SSRefractionRenderer.h"
-#include "../SSFR/SSFluidRenderer.h"
 #include "../SSFR/BilateralFilterRenderer.h"
 #include "../SSFR/SSNormalRenderer.h"
 #include "../SSFR/SSAbsorptionRenderer.h"
 #include "../SSFR/SSDefferedRenderer.h"
+#include "../SSFR/SSCompositeRenderer.h"
 
 namespace Crystal {
 	namespace UI {
@@ -47,7 +47,7 @@ private:
 		Shader::TextureObject shadedTexture;
 		Shader::TextureObject reflectedTexture;
 		Shader::TextureObject refractedTexture;
-		Shader::TextureObject texture;
+		Shader::TextureObject composite;
 		Shader::CubeMapTextureObject cubeMap;
 	};
 
@@ -62,6 +62,7 @@ private:
 		Crystal::Renderer::SSRefractionRenderer refraction;
 		Crystal::Renderer::SSDefferedRenderer deffered;
 		Crystal::Renderer::SSAbsorptionRenderer absorption;
+		Crystal::Renderer::SSCompositeRenderer composite;
 		Crystal::Renderer::TexRenderer tex;
 	};
 

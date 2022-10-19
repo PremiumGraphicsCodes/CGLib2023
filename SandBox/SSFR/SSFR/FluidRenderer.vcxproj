@@ -157,7 +157,7 @@
     <ClCompile Include="SSAbsorptionRenderer.cpp" />
     <ClCompile Include="BilateralFilterRenderer.cpp" />
     <ClCompile Include="SSDefferedRenderer.cpp" />
-    <ClCompile Include="SSFluidRenderer.cpp" />
+    <ClCompile Include="SSCompositeRenderer.cpp" />
     <ClCompile Include="ParticleDepthRenderer.cpp" />
     <ClCompile Include="SSNormalRenderer.cpp" />
     <ClCompile Include="SSReflectionRenderer.cpp" />
@@ -173,8 +173,8 @@
     <None Include="..\GLSL\SSAbsorption.vs" />
     <None Include="..\GLSL\SSDeffered.fs" />
     <None Include="..\GLSL\SSDeffered.vs" />
-    <None Include="..\GLSL\SSFluid.glfs" />
-    <None Include="..\GLSL\SSFluid.glvs" />
+    <None Include="..\GLSL\SSComposite.fs" />
+    <None Include="..\GLSL\SSComposite.vs" />
     <None Include="..\GLSL\SSNormal.fs" />
     <None Include="..\GLSL\SSNormal.vs" />
     <None Include="..\GLSL\SSReflection.fs" />
@@ -189,7 +189,7 @@
     <ClInclude Include="BilateralFilterRenderer.h" />
     <ClInclude Include="ParticleDepthRenderer.h" />
     <ClInclude Include="SSDefferedRenderer.h" />
-    <ClInclude Include="SSFluidRenderer.h" />
+    <ClInclude Include="SSCompositeRenderer.h" />
     <ClInclude Include="SSNormalRenderer.h" />
     <ClInclude Include="SSReflectionRenderer.h" />
     <ClInclude Include="SSRefractionRenderer.h" />

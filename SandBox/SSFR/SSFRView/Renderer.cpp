@@ -85,6 +85,10 @@ void Renderer::init()
 	renderers.deffered.setShader(builder.getShader());
 	renderers.deffered.link();
 
+	builder.buildFromFile("../GLSL/SSComposite.vs", "../GLSL/SSComposite.fs");
+	renderers.composite.setShader(builder.getShader());
+	renderers.composite.link();
+
 	builder.buildFromFile("../GLSL/Tex.vs", "../GLSL/Tex.fs");
 	renderers.tex.setShader(builder.getShader());
 	renderers.tex.link();
@@ -136,6 +140,12 @@ void Renderer::init()
 
 	this->textures.refractedTexture.create();
 	this->textures.refractedTexture.send(Imageuc(512, 512));
+
+	this->textures.shadedTexture.create();
+	this->textures.shadedTexture.send(Imageuc(512, 512));
+
+	this->textures.composite.create();
+	this->textures.composite.send(Imageuc(512, 512));
 
 	readCubeMap(this->textures.cubeMap);
 }

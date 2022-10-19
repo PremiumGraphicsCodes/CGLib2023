@@ -19,8 +19,8 @@
     <ClCompile Include="SSReflectionRenderer.cpp">
       <Filter>SSReflection</Filter>
     </ClCompile>
-    <ClCompile Include="SSFluidRenderer.cpp">
-      <Filter>SSFluid</Filter>
+    <ClCompile Include="SSCompositeRenderer.cpp">
+      <Filter>SSComposite</Filter>
     </ClCompile>
     <ClCompile Include="SSRefractionRenderer.cpp">
       <Filter>SSRefraction</Filter>
@@ -48,14 +48,14 @@
     <Filter Include="SSReflection">
       <UniqueIdentifier>{2f2459d2-6632-4dac-9d6d-913f081f5f93}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SSFluid">
-      <UniqueIdentifier>{48f66445-dfce-4b3b-9258-10e3db0fc80c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SSRefraction">
       <UniqueIdentifier>{22b850e2-2c70-4b62-b298-50bfe4755321}</UniqueIdentifier>
     </Filter>
     <Filter Include="SSDeffered">
       <UniqueIdentifier>{41a7bf6a-9c35-47ed-9772-e7cdc3d2026f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSComposite">
+      <UniqueIdentifier>{48f66445-dfce-4b3b-9258-10e3db0fc80c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -89,11 +89,11 @@
     <None Include="..\GLSL\SSReflection.vs">
       <Filter>SSReflection</Filter>
     </None>
-    <None Include="..\GLSL\SSFluid.glfs">
-      <Filter>SSFluid</Filter>
+    <None Include="..\GLSL\SSComposite.fs">
+      <Filter>SSComposite</Filter>
     </None>
-    <None Include="..\GLSL\SSFluid.glvs">
-      <Filter>SSFluid</Filter>
+    <None Include="..\GLSL\SSComposite.vs">
+      <Filter>SSComposite</Filter>
     </None>
     <None Include="..\GLSL\SSAbsorption.fs">
       <Filter>SSAbsorption</Filter>
@@ -133,8 +133,8 @@
     <ClInclude Include="SSReflectionRenderer.h">
       <Filter>SSReflection</Filter>
     </ClInclude>
-    <ClInclude Include="SSFluidRenderer.h">
-      <Filter>SSFluid</Filter>
+    <ClInclude Include="SSCompositeRenderer.h">
+      <Filter>SSComposite</Filter>
     </ClInclude>
     <ClInclude Include="SSRefractionRenderer.h">
       <Filter>SSRefraction</Filter>
