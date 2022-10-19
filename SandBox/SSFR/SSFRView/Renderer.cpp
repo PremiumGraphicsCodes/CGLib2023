@@ -62,6 +62,9 @@ void Renderer::init()
 	this->fbo.create();
 	this->textures.depthTexture.create();
 	this->textures.depthTexture.send(Imageuc(512, 512));
+
+	this->textures.filteredDepthTexture.create();
+	this->textures.filteredDepthTexture.send(Imageuc(512, 512));
 }
 
 void Renderer::render(const int width, const int height)
@@ -69,12 +72,13 @@ void Renderer::render(const int width, const int height)
 	assert(GL_NO_ERROR == glGetError());
 
 	renderDepth(*world->getCamera());
+	filterDepth();
 
 	glViewport(0, 0, width, height);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderers.tex.buffer.tex = &this->textures.depthTexture;
+	renderers.tex.buffer.tex = &this->textures.filteredDepthTexture;
 	renderers.tex.render();
 
 	//presenter.render(camera);
@@ -82,12 +86,12 @@ void Renderer::render(const int width, const int height)
 	assert(GL_NO_ERROR == glGetError());
 }
 
-void Renderer::renderDepth(const Graphics::Camera& camera)
+void Renderer::renderDepth(const Camera& camera)
 {
 	this->fbo.bind();
 	this->fbo.setTexture(this->textures.depthTexture);
 
-	glViewport(0, 0, 512, 512);
+	glViewport(0, 0, this->textures.depthTexture.getWidth(), this->textures.depthTexture.getHeight());
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -103,6 +107,23 @@ void Renderer::renderDepth(const Graphics::Camera& camera)
 	renderers.depth.buffer = pdBuffer;
 
 	renderers.depth.render();
+
+	this->fbo.unbind();
+}
+
+void Renderer::filterDepth()
+{
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.filteredDepthTexture);
+
+	glViewport(0, 0, textures.depthTexture.getWidth(), textures.depthTexture.getHeight());
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	BilateralFilterRenderer::Buffer buffer;
+	buffer.texture = &this->textures.depthTexture;
+	renderers.bilateralFilter.buffer = buffer;
+	renderers.bilateralFilter.render();
 
 	this->fbo.unbind();
 }

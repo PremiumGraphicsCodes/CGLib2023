@@ -83,7 +83,7 @@ private:
 
 	void renderDepth(const Graphics::Camera& camera);
 
-	void filterDepth(const Graphics::Camera& camera);
+	void filterDepth();
 
 	void renderNormal(const Graphics::Camera& camera);
 

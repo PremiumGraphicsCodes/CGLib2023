@@ -26,9 +26,9 @@ public:
 
 	void unbind() const override;
 
-	int getWidth();
+	int getWidth() { return width; }
 
-	int getHeight();
+	int getHeight() { return height; }
 
 private:
 	int width;
