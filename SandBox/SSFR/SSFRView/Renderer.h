@@ -56,7 +56,7 @@ private:
 		Crystal::Renderer::SSThicknessRenderer thickness;
 		Crystal::Renderer::BilateralFilterRenderer bilateralFilter;
 		Crystal::Renderer::SSNormalRenderer normal;
-		//SSFRReflectionRenderer reflectionRenderer;
+		Crystal::Renderer::SSReflectionRenderer reflection;
 		//SSFRRefractionRenderer refractionRenderer;
 		//SSFRDeferredRenderer deferredRenderer;
 		Crystal::Renderer::SSAbsorptionRenderer absorption;

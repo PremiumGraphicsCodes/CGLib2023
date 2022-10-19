@@ -64,11 +64,12 @@ void Renderer::init()
 	builder.buildFromFile("../GLSL/SSNormal.glvs", "../GLSL/SSNormal.glfs");
 	renderers.normal.setShader(builder.getShader());
 	renderers.normal.link();
-	/*
-	builder.buildFromFile("../GLSL/SSReflection.glvs", "../GLSL/SSReflection.glfs");
-	reflection.setShader(builder.getShader());
-	reflection.link();
 
+	builder.buildFromFile("../GLSL/SSReflection.glvs", "../GLSL/SSReflection.glfs");
+	renderers.reflection.setShader(builder.getShader());
+	renderers.reflection.link();
+
+	/*
 	builder.buildFromFile("../GLSL/SSFluid.glvs", "../GLSL/SSFluid.glfs");
 	fluid.setShader(builder.getShader());
 	fluid.link();
@@ -128,6 +129,9 @@ void Renderer::init()
 	this->textures.absorptionTexture.create();
 	this->textures.absorptionTexture.send(Imageuc(512, 512));
 
+	this->textures.reflectedTexture.create();
+	this->textures.reflectedTexture.send(Imageuc(512, 512));
+
 	readCubeMap(this->textures.cubeMap);
 }
 
@@ -135,18 +139,21 @@ void Renderer::render(const int width, const int height)
 {
 	assert(GL_NO_ERROR == glGetError());
 
-	renderBackGround(*world->getCamera());
-	renderDepth(*world->getCamera());
+	const auto camera = *world->getCamera();
+
+	renderBackGround(camera);
+	renderDepth(camera);
 	filterDepth();
-	renderThickness(*world->getCamera());
-	renderNormal(*world->getCamera());
+	renderThickness(camera);
+	renderNormal(camera);
 	renderAbsorption();
+	renderReflection(camera);
 
 	glViewport(0, 0, width, height);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderers.tex.buffer.tex = &this->textures.background; //&this->textures.filteredDepthTexture;
+	renderers.tex.buffer.tex = &this->textures.reflectedTexture; //&this->textures.filteredDepthTexture;
 	renderers.tex.render();
 
 	//presenter.render(camera);
@@ -274,6 +281,28 @@ void Renderer::renderAbsorption()
 	renderers.absorption.buffer = buffer;
 
 	renderers.absorption.render();
+
+	this->fbo.unbind();
+}
+
+void Renderer::renderReflection(const Graphics::Camera& camera)
+{
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.reflectedTexture);
+
+	glViewport(0, 0, textures.depthTexture.getWidth(), textures.depthTexture.getHeight());
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	SSReflectionRenderer::Buffer buffer;
+	buffer.cubeMapTexture = &this->textures.cubeMap;
+	buffer.depthTexture = &this->textures.filteredDepthTexture;
+	buffer.normalTexture = &this->textures.normalTexture;
+	buffer.eyePosition = camera.getEye();
+	buffer.projectionMatrix = camera.getProjectionMatrix();
+
+	renderers.reflection.buffer = buffer;
+	renderers.reflection.render();
 
 	this->fbo.unbind();
 }
