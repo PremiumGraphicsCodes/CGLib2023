@@ -15,6 +15,7 @@
 #include "../FluidRenderer/BilateralFilterRenderer.h"
 #include "../FluidRenderer/SSNormalRenderer.h"
 #include "../FluidRenderer/SSAbsorptionRenderer.h"
+#include "../FluidRenderer/SSDefferedRenderer.h"
 
 namespace Crystal {
 	namespace UI {
@@ -59,7 +60,7 @@ private:
 		Crystal::Renderer::SSNormalRenderer normal;
 		Crystal::Renderer::SSReflectionRenderer reflection;
 		Crystal::Renderer::SSRefractionRenderer refraction;
-		//SSFRDeferredRenderer deferredRenderer;
+		Crystal::Renderer::SSDefferedRenderer deffered;
 		Crystal::Renderer::SSAbsorptionRenderer absorption;
 		Crystal::Renderer::TexRenderer tex;
 	};

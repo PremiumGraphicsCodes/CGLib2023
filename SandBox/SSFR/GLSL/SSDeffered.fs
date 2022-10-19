@@ -25,7 +25,7 @@ float getDepth(vec2 tCoord){
 vec3 uvToEye(vec2 tCoord, float depth) {
 	vec4 clippingPosition = vec4(tCoord, depth, 1.0);
 	vec4 viewPosition = inverse(projectionMatrix) * clippingPosition;
-	return viewPosition.xyz / viewPosition.w;
+    return viewPosition.xyz / viewPosition.w;
 }
 vec3 getEyePosition(vec2 texCoord){
 	float depth = getDepth(texCoord);
@@ -51,7 +51,7 @@ void main(void) {
 		return;
 	}
 	vec3 normal = texture2D(normalTex, texCoord).rgb;
-	vec3 eyePosition = getEyePosition(texCoord);
+    vec3 eyePosition = getEyePosition(texCoord);
 	fragColor.rgb = getPhongShadedColor( eyePosition, normal);
 	fragColor.a = 1.0;
-}
+	};

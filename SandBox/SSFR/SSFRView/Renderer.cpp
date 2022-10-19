@@ -81,6 +81,10 @@ void Renderer::init()
 	renderers.absorption.setShader(builder.getShader());
 	renderers.absorption.link();
 
+	builder.buildFromFile("../GLSL/SSDeffered.vs", "../GLSL/SSDeffered.fs");
+	renderers.deffered.setShader(builder.getShader());
+	renderers.deffered.link();
+
 	builder.buildFromFile("../GLSL/Tex.vs", "../GLSL/Tex.fs");
 	renderers.tex.setShader(builder.getShader());
 	renderers.tex.link();
@@ -149,12 +153,13 @@ void Renderer::render(const int width, const int height)
 	renderNormal(camera);
 	renderAbsorption();
 	renderReflection(camera);
+	renderRefraction(camera);
 
 	glViewport(0, 0, width, height);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderers.tex.buffer.tex = &this->textures.reflectedTexture; //&this->textures.filteredDepthTexture;
+	renderers.tex.buffer.tex = &this->textures.refractedTexture; //&this->textures.filteredDepthTexture;
 	renderers.tex.render();
 
 	//presenter.render(camera);
@@ -310,4 +315,23 @@ void Renderer::renderReflection(const Graphics::Camera& camera)
 
 void Renderer::renderRefraction(const Graphics::Camera& camera)
 {
+	this->fbo.bind();
+	this->fbo.setTexture(this->textures.refractedTexture);
+
+	glViewport(0, 0, textures.depthTexture.getWidth(), textures.depthTexture.getHeight());
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	SSRefractionRenderer::Buffer buffer;
+	buffer.cubeMapTexture = &this->textures.cubeMap;
+	buffer.depthTexture = &this->textures.filteredDepthTexture;
+	buffer.normalTexture = &this->textures.normalTexture;
+	buffer.eyePosition = camera.getEye();
+	buffer.projectionMatrix = camera.getProjectionMatrix();
+
+	renderers.refraction.buffer = buffer;
+	renderers.refraction.render();
+
+	this->fbo.unbind();
+
 }

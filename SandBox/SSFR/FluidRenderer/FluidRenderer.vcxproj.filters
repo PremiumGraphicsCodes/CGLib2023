@@ -25,6 +25,9 @@
     <ClCompile Include="SSRefractionRenderer.cpp">
       <Filter>SSRefraction</Filter>
     </ClCompile>
+    <ClCompile Include="SSDefferedRenderer.cpp">
+      <Filter>SSDeffered</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleDepth">
@@ -50,6 +53,9 @@
     </Filter>
     <Filter Include="SSRefraction">
       <UniqueIdentifier>{22b850e2-2c70-4b62-b298-50bfe4755321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSDeffered">
+      <UniqueIdentifier>{41a7bf6a-9c35-47ed-9772-e7cdc3d2026f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +107,12 @@
     <None Include="..\GLSL\SSRefraction.vs">
       <Filter>SSRefraction</Filter>
     </None>
+    <None Include="..\GLSL\SSDeffered.fs">
+      <Filter>SSDeffered</Filter>
+    </None>
+    <None Include="..\GLSL\SSDeffered.vs">
+      <Filter>SSDeffered</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ParticleDepthRenderer.h">
@@ -126,6 +138,9 @@
     </ClInclude>
     <ClInclude Include="SSRefractionRenderer.h">
       <Filter>SSRefraction</Filter>
+    </ClInclude>
+    <ClInclude Include="SSDefferedRenderer.h">
+      <Filter>SSDeffered</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
