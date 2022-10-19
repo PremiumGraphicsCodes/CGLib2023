@@ -7,15 +7,15 @@
 #include "Crystal/Renderer/TexRenderer.h"
 
 #include "Crystal/Renderer/SkyBoxRenderer.h"
-#include "../FluidRenderer/ParticleDepthRenderer.h"
-#include "../FluidRenderer/SSThicknessRenderer.h"
-#include "../FluidRenderer/SSReflectionRenderer.h"
-#include "../FluidRenderer/SSRefractionRenderer.h"
-#include "../FluidRenderer/SSFluidRenderer.h"
-#include "../FluidRenderer/BilateralFilterRenderer.h"
-#include "../FluidRenderer/SSNormalRenderer.h"
-#include "../FluidRenderer/SSAbsorptionRenderer.h"
-#include "../FluidRenderer/SSDefferedRenderer.h"
+#include "../SSFR/ParticleDepthRenderer.h"
+#include "../SSFR/SSThicknessRenderer.h"
+#include "../SSFR/SSReflectionRenderer.h"
+#include "../SSFR/SSRefractionRenderer.h"
+#include "../SSFR/SSFluidRenderer.h"
+#include "../SSFR/BilateralFilterRenderer.h"
+#include "../SSFR/SSNormalRenderer.h"
+#include "../SSFR/SSAbsorptionRenderer.h"
+#include "../SSFR/SSDefferedRenderer.h"
 
 namespace Crystal {
 	namespace UI {

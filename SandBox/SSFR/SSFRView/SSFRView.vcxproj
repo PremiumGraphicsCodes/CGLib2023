@@ -171,7 +171,7 @@
     <ProjectReference Include="..\..\..\Crystal\Scene\Scene.vcxproj">
       <Project>{8f772d35-8835-4288-941e-867f4e7e7f8f}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\FluidRenderer\FluidRenderer.vcxproj">
+    <ProjectReference Include="..\SSFR\FluidRenderer.vcxproj">
       <Project>{d9fe5f33-e69c-4e6a-8ebd-ec95458ce7b8}</Project>
     </ProjectReference>
   </ItemGroup>
