@@ -26,7 +26,13 @@ public:
 
 	void unbind() const override;
 
+	int getWidth();
+
+	int getHeight();
+
 private:
+	int width;
+	int height;
 };
 
 	}

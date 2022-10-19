@@ -32,6 +32,9 @@ void TextureObject::unbind() const
 
 void TextureObject::send(const Imageuc& image)
 {
+	this->width = image.getWidth();
+	this->height = image.getHeight();
+
 	glBindTexture(GL_TEXTURE_2D, handle);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.getWidth(), image.getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, image.getValues().data());
 
@@ -56,6 +59,9 @@ void TextureObject::setParameter(const GLenum type, const GLuint value)
 
 void TextureObject::send(const Imagef& image)
 {
+	this->width = image.getWidth();
+	this->height = image.getHeight();
+
 	glBindTexture(GL_TEXTURE_2D, handle);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA32F, image.getWidth(), image.getHeight(), 0, GL_RGBA, GL_FLOAT, image.getValues().data());
 

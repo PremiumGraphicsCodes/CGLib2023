@@ -10,6 +10,7 @@
 #include "../FluidRenderer/SSThicknessRenderer.h"
 #include "../FluidRenderer/SSReflectionRenderer.h"
 #include "../FluidRenderer/SSFluidRenderer.h"
+#include "../FluidRenderer/BilateralFilterRenderer.h"
 
 namespace Crystal {
 	namespace UI {
@@ -49,7 +50,7 @@ private:
 		//Shader::SkyBoxRenderer skyBoxRenderer;
 		Crystal::Renderer::ParticleDepthRenderer depth;
 		//SSFRThicknessRenderer thicknessRenderer;
-		//SSFRBilateralFilterRenderer bilateralFilter;
+		Crystal::Renderer::BilateralFilterRenderer bilateralFilter;
 		//SSFRNormalFilterRenderer normalFilter;
 		//SSFRReflectionRenderer reflectionRenderer;
 		//SSFRRefractionRenderer refractionRenderer;

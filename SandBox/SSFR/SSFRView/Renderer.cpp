@@ -29,6 +29,10 @@ void Renderer::init()
 	fluid.link();
 	*/
 
+	builder.buildFromFile("../GLSL/BilateralFilter.glvs", "../GLSL/BilateralFilter.glfs");
+	renderers.bilateralFilter.setShader(builder.getShader());
+	renderers.bilateralFilter.link();
+
 	builder.buildFromFile("../GLSL/Tex.vs", "../GLSL/Tex.fs");
 	renderers.tex.setShader(builder.getShader());
 	renderers.tex.link();
