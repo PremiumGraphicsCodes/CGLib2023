@@ -119,7 +119,6 @@ void MVPFluidSolver::simulate()
 			const auto particle = fluidParticles[i];
 			particle->updateMassPositions();
 			particle->updateMassVelocities();
-			particle->updateMassTemperatures();
 		}
 
 #pragma omp parallel for
@@ -128,7 +127,6 @@ void MVPFluidSolver::simulate()
 			particle->updateInnerPoints();
 			particle->calculateDensity();
 			particle->calculateViscosityForce();
-			particle->calculateHeatDiffuse();
 		}
 
 
@@ -140,11 +138,8 @@ void MVPFluidSolver::simulate()
 		}
 
 		for (auto particle : fluidParticles) {
-			const auto buo = buoyancy * (particle->getTemperature() - 300.0f) * particle->getDensity();
-			particle->addForce(buo);
 			particle->addForce(externalForce * particle->getDensity());
 			particle->calculateDragForce();
-			particle->calculateDragHeat();
 			//particle->stepTime(dt);
 		}
 
@@ -184,12 +179,6 @@ void MVPFluidSolver::simulate()
 		densityError += particle->getDensity() / (double)fluidParticles.size();
 	}
 	std::cout << densityError << std::endl;
-
-	auto aveTemperature = 0.0;
-	for (auto p : fluidParticles) {
-		aveTemperature += p->getTemperature() / (double)fluidParticles.size();
-	}
-	std::cout << aveTemperature << std::endl;
 
 	boundarySolver.clearGphosts();
 

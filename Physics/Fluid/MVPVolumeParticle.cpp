@@ -10,9 +10,7 @@ using namespace Crystal::Physics;
 MVPVolumeParticle::MVPVolumeParticle(const float radius, const Vector3dd& position) :
 	radius(radius),
 	position(position),
-	restMass(0.0f),
-	temperature(300.0f),
-	enthaply(0.0)
+	restMass(0.0f)
 {}
 
 MVPVolumeParticle::~MVPVolumeParticle()
@@ -49,7 +47,6 @@ void MVPVolumeParticle::setHeatDiffuseCue(const float c)
 void MVPVolumeParticle::reset(bool resetMicro)
 {
 	this->force = Math::Vector3df(0, 0, 0);
-	this->enthaply = 0.0;
 	this->averagedCenter = this->position;
 	//this->dv = Math::Vector3df(0, 0, 0);
 	if (resetMicro) {
@@ -91,17 +88,6 @@ void MVPVolumeParticle::calculateViscosityForce()
 	this->force += f;
 }
 
-#include <iostream>
-
-void MVPVolumeParticle::calculateHeatDiffuse()
-{
-	float t = 0.0;
-	for (auto mp : innerPoints) {
-		t -= (this->temperature - mp->getTemperature()) * mp->getMass() * mp->getHeatDiffuseCoe();
-	}
-	this->enthaply += t / (float)innerPoints.size();
-}
-
 /*
 void MVPVolumeParticle::calculateVorticity()
 {
@@ -123,8 +109,6 @@ void MVPVolumeParticle::stepTime(const float dt)
 	const auto acc = (force) / getDensity();
 	this->velocity += acc * dt;
 	this->position += this->velocity * dt;
-
-	this->temperature += this->enthaply * dt;
 
 	for (auto c : this->massParticles) {
 		c->lifeTime++;
@@ -150,13 +134,6 @@ void MVPVolumeParticle::updateMassVelocities()
 	}
 }
 
-void MVPVolumeParticle::updateMassTemperatures()
-{
-	for (auto mp : this->massParticles) {
-		mp->updateTemperature(this->temperature);
-	}
-}
-
 void MVPVolumeParticle::updateInnerPoints()
 {
 	const auto p = this->averagedCenter;
@@ -178,9 +155,4 @@ void MVPVolumeParticle::calculateDragForce()
 	//const auto t = (temperature - 300.0f);
 	const auto drag = -dragForceCoe * (velocity - Vector3df(0.0, -10, 0.0)); //* (1.0f - density / 1.0f);
 	addForce(drag * this->density);
-}
-
-void MVPVolumeParticle::calculateDragHeat()
-{
-	this->enthaply += -dragHeatCoe * (temperature - 300.0f); //* (1.0f - density / 1.0f);
 }

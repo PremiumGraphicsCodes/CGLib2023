@@ -52,8 +52,6 @@ public:
 
 	void calculateViscosityForce();
 
-	void calculateHeatDiffuse();
-
 	void stepTime(const float dt);
 
 	void setRadius(const float r) { this->radius = r; }
@@ -74,8 +72,6 @@ public:
 
 	void updateMassVelocities();
 
-	void updateMassTemperatures();
-
 	void updateInnerPoints();
 
 	float getSelfMass() { return restMass; }
@@ -90,19 +86,12 @@ public:
 
 	const std::vector<MVPVolumeParticle*>& getNeighbors() const { return neighbors; }
 
-	void setTemperature(const float t) { this->temperature = t; }
-
-	float getTemperature() const { return this->temperature; }
-
 	void calculateDragForce();
-
-	void calculateDragHeat();
 
 private:
 	float pressureCoe;
 	float viscosityCoe;
 	float radius;
-	//float vorticityCoe;
 	std::vector<MVPMassParticle*> massParticles;
 	std::vector<MVPMassParticle*> innerPoints;
 	std::vector<MVPVolumeParticle*> neighbors;
@@ -111,8 +100,6 @@ private:
 	Math::Vector3df predictedPosition;
 	Math::Vector3df velocity;
 	Math::Vector3df averagedCenter;
-	float temperature;
-	float enthaply;
 	float restMass;
 	float density;
 	float pressure;

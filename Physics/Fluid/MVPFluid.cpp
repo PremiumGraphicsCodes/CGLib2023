@@ -80,7 +80,6 @@ MVPVolumeParticle* MVPFluid::create(const Vector3df& position, const float radiu
 	mp->updateTemperature(1000.0f);
 	vp->setRestMass(weight * 1.25f);
 	vp->addMassParticle(mp);
-	vp->setTemperature(temperature);
 	mp->setParent(vp);
 
 	//vp->addMassParticle(mp);
