@@ -8,6 +8,7 @@
 #include "Crystal/AppBase/SceneSelectView.h"
 
 #include "../Fluid/MVPFluidSolver.h"
+#include "MVPFluidAnimator.h"
 
 namespace Crystal {
 	namespace Physics {
@@ -31,7 +32,7 @@ private:
 	Physics::MVPFluidScene* fluidScene;
 	Physics::MVPFluidScene* staticScene;
 	Physics::MVPFluidSolver solver;
-	//Physics::MVPUpdater updator;
+	Physics::MVPFluidAnimator* animator;
 	FloatView pressureCoeView;
 	FloatView viscosityCoeView;
 	FloatView timeStepView;

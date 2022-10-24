@@ -40,6 +40,9 @@
     <ClCompile Include="MVPFluidView.cpp">
       <Filter>MVP</Filter>
     </ClCompile>
+    <ClCompile Include="MVPFluidAnimator.cpp">
+      <Filter>MVP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -82,6 +85,9 @@
       <Filter>MVP</Filter>
     </ClInclude>
     <ClInclude Include="MVPFluidView.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
+    <ClInclude Include="MVPFluidAnimator.h">
       <Filter>MVP</Filter>
     </ClInclude>
   </ItemGroup>
