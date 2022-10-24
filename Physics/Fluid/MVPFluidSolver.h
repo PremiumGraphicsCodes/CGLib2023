@@ -30,7 +30,9 @@ public:
 
 	//void addEmitterScene(MVPFluidEmitterScene* scene);
 
-	void addBoundary(const Math::Box3df& box);
+	void setBoundary(const Math::Box3df& box);
+
+	//void addBoundary(const Math::Box3df& box);
 
 	void setMaxTimeStep(const float maxTimeStep) { this->maxTimeStep = maxTimeStep; }
 

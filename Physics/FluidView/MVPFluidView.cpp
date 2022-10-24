@@ -17,6 +17,7 @@ MVPFluidView::MVPFluidView(const std::string& name, World* model, Renderer* rend
 	renderer(renderer),
 	startButton("Start"),
 	resetButton("Reset"),
+	applyButton("Apply"),
 	boundaryView("Boundary"),
 	pressureCoeView("PressureCoe", 500.f),
 	viscosityCoeView("ViscosityCoe", 50.0f),
@@ -31,6 +32,9 @@ MVPFluidView::MVPFluidView(const std::string& name, World* model, Renderer* rend
 
 	resetButton.setFunction([=]() { onReset(); });
 	add(&resetButton);
+
+	applyButton.setFunction([=]() { onApply(); });
+	add(&applyButton);
 
 	add(&boundaryView);
 	add(&pressureCoeView);
@@ -81,7 +85,7 @@ void MVPFluidView::onReset()
 
 	auto solver = std::make_unique<MVPFluidSolver>();
 	solver->setMaxTimeStep(timeStepView.getValue());
-	solver->addBoundary(boundaryView.getValue());
+	solver->setBoundary(boundaryView.getValue());
 	solver->setExternalForce(Vector3df(0.0f, -9.8f, 0.0f));
 	solver->addFluidScene(fluid.get());
 
@@ -90,3 +94,9 @@ void MVPFluidView::onReset()
 	this->animator->setTimeStep(timeStepView.getValue());
 }
 
+void MVPFluidView::onApply()
+{
+	auto solver = this->animator->getSolver();
+	solver->setBoundary(boundaryView.getValue());
+	solver->setMaxTimeStep(timeStepView.getValue());
+}

@@ -21,6 +21,8 @@ public:
 
 	void setTimeStep(const float timeStep) { this->timeStep = timeStep; }
 
+	MVPFluidSolver* getSolver() { return solver.get(); }
+
 private:
 	std::unique_ptr<MVPFluidSolver> solver;
 	MVPFluidScene* scene;

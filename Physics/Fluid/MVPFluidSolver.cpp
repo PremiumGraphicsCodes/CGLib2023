@@ -38,8 +38,9 @@ void MVPFluidSolver::addFluidScene(MVPFluid* scene)
 	this->fluids.push_back(scene);
 }
 
-void MVPFluidSolver::addBoundary(const Box3df& box)
+void MVPFluidSolver::setBoundary(const Box3df& box)
 {
+	this->boundarySolver.clear();
 	this->boundarySolver.add(box);
 }
 

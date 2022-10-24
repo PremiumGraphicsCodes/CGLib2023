@@ -28,6 +28,8 @@ private:
 
 	void onReset();
 
+	void onApply();
+
 private:
 	Physics::MVPFluidScene* fluidScene;
 	Physics::MVPFluidScene* staticScene;
@@ -41,6 +43,7 @@ private:
 	Vector3dView externalForceView;
 	Button startButton;
 	Button resetButton;
+	Button applyButton;
 	int newId;
 
 	World* world;
