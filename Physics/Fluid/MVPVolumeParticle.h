@@ -28,10 +28,6 @@ public:
 
 	void setViscosityCoe(const float c);
 
-	void setVorticityCoe(const float c);
-
-	void setHeatDiffuseCue(const float c);
-
 	void setDragForceCoe(const float c) { this->dragForceCoe = c; }
 
 	void setDragHeatCoe(const float c) { this->dragHeatCoe = c; }

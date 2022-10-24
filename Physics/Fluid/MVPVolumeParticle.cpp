@@ -37,13 +37,6 @@ void MVPVolumeParticle::setViscosityCoe(const float c)
 	}
 }
 
-void MVPVolumeParticle::setHeatDiffuseCue(const float c)
-{
-	for (auto p : massParticles) {
-		p->setHeatDiffuseCoe(c);
-	}
-}
-
 void MVPVolumeParticle::reset(bool resetMicro)
 {
 	this->force = Math::Vector3df(0, 0, 0);
@@ -88,23 +81,10 @@ void MVPVolumeParticle::calculateViscosityForce()
 	this->force += f;
 }
 
-/*
-void MVPVolumeParticle::calculateVorticity()
-{
-	vorticity = Vector3df(0, 0, 0);
-	for (auto mp : innerPoints) {
-		const auto p = (mp->position - this->position);
-		const auto v = (mp->getVelocity() - this->velocity);
-		vorticity += glm::cross(p, v) * this->vorticityCoe;
-	}
-}
-*/
-
 void MVPVolumeParticle::stepTime(const float dt)
 {
 	const auto dv = this->position - averagedCenter;
 	this->force += dv /*/ dt / dt*/ * this->density * this->pressureCoe;
-
 
 	const auto acc = (force) / getDensity();
 	this->velocity += acc * dt;

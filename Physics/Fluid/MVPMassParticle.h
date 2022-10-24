@@ -25,8 +25,6 @@ public:
 
 	void updateVelocity(const Math::Vector3df& centerVelocity);
 
-	void updateTemperature(const float t) { this->temperature = t; }
-
 	float getMass() const { return mass; }
 
 	void setPressureCoe(const float c) { this->pressureCoe = c; }
@@ -37,13 +35,7 @@ public:
 
 	float getViscosityCoe() const { return viscosityCoe; }
 
-	void setHeatDiffuseCoe(const float c) { this->heatDiffuseCoe = c; }
-
-	float getHeatDiffuseCoe() const { return heatDiffuseCoe; }
-
 	Math::Vector3df position;
-
-	float getTemperature() const { return temperature; }
 
 	int lifeTime = 0;
 
@@ -54,8 +46,6 @@ private:
 	float mass;
 	float pressureCoe;
 	float viscosityCoe;
-	float heatDiffuseCoe;
-	float temperature;
 };
 
 	}

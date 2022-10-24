@@ -14,18 +14,6 @@ public:
 
 	~MVPFluid();
 
-	//void addParticle(MVPVolumeParticle* mp);
-	/*
-{
-	mp->setPressureCoe(this->pressureCoe);
-	mp->setViscosityCoe(this->viscosityCoe);
-	mp->setHeatDiffuseCue(this->heatDiffuseCoe);
-	mp->setDragHeatCoe(this->dragHeatCoe);
-	mp->setDragForceCoe(this->dragForceCoe);
-	particles.push_back(mp);
-}
-*/
-
 	std::list<MVPVolumeParticle*> getParticles() const { return particles; }
 
 	void remove(MVPVolumeParticle* p) { particles.remove(p); }
@@ -60,7 +48,7 @@ public:
 
 	void setLifeLimit(const int limit) { this->lifeLimit = limit; }
 
-	MVPVolumeParticle* create(const Math::Vector3df& position, const float radius, const float weight, const float temperature);
+	MVPVolumeParticle* create(const Math::Vector3df& position, const float radius, const float weight);
 
 private:
 	std::list<MVPVolumeParticle*> particles;
