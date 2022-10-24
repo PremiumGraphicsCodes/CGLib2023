@@ -27,10 +27,16 @@
     <ClCompile Include="PBSPHAnimator.cpp">
       <Filter>PBSPH</Filter>
     </ClCompile>
-    <ClCompile Include="MVPSamplerView.cpp">
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="MVPFluidPresenter.cpp">
       <Filter>MVP</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="MVPSamplerView.cpp">
+      <Filter>MVP\Sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="MVPFluidScene.cpp">
+      <Filter>MVP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -61,11 +67,17 @@
     <ClInclude Include="PBSPHAnimator.h">
       <Filter>PBSPH</Filter>
     </ClInclude>
-    <ClInclude Include="MVPSamplerView.h">
-      <Filter>MVP</Filter>
-    </ClInclude>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="MVPFluidPresenter.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
+    <ClInclude Include="MVPSamplerView.h">
+      <Filter>MVP\Sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="MVPFluidScene.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CSPH">
@@ -76,6 +88,9 @@
     </Filter>
     <Filter Include="MVP">
       <UniqueIdentifier>{95401368-80d9-45dd-9713-e4739b193b77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVP\Sampler">
+      <UniqueIdentifier>{98a6c59c-387d-4b06-93b9-e1535a0a7223}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

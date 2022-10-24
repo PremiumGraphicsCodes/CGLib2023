@@ -3,7 +3,6 @@
 #include "Crystal/Scene/SceneBase.h"
 #include "CSPHFluidPresenter.h"
 #include "../Fluid/CSPHFluid.h"
-#include <vector>
 
 namespace Crystal {
 	namespace Physics {
