@@ -64,10 +64,12 @@ void MVPFluidSolver::simulate()
 		return;
 	}
 
+	/*
 	if (currentTimeStep % 5 == 0) {
 		MVPSampler sampler;
 		sampler.merge(allFluids, effectLength);
 	}
+	*/
 
 	for (auto fluid : allFluids) {
 		const auto ps = fluid->getParticles();
@@ -182,10 +184,12 @@ void MVPFluidSolver::simulate()
 
 	boundarySolver.clearGphosts();
 
+	/*
 	MVPSampler sampler;
 	if (currentTimeStep % 2 == 0) {
 		sampler.split(allFluids);
 	}
+	*/
 
 	currentTimeStep++;
 }
