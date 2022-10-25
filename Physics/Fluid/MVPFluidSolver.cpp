@@ -133,13 +133,7 @@ void MVPFluidSolver::simulate()
 		}
 
 
-#pragma omp parallel for
-		for (int i = 0; i < fluidParticles.size(); ++i) {
-			const auto particle = fluidParticles[i];
-			//boundarySolver.createMacro(particle);
-			boundarySolver.solvePressure(particle, dt);
-		}
-
+//#pragma omp parallel for
 		for (auto particle : fluidParticles) {
 			particle->addForce(externalForce * particle->getDensity());
 		}
@@ -158,6 +152,7 @@ void MVPFluidSolver::simulate()
 				particle->updateInnerPoints();
 				//particle->calculateDensity();
 				particle->calculatePressureForce(relaxationCoe, dt);
+				boundarySolver.solvePressure(particle, dt);
 			}
 			relaxationCoe *= 0.85f;
 

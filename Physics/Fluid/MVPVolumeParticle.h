@@ -76,6 +76,8 @@ public:
 
 	const std::vector<MVPVolumeParticle*>& getNeighbors() const { return neighbors; }
 
+	void addDx(const Math::Vector3df& dx) { this->averagedCenter -= dx; }
+
 private:
 	float pressureCoe;
 	float viscosityCoe;
