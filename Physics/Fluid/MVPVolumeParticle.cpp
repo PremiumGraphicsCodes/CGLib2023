@@ -129,10 +129,3 @@ void MVPVolumeParticle::updateInnerPoints()
 		}
 	}
 }
-
-void MVPVolumeParticle::calculateDragForce()
-{
-	//const auto t = (temperature - 300.0f);
-	const auto drag = -dragForceCoe * (velocity - Vector3df(0.0, -10, 0.0)); //* (1.0f - density / 1.0f);
-	addForce(drag * this->density);
-}

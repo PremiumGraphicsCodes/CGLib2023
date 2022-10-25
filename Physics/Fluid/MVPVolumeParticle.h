@@ -28,12 +28,6 @@ public:
 
 	void setViscosityCoe(const float c);
 
-	void setDragForceCoe(const float c) { this->dragForceCoe = c; }
-
-	void setDragHeatCoe(const float c) { this->dragHeatCoe = c; }
-
-	//KFFluidScene* getScene() { return scene; }
-
 	void reset(bool resetMicro);
 
 	void addNeighbor(MVPVolumeParticle* neighbor) { this->neighbors.push_back(neighbor); }
@@ -82,8 +76,6 @@ public:
 
 	const std::vector<MVPVolumeParticle*>& getNeighbors() const { return neighbors; }
 
-	void calculateDragForce();
-
 private:
 	float pressureCoe;
 	float viscosityCoe;
@@ -99,8 +91,6 @@ private:
 	float restMass;
 	float density;
 	float pressure;
-	float dragForceCoe = 0.0f;
-	float dragHeatCoe = 0.0f;
 };
 
 	}

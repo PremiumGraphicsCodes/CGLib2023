@@ -142,8 +142,6 @@ void MVPFluidSolver::simulate()
 
 		for (auto particle : fluidParticles) {
 			particle->addForce(externalForce * particle->getDensity());
-			particle->calculateDragForce();
-			//particle->stepTime(dt);
 		}
 
 		// solve incompressibility.
