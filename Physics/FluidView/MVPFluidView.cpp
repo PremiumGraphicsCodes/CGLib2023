@@ -25,7 +25,7 @@ MVPFluidView::MVPFluidView(const std::string& name, World* model, Renderer* rend
 	radiusView("SearchRadius", 2.00f),
 	externalForceView("ExternalForce", Vector3dd(0.0, -9.8, 0.0))
 {
-	boundaryView.setValue(Box3df(Vector3dd(0, 0.0, 0.0), Vector3dd(100.0, 1000.0, 40.0)));
+	boundaryView.setValue(Box3df(Vector3dd(0, 0.0, 0.0), Vector3dd(50.0, 1000.0, 10.0)));
 
 	startButton.setFunction([=]() { onStart(); });
 	add(&startButton);

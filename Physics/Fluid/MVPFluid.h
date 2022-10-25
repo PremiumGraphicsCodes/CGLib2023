@@ -20,8 +20,6 @@ public:
 
 	void removeDegeneratedVolumes();
 
-	void removeExpired();
-
 	void add(MVPVolumeParticle* p) { particles.push_back(p); }
 
 	Math::Box3df getBoundingBox() const;

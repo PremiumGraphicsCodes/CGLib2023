@@ -37,8 +37,6 @@ public:
 
 	Math::Vector3df position;
 
-	int lifeTime = 0;
-
 private:
 	MVPVolumeParticle* parent;
 	Math::Vector3df vector;

@@ -47,30 +47,6 @@ void MVPFluid::removeDegeneratedVolumes()
 	for (auto v : vps) {
 		delete v;
 	}
-	removeExpired();
-}
-
-void MVPFluid::removeExpired()
-{
-	std::list<MVPVolumeParticle*> vps;
-	if (lifeLimit != -1) {
-		for (auto v : particles) {
-			if (v->getMassParticles().front()->lifeTime > lifeLimit) {
-				v->clearMasses();
-				vps.push_back(v);
-			}
-		}
-	}
-	std::list<MVPVolumeParticle*> diffs;
-	std::set_difference(
-		this->particles.begin(), this->particles.end(),
-		vps.begin(), vps.end(),
-		std::inserter(diffs, diffs.end())
-	);
-	this->particles = diffs;
-	for (auto v : vps) {
-		delete v;
-	}
 }
 
 MVPVolumeParticle* MVPFluid::create(const Vector3df& position, const float radius, const float weight)

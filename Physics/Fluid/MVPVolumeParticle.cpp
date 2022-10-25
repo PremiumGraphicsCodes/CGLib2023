@@ -89,10 +89,6 @@ void MVPVolumeParticle::stepTime(const float dt)
 	const auto acc = (force) / getDensity();
 	this->velocity += acc * dt;
 	this->position += this->velocity * dt;
-
-	for (auto c : this->massParticles) {
-		c->lifeTime++;
-	}
 }
 
 float MVPVolumeParticle::getDensity() const
