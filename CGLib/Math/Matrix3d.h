@@ -36,12 +36,23 @@ static Matrix3d<T> rotationMatrixY(const T angle)
 template<typename T>
 static Matrix3d<T> rotationMatrixZ(const T angle)
 {
-	return Matrix3dd
+	return Matrix3d<T>
 	(
 		::cos(angle), -::sin(angle), 0.0,
 		::sin(angle), cos(angle), 0.0,
 		0.0, 0.0, 1.0
 	);
+}
+
+template<typename T>
+static Matrix3d<T> identitiyMatrix3d()
+{
+	return Matrix3d<T>
+		(
+		1, 0, 0,
+		0, 1, 0,
+		0, 0, 1
+		);
 }
 
 template<typename T>

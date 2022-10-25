@@ -44,6 +44,12 @@
     <ClInclude Include="MVPSampler.h">
       <Filter>MVP</Filter>
     </ClInclude>
+    <ClInclude Include="WPCA.h">
+      <Filter>SPHSurface</Filter>
+    </ClInclude>
+    <ClInclude Include="SPHSurfaceParticle.h">
+      <Filter>SPHSurface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -89,6 +95,12 @@
     <ClCompile Include="MVPSampler.cpp">
       <Filter>MVP</Filter>
     </ClCompile>
+    <ClCompile Include="WPCA.cpp">
+      <Filter>SPHSurface</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHSurfaceParticle.cpp">
+      <Filter>SPHSurface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CSPH">
@@ -99,6 +111,9 @@
     </Filter>
     <Filter Include="MVP">
       <UniqueIdentifier>{09cdb36e-490b-45c6-a4fc-f358fd518a95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SPHSurface">
+      <UniqueIdentifier>{2ce7fb62-bb64-41f2-9156-2b745c042e6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
