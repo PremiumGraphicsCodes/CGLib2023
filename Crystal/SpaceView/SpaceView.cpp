@@ -7,6 +7,7 @@
 #include "CGLib/UI/Panel.h"
 
 #include "World.h"
+#include "Renderer.h"
 
 #include "SpaceMenu.h"
 

@@ -162,6 +162,7 @@
     <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="SpaceHash.h" />
     <ClInclude Include="SparseVolume.h" />
+    <ClInclude Include="SparseVolumeBuilder.h" />
     <ClInclude Include="ZIndexedSearcher.h" />
     <ClInclude Include="ZOrderCurve2d.h" />
     <ClInclude Include="ZOrderCurve3d.h" />
@@ -175,6 +176,7 @@
     <ClCompile Include="LinearOctreeIndex.cpp" />
     <ClCompile Include="SpaceHash.cpp" />
     <ClCompile Include="SparseVolume.cpp" />
+    <ClCompile Include="SparseVolumeBuilder.cpp" />
     <ClCompile Include="ZIndexedSearcher.cpp" />
     <ClCompile Include="ZOrderCurve2d.cpp" />
     <ClCompile Include="ZOrderCurve3d.cpp" />

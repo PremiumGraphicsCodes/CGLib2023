@@ -27,6 +27,9 @@
     <ClInclude Include="SparseVolume.h">
       <Filter>Volume</Filter>
     </ClInclude>
+    <ClInclude Include="SparseVolumeBuilder.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
@@ -52,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="ZIndexedSearcher.cpp" />
     <ClCompile Include="SparseVolume.cpp">
+      <Filter>Volume</Filter>
+    </ClCompile>
+    <ClCompile Include="SparseVolumeBuilder.cpp">
       <Filter>Volume</Filter>
     </ClCompile>
   </ItemGroup>

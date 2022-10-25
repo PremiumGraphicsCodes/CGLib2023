@@ -10,24 +10,5 @@ namespace Crystal {
 		public:
 		};
 
-		class Renderer : public IRenderer
-		{
-		public:
-			explicit Renderer(World* world) :
-				world(world)
-			{}
-
-			void init() override
-			{
-
-			}
-
-			void render(const int width, const int height) override
-			{
-			}
-
-		private:
-			World* world;
-		};
 	}
 }

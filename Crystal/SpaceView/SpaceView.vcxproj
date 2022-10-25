@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CompactSpaceHashView.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SpaceHashView.cpp" />
     <ClCompile Include="SpaceMenu.cpp" />
     <ClCompile Include="SpaceView.cpp" />
@@ -175,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CompactSpaceHashView.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="SpaceHashView.h" />
     <ClInclude Include="SpaceMenu.h" />
     <ClInclude Include="World.h" />

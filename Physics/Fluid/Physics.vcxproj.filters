@@ -50,6 +50,9 @@
     <ClInclude Include="SPHSurfaceParticle.h">
       <Filter>SPHSurface</Filter>
     </ClInclude>
+    <ClInclude Include="SPHVolumeConverter.h">
+      <Filter>SPHSurface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -99,6 +102,9 @@
       <Filter>SPHSurface</Filter>
     </ClCompile>
     <ClCompile Include="SPHSurfaceParticle.cpp">
+      <Filter>SPHSurface</Filter>
+    </ClCompile>
+    <ClCompile Include="SPHVolumeConverter.cpp">
       <Filter>SPHSurface</Filter>
     </ClCompile>
   </ItemGroup>
