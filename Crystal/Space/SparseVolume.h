@@ -82,7 +82,7 @@ public:
 
 	SparseVolumeNode<T>* createNode(const std::array<int, 3>& index);
 
-	Math::Vector3dd getPositionAt(const std::array<int, 3>& index) const;
+	Math::Vector3df getPositionAt(const std::array<int, 3>& index) const;
 
 	SparseVolumeNode<T>* findNode(const std::array<int, 3>& index) const;
 

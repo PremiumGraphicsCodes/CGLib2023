@@ -17,9 +17,9 @@ class SparseVolumeBuilder
 public:
 	void build(const Math::Vector3df& cellLength, const size_t tableSize);
 
-	void add(const Math::Box3d<double>& box);
+	void add(const Math::Box3d<float>& box);
 
-	void add(const Math::Sphere3d<double>& sphere);
+	void add(const Math::Sphere3d<float>& sphere);
 
 	std::unique_ptr<SparseVolumef> get() { return std::move(volume); }
 

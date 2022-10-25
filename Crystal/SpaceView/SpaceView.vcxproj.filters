@@ -6,6 +6,12 @@
     <ClCompile Include="SpaceHashView.cpp" />
     <ClCompile Include="CompactSpaceHashView.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SparseVolumeMenu.cpp">
+      <Filter>Volume</Filter>
+    </ClCompile>
+    <ClCompile Include="SVBoxView.cpp">
+      <Filter>Volume</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -16,5 +22,16 @@
     <ClInclude Include="CompactSpaceHashView.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SparseVolumeMenu.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
+    <ClInclude Include="SVBoxView.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Volume">
+      <UniqueIdentifier>{417d2348-17e3-4a25-8244-f756c3cfe3c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

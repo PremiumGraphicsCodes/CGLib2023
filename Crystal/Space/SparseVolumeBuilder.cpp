@@ -11,7 +11,7 @@ void SparseVolumeBuilder::build(const Vector3df& cellLength, const size_t tableS
 	this->volume = std::make_unique<SparseVolumef>(cellLength, tableSize);
 }
 
-void SparseVolumeBuilder::add(const Box3d<double>& box)
+void SparseVolumeBuilder::add(const Box3d<float>& box)
 {
 	const auto min = this->volume->toIndex(box.getMin());
 	const auto max = this->volume->toIndex(box.getMax());
@@ -27,7 +27,7 @@ void SparseVolumeBuilder::add(const Box3d<double>& box)
 	}
 }
 
-void SparseVolumeBuilder::add(const Sphere3d<double>& sphere)
+void SparseVolumeBuilder::add(const Sphere3d<float>& sphere)
 {
 	const auto box = sphere.getBoundingBox();
 	const auto min = this->volume->toIndex(box.getMin());

@@ -28,12 +28,12 @@ void SparseVolume<T>::clear()
 }
 
 template<typename T>
-Vector3dd SparseVolume<T>::getPositionAt(const std::array<int, 3>& index) const
+Vector3df SparseVolume<T>::getPositionAt(const std::array<int, 3>& index) const
 {
 	const auto x = index[0] * cellLength[0];
 	const auto y = index[1] * cellLength[1];
 	const auto z = index[2] * cellLength[2];
-	return Vector3dd(x, y, z);
+	return Vector3df(x, y, z);
 }
 
 template<typename T>

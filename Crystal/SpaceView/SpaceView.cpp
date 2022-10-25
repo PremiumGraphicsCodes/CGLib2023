@@ -10,6 +10,7 @@
 #include "Renderer.h"
 
 #include "SpaceMenu.h"
+#include "SparseVolumeMenu.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -31,6 +32,7 @@ int main() {
 
 	app.add(new CameraMenu("Camera", &world));
 	app.add(new SpaceMenu("Space", control, &world, &renderer));
+	app.add(new SparseVolumeMenu("SparseVolume", control, &world, &renderer));
 	app.add(control);
 
 	app.show();

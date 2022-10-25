@@ -150,6 +150,8 @@
     <ClCompile Include="SpaceHashView.cpp" />
     <ClCompile Include="SpaceMenu.cpp" />
     <ClCompile Include="SpaceView.cpp" />
+    <ClCompile Include="SparseVolumeMenu.cpp" />
+    <ClCompile Include="SVBoxView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CGLib\Shader\Shader.vcxproj">
@@ -179,6 +181,8 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SpaceHashView.h" />
     <ClInclude Include="SpaceMenu.h" />
+    <ClInclude Include="SparseVolumeMenu.h" />
+    <ClInclude Include="SVBoxView.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
