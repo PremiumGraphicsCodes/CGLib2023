@@ -22,10 +22,10 @@ MVPFluidView::MVPFluidView(const std::string& name, World* model, Renderer* rend
 	pressureCoeView("PressureCoe", 500.f),
 	viscosityCoeView("ViscosityCoe", 50.0f),
 	timeStepView("TimeStep", 0.01f),
-	radiusView("SearchRadius", 2.00f),
+	radiusView("SearchRadius", 1.00f),
 	externalForceView("ExternalForce", Vector3dd(0.0, -9.8, 0.0))
 {
-	boundaryView.setValue(Box3df(Vector3dd(0, 0.0, 0.0), Vector3dd(50.0, 1000.0, 10.0)));
+	boundaryView.setValue(Box3df(Vector3dd(1.0, 0.0, 1.0), Vector3dd(50.0, 1000.0, 20.0)));
 
 	startButton.setFunction([=]() { onStart(); });
 	add(&startButton);
@@ -67,8 +67,8 @@ void MVPFluidView::onReset()
 	fluid->setViscosityCoe(this->viscosityCoeView.getValue());
 
 	{
-		const auto radius = 1.0;
-		const auto length = radius * 0.5;
+		const auto radius = 0.5;
+		const auto length = radius * 2.0;
 		for (int i = 0; i < 20; ++i) {
 			for (int j = 0; j < 20; ++j) {
 				for (int k = 0; k < 20; ++k) {
@@ -87,6 +87,7 @@ void MVPFluidView::onReset()
 	solver->setMaxTimeStep(timeStepView.getValue());
 	solver->setBoundary(boundaryView.getValue());
 	solver->setExternalForce(Vector3df(0.0f, -9.8f, 0.0f));
+	solver->setEffectLength(this->radiusView.getValue());
 	solver->addFluidScene(fluid.get());
 
 	this->fluidScene->setFluid(std::move(fluid));
