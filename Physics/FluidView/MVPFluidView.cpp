@@ -6,6 +6,8 @@
 
 #include "Renderer.h"
 
+#include <random>
+
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
@@ -66,6 +68,7 @@ void MVPFluidView::onReset()
 	fluid->setPressureCoe(this->pressureCoeView.getValue());
 	fluid->setViscosityCoe(this->viscosityCoeView.getValue());
 
+	/*
 	{
 		const auto radius = 0.5;
 		const auto length = radius * 2.0;
@@ -81,6 +84,20 @@ void MVPFluidView::onReset()
 				}
 			}
 		}
+	}
+	*/
+	Box3df box(Vector3df(0, 0, 0), Vector3df(20, 20, 20));
+	std::mt19937 mt{ std::random_device{}() };
+	std::uniform_real_distribution<float> dist(0.0, 1.0);
+	for (int i = 0; i < 10000; ++i) {
+		const auto u = dist(mt);
+		const auto v = dist(mt);
+		const auto w = dist(mt);
+		const auto pos =  box.getPosition(u, v, w);
+		auto mp = fluid->create(pos, 1.0, 0.25f);
+		mp->setPressureCoe(this->pressureCoeView.getValue());
+		mp->setViscosityCoe(this->viscosityCoeView.getValue());
+		fluid->add(mp);
 	}
 
 	auto solver = std::make_unique<MVPFluidSolver>();
