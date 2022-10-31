@@ -3,7 +3,7 @@
 #include "Crystal/AppBase/IRenderer.h"
 #include "Crystal/Renderer/PointRenderer.h"
 
-namespace Crystal{
+namespace Crystal {
 	namespace UI {
 
 class Renderer : public Crystal::UI::IRenderer
