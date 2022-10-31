@@ -4,12 +4,16 @@
     <ClCompile Include="VolumeView.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SparseVolumePresenter.cpp" />
+    <ClCompile Include="SVBoxView.cpp" />
+    <ClCompile Include="SparseVolumeMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SparseVolumeScene.h" />
     <ClInclude Include="SparseVolumePresenter.h" />
+    <ClInclude Include="SVBoxView.h" />
+    <ClInclude Include="SparseVolumeMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
