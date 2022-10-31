@@ -12,7 +12,7 @@ namespace Crystal {
 class SparseVolumeScene : public Scene::SceneBase
 {
 public:
-	SparseVolumeScene();
+	SparseVolumeScene() {}
 
 	void setShape(std::unique_ptr<SparseVolumef> shape) { this->shape = std::move(shape); }
 
@@ -22,7 +22,7 @@ public:
 
 	Scene::IPresenter* getPresenter() override { return presenter.get(); }
 
-	Math::Box3df getBoundingBox() const override;
+	Math::Box3df getBoundingBox() const override { return shape->getBoundingBox(); }
 
 private:
 	std::unique_ptr<SparseVolumef> shape;

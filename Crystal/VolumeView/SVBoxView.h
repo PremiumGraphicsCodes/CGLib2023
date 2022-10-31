@@ -19,6 +19,8 @@ public:
 private:
 	Box3dView boxView;
 	FloatView cellLengthView;
+	World* world;
+	Renderer* renderer;
 };
 
 	}

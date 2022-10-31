@@ -8,7 +8,7 @@
 #include "World.h"
 #include "Renderer.h"
 
-//#include "SpaceMenu.h"
+#include "SparseVolumeMenu.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -28,7 +28,7 @@ int main() {
 	auto control = new Panel("Control");
 
 	app.add(new CameraMenu("Camera", &world));
-	//app.add(new PhysicsMenu("Physics", &world, &renderer, control));
+	app.add(new SparseVolumeMenu("SparseVolume", control, &world, &renderer));
 	app.add(control);
 
 	app.show();

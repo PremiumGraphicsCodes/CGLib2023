@@ -148,7 +148,9 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SparseVolumeMenu.cpp" />
     <ClCompile Include="SparseVolumePresenter.cpp" />
+    <ClCompile Include="SparseVolumeScene.cpp" />
     <ClCompile Include="SVBoxView.cpp" />
+    <ClCompile Include="VolumeMenu.cpp" />
     <ClCompile Include="VolumeView.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +188,7 @@
     <ClInclude Include="SparseVolumePresenter.h" />
     <ClInclude Include="SparseVolumeScene.h" />
     <ClInclude Include="SVBoxView.h" />
+    <ClInclude Include="VolumeMenu.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>

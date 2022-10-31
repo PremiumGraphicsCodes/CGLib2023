@@ -3,19 +3,43 @@
   <ItemGroup>
     <ClCompile Include="VolumeView.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="SparseVolumePresenter.cpp" />
-    <ClCompile Include="SVBoxView.cpp" />
-    <ClCompile Include="SparseVolumeMenu.cpp" />
+    <ClCompile Include="SparseVolumeMenu.cpp">
+      <Filter>SparseVolume</Filter>
+    </ClCompile>
+    <ClCompile Include="SparseVolumePresenter.cpp">
+      <Filter>SparseVolume</Filter>
+    </ClCompile>
+    <ClCompile Include="SparseVolumeScene.cpp">
+      <Filter>SparseVolume</Filter>
+    </ClCompile>
+    <ClCompile Include="SVBoxView.cpp">
+      <Filter>SparseVolume</Filter>
+    </ClCompile>
+    <ClCompile Include="VolumeMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="SparseVolumeScene.h" />
-    <ClInclude Include="SparseVolumePresenter.h" />
-    <ClInclude Include="SVBoxView.h" />
-    <ClInclude Include="SparseVolumeMenu.h" />
+    <ClInclude Include="SparseVolumeMenu.h">
+      <Filter>SparseVolume</Filter>
+    </ClInclude>
+    <ClInclude Include="SparseVolumePresenter.h">
+      <Filter>SparseVolume</Filter>
+    </ClInclude>
+    <ClInclude Include="SparseVolumeScene.h">
+      <Filter>SparseVolume</Filter>
+    </ClInclude>
+    <ClInclude Include="SVBoxView.h">
+      <Filter>SparseVolume</Filter>
+    </ClInclude>
+    <ClInclude Include="VolumeMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SparseVolume">
+      <UniqueIdentifier>{6072dada-a6df-4342-ae4e-e94b6c05d434}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

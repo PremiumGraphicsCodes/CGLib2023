@@ -15,12 +15,11 @@ void SparseVolumePresenter::build()
 
 void SparseVolumePresenter::send()
 {
-	/*
 	Shader::VertexBuffer<float> position;
 	Shader::VertexBuffer<float> color;
 	Shader::VertexBuffer<float> size;
 
-	const auto& particles = model->get
+	const auto& particles = model->getShape()->getNodes();
 	for (auto& p : particles) {
 		position.add(p->getPosition());
 		color.add(ColorRGBAf(1, 0, 0, 0));
@@ -32,12 +31,10 @@ void SparseVolumePresenter::send()
 	vbo.size.send(size);
 
 	count = static_cast<int>(particles.size());
-	*/
 }
 
 void SparseVolumePresenter::render(const Camera& camera)
 {
-	/*
 	view->buffer.position = &vbo.position;
 	view->buffer.size = &vbo.size;
 	view->buffer.color = &vbo.color;
@@ -46,5 +43,4 @@ void SparseVolumePresenter::render(const Camera& camera)
 	view->buffer.projectionMatrix = camera.getProjectionMatrix();
 
 	view->render();
-	*/
 }

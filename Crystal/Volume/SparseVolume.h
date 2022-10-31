@@ -96,7 +96,7 @@ public:
 
 	std::list<SparseVolumeNode<T>*> getNodes() const;
 
-	Math::Box3dd getBoundingBox() const;
+	Math::Box3df getBoundingBox() const;
 
 	std::array<int, 3> toIndex(const Math::Vector3df& pos) const;
 

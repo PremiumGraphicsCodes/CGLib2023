@@ -149,9 +149,9 @@ std::list<SparseVolumeNode<T>*> SparseVolume<T>::getNodes() const
 }
 
 template<typename T>
-Box3dd SparseVolume<T>::getBoundingBox() const
+Box3df SparseVolume<T>::getBoundingBox() const
 {
-	auto box = Box3dd::createDegeneratedBox();
+	auto box = Box3df::createDegeneratedBox();
 
 	const auto nodes = getNodes();
 	for (auto n : nodes) {
