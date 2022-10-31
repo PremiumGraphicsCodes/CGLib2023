@@ -64,7 +64,7 @@ std::unique_ptr<SparseVolumef> SPHVolumeConverter::buildIsotoropic(const std::ve
 	for (int i = 0; i < ns.size(); ++i) {
 		auto node = ns[i];
 		const auto nodePos = node->getPosition();
-		const auto neighbors = spaceHash.findNeighborIndices(i);
+		const auto neighbors = spaceHash.findNeighborIndices(nodePos);
 		for (auto n : neighbors) {
 			auto& sp = particles[n];
 			const auto v = sp->getPosition() - nodePos;

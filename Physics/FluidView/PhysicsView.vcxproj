@@ -163,6 +163,7 @@
     <ClCompile Include="PhysicsView.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SPHVolumeConverterView.cpp" />
+    <ClCompile Include="SPHVolumePresenter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CGLib\Graphics\Graphics.vcxproj">
@@ -183,6 +184,9 @@
     <ProjectReference Include="..\..\Crystal\AppBase\AppBase.vcxproj">
       <Project>{66a1065b-73e5-4862-af0f-add2efa732e1}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\Crystal\Numerics\Numerics\Numerics.vcxproj">
+      <Project>{65ca69ad-6106-4f1b-baca-9c10359c31f5}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\Crystal\Renderer\Renderer.vcxproj">
       <Project>{b4138991-bd60-465f-ab44-64d49a9382c3}</Project>
     </ProjectReference>
@@ -191,6 +195,9 @@
     </ProjectReference>
     <ProjectReference Include="..\..\Crystal\Space\Space.vcxproj">
       <Project>{9530d9d5-3a0e-4d2f-a151-44836e69854c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Crystal\Volume\Volume.vcxproj">
+      <Project>{0b87c0f4-9d63-4607-8330-ccebcea6e4f9}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Fluid\Physics.vcxproj">
       <Project>{f978fd4b-f39b-4e94-93b4-f9ef0a90d71e}</Project>
@@ -216,6 +223,8 @@
     <ClInclude Include="PhysicsMenu.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SPHVolumeConverterView.h" />
+    <ClInclude Include="SPHVolumePresenter.h" />
+    <ClInclude Include="SPHVolumeScene.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

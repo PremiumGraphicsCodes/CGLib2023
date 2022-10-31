@@ -2,27 +2,15 @@
 
 #include "../Fluid/SPHVolumeConverter.h"
 
-//#include "Crystal/Shape/Particle.h"
-//#include "Crystal/Shape/WireFrameBuilder.h"
-//
-//#include "CrystalScene/Scene/WireFrameScene.h"
-//#include "CrystalScene/Scene/TriangleMeshScene.h"
-//
-//#include "CrystalSpace/CrystalSpace/SparseVolumeScene.h"
-//
+#include "SPHVolumeScene.h"
 #include "CGLib/Math/Sphere3d.h"
-//#include "Crystal/Math/Ellipsoid3d.h"
-//
-//#include "CrystalSpace/CrystalSpace/MarchingCubesAlgo.h"
-////#include "Crystal/Shape/PolygonMeshBuilder.h"
-//
+#include "Renderer.h"
 #include <iostream>
-//
+
 using namespace Crystal::Math;
 using namespace Crystal::Shape;
 using namespace Crystal::UI;
-//using namespace Crystal::Scene;
-//using namespace Crystal::Space;
+using namespace Crystal::Renderer;
 using namespace Crystal::Physics;
 
 namespace {
@@ -113,15 +101,12 @@ void SPHVolumeConverterView::onOk()
 	std::cout << minValue << std::endl;
 	std::cout << maxValue << std::endl;
 
-	/*
-	SparseVolumeScene* svScene = new SparseVolumeScene(getWorld()->getNextSceneId(), "Vol", std::move(sp));
-	auto presenter = svScene->getPresenter();
+	auto volume = new SPHVolumeScene();
+	volume->setShape(std::move(sp));
 
-	auto colorMap = this->colorMapView.getValue();
-	colorMap.setMinMax(minValue, maxValue);
-	static_cast<SparseVolumePresenter*>(presenter)->setColorMap(colorMap);
-	presenter->createView(world->getRenderer());
-
-	getWorld()->getScenes()->addScene(svScene);
-	*/
+	auto presenter = std::make_unique<SPHVolumePresenter>(volume, renderer->getPointRenderer());
+	presenter->build();
+	presenter->send();
+	volume->setPresenter(std::move(presenter));
+	world->getRootScene()->addScene(volume);
 }

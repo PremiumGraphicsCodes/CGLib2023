@@ -6,6 +6,7 @@
 #include "PBSPHFluidView.h"
 #include "MVPFluidView.h"
 #include "MVPSamplerView.h"
+#include "SPHVolumeConverterView.h"
 
 using namespace Crystal::UI;
 
@@ -23,5 +24,8 @@ PhysicsMenu::PhysicsMenu(const std::string& name, World* world, Renderer* render
 		}));
 	add(new MenuItem("MVPSampler", [control, world, renderer]() {
 		control->setChild(new MVPSamplerView("MVPSampler", world, renderer));
+		}));
+	add(new MenuItem("SPHVolume", [control, world, renderer]() {
+		control->setChild(new SPHVolumeConverterView("SPHVolume", world, renderer));
 		}));
 }
