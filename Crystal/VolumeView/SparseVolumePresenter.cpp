@@ -1,6 +1,6 @@
 #include "SparseVolumePresenter.h"
 #include "SparseVolumeScene.h"
-#include "../Space/SparseVolume.h"
+#include "../Volume/SparseVolume.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::Scene;

@@ -1,15 +1,13 @@
 #include "SVBoxView.h"
 
-#include "../Space/SparseVolume.h"
-#include "../Space/SparseVolumeBuilder.h"
+//#include "../Volume/SparseVolume.h"
+//#include "../Volume/SparseVolumeBuilder.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::UI;
 
 using namespace Crystal::Math;
-using namespace Crystal::Shape;
 using namespace Crystal::UI;
-using namespace Crystal::Space;
 
 SVBoxView::SVBoxView(const std::string& name, World* world, Renderer* canvas) :
 	IOkCancelView(name),
@@ -23,6 +21,7 @@ SVBoxView::SVBoxView(const std::string& name, World* world, Renderer* canvas) :
 
 void SVBoxView::onOk()
 {
+	/*
 	const auto box = boxView.getValue();
 	const auto cellLength = cellLengthView.getValue();
 
@@ -36,4 +35,5 @@ void SVBoxView::onOk()
 	}
 
 	//ISVAddView::addVolume(std::move(sv));
+	*/
 }

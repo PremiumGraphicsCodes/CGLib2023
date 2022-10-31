@@ -12,9 +12,6 @@
     <ClCompile Include="SVBoxView.cpp">
       <Filter>Volume</Filter>
     </ClCompile>
-    <ClCompile Include="SparseVolumePresenter.cpp">
-      <Filter>Volume</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -29,12 +26,6 @@
       <Filter>Volume</Filter>
     </ClInclude>
     <ClInclude Include="SVBoxView.h">
-      <Filter>Volume</Filter>
-    </ClInclude>
-    <ClInclude Include="SparseVolumeScene.h">
-      <Filter>Volume</Filter>
-    </ClInclude>
-    <ClInclude Include="SparseVolumePresenter.h">
       <Filter>Volume</Filter>
     </ClInclude>
   </ItemGroup>

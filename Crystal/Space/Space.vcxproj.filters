@@ -24,12 +24,6 @@
       <Filter>SpaceHash</Filter>
     </ClInclude>
     <ClInclude Include="ZIndexedSearcher.h" />
-    <ClInclude Include="SparseVolume.h">
-      <Filter>Volume</Filter>
-    </ClInclude>
-    <ClInclude Include="SparseVolumeBuilder.h">
-      <Filter>Volume</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
@@ -54,12 +48,6 @@
       <Filter>SpaceHash</Filter>
     </ClCompile>
     <ClCompile Include="ZIndexedSearcher.cpp" />
-    <ClCompile Include="SparseVolume.cpp">
-      <Filter>Volume</Filter>
-    </ClCompile>
-    <ClCompile Include="SparseVolumeBuilder.cpp">
-      <Filter>Volume</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Indexed">
@@ -73,9 +61,6 @@
     </Filter>
     <Filter Include="SpaceHash">
       <UniqueIdentifier>{95f2c85d-ef80-4d60-ad35-a61e7ccc8e59}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Volume">
-      <UniqueIdentifier>{fdee595f-1460-45d4-b827-589b34225cfb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

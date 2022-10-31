@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SparseVolumePresenter.cpp" />
     <ClCompile Include="VolumeView.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +177,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SparseVolumePresenter.h" />
+    <ClInclude Include="SparseVolumeScene.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
