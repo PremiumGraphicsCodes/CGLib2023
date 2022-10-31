@@ -5,7 +5,7 @@
 #include "Crystal/Scene/IPresenter.h"
 
 namespace Crystal {
-	namespace Space {
+	namespace Volume {
 		class SparseVolumeScene;
 
 class SparseVolumePresenter : public Scene::IPresenter

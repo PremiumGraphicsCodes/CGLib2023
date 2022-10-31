@@ -11,8 +11,7 @@
 
 using namespace Crystal::Math;
 using namespace Crystal::UI;
-
-using namespace Crystal::Space;
+using namespace Crystal::Volume;
 
 SVBoxView::SVBoxView(const std::string& name, World* world, Renderer* canvas) :
 	IOkCancelView(name),

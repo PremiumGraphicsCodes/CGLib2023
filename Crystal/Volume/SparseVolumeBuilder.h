@@ -10,7 +10,7 @@ namespace Crystal {
 		template<typename T>
 		class Sphere3d;
 	}
-	namespace Space {
+	namespace Volume {
 
 class SparseVolumeBuilder
 {

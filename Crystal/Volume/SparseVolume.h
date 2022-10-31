@@ -10,7 +10,7 @@
 #include <array>
 
 namespace Crystal {
-	namespace Space {
+	namespace Volume {
 
 /*
 template<typename T>

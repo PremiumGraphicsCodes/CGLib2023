@@ -4,7 +4,7 @@
 
 using namespace Crystal::Graphics;
 using namespace Crystal::Scene;
-using namespace Crystal::Space;
+using namespace Crystal::Volume;
 
 void SparseVolumePresenter::build()
 {

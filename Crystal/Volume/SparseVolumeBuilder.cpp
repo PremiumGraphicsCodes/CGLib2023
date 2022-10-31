@@ -4,7 +4,7 @@
 #include "CGLib/Math/Box3d.h"
 
 using namespace Crystal::Math;
-using namespace Crystal::Space;
+using namespace Crystal::Volume;
 
 void SparseVolumeBuilder::build(const Vector3df& cellLength, const size_t tableSize)
 {

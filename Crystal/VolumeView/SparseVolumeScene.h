@@ -7,7 +7,7 @@
 #include <memory>
 
 namespace Crystal {
-	namespace Space {
+	namespace Volume {
 
 class SparseVolumeScene : public Scene::SceneBase
 {

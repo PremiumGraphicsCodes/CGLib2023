@@ -4,7 +4,7 @@
 #include <bitset>
 
 using namespace Crystal::Math;
-using namespace Crystal::Space;
+using namespace Crystal::Volume;
 
 namespace {
 	constexpr long int p1 = 73856093;
