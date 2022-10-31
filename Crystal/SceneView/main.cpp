@@ -19,8 +19,7 @@ int main() {
 	World world;
 	Renderer renderer(&world);
 
-	Crystal::UI::Canvas canvas;
-	canvas.setUICtrl(std::make_unique<CameraUICtrl>(world.getCamera()));
+	Crystal::UI::Canvas canvas(&world);
 	Crystal::UI::Window window("Hello", &world, &canvas, &renderer);
 	window.init();
 

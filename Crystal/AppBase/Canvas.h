@@ -8,13 +8,14 @@
 namespace Crystal {
 	namespace UI {
 		class IUICtrl;
+		class WorldBase;
 
 class Canvas : public IMouseListener
 {
 public:
-	Canvas();
+	explicit Canvas(WorldBase* world);
 
-	virtual ~Canvas() {}
+	~Canvas() {}
 
 	void setUICtrl(std::unique_ptr<IUICtrl> ctrl) { this->ctrl = std::move(ctrl); }
 
@@ -40,6 +41,7 @@ public:
 
 private:
 	std::unique_ptr<IUICtrl> ctrl;
+	WorldBase* world;
 };
 
 	}
