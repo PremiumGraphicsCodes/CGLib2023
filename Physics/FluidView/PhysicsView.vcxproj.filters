@@ -43,6 +43,9 @@
     <ClCompile Include="MVPFluidAnimator.cpp">
       <Filter>MVP</Filter>
     </ClCompile>
+    <ClCompile Include="SPHVolumeConverterView.cpp">
+      <Filter>SPHSurface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -90,6 +93,9 @@
     <ClInclude Include="MVPFluidAnimator.h">
       <Filter>MVP</Filter>
     </ClInclude>
+    <ClInclude Include="SPHVolumeConverterView.h">
+      <Filter>SPHSurface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CSPH">
@@ -103,6 +109,9 @@
     </Filter>
     <Filter Include="MVP\Sampler">
       <UniqueIdentifier>{98a6c59c-387d-4b06-93b9-e1535a0a7223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SPHSurface">
+      <UniqueIdentifier>{c4cc57a2-9f9a-4ae7-bb65-87892fdcd239}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

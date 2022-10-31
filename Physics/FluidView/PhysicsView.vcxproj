@@ -162,6 +162,7 @@
     <ClCompile Include="PhysicsMenu.cpp" />
     <ClCompile Include="PhysicsView.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SPHVolumeConverterView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CGLib\Graphics\Graphics.vcxproj">
@@ -214,6 +215,7 @@
     <ClInclude Include="PBSPHFluidView.h" />
     <ClInclude Include="PhysicsMenu.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SPHVolumeConverterView.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
