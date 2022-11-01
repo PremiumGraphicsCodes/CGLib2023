@@ -2,7 +2,7 @@
 #include "Renderer.h"
 #include "World.h"
 #include "TriangleMeshScene.h"
-#include "CGLib/Shape/TriangleMeshBuilder.h"
+#include "TriangleMeshBuilder.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Shape;

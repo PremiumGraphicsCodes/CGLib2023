@@ -70,6 +70,12 @@
     <ClCompile Include="ParticleSystemScene.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
+    <ClCompile Include="TriangleMesh.cpp">
+      <Filter>TriangleMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangleMeshBuilder.cpp">
+      <Filter>TriangleMesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -146,6 +152,12 @@
     </ClInclude>
     <ClInclude Include="ParticleSystemScene.h">
       <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleMesh.h">
+      <Filter>TriangleMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleMeshBuilder.h">
+      <Filter>TriangleMesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

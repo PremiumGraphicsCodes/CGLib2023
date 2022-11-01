@@ -1,6 +1,6 @@
 #include "TMBoxView.h"
 #include "TriangleMeshScene.h"
-#include "CGLib/Shape/TriangleMeshBuilder.h"
+#include "TriangleMeshBuilder.h"
 #include "Renderer.h"
 #include "World.h"
 

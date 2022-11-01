@@ -156,8 +156,6 @@
     <ClInclude Include="IVertex.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="ParticleSystemBuilder.h" />
-    <ClInclude Include="TriangleMesh.h" />
-    <ClInclude Include="TriangleMeshBuilder.h" />
     <ClInclude Include="WireFrame.h" />
     <ClInclude Include="WireFrameBuilder.h" />
   </ItemGroup>
@@ -169,8 +167,6 @@
   <ItemGroup>
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="ParticleSystemBuilder.cpp" />
-    <ClCompile Include="TriangleMesh.cpp" />
-    <ClCompile Include="TriangleMeshBuilder.cpp" />
     <ClCompile Include="WireFrame.cpp" />
     <ClCompile Include="WireFrameBuilder.cpp" />
   </ItemGroup>

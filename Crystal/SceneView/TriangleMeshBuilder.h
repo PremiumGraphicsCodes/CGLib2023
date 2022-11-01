@@ -1,7 +1,7 @@
 #pragma once
 
 #include "TriangleMesh.h"
-#include "../Util/UnCopyable.h"
+#include "CGLib/Util/UnCopyable.h"
 #include <memory>
 
 namespace Crystal {

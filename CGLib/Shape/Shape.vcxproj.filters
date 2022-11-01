@@ -20,12 +20,6 @@
     <ClInclude Include="ParticleSystemBuilder.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
-    <ClInclude Include="TriangleMesh.h">
-      <Filter>TriangleMesh</Filter>
-    </ClInclude>
-    <ClInclude Include="TriangleMeshBuilder.h">
-      <Filter>TriangleMesh</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
@@ -33,9 +27,6 @@
     </Filter>
     <Filter Include="WireFrame">
       <UniqueIdentifier>{a57deecd-7c58-4f86-b927-41dfceb48dba}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="TriangleMesh">
-      <UniqueIdentifier>{c83447e0-343c-4fdd-b945-8bd6c72ecf85}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -50,12 +41,6 @@
     </ClCompile>
     <ClCompile Include="ParticleSystemBuilder.cpp">
       <Filter>ParticleSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="TriangleMesh.cpp">
-      <Filter>TriangleMesh</Filter>
-    </ClCompile>
-    <ClCompile Include="TriangleMeshBuilder.cpp">
-      <Filter>TriangleMesh</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

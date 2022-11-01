@@ -161,6 +161,8 @@
     <ClCompile Include="TMBoxView.cpp" />
     <ClCompile Include="TMCylinderView.cpp" />
     <ClCompile Include="TMSphereView.cpp" />
+    <ClCompile Include="TriangleMesh.cpp" />
+    <ClCompile Include="TriangleMeshBuilder.cpp" />
     <ClCompile Include="TriangleMeshMenu.cpp" />
     <ClCompile Include="TriangleMeshPresenter.cpp" />
     <ClCompile Include="WFBoxView.cpp" />
@@ -218,6 +220,8 @@
     <ClInclude Include="TMBoxView.h" />
     <ClInclude Include="TMCylinderView.h" />
     <ClInclude Include="TMSphereView.h" />
+    <ClInclude Include="TriangleMesh.h" />
+    <ClInclude Include="TriangleMeshBuilder.h" />
     <ClInclude Include="TriangleMeshMenu.h" />
     <ClInclude Include="TriangleMeshPresenter.h" />
     <ClInclude Include="TriangleMeshScene.h" />

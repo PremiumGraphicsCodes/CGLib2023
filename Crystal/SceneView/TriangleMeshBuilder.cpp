@@ -1,6 +1,6 @@
 #include "TriangleMeshBuilder.h"
 
-#include "../Math/ISurface3d.h"
+#include "CGLib/Math/ISurface3d.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Shape;

@@ -3,7 +3,7 @@
 #include "Crystal/Scene/SceneBase.h"
 #include "TriangleMeshPresenter.h"
 
-#include "CGLib/Shape/TriangleMesh.h"
+#include "TriangleMesh.h"
 
 #include <vector>
 #include <memory>

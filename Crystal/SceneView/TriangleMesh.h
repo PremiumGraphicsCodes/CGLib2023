@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../Shape/IShape.h"
-#include "../Math/Triangle3d.h"
+#include "CGLib/Shape/IShape.h"
+#include "CGLib/Math/Triangle3d.h"
 
 #include <vector>
 
