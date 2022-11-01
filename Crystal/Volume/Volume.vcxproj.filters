@@ -3,9 +3,11 @@
   <ItemGroup>
     <ClInclude Include="SparseVolume.h" />
     <ClInclude Include="SparseVolumeBuilder.h" />
+    <ClInclude Include="Volume.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SparseVolume.cpp" />
     <ClCompile Include="SparseVolumeBuilder.cpp" />
+    <ClCompile Include="Volume.cpp" />
   </ItemGroup>
 </Project>
