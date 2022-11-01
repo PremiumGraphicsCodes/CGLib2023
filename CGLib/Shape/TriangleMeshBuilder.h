@@ -20,7 +20,7 @@ public:
 
 	void add(const Math::ISurface3d<float>& sphere, const int unum, const int vnum);
 
-	//void add(const Math::IVolume3d<float>& volume, const int unum, const int vnum, const int wnum);
+	void add(const Math::IVolume3d<float>& volume, const int unum, const int vnum, const int wnum);
 
 	std::unique_ptr<TriangleMesh> build();
 

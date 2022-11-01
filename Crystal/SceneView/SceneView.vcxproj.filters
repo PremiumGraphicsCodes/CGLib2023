@@ -6,9 +6,6 @@
     <ClCompile Include="ShapeMenu.cpp" />
     <ClCompile Include="WireFrameMenu.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="PMBoxView.cpp">
-      <Filter>ParticleSystem</Filter>
-    </ClCompile>
     <ClCompile Include="PSBoxView.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
@@ -33,6 +30,13 @@
     <ClCompile Include="WFSphereView.cpp">
       <Filter>WireFrame</Filter>
     </ClCompile>
+    <ClCompile Include="PMBoxView.cpp">
+      <Filter>PolygonMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="TMBoxView.cpp">
+      <Filter>TriangleMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangleMeshMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -43,9 +47,6 @@
     <ClInclude Include="ParticleSystemMenu.h" />
     <ClInclude Include="ShapeMenu.h" />
     <ClInclude Include="WireFrameMenu.h" />
-    <ClInclude Include="PMBoxView.h">
-      <Filter>ParticleSystem</Filter>
-    </ClInclude>
     <ClInclude Include="PSBoxView.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
@@ -70,6 +71,13 @@
     <ClInclude Include="WFSphereView.h">
       <Filter>WireFrame</Filter>
     </ClInclude>
+    <ClInclude Include="PMBoxView.h">
+      <Filter>PolygonMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="TMBoxView.h">
+      <Filter>TriangleMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleMeshMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
@@ -77,6 +85,12 @@
     </Filter>
     <Filter Include="WireFrame">
       <UniqueIdentifier>{55f2ed34-32cb-4012-8ba4-01813d811c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriangleMesh">
+      <UniqueIdentifier>{7332979a-5eaf-4202-b8d9-20ad57e1f5e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolygonMesh">
+      <UniqueIdentifier>{64b0674c-cd73-4611-a0f0-aaa40ad5225a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
