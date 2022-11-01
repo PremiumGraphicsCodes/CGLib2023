@@ -12,7 +12,7 @@ namespace Crystal {
 class PSBoxView : public IOkCancelView
 {
 public:
-	explicit PSBoxView(const std::string& name, World* world, Renderer* renderer);
+	PSBoxView(const std::string& name, World* world, Renderer* renderer);
 
 	void onOk() override;
 

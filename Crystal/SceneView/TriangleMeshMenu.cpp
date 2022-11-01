@@ -4,6 +4,7 @@
 #include "Crystal/AppBase/MenuItem.h"
 
 #include "TMBoxView.h"
+#include "TMSphereView.h"
 
 using namespace Crystal::UI;
 
@@ -13,10 +14,10 @@ TriangleMeshMenu::TriangleMeshMenu(const std::string& name, Panel* control, Worl
 	add(new MenuItem("Box", [control, world, renderer]() {
 		control->setChild(new TMBoxView("Box", world, renderer));
 		}));
-	/*
 	add(new MenuItem("Sphere", [control, world, renderer]() {
-		control->setChild(new WFSphereView("WFSphere", world, renderer));
+		control->setChild(new TMSphereView("Sphere", world, renderer));
 		}));
+	/*
 	add(new MenuItem("Ellipse", [control, world, renderer]() {
 		control->setChild(new WFEllipseView("WFEllipse", world, renderer));
 		}));

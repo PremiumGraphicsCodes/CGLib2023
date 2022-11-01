@@ -9,16 +9,17 @@ namespace Crystal {
 		class World;
 		class Renderer;
 
-class PSSphereView : public IOkCancelView
+class TMSphereView : public IOkCancelView
 {
 public:
-	PSSphereView(const std::string& name, World* world, Renderer* renderer);
+	TMSphereView(const std::string& name, World* world, Renderer* renderer);
 
 	void onOk() override;
 
 private:
 	Sphere3dView sphereView;
-	IntView countView;
+	IntView unumView;
+	IntView vnumView;
 	World* world;
 	Renderer* renderer;
 };

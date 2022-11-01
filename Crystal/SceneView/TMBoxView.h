@@ -11,7 +11,7 @@ namespace Crystal {
 class TMBoxView : public IOkCancelView
 {
 public:
-	explicit TMBoxView(const std::string& name, World* world, Renderer* renderer);
+	TMBoxView(const std::string& name, World* world, Renderer* renderer);
 
 	void onOk() override;
 

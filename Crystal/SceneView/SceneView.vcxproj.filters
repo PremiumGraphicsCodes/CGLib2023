@@ -37,6 +37,9 @@
       <Filter>TriangleMesh</Filter>
     </ClCompile>
     <ClCompile Include="TriangleMeshMenu.cpp" />
+    <ClCompile Include="TMSphereView.cpp">
+      <Filter>TriangleMesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -78,6 +81,9 @@
       <Filter>TriangleMesh</Filter>
     </ClInclude>
     <ClInclude Include="TriangleMeshMenu.h" />
+    <ClInclude Include="TMSphereView.h">
+      <Filter>TriangleMesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">

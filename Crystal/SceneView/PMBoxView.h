@@ -11,7 +11,7 @@ namespace Crystal {
 class PMBoxView : public IOkCancelView
 {
 public:
-	explicit PMBoxView(const std::string& name, World* world, Renderer* renderer);
+	PMBoxView(const std::string& name, World* world, Renderer* renderer);
 
 	void onOk() override;
 
