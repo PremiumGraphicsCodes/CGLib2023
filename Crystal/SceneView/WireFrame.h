@@ -4,13 +4,12 @@
 #include <memory>
 
 #include "IVertex.h"
-#include "CGLib/Shape/IShape.h"
 #include "CGLib/Math/Box3d.h"
 
 namespace Crystal {
 	namespace Shape {
 
-class WireFrame : public IShape
+class WireFrame
 {
 public:
 	struct Edge
@@ -36,7 +35,7 @@ public:
 
 	std::vector<Edge> getEdges() const { return edges; }
 
-	Math::Box3df getBoundingBox() const override;
+	Math::Box3df getBoundingBox() const;
 
 private:
 	std::vector<Edge> edges;

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "CGLib/Shape/IShape.h"
 #include "CGLib/Math/Triangle3d.h"
+#include "CGLib/Math/Box3d.h"
 
 #include <vector>
 
@@ -24,7 +24,7 @@ public:
 	Math::Vector3dd normal;
 };
 
-class TriangleMesh : public IShape
+class TriangleMesh
 {
 public:
 	TriangleMesh();
@@ -33,7 +33,7 @@ public:
 
 	void clear();
 
-	Math::Box3df getBoundingBox() const override;
+	Math::Box3df getBoundingBox() const;
 
 	std::vector<TriangleFace> getFaces() const { return faces; }
 
