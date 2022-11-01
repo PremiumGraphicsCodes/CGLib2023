@@ -76,6 +76,12 @@
     <ClCompile Include="TriangleMeshBuilder.cpp">
       <Filter>TriangleMesh</Filter>
     </ClCompile>
+    <ClCompile Include="WireFrame.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="WireFrameBuilder.cpp">
+      <Filter>WireFrame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -158,6 +164,12 @@
     </ClInclude>
     <ClInclude Include="TriangleMeshBuilder.h">
       <Filter>TriangleMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="WireFrame.h">
+      <Filter>WireFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="WireFrameBuilder.h">
+      <Filter>WireFrame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

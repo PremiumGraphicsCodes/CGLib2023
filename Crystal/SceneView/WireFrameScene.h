@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Crystal/Scene/SceneBase.h"
-#include "CGLib/Shape/WireFrame.h"
+#include "WireFrame.h"
 #include "WireFramePresenter.h"
 #include <vector>
 

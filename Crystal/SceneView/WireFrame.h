@@ -4,8 +4,8 @@
 #include <memory>
 
 #include "IVertex.h"
-#include "IShape.h"
-#include "../Math/Box3d.h"
+#include "CGLib/Shape/IShape.h"
+#include "CGLib/Math/Box3d.h"
 
 namespace Crystal {
 	namespace Shape {

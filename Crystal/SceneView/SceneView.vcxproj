@@ -171,6 +171,8 @@
     <ClCompile Include="WFEllipsoidView.cpp" />
     <ClCompile Include="WFLineView.cpp" />
     <ClCompile Include="WFSphereView.cpp" />
+    <ClCompile Include="WireFrame.cpp" />
+    <ClCompile Include="WireFrameBuilder.cpp" />
     <ClCompile Include="WireFrameMenu.cpp" />
     <ClCompile Include="WireFramePresenter.cpp" />
     <ClCompile Include="WireFrameScene.cpp" />
@@ -231,6 +233,8 @@
     <ClInclude Include="WFEllipsoidView.h" />
     <ClInclude Include="WFLineView.h" />
     <ClInclude Include="WFSphereView.h" />
+    <ClInclude Include="WireFrame.h" />
+    <ClInclude Include="WireFrameBuilder.h" />
     <ClInclude Include="WireFrameMenu.h" />
     <ClInclude Include="WireFramePresenter.h" />
     <ClInclude Include="WireFrameScene.h" />

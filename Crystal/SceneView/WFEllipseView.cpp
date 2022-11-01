@@ -2,7 +2,7 @@
 #include "Renderer.h"
 #include "World.h"
 #include "WireFrameScene.h"
-#include "CGLib/Shape/WireFrameBuilder.h"
+#include "WireFrameBuilder.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Shape;
