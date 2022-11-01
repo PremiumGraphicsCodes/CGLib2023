@@ -4,10 +4,21 @@
     <ClInclude Include="SparseVolume.h" />
     <ClInclude Include="SparseVolumeBuilder.h" />
     <ClInclude Include="Volume.h" />
+    <ClInclude Include="MarchingCubesTable.h">
+      <Filter>MarchingCubes</Filter>
+    </ClInclude>
+    <ClInclude Include="MCCell.h">
+      <Filter>MarchingCubes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SparseVolume.cpp" />
     <ClCompile Include="SparseVolumeBuilder.cpp" />
     <ClCompile Include="Volume.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="MarchingCubes">
+      <UniqueIdentifier>{e5cc83ab-f246-4ab8-8cfb-0a6d1b95e2ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

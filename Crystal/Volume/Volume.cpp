@@ -5,8 +5,7 @@ using namespace Crystal::Shape;
 
 template<typename T>
 Volume<T>::Volume() :
-	box(Box3dd()),
-	nodes(2, 2, 2)
+	box(Box3dd())
 {}
 
 template<typename T>
@@ -48,7 +47,7 @@ template<typename T>
 Vector3dd Volume<T>::getCellLength() const
 {
 	const auto& length = box.getLength();
-	const auto& resolutions = nodes.getResolutions();
+	//const auto& resolutions = nodes.getResolutions();
 	const auto dx = length.x / static_cast<double>(resolutions[0]);
 	const auto dy = length.y / static_cast<double>(resolutions[1]);
 	const auto dz = length.z / static_cast<double>(resolutions[2]);

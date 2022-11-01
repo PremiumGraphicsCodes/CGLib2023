@@ -159,7 +159,6 @@
     <ClInclude Include="IndexedSortBasedSeacher.h" />
     <ClInclude Include="IntersectionCalculator.h" />
     <ClInclude Include="LinearOctreeIndex.h" />
-    <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="SpaceHash.h" />
     <ClInclude Include="ZIndexedSearcher.h" />
     <ClInclude Include="ZOrderCurve2d.h" />

@@ -3,7 +3,6 @@
   <ItemGroup>
     <ClInclude Include="ZOrderCurve3d.h" />
     <ClInclude Include="ZOrderCurve2d.h" />
-    <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="LinearOctreeIndex.h" />
     <ClInclude Include="IndexedParticle.h">
       <Filter>Indexed</Filter>
