@@ -158,6 +158,7 @@
     <ClInclude Include="ParticleSystemBuilder.h" />
     <ClInclude Include="PolygonMesh.h" />
     <ClInclude Include="TriangleMesh.h" />
+    <ClInclude Include="TriangleMeshBuilder.h" />
     <ClInclude Include="WireFrame.h" />
     <ClInclude Include="WireFrameBuilder.h" />
   </ItemGroup>
@@ -171,6 +172,7 @@
     <ClCompile Include="ParticleSystemBuilder.cpp" />
     <ClCompile Include="PolygonMesh.cpp" />
     <ClCompile Include="TriangleMesh.cpp" />
+    <ClCompile Include="TriangleMeshBuilder.cpp" />
     <ClCompile Include="WireFrame.cpp" />
     <ClCompile Include="WireFrameBuilder.cpp" />
   </ItemGroup>
