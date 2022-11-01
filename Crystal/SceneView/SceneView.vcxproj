@@ -148,6 +148,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp" />
     <ClCompile Include="PMBoxView.cpp" />
+    <ClCompile Include="PolygonMesh.cpp" />
+    <ClCompile Include="PolygonMeshBuilder.cpp" />
+    <ClCompile Include="PolygonMeshPresenter.cpp" />
+    <ClCompile Include="PolygonMeshScene.cpp" />
     <ClCompile Include="PSBoxView.cpp" />
     <ClCompile Include="PSSphereView.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -196,6 +200,10 @@
   <ItemGroup>
     <ClInclude Include="ParticleSystemMenu.h" />
     <ClInclude Include="PMBoxView.h" />
+    <ClInclude Include="PolygonMesh.h" />
+    <ClInclude Include="PolygonMeshBuilder.h" />
+    <ClInclude Include="PolygonMeshPresenter.h" />
+    <ClInclude Include="PolygonMeshScene.h" />
     <ClInclude Include="PSBoxView.h" />
     <ClInclude Include="PSSphereView.h" />
     <ClInclude Include="Renderer.h" />

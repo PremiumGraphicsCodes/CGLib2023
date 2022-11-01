@@ -158,8 +158,6 @@
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="ParticleSystemPresenter.h" />
     <ClInclude Include="ParticleSystemScene.h" />
-    <ClInclude Include="PolygonMeshPresenter.h" />
-    <ClInclude Include="PolygonMeshScene.h" />
     <ClInclude Include="SceneGroup.h" />
     <ClInclude Include="TriangleMeshPresenter.h" />
     <ClInclude Include="TriangleMeshScene.h" />
@@ -170,8 +168,6 @@
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="ParticleSystemPresenter.cpp" />
     <ClCompile Include="ParticleSystemScene.cpp" />
-    <ClCompile Include="PolygonMeshPresenter.cpp" />
-    <ClCompile Include="PolygonMeshScene.cpp" />
     <ClCompile Include="SceneGroup.cpp" />
     <ClCompile Include="TriangleMeshPresenter.cpp" />
     <ClCompile Include="WireFramePresenter.cpp" />

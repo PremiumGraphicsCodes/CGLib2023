@@ -43,6 +43,18 @@
     <ClCompile Include="TMCylinderView.cpp">
       <Filter>TriangleMesh</Filter>
     </ClCompile>
+    <ClCompile Include="PolygonMesh.cpp">
+      <Filter>PolygonMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonMeshBuilder.cpp">
+      <Filter>PolygonMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonMeshScene.cpp">
+      <Filter>PolygonMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonMeshPresenter.cpp">
+      <Filter>PolygonMesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -89,6 +101,18 @@
     </ClInclude>
     <ClInclude Include="TMCylinderView.h">
       <Filter>TriangleMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonMesh.h">
+      <Filter>PolygonMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonMeshBuilder.h">
+      <Filter>PolygonMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonMeshScene.h">
+      <Filter>PolygonMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonMeshPresenter.h">
+      <Filter>PolygonMesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

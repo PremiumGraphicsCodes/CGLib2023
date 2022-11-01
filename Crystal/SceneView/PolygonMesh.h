@@ -1,7 +1,7 @@
 #pragma once
 
-#include "IVertex.h"
-#include "IShape.h"
+#include "CGLib/Shape/IVertex.h"
+#include "CGLib/Shape/IShape.h"
 #include <vector>
 #include <memory>
 
