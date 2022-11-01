@@ -3,6 +3,7 @@
 #include "IVertex.h"
 #include "IShape.h"
 #include <vector>
+#include <memory>
 
 namespace Crystal {
 	namespace Shape {
@@ -17,9 +18,9 @@ public:
 		int v2;
 	};
 
-	void add(Shape::IVertex* v) { this->vertices.push_back(v); }
+	void add(std::unique_ptr<Shape::IVertex>&& v) { this->vertices.push_back(std::move(v)); }
 
-	std::vector<Shape::IVertex*> getVertices() const { return vertices; }
+	const std::vector<std::unique_ptr<Shape::IVertex>>& getVertices() const { return vertices; }
 
 	void addFace(const Face& face) { this->faces.push_back(face); }
 
@@ -29,7 +30,7 @@ public:
 
 private:
 	std::vector<Face> faces;
-	std::vector<Shape::IVertex*> vertices;
+	std::vector<std::unique_ptr<Shape::IVertex>> vertices;
 
 };
 

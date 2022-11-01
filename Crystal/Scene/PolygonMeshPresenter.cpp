@@ -19,8 +19,8 @@ void PolygonMeshPresenter::send()
 
 	auto shape = model->getShape();
 
-	const auto vertices = shape->getVertices();
-	for (auto p : vertices) {
+	const auto& vertices = shape->getVertices();
+	for (auto& p : vertices) {
 		position.add(p->getPosition());
 		color.add(ColorRGBAf(1, 0, 0, 0));
 	}
