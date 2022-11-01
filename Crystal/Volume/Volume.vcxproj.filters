@@ -10,11 +10,17 @@
     <ClInclude Include="MCCell.h">
       <Filter>MarchingCubes</Filter>
     </ClInclude>
+    <ClInclude Include="MCSurfaceBuilder.h">
+      <Filter>MarchingCubes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SparseVolume.cpp" />
     <ClCompile Include="SparseVolumeBuilder.cpp" />
     <ClCompile Include="Volume.cpp" />
+    <ClCompile Include="MCSurfaceBuilder.cpp">
+      <Filter>MarchingCubes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="MarchingCubes">

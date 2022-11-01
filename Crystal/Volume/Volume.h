@@ -6,7 +6,7 @@
 #include <vector>
 
 namespace Crystal {
-	namespace Shape {
+	namespace Volume {
 
 template<typename T>
 class Volume

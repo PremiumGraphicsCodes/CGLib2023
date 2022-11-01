@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClInclude Include="MarchingCubesTable.h" />
     <ClInclude Include="MCCell.h" />
+    <ClInclude Include="MCSurfaceBuilder.h" />
     <ClInclude Include="SparseVolume.h" />
     <ClInclude Include="SparseVolumeBuilder.h" />
     <ClInclude Include="Volume.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MCSurfaceBuilder.cpp" />
     <ClCompile Include="SparseVolume.cpp" />
     <ClCompile Include="SparseVolumeBuilder.cpp" />
     <ClCompile Include="Volume.cpp" />

@@ -4,7 +4,7 @@
 #include "CGLib/Math/Vector3d.h"
 
 namespace Crystal {
-	namespace Space {
+	namespace Volume {
 
 struct MCCell
 {
@@ -13,13 +13,13 @@ struct MCCell
 		Vertex()
 		{}
 
-		Vertex(const Math::Vector3df& position, double value) :
+		Vertex(const Math::Vector3df& position, const float value) :
 			position(position),
 			value(value)
 		{}
 
 		Math::Vector3df position;
-		double value;
+		float value;
 	};
 
 	MCCell()
