@@ -5,10 +5,6 @@
 using namespace Crystal::Math;
 using namespace Crystal::Shape;
 
-namespace {
-	constexpr auto tolerance = 1.0e-12;
-}
-
 TriangleMeshBuilder::TriangleMeshBuilder()
 {
 }

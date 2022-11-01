@@ -40,6 +40,9 @@
     <ClCompile Include="TMSphereView.cpp">
       <Filter>TriangleMesh</Filter>
     </ClCompile>
+    <ClCompile Include="TMCylinderView.cpp">
+      <Filter>TriangleMesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -82,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="TriangleMeshMenu.h" />
     <ClInclude Include="TMSphereView.h">
+      <Filter>TriangleMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="TMCylinderView.h">
       <Filter>TriangleMesh</Filter>
     </ClInclude>
   </ItemGroup>

@@ -29,6 +29,9 @@
     <ClInclude Include="TriangleMeshBuilder.h">
       <Filter>TriangleMesh</Filter>
     </ClInclude>
+    <ClInclude Include="PolygonMeshBuilder.h">
+      <Filter>PolygonMesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="TriangleMeshBuilder.cpp">
       <Filter>TriangleMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonMeshBuilder.cpp">
+      <Filter>PolygonMesh</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
