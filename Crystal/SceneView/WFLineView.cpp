@@ -1,6 +1,6 @@
 #include "WFLineView.h"
 
-#include "Crystal/Scene/WireFrameScene.h"
+#include "WireFrameScene.h"
 #include "Renderer.h"
 #include "World.h"
 

@@ -1,6 +1,6 @@
 #include "TriangleMeshPresenter.h"
 
-#include "../Scene/TriangleMeshScene.h"
+#include "TriangleMeshScene.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::Shape;

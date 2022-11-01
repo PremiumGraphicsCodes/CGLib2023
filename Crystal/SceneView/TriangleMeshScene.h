@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SceneBase.h"
+#include "Crystal/Scene/SceneBase.h"
 #include "TriangleMeshPresenter.h"
 
 #include "CGLib/Shape/TriangleMesh.h"

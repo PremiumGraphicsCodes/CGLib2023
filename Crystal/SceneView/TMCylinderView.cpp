@@ -1,7 +1,7 @@
 #include "TMCylinderView.h"
 #include "Renderer.h"
 #include "World.h"
-#include "Crystal/Scene/TriangleMeshScene.h"
+#include "TriangleMeshScene.h"
 #include "CGLib/Shape/TriangleMeshBuilder.h"
 
 using namespace Crystal::Math;

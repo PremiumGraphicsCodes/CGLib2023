@@ -160,6 +160,7 @@
     <ClCompile Include="TMCylinderView.cpp" />
     <ClCompile Include="TMSphereView.cpp" />
     <ClCompile Include="TriangleMeshMenu.cpp" />
+    <ClCompile Include="TriangleMeshPresenter.cpp" />
     <ClCompile Include="WFBoxView.cpp" />
     <ClCompile Include="WFCylinderView.cpp" />
     <ClCompile Include="WFEllipseView.cpp" />
@@ -167,6 +168,8 @@
     <ClCompile Include="WFLineView.cpp" />
     <ClCompile Include="WFSphereView.cpp" />
     <ClCompile Include="WireFrameMenu.cpp" />
+    <ClCompile Include="WireFramePresenter.cpp" />
+    <ClCompile Include="WireFrameScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -212,6 +215,8 @@
     <ClInclude Include="TMCylinderView.h" />
     <ClInclude Include="TMSphereView.h" />
     <ClInclude Include="TriangleMeshMenu.h" />
+    <ClInclude Include="TriangleMeshPresenter.h" />
+    <ClInclude Include="TriangleMeshScene.h" />
     <ClInclude Include="WFBoxView.h" />
     <ClInclude Include="WFCylinderView.h" />
     <ClInclude Include="WFEllipseView.h" />
@@ -219,6 +224,8 @@
     <ClInclude Include="WFLineView.h" />
     <ClInclude Include="WFSphereView.h" />
     <ClInclude Include="WireFrameMenu.h" />
+    <ClInclude Include="WireFramePresenter.h" />
+    <ClInclude Include="WireFrameScene.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

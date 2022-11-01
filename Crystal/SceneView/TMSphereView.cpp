@@ -1,6 +1,6 @@
 #include "TMSphereView.h"
 
-#include "Crystal/Scene/TriangleMeshScene.h"
+#include "TriangleMeshScene.h"
 #include "CGLib/Shape/TriangleMeshBuilder.h"
 #include "Renderer.h"
 #include "World.h"

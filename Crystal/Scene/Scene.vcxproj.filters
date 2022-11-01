@@ -5,53 +5,26 @@
     <ClInclude Include="ParticleSystemScene.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
-    <ClInclude Include="WireFrameScene.h">
-      <Filter>WireFrame</Filter>
-    </ClInclude>
     <ClInclude Include="IPresenter.h" />
     <ClInclude Include="ParticleSystemPresenter.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
-    <ClInclude Include="WireFramePresenter.h">
-      <Filter>WireFrame</Filter>
-    </ClInclude>
     <ClInclude Include="SceneGroup.h" />
     <ClInclude Include="IAnimator.h" />
-    <ClInclude Include="TriangleMeshScene.h">
-      <Filter>TriangleMesh</Filter>
-    </ClInclude>
-    <ClInclude Include="TriangleMeshPresenter.h">
-      <Filter>TriangleMesh</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="ParticleSystemScene.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
-    <ClCompile Include="WireFrameScene.cpp">
-      <Filter>WireFrame</Filter>
-    </ClCompile>
     <ClCompile Include="ParticleSystemPresenter.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
-    <ClCompile Include="WireFramePresenter.cpp">
-      <Filter>WireFrame</Filter>
-    </ClCompile>
     <ClCompile Include="SceneGroup.cpp" />
-    <ClCompile Include="TriangleMeshPresenter.cpp">
-      <Filter>TriangleMesh</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
       <UniqueIdentifier>{db2c6048-4736-40f5-8e80-00acd522a8d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="WireFrame">
-      <UniqueIdentifier>{8d4a88ef-9013-4be9-bf75-e3c83cbc8a46}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="TriangleMesh">
-      <UniqueIdentifier>{e8622c78-e30a-4657-8a16-ca7a04b2d678}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
