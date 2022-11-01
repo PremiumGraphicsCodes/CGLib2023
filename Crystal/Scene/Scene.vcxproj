@@ -156,14 +156,10 @@
     <ClInclude Include="IAnimator.h" />
     <ClInclude Include="IPresenter.h" />
     <ClInclude Include="SceneBase.h" />
-    <ClInclude Include="ParticleSystemPresenter.h" />
-    <ClInclude Include="ParticleSystemScene.h" />
     <ClInclude Include="SceneGroup.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneBase.cpp" />
-    <ClCompile Include="ParticleSystemPresenter.cpp" />
-    <ClCompile Include="ParticleSystemScene.cpp" />
     <ClCompile Include="SceneGroup.cpp" />
   </ItemGroup>
   <ItemGroup>

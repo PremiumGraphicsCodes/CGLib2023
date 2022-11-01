@@ -2,7 +2,7 @@
 
 #include "World.h"
 
-#include "Crystal/Scene/ParticleSystemScene.h"
+//#include "Crystal/Scene/ParticleSystemScene.h"
 
 #include "../Space/SpaceHash.h"
 #include <iostream>
@@ -25,6 +25,7 @@ SpaceHashView::SpaceHashView(const std::string& name, World* world, Renderer* re
 
 void SpaceHashView::onOk()
 {
+	/*
 	auto psScene = world->getRootScene()->findSceneById<ParticleSystemScene*>(psSelectView.getId());
 	const auto& particles = psScene->getShape()->getParticles();
 	SpaceHash spaceHash(searchRadiusView.getValue(), particles.size());
@@ -37,4 +38,5 @@ void SpaceHashView::onOk()
 		totalIndicesCount += indices.size();
 	}
 	std::cout << totalIndicesCount << std::endl;
+	*/
 }

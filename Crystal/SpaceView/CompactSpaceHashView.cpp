@@ -1,6 +1,6 @@
 #include "CompactSpaceHashView.h"
 
-#include "Crystal/Scene/ParticleSystemScene.h"
+//#include "Crystal/Scene/ParticleSystemScene.h"
 
 #include "../Space/CompactSpaceHash.h"
 #include "World.h"
@@ -24,6 +24,7 @@ CompactSpaceHashView::CompactSpaceHashView(const std::string& name, World* world
 
 void CompactSpaceHashView::onOk()
 {
+	/*
 	auto psScene = world->getRootScene()->findSceneById<ParticleSystemScene*>(psSelectView.getId());
 	const auto& particles = psScene->getShape()->getParticles();
 	CompactSpaceHash spaceHash(searchRadiusView.getValue(), particles.size());
@@ -36,4 +37,5 @@ void CompactSpaceHashView::onOk()
 		totalIndicesCount += indices.size();
 	}
 	std::cout << totalIndicesCount << std::endl;
+	*/
 }

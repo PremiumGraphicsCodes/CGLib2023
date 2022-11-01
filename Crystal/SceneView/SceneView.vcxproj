@@ -147,6 +147,8 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp" />
+    <ClCompile Include="ParticleSystemPresenter.cpp" />
+    <ClCompile Include="ParticleSystemScene.cpp" />
     <ClCompile Include="PMBoxView.cpp" />
     <ClCompile Include="PolygonMesh.cpp" />
     <ClCompile Include="PolygonMeshBuilder.cpp" />
@@ -202,6 +204,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ParticleSystemMenu.h" />
+    <ClInclude Include="ParticleSystemPresenter.h" />
+    <ClInclude Include="ParticleSystemScene.h" />
     <ClInclude Include="PMBoxView.h" />
     <ClInclude Include="PolygonMesh.h" />
     <ClInclude Include="PolygonMeshBuilder.h" />

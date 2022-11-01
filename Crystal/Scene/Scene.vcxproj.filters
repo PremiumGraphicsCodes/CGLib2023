@@ -2,29 +2,12 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="SceneBase.h" />
-    <ClInclude Include="ParticleSystemScene.h">
-      <Filter>ParticleSystem</Filter>
-    </ClInclude>
     <ClInclude Include="IPresenter.h" />
-    <ClInclude Include="ParticleSystemPresenter.h">
-      <Filter>ParticleSystem</Filter>
-    </ClInclude>
     <ClInclude Include="SceneGroup.h" />
     <ClInclude Include="IAnimator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneBase.cpp" />
-    <ClCompile Include="ParticleSystemScene.cpp">
-      <Filter>ParticleSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="ParticleSystemPresenter.cpp">
-      <Filter>ParticleSystem</Filter>
-    </ClCompile>
     <ClCompile Include="SceneGroup.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="ParticleSystem">
-      <UniqueIdentifier>{db2c6048-4736-40f5-8e80-00acd522a8d1}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
 </Project>

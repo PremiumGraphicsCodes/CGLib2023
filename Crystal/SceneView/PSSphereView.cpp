@@ -1,6 +1,6 @@
 #include "PSSphereView.h"
 
-#include "Crystal/Scene/ParticleSystemScene.h"
+#include "ParticleSystemScene.h"
 #include "Renderer.h"
 #include "World.h"
 

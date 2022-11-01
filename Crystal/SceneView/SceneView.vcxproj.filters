@@ -64,6 +64,12 @@
     <ClCompile Include="WireFrameScene.cpp">
       <Filter>WireFrame</Filter>
     </ClCompile>
+    <ClCompile Include="ParticleSystemPresenter.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemScene.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -134,6 +140,12 @@
     </ClInclude>
     <ClInclude Include="WireFrameScene.h">
       <Filter>WireFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemPresenter.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemScene.h">
+      <Filter>ParticleSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
