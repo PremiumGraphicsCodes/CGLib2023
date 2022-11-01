@@ -186,6 +186,7 @@
     <ClInclude Include="SparseVolumeScene.h" />
     <ClInclude Include="SVBoxView.h" />
     <ClInclude Include="VolumeMenu.h" />
+    <ClInclude Include="VolumeScene.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>

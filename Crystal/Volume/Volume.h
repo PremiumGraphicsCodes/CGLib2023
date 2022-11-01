@@ -14,17 +14,17 @@ class Volume
 public:
 	Volume();
 
-	Volume(const Math::Box3dd& box, const std::array<size_t, 3>& resolutions);
+	Volume(const Math::Box3df& box, const std::array<size_t, 3>& resolutions);
 
-	Math::Box3dd getBoundingBox() const { return box; }
+	Math::Box3df getBoundingBox() const { return box; }
 
 	std::array<size_t, 3> getResolutions() const { return resolutions; }
 
-	Math::Vector3dd getCellPosition(const size_t i, const size_t j, const size_t k) const;
+	Math::Vector3df getCellPosition(const size_t i, const size_t j, const size_t k) const;
 
-	std::array<size_t, 3> getIndexFromPosition(const Math::Vector3dd& position);
+	std::array<size_t, 3> getIndexFromPosition(const Math::Vector3df& position);
 
-	Math::Vector3dd getCellLength() const;
+	Math::Vector3df getCellLength() const;
 
 	T getValue(const size_t i, const size_t j, const size_t k) const { return nodes[i][j][k]; }
 
@@ -33,10 +33,13 @@ public:
 	//void fill(const T value) { this->nodes.fill(value); }
 
 private:
-	Math::Box3dd box;
+	Math::Box3df box;
 	std::array<size_t, 3> resolutions;
 	std::vector<std::vector<std::vector<T>>> nodes;
 };
+
+using Volumef = Volume<float>;
+using Volumed = Volume<double>;
 
 	}
 }

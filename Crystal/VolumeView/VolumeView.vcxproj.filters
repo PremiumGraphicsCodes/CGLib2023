@@ -33,6 +33,9 @@
       <Filter>SparseVolume</Filter>
     </ClInclude>
     <ClInclude Include="VolumeMenu.h" />
+    <ClInclude Include="VolumeScene.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -40,6 +43,9 @@
   <ItemGroup>
     <Filter Include="SparseVolume">
       <UniqueIdentifier>{6072dada-a6df-4342-ae4e-e94b6c05d434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Volume">
+      <UniqueIdentifier>{d4629963-c024-427b-b907-c11f22ea38d1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
