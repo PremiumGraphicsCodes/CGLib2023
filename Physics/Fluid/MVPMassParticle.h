@@ -1,7 +1,6 @@
 #pragma once
 
 #include "CGLib/Math/Vector3d.h"
-#include "CGLib/Shape/IParticle.h"
 #include "CGLib/Util/UnCopyable.h"
 
 namespace Crystal {

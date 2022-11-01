@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Crystal/Scene/SceneBase.h"
-#include "CGLib/Shape/ParticleSystem.h"
+#include "ParticleSystem.h"
 #include "ParticleSystemPresenter.h"
 #include <vector>
 

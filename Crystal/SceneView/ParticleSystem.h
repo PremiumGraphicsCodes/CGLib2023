@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../Math/Box3d.h"
+#include "CGLib/Math/Box3d.h"
 #include "IParticle.h"
-#include "IShape.h"
+#include "CGLib/Shape/IShape.h"
 #include <vector>
 #include <memory>
 

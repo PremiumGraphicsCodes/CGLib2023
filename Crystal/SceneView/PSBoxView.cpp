@@ -1,7 +1,7 @@
 #include "PSBoxView.h"
 
 #include "ParticleSystemScene.h"
-#include "CGLib/Shape/ParticleSystemBuilder.h"
+#include "ParticleSystemBuilder.h"
 #include "Renderer.h"
 #include "World.h"
 

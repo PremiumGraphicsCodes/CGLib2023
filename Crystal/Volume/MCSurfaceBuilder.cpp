@@ -5,7 +5,6 @@
 #include "MarchingCubesTable.h"
 
 using namespace Crystal::Math;
-using namespace Crystal::Shape;
 using namespace Crystal::Space;
 using namespace Crystal::Space::MarchingCubesTable;
 using namespace Crystal::Volume;

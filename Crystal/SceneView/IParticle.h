@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Math/Vector3d.h"
+#include "CGLib/Math/Vector3d.h"
 
 namespace Crystal {
 	namespace Shape {

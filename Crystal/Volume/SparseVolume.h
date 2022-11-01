@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CGLib/Math/Box3d.h"
-#include "CGLib/Shape/IParticle.h"
+//#include "IParticle.h"
 #include "CGLib/Util/UnCopyable.h"
 
 #include <map>
@@ -29,7 +29,7 @@ public:
 };
 
 template<typename T>
-class SparseVolumeNode : public Shape::IParticle
+class SparseVolumeNode
 {
 public:
 	SparseVolumeNode(const Math::Vector3df& position, const std::array<int, 3>& index) :
@@ -39,7 +39,7 @@ public:
 		attr(nullptr)
 	{}
 
-	Math::Vector3df getPosition() const override { return position; }
+	Math::Vector3df getPosition() const { return position; }
 
 	T getValue() const { return value; }
 

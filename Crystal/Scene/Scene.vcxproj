@@ -162,11 +162,6 @@
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneGroup.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\CGLib\Shape\Shape.vcxproj">
-      <Project>{6a17c2ee-6107-45a8-a72c-6b8b55136abf}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -8,7 +8,6 @@
 #include <iostream>
 
 using namespace Crystal::Math;
-using namespace Crystal::Shape;
 using namespace Crystal::UI;
 using namespace Crystal::Renderer;
 using namespace Crystal::Physics;

@@ -157,9 +157,6 @@
     <ProjectReference Include="..\..\CGLib\Math\Math.vcxproj">
       <Project>{43f2d582-49b6-425d-bf27-6b3a9a9a0acb}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\CGLib\Shape\Shape.vcxproj">
-      <Project>{6a17c2ee-6107-45a8-a72c-6b8b55136abf}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\..\CGLib\UI\UI.vcxproj">
       <Project>{02b12dc2-d4af-4fa1-a2f0-b51326d3c1e6}</Project>
     </ProjectReference>

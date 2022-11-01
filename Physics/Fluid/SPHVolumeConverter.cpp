@@ -11,7 +11,6 @@
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;
-using namespace Crystal::Shape;
 using namespace Crystal::Volume;
 using namespace Crystal::Physics;
 

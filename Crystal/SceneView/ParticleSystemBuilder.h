@@ -3,7 +3,7 @@
 #include <vector>
 #include <memory>
 
-#include "../Math/Vector3d.h"
+#include "CGLib/Math/Vector3d.h"
 
 #include "ParticleSystem.h"
 

@@ -1,8 +1,8 @@
 #include "ParticleSystemBuilder.h"
 
-#include "../Math/ICurve3d.h"
-#include "../Math/ISurface3d.h"
-#include "../Math/IVolume3d.h"
+#include "CGLib/Math/ICurve3d.h"
+#include "CGLib/Math/ISurface3d.h"
+#include "CGLib/Math/IVolume3d.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Shape;
