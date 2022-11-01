@@ -23,6 +23,12 @@
     </ClInclude>
     <ClInclude Include="SceneGroup.h" />
     <ClInclude Include="IAnimator.h" />
+    <ClInclude Include="TriangleMeshScene.h">
+      <Filter>TriangleMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleMeshPresenter.h">
+      <Filter>TriangleMesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneBase.cpp" />
@@ -45,6 +51,9 @@
       <Filter>PolygonMesh</Filter>
     </ClCompile>
     <ClCompile Include="SceneGroup.cpp" />
+    <ClCompile Include="TriangleMeshPresenter.cpp">
+      <Filter>TriangleMesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
@@ -55,6 +64,9 @@
     </Filter>
     <Filter Include="PolygonMesh">
       <UniqueIdentifier>{dd1a1963-a823-4a49-bb49-cf8d7451224f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriangleMesh">
+      <UniqueIdentifier>{e8622c78-e30a-4657-8a16-ca7a04b2d678}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

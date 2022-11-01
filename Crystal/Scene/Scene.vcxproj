@@ -161,6 +161,8 @@
     <ClInclude Include="PolygonMeshPresenter.h" />
     <ClInclude Include="PolygonMeshScene.h" />
     <ClInclude Include="SceneGroup.h" />
+    <ClInclude Include="TriangleMeshPresenter.h" />
+    <ClInclude Include="TriangleMeshScene.h" />
     <ClInclude Include="WireFramePresenter.h" />
     <ClInclude Include="WireFrameScene.h" />
   </ItemGroup>
@@ -171,6 +173,7 @@
     <ClCompile Include="PolygonMeshPresenter.cpp" />
     <ClCompile Include="PolygonMeshScene.cpp" />
     <ClCompile Include="SceneGroup.cpp" />
+    <ClCompile Include="TriangleMeshPresenter.cpp" />
     <ClCompile Include="WireFramePresenter.cpp" />
     <ClCompile Include="WireFrameScene.cpp" />
   </ItemGroup>
