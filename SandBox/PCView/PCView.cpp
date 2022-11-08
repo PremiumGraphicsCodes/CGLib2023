@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include "World.h"
+#include "Renderer.h"
 
 int main()
 {

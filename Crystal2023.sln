@@ -63,7 +63,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VolumeView", "Crystal\Volum
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PC", "SandBox\PC\PC.vcxproj", "{923E2C7A-E7B7-4EFE-994E-2282919D15DB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PCView", "PCView\PCView.vcxproj", "{DD7A1846-F5C4-4D92-9908-DC905E0E4485}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PCView", "SandBox\PCView\PCView.vcxproj", "{DD7A1846-F5C4-4D92-9908-DC905E0E4485}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
