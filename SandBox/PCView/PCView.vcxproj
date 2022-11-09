@@ -149,6 +149,7 @@
     <ClCompile Include="PCMenu.cpp" />
     <ClCompile Include="PCView.cpp" />
     <ClCompile Include="PointCloudPresenter.cpp" />
+    <ClCompile Include="PointCloudScene.cpp" />
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>

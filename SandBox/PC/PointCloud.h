@@ -1,16 +1,25 @@
 #pragma once
 
 #include <vector>
-#include "CGLib/Math/Vector3d.h"
+#include <memory>
+#include "Point.h"
+#include "CGLib/Math/Box3d.h"
+#include "CGLib/Util/UnCopyable.h"
 
 namespace Crystal {
 	namespace PC {
 
-class PointCloud
+class PointCloud : private UnCopyable
 {
+public:
+	void add(std::unique_ptr<IPoint>&& point);
+
+	const std::vector<std::unique_ptr<IPoint>>& getPoints() { return points; }
+
+	Math::Box3df getBoindingBox() const;
 
 private:
-	std::vector<Math::Vector3df> points;
+	std::vector<std::unique_ptr<IPoint>> points;
 };
 	}
 }

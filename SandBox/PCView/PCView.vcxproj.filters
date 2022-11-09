@@ -6,6 +6,7 @@
     <ClCompile Include="PCMenu.cpp" />
     <ClCompile Include="DensityEstimatorView.cpp" />
     <ClCompile Include="PointCloudPresenter.cpp" />
+    <ClCompile Include="PointCloudScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />

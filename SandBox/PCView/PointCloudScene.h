@@ -2,28 +2,31 @@
 
 #include "Crystal/Scene/SceneBase.h"
 #include "PointCloudPresenter.h"
+#include "../PC/PointCloud.h"
 #include <vector>
 #include <memory>
 
 namespace Crystal {
-	namespace Scene {
+	namespace PC {
 
-class PointCloudScene : public SceneBase
+class PointCloudScene : public Scene::SceneBase
 {
 public:
 	PointCloudScene();
 
-	void setPresenter(std::unique_ptr<PointCloudPresenter> p) { this->presenter = std::move(p); }
+	void setShape(std::unique_ptr<PointCloud>&& shape) { this->shape = std::move(shape); }
 
-	//Shape::ParticleSystem* getShape() { return shape.get(); }
+	void setPresenter(std::unique_ptr<Scene::PointCloudPresenter>&& p) { this->presenter = std::move(p); }
 
-	IPresenter* getPresenter() override { return presenter.get(); }
+	PointCloud* getShape() { return shape.get(); }
+
+	Scene::IPresenter* getPresenter() override { return presenter.get(); }
 
 	Math::Box3df getBoundingBox() const override;
 
 private:
-	std::vector<Math::Vector3df> positions;
-	std::unique_ptr<PointCloudPresenter> presenter;
+	std::unique_ptr<PointCloud> shape;
+	std::unique_ptr<Scene::PointCloudPresenter> presenter;
 };
 
 	}
