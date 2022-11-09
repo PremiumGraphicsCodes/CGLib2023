@@ -12,6 +12,8 @@ public:
 
 	float getWeight(const float x) const;
 
+	static GaussianFunc createNormalDistributionFunc(const float mu, const float tau);
+
 private:
 	float a;
 	float b;
