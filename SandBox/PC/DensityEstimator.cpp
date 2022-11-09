@@ -13,6 +13,7 @@ void DensityEstimator::add(const Vector3df& position)
 
 void DensityEstimator::estimate(const float searchRadius)
 {
+	this->densities.resize(this->positions.size());
 	const auto tableSize = static_cast<int>(this->positions.size());
 	CompactSpaceHash spaceHash(searchRadius, tableSize);
 	for (const auto& p : positions) {
@@ -20,5 +21,11 @@ void DensityEstimator::estimate(const float searchRadius)
 	}
 	for (int i = 0; i < tableSize; ++i) {
 		const auto indices = spaceHash.findNeighborIndices(i);
+		/*
+		for (const auto i : indices) {
+			const auto d = Math::getDistanceSquared( positions[i]
+		}
+		*/
 	}
 }
+ 

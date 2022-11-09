@@ -4,9 +4,11 @@
     <ClInclude Include="DensityEstimator.h" />
     <ClInclude Include="PointCloud.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="GaussianFunc.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
     <ClCompile Include="PointCloud.cpp" />
+    <ClCompile Include="GaussianFunc.cpp" />
   </ItemGroup>
 </Project>
