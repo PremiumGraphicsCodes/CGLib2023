@@ -4,11 +4,13 @@
     <ClCompile Include="PCView.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="PCMenu.cpp" />
+    <ClCompile Include="DensityEstimatorView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="PCMenu.h" />
+    <ClInclude Include="DensityEstimatorView.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
