@@ -148,11 +148,14 @@
     <ClCompile Include="DensityEstimatorView.cpp" />
     <ClCompile Include="PCMenu.cpp" />
     <ClCompile Include="PCView.cpp" />
+    <ClCompile Include="PointCloudPresenter.cpp" />
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DensityEstimatorView.h" />
     <ClInclude Include="PCMenu.h" />
+    <ClInclude Include="PointCloudPresenter.h" />
+    <ClInclude Include="PointCloudScene.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
