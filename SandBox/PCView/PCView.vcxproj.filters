@@ -3,10 +3,12 @@
   <ItemGroup>
     <ClCompile Include="PCView.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="PCMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="PCMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
