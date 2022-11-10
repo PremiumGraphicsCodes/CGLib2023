@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimatorView.cpp" />
+    <ClCompile Include="PCBoxView.cpp" />
     <ClCompile Include="PCMenu.cpp" />
     <ClCompile Include="PCView.cpp" />
     <ClCompile Include="PointCloudPresenter.cpp" />
@@ -154,6 +155,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DensityEstimatorView.h" />
+    <ClInclude Include="PCBoxView.h" />
+    <ClInclude Include="PointCloudBuilder.h" />
     <ClInclude Include="PCMenu.h" />
     <ClInclude Include="PointCloudPresenter.h" />
     <ClInclude Include="PointCloudScene.h" />

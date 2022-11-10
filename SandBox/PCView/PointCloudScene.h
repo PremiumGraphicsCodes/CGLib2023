@@ -16,7 +16,7 @@ public:
 
 	void setShape(std::unique_ptr<PointCloud>&& shape) { this->shape = std::move(shape); }
 
-	void setPresenter(std::unique_ptr<Scene::PointCloudPresenter>&& p) { this->presenter = std::move(p); }
+	void setPresenter(std::unique_ptr<PointCloudPresenter>&& p) { this->presenter = std::move(p); }
 
 	PointCloud* getShape() { return shape.get(); }
 
@@ -26,7 +26,7 @@ public:
 
 private:
 	std::unique_ptr<PointCloud> shape;
-	std::unique_ptr<Scene::PointCloudPresenter> presenter;
+	std::unique_ptr<PointCloudPresenter> presenter;
 };
 
 	}

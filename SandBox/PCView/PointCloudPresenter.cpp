@@ -2,7 +2,7 @@
 #include "PointCloudScene.h"
 
 using namespace Crystal::Graphics;
-using namespace Crystal::Scene;
+using namespace Crystal::PC;
 
 void PointCloudPresenter::build()
 {

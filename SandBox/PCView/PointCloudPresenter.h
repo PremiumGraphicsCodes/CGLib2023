@@ -5,10 +5,10 @@
 #include "Crystal/Renderer/PointRenderer.h"
 
 namespace Crystal {
-	namespace Scene {
+	namespace PC {
 		class PointCloudScene;
 
-class PointCloudPresenter : public IPresenter
+class PointCloudPresenter : public Scene::IPresenter
 {
 public:
 	PointCloudPresenter(PointCloudScene* psScene, Crystal::Renderer::PointRenderer* renderer) :
@@ -32,7 +32,7 @@ private:
 	VBO vbo;
 	int count;
 
-	Scene::PointCloudScene* model;
+	PointCloudScene* model;
 	Crystal::Renderer::PointRenderer* view;
 };
 
