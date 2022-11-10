@@ -2,7 +2,7 @@
 
 #include "World.h"
 
-//#include "Crystal/Scene/ParticleSystemScene.h"
+#include "../PC/DensityEstimator.h"
 
 #include "Crystal/Space/SpaceHash.h"
 #include <iostream>
@@ -11,11 +11,12 @@ using namespace Crystal::Math;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 using namespace Crystal::Space;
+using namespace Crystal::PC;
 
 DensityEstimatorView::DensityEstimatorView(const std::string& name, World* world, Renderer* renderer) :
 	IOkCancelView(name),
 	pcSelectView("PointCloud", world),
-	searchRadiusView("SearchRadius", 1.0f),
+	searchRadiusView("SearchRadius", 1.5f),
 	world(world),
 	renderer(renderer)
 {
@@ -25,18 +26,20 @@ DensityEstimatorView::DensityEstimatorView(const std::string& name, World* world
 
 void DensityEstimatorView::onOk()
 {
-	/*
-	auto psScene = world->getRootScene()->findSceneById<ParticleSystemScene*>(pcSelectView.getId());
-	const auto& particles = psScene->getShape()->getParticles();
-	SpaceHash spaceHash(searchRadiusView.getValue(), particles.size());
-	for (const auto& p : particles) {
-		spaceHash.add(p->getPosition());
+	std::vector<Vector3df> positions;
+	for (int i = 0; i < 10; ++i) {
+		for (int j = 0; j < 10; ++j) {
+			for (int k = 0; k < 10; ++k) {
+				const auto x = i * 1.0f;
+				const auto y = j * 1.0f;
+				const auto z = k * 1.0f;
+				positions.emplace_back(x, y, z);
+			}
+		}
 	}
-	int totalIndicesCount = 0;
-	for (const auto& p : particles) {
-		const auto indices = spaceHash.findNeighborIndices(p->getPosition());
-		totalIndicesCount += indices.size();
+	DensityEstimator estimator;
+	for (const auto& p : positions) {
+		estimator.add(p);
 	}
-	std::cout << totalIndicesCount << std::endl;
-	*/
+	estimator.estimate(searchRadiusView.getValue());
 }

@@ -1,5 +1,6 @@
 #include "DensityEstimator.h"
 
+#include "GaussianFunc.h"
 #include "Crystal/Space/CompactSpaceHash.h"
 
 using namespace Crystal::Math;
@@ -19,13 +20,18 @@ void DensityEstimator::estimate(const float searchRadius)
 	for (const auto& p : positions) {
 		spaceHash.add(p);
 	}
+	const auto g = GaussianFunc::createNormalDistributionFunc();
 	for (int i = 0; i < tableSize; ++i) {
+		const auto& p = this->positions[i];
 		const auto indices = spaceHash.findNeighborIndices(i);
-		/*
-		for (const auto i : indices) {
-			const auto d = Math::getDistanceSquared( positions[i]
+		float density = 0.0f;
+		for (const auto ni : indices) {
+			const auto n = this->positions[ni];
+			const auto d = Math::getDistance(p, n);
+			const auto w = g.getWeight(d / searchRadius);
+			density += w;
 		}
-		*/
+		this->densities[i] = density;
 	}
 }
  

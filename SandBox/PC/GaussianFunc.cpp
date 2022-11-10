@@ -17,6 +17,11 @@ float GaussianFunc::getWeight(const float x) const
 	return a * std::exp(power);
 }
 
+GaussianFunc GaussianFunc::createNormalDistributionFunc()
+{
+	return createNormalDistributionFunc(0.0f, 1.0f);
+}
+
 GaussianFunc GaussianFunc::createNormalDistributionFunc(const float mu, const float tau)
 {
 	const auto denomi = std::sqrt(2.0f * PI) * tau;
