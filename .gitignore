@@ -102,3 +102,7 @@
 /SandBox/PC/x64/Release
 /SandBox/PCView/x64/Release
 /SandBox/PCTest/x64/Debug
+/SandBox/PointCloud/PC/x64
+/SandBox/PointCloud/PCTest/x64
+/SandBox/PointCloud/PCView/x64
+/SandBox/PointCloud/PCView/imgui.ini
