@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="DensityEstimatorView.h" />
     <ClInclude Include="PCBoxView.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="PointCloudBuilder.h" />
     <ClInclude Include="PCMenu.h" />
     <ClInclude Include="PointCloudPresenter.h" />

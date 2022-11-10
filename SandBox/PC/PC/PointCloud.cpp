@@ -8,7 +8,7 @@ void PointCloud::add(std::unique_ptr<IPoint>&& point)
 	points.push_back(std::move(point));
 }
 
-Box3df PointCloud::getBoindingBox() const
+Box3df PointCloud::getBoundingBox() const
 {
 	auto bb = Math::Box3df::createDegeneratedBox();
 	for (auto& p : points) {

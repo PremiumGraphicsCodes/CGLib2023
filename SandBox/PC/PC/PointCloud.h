@@ -16,7 +16,7 @@ public:
 
 	const std::vector<std::unique_ptr<IPoint>>& getPoints() { return points; }
 
-	Math::Box3df getBoindingBox() const;
+	Math::Box3df getBoundingBox() const;
 
 private:
 	std::vector<std::unique_ptr<IPoint>> points;

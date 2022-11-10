@@ -9,5 +9,5 @@ PointCloudScene::PointCloudScene()
 
 Box3df PointCloudScene::getBoundingBox() const
 {
-	return shape->getBoindingBox();
+	return shape->getBoundingBox();
 }

@@ -19,6 +19,7 @@
     <ClInclude Include="PointCloudPresenter.h" />
     <ClInclude Include="PCBoxView.h" />
     <ClInclude Include="PointCloudBuilder.h" />
+    <ClInclude Include="Point.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -4,6 +4,8 @@
 #include "CGLib/Math/ISurface3d.h"
 #include "CGLib/Math/IVolume3d.h"
 
+#include "Point.h"
+
 using namespace Crystal::Math;
 using namespace Crystal::PC;
 
