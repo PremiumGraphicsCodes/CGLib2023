@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "CGLib/Math/Vector3d.h"
-#include "../PC/PointCloud.h"
+#include "PointCloudScene.h"
 
 namespace Crystal {
 	namespace Math {

@@ -155,13 +155,10 @@
   <ItemGroup>
     <ClInclude Include="DensityEstimator.h" />
     <ClInclude Include="GaussianFunc.h" />
-    <ClInclude Include="Point.h" />
-    <ClInclude Include="PointCloud.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
     <ClCompile Include="GaussianFunc.cpp" />
-    <ClCompile Include="PointCloud.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

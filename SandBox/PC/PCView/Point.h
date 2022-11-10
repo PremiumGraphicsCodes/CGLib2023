@@ -1,12 +1,11 @@
 #pragma once
 
-#include "../PC/Point.h"
 #include "CGLib/Graphics/ColorRGBA.h"
 
 namespace Crystal {
 	namespace PC {
 
-struct Point : public IPoint
+struct Point //: public IPoint
 {
 public:
 	explicit Point(const Math::Vector3df& p) :
@@ -15,7 +14,14 @@ public:
 		this->pos = p;
 	}
 
-	Math::Vector3df getPosition() const override {
+	Point(const Math::Vector3df& p, const Graphics::ColorRGBAf& color) :
+		color(color)
+	{
+		this->pos = p;
+	}
+
+
+	Math::Vector3df getPosition() const {
 		return pos;
 	}
 

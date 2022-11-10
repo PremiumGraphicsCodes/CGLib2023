@@ -70,7 +70,7 @@ float ColorMap::getValueFromIndex(const int i) const
 void ColorMap::setMin(const float m)
 {
 	min_ = m;
-	assert(isValid());
+	//assert(isValid());
 }
 
 float ColorMap::getMin() const
@@ -81,7 +81,7 @@ float ColorMap::getMin() const
 void ColorMap::setMax(const float m)
 {
 	max_ = m;
-	assert(isValid());
+	//assert(isValid());
 }
 
 float ColorMap::getMax() const

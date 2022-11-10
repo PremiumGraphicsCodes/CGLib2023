@@ -13,6 +13,8 @@ public:
 
 	void estimate(const float searchRadius);
 
+	std::vector<float> getDensities() const { return densities; }
+
 private:
 	std::vector<Math::Vector3df> positions;
 	std::vector<float> densities;

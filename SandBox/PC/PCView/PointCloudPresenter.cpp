@@ -20,8 +20,8 @@ void PointCloudPresenter::send()
 	const auto& particles = model->getShape()->getPoints();
 	for (auto& p : particles) {
 		position.add(p->getPosition());
-		color.add(ColorRGBAf(1,1,1,0));
-		size.add(1);
+		color.add(p->getColor());
+		size.add(10.0f);
 	}
 
 	vbo.position.send(position);
