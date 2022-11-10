@@ -61,11 +61,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Volume", "Crystal\Volume\Vo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VolumeView", "Crystal\VolumeView\VolumeView.vcxproj", "{09323480-9954-4124-AE02-737AB9FEE66B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PC", "SandBox\PointCloud\PC\PC.vcxproj", "{923E2C7A-E7B7-4EFE-994E-2282919D15DB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PC", "SandBox\PC\PC\PC.vcxproj", "{923E2C7A-E7B7-4EFE-994E-2282919D15DB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PCView", "SandBox\PointCloud\PCView\PCView.vcxproj", "{DD7A1846-F5C4-4D92-9908-DC905E0E4485}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PCView", "SandBox\PC\PCView\PCView.vcxproj", "{DD7A1846-F5C4-4D92-9908-DC905E0E4485}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PCTest", "SandBox\PointCloud\PCTest\PCTest.vcxproj", "{23FDE1CF-AF84-4014-ABDF-C8D88FF607DB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PCTest", "SandBox\PC\PCTest\PCTest.vcxproj", "{23FDE1CF-AF84-4014-ABDF-C8D88FF607DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
