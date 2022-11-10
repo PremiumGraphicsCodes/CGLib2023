@@ -13,12 +13,11 @@ void PointCloudPresenter::build()
 
 void PointCloudPresenter::send()
 {
-	/*
 	Shader::VertexBuffer<float> position;
 	Shader::VertexBuffer<float> color;
 	Shader::VertexBuffer<float> size;
 
-	const auto& particles = model->getShape()->getParticles();
+	const auto& particles = model->getShape()->getPoints();
 	for (auto& p : particles) {
 		position.add(p->getPosition());
 		color.add(ColorRGBAf(1, 0, 0, 0));
@@ -30,7 +29,6 @@ void PointCloudPresenter::send()
 	vbo.size.send(size);
 
 	count = static_cast<int>(particles.size());
-	*/
 }
 
 void PointCloudPresenter::render(const Camera& camera)

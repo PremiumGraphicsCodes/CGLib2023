@@ -1,7 +1,7 @@
 #include "PCBoxView.h"
 
 #include "PointCloudScene.h"
-//#include "ParticleSystemBuilder.h"
+#include "PointCloudBuilder.h"
 #include "Renderer.h"
 #include "World.h"
 
@@ -31,15 +31,13 @@ void PCBoxView::onOk()
 	const auto box = boxView.getValue();
 
 	auto scene = new PointCloudScene();
-	/*
-	ParticleSystemBuilder builder;
+	PointCloudBuilder builder;
 	builder.add(box, uNumView.getValue(), vNumView.getValue(), wNumView.getValue());
-	scene->setShape(std::move(builder.toParticleSystem()));
+	scene->setShape(std::move(builder.toPointCloud()));
 
-	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, renderer->getPointRenderer());
+	auto presenter = std::make_unique<PointCloudPresenter>(scene, renderer->getPointRenderer());
 	presenter->build();
 	presenter->send();
 	scene->setPresenter(std::move(presenter));
 	world->getRootScene()->addScene(scene);
-	*/
 }

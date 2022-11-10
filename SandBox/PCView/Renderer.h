@@ -18,8 +18,11 @@ public:
 
 	void render(const int width, const int height) override;
 
+	Crystal::Renderer::PointRenderer* getPointRenderer() { return &point; }
+
 private:
 	World* world;
+	Crystal::Renderer::PointRenderer point;
 };
 
 	}

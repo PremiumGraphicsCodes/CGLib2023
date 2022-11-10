@@ -1,4 +1,5 @@
 #include "Renderer.h"
+#include "World.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
 
@@ -7,17 +8,14 @@ using namespace Crystal::UI;
 
 void Renderer::init()
 {
-	/*
 	ShaderBuilder builder;
 	builder.buildFromFile("../GLSL/Point.vs", "../GLSL/Point.fs");
 	point.setShader(builder.getShader());
 	point.link();
-	*/
 }
 
 void Renderer::render(const int width, const int height)
 {
-	/*
 	assert(GL_NO_ERROR == glGetError());
 	glViewport(0, 0, width, height);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -30,5 +28,4 @@ void Renderer::render(const int width, const int height)
 	//presenter.render(camera);
 	//wfPresenter->render(camera);
 	assert(GL_NO_ERROR == glGetError());
-	*/
 }
