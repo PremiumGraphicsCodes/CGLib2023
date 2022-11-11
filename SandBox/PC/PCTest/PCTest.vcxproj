@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GaussianFuncTest.cpp" />
+    <ClCompile Include="NormalEstimatorTest.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -45,11 +46,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CGLib\Math\Math.vcxproj">
+    <ProjectReference Include="..\..\..\CGLib\Math\Math.vcxproj">
       <Project>{43f2d582-49b6-425d-bf27-6b3a9a9a0acb}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Crystal\Numerics\Numerics\Numerics.vcxproj">
+    <ProjectReference Include="..\..\..\Crystal\Numerics\Numerics\Numerics.vcxproj">
       <Project>{65ca69ad-6106-4f1b-baca-9c10359c31f5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Crystal\Space\Space.vcxproj">
+      <Project>{9530d9d5-3a0e-4d2f-a151-44836e69854c}</Project>
     </ProjectReference>
     <ProjectReference Include="..\PC\PC.vcxproj">
       <Project>{923e2c7a-e7b7-4efe-994e-2282919d15db}</Project>
@@ -88,6 +92,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>../../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

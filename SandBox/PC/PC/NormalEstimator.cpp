@@ -3,11 +3,12 @@
 #include "GaussianFunc.h"
 #include "Crystal/Space/CompactSpaceHash.h"
 #include "CGLib/Math/Matrix3d.h"
+#include "Crystal/Numerics/Numerics/Converter.h"
+#include "Crystal/Numerics/Numerics/SVD3d.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;
 using namespace Crystal::PC;
-
 
 namespace {
 	Matrix3df calculateCovarianceMatrix(const Vector3df& center, const std::vector<Vector3df>& neighbors)
@@ -50,7 +51,6 @@ void NormalEstimator::add(const Vector3df& position)
 
 void NormalEstimator::estimate(const float searchRadius)
 {
-	/*
 	this->normals.resize(this->positions.size());
 	const auto tableSize = static_cast<int>(this->positions.size());
 	CompactSpaceHash spaceHash(searchRadius, tableSize);
@@ -61,14 +61,18 @@ void NormalEstimator::estimate(const float searchRadius)
 	for (int i = 0; i < tableSize; ++i) {
 		const auto& p = this->positions[i];
 		const auto indices = spaceHash.findNeighborIndices(i);
-		float density = 0.0f;
+		std::vector<Vector3df> neighbors;
 		for (const auto ni : indices) {
 			const auto n = this->positions[ni];
-			const auto d = Math::getDistance(p, n);
-			const auto w = g.getWeight(d / searchRadius);
-			density += w;
+			neighbors.push_back(n);
 		}
-		this->densities[i] = density;
+		const auto matrix = calculateCovarianceMatrix(p, neighbors);
+		Crystal::Numerics::Converter::toEigen(matrix);
+		Crystal::Numerics::SVD3d svd;
+		const auto result = svd.calculate(matrix);
+		const auto ev = result.eigenVectors[0];
+		this->normals[i].x = ev.x;
+		this->normals[i].y = ev.y;
+		this->normals[i].z = ev.z;
 	}
-	*/
 }

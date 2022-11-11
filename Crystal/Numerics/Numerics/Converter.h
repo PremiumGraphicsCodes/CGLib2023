@@ -8,6 +8,8 @@
 #include "CGLib/Math/Vector3d.h"
 #include "CGLib/Math/Vector4d.h"
 
+#include "../ThirdParty/eigen-3.4.0/Eigen/Eigen"
+
 
 namespace Crystal {
 	namespace Numerics {
