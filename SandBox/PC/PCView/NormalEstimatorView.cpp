@@ -50,19 +50,12 @@ void NormalEstimatorView::onOk()
 	}
 	estimator.estimate(searchRadiusView.getValue());
 
-	/*
-	const auto densities = estimator.getDensities();
-
-	auto colorMap = this->colorMapView.getValue();
-	const auto min = *std::min_element(densities.begin(), densities.end());
-	const auto max = *std::max_element(densities.begin(), densities.end());
-	colorMap.setMin(min);
-	colorMap.setMax(max);
+	const auto normals = estimator.getNormals();
 
 	auto pointCloud = std::make_unique<PointCloud>();
 	//std::vector<ColorRGBAf> colors;
 	for (int i = 0; i < positions.size(); ++i) {
-		const auto c = colorMap.getInterpolatedColor(densities[i]);
+		const ColorRGBAf c( normals[i], 0.0f );
 		pointCloud->add(std::make_unique<Point>(positions[i], c));
 		//colors.push_back(c);
 	}
@@ -75,5 +68,4 @@ void NormalEstimatorView::onOk()
 	presenter->send();
 	scene->setPresenter(std::move(presenter));
 	world->getRootScene()->addScene(scene);
-	*/
 }
