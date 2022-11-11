@@ -71,7 +71,7 @@ void CurvatureEstimator::estimate(const float searchRadius)
 		Crystal::Numerics::SVD3d svd;
 		const auto result = svd.calculate(matrix);
 		const auto& ev = result.eigenValues;
-		const auto denomi = ev[0] / (ev[0] + ev[1] + ev[2]);
-		this->curvatures[i] = ev[0] / denomi;
+		const auto c = ev[0] / (ev[0] + ev[1] + ev[2]);
+		this->curvatures[i] = c;
 	}
 }

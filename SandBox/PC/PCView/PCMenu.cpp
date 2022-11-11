@@ -6,6 +6,7 @@
 #include "PCBoxView.h"
 #include "DensityEstimatorView.h"
 #include "NormalEstimatorView.h"
+#include "CurvatureEstimatorView.h"
 
 using namespace Crystal::UI;
 
@@ -24,4 +25,7 @@ PCMenu::PCMenu(const std::string& name, World* world, Renderer* renderer, Panel*
 		control->setChild(new NormalEstimatorView("Normal", world, renderer));
 		}));
 
+	add(new MenuItem("Curvature", [control, world, renderer]() {
+		control->setChild(new CurvatureEstimatorView("Curvature", world, renderer));
+		}));
 }
