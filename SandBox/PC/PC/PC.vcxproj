@@ -159,17 +159,21 @@
     <ClInclude Include="NormalEstimator.h" />
     <ClInclude Include="PCDFile.h" />
     <ClInclude Include="PCDFileReader.h" />
+    <ClInclude Include="PCDFileWriter.h" />
     <ClInclude Include="PLYFile.h" />
     <ClInclude Include="PLYFileReader.h" />
     <ClInclude Include="PLYFileWriter.h" />
+    <ClInclude Include="TXTFileWriter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
     <ClCompile Include="GaussianFunc.cpp" />
     <ClCompile Include="NormalEstimator.cpp" />
     <ClCompile Include="PCDFileReader.cpp" />
+    <ClCompile Include="PCDFileWriter.cpp" />
     <ClCompile Include="PLYFileReader.cpp" />
     <ClCompile Include="PLYFileWriter.cpp" />
+    <ClCompile Include="TXTFileWriter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

@@ -19,6 +19,12 @@
     <ClInclude Include="PCDFileReader.h">
       <Filter>IO\PCD</Filter>
     </ClInclude>
+    <ClInclude Include="PCDFileWriter.h">
+      <Filter>IO\PCD</Filter>
+    </ClInclude>
+    <ClInclude Include="TXTFileWriter.h">
+      <Filter>IO\TXT</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
@@ -33,6 +39,12 @@
     <ClCompile Include="PCDFileReader.cpp">
       <Filter>IO\PCD</Filter>
     </ClCompile>
+    <ClCompile Include="PCDFileWriter.cpp">
+      <Filter>IO\PCD</Filter>
+    </ClCompile>
+    <ClCompile Include="TXTFileWriter.cpp">
+      <Filter>IO\TXT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="IO">
@@ -43,6 +55,9 @@
     </Filter>
     <Filter Include="IO\PCD">
       <UniqueIdentifier>{3c491e85-b837-49df-8fad-0817d83c2e58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO\TXT">
+      <UniqueIdentifier>{e2538f82-cf61-4149-bd33-ba88293f7342}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

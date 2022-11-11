@@ -9,6 +9,7 @@
     <ClCompile Include="PointCloudScene.cpp" />
     <ClCompile Include="PCBoxView.cpp" />
     <ClCompile Include="PointCloudBuilder.cpp" />
+    <ClCompile Include="NormalEstimatorView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
@@ -20,6 +21,7 @@
     <ClInclude Include="PCBoxView.h" />
     <ClInclude Include="PointCloudBuilder.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="NormalEstimatorView.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
