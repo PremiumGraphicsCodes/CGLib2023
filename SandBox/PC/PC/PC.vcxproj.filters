@@ -25,6 +25,7 @@
     <ClInclude Include="TXTFileWriter.h">
       <Filter>IO\TXT</Filter>
     </ClInclude>
+    <ClInclude Include="CurvatureEstimator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
@@ -45,6 +46,7 @@
     <ClCompile Include="TXTFileWriter.cpp">
       <Filter>IO\TXT</Filter>
     </ClCompile>
+    <ClCompile Include="CurvatureEstimator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="IO">

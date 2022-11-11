@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CurvatureEstimator.h" />
     <ClInclude Include="DensityEstimator.h" />
     <ClInclude Include="GaussianFunc.h" />
     <ClInclude Include="NormalEstimator.h" />
@@ -167,6 +168,7 @@
     <ClInclude Include="TXTFileWriter.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CurvatureEstimator.cpp" />
     <ClCompile Include="DensityEstimator.cpp" />
     <ClCompile Include="GaussianFunc.cpp" />
     <ClCompile Include="NormalEstimator.cpp" />

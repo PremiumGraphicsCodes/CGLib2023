@@ -1,4 +1,4 @@
-#include "NormalEstimator.h"
+#include "CurvatureEstimator.h"
 
 #include "GaussianFunc.h"
 #include "Crystal/Space/CompactSpaceHash.h"
@@ -44,14 +44,14 @@ namespace {
 	}
 }
 
-void NormalEstimator::add(const Vector3df& position)
+void CurvatureEstimator::add(const Vector3df& position)
 {
 	this->positions.push_back(position);
 }
 
-void NormalEstimator::estimate(const float searchRadius)
+void CurvatureEstimator::estimate(const float searchRadius)
 {
-	this->normals.resize(this->positions.size());
+	this->curvatures.resize(this->positions.size());
 	const auto tableSize = static_cast<int>(this->positions.size());
 	CompactSpaceHash spaceHash(searchRadius, tableSize);
 	for (const auto& p : positions) {
@@ -70,9 +70,8 @@ void NormalEstimator::estimate(const float searchRadius)
 		Crystal::Numerics::Converter::toEigen(matrix);
 		Crystal::Numerics::SVD3d svd;
 		const auto result = svd.calculate(matrix);
-		const auto& ev = result.eigenVectors[0];
-		this->normals[i].x = ev.x;
-		this->normals[i].y = ev.y;
-		this->normals[i].z = ev.z;
+		const auto& ev = result.eigenValues;
+		const auto denomi = ev[0] / (ev[0] + ev[1] + ev[2]);
+		this->curvatures[i] = ev[0] / denomi;
 	}
 }
