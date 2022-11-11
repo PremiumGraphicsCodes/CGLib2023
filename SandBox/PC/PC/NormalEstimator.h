@@ -6,18 +6,18 @@
 namespace Crystal {
 	namespace PC {
 
-class DensityEstimator
+class NormalEstimator
 {
 public:
 	void add(const Math::Vector3df& position);
 
 	void estimate(const float searchRadius);
 
-	std::vector<float> getDensities() const { return densities; }
+	std::vector<Math::Vector3df> getNormals() const { return normals; }
 
 private:
 	std::vector<Math::Vector3df> positions;
-	std::vector<float> densities;
+	std::vector<Math::Vector3df> normals;
 };
 
 	}

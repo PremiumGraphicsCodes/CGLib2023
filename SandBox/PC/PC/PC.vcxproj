@@ -156,13 +156,17 @@
   <ItemGroup>
     <ClInclude Include="DensityEstimator.h" />
     <ClInclude Include="GaussianFunc.h" />
+    <ClInclude Include="NormalEstimator.h" />
     <ClInclude Include="PLYFile.h" />
     <ClInclude Include="PLYFileReader.h" />
+    <ClInclude Include="PLYFileWriter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
     <ClCompile Include="GaussianFunc.cpp" />
+    <ClCompile Include="NormalEstimator.cpp" />
     <ClCompile Include="PLYFileReader.cpp" />
+    <ClCompile Include="PLYFileWriter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

@@ -9,6 +9,10 @@
     <ClInclude Include="PLYFileReader.h">
       <Filter>IO</Filter>
     </ClInclude>
+    <ClInclude Include="PLYFileWriter.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalEstimator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
@@ -16,6 +20,10 @@
     <ClCompile Include="PLYFileReader.cpp">
       <Filter>IO</Filter>
     </ClCompile>
+    <ClCompile Include="PLYFileWriter.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalEstimator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="IO">
