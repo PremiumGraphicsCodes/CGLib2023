@@ -3,9 +3,23 @@
   <ItemGroup>
     <ClInclude Include="DensityEstimator.h" />
     <ClInclude Include="GaussianFunc.h" />
+    <ClInclude Include="PLYFile.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="PLYFileReader.h">
+      <Filter>IO</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
     <ClCompile Include="GaussianFunc.cpp" />
+    <ClCompile Include="PLYFileReader.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="IO">
+      <UniqueIdentifier>{5ae5b096-91ae-43ba-ae83-1edda31eb34b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
