@@ -157,6 +157,8 @@
     <ClInclude Include="DensityEstimator.h" />
     <ClInclude Include="GaussianFunc.h" />
     <ClInclude Include="NormalEstimator.h" />
+    <ClInclude Include="PCDFile.h" />
+    <ClInclude Include="PCDFileReader.h" />
     <ClInclude Include="PLYFile.h" />
     <ClInclude Include="PLYFileReader.h" />
     <ClInclude Include="PLYFileWriter.h" />
@@ -165,6 +167,7 @@
     <ClCompile Include="DensityEstimator.cpp" />
     <ClCompile Include="GaussianFunc.cpp" />
     <ClCompile Include="NormalEstimator.cpp" />
+    <ClCompile Include="PCDFileReader.cpp" />
     <ClCompile Include="PLYFileReader.cpp" />
     <ClCompile Include="PLYFileWriter.cpp" />
   </ItemGroup>

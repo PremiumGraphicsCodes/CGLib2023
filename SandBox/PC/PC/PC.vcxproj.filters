@@ -3,31 +3,46 @@
   <ItemGroup>
     <ClInclude Include="DensityEstimator.h" />
     <ClInclude Include="GaussianFunc.h" />
+    <ClInclude Include="NormalEstimator.h" />
     <ClInclude Include="PLYFile.h">
-      <Filter>IO</Filter>
+      <Filter>IO\PLY</Filter>
     </ClInclude>
     <ClInclude Include="PLYFileReader.h">
-      <Filter>IO</Filter>
+      <Filter>IO\PLY</Filter>
     </ClInclude>
     <ClInclude Include="PLYFileWriter.h">
-      <Filter>IO</Filter>
+      <Filter>IO\PLY</Filter>
     </ClInclude>
-    <ClInclude Include="NormalEstimator.h" />
+    <ClInclude Include="PCDFile.h">
+      <Filter>IO\PCD</Filter>
+    </ClInclude>
+    <ClInclude Include="PCDFileReader.h">
+      <Filter>IO\PCD</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
     <ClCompile Include="GaussianFunc.cpp" />
+    <ClCompile Include="NormalEstimator.cpp" />
     <ClCompile Include="PLYFileReader.cpp">
-      <Filter>IO</Filter>
+      <Filter>IO\PLY</Filter>
     </ClCompile>
     <ClCompile Include="PLYFileWriter.cpp">
-      <Filter>IO</Filter>
+      <Filter>IO\PLY</Filter>
     </ClCompile>
-    <ClCompile Include="NormalEstimator.cpp" />
+    <ClCompile Include="PCDFileReader.cpp">
+      <Filter>IO\PCD</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="IO">
       <UniqueIdentifier>{5ae5b096-91ae-43ba-ae83-1edda31eb34b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO\PLY">
+      <UniqueIdentifier>{bd0a5bf9-642f-4f76-8a4c-4daa2dc92021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO\PCD">
+      <UniqueIdentifier>{3c491e85-b837-49df-8fad-0817d83c2e58}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
