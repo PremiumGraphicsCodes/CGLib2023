@@ -25,6 +25,7 @@ TEST(PCDFileReaderTest, TestReadASCII)
 		<< "0.97192 0.278 0 4.2108e+06" << std::endl
 		<< "0.944 0.29474 0 4.2108e+06" << std::endl;
 	PCDFileReader reader;
+	//EXPECT_FALSE(reader.isBinary(stream));
 	EXPECT_TRUE(reader.readAscii(stream));
 
 	const auto& pcd = reader.getPCD();
@@ -35,7 +36,8 @@ TEST(PCDFileReaderTest, TestReadASCII)
 TEST(PCDFileReaderTest, TestReadBinary)
 {
 	PCDFileReader reader;
-	EXPECT_TRUE(reader.readBinary("./TestFiles/PCDBinaryFileReaderTest.pcd"));
+	//EXPECT_TRUE(reader.isBinary("./TestFiles/PCDBinaryFileReaderTest.pcd"));
+	EXPECT_TRUE(reader.read("./TestFiles/PCDBinaryFileReaderTest.pcd"));
 
 	const auto& pcd = reader.getPCD();
 	EXPECT_EQ(3, pcd.data.positions.size()) << std::endl;

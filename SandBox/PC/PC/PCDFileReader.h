@@ -11,13 +11,15 @@ namespace Crystal {
 class PCDFileReader
 {
 public:
+	bool isBinary(std::istream& stream);
+
+	bool isBinary(const std::filesystem::path& filepath);
+
 	bool readAscii(std::istream& stream);
 
-	bool readAscii(const std::filesystem::path& filename);
+	bool read(const std::filesystem::path& filename);
 
 	bool readBinary(std::istream& stream);
-
-	bool readBinary(const std::filesystem::path& filename);
 
 	PCDFile getPCD() const { return pcd; }
 

@@ -24,9 +24,18 @@ bool FileImporter::import(const std::filesystem::path& path)
 
 bool FileImporter::importPCD(const std::filesystem::path& path)
 {
-	//PCDFileReader reader;
-	//reader.read()
-	return false;
+	PCDFileReader reader;
+	const auto isOk = reader.read(path);
+	if (!isOk) {
+		return false;
+	}
+	this->pointCloud = std::make_unique<PointCloud>();
+	const auto positions = reader.getPCD().data.positions;
+	for (const auto& p : positions) {
+		const ColorRGBAf c(1, 1, 1, 1);
+		this->pointCloud->add(std::make_unique<Point>(p, c));
+	}
+	return true;
 }
 
 bool FileImporter::importPLY(const std::filesystem::path& path)

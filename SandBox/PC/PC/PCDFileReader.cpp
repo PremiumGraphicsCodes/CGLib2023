@@ -29,13 +29,20 @@ namespace {
 	}
 }
 
-bool PCDFileReader::readAscii(const std::filesystem::path& filename)
+bool PCDFileReader::isBinary(std::istream& stream)
 {
-	std::ifstream stream(filename, std::ios::in | std::ios::binary);
+	const auto header = readHeader(stream);
+	return header.isBinary;
+}
+
+bool PCDFileReader::isBinary(const std::filesystem::path& filepath)
+{
+	std::ifstream stream(filepath, std::ios::in | std::ios::binary);
 	if (!stream.is_open()) {
 		return false;
 	}
-	return readAscii(stream);
+	const auto header = readHeader(stream);
+	return header.isBinary;
 }
 
 bool PCDFileReader::readAscii(std::istream& stream)
@@ -94,13 +101,20 @@ PCDFile::Data PCDFileReader::readDataAscii(std::istream& stream)
 	return data;
 }
 
-bool PCDFileReader::readBinary(const std::filesystem::path& filename)
+bool PCDFileReader::read(const std::filesystem::path& filename)
 {
 	std::ifstream stream(filename, std::ios_base::in | std::ios_base::binary);
 	if (!stream.is_open()) {
 		return false;
 	}
-	return readBinary(stream);
+	this->pcd.header = readHeader(stream);
+	if (this->pcd.header.isBinary) {
+		this->pcd.data = readDataBinary(stream, this->pcd.header.points);
+	}
+	else {
+		this->pcd.data = readDataAscii(stream);
+	}
+	return true;
 }
 
 bool PCDFileReader::readBinary(std::istream& stream)
