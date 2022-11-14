@@ -3,7 +3,6 @@
   <ItemGroup>
     <ClCompile Include="GaussianFuncTest.cpp" />
     <ClCompile Include="NormalEstimatorTest.cpp" />
-    <ClCompile Include="pch.cpp" />
     <ClCompile Include="PCDFileWriterTest.cpp">
       <Filter>IO</Filter>
     </ClCompile>
@@ -22,9 +21,6 @@
     <ClCompile Include="PLYFileReaderTest.cpp">
       <Filter>IO</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
