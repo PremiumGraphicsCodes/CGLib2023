@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="GaussianFuncTest.cpp" />
+    <ClCompile Include="NormalEstimatorTest.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="PCDFileWriterTest.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="PCDFileReaderTest.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="IO">
+      <UniqueIdentifier>{9d1cea35-6a6c-430b-8e5d-e559d185b92b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
