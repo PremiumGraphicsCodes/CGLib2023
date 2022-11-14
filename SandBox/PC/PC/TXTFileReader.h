@@ -4,7 +4,7 @@
 #include "CGLib/Math/Vector3d.h"
 
 namespace Crystal {
-	namespace IO {
+	namespace PC {
 
 class TXTFileReader
 {

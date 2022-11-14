@@ -4,7 +4,7 @@
 #include "../PC/TXTFileReader.h"
 
 using namespace Crystal::Math;
-using namespace Crystal::IO;
+using namespace Crystal::PC;
 
 namespace {
 	std::stringstream getSampleTXT() {
