@@ -157,7 +157,6 @@
   <ItemGroup>
     <ClInclude Include="CurvatureEstimator.h" />
     <ClInclude Include="DensityEstimator.h" />
-    <ClInclude Include="GaussianFunc.h" />
     <ClInclude Include="NormalEstimator.h" />
     <ClInclude Include="PCDFile.h" />
     <ClInclude Include="PCDFileReader.h" />
@@ -171,7 +170,6 @@
   <ItemGroup>
     <ClCompile Include="CurvatureEstimator.cpp" />
     <ClCompile Include="DensityEstimator.cpp" />
-    <ClCompile Include="GaussianFunc.cpp" />
     <ClCompile Include="NormalEstimator.cpp" />
     <ClCompile Include="PCDFileReader.cpp" />
     <ClCompile Include="PCDFileWriter.cpp" />

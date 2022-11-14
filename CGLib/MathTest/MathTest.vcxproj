@@ -35,6 +35,7 @@
   <ItemGroup>
     <ClCompile Include="Box3dTest.cpp" />
     <ClCompile Include="Ellipsoid3dTest.cpp" />
+    <ClCompile Include="GaussianTest.cpp" />
     <ClCompile Include="Matrix2dTest.cpp" />
     <ClCompile Include="Matrix3dTest.cpp" />
     <ClCompile Include="Plane3dTest.cpp" />

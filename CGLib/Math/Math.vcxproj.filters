@@ -13,6 +13,7 @@
     <ClCompile Include="Circle3d.cpp" />
     <ClCompile Include="Ellipse3d.cpp" />
     <ClCompile Include="Cylinder3d.cpp" />
+    <ClCompile Include="Gaussian.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glm.h" />
@@ -57,6 +58,7 @@
     <ClInclude Include="Circle3d.h" />
     <ClInclude Include="Ellipse3d.h" />
     <ClInclude Include="Cylinder3d.h" />
+    <ClInclude Include="Gaussian.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Matrix">

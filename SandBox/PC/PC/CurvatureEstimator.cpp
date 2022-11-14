@@ -1,6 +1,6 @@
 #include "CurvatureEstimator.h"
 
-#include "GaussianFunc.h"
+#include "CGLib/Math/Gaussian.h"
 #include "Crystal/Space/CompactSpaceHash.h"
 #include "CGLib/Math/Matrix3d.h"
 #include "Crystal/Numerics/Numerics/Converter.h"
@@ -57,7 +57,7 @@ void CurvatureEstimator::estimate(const float searchRadius)
 	for (const auto& p : positions) {
 		spaceHash.add(p);
 	}
-	const auto g = GaussianFunc::createNormalDistributionFunc();
+	const auto g = Gaussian::createNormalDistributionFunc();
 	for (int i = 0; i < tableSize; ++i) {
 		const auto& p = this->positions[i];
 		const auto indices = spaceHash.findNeighborIndices(i);

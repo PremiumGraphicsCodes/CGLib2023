@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="DensityEstimator.h" />
-    <ClInclude Include="GaussianFunc.h" />
     <ClInclude Include="NormalEstimator.h" />
     <ClInclude Include="PLYFile.h">
       <Filter>IO\PLY</Filter>
@@ -32,7 +31,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DensityEstimator.cpp" />
-    <ClCompile Include="GaussianFunc.cpp" />
     <ClCompile Include="NormalEstimator.cpp" />
     <ClCompile Include="PLYFileReader.cpp">
       <Filter>IO\PLY</Filter>

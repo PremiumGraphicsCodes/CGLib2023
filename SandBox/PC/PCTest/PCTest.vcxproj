@@ -33,7 +33,6 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClCompile Include="GaussianFuncTest.cpp" />
     <ClCompile Include="NormalEstimatorTest.cpp" />
     <ClCompile Include="PCDFileReaderTest.cpp" />
     <ClCompile Include="PCDFileWriterTest.cpp" />
