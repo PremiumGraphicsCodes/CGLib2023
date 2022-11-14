@@ -3,8 +3,8 @@
 #include "CGLib/Math/Sphere3d.h"
 
 #include "Crystal/Space/CompactSpaceHash.h"
-#include "Crystal/Volume/SparseVolume.h"
-#include "Crystal/Volume/SparseVolumeBuilder.h"
+#include "Crystal/Volume/Volume/SparseVolume.h"
+#include "Crystal/Volume/Volume/SparseVolumeBuilder.h"
 
 #include "WPCA.h"
 #include "SPHKernel.h"

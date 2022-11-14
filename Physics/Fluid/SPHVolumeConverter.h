@@ -5,7 +5,7 @@
 
 #include "SPHSurfaceParticle.h"
 
-#include "Crystal/Volume/SparseVolume.h"
+#include "Crystal/Volume/Volume/SparseVolume.h"
 
 namespace Crystal {
 	namespace Physics {

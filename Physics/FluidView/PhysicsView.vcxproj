@@ -193,7 +193,7 @@
     <ProjectReference Include="..\..\Crystal\Space\Space.vcxproj">
       <Project>{9530d9d5-3a0e-4d2f-a151-44836e69854c}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Crystal\Volume\Volume.vcxproj">
+    <ProjectReference Include="..\..\Crystal\Volume\Volume\Volume.vcxproj">
       <Project>{0b87c0f4-9d63-4607-8330-ccebcea6e4f9}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Fluid\Physics.vcxproj">
