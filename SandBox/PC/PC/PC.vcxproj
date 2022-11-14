@@ -165,6 +165,7 @@
     <ClInclude Include="PLYFile.h" />
     <ClInclude Include="PLYFileReader.h" />
     <ClInclude Include="PLYFileWriter.h" />
+    <ClInclude Include="TXTFileReader.h" />
     <ClInclude Include="TXTFileWriter.h" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +177,7 @@
     <ClCompile Include="PCDFileWriter.cpp" />
     <ClCompile Include="PLYFileReader.cpp" />
     <ClCompile Include="PLYFileWriter.cpp" />
+    <ClCompile Include="TXTFileReader.cpp" />
     <ClCompile Include="TXTFileWriter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

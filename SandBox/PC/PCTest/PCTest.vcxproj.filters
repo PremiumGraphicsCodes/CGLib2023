@@ -10,6 +10,12 @@
     <ClCompile Include="PCDFileReaderTest.cpp">
       <Filter>IO</Filter>
     </ClCompile>
+    <ClCompile Include="TXTFileWriterTest.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="TXTFileReaderTest.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
