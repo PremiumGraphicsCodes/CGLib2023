@@ -1,7 +1,7 @@
 #include "DensityEstimator.h"
 
 #include "CGLib/Math/Gaussian.h"
-#include "Crystal/Space/CompactSpaceHash.h"
+#include "Crystal/Space/Space/CompactSpaceHash.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;

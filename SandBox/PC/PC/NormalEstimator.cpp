@@ -1,6 +1,6 @@
 #include "NormalEstimator.h"
 
-#include "Crystal/Space/CompactSpaceHash.h"
+#include "Crystal/Space/Space/CompactSpaceHash.h"
 #include "CGLib/Math/Matrix3d.h"
 #include "Crystal/Numerics/Numerics/Converter.h"
 #include "Crystal/Numerics/Numerics/SVD3d.h"

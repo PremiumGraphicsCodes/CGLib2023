@@ -9,7 +9,7 @@
 
 #include "Renderer.h"
 
-#include "Crystal/Space/SpaceHash.h"
+#include "Crystal/Space/Space/SpaceHash.h"
 #include <iostream>
 #include <algorithm>
 

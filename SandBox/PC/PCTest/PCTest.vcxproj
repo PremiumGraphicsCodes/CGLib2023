@@ -48,7 +48,7 @@
     <ProjectReference Include="..\..\..\Crystal\Numerics\Numerics\Numerics.vcxproj">
       <Project>{65ca69ad-6106-4f1b-baca-9c10359c31f5}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Crystal\Space\Space.vcxproj">
+    <ProjectReference Include="..\..\..\Crystal\Space\Space\Space.vcxproj">
       <Project>{9530d9d5-3a0e-4d2f-a151-44836e69854c}</Project>
     </ProjectReference>
     <ProjectReference Include="..\PC\PC.vcxproj">
@@ -121,6 +121,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalIncludeDirectories>../../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
