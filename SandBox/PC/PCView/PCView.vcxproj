@@ -117,6 +117,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>../../../;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,6 +135,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>../../../;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="CurvatureEstimatorView.cpp" />
     <ClCompile Include="DensityEstimatorView.cpp" />
+    <ClCompile Include="FileImporter.cpp" />
     <ClCompile Include="FileMenu.cpp" />
     <ClCompile Include="NormalEstimatorView.cpp" />
     <ClCompile Include="PCBoxView.cpp" />
@@ -160,6 +163,7 @@
   <ItemGroup>
     <ClInclude Include="CurvatureEstimatorView.h" />
     <ClInclude Include="DensityEstimatorView.h" />
+    <ClInclude Include="FileImporter.h" />
     <ClInclude Include="FileMenu.h" />
     <ClInclude Include="NormalEstimatorView.h" />
     <ClInclude Include="PCBoxView.h" />

@@ -97,6 +97,9 @@
     <ClInclude Include="DirectoryView.h">
       <Filter>Dialog</Filter>
     </ClInclude>
+    <ClInclude Include="FileOpenDialog.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -181,6 +184,9 @@
       <Filter>Dialog</Filter>
     </ClCompile>
     <ClCompile Include="DirectoryView.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="FileOpenDialog.cpp">
       <Filter>Dialog</Filter>
     </ClCompile>
   </ItemGroup>

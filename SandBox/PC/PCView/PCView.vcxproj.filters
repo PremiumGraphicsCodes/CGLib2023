@@ -12,6 +12,7 @@
     <ClCompile Include="NormalEstimatorView.cpp" />
     <ClCompile Include="CurvatureEstimatorView.cpp" />
     <ClCompile Include="FileMenu.cpp" />
+    <ClCompile Include="FileImporter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
@@ -26,6 +27,7 @@
     <ClInclude Include="NormalEstimatorView.h" />
     <ClInclude Include="CurvatureEstimatorView.h" />
     <ClInclude Include="FileMenu.h" />
+    <ClInclude Include="FileImporter.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,5 +1,5 @@
 #include "FileMenu.h"
-#include "CGLib/UI/FileOpenView.h"
+#include "CGLib/UI/FileOpenDialog.h"
 #include "CGLib/UI/FileSaveView.h"
 #include "Crystal/AppBase/MenuItem.h"
 
@@ -23,35 +23,36 @@ void FileMenu::onNew()
 
 void FileMenu::onImport()
 {
-	FileOpenView view("");
-	view.addFilter("*.stl");
-	view.addFilter("*.obj");
-	view.addFilter("*.mtl");
+	FileOpenDialog view("");
 	view.addFilter("*.pcd");
+	view.addFilter("*.ply");
+	view.addFilter("*.txt");
 	view.show();
 	const auto& filename = view.getFileName();
 	if (!filename.empty()) {
 		/*
-		FileImportCommand command;
-		command.setArg(Fil::FilePathLabel, std::string(filename));
-		bool isOk = command.execute(model);
-		if (!isOk) {
-			std::cout << "import failed." << std::endl;
+		auto scene = new PointCloudScene();
+		PointCloudBuilder builder;
+		builder.add(box, uNumView.getValue(), vNumView.getValue(), wNumView.getValue());
+		const auto pc = builder.toPointCloud();
+		const auto& points = pc->getPoints();
+		for (auto& p : points) {
+			p->setColor(ColorRGBAf(0, 0, 1, 0));
 		}
-		else {
-			const int newId = std::any_cast<int>(command.getResult(FileImportLabels::NewIdLabel));
-			auto scene = model->getScenes()->findSceneById<Crystal::Scene::IScene*>(newId);
-			auto presenter = scene->getPresenter();
-			presenter->createView(getWorld()->getRenderer(), *getWorld()->getGLFactory());
-//					scene->getParent()->se
-				}
-				*/
+		scene->setShape(std::move(builder.toPointCloud()));
+
+		auto presenter = std::make_unique<PointCloudPresenter>(scene, renderer->getPointRenderer());
+		presenter->build();
+		presenter->send();
+		scene->setPresenter(std::move(presenter));
+		world->getRootScene()->addScene(scene);
+		*/
 	}
-	//canvas->update();
 }
 
 void FileMenu::onExport()
 {
+	/*
 	FileSaveView view("");
 	view.addFilter("*.stl");
 	view.addFilter("*.obj");
@@ -60,14 +61,6 @@ void FileMenu::onExport()
 	view.show();
 	const auto& filename = view.getFileName();
 	if (!filename.empty()) {
-		/*
-		Crystal::Command::Command command(FileExportLabels::FileExportCommandLabel);
-		command.setArg(FileExportLabels::FilePathLabel, filename);
-		const auto isOk = command.execute(model);
-		if (!isOk) {
-			std::cout << "export failed." << std::endl;
-		}
-		*/
 	}
-	//model->write(filename);
+	*/
 }
