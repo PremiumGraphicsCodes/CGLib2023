@@ -2,7 +2,7 @@
 
 #include "CGLib/Math/Sphere3d.h"
 
-#include "Crystal/Space/CompactSpaceHash.h"
+#include "Crystal/Space/Space/CompactSpaceHash.h"
 #include "Crystal/Volume/Volume/SparseVolume.h"
 #include "Crystal/Volume/Volume/SparseVolumeBuilder.h"
 

@@ -4,7 +4,7 @@
 
 #include "PBSPHBoundarySolver.h"
 
-#include "Crystal/Space/IndexedSortBasedSeacher.h"
+#include "Crystal/Space/Space/IndexedSortBasedSeacher.h"
 
 #include <iostream>
 

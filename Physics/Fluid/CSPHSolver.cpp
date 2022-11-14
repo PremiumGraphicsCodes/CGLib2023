@@ -3,7 +3,7 @@
 #include "CSPHBoundarySolver.h"
 #include "CSPHFluid.h"
 
-#include "Crystal/Space/IndexedSortBasedSeacher.h"
+#include "Crystal/Space/Space/IndexedSortBasedSeacher.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;

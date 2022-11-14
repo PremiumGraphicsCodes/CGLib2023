@@ -6,7 +6,7 @@
 #include "MVPFluid.h"
 #include "MVPSampler.h"
 
-#include "Crystal/Space/CompactSpaceHash.h"
+#include "Crystal/Space/Space/CompactSpaceHash.h"
 
 #include <iostream>
 

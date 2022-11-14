@@ -2,7 +2,7 @@
 
 #include "MVPFluid.h"
 #include "MVPVolumeParticle.h"
-#include "Crystal/Space/CompactSpaceHash.h"
+#include "Crystal/Space/Space/CompactSpaceHash.h"
 #include <iostream>
 
 using namespace Crystal::Math;
