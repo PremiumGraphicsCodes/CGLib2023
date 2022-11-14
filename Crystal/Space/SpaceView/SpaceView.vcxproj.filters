@@ -8,13 +8,13 @@
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="SpaceMenu.h" />
     <ClInclude Include="SpaceHashView.h" />
     <ClInclude Include="CompactSpaceHashView.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

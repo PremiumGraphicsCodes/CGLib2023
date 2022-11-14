@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "Crystal/Space/SpaceHash.h"
+#include "../Space/SpaceHash.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Space;

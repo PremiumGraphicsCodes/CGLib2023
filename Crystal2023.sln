@@ -23,13 +23,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SceneView", "Crystal\SceneV
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppBase", "Crystal\AppBase\AppBase.vcxproj", "{66A1065B-73E5-4862-AF0F-ADD2EFA732E1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Space", "Crystal\Space\Space.vcxproj", "{9530D9D5-3A0E-4D2F-A151-44836E69854C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Space", "Crystal\Space\Space\Space.vcxproj", "{9530D9D5-3A0E-4D2F-A151-44836E69854C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceView", "Crystal\SpaceView\SpaceView.vcxproj", "{BFC55E53-739B-46B1-B23C-E2148C00F06D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceView", "Crystal\Space\SpaceView\SpaceView.vcxproj", "{BFC55E53-739B-46B1-B23C-E2148C00F06D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathTest", "CGLib\MathTest\MathTest.vcxproj", "{0F492A31-197C-43BE-896D-C4768BD37D05}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceTest", "Crystal\SpaceTest\SpaceTest.vcxproj", "{6042B37D-57D4-46DD-84EF-86F1C0D7F595}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceTest", "Crystal\Space\SpaceTest\SpaceTest.vcxproj", "{6042B37D-57D4-46DD-84EF-86F1C0D7F595}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicsTest", "CGLib\GraphicsTest\GraphicsTest.vcxproj", "{CCD27D9B-E370-4859-A08F-D3A610E78D69}"
 EndProject
