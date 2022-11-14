@@ -2,7 +2,6 @@
 
 #include <filesystem>
 #include "PointCloudScene.h"
-#include "CGLib/Graphics/ColorRGBA.h"
 
 namespace Crystal {
 	namespace PC {
