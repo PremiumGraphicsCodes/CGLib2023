@@ -3,7 +3,7 @@
 #include <fstream>
 
 using namespace Crystal::Math;
-using namespace Crystal::IO;
+using namespace Crystal::PC;
 
 bool PCDFileWriter::writeAscii(const std::filesystem::path& filename, const PCDFile& pcd)
 {

@@ -3,7 +3,7 @@
 #include "../PC/PCDFileWriter.h"
 
 using namespace Crystal::Math;
-using namespace Crystal::IO;
+using namespace Crystal::PC;
 
 TEST(PCDFileWriterTest, TestWriteAscii)
 {

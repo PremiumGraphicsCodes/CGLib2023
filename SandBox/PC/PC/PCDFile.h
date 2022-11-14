@@ -4,7 +4,7 @@
 #include <vector>
 
 namespace Crystal {
-	namespace IO {
+	namespace PC {
 
 struct PCDFile
 {

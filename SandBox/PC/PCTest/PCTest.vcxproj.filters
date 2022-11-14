@@ -16,6 +16,9 @@
     <ClCompile Include="TXTFileReaderTest.cpp">
       <Filter>IO</Filter>
     </ClCompile>
+    <ClCompile Include="PLYFileWriterTest.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

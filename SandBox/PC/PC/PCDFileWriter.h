@@ -5,7 +5,7 @@
 #include "PCDFile.h"
 
 namespace Crystal {
-	namespace IO {
+	namespace PC {
 
 class PCDFileWriter
 {

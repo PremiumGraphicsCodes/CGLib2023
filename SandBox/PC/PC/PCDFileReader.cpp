@@ -5,7 +5,7 @@
 #include <cassert>
 
 using namespace Crystal::Math;
-using namespace Crystal::IO;
+using namespace Crystal::PC;
 
 namespace {
 	std::vector<std::string> split(const std::string& input, char delimiter)

@@ -1,7 +1,7 @@
 #include "gtest\gtest.h"
 #include "../PC/PCDFileReader.h"
 
-using namespace Crystal::IO;
+using namespace Crystal::PC;
 
 // from http://pointclouds.org/documentation/tutorials/pcd_file_format.php
 TEST(PCDFileReaderTest, TestReadASCII)
