@@ -1,13 +1,15 @@
 #include "Renderer.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
+#include "Crystal/Renderer/PointShaderSource.h"
 
 using namespace Crystal::UI;
+using namespace Crystal::Renderer;
 
 void Renderer::init()
 {
 	Crystal::Shader::ShaderBuilder builder;
-	builder.buildFromFile("../GLSL/Point.vs", "../GLSL/Point.fs");
+	builder.build(PointShaderSource::getVertexShaderSource(), PointShaderSource::getFragmentShaderSource());
 	point.setShader(builder.getShader());
 	point.link();
 

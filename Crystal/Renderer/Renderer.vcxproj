@@ -156,6 +156,7 @@
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="PointRenderer.h" />
+    <ClInclude Include="PointShaderSource.h" />
     <ClInclude Include="SkyBoxRenderer.h" />
     <ClInclude Include="TexRenderer.h" />
     <ClInclude Include="TriangleRenderer.h" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="LineRenderer.cpp" />
     <ClCompile Include="PointRenderer.cpp" />
+    <ClCompile Include="PointShaderSource.cpp" />
     <ClCompile Include="SkyBoxRenderer.cpp" />
     <ClCompile Include="TexRenderer.cpp" />
     <ClCompile Include="TriangleRenderer.cpp" />
@@ -181,8 +183,6 @@
   <ItemGroup>
     <None Include="..\GLSL\Line.fs" />
     <None Include="..\GLSL\Line.vs" />
-    <None Include="..\GLSL\Point.fs" />
-    <None Include="..\GLSL\Point.vs" />
     <None Include="..\GLSL\SkyBox.fs" />
     <None Include="..\GLSL\SkyBox.vs" />
     <None Include="..\GLSL\Tex.fs" />

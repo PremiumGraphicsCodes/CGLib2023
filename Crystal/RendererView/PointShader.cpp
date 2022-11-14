@@ -1,4 +1,5 @@
 #include "PointShader.h"
+#include "Crystal/Renderer/PointShaderSource.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
 #include "CGLib/Shader/VertexBuffer.h"
@@ -11,7 +12,7 @@ using namespace Crystal::Renderer;
 void PointShader::build()
 {
 	ShaderBuilder builder;
-	builder.buildFromFile("../GLSL/Point.vs", "../GLSL/Point.fs");
+	builder.build(PointShaderSource::getVertexShaderSource(), PointShaderSource::getFragmentShaderSource());
 	renderer.setShader(builder.getShader());
 	renderer.link();
 

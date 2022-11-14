@@ -17,6 +17,9 @@
     <ClInclude Include="TexRenderer.h">
       <Filter>Texture</Filter>
     </ClInclude>
+    <ClInclude Include="PointShaderSource.h">
+      <Filter>Point</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
@@ -33,6 +36,9 @@
     </ClCompile>
     <ClCompile Include="TexRenderer.cpp">
       <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="PointShaderSource.cpp">
+      <Filter>Point</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -58,12 +64,6 @@
     </None>
     <None Include="..\GLSL\SkyBox.vs">
       <Filter>SkyBox</Filter>
-    </None>
-    <None Include="..\GLSL\Point.vs">
-      <Filter>Point</Filter>
-    </None>
-    <None Include="..\GLSL\Point.fs">
-      <Filter>Point</Filter>
     </None>
     <None Include="..\GLSL\Line.fs">
       <Filter>Line</Filter>
