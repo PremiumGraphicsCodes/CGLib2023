@@ -3,6 +3,7 @@
 #include "Crystal/AppBase/CameraMenu.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
 
+#include "FileMenu.h"
 #include "PCMenu.h"
 
 #include "CGLib/UI/Panel.h"
@@ -27,6 +28,7 @@ int main() {
 
 	auto control = new Panel("Control");
 
+	app.add(new FileMenu("File", &world, &renderer));
 	app.add(new CameraMenu("Camera", &world));
 	app.add(new PCMenu("PC", &world, &renderer, control));
 	app.add(control);

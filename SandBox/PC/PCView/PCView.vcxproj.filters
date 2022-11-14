@@ -11,6 +11,7 @@
     <ClCompile Include="PointCloudBuilder.cpp" />
     <ClCompile Include="NormalEstimatorView.cpp" />
     <ClCompile Include="CurvatureEstimatorView.cpp" />
+    <ClCompile Include="FileMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
@@ -24,6 +25,7 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="NormalEstimatorView.h" />
     <ClInclude Include="CurvatureEstimatorView.h" />
+    <ClInclude Include="FileMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
