@@ -15,7 +15,7 @@ TEST(PCDFileWriterTest, TestWriteAscii)
 	pcd.data.positions.push_back(Vector3dd(3, 4, 5));
 
 	PCDFileWriter writer;
-	EXPECT_TRUE(writer.writeAscii("PCDFileWriterTestAscii.pcd", pcd));
+	EXPECT_TRUE(writer.writeAscii("./TestFiles/PCDFileWriterTestAscii.pcd", pcd));
 }
 
 TEST(PCDFileWriterTest, TestWriterBinary)
@@ -28,5 +28,5 @@ TEST(PCDFileWriterTest, TestWriterBinary)
 	pcd.data.positions.push_back(Vector3dd(3, 4, 5));
 
 	PCDFileWriter writer;
-	EXPECT_TRUE(writer.writeBinary("PCDFileWriterTestBinary.pcd", pcd));
+	EXPECT_TRUE(writer.writeBinary("./TestFiles/PCDFileWriterTestBinary.pcd", pcd));
 }

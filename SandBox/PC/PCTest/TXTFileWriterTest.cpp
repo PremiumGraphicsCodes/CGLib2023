@@ -12,6 +12,6 @@ TEST(TXTFileWriterTest, TestWrite)
 	writer.add(Vector3dd(3, 4, 5));
 	writer.add(Vector3dd(6, 7, 8));
 
-	const auto isOk = writer.write("TXTFileWriterTest.txt");
+	const auto isOk = writer.write("./TestFiles/TXTFileWriterTest.txt");
 	EXPECT_TRUE(isOk);
 }

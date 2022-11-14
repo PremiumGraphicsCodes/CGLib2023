@@ -35,7 +35,7 @@ TEST(PCDFileReaderTest, TestReadASCII)
 TEST(PCDFileReaderTest, TestReadBinary)
 {
 	PCDFileReader reader;
-	EXPECT_TRUE(reader.readBinary("./PCDBinaryFileReaderTest.pcd"));
+	EXPECT_TRUE(reader.readBinary("./TestFiles/PCDBinaryFileReaderTest.pcd"));
 
 	const auto& pcd = reader.getPCD();
 	EXPECT_EQ(3, pcd.data.positions.size()) << std::endl;
