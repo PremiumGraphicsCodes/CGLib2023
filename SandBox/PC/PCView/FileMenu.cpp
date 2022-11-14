@@ -3,14 +3,17 @@
 #include "CGLib/UI/FileSaveView.h"
 #include "Crystal/AppBase/MenuItem.h"
 
+#include "FileImporter.h"
+
 #include <iostream>
 
+using namespace Crystal::PC;
 using namespace Crystal::UI;
 
 FileMenu::FileMenu(const std::string& name, World* model, Renderer* canvas) :
 	IMenu(name),
 	world(model),
-	renderer(renderer)
+	renderer(canvas)
 {
 	add(new MenuItem("New", [&] { onNew(); }));
 	add(new MenuItem("Import", [&] { onImport(); }));
@@ -30,23 +33,17 @@ void FileMenu::onImport()
 	view.show();
 	const auto& filename = view.getFileName();
 	if (!filename.empty()) {
-		/*
+		FileImporter importer;
+		importer.import(filename);
+
 		auto scene = new PointCloudScene();
-		PointCloudBuilder builder;
-		builder.add(box, uNumView.getValue(), vNumView.getValue(), wNumView.getValue());
-		const auto pc = builder.toPointCloud();
-		const auto& points = pc->getPoints();
-		for (auto& p : points) {
-			p->setColor(ColorRGBAf(0, 0, 1, 0));
-		}
-		scene->setShape(std::move(builder.toPointCloud()));
+		scene->setShape(importer.getPointCloud());
 
 		auto presenter = std::make_unique<PointCloudPresenter>(scene, renderer->getPointRenderer());
 		presenter->build();
 		presenter->send();
 		scene->setPresenter(std::move(presenter));
 		world->getRootScene()->addScene(scene);
-		*/
 	}
 }
 
