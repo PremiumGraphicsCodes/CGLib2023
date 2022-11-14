@@ -7,7 +7,7 @@
 #include "PLYFile.h"
 
 namespace Crystal {
-	namespace IO {
+	namespace PC {
 
 class PLYFileReader
 {

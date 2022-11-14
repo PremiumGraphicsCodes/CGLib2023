@@ -3,7 +3,7 @@
 #include "../PC/PLYFileWriter.h"
 
 using namespace Crystal::Math;
-using namespace Crystal::IO;
+using namespace Crystal::PC;
 
 TEST(PLYFileWriterTest, TestWriteASCII)
 {

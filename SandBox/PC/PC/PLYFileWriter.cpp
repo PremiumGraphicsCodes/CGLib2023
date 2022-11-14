@@ -3,7 +3,7 @@
 #include <fstream>
 
 using namespace Crystal::Math;
-using namespace Crystal::IO;
+using namespace Crystal::PC;
 
 bool PLYFileWriter::writeASCII(const std::filesystem::path& filename, const PLYFile& pcd)
 {
