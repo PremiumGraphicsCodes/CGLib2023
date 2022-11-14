@@ -6,10 +6,10 @@
 namespace Crystal {
 	namespace UI {
 
-class FileOpenDialog
+class FileSaveDialog
 {
 public:
-	explicit FileOpenDialog(const std::string& name);
+	explicit FileSaveDialog(const std::string& name);
 
 	void addFilter(char const* filter);
 

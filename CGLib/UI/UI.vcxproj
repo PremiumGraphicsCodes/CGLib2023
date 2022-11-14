@@ -174,6 +174,7 @@
     <ClInclude Include="Ellipsoid3dView.h" />
     <ClInclude Include="FileOpenDialog.h" />
     <ClInclude Include="FileOpenView.h" />
+    <ClInclude Include="FileSaveDialog.h" />
     <ClInclude Include="FileSaveView.h" />
     <ClInclude Include="Float4View.h" />
     <ClInclude Include="FloatView.h" />
@@ -213,6 +214,7 @@
     <ClCompile Include="Ellipsoid3dView.cpp" />
     <ClCompile Include="FileOpenDialog.cpp" />
     <ClCompile Include="FileOpenView.cpp" />
+    <ClCompile Include="FileSaveDialog.cpp" />
     <ClCompile Include="FileSaveView.cpp" />
     <ClCompile Include="Float4View.cpp" />
     <ClCompile Include="FloatView.cpp" />

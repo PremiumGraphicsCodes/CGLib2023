@@ -1,0 +1,30 @@
+#pragma once
+
+#include "FileSaveDialog.h"
+#include "tinyfiledialogs.h"
+
+using namespace Crystal::UI;
+
+FileSaveDialog::FileSaveDialog(const std::string& name) :
+	name(name.c_str())
+{}
+
+void FileSaveDialog::addFilter(char const* filter)
+{
+	filters.push_back(filter);
+}
+
+void FileSaveDialog::show()
+{
+	//char const * lFilterPatterns[2] = { "*.stl", "*.obj" };
+	const auto filterCount = static_cast<int>(filters.size());
+	tinyfd_saveFileDialog("Save", "", filterCount, filters.data(), nullptr);
+}
+
+std::string FileSaveDialog::getFileName() const
+{
+	if (filename == nullptr) {
+		return "";
+	}
+	return filename;
+}

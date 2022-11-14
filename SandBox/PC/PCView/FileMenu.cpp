@@ -1,6 +1,6 @@
 #include "FileMenu.h"
 #include "CGLib/UI/FileOpenDialog.h"
-#include "CGLib/UI/FileSaveView.h"
+#include "CGLib/UI/FileSaveDialog.h"
 #include "Crystal/AppBase/MenuItem.h"
 
 #include "FileImporter.h"
@@ -30,6 +30,7 @@ void FileMenu::onImport()
 	view.addFilter("*.pcd");
 	view.addFilter("*.ply");
 	view.addFilter("*.txt");
+	//view.addFilter("*.*");
 	view.show();
 	const auto& filename = view.getFileName();
 	if (!filename.empty()) {
@@ -49,15 +50,13 @@ void FileMenu::onImport()
 
 void FileMenu::onExport()
 {
-	/*
-	FileSaveView view("");
-	view.addFilter("*.stl");
-	view.addFilter("*.obj");
-	view.addFilter("*.mtl");
+	FileSaveDialog view("");
 	view.addFilter("*.pcd");
+	view.addFilter("*.ply");
+	view.addFilter("*.txt");
+	//view.addFilter("*.*");
 	view.show();
 	const auto& filename = view.getFileName();
 	if (!filename.empty()) {
 	}
-	*/
 }
