@@ -13,10 +13,10 @@ public:
 
 	bool read(std::istream& stream);
 
-	std::vector<Math::Vector3dd> getPositions() const { return positions; }
+	std::vector<Math::Vector3df> getPositions() const { return positions; }
 
 private:
-	std::vector<Math::Vector3dd> positions;
+	std::vector<Math::Vector3df> positions;
 };
 
 	}

@@ -39,9 +39,9 @@ bool TXTFileReader::read(std::istream& stream)
 		}
 		const auto& splitted = ::split(str, ' ');
 		assert(splitted.size() >= 3);
-		const auto x = std::stod(splitted[0]);
-		const auto y = std::stod(splitted[1]);
-		const auto z = std::stod(splitted[2]);
+		const auto x = std::stof(splitted[0]);
+		const auto y = std::stof(splitted[1]);
+		const auto z = std::stof(splitted[2]);
 		this->positions.emplace_back(x, y, z);
 	}
 

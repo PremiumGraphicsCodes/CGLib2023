@@ -1,7 +1,8 @@
 #include "FileImporter.h"
 
-#include "../PC/PCDFileReader.h"
 #include "../PC/PLYFileReader.h"
+#include "../PC/PCDFileReader.h"
+#include "../PC/TXTFileReader.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
@@ -45,7 +46,7 @@ bool FileImporter::importPLY(const std::filesystem::path& path)
 	if (!isOk) {
 		return false;
 	}
-	pointCloud = std::make_unique<PointCloud>();
+	this->pointCloud = std::make_unique<PointCloud>();
 	const auto vs = reader.getPLY().vertices;
 	for (const auto& v : vs) {
 		const auto x = v.getValueAs<float>(0);
@@ -60,5 +61,16 @@ bool FileImporter::importPLY(const std::filesystem::path& path)
 
 bool FileImporter::importTXT(const std::filesystem::path& path)
 {
-	return false;
+	TXTFileReader reader;
+	const auto isOk = reader.read(path);
+	if (!isOk) {
+		return false;
+	}
+	this->pointCloud = std::make_unique<PointCloud>();
+	const auto points = reader.getPositions();
+	for (const auto& p : points) {
+		const ColorRGBAf c(1, 1, 1, 1);
+		this->pointCloud->add(std::make_unique<Point>(p, c));
+	}
+	return true;
 }
