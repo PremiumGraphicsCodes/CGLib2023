@@ -2,15 +2,15 @@
 
 #include "IMenu.h"
 #include "CGLib/Graphics/Camera.h"
+#include "Crystal/Scene/SceneGroup.h"
 
 namespace Crystal {
 	namespace UI {
-		class WorldBase;
 
 class CameraMenu : public IMenu
 {
 public:
-	CameraMenu(const std::string& name, WorldBase* world, Graphics::Camera* camera);
+	CameraMenu(const std::string& name, Scene::SceneGroup* rootScene, Graphics::Camera* camera);
 
 private:
 	void onFit();
@@ -21,7 +21,7 @@ private:
 
 	void onZX();
 
-	WorldBase* world;
+	Scene::SceneGroup* rootScene;
 	Graphics::Camera* camera;
 };
 

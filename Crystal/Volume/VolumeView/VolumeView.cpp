@@ -27,7 +27,7 @@ int main() {
 
 	auto control = new Panel("Control");
 
-	app.add(new CameraMenu("Camera", &world, canvas.getCamera()));
+	app.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
 	app.add(new SparseVolumeMenu("SparseVolume", control, &world, &renderer));
 	app.add(control);
 

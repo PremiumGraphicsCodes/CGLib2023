@@ -29,7 +29,7 @@ int main() {
 	auto control = new Panel("Control");
 
 	app.add(new FileMenu("File", &world, &renderer));
-	app.add(new CameraMenu("Camera", &world, canvas.getCamera()));
+	app.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
 	app.add(new PCMenu("PC", &world, &renderer, control));
 	app.add(control);
 

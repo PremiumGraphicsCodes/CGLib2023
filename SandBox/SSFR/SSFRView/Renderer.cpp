@@ -151,11 +151,9 @@ void Renderer::init()
 	readCubeMap(this->textures.cubeMap);
 }
 
-void Renderer::render(const int width, const int height)
+void Renderer::render(const Graphics::Camera& camera, const int width, const int height)
 {
 	assert(GL_NO_ERROR == glGetError());
-
-	const auto camera = *world->getCamera();
 
 	renderBackGround(camera);
 	renderDepth(camera);

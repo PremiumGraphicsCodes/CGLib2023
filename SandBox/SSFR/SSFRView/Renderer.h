@@ -31,7 +31,7 @@ public:
 
 	void init() override;
 
-	void render(const int width, const int height) override;
+	void render(const Graphics::Camera& camera, const int width, const int height) override;
 
 private:
 	World* world;

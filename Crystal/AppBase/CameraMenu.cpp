@@ -5,12 +5,13 @@
 #include "WorldBase.h"
 
 using namespace Crystal::Math;
+using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-CameraMenu::CameraMenu(const std::string& name, WorldBase* world, Graphics::Camera* camera) :
+CameraMenu::CameraMenu(const std::string& name, SceneGroup* rootScene, Graphics::Camera* camera) :
 	IMenu(name),
 	camera(camera),
-	world(world)
+	rootScene(rootScene)
 {
 	add(new MenuItem("Fit", [&] { onFit(); }));
 	add(new MenuItem("XY", [&] { onXY(); }));
@@ -20,7 +21,7 @@ CameraMenu::CameraMenu(const std::string& name, WorldBase* world, Graphics::Came
 
 void CameraMenu::onFit()
 {
-	const auto boundingBox = world->getRootScene()->getBoundingBox();
+	const auto boundingBox = rootScene->getBoundingBox();
 	const auto dist = static_cast<float>(glm::distance(boundingBox.getMin(), boundingBox.getMax()));
 	camera->setNear(dist * 0.1f);
 	camera->setFar(dist * 10.0f);

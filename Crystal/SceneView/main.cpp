@@ -25,7 +25,7 @@ int main() {
 
 	auto control = new Panel("Control");
 
-	window.add(new CameraMenu("Camera", &world, canvas.getCamera()));
+	window.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
 
 	window.add(new ShapeMenu("Shape", &world, &renderer, control));
 	window.add(control);
