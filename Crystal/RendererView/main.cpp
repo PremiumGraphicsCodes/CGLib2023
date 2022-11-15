@@ -54,7 +54,7 @@ namespace {
 			activeRenderer = &pointRenderer;
 		}
 
-		void render(const int width, const int height) override
+		void render(const Crystal::Graphics::Camera& camera, const int width, const int height) override
 		{
 			glClearColor(0, 0, 0, 0);
 			glClear(GL_COLOR_BUFFER_BIT);
@@ -104,7 +104,7 @@ int main() {
 	World world;
 	Renderer renderer;
 
-	Crystal::UI::Canvas canvas(&world);
+	Crystal::UI::Canvas canvas;
 	Crystal::UI::Window app("Hello", &world, &canvas, &renderer);
 	app.init();
 	app.add(new RendererMenu("Renderer", &renderer));

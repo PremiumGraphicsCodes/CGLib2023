@@ -16,7 +16,7 @@ void Renderer::init()
 	point.link();
 }
 
-void Renderer::render(const int width, const int height)
+void Renderer::render(const Graphics::Camera& camera, const int width, const int height)
 {
 	assert(GL_NO_ERROR == glGetError());
 	glViewport(0, 0, width, height);
@@ -25,7 +25,7 @@ void Renderer::render(const int width, const int height)
 
 	auto children = world->getRootScene()->getChildren();
 	for (auto c : children) {
-		c->getPresenter()->render(*world->getCamera());
+		c->getPresenter()->render(camera);
 	}
 	//presenter.render(camera);
 	//wfPresenter->render(camera);

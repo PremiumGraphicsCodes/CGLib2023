@@ -22,14 +22,14 @@ int main() {
 	World world;
 	Renderer renderer(&world);
 
-	Crystal::UI::Canvas canvas(&world);
+	Crystal::UI::Canvas canvas;
 	Crystal::UI::Window app("Hello", &world, &canvas, &renderer);
 	app.init();
 
 	auto control = new Panel("Control");
 
 	app.add(new FileMenu("File", &world, &renderer));
-	app.add(new CameraMenu("Camera", &world));
+	app.add(new CameraMenu("Camera", &world, canvas.getCamera()));
 	app.add(new PCMenu("PC", &world, &renderer, control));
 	app.add(control);
 

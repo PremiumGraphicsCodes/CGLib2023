@@ -37,8 +37,7 @@ void Renderer::setTarget(const Target target)
 	}
 }
 
-void Renderer::render(const int width, const int height)
+void Renderer::render(const Graphics::Camera& camera, const int width, const int height)
 {
-	const auto camera = world->getCamera();
-	this->active->render(*camera, width, height);
+	this->active->render(camera, width, height);
 }

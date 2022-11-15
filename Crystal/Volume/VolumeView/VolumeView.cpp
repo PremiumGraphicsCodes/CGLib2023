@@ -21,13 +21,13 @@ int main() {
 	World world;
 	Renderer renderer(&world);
 
-	Canvas canvas(&world);
+	Canvas canvas;
 	Window app("Hello", &world, &canvas, &renderer);
 	app.init();
 
 	auto control = new Panel("Control");
 
-	app.add(new CameraMenu("Camera", &world));
+	app.add(new CameraMenu("Camera", &world, canvas.getCamera()));
 	app.add(new SparseVolumeMenu("SparseVolume", control, &world, &renderer));
 	app.add(control);
 

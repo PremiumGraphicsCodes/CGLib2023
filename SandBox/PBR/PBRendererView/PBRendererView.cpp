@@ -19,11 +19,11 @@ int main() {
 	World world;
 	Renderer renderer(&world);
 
-	Crystal::UI::Canvas canvas(&world);
+	Crystal::UI::Canvas canvas;
 	Crystal::UI::Window app("Hello", &world, &canvas, &renderer);
 	app.init();
 
-	app.add(new CameraMenu("Camera", &world));
+	app.add(new CameraMenu("Camera", &world, canvas.getCamera()));
 	app.add(new PBRMenu("PBR", &world, &renderer));
 
 	app.show();
