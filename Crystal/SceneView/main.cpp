@@ -19,13 +19,13 @@ int main() {
 	World world;
 	Renderer renderer(&world);
 
-	Crystal::UI::Canvas canvas(&world);
+	Crystal::UI::Canvas canvas;
 	Crystal::UI::Window window("Hello", &world, &canvas, &renderer);
 	window.init();
 
 	auto control = new Panel("Control");
 
-	window.add(new CameraMenu("Camera", &world));
+	window.add(new CameraMenu("Camera", &world, canvas.getCamera()));
 
 	window.add(new ShapeMenu("Shape", &world, &renderer, control));
 	window.add(control);

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IMenu.h"
+#include "CGLib/Graphics/Camera.h"
 
 namespace Crystal {
 	namespace UI {
@@ -9,7 +10,7 @@ namespace Crystal {
 class CameraMenu : public IMenu
 {
 public:
-	CameraMenu(const std::string& name, WorldBase* world);
+	CameraMenu(const std::string& name, WorldBase* world, Graphics::Camera* camera);
 
 private:
 	void onFit();
@@ -21,6 +22,7 @@ private:
 	void onZX();
 
 	WorldBase* world;
+	Graphics::Camera* camera;
 };
 
 	}

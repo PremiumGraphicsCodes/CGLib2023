@@ -7,8 +7,9 @@
 using namespace Crystal::Math;
 using namespace Crystal::UI;
 
-CameraMenu::CameraMenu(const std::string& name, WorldBase* world) :
+CameraMenu::CameraMenu(const std::string& name, WorldBase* world, Graphics::Camera* camera) :
 	IMenu(name),
+	camera(camera),
 	world(world)
 {
 	add(new MenuItem("Fit", [&] { onFit(); }));
@@ -20,7 +21,6 @@ CameraMenu::CameraMenu(const std::string& name, WorldBase* world) :
 void CameraMenu::onFit()
 {
 	const auto boundingBox = world->getRootScene()->getBoundingBox();
-	auto camera = world->getCamera();
 	const auto dist = static_cast<float>(glm::distance(boundingBox.getMin(), boundingBox.getMax()));
 	camera->setNear(dist * 0.1f);
 	camera->setFar(dist * 10.0f);

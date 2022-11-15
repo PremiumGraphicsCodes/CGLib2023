@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CGLib/Math/Vector2d.h"
+#include "CGLib/Graphics/Camera.h"
 
 #include "IUICtrl.h"
 #include <memory>
@@ -13,7 +14,7 @@ namespace Crystal {
 class Canvas : public IMouseListener
 {
 public:
-	explicit Canvas(WorldBase* world);
+	Canvas();
 
 	~Canvas() {}
 
@@ -39,9 +40,11 @@ public:
 
 	virtual void onWheel(const float scale) override;
 
+	Graphics::Camera* getCamera() { return &camera; }
+
 private:
 	std::unique_ptr<IUICtrl> ctrl;
-	WorldBase* world;
+	Graphics::Camera camera;
 };
 
 	}

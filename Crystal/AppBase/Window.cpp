@@ -161,7 +161,7 @@ void Window::show()
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
 
-		renderer->render(width, height);
+		renderer->render(*canvas->getCamera(), width, height);
 
 		world->step();
 		//world->getRenderer()->render(*world->getCamera()->getCamera(), width, height);

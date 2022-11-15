@@ -1,14 +1,13 @@
 #include "Canvas.h"
 #include "CameraUICtrl.h"
-#include "WorldBase.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::UI;
 
-Canvas::Canvas(WorldBase* world) :
-	world(world)
+Canvas::Canvas() :
+	camera(Vector3df(0, 0, 1), Vector3df(0, 0, 0), Vector3df(0, 1, 0), 0.1f, 10.0f)
 {
-	ctrl = std::make_unique<CameraUICtrl>(world->getCamera());
+	ctrl = std::make_unique<CameraUICtrl>(&camera);
 }
 
 void Canvas::onLeftButtonDown(const Vector2df& position)

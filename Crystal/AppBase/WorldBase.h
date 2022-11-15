@@ -22,14 +22,11 @@ public:
 
 	void addAnimator(Scene::IAnimator* animator) { animators.push_back(animator); }
 
-	Graphics::Camera* getCamera() { return &camera; }
-
 	//Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:
 	Scene::SceneGroup rootScene;
 	std::list<Scene::IAnimator*> animators;
-	Graphics::Camera camera;
 	int nextId = 0;
 };
 	}
