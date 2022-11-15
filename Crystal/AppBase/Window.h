@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <memory>
-#include "IMenu.h"
+#include "CGLib/UI/IMenu.h"
 
 struct GLFWwindow;
 

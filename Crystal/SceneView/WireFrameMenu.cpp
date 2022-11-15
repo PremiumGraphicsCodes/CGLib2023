@@ -1,7 +1,7 @@
 #include "WireFrameMenu.h"
 
 #include "CGLib/UI/Panel.h"
-#include "Crystal/AppBase/MenuItem.h"
+#include "CGLib/UI/MenuItem.h"
 
 #include "WFLineView.h"
 #include "WFBoxView.h"

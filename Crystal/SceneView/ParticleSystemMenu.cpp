@@ -1,7 +1,7 @@
 #include "ParticleSystemMenu.h"
 
 #include "CGLib/UI/Panel.h"
-#include "Crystal/AppBase/MenuItem.h"
+#include "CGLib/UI/MenuItem.h"
 #include "PSBoxView.h"
 #include "PSSphereView.h"
 

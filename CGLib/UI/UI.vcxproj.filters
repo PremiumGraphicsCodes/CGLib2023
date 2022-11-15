@@ -103,6 +103,9 @@
     <ClInclude Include="FileSaveDialog.h">
       <Filter>Dialog</Filter>
     </ClInclude>
+    <ClInclude Include="MenuItem.h" />
+    <ClInclude Include="IMenu.h" />
+    <ClInclude Include="IMenuItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -195,6 +198,8 @@
     <ClCompile Include="FileSaveDialog.cpp">
       <Filter>Dialog</Filter>
     </ClCompile>
+    <ClCompile Include="IMenu.cpp" />
+    <ClCompile Include="IMenuItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

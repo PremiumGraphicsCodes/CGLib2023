@@ -2,14 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="Window.h" />
-    <ClInclude Include="IMenu.h" />
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="IMouseListener.h" />
     <ClInclude Include="CameraUICtrl.h" />
     <ClInclude Include="IRenderer.h" />
-    <ClInclude Include="IMenuItem.h" />
-    <ClInclude Include="MenuItem.h" />
     <ClInclude Include="CameraMenu.h" />
     <ClInclude Include="WorldBase.h" />
     <ClInclude Include="SceneSelectView.h" />
@@ -17,10 +14,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
-    <ClCompile Include="IMenu.cpp" />
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="CameraUICtrl.cpp" />
-    <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="CameraMenu.cpp" />
     <ClCompile Include="WorldBase.cpp" />
     <ClCompile Include="SceneSelectView.cpp" />

@@ -1,7 +1,7 @@
 #include "TriangleMeshMenu.h"
 
 #include "CGLib/UI/Panel.h"
-#include "Crystal/AppBase/MenuItem.h"
+#include "CGLib/UI/MenuItem.h"
 
 #include "TMBoxView.h"
 #include "TMSphereView.h"

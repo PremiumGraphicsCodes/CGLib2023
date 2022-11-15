@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CGLib/UI/IWindow.h"
+#include "IWindow.h"
 
 namespace Crystal {
 	namespace UI {

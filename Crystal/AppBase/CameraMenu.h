@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IMenu.h"
+#include "CGLib/UI/IMenu.h"
 #include "CGLib/Graphics/Camera.h"
 #include "Crystal/Scene/SceneGroup.h"
 

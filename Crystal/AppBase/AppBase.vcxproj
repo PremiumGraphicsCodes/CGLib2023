@@ -156,23 +156,18 @@
     <ClInclude Include="CameraMenu.h" />
     <ClInclude Include="CameraUICtrl.h" />
     <ClInclude Include="Canvas.h" />
-    <ClInclude Include="IMenu.h" />
-    <ClInclude Include="IMenuItem.h" />
     <ClInclude Include="IMouseListener.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IUICtrl.h" />
     <ClInclude Include="SceneListPanel.h" />
     <ClInclude Include="SceneSelectView.h" />
     <ClInclude Include="WorldBase.h" />
-    <ClInclude Include="MenuItem.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CameraMenu.cpp" />
     <ClCompile Include="CameraUICtrl.cpp" />
     <ClCompile Include="Canvas.cpp" />
-    <ClCompile Include="IMenu.cpp" />
-    <ClCompile Include="IMenuItem.cpp" />
     <ClCompile Include="SceneListPanel.cpp" />
     <ClCompile Include="SceneSelectView.cpp" />
     <ClCompile Include="WorldBase.cpp" />

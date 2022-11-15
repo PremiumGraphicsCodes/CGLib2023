@@ -1,6 +1,6 @@
 #include "CameraMenu.h"
 #include "Canvas.h"
-#include "MenuItem.h"
+#include "CGLib/UI/MenuItem.h"
 
 #include "WorldBase.h"
 
