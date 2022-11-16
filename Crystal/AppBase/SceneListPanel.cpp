@@ -5,16 +5,16 @@
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 
-SceneListPanel::SceneListPanel(const std::string& name, WorldBase* model) :
+SceneListPanel::SceneListPanel(const std::string& name, Scene::SceneBase* scene) :
 	IWindow(name),
-	world(model)
+	scene(scene)
 {
 }
 
 void SceneListPanel::onShow()
 {
 	ImGui::Begin("SceneList");
-	show(world->getRootScene());
+	show(scene);
 	ImGui::End();
 }
 

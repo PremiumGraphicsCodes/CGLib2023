@@ -12,14 +12,14 @@ namespace Crystal {
 class SceneListPanel : public IWindow
 {
 public:
-	SceneListPanel(const std::string& name, WorldBase* model);
+	SceneListPanel(const std::string& name, Scene::SceneBase* scene);
 
 	void onShow() override;
 
 private:
 	void show(Scene::SceneBase* scene);
 
-	WorldBase* world;
+	Scene::SceneBase* scene;
 };
 
 	}
