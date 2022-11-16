@@ -4,6 +4,9 @@
 #include "Crystal/Renderer/PointRenderer.h"
 #include "Crystal/Renderer/LineRenderer.h"
 #include "Crystal/Renderer/TriangleRenderer.h"
+#include "Crystal/Renderer/TexRenderer.h"
+#include "CGLib/Shader/FrameBufferObject.h"
+#include "CGLib/Shader/TextureObject.h"
 
 namespace Crystal{
 	namespace UI {
@@ -25,22 +28,34 @@ public:
 
 	void render(const Graphics::Camera& camera, const int width, const int height) override;
 
-	Crystal::Renderer::PointRenderer* getPointRenderer() { return &point; }
+	Crystal::Renderer::PointRenderer* getPointRenderer() { return &renderers.point; }
 
-	Crystal::Renderer::LineRenderer* getLineRenderer() { return &line; }
+	Crystal::Renderer::LineRenderer* getLineRenderer() { return &renderers.line; }
 
-	Crystal::Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
+	Crystal::Renderer::TriangleRenderer* getTriangleRenderer() { return &renderers.triangle; }
 
 private:
 	World* world;
 	Target target;
-	Crystal::Renderer::PointRenderer point;
-	Crystal::Renderer::LineRenderer line;
-	Crystal::Renderer::TriangleRenderer triangle;
+	
+	struct Renderers {
+		Crystal::Renderer::PointRenderer point;
+		Crystal::Renderer::LineRenderer line;
+		Crystal::Renderer::TriangleRenderer triangle;
+		Crystal::Renderer::TexRenderer tex;
+	};
+	Renderers renderers;
 
-	void renderMain(const Graphics::Camera& camera, const int width, const int height);
+	struct Textures {
+		Shader::TextureObject main;
+		Shader::TextureObject id;
+	};
+	Textures textures;
+	Shader::FrameBufferObject fbo;
 
-	void renderId(const Graphics::Camera& camera, const int width, const int height);
+	void renderMain(const Graphics::Camera& camera);
+
+	void renderId(const Graphics::Camera& camera);
 };
 
 	}

@@ -160,6 +160,7 @@
     <ClInclude Include="PointShaderSource.h" />
     <ClInclude Include="SkyBoxRenderer.h" />
     <ClInclude Include="TexRenderer.h" />
+    <ClInclude Include="TexShaderSource.h" />
     <ClInclude Include="TriangleRenderer.h" />
     <ClInclude Include="TriangleShaderSource.h" />
   </ItemGroup>
@@ -170,6 +171,7 @@
     <ClCompile Include="PointShaderSource.cpp" />
     <ClCompile Include="SkyBoxRenderer.cpp" />
     <ClCompile Include="TexRenderer.cpp" />
+    <ClCompile Include="TexShaderSource.cpp" />
     <ClCompile Include="TriangleRenderer.cpp" />
     <ClCompile Include="TriangleShaderSource.cpp" />
   </ItemGroup>
@@ -187,8 +189,6 @@
   <ItemGroup>
     <None Include="..\GLSL\SkyBox.fs" />
     <None Include="..\GLSL\SkyBox.vs" />
-    <None Include="..\GLSL\Tex.fs" />
-    <None Include="..\GLSL\Tex.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
