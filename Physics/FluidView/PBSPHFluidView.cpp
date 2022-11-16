@@ -1,6 +1,7 @@
 #include "PBSPHFluidView.h"
 
 #include "PBSPHFluidScene.h"
+#include "PBSPHFluidPresenter.h"
 #include "../Fluid/PBSPHSolver.h"
 #include "../Fluid/PBSPHParticle.h"
 
@@ -40,9 +41,9 @@ void PBSPHFluidView::onOk()
 {
 	this->fluidScene = new PBSPHFluidScene();
 
-	auto presenter = std::make_unique<PBSPHFluidPresenter>(fluidScene, renderer->getPointRenderer());
+	auto presenter = new PBSPHFluidPresenter(fluidScene, renderer->getPointRenderer());
 	presenter->build();
-	this->fluidScene->setPresenter(std::move(presenter));
+	this->fluidScene->addPresenter(std::move(presenter));
 
 	model->getRootScene()->addScene(fluidScene);
 

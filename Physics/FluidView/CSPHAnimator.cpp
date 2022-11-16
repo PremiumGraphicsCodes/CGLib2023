@@ -11,5 +11,7 @@ CSPHAnimator::CSPHAnimator()
 void CSPHAnimator::step()
 {
 	solver->simulate();
-	scene->getPresenter()->send();
+	for (auto p : scene->getPresenters()) {
+		p->send();
+	}
 }

@@ -44,10 +44,10 @@ void SVBoxView::onOk()
 	auto scene = new SparseVolumeScene();
 	scene->setShape(std::move(sv));
 
-	auto presenter = std::make_unique<SparseVolumePresenter>(scene, renderer->getPointRenderer());
+	auto presenter = new SparseVolumePresenter(scene, renderer->getPointRenderer());
 	presenter->build();
 	presenter->send();
-	scene->setPresenter(std::move(presenter));
+	scene->addPresenter(std::move(presenter));
 	world->getRootScene()->addScene(scene);
 
 	//ISVAddView::addVolume(std::move(sv));

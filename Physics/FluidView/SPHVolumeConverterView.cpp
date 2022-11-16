@@ -103,9 +103,9 @@ void SPHVolumeConverterView::onOk()
 	auto volume = new SPHVolumeScene();
 	volume->setShape(std::move(sp));
 
-	auto presenter = std::make_unique<SPHVolumePresenter>(volume, renderer->getPointRenderer());
+	auto presenter = new SPHVolumePresenter(volume, renderer->getPointRenderer());
 	presenter->build();
 	presenter->send();
-	volume->setPresenter(std::move(presenter));
+	volume->addPresenter(presenter);
 	world->getRootScene()->addScene(volume);
 }

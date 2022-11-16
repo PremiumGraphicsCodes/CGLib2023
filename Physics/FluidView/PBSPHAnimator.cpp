@@ -12,5 +12,7 @@ PBSPHAnimator::PBSPHAnimator() :
 void PBSPHAnimator::step()
 {
 	solver->simulate(timeStep, 3);
-	scene->getPresenter()->send();
+	for (auto p : scene->getPresenters()) {
+		p->send();
+	}
 }

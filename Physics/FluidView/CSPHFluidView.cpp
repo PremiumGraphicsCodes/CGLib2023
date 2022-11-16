@@ -37,9 +37,9 @@ CSPHFluidView::CSPHFluidView(const std::string& name, World* world, Renderer* re
 void CSPHFluidView::onOk()
 {
 	fluidScene = new CSPHFluidScene();
-	auto preseter = std::make_unique<CSPHFluidPresenter>(fluidScene, renderer->getPointRenderer());
+	auto preseter = new CSPHFluidPresenter(fluidScene, renderer->getPointRenderer());
 	preseter->build();
-	fluidScene->setPresenter(std::move(preseter));
+	fluidScene->addPresenter(preseter);
 
 	world->getRootScene()->addScene(fluidScene);
 

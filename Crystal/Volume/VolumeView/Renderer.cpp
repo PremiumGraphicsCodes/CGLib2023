@@ -35,7 +35,9 @@ void Renderer::render(const Graphics::Camera& camera, const int width, const int
 
 	auto children = world->getRootScene()->getChildren();
 	for (auto c : children) {
-		c->getPresenter()->render(camera);
+		for (auto p : c->getPresenters()) {
+			p->render(camera);
+		}
 	}
 	//presenter.render(camera);
 	//wfPresenter->render(camera);

@@ -49,9 +49,9 @@ MVPFluidView::MVPFluidView(const std::string& name, World* model, Renderer* rend
 void MVPFluidView::onStart()
 {
 	fluidScene = new MVPFluidScene();
-	auto preseter = std::make_unique<MVPFluidPresenter>(fluidScene, renderer->getPointRenderer());
+	auto preseter = new MVPFluidPresenter(fluidScene, renderer->getPointRenderer());
 	preseter->build();
-	fluidScene->setPresenter(std::move(preseter));
+	fluidScene->addPresenter(std::move(preseter));
 
 	world->getRootScene()->addScene(fluidScene);
 
