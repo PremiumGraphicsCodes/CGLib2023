@@ -29,16 +29,7 @@ void TMSphereView::onOk()
 {
 	const auto sphere = sphereView.getValue();
 
-	auto scene = new TriangleMeshScene();
-	scene->setId(world->getNextId());
-
 	TriangleMeshBuilder builder;
 	builder.add(sphere, unumView.getValue(), vnumView.getValue());
-	scene->setShape(std::move(builder.build()));
-
-	auto presenter = std::make_unique<TriangleMeshPresenter>(scene, renderer->getTriangleRenderer());
-	presenter->build();
-	presenter->send();
-	scene->setPresenter(std::move(presenter));
-	world->getRootScene()->addScene(scene);
+	world->addTriangleMesh(std::move(builder.build()));
 }

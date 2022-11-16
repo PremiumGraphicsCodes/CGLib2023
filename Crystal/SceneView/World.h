@@ -4,6 +4,7 @@
 
 #include "ParticleSystem.h"
 #include "WireFrame.h"
+#include "TriangleMesh.h"
 #include <memory>
 
 namespace Crystal {
@@ -18,6 +19,8 @@ public:
 	void addParticleSystem(std::unique_ptr<Shape::ParticleSystem>&& particleSystem);
 
 	void addWireFrame(std::unique_ptr<Shape::WireFrame>&& wireFrame);
+
+	void addTriangleMesh(std::unique_ptr<Shape::TriangleMesh>&& mesh);
 
 	const std::vector<std::unique_ptr<Scene::IPresenter>>& getPresenters() { return presenters; }
 

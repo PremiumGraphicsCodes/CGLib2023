@@ -22,15 +22,7 @@ void TMBoxView::onOk()
 {
 	const auto box = boxView.getValue();
 
-	auto scene = new TriangleMeshScene();
-
 	TriangleMeshBuilder builder;
 	builder.add(box, 2, 2, 2);
-	scene->setShape(builder.build());
-
-	auto presenter = std::make_unique<TriangleMeshPresenter>(scene, renderer->getTriangleRenderer());
-	presenter->build();
-	presenter->send();
-	scene->setPresenter(std::move(presenter));
-	world->getRootScene()->addScene(scene);
+	world->addTriangleMesh(builder.build());
 }

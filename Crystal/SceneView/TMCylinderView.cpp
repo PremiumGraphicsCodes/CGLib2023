@@ -26,15 +26,7 @@ void TMCylinderView::onOk()
 {
 	const auto e = cylinderView.getValue();
 
-	auto scene = new TriangleMeshScene();
 	TriangleMeshBuilder builder;
 	builder.add(e, uNumView.getValue(), vNumView.getValue());
-	scene->setShape(std::move(builder.build()));
-
-	auto wfPresenter = std::make_unique<TriangleMeshPresenter>(scene, renderer->getTriangleRenderer());
-	wfPresenter->build();
-	wfPresenter->send();
-	scene->setPresenter(std::move(wfPresenter));
-
-	world->getRootScene()->addScene(scene);
+	world->addTriangleMesh(std::move(builder.build()));
 }

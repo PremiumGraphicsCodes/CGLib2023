@@ -5,6 +5,7 @@
 
 #include "ParticleSystemScene.h"
 #include "WireFrameScene.h"
+#include "TriangleMeshScene.h"
 
 #include "ParticleSystemIdPresenter.h"
 
@@ -38,5 +39,16 @@ void World::addWireFrame(std::unique_ptr<WireFrame>&& wireFrame)
 	wfPresenter->build();
 	wfPresenter->send();
 	scene->setPresenter(std::move(wfPresenter));
+	getRootScene()->addScene(scene);
+}
+
+void World::addTriangleMesh(std::unique_ptr<TriangleMesh>&& mesh)
+{
+	auto scene = new TriangleMeshScene();
+	scene->setShape(std::move(mesh));
+	auto presenter = std::make_unique<TriangleMeshPresenter>(scene, renderer->getTriangleRenderer());
+	presenter->build();
+	presenter->send();
+	scene->setPresenter(std::move(presenter));
 	getRootScene()->addScene(scene);
 }
