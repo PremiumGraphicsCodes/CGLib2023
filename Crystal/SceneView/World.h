@@ -26,6 +26,7 @@ public:
 
 private:
 	 Renderer* renderer;
+	 std::vector<std::unique_ptr<Scene::IPresenter>> presenters;
 	 std::vector<std::unique_ptr<Scene::IPresenter>> idPresenters;
 };
 

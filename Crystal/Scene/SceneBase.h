@@ -64,7 +64,9 @@ public:
 
 	bool isLeaf() const { return children.empty(); }
 
-	virtual IPresenter* getPresenter() { return nullptr; }
+	void addPresenter(IPresenter* presenter) { this->presenters.push_back(presenter); }
+
+	std::list<IPresenter*> getPresenters() { return presenters; }
 
 	//virtual void step() {};
 
@@ -72,6 +74,7 @@ protected:
 	std::string name;
 	int id;
 	std::list<SceneBase*> children;
+	std::list<IPresenter*> presenters;
 	SceneBase* parent;
 };
 

@@ -17,13 +17,8 @@ namespace Crystal {
 
 			Shape::PolygonMesh* getShape() { return shape.get(); }
 
-			void setPresenter(std::unique_ptr<PolygonMeshPresenter> p) { this->presenter = std::move(p); }
-
-			IPresenter* getPresenter() override { return presenter.get(); }
-
 		private:
 			std::unique_ptr<Shape::PolygonMesh> shape;
-			std::unique_ptr<PolygonMeshPresenter> presenter;
 		};
 
 	}

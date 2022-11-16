@@ -18,15 +18,10 @@ public:
 
 	Shape::TriangleMesh* getShape() { return shape.get(); }
 
-	void setPresenter(std::unique_ptr<TriangleMeshPresenter> p) { this->presenter = std::move(p); }
-
 	Math::Box3df getBoundingBox() const override { return shape->getBoundingBox(); }
-
-	IPresenter* getPresenter() override { return presenter.get(); }
 
 private:
 	std::unique_ptr<Shape::TriangleMesh> shape;
-	std::unique_ptr<TriangleMeshPresenter> presenter;
 };
 
 	}

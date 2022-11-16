@@ -83,7 +83,9 @@ void Renderer::renderMain(const Camera& camera)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	auto children = world->getRootScene()->getChildren();
 	for (auto c : children) {
-		c->getPresenter()->render(camera);
+		for (auto p : c->getPresenters()) {
+			p->render(camera);
+		}
 	}
 	assert(GL_NO_ERROR == glGetError());
 

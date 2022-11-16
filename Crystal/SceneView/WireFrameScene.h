@@ -15,17 +15,12 @@ public:
 
 	void setShape(std::unique_ptr<Shape::WireFrame> shape) { this->shape = std::move(shape); }
 
-	void setPresenter(std::unique_ptr<WireFramePresenter> p) { this->presenter = std::move(p); }
-
 	Shape::WireFrame* getShape() { return shape.get(); }
-
-	IPresenter* getPresenter() override { return presenter.get(); }
 
 	Math::Box3df getBoundingBox() const override { return shape->getBoundingBox(); }
 
 private:
 	std::unique_ptr<Shape::WireFrame> shape;
-	std::unique_ptr<WireFramePresenter> presenter;
 };
 
 	}

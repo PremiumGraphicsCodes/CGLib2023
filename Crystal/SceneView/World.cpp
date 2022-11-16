@@ -22,7 +22,8 @@ void World::addParticleSystem(std::unique_ptr<ParticleSystem>&& particleSystem)
 	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, renderer->getPointRenderer());
 	presenter->build();
 	presenter->send();
-	scene->setPresenter(std::move(presenter));
+	scene->addPresenter(presenter.get());
+	presenters.push_back(std::move(presenter));
 	getRootScene()->addScene(scene);
 
 	auto idPresenter = std::make_unique<Crystal::Scene::ParticleSystemIdPresenter>(scene, renderer->getPointRenderer());
@@ -35,10 +36,11 @@ void World::addWireFrame(std::unique_ptr<WireFrame>&& wireFrame)
 {
 	auto scene = new WireFrameScene();
 	scene->setShape(std::move(wireFrame));
-	auto wfPresenter = std::make_unique<Crystal::Scene::WireFramePresenter>(scene, renderer->getLineRenderer());
-	wfPresenter->build();
-	wfPresenter->send();
-	scene->setPresenter(std::move(wfPresenter));
+	auto presenter = std::make_unique<Crystal::Scene::WireFramePresenter>(scene, renderer->getLineRenderer());
+	presenter->build();
+	presenter->send();
+	scene->addPresenter(presenter.get());
+	presenters.push_back(std::move(presenter));
 	getRootScene()->addScene(scene);
 }
 
@@ -49,6 +51,7 @@ void World::addTriangleMesh(std::unique_ptr<TriangleMesh>&& mesh)
 	auto presenter = std::make_unique<TriangleMeshPresenter>(scene, renderer->getTriangleRenderer());
 	presenter->build();
 	presenter->send();
-	scene->setPresenter(std::move(presenter));
+	scene->addPresenter(presenter.get());
+	presenters.push_back(std::move(presenter));
 	getRootScene()->addScene(scene);
 }

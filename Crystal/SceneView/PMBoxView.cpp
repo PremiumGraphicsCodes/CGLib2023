@@ -34,10 +34,4 @@ void PMBoxView::onOk()
 		scene->add(new Particle(pos));
 	}
 	*/
-
-	auto presenter = std::make_unique<Crystal::Scene::PolygonMeshPresenter>(scene, renderer->getTriangleRenderer());
-	presenter->build();
-	presenter->send();
-	scene->setPresenter(std::move(presenter));
-	world->getRootScene()->addScene(scene);
 }
