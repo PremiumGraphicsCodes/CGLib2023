@@ -28,7 +28,7 @@ void World::addParticleSystem(std::unique_ptr<ParticleSystem>&& particleSystem)
 	auto idPresenter = std::make_unique<Crystal::Scene::ParticleSystemIdPresenter>(scene, renderer->getPointRenderer());
 	idPresenter->build();
 	idPresenter->send();
-	presenters.push_back(std::move(idPresenter));
+	idPresenters.push_back(std::move(idPresenter));
 }
 
 void World::addWireFrame(std::unique_ptr<WireFrame>&& wireFrame)

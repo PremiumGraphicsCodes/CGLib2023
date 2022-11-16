@@ -22,11 +22,11 @@ public:
 
 	void addTriangleMesh(std::unique_ptr<Shape::TriangleMesh>&& mesh);
 
-	const std::vector<std::unique_ptr<Scene::IPresenter>>& getPresenters() { return presenters; }
+	const std::vector<std::unique_ptr<Scene::IPresenter>>& getIdPresenters() { return idPresenters; }
 
 private:
 	 Renderer* renderer;
-	 std::vector<std::unique_ptr<Scene::IPresenter>> presenters;
+	 std::vector<std::unique_ptr<Scene::IPresenter>> idPresenters;
 };
 
 	}

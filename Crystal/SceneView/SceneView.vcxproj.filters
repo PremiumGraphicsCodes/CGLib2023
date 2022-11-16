@@ -92,6 +92,7 @@
     <ClCompile Include="ParticleSystemIdPresenter.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
+    <ClCompile Include="RendererMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -187,10 +188,10 @@
     <ClInclude Include="ParticleSystemBuilder.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
-    <ClInclude Include="SelectionRenderer.h" />
     <ClInclude Include="ParticleSystemIdPresenter.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
+    <ClInclude Include="RendererMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">

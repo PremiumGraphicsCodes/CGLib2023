@@ -160,6 +160,7 @@
     <ClCompile Include="PSBoxView.cpp" />
     <ClCompile Include="PSSphereView.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="RendererMenu.cpp" />
     <ClCompile Include="ShapeMenu.cpp" />
     <ClCompile Include="TMBoxView.cpp" />
     <ClCompile Include="TMCylinderView.cpp" />
@@ -222,7 +223,7 @@
     <ClInclude Include="PSBoxView.h" />
     <ClInclude Include="PSSphereView.h" />
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="SelectionRenderer.h" />
+    <ClInclude Include="RendererMenu.h" />
     <ClInclude Include="ShapeMenu.h" />
     <ClInclude Include="TMBoxView.h" />
     <ClInclude Include="TMCylinderView.h" />

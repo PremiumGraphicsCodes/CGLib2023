@@ -7,6 +7,7 @@
 
 #include "Crystal/Scene/IPresenter.h"
 
+using namespace Crystal::Graphics;
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
 using namespace Crystal::Renderer;
@@ -34,24 +35,46 @@ void Renderer::init()
 	triangle.link();
 }
 
-void Renderer::render(const Graphics::Camera& camera, const int width, const int height)
+void Renderer::render(const Camera& camera, const int width, const int height)
+{
+	switch (target) {
+	case Target::Main: {
+		renderMain(camera, width, height);
+		break;
+	}
+	case Target::Id: {
+		renderId(camera, width, height);
+		break;
+	}
+	default:
+		assert(false);
+	}
+}
+
+void Renderer::renderMain(const Camera& camera, const int width, const int height)
 {
 	assert(GL_NO_ERROR == glGetError());
 	glViewport(0, 0, width, height);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 	auto children = world->getRootScene()->getChildren();
 	for (auto c : children) {
 		c->getPresenter()->render(camera);
 	}
+	assert(GL_NO_ERROR == glGetError());
+}
+
+void Renderer::renderId(const Camera& camera, const int width, const int height)
+{
+	assert(GL_NO_ERROR == glGetError());
+	glViewport(0, 0, width, height);
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	/*
-	const auto& presenters = world->getPresenters();
+	const auto& presenters = world->getIdPresenters();
 	for (auto& p : presenters) {
 		p->render(camera);
 	}
 	*/
-	//presenter.render(camera);
-	//wfPresenter->render(camera);
 	assert(GL_NO_ERROR == glGetError());
 }

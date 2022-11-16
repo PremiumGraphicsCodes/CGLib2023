@@ -11,7 +11,15 @@ namespace Crystal{
 class Renderer : public Crystal::UI::IRenderer
 {
 public:
+	enum class Target
+	{
+		Main,
+		Id,
+	};
+
 	explicit Renderer(World* world);
+
+	void setTarget(const Target t) { this->target = t; }
 
 	void init() override;
 
@@ -25,9 +33,14 @@ public:
 
 private:
 	World* world;
+	Target target;
 	Crystal::Renderer::PointRenderer point;
 	Crystal::Renderer::LineRenderer line;
 	Crystal::Renderer::TriangleRenderer triangle;
+
+	void renderMain(const Graphics::Camera& camera, const int width, const int height);
+
+	void renderId(const Graphics::Camera& camera, const int width, const int height);
 };
 
 	}

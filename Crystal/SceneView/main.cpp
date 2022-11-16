@@ -8,6 +8,7 @@
 #include "World.h"
 #include "Renderer.h"
 #include "ShapeMenu.h"
+#include "RendererMenu.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -26,11 +27,11 @@ int main() {
 	auto control = new Panel("Control");
 
 	window.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
-
+	window.add(new RendererMenu("Renderer", &world, &renderer));
 	window.add(new ShapeMenu("Shape", &world, &renderer, control));
-	window.add(control);
-
 	window.add(new SceneListPanel("SceneList", world.getRootScene()));
+
+	window.add(control);
 	
 	window.show();
 }
