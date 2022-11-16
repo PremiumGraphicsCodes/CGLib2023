@@ -6,6 +6,8 @@
 #include "ParticleSystemScene.h"
 #include "WireFrameScene.h"
 
+#include "ParticleSystemIdPresenter.h"
+
 #include "Renderer.h"
 
 using namespace Crystal::Shape;
@@ -21,6 +23,11 @@ void World::addParticleSystem(std::unique_ptr<ParticleSystem>&& particleSystem)
 	presenter->send();
 	scene->setPresenter(std::move(presenter));
 	getRootScene()->addScene(scene);
+
+	auto idPresenter = std::make_unique<Crystal::Scene::ParticleSystemIdPresenter>(scene, renderer->getPointRenderer());
+	idPresenter->build();
+	idPresenter->send();
+	presenters.push_back(std::move(idPresenter));
 }
 
 void World::addWireFrame(std::unique_ptr<WireFrame>&& wireFrame)

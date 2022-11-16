@@ -4,6 +4,7 @@
 
 #include "ParticleSystem.h"
 #include "WireFrame.h"
+#include <memory>
 
 namespace Crystal {
 	namespace UI {
@@ -18,8 +19,11 @@ public:
 
 	void addWireFrame(std::unique_ptr<Shape::WireFrame>&& wireFrame);
 
+	const std::vector<std::unique_ptr<Scene::IPresenter>>& getPresenters() { return presenters; }
+
 private:
 	 Renderer* renderer;
+	 std::vector<std::unique_ptr<Scene::IPresenter>> presenters;
 };
 
 	}

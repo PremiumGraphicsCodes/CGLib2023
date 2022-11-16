@@ -148,6 +148,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="ParticleSystemBuilder.cpp" />
+    <ClCompile Include="ParticleSystemIdPresenter.cpp" />
     <ClCompile Include="ParticleSystemMenu.cpp" />
     <ClCompile Include="ParticleSystemPresenter.cpp" />
     <ClCompile Include="ParticleSystemScene.cpp" />
@@ -209,6 +210,7 @@
   <ItemGroup>
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="ParticleSystemBuilder.h" />
+    <ClInclude Include="ParticleSystemIdPresenter.h" />
     <ClInclude Include="ParticleSystemMenu.h" />
     <ClInclude Include="ParticleSystemPresenter.h" />
     <ClInclude Include="ParticleSystemScene.h" />

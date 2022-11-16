@@ -5,6 +5,9 @@
 #include "Crystal/Renderer/LineShaderSource.h"
 #include "Crystal/Renderer/TriangleShaderSource.h"
 
+#include "Crystal/Scene/IPresenter.h"
+
+using namespace Crystal::Scene;
 using namespace Crystal::UI;
 using namespace Crystal::Renderer;
 
@@ -42,6 +45,12 @@ void Renderer::render(const Graphics::Camera& camera, const int width, const int
 	for (auto c : children) {
 		c->getPresenter()->render(camera);
 	}
+	/*
+	const auto& presenters = world->getPresenters();
+	for (auto& p : presenters) {
+		p->render(camera);
+	}
+	*/
 	//presenter.render(camera);
 	//wfPresenter->render(camera);
 	assert(GL_NO_ERROR == glGetError());

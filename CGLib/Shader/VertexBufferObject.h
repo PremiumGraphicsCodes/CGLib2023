@@ -24,6 +24,8 @@ public:
 
 	void send(const std::vector<float>& values);
 
+	void send(const std::vector<unsigned char>& values);
+
 	void send(const VertexBuffer<float>& vb);
 
 	GLuint getHandle() const { return handle; }

@@ -34,6 +34,13 @@ public:
 		data.push_back(c.a);
 	}
 
+	void add(const Graphics::ColorRGBAuc& c) {
+		data.push_back(c.r);
+		data.push_back(c.g);
+		data.push_back(c.b);
+		data.push_back(c.a);
+	}
+
 	std::vector<T> getData() const { return data; }
 
 private:

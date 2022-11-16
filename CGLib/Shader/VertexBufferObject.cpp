@@ -42,6 +42,13 @@ void VertexBufferObject::send(const std::vector<float>& values)
 	unbind();
 }
 
+void VertexBufferObject::send(const std::vector<unsigned char>& values)
+{
+	bind();
+	glBufferData(GL_ARRAY_BUFFER, sizeof(values[0]) * values.size(), values.data(), GL_STATIC_DRAW);
+	unbind();
+}
+
 void VertexBufferObject::send(const VertexBuffer<float>& vb)
 {
 	send(vb.getData());
