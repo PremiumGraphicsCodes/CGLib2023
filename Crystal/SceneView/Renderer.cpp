@@ -2,6 +2,7 @@
 
 #include "CGLib/Shader/ShaderBuilder.h"
 #include "Crystal/Renderer/PointShaderSource.h"
+#include "Crystal/Renderer/LineShaderSource.h"
 
 using namespace Crystal::UI;
 using namespace Crystal::Renderer;
@@ -20,7 +21,7 @@ void Renderer::init()
 	point.setShader(builder.getShader());
 	point.link();
 
-	builder.buildFromFile("../GLSL/Line.vs", "../GLSL/Line.fs");
+	builder.build(LineShaderSource::getVertexShaderSource(), LineShaderSource::getFragmentShaderSource());
 	line.setShader(builder.getShader());
 	line.link();
 

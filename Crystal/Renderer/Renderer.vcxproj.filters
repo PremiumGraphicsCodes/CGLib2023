@@ -20,6 +20,9 @@
     <ClInclude Include="PointShaderSource.h">
       <Filter>Point</Filter>
     </ClInclude>
+    <ClInclude Include="LineShaderSource.h">
+      <Filter>Line</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
@@ -39,6 +42,9 @@
     </ClCompile>
     <ClCompile Include="PointShaderSource.cpp">
       <Filter>Point</Filter>
+    </ClCompile>
+    <ClCompile Include="LineShaderSource.cpp">
+      <Filter>Line</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,12 +70,6 @@
     </None>
     <None Include="..\GLSL\SkyBox.vs">
       <Filter>SkyBox</Filter>
-    </None>
-    <None Include="..\GLSL\Line.fs">
-      <Filter>Line</Filter>
-    </None>
-    <None Include="..\GLSL\Line.vs">
-      <Filter>Line</Filter>
     </None>
     <None Include="..\GLSL\Triangle.fs">
       <Filter>Triangle</Filter>
