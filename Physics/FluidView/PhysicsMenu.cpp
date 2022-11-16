@@ -1,7 +1,7 @@
 #include "PhysicsMenu.h"
 
 #include "CGLib/UI/Panel.h"
-#include "Crystal/AppBase/MenuItem.h"
+#include "CGLib/UI/MenuItem.h"
 #include "CSPHFluidView.h"
 #include "PBSPHFluidView.h"
 #include "MVPFluidView.h"

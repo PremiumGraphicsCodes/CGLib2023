@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Crystal/AppBase/IMenu.h"
+#include "CGLib/UI/IMenu.h"
 
 namespace Crystal {
 	namespace UI {

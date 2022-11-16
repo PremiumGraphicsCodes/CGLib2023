@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Crystal/AppBase/IMenu.h"
+#include "CGLib/UI/IMenu.h"
 #include "World.h"
 #include "Renderer.h"
 

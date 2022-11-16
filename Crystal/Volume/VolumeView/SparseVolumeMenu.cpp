@@ -1,7 +1,7 @@
 #include "SparseVolumeMenu.h"
 
 #include "CGLib/UI/Panel.h"
-#include "Crystal/AppBase/MenuItem.h"
+#include "CGLib/UI/MenuItem.h"
 
 #include "SVBoxView.h"
 

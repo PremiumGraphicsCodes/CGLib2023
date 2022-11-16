@@ -1,7 +1,7 @@
 #include "SpaceMenu.h"
 
 #include "CGLib/UI/Panel.h"
-#include "Crystal/AppBase/MenuItem.h"
+#include "CGLib/UI/MenuItem.h"
 
 #include "SpaceHashView.h"
 #include "CompactSpaceHashView.h"

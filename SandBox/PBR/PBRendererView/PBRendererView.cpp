@@ -23,7 +23,7 @@ int main() {
 	Crystal::UI::Window app("Hello", &world, &canvas, &renderer);
 	app.init();
 
-	app.add(new CameraMenu("Camera", &world, canvas.getCamera()));
+	app.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
 	app.add(new PBRMenu("PBR", &world, &renderer));
 
 	app.show();
