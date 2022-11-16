@@ -26,17 +26,10 @@ void WFLineView::onOk()
 {
 	const auto line = lineView.getValue();
 
-	auto scene = new WireFrameScene();
 	auto shape = std::make_unique<WireFrame>();
 	shape->add(std::make_unique<Vertex>(Vector3df(0, 0, 0)));
 	shape->add(std::make_unique<Vertex>(Vector3df(1, 0, 0)));
 	shape->addEdge(WireFrame::Edge(0, 1));
-	scene->setShape(std::move(shape));
 
-	auto wfPresenter = std::make_unique<Crystal::Scene::WireFramePresenter>(scene, renderer->getLineRenderer());
-	wfPresenter->build();
-	wfPresenter->send();
-	scene->setPresenter(std::move(wfPresenter));
-
-	world->getRootScene()->addScene(scene);
+	world->addWireFrame(std::move(shape));
 }

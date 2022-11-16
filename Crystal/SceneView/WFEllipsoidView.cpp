@@ -26,15 +26,7 @@ void WFEllipsoidView::onOk()
 {
 	const auto e = ellipsoidView.getValue();
 
-	auto scene = new WireFrameScene();
 	WireFrameBuilder wfBuilder;
 	wfBuilder.add(e, uNumView.getValue(), vNumView.getValue());
-	scene->setShape(std::move(wfBuilder.toWireFrame()));
-
-	auto wfPresenter = std::make_unique<Crystal::Scene::WireFramePresenter>(scene, renderer->getLineRenderer());
-	wfPresenter->build();
-	wfPresenter->send();
-	scene->setPresenter(std::move(wfPresenter));
-
-	world->getRootScene()->addScene(scene);
+	world->addWireFrame(std::move(wfBuilder.toWireFrame()));
 }
