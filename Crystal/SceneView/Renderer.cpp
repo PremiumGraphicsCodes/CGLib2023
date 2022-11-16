@@ -3,6 +3,7 @@
 #include "CGLib/Shader/ShaderBuilder.h"
 #include "Crystal/Renderer/PointShaderSource.h"
 #include "Crystal/Renderer/LineShaderSource.h"
+#include "Crystal/Renderer/TriangleShaderSource.h"
 
 using namespace Crystal::UI;
 using namespace Crystal::Renderer;
@@ -25,7 +26,7 @@ void Renderer::init()
 	line.setShader(builder.getShader());
 	line.link();
 
-	builder.buildFromFile("../GLSL/Triangle.vs", "../GLSL/Triangle.fs");
+	builder.build(TriangleShaderSource::getVertexShaderSource(), TriangleShaderSource::getFragmentShaderSource());
 	triangle.setShader(builder.getShader());
 	triangle.link();
 }

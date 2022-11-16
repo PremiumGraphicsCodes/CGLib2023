@@ -161,6 +161,7 @@
     <ClInclude Include="SkyBoxRenderer.h" />
     <ClInclude Include="TexRenderer.h" />
     <ClInclude Include="TriangleRenderer.h" />
+    <ClInclude Include="TriangleShaderSource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LineRenderer.cpp" />
@@ -170,6 +171,7 @@
     <ClCompile Include="SkyBoxRenderer.cpp" />
     <ClCompile Include="TexRenderer.cpp" />
     <ClCompile Include="TriangleRenderer.cpp" />
+    <ClCompile Include="TriangleShaderSource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CGLib\Graphics\Graphics.vcxproj">
@@ -187,8 +189,6 @@
     <None Include="..\GLSL\SkyBox.vs" />
     <None Include="..\GLSL\Tex.fs" />
     <None Include="..\GLSL\Tex.vs" />
-    <None Include="..\GLSL\Triangle.fs" />
-    <None Include="..\GLSL\Triangle.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

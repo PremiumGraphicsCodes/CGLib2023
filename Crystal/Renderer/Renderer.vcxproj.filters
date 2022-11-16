@@ -23,6 +23,9 @@
     <ClInclude Include="LineShaderSource.h">
       <Filter>Line</Filter>
     </ClInclude>
+    <ClInclude Include="TriangleShaderSource.h">
+      <Filter>Triangle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SkyBoxRenderer.cpp">
@@ -45,6 +48,9 @@
     </ClCompile>
     <ClCompile Include="LineShaderSource.cpp">
       <Filter>Line</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangleShaderSource.cpp">
+      <Filter>Triangle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,12 +76,6 @@
     </None>
     <None Include="..\GLSL\SkyBox.vs">
       <Filter>SkyBox</Filter>
-    </None>
-    <None Include="..\GLSL\Triangle.fs">
-      <Filter>Triangle</Filter>
-    </None>
-    <None Include="..\GLSL\Triangle.vs">
-      <Filter>Triangle</Filter>
     </None>
     <None Include="..\GLSL\Tex.fs">
       <Filter>Texture</Filter>
