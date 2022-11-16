@@ -3,6 +3,8 @@
 #include "CGLib/Shader/ShaderBuilder.h"
 #include "CGLib/Shader/VertexBuffer.h"
 
+#include "Crystal/Renderer/TriangleShaderSource.h"
+
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
@@ -11,7 +13,7 @@ using namespace Crystal::Renderer;
 void TriangleShader::build()
 {
 	ShaderBuilder builder;
-	builder.buildFromFile("../GLSL/Triangle.vs", "../GLSL/Triangle.fs");
+	builder.build(TriangleShaderSource::getVertexShaderSource(), TriangleShaderSource::getFragmentShaderSource());
 	renderer.setShader(builder.getShader());
 	renderer.link();
 

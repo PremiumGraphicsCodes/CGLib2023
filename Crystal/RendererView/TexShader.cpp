@@ -1,6 +1,7 @@
 #include "TexShader.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
+#include "Crystal/Renderer/TexShaderSource.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
@@ -10,7 +11,7 @@ void TexShader::build()
 {
 	ShaderBuilder sBuilder;
 
-	sBuilder.buildFromFile("../GLSL/Tex.vs", "../GLSL/Tex.fs");
+	sBuilder.build(TexShaderSource::getVertexShaderSource(), TexShaderSource::getFragmentShaderSource());
 
 	renderer.setShader(sBuilder.getShader());
 	renderer.link();

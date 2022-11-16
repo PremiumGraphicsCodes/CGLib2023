@@ -1,6 +1,7 @@
 #include "SkyBoxShader.h"
 #include "CGLib/Graphics/ImageFileReader.h"
 #include "CGLib/Shader/ShaderBuilder.h"
+#include "Crystal/Renderer/SkyBoxShaderSource.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
@@ -45,7 +46,7 @@ namespace {
 void SkyBoxShader::build()
 {
 	ShaderBuilder builder;
-	builder.buildFromFile("../GLSL/SkyBox.vs", "../GLSL/SkyBox.fs");
+	builder.build(SkyBoxShaderSource::getVertexShaderSource(), SkyBoxShaderSource::getFragmentShaderSource());
 	auto shader = builder.getShader();
 	skyBoxRenderer.setShader(std::move(shader));
 	skyBoxRenderer.link();

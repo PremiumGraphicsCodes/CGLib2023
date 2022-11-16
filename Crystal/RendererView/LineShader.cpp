@@ -2,6 +2,7 @@
 
 #include "CGLib/Shader/ShaderBuilder.h"
 #include "CGLib/Shader/VertexBuffer.h"
+#include "Crystal/Renderer/LineShaderSource.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
@@ -11,7 +12,7 @@ using namespace Crystal::Renderer;
 void LineShader::build()
 {
 	ShaderBuilder builder;
-	builder.buildFromFile("../GLSL/Line.vs", "../GLSL/Line.fs");
+	builder.build(LineShaderSource::getVertexShaderSource(), LineShaderSource::getFragmentShaderSource());
 	renderer.setShader(builder.getShader());
 	renderer.link();
 
