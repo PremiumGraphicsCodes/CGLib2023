@@ -88,6 +88,7 @@
     <ClCompile Include="ParticleSystemBuilder.cpp">
       <Filter>ParticleSystem</Filter>
     </ClCompile>
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -183,6 +184,7 @@
     <ClInclude Include="ParticleSystemBuilder.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
+    <ClInclude Include="SelectionRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">

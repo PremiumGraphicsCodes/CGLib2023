@@ -29,14 +29,7 @@ void PSBoxView::onOk()
 {
 	const auto box = boxView.getValue();
 
-	auto scene = new ParticleSystemScene();
 	ParticleSystemBuilder builder;
 	builder.add(box, uNumView.getValue(), vNumView.getValue(), wNumView.getValue());
-	scene->setShape(std::move(builder.toParticleSystem()));
-
-	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, renderer->getPointRenderer());
-	presenter->build();
-	presenter->send();
-	scene->setPresenter(std::move(presenter));
-	world->getRootScene()->addScene(scene);
+	world->addParticleSystem( std::move(builder.toParticleSystem()));
 }

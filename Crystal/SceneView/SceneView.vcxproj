@@ -178,6 +178,7 @@
     <ClCompile Include="WireFrameMenu.cpp" />
     <ClCompile Include="WireFramePresenter.cpp" />
     <ClCompile Include="WireFrameScene.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -219,6 +220,7 @@
     <ClInclude Include="PSBoxView.h" />
     <ClInclude Include="PSSphereView.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SelectionRenderer.h" />
     <ClInclude Include="ShapeMenu.h" />
     <ClInclude Include="TMBoxView.h" />
     <ClInclude Include="TMCylinderView.h" />

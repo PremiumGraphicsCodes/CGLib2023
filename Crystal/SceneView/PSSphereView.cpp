@@ -26,9 +26,6 @@ void PSSphereView::onOk()
 {
 	const auto sphere = sphereView.getValue();
 
-	auto scene = new ParticleSystemScene();
-	scene->setId(world->getNextId());
-
 	auto shape = std::make_unique<ParticleSystem>();
 
 	std::mt19937 mt{ std::random_device{}() };
@@ -40,11 +37,5 @@ void PSSphereView::onOk()
 		const auto pos = sphere.getPosition(u, v, w);
 		shape->add(std::make_unique<Particle>(pos));
 	}
-	scene->setShape(std::move(shape));
-
-	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, renderer->getPointRenderer());
-	presenter->build();
-	presenter->send();
-	scene->setPresenter(std::move(presenter));
-	world->getRootScene()->addScene(scene);
+	world->addParticleSystem(std::move(shape));
 }

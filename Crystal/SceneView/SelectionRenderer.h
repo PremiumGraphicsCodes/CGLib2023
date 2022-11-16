@@ -5,23 +5,19 @@
 #include "Crystal/Renderer/LineRenderer.h"
 #include "Crystal/Renderer/TriangleRenderer.h"
 
-namespace Crystal{
+namespace Crystal {
 	namespace UI {
 
-class Renderer : public Crystal::UI::IRenderer
+class SelectionRenderer : public Crystal::UI::IRenderer
 {
 public:
-	explicit Renderer(World* world);
+	explicit SelectionRenderer(World* world) :
+		world(world)
+	{}
 
 	void init() override;
 
 	void render(const Graphics::Camera& camera, const int width, const int height) override;
-
-	Crystal::Renderer::PointRenderer* getPointRenderer() { return &point; }
-
-	Crystal::Renderer::LineRenderer* getLineRenderer() { return &line; }
-
-	Crystal::Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
 
 private:
 	World* world;
