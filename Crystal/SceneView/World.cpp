@@ -19,17 +19,19 @@ void World::addParticleSystem(std::unique_ptr<ParticleSystem>&& particleSystem)
 {
 	auto scene = new ParticleSystemScene();
 	scene->setShape(std::move(particleSystem));
-	auto presenter = std::make_unique<Crystal::Scene::ParticleSystemPresenter>(scene, renderer->getPointRenderer());
+	auto presenter = std::make_unique<ParticleSystemPresenter>(scene, renderer->getPointRenderer());
 	presenter->build();
 	presenter->send();
 	scene->addPresenter(presenter.get());
 	presenters.push_back(std::move(presenter));
-	getRootScene()->addScene(scene);
 
-	auto idPresenter = std::make_unique<Crystal::Scene::ParticleSystemIdPresenter>(scene, renderer->getPointRenderer());
+	auto idPresenter = std::make_unique<ParticleSystemIdPresenter>(scene, renderer->getPointRenderer());
 	idPresenter->build();
 	idPresenter->send();
+	scene->addPresenter(idPresenter.get());
 	idPresenters.push_back(std::move(idPresenter));
+
+	getRootScene()->addScene(scene);
 }
 
 void World::addWireFrame(std::unique_ptr<WireFrame>&& wireFrame)

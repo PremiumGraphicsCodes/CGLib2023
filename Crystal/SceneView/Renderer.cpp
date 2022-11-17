@@ -80,16 +80,13 @@ void Renderer::renderMain(const Camera& camera)
 	glViewport(0, 0, this->textures.main.getWidth(), this->textures.main.getHeight());
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	auto children = world->getRootScene()->getChildren();
-	for (auto c : children) {
-		for (auto p : c->getPresenters()) {
-			p->render(camera);
-		}
+	const auto& presenters = world->getPresenters();
+	for (auto& p : presenters) {
+		p->render(camera);
 	}
 	assert(GL_NO_ERROR == glGetError());
 
 	this->fbo.unbind();
-
 }
 
 void Renderer::renderId(const Camera& camera)
