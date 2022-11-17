@@ -22,33 +22,29 @@ using namespace Crystal::PC;
 
 CurvatureEstimatorView::CurvatureEstimatorView(const std::string& name, World* world, Renderer* renderer) :
 	IOkCancelView(name),
-	pcSelectView("PointCloud", world),
+	pcIdView("PointCloudId", -1),
 	searchRadiusView("SearchRadius", 1.5f),
 	colorMapView("ColorMap"),
 	world(world),
 	renderer(renderer)
 {
-	add(&pcSelectView);
+	add(&pcIdView);
 	add(&searchRadiusView);
 	add(&colorMapView);
 }
 
 void CurvatureEstimatorView::onOk()
 {
-	std::vector<Vector3df> positions;
-	for (int i = 0; i < 10; ++i) {
-		for (int j = 0; j < 10; ++j) {
-			for (int k = 0; k < 10; ++k) {
-				const auto x = i * 1.0f;
-				const auto y = j * 1.0f;
-				const auto z = k * 1.0f;
-				positions.emplace_back(x, y, z);
-			}
-		}
+	auto pointCloud = world->getRootScene()->findSceneById<PointCloudScene*>(pcIdView.getValue());
+	if (pointCloud == nullptr) {
+		return;
 	}
+
+	const auto& points = pointCloud->getShape()->getPoints();
+
 	CurvatureEstimator estimator;
-	for (const auto& p : positions) {
-		estimator.add(p);
+	for (const auto& p : points) {
+		estimator.add(p->getPosition());
 	}
 	estimator.estimate(searchRadiusView.getValue());
 
@@ -60,21 +56,13 @@ void CurvatureEstimatorView::onOk()
 	colorMap.setMin(min);
 	colorMap.setMax(max);
 
-	auto pointCloud = std::make_unique<PointCloud>();
-	//std::vector<ColorRGBAf> colors;
-	for (int i = 0; i < positions.size(); ++i) {
+	auto newPointCloud = std::make_unique<PointCloud>();
+	for (int i = 0; i < points.size(); ++i) {
 		const auto c = colorMap.getInterpolatedColor(curvatures[i]);
-		pointCloud->add(std::make_unique<Point>(positions[i], c));
-		//colors.push_back(c);
+		newPointCloud->add(std::make_unique<Point>(points[i]->getPosition(), c));
 	}
 
-	auto scene = new PointCloudScene();
-	scene->setShape(std::move(pointCloud));
+	pointCloud->setVisible(false);
 
-	auto presenter = new PointCloudPresenter(scene, renderer->getPointRenderer());
-	presenter->build();
-	presenter->send();
-	scene->addPresenter(presenter);
-	world->getRootScene()->addScene(scene);
-
+	world->add(std::move(newPointCloud));
 }

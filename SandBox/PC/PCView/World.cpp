@@ -25,7 +25,7 @@ std::list<IPresenter*> World::getPresenters()
 {
 	std::list<IPresenter*> actives;
 	for (auto s : getRootScene()->getChildren()) {
-		if (!s->getIsVisible()) {
+		if (!s->isVisible()) {
 			continue;
 		}
 		const auto ps = s->getPresenters();

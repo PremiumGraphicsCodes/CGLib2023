@@ -68,9 +68,9 @@ public:
 
 	std::list<IPresenter*> getPresenters() { return presenters; }
 
-	void setIsVisible(const bool isVisible) { this->isVisible = isVisible; }
+	void setVisible(const bool isVisible) { this->isVisible_ = isVisible; }
 
-	bool getIsVisible() { return this->isVisible; }
+	bool isVisible() { return this->isVisible_; }
 
 	//virtual void step() {};
 
@@ -80,7 +80,7 @@ protected:
 	std::list<SceneBase*> children;
 	std::list<IPresenter*> presenters;
 	SceneBase* parent;
-	bool isVisible = true;
+	bool isVisible_ = true;
 };
 
 	}

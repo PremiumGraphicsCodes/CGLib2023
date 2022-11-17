@@ -62,5 +62,5 @@ void DensityEstimatorView::onOk()
 	}
 	world->add(std::move(newPointCloud));
 
-	pointCloud->setIsVisible(false);
+	pointCloud->setVisible(false);
 }
