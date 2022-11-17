@@ -71,10 +71,10 @@ void DensityEstimatorView::onOk()
 	auto scene = new PointCloudScene();
 	scene->setShape(std::move(pointCloud));
 
-	auto presenter = std::make_unique<PointCloudPresenter>(scene, renderer->getPointRenderer());
+	auto presenter = new PointCloudPresenter(scene, renderer->getPointRenderer());
 	presenter->build();
 	presenter->send();
-	scene->setPresenter(std::move(presenter));
+	scene->addPresenter(presenter);
 	world->getRootScene()->addScene(scene);
 
 }

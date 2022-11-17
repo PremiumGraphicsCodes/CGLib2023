@@ -30,17 +30,12 @@ public:
 
 	void setShape(std::unique_ptr<PointCloud>&& shape) { this->shape = std::move(shape); }
 
-	void setPresenter(std::unique_ptr<PointCloudPresenter>&& p) { this->presenter = std::move(p); }
-
 	PointCloud* getShape() { return shape.get(); }
-
-	Scene::IPresenter* getPresenter() override { return presenter.get(); }
 
 	Math::Box3df getBoundingBox() const override;
 
 private:
 	std::unique_ptr<PointCloud> shape;
-	std::unique_ptr<PointCloudPresenter> presenter;
 };
 
 	}

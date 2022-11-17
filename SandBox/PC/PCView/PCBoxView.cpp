@@ -40,9 +40,9 @@ void PCBoxView::onOk()
 	}
 	scene->setShape(std::move(builder.toPointCloud()));
 
-	auto presenter = std::make_unique<PointCloudPresenter>(scene, renderer->getPointRenderer());
+	auto presenter = new PointCloudPresenter(scene, renderer->getPointRenderer());
 	presenter->build();
 	presenter->send();
-	scene->setPresenter(std::move(presenter));
+	scene->addPresenter(presenter);
 	world->getRootScene()->addScene(scene);
 }
