@@ -17,7 +17,7 @@ void ParticleSystemIdPresenter::send()
 	Shader::VertexBuffer<float> color;
 	Shader::VertexBuffer<float> size;
 
-	const auto r = 1.0f;//model->getId();
+	const auto r = 1.0f / 255.0f;//model->getId();
 	const auto& particles = model->getShape()->getParticles();
 	for (auto& p : particles) {
 		position.add(p->getPosition());

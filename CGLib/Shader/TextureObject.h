@@ -30,6 +30,8 @@ public:
 
 	int getHeight() { return height; }
 
+	Graphics::Imageuc toImageuc() const;
+
 private:
 	int width;
 	int height;
