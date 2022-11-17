@@ -22,50 +22,38 @@ using namespace Crystal::PC;
 
 NormalEstimatorView::NormalEstimatorView(const std::string& name, World* world, Renderer* renderer) :
 	IOkCancelView(name),
-	pcSelectView("PointCloud", world),
+	pcIdView("PointCloudId", -1),
 	searchRadiusView("SearchRadius", 1.5f),
 	world(world),
 	renderer(renderer)
 {
-	add(&pcSelectView);
+	add(&pcIdView);
 	add(&searchRadiusView);
 }
 
 void NormalEstimatorView::onOk()
 {
-	std::vector<Vector3df> positions;
-	for (int i = 0; i < 10; ++i) {
-		for (int j = 0; j < 10; ++j) {
-			for (int k = 0; k < 10; ++k) {
-				const auto x = i * 1.0f;
-				const auto y = j * 1.0f;
-				const auto z = k * 1.0f;
-				positions.emplace_back(x, y, z);
-			}
-		}
+	auto pointCloud = world->getRootScene()->findSceneById<PointCloudScene*>(pcIdView.getValue());
+	if (pointCloud == nullptr) {
+		return;
 	}
+
+	const auto& points = pointCloud->getShape()->getPoints();
 	NormalEstimator estimator;
-	for (const auto& p : positions) {
-		estimator.add(p);
+	for (const auto& p : points) {
+		estimator.add(p->getPosition());
 	}
 	estimator.estimate(searchRadiusView.getValue());
 
 	const auto normals = estimator.getNormals();
 
-	auto pointCloud = std::make_unique<PointCloud>();
-	//std::vector<ColorRGBAf> colors;
-	for (int i = 0; i < positions.size(); ++i) {
+	auto newPointCloud = std::make_unique<PointCloud>();
+	for (int i = 0; i < points.size(); ++i) {
 		const ColorRGBAf c( normals[i], 0.0f );
-		pointCloud->add(std::make_unique<Point>(positions[i], c));
-		//colors.push_back(c);
+		newPointCloud->add(std::make_unique<Point>(points[i]->getPosition(), c));
 	}
 
-	auto scene = new PointCloudScene();
-	scene->setShape(std::move(pointCloud));
+	world->add(std::move(newPointCloud));
 
-	auto presenter = new PointCloudPresenter(scene, renderer->getPointRenderer());
-	presenter->build();
-	presenter->send();
-	scene->addPresenter(presenter);
-	world->getRootScene()->addScene(scene);
+	pointCloud->setVisible(false);
 }

@@ -3,7 +3,7 @@
 #include "CGLib/UI/IOkCancelView.h"
 #include "CGLib/UI/Box3dView.h"
 #include "CGLib/UI/FloatView.h"
-#include "Crystal/AppBase/SceneSelectView.h"
+#include "CGLib/UI/IntView.h"
 
 namespace Crystal {
 	namespace UI {
@@ -19,7 +19,7 @@ public:
 
 private:
 	FloatView searchRadiusView;
-	SceneSelectView pcSelectView;
+	IntView pcIdView;
 	World* world;
 	Renderer* renderer;
 };
