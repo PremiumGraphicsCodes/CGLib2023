@@ -61,4 +61,6 @@ void DensityEstimatorView::onOk()
 		newPointCloud->add(std::make_unique<Point>(points[i]->getPosition(), c));
 	}
 	world->add(std::move(newPointCloud));
+
+	pointCloud->setIsVisible(false);
 }

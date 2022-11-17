@@ -17,6 +17,8 @@ public:
 
 	void add(std::unique_ptr<PC::PointCloud>&& pointCloud);
 
+	std::list<Scene::IPresenter*> getPresenters();
+
 private:
 	Renderer* renderer;
 	std::vector<std::unique_ptr<Scene::IPresenter>> presenters;

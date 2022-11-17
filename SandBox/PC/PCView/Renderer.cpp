@@ -29,11 +29,9 @@ void Renderer::render(const Graphics::Camera& camera, const int width, const int
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	auto children = world->getRootScene()->getChildren();
-	for (auto c : children) {
-		for (auto p : c->getPresenters()) {
-			p->render(camera);
-		}
+	auto presenters = world->getPresenters();
+	for (auto p : presenters) {
+		p->render(camera);
 	}
 	//presenter.render(camera);
 	//wfPresenter->render(camera);
