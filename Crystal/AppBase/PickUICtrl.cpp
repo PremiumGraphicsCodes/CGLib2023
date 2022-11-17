@@ -12,8 +12,10 @@ PickUICtrl::PickUICtrl(TextureObject* texture) :
 
 void PickUICtrl::onLeftButtonDown(const Vector2df& position)
 {
-	std::vector<char> outBuffer(texture->getWidth() * texture->getHandle() * 4);
+	std::vector<unsigned char> outBuffer;
+	outBuffer.resize(texture->getWidth()* texture->getHeight() * 4);
 
+	glActiveTexture(GL_TEXTURE0);
 	texture->bind();
 	//glActiveTexture(GL_TEXTURE0);
 	//glBindTexture(GL_TEXTURE_2D, texture->getHandle());

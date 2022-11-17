@@ -34,6 +34,8 @@ public:
 
 	Crystal::Renderer::TriangleRenderer* getTriangleRenderer() { return &renderers.triangle; }
 
+	Shader::TextureObject* getIdTexture() { return &textures.id; }
+
 private:
 	World* world;
 	Target target;

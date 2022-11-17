@@ -69,7 +69,6 @@ void Renderer::render(const Camera& camera, const int width, const int height)
 		assert(false);
 	}
 	this->renderers.tex.render();
-
 }
 
 void Renderer::renderMain(const Camera& camera)
@@ -100,7 +99,7 @@ void Renderer::renderId(const Camera& camera)
 
 	assert(GL_NO_ERROR == glGetError());
 	glViewport(0, 0, this->textures.id.getWidth(), this->textures.id.getHeight());
-	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClearColor(1.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	/*
 	const auto& presenters = world->getIdPresenters();

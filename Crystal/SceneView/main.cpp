@@ -29,7 +29,7 @@ int main() {
 
 	window.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
 	window.add(new RendererMenu("Renderer", &world, &renderer));
-	window.add(new CtrlMenu("Ctrl", &canvas));
+	window.add(new CtrlMenu("Ctrl", &canvas, &renderer));
 	window.add(new ShapeMenu("Shape", &world, &renderer, control));
 	window.add(new SceneListPanel("SceneList", world.getRootScene()));
 
