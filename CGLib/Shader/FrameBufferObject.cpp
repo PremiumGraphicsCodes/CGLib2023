@@ -90,6 +90,7 @@ Image FrameBufferObject::toImage() const
 
 	return Image(width, height, values);
 }
+*/
 
 ColorRGBAuc FrameBufferObject::getColor(const int x, const int y) const
 {
@@ -104,4 +105,3 @@ ColorRGBAuc FrameBufferObject::getColor(const int x, const int y) const
 
 	return ColorRGBAuc(values[0], values[1], values[2], values[3]);
 }
-*/

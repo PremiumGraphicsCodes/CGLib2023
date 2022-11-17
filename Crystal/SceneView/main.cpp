@@ -9,6 +9,7 @@
 #include "Renderer.h"
 #include "ShapeMenu.h"
 #include "RendererMenu.h"
+#include "CtrlMenu.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -28,6 +29,7 @@ int main() {
 
 	window.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
 	window.add(new RendererMenu("Renderer", &world, &renderer));
+	window.add(new CtrlMenu("Ctrl", &canvas));
 	window.add(new ShapeMenu("Shape", &world, &renderer, control));
 	window.add(new SceneListPanel("SceneList", world.getRootScene()));
 

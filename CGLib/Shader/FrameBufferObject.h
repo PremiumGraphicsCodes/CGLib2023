@@ -3,6 +3,7 @@
 #include "glew.h"
 #include "IGLObject.h"
 #include "RenderBufferObject.h"
+#include "../Graphics/ColorRGBA.h"
 
 namespace Crystal {
 	namespace Shader {
@@ -30,6 +31,8 @@ public:
 	GLuint getHandle() const { return frameBuffer; }
 
 	void setRenderBuffer(const GLenum attachment, RenderBufferObject* rbo);
+
+	Graphics::ColorRGBAuc getColor(const int x, const int y) const;
 
 private:
 	GLuint frameBuffer;

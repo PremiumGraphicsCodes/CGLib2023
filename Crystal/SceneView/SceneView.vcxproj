@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CtrlMenu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="ParticleSystemBuilder.cpp" />
@@ -209,6 +210,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CtrlMenu.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="ParticleSystemBuilder.h" />
     <ClInclude Include="ParticleSystemIdPresenter.h" />

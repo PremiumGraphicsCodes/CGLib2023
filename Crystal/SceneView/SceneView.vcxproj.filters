@@ -93,6 +93,7 @@
       <Filter>ParticleSystem</Filter>
     </ClCompile>
     <ClCompile Include="RendererMenu.cpp" />
+    <ClCompile Include="CtrlMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -192,6 +193,7 @@
       <Filter>ParticleSystem</Filter>
     </ClInclude>
     <ClInclude Include="RendererMenu.h" />
+    <ClInclude Include="CtrlMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">

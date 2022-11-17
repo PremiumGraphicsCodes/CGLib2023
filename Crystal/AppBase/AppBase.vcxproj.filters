@@ -11,6 +11,7 @@
     <ClInclude Include="WorldBase.h" />
     <ClInclude Include="SceneSelectView.h" />
     <ClInclude Include="SceneListPanel.h" />
+    <ClInclude Include="PickUICtrl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp" />
@@ -20,6 +21,7 @@
     <ClCompile Include="WorldBase.cpp" />
     <ClCompile Include="SceneSelectView.cpp" />
     <ClCompile Include="SceneListPanel.cpp" />
+    <ClCompile Include="PickUICtrl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
