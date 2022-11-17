@@ -36,16 +36,10 @@ void FileMenu::onImport()
 	const auto& filename = view.getFileName();
 	if (!filename.empty()) {
 		FileImporter importer;
-		importer.import(filename);
-
-		auto scene = new PointCloudScene();
-		scene->setShape(importer.getPointCloud());
-
-		auto presenter = new PointCloudPresenter(scene, renderer->getPointRenderer());
-		presenter->build();
-		presenter->send();
-		scene->addPresenter(presenter);
-		world->getRootScene()->addScene(scene);
+		const auto isOk = importer.import(filename);
+		if (isOk) {
+			world->add(importer.getPointCloud());
+		}
 	}
 }
 

@@ -2,6 +2,7 @@
 #include "Crystal/AppBase/Window.h"
 #include "Crystal/AppBase/CameraMenu.h"
 #include "Crystal/AppBase/CameraUICtrl.h"
+#include "Crystal/AppBase/SceneListPanel.h"
 
 #include "FileMenu.h"
 #include "PCMenu.h"
@@ -27,11 +28,13 @@ int main() {
 	app.init();
 
 	auto control = new Panel("Control");
+	auto listPanel = new SceneListPanel("Scenes", world.getRootScene());
 
 	app.add(new FileMenu("File", &world, &renderer));
 	app.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
 	app.add(new PCMenu("PC", &world, &renderer, control));
 	app.add(control);
+	app.add(listPanel);
 
 	app.show();
 }

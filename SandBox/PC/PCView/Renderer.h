@@ -10,9 +10,7 @@ namespace Crystal {
 class Renderer : public IRenderer
 {
 public:
-	explicit Renderer(World* world) :
-		world(world)
-	{}
+	explicit Renderer(World* world);
 
 	void init() override;
 

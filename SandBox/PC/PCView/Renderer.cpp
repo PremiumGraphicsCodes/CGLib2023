@@ -8,6 +8,12 @@ using namespace Crystal::Shader;
 using namespace Crystal::UI;
 using namespace Crystal::Renderer;
 
+Renderer::Renderer(World* world) :
+	world(world)
+{
+	world->setRenderer(this);
+}
+
 void Renderer::init()
 {
 	ShaderBuilder builder;

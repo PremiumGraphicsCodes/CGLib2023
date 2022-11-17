@@ -30,7 +30,6 @@ void PCBoxView::onOk()
 {
 	const auto box = boxView.getValue();
 
-	auto scene = new PointCloudScene();
 	PointCloudBuilder builder;
 	builder.add(box, uNumView.getValue(), vNumView.getValue(), wNumView.getValue());
 	const auto pc = builder.toPointCloud();
@@ -38,11 +37,5 @@ void PCBoxView::onOk()
 	for (auto& p : points) {
 		p->setColor(ColorRGBAf(0, 0, 1, 0));
 	}
-	scene->setShape(std::move(builder.toPointCloud()));
-
-	auto presenter = new PointCloudPresenter(scene, renderer->getPointRenderer());
-	presenter->build();
-	presenter->send();
-	scene->addPresenter(presenter);
-	world->getRootScene()->addScene(scene);
+	world->add(builder.toPointCloud());
 }
