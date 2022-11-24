@@ -4,10 +4,14 @@
     <ClCompile Include="VDBView.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="VDBPointsPresenter.cpp" />
+    <ClCompile Include="VDBPointsScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="VDBPointsPresenter.h" />
+    <ClInclude Include="VDBPointsScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
