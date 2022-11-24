@@ -10,7 +10,9 @@ using namespace Crystal::Math;
 using namespace Crystal::VDB;
 
 VDBPoints::VDBPoints()
-{}
+{
+    impl = std::make_unique<VDBPointsImpl>();
+}
 
 VDBPoints::~VDBPoints()
 {

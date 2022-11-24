@@ -7,6 +7,7 @@
     <ClCompile Include="VDBPointsPresenter.cpp" />
     <ClCompile Include="VDBPointsScene.cpp" />
     <ClCompile Include="VDBPointsBoxView.cpp" />
+    <ClCompile Include="VDBPointsMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
@@ -14,6 +15,7 @@
     <ClInclude Include="VDBPointsPresenter.h" />
     <ClInclude Include="VDBPointsScene.h" />
     <ClInclude Include="VDBPointsBoxView.h" />
+    <ClInclude Include="VDBPointsMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

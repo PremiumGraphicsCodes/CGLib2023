@@ -1,18 +1,21 @@
 #include "World.h"
 
-//#include "Renderer.h"
+#include "Renderer.h"
+
+#include "VDBPointsScene.h"
+#include "VDBPointsPresenter.h"
 
 using namespace Crystal::Scene;
+using namespace Crystal::VDB;
 using namespace Crystal::UI;
 
-/*
-void World::add(std::unique_ptr<PointCloud>&& pointCloud)
+void World::add(std::unique_ptr<VDBPoints>&& points)
 {
-	auto scene = new PointCloudScene();
+	auto scene = new VDBPointsScene();
 	scene->setId(getNextId());
-	scene->setShape(std::move(pointCloud));
+	scene->setShape(std::move(points));
 
-	auto presenter = std::make_unique<PointCloudPresenter>(scene, renderer->getPointRenderer());
+	auto presenter = std::make_unique<VDBPointsPresenter>(scene, renderer->getPointRenderer());
 	presenter->build();
 	presenter->send();
 	scene->addPresenter(presenter.get());
@@ -20,7 +23,6 @@ void World::add(std::unique_ptr<PointCloud>&& pointCloud)
 
 	this->presenters.push_back(std::move(presenter));
 }
-*/
 
 std::list<IPresenter*> World::getPresenters()
 {

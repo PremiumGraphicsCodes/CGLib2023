@@ -23,6 +23,7 @@ private:
 private:
 	Sphere3dView sphereView;
 	FloatView divideLengthView;
+	World* world;
 };
 
 	}

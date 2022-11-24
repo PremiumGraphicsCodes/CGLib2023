@@ -4,10 +4,14 @@
 #include "Crystal/AppBase/CameraUICtrl.h"
 #include "Crystal/AppBase/SceneListPanel.h"
 
+#include "VDBPointsMenu.h"
+
 #include "CGLib/UI/Panel.h"
 
 #include "World.h"
 #include "Renderer.h"
+
+#include <openvdb/openvdb.h>
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -17,6 +21,8 @@ using namespace Crystal::UI;
 
 
 int main() {
+	openvdb::initialize();
+
 	World world;
 	Renderer renderer(&world);
 
@@ -28,7 +34,7 @@ int main() {
 	auto listPanel = new SceneListPanel("Scenes", world.getRootScene());
 
 	app.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
-	//app.add(new PCMenu("PC", &world, &renderer, control));
+	app.add(new VDBPointsMenu("VDBPoints", &world, &renderer, control));
 	app.add(control);
 	app.add(listPanel);
 

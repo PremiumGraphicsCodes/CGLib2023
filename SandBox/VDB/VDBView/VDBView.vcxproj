@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="VDBPointsMenu.cpp" />
     <ClCompile Include="VDBPointsBoxView.cpp" />
     <ClCompile Include="VDBPointsPresenter.cpp" />
     <ClCompile Include="VDBPointsScene.cpp" />
@@ -154,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="VDBPointsMenu.h" />
     <ClInclude Include="VDBPointsBoxView.h" />
     <ClInclude Include="VDBPointsPresenter.h" />
     <ClInclude Include="VDBPointsScene.h" />
