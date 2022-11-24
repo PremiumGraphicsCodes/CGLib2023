@@ -41,19 +41,18 @@ void VDBVolumePresenter::send()
 
 	const auto nodes = model->getShape()->getActiveNodes();
 
-	/*
-	for (auto iter = grid->cbeginValueOn(); iter; ++iter) {
-		//auto c = iter.getCoord();
-		auto coord = transform.indexToWorld(iter.getCoord());
-		auto value = *iter;
-		const auto c = colorMap.getColor((float)value);
-		//position.add(
-		//pb.add(Converter::fromVDB(coord), c, 1.0f);
+	for (const auto& n : nodes) {
+		position.add(n.position);
+		const auto c = this->colorMap.getColor(n.value);
+		color.add(c);
+		size.add(10.0f);
 	}
-	//this->view->send(pb);
 
-	//count = static_cast<int>(particles.size());
-	*/
+	vbo.position.send(position);
+	vbo.color.send(color);
+	vbo.size.send(size);
+
+	count = static_cast<int>(nodes.size());
 }
 
 void VDBVolumePresenter::render(const Camera& camera)

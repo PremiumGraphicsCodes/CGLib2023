@@ -22,6 +22,12 @@
     <ClCompile Include="VDBVolumePresenter.cpp">
       <Filter>Volume</Filter>
     </ClCompile>
+    <ClCompile Include="VDBVolumeSphereView.cpp">
+      <Filter>Volume</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBVolumeMenu.cpp">
+      <Filter>Volume</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
@@ -42,6 +48,12 @@
       <Filter>Volume</Filter>
     </ClInclude>
     <ClInclude Include="VDBVolumePresenter.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBVolumeSphereView.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBVolumeMenu.h">
       <Filter>Volume</Filter>
     </ClInclude>
   </ItemGroup>

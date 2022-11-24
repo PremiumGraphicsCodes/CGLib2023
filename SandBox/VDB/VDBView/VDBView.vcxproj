@@ -151,8 +151,10 @@
     <ClCompile Include="VDBPointsPresenter.cpp" />
     <ClCompile Include="VDBPointsScene.cpp" />
     <ClCompile Include="VDBView.cpp" />
+    <ClCompile Include="VDBVolumeMenu.cpp" />
     <ClCompile Include="VDBVolumePresenter.cpp" />
     <ClCompile Include="VDBVolumeScene.cpp" />
+    <ClCompile Include="VDBVolumeSphereView.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -161,8 +163,10 @@
     <ClInclude Include="VDBPointsBoxView.h" />
     <ClInclude Include="VDBPointsPresenter.h" />
     <ClInclude Include="VDBPointsScene.h" />
+    <ClInclude Include="VDBVolumeMenu.h" />
     <ClInclude Include="VDBVolumePresenter.h" />
     <ClInclude Include="VDBVolumeScene.h" />
+    <ClInclude Include="VDBVolumeSphereView.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
