@@ -19,7 +19,7 @@ public:
 		ptr(ptr)
 	{}
 
-	~VDBVolumeImpl() {}
+	~VDBVolumeImpl();
 
 	openvdb::FloatGrid::Ptr getPtr() { return ptr; }
 

@@ -4,20 +4,56 @@
     <ClCompile Include="VDBView.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="VDBPointsPresenter.cpp" />
-    <ClCompile Include="VDBPointsScene.cpp" />
-    <ClCompile Include="VDBPointsBoxView.cpp" />
-    <ClCompile Include="VDBPointsMenu.cpp" />
+    <ClCompile Include="VDBPointsBoxView.cpp">
+      <Filter>Points</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBPointsMenu.cpp">
+      <Filter>Points</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBPointsPresenter.cpp">
+      <Filter>Points</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBPointsScene.cpp">
+      <Filter>Points</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBVolumeScene.cpp">
+      <Filter>Volume</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBVolumePresenter.cpp">
+      <Filter>Volume</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="VDBPointsPresenter.h" />
-    <ClInclude Include="VDBPointsScene.h" />
-    <ClInclude Include="VDBPointsBoxView.h" />
-    <ClInclude Include="VDBPointsMenu.h" />
+    <ClInclude Include="VDBPointsBoxView.h">
+      <Filter>Points</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBPointsMenu.h">
+      <Filter>Points</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBPointsPresenter.h">
+      <Filter>Points</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBPointsScene.h">
+      <Filter>Points</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBVolumeScene.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBVolumePresenter.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Points">
+      <UniqueIdentifier>{42de6307-db24-472f-8bd8-9911a4d4592e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Volume">
+      <UniqueIdentifier>{318fc088-7437-489f-830c-b49eaafd1609}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

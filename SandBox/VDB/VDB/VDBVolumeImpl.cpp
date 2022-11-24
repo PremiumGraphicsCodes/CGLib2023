@@ -4,6 +4,8 @@
 
 using namespace Crystal::VDB;
 
+VDBVolumeImpl::~VDBVolumeImpl() = default;
+
 void VDBVolumeImpl::setScale(const double scale)
 {
 	this->getPtr()->setTransform(openvdb::math::Transform::createLinearTransform(scale));

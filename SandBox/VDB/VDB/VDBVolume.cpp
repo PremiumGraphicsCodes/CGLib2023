@@ -18,6 +18,8 @@ VDBVolume::VDBVolume() :
 	impl = std::make_unique<VDBVolumeImpl>(grid);
 }
 
+VDBVolume::~VDBVolume() = default;
+
 VDBVolume::VDBVolume(const float value)
 {
 	using FloatTreeType = openvdb::tree::Tree4<float, 5, 4, 3>::Type;
@@ -71,4 +73,20 @@ Box3df VDBVolume::getBoundingBox() const
 void VDBVolume::setScale(const float scale)
 {
 	impl->setScale(scale);
+}
+
+std::vector<VDBVolume::Node> VDBVolume::getActiveNodes()
+{
+	auto grid = impl->getPtr();
+	auto transform = grid->transform();
+	std::vector<VDBVolume::Node> nodes;
+	for (auto iter = grid->cbeginValueOn(); iter; ++iter) {
+		//auto c = iter.getCoord();
+		auto coord = transform.indexToWorld(iter.getCoord());
+		VDBVolume::Node node;
+		node.position = Converter::fromVDB(coord);
+		node.value = *iter;
+		nodes.push_back(node);
+	}
+	return nodes;
 }

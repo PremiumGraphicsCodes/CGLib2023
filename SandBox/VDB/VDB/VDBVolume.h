@@ -1,6 +1,8 @@
 #pragma once
 
 #include <memory>
+#include <array>
+#include <vector>
 
 #include "CGLib/Math/Box3d.h"
 #include "CGLib/Util/UnCopyable.h"
@@ -13,6 +15,8 @@ class VDBVolume : private UnCopyable
 {
 public:
 	VDBVolume();
+
+	~VDBVolume();
 
 	explicit VDBVolume(const float value);
 
@@ -33,6 +37,14 @@ public:
 	VDBVolumeImpl* getImpl() const { return impl.get(); }
 
 	void setScale(const float scale);
+
+	struct Node
+	{
+		Math::Vector3df position;
+		float value;
+	};
+	
+	std::vector<Node> getActiveNodes();
 
 private:
 	std::unique_ptr<VDBVolumeImpl> impl;

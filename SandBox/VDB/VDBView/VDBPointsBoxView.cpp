@@ -44,10 +44,4 @@ void VDBPointsBoxView::onOk()
 	points->create(positions);
 
 	world->add(std::move(points));
-	/*
-	auto scene = new VDBPointsScene(getWorld()->getNextSceneId(), "VDBPS");
-	scene->create(positions);
-	scene->getPresenter()->createView(getWorld()->getRenderer());
-	getWorld()->getScenes()->addScene(scene);
-	*/
 }
