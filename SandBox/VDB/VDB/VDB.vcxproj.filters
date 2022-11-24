@@ -3,9 +3,13 @@
   <ItemGroup>
     <ClCompile Include="VDBPointsImpl.cpp" />
     <ClCompile Include="VDBMeshImpl.cpp" />
+    <ClCompile Include="VDBPoints.cpp" />
+    <ClCompile Include="Converter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VDBPointsImpl.h" />
     <ClInclude Include="VDBMeshImpl.h" />
+    <ClInclude Include="VDBPoints.h" />
+    <ClInclude Include="Converter.h" />
   </ItemGroup>
 </Project>

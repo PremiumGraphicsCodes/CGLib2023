@@ -124,7 +124,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(VDBPath);$(VCPKGPath)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VDBPath);$(VCPKGPath)\include;../../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4244;4251;4267;4275;4305</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -155,11 +155,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Converter.h" />
     <ClInclude Include="VDBMeshImpl.h" />
+    <ClInclude Include="VDBPoints.h" />
     <ClInclude Include="VDBPointsImpl.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Converter.cpp" />
     <ClCompile Include="VDBMeshImpl.cpp" />
+    <ClCompile Include="VDBPoints.cpp" />
     <ClCompile Include="VDBPointsImpl.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
