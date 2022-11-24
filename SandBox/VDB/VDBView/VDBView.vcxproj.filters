@@ -6,12 +6,14 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="VDBPointsPresenter.cpp" />
     <ClCompile Include="VDBPointsScene.cpp" />
+    <ClCompile Include="VDBPointsBoxView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="VDBPointsPresenter.h" />
     <ClInclude Include="VDBPointsScene.h" />
+    <ClInclude Include="VDBPointsBoxView.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -156,12 +156,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Converter.h" />
+    <ClInclude Include="VDBMesh.h" />
     <ClInclude Include="VDBMeshImpl.h" />
     <ClInclude Include="VDBPoints.h" />
     <ClInclude Include="VDBPointsImpl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Converter.cpp" />
+    <ClCompile Include="VDBMesh.cpp" />
     <ClCompile Include="VDBMeshImpl.cpp" />
     <ClCompile Include="VDBPoints.cpp" />
     <ClCompile Include="VDBPointsImpl.cpp" />
