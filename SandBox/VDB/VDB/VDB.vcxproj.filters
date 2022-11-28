@@ -25,6 +25,9 @@
     <ClCompile Include="VDBFileWriter.cpp" />
     <ClCompile Include="VDBVolumeToPointsConverter.cpp" />
     <ClCompile Include="VDBFilter.cpp" />
+    <ClCompile Include="VDBResampler.cpp" />
+    <ClCompile Include="VDBToSpheres.cpp" />
+    <ClCompile Include="VDBTransform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Converter.h" />
@@ -51,6 +54,9 @@
     <ClInclude Include="VDBFileWriter.h" />
     <ClInclude Include="VDBVolumeToPointsConverter.h" />
     <ClInclude Include="VDBFilter.h" />
+    <ClInclude Include="VDBResampler.h" />
+    <ClInclude Include="VDBToSpheres.h" />
+    <ClInclude Include="VDBTransform.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Points">

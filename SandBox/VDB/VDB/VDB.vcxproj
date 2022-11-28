@@ -163,6 +163,9 @@
     <ClInclude Include="VDBMeshImpl.h" />
     <ClInclude Include="VDBPoints.h" />
     <ClInclude Include="VDBPointsImpl.h" />
+    <ClInclude Include="VDBResampler.h" />
+    <ClInclude Include="VDBToSpheres.h" />
+    <ClInclude Include="VDBTransform.h" />
     <ClInclude Include="VDBVolume.h" />
     <ClInclude Include="VDBVolumeImpl.h" />
     <ClInclude Include="VDBVolumeToMeshConverter.h" />
@@ -177,6 +180,9 @@
     <ClCompile Include="VDBMeshImpl.cpp" />
     <ClCompile Include="VDBPoints.cpp" />
     <ClCompile Include="VDBPointsImpl.cpp" />
+    <ClCompile Include="VDBResampler.cpp" />
+    <ClCompile Include="VDBToSpheres.cpp" />
+    <ClCompile Include="VDBTransform.cpp" />
     <ClCompile Include="VDBVolume.cpp" />
     <ClCompile Include="VDBVolumeImpl.cpp" />
     <ClCompile Include="VDBVolumeToMeshConverter.cpp" />
