@@ -3,9 +3,24 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="STLFile.h">
+      <Filter>STL</Filter>
+    </ClInclude>
+    <ClInclude Include="STLFileReader.h">
+      <Filter>STL</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="STLFileReader.cpp">
+      <Filter>STL</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="STL">
+      <UniqueIdentifier>{c4645c3e-725a-49a9-8f2b-d0cc12af3c08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
