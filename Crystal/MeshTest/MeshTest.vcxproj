@@ -33,6 +33,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClCompile Include="MTLFileReaderTest.cpp" />
+    <ClCompile Include="MTLFileWriterTest.cpp" />
     <ClCompile Include="OBJFileReaderTest.cpp" />
     <ClCompile Include="OBJFileWriterTest.cpp" />
     <ClCompile Include="STLASCIIFileReaderTest.cpp" />
