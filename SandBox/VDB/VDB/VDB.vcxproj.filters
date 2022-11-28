@@ -21,6 +21,9 @@
       <Filter>Volume</Filter>
     </ClCompile>
     <ClCompile Include="VDBVolumeToMeshConverter.cpp" />
+    <ClCompile Include="VDBFileReader.cpp" />
+    <ClCompile Include="VDBFileWriter.cpp" />
+    <ClCompile Include="VDBVolumeToPointsConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Converter.h" />
@@ -43,6 +46,9 @@
       <Filter>Volume</Filter>
     </ClInclude>
     <ClInclude Include="VDBVolumeToMeshConverter.h" />
+    <ClInclude Include="VDBFileReader.h" />
+    <ClInclude Include="VDBFileWriter.h" />
+    <ClInclude Include="VDBVolumeToPointsConverter.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Points">
