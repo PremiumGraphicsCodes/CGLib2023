@@ -12,7 +12,7 @@ namespace Crystal {
 	namespace VDB {
 		class VDBMeshImpl;
 
-class VDBMeshScene : private UnCopyable
+class VDBMesh : private UnCopyable
 {
 public:
 	struct TriangleFace
@@ -33,9 +33,9 @@ public:
 		Math::Vector3df normal;
 	};
 
-	VDBMeshScene();
+	VDBMesh();
 
-	~VDBMeshScene();
+	~VDBMesh();
 
 	void addVertex(const Math::Vector3df& position);
 

@@ -1,34 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="VDBMeshImpl.cpp" />
     <ClCompile Include="Converter.cpp" />
-    <ClCompile Include="VDBMesh.cpp" />
-    <ClCompile Include="VDBVolumeImpl.cpp" />
-    <ClCompile Include="VDBVolume.cpp" />
     <ClCompile Include="VDBPoints.cpp">
       <Filter>Points</Filter>
     </ClCompile>
     <ClCompile Include="VDBPointsImpl.cpp">
       <Filter>Points</Filter>
     </ClCompile>
+    <ClCompile Include="VDBMesh.cpp">
+      <Filter>Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBMeshImpl.cpp">
+      <Filter>Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBVolume.cpp">
+      <Filter>Volume</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBVolumeImpl.cpp">
+      <Filter>Volume</Filter>
+    </ClCompile>
+    <ClCompile Include="VDBVolumeToMeshConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="VDBMeshImpl.h" />
     <ClInclude Include="Converter.h" />
-    <ClInclude Include="VDBMesh.h" />
-    <ClInclude Include="VDBVolumeImpl.h" />
-    <ClInclude Include="VDBVolume.h" />
     <ClInclude Include="VDBPoints.h">
       <Filter>Points</Filter>
     </ClInclude>
     <ClInclude Include="VDBPointsImpl.h">
       <Filter>Points</Filter>
     </ClInclude>
+    <ClInclude Include="VDBMesh.h">
+      <Filter>Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBMeshImpl.h">
+      <Filter>Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBVolume.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBVolumeImpl.h">
+      <Filter>Volume</Filter>
+    </ClInclude>
+    <ClInclude Include="VDBVolumeToMeshConverter.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Points">
       <UniqueIdentifier>{a5c34a1e-694e-4c43-b272-4d51a27e5836}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mesh">
+      <UniqueIdentifier>{6465cc2b-2bc5-4112-aa45-b00ac9a41f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Volume">
+      <UniqueIdentifier>{89cc2d98-2eb5-4fd3-a111-34592d965e40}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

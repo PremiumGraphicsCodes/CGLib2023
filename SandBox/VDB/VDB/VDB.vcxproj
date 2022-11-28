@@ -162,6 +162,7 @@
     <ClInclude Include="VDBPointsImpl.h" />
     <ClInclude Include="VDBVolume.h" />
     <ClInclude Include="VDBVolumeImpl.h" />
+    <ClInclude Include="VDBVolumeToMeshConverter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Converter.cpp" />
@@ -171,6 +172,7 @@
     <ClCompile Include="VDBPointsImpl.cpp" />
     <ClCompile Include="VDBVolume.cpp" />
     <ClCompile Include="VDBVolumeImpl.cpp" />
+    <ClCompile Include="VDBVolumeToMeshConverter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
