@@ -55,6 +55,7 @@ void TriangleRenderer::render()
 	color.sendVertexAttribute4df(*buffer.color);
 
 	shader->drawTriangles(buffer.indices);
+	shader->drawQuads(buffer.quadIndices);
 
 	shader->bindOutput(::fragColorLabel);
 

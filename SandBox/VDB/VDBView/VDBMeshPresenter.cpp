@@ -38,7 +38,6 @@ void VDBMeshPresenter::send()
 		const auto t = tt.indices;
 		this->indices.push_back(t[0]);
 		this->indices.push_back(t[1]);
-		//this->indices.push_back(t[1]);
 		this->indices.push_back(t[2]);
 	}
 
@@ -46,12 +45,10 @@ void VDBMeshPresenter::send()
 
 	for (const auto& qq : quads) {
 		const auto q = qq.indices;
-		this->indices.push_back(q[0]);
-		this->indices.push_back(q[1]);
-		//this->indices.push_back(q[1]);
-		this->indices.push_back(q[2]);
-		//this->indices.push_back(q[2]);
-		//this->indices.push_back(q[3]);
+		this->quadIndices.push_back(q[0]);
+		this->quadIndices.push_back(q[1]);
+		this->quadIndices.push_back(q[2]);
+		this->quadIndices.push_back(q[3]);
 	}
 }
 
@@ -60,6 +57,7 @@ void VDBMeshPresenter::render(const Camera& camera)
 	view->buffer.position = &vbo.position;
 	view->buffer.color = &vbo.color;
 	view->buffer.indices = indices;
+	view->buffer.quadIndices = quadIndices;
 	view->buffer.modelViewMatrix = camera.getModelViewMatrix();
 	view->buffer.projectionMatrix = camera.getProjectionMatrix();
 	//view->buffer.lineWidth = 1.0f;

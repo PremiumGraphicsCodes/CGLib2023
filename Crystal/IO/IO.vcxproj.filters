@@ -8,15 +8,27 @@
       <Filter>STL</Filter>
     </ClInclude>
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="STLFileWriter.h">
+      <Filter>STL</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJFile.h">
+      <Filter>OBJ</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLFileReader.cpp">
+      <Filter>STL</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileWriter.cpp">
       <Filter>STL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="STL">
       <UniqueIdentifier>{c4645c3e-725a-49a9-8f2b-d0cc12af3c08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OBJ">
+      <UniqueIdentifier>{bc845f5c-a698-4ae3-b532-05a1242dbab3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

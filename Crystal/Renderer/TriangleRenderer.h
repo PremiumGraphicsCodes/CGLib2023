@@ -17,6 +17,7 @@ public:
 		Math::Matrix4dd projectionMatrix;
 		Math::Matrix4dd modelViewMatrix;
 		std::vector<unsigned int> indices;
+		std::vector<unsigned int> quadIndices;
 	};
 
 	void link() override;

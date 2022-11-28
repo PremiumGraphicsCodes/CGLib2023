@@ -60,6 +60,8 @@ public:
 
 	void drawQuads(const int count);
 
+	void drawQuads(const std::vector<unsigned int>& indices);
+
 	void bindOutput(const std::string& name);
 
 	void bindOutput(const std::string& name, unsigned int number);

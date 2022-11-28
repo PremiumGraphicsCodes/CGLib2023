@@ -31,6 +31,7 @@ private:
 	};
 	VBO vbo;
 	std::vector<unsigned int> indices;
+	std::vector<unsigned int> quadIndices;
 
 	VDBMeshScene* model;
 	Crystal::Renderer::TriangleRenderer* view;

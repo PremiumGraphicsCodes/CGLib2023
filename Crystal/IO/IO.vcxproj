@@ -156,11 +156,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="OBJFile.h" />
     <ClInclude Include="STLFile.h" />
     <ClInclude Include="STLFileReader.h" />
+    <ClInclude Include="STLFileWriter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLFileReader.cpp" />
+    <ClCompile Include="STLFileWriter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
