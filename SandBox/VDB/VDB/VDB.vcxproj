@@ -158,6 +158,7 @@
     <ClInclude Include="Converter.h" />
     <ClInclude Include="VDBFileReader.h" />
     <ClInclude Include="VDBFileWriter.h" />
+    <ClInclude Include="VDBFilter.h" />
     <ClInclude Include="VDBMesh.h" />
     <ClInclude Include="VDBMeshImpl.h" />
     <ClInclude Include="VDBPoints.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="Converter.cpp" />
     <ClCompile Include="VDBFileReader.cpp" />
     <ClCompile Include="VDBFileWriter.cpp" />
+    <ClCompile Include="VDBFilter.cpp" />
     <ClCompile Include="VDBMesh.cpp" />
     <ClCompile Include="VDBMeshImpl.cpp" />
     <ClCompile Include="VDBPoints.cpp" />

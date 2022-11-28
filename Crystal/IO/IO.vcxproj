@@ -157,11 +157,17 @@
   <ItemGroup>
     <ClInclude Include="Helper.h" />
     <ClInclude Include="OBJFile.h" />
+    <ClInclude Include="OBJFileReader.h" />
+    <ClInclude Include="OBJFileWriter.h" />
+    <ClInclude Include="OBJSyntaxParser.h" />
     <ClInclude Include="STLFile.h" />
     <ClInclude Include="STLFileReader.h" />
     <ClInclude Include="STLFileWriter.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="OBJFileReader.cpp" />
+    <ClCompile Include="OBJFileWriter.cpp" />
+    <ClCompile Include="OBJSyntaxParser.cpp" />
     <ClCompile Include="STLFileReader.cpp" />
     <ClCompile Include="STLFileWriter.cpp" />
   </ItemGroup>
