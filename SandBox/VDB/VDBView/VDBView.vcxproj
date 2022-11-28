@@ -146,6 +146,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="VDBMeshPresenter.cpp" />
+    <ClCompile Include="VDBMeshScene.cpp" />
     <ClCompile Include="VDBPointsMenu.cpp" />
     <ClCompile Include="VDBPointsBoxView.cpp" />
     <ClCompile Include="VDBPointsPresenter.cpp" />
@@ -159,6 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="VDBMeshPresenter.h" />
+    <ClInclude Include="VDBMeshScene.h" />
     <ClInclude Include="VDBPointsMenu.h" />
     <ClInclude Include="VDBPointsBoxView.h" />
     <ClInclude Include="VDBPointsPresenter.h" />
