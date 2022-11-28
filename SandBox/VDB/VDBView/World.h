@@ -5,6 +5,7 @@
 
 #include "../VDB/VDBPoints.h"
 #include "../VDB/VDBVolume.h"
+#include "../VDB/VDBMesh.h"
 
 #include <memory>
 #include <vector>
@@ -21,6 +22,8 @@ public:
 	void add(std::unique_ptr<VDB::VDBPoints>&& points);
 
 	void add(std::unique_ptr<VDB::VDBVolume>&& volume);
+
+	void add(std::unique_ptr<VDB::VDBMesh>&& mesh);
 
 	std::list<Scene::IPresenter*> getPresenters();
 

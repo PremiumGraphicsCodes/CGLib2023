@@ -13,5 +13,4 @@ VDBPointsMenu::VDBPointsMenu(const std::string& name, World* world, Renderer* re
 	add(new MenuItem("Box", [control, world, renderer]() {
 		control->setChild(new VDBPointsBoxView("Box", world, renderer));
 		}));
-
 }

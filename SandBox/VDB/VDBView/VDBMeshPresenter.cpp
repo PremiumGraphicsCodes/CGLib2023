@@ -38,7 +38,7 @@ void VDBMeshPresenter::send()
 		const auto t = tt.indices;
 		this->indices.push_back(t[0]);
 		this->indices.push_back(t[1]);
-		this->indices.push_back(t[1]);
+		//this->indices.push_back(t[1]);
 		this->indices.push_back(t[2]);
 	}
 
@@ -48,10 +48,10 @@ void VDBMeshPresenter::send()
 		const auto q = qq.indices;
 		this->indices.push_back(q[0]);
 		this->indices.push_back(q[1]);
-		this->indices.push_back(q[1]);
+		//this->indices.push_back(q[1]);
 		this->indices.push_back(q[2]);
-		this->indices.push_back(q[2]);
-		this->indices.push_back(q[3]);
+		//this->indices.push_back(q[2]);
+		//this->indices.push_back(q[3]);
 	}
 }
 

@@ -6,6 +6,7 @@
 
 #include "VDBPointsMenu.h"
 #include "VDBVolumeMenu.h"
+#include "VDBMeshMenu.h"
 
 #include "CGLib/UI/Panel.h"
 
@@ -37,6 +38,7 @@ int main() {
 	app.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
 	app.add(new VDBPointsMenu("VDBPoints", &world, &renderer, control));
 	app.add(new VDBVolumeMenu("VDBVolume", &world, &renderer, control));
+	app.add(new VDBMeshMenu("VDBMesh", &world, &renderer, control));
 	app.add(control);
 	app.add(listPanel);
 

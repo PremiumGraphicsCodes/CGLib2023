@@ -6,6 +6,8 @@
 #include "VDBPointsPresenter.h"
 #include "VDBVolumeScene.h"
 #include "VDBVolumePresenter.h"
+#include "VDBMeshScene.h"
+#include "VDBMeshPresenter.h"
 
 using namespace Crystal::Scene;
 using namespace Crystal::VDB;
@@ -33,6 +35,21 @@ void World::add(std::unique_ptr<VDBVolume>&& volume)
 	scene->setShape(std::move(volume));
 
 	auto presenter = std::make_unique<VDBVolumePresenter>(scene, renderer->getPointRenderer());
+	presenter->build();
+	presenter->send();
+	scene->addPresenter(presenter.get());
+	getRootScene()->addScene(scene);
+
+	this->presenters.push_back(std::move(presenter));
+}
+
+void World::add(std::unique_ptr<VDBMesh>&& mesh)
+{
+	auto scene = new VDBMeshScene();
+	scene->setId(getNextId());
+	scene->setShape(std::move(mesh));
+
+	auto presenter = std::make_unique<VDBMeshPresenter>(scene, renderer->getTriangleRenderer());
 	presenter->build();
 	presenter->send();
 	scene->addPresenter(presenter.get());

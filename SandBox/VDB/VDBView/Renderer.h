@@ -2,6 +2,7 @@
 
 #include "Crystal/AppBase/IRenderer.h"
 #include "Crystal/Renderer/PointRenderer.h"
+#include "Crystal/Renderer/TriangleRenderer.h"
 
 namespace Crystal {
 	namespace UI {
@@ -18,9 +19,12 @@ public:
 
 	Crystal::Renderer::PointRenderer* getPointRenderer() { return &point; }
 
+	Crystal::Renderer::TriangleRenderer* getTriangleRenderer() { return &triangle; }
+
 private:
 	World* world;
 	Crystal::Renderer::PointRenderer point;
+	Crystal::Renderer::TriangleRenderer triangle;
 };
 
 	}
