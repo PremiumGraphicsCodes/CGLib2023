@@ -20,6 +20,8 @@ public:
 	struct Vertex
 	{
 		Math::Vector3df position;
+		Math::Vector3df normal;
+		Math::Vector2df texCoord;
 	};
 
 	void add(std::unique_ptr<Vertex>&& v) { this->vertices.push_back(std::move(v)); }
