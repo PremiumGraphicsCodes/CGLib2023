@@ -39,9 +39,6 @@ private:
 
 	std::vector<PolygonMesh::Vertex> vertices;
 	std::vector<PolygonMesh::Face> faces;
-
-	int nextVertexId;
-	int nextFaceId;
 };
 
 	}

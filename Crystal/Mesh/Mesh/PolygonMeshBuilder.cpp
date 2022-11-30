@@ -14,9 +14,7 @@ namespace {
 	}
 }
 
-PolygonMeshBuilder::PolygonMeshBuilder() :
-	nextVertexId(0),
-	nextFaceId(0)
+PolygonMeshBuilder::PolygonMeshBuilder()
 {}
 
 void PolygonMeshBuilder::add(const ISurface3d<float>& surface, const int unum, const int vnum)
@@ -24,33 +22,37 @@ void PolygonMeshBuilder::add(const ISurface3d<float>& surface, const int unum, c
 	assert(1 <= unum);
 	assert(1 <= vnum);
 
-	std::vector<std::vector<int>> grid;
+	std::vector<std::vector<int>> vertices;
+	vertices.resize(unum + 1);
 	for (int i = 0; i <= unum; ++i) {
 		const float u = i / static_cast<float>(unum);
-		std::vector<int> g;
+		vertices[i].resize(vnum + 1);
 		for (int j = 0; j <= vnum; ++j) {
 			const float v = j / static_cast<float>(vnum);
-			PolygonMesh::Vertex vert;
-			vert.position = surface.getPosition(u, v);
-			vert.normal = ::calculateNormal(surface, u, v); //surface.getPosition()
-			vert.texCoord = Vector2df(u, v);
+			const auto p = surface.getPosition(u, v);
+			const auto n = ::calculateNormal(surface, u, v); //surface.getPosition()
+			const auto t = Vector2df(u, v);
+			const auto index = createVertex(p, n, t);
+			vertices[i][j] = index;
 		}
-		grid.push_back(g);
 	}
 
-	/*
 	for (int i = 0; i < unum; ++i) {
 		for (int j = 0; j < vnum; ++j) {
 			createFace(vertices[i][j], vertices[i + 1][j], vertices[i][j + 1]);
 			createFace(vertices[i + 1][j + 1], vertices[i][j + 1], vertices[i + 1][j]);
 		}
 	}
-	*/
 }
 
 int PolygonMeshBuilder::createVertex(const Vector3df& position, const Vector3df& normal, const Vector2df& texCoord)
 {
-	return -1;
+	PolygonMesh::Vertex v;
+	v.position = position;
+	v.normal = normal;
+	v.texCoord = texCoord;
+	vertices.push_back(v);
+	return vertices.size() - 1;
 }
 
 //
@@ -120,10 +122,13 @@ int PolygonMeshBuilder::createVertex(const Vector3df& position, const Vector3df&
 //	vertices.push_back(v);
 //	return v.id;
 //}
-//
-//int PolygonMeshBuilder::createFace(int v0, int v1, int v2)
-//{
-//	Face f(v0, v1, v2, nextFaceId++);
-//	faces.push_back(f);
-//	return f.getId();
-//}
+
+int PolygonMeshBuilder::createFace(int v0, int v1, int v2)
+{
+	PolygonMesh::Face f;
+	f.v0 = v0;
+	f.v1 = v1;
+	f.v2 = v2;
+	faces.push_back(f);
+	return faces.size()-1;
+}
