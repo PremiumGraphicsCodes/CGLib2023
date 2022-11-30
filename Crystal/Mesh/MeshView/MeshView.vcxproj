@@ -146,10 +146,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MeshView.cpp" />
+    <ClCompile Include="PMBoxView.cpp" />
+    <ClCompile Include="PolygonMeshPresenter.cpp" />
+    <ClCompile Include="PolygonMeshScene.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PMBoxView.h" />
+    <ClInclude Include="PolygonMeshPresenter.h" />
+    <ClInclude Include="PolygonMeshScene.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>

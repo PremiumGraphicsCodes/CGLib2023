@@ -30,9 +30,6 @@
     <ClCompile Include="WFSphereView.cpp">
       <Filter>WireFrame</Filter>
     </ClCompile>
-    <ClCompile Include="PMBoxView.cpp">
-      <Filter>PolygonMesh</Filter>
-    </ClCompile>
     <ClCompile Include="TMBoxView.cpp">
       <Filter>TriangleMesh</Filter>
     </ClCompile>
@@ -42,18 +39,6 @@
     </ClCompile>
     <ClCompile Include="TMCylinderView.cpp">
       <Filter>TriangleMesh</Filter>
-    </ClCompile>
-    <ClCompile Include="PolygonMesh.cpp">
-      <Filter>PolygonMesh</Filter>
-    </ClCompile>
-    <ClCompile Include="PolygonMeshBuilder.cpp">
-      <Filter>PolygonMesh</Filter>
-    </ClCompile>
-    <ClCompile Include="PolygonMeshScene.cpp">
-      <Filter>PolygonMesh</Filter>
-    </ClCompile>
-    <ClCompile Include="PolygonMeshPresenter.cpp">
-      <Filter>PolygonMesh</Filter>
     </ClCompile>
     <ClCompile Include="TriangleMeshPresenter.cpp">
       <Filter>TriangleMesh</Filter>
@@ -128,9 +113,6 @@
     <ClInclude Include="WFSphereView.h">
       <Filter>WireFrame</Filter>
     </ClInclude>
-    <ClInclude Include="PMBoxView.h">
-      <Filter>PolygonMesh</Filter>
-    </ClInclude>
     <ClInclude Include="TMBoxView.h">
       <Filter>TriangleMesh</Filter>
     </ClInclude>
@@ -140,18 +122,6 @@
     </ClInclude>
     <ClInclude Include="TMCylinderView.h">
       <Filter>TriangleMesh</Filter>
-    </ClInclude>
-    <ClInclude Include="PolygonMesh.h">
-      <Filter>PolygonMesh</Filter>
-    </ClInclude>
-    <ClInclude Include="PolygonMeshBuilder.h">
-      <Filter>PolygonMesh</Filter>
-    </ClInclude>
-    <ClInclude Include="PolygonMeshScene.h">
-      <Filter>PolygonMesh</Filter>
-    </ClInclude>
-    <ClInclude Include="PolygonMeshPresenter.h">
-      <Filter>PolygonMesh</Filter>
     </ClInclude>
     <ClInclude Include="TriangleMeshPresenter.h">
       <Filter>TriangleMesh</Filter>
@@ -194,6 +164,7 @@
     </ClInclude>
     <ClInclude Include="RendererMenu.h" />
     <ClInclude Include="CtrlMenu.h" />
+    <ClInclude Include="IVertex.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ParticleSystem">
@@ -204,9 +175,6 @@
     </Filter>
     <Filter Include="TriangleMesh">
       <UniqueIdentifier>{7332979a-5eaf-4202-b8d9-20ad57e1f5e8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="PolygonMesh">
-      <UniqueIdentifier>{64b0674c-cd73-4611-a0f0-aaa40ad5225a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

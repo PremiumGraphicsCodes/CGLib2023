@@ -1,6 +1,5 @@
 #pragma once
 
-#include "IVertex.h"
 #include "CGLib/Math/Box3d.h"
 #include <vector>
 #include <memory>
@@ -18,9 +17,14 @@ public:
 		int v2;
 	};
 
-	void add(std::unique_ptr<Shape::IVertex>&& v) { this->vertices.push_back(std::move(v)); }
+	struct Vertex
+	{
+		Math::Vector3df position;
+	};
 
-	const std::vector<std::unique_ptr<Shape::IVertex>>& getVertices() const { return vertices; }
+	void add(std::unique_ptr<Vertex>&& v) { this->vertices.push_back(std::move(v)); }
+
+	const std::vector<std::unique_ptr<Vertex>>& getVertices() const { return vertices; }
 
 	void addFace(const Face& face) { this->faces.push_back(face); }
 
@@ -30,7 +34,7 @@ public:
 
 private:
 	std::vector<Face> faces;
-	std::vector<std::unique_ptr<Shape::IVertex>> vertices;
+	std::vector<std::unique_ptr<Vertex>> vertices;
 
 };
 

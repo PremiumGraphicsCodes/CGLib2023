@@ -21,7 +21,7 @@ void PolygonMeshPresenter::send()
 
 	const auto& vertices = shape->getVertices();
 	for (auto& p : vertices) {
-		position.add(p->getPosition());
+		position.add(p->position);
 		color.add(ColorRGBAf(1, 0, 0, 0));
 	}
 

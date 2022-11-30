@@ -3,7 +3,7 @@
 #include "Crystal/Scene/SceneBase.h"
 #include "PolygonMeshPresenter.h"
 
-#include "PolygonMesh.h"
+#include "../Mesh/PolygonMesh.h"
 
 #include <vector>
 

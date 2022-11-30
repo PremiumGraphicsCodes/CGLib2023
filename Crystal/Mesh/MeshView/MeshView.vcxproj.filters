@@ -4,10 +4,16 @@
     <ClCompile Include="MeshView.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="PMBoxView.cpp" />
+    <ClCompile Include="PolygonMeshPresenter.cpp" />
+    <ClCompile Include="PolygonMeshScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="PMBoxView.h" />
+    <ClInclude Include="PolygonMeshPresenter.h" />
+    <ClInclude Include="PolygonMeshScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

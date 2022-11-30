@@ -8,9 +8,9 @@ Box3df PolygonMesh::getBoundingBox() const
 	if (vertices.empty()) {
 		return Box3df::createDegeneratedBox();
 	}
-	Math::Box3df bb(vertices.front()->getPosition());
+	Math::Box3df bb(vertices.front()->position);
 	for (auto& p : vertices) {
-		bb.add(p->getPosition());
+		bb.add(p->position);
 	}
 	return bb;
 }
