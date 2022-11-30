@@ -10,6 +10,7 @@
     <ClCompile Include="MeshMenu.cpp" />
     <ClCompile Include="PMSphereView.cpp" />
     <ClCompile Include="FileMenu.cpp" />
+    <ClCompile Include="FileImporter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
@@ -20,6 +21,7 @@
     <ClInclude Include="MeshMenu.h" />
     <ClInclude Include="PMSphereView.h" />
     <ClInclude Include="FileMenu.h" />
+    <ClInclude Include="FileImporter.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
