@@ -4,6 +4,8 @@
 #include "Crystal/AppBase/CameraUICtrl.h"
 #include "Crystal/AppBase/SceneListPanel.h"
 
+#include "MeshMenu.h"
+
 #include "CGLib/UI/Panel.h"
 
 #include "World.h"
@@ -14,7 +16,6 @@ using namespace Crystal::Scene;
 using namespace Crystal::Graphics;
 //using namespace Crystal::Renderer;
 using namespace Crystal::UI;
-
 
 int main() {
 	World world;
@@ -29,7 +30,7 @@ int main() {
 
 	//app.add(new FileMenu("File", &world, &renderer));
 	app.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
-	//app.add(new PCMenu("PC", &world, &renderer, control));
+	app.add(new MeshMenu("Mesh", &world, &renderer, control));
 	app.add(control);
 	app.add(listPanel);
 

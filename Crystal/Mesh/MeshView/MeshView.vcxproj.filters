@@ -7,6 +7,7 @@
     <ClCompile Include="PMBoxView.cpp" />
     <ClCompile Include="PolygonMeshPresenter.cpp" />
     <ClCompile Include="PolygonMeshScene.cpp" />
+    <ClCompile Include="MeshMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
@@ -14,6 +15,7 @@
     <ClInclude Include="PMBoxView.h" />
     <ClInclude Include="PolygonMeshPresenter.h" />
     <ClInclude Include="PolygonMeshScene.h" />
+    <ClInclude Include="MeshMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
