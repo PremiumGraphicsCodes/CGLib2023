@@ -9,6 +9,7 @@
     <ClCompile Include="PolygonMeshScene.cpp" />
     <ClCompile Include="MeshMenu.cpp" />
     <ClCompile Include="PMSphereView.cpp" />
+    <ClCompile Include="FileMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h" />
@@ -18,6 +19,7 @@
     <ClInclude Include="PolygonMeshScene.h" />
     <ClInclude Include="MeshMenu.h" />
     <ClInclude Include="PMSphereView.h" />
+    <ClInclude Include="FileMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

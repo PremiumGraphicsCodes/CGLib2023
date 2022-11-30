@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileMenu.cpp" />
     <ClCompile Include="MeshMenu.cpp" />
     <ClCompile Include="MeshView.cpp" />
     <ClCompile Include="PMBoxView.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FileMenu.h" />
     <ClInclude Include="MeshMenu.h" />
     <ClInclude Include="PMBoxView.h" />
     <ClInclude Include="PMSphereView.h" />

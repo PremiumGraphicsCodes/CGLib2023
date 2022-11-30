@@ -4,6 +4,7 @@
 #include "Crystal/AppBase/CameraUICtrl.h"
 #include "Crystal/AppBase/SceneListPanel.h"
 
+#include "FileMenu.h"
 #include "MeshMenu.h"
 
 #include "CGLib/UI/Panel.h"
@@ -28,7 +29,7 @@ int main() {
 	auto control = new Panel("Control");
 	auto listPanel = new SceneListPanel("Scenes", world.getRootScene());
 
-	//app.add(new FileMenu("File", &world, &renderer));
+	app.add(new FileMenu("File", &world, &renderer));
 	app.add(new CameraMenu("Camera", world.getRootScene(), canvas.getCamera()));
 	app.add(new MeshMenu("Mesh", &world, &renderer, control));
 	app.add(control);
