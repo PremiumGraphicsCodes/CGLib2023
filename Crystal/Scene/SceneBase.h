@@ -2,6 +2,7 @@
 
 #include <list>
 #include <string>
+#include <typeinfo>
 
 #include "IPresenter.h"
 
@@ -41,6 +42,8 @@ public:
 	SceneBase* findSceneById(int id);
 
 	SceneBase* findSceneByName(const std::string& name);
+
+	std::list<SceneBase*> findScenesByType(const std::type_info& type);
 
 	void deleteSceneById(int id);
 

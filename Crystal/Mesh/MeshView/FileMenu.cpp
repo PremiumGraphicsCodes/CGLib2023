@@ -6,6 +6,12 @@
 #include "CGLib/UI/FileOpenDialog.h"
 #include "CGLib/UI/FileSaveDialog.h"
 
+#include "FileImporter.h"
+#include "FileExporter.h"
+
+#include "World.h"
+
+using namespace Crystal::Mesh;
 using namespace Crystal::UI;
 
 FileMenu::FileMenu(const std::string& name, World* model, Renderer* canvas) :
@@ -51,8 +57,11 @@ void FileMenu::onExport()
 	//view.addFilter("*.*");
 	view.show();
 	const auto& filename = view.getFileName();
+
+	//world->getRootScene()->fin
+
 	if (!filename.empty()) {
-		//FileExporter exporter;
-		//exporter.export_(filename);
+		FileExporter exporter;
+		exporter.export_(filename);
 	}
 }

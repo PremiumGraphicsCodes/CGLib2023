@@ -50,6 +50,19 @@ SceneBase* SceneBase::findSceneById(int id)
 	return nullptr;
 }
 
+std::list<SceneBase*> SceneBase::findScenesByType(const std::type_info& type)
+{
+	std::list<SceneBase*> results;
+	if (type == typeid(*this)) {
+		results.push_back(this);
+	}
+	for (auto c : children) {
+		auto s = c->findScenesByType(type);
+		results.insert(results.end(), s.begin(), s.end());
+	}
+	return results;
+}
+
 void SceneBase::deleteSceneById(int id)
 {
 	for (auto c : children) {

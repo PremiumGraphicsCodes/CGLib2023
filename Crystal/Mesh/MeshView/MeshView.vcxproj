@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileExporter.cpp" />
     <ClCompile Include="FileImporter.cpp" />
     <ClCompile Include="FileMenu.cpp" />
     <ClCompile Include="MeshMenu.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FileExporter.h" />
     <ClInclude Include="FileImporter.h" />
     <ClInclude Include="FileMenu.h" />
     <ClInclude Include="MeshMenu.h" />
