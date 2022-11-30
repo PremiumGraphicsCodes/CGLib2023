@@ -21,7 +21,8 @@ private:
 	//bool exportTXT(const std::filesystem::path& path);
 
 	std::vector<Math::Vector3df> positions;
-	std::vector<Graphics::ColorRGBAf> colors;
+	std::vector<Math::Vector3df> normals;
+	std::vector<Math::Vector2df> texCoords;
 };
 
 	}

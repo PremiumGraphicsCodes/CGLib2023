@@ -19,20 +19,28 @@ public:
 
 	struct Vertex
 	{
-		Math::Vector3df position;
-		Math::Vector3df normal;
-		Math::Vector2df texCoord;
+		int positionIndex;
+		int normalIndex;
+		int texCoordIndex;
 	};
 
 	PolygonMesh();
 
 	//PolygonMesh(const std::vector<Face>& faces, std::vector<std::unique_ptr<Vertex>>&& vertices);
 
-	void addVertex(std::unique_ptr<Vertex>&& v) { this->vertices.push_back(std::move(v)); }
+	void addPosition(const Math::Vector3df& p) { this->positions.push_back(p); }
 
-	const std::vector<std::unique_ptr<Vertex>>& getVertices() const { return vertices; }
+	void addNormal(const Math::Vector3df& n) { this->normals.push_back(n); }
+
+	void addTexCoord(const Math::Vector2df& t) { this->texCoords.push_back(t); }
+
+	void addVertex(const Vertex& v) { this->vertices.push_back(v); }
 
 	void addFace(const Face& face) { this->faces.push_back(face); }
+
+	const std::vector<Vertex>& getVertices() const { return vertices; }
+
+	Math::Vector3df getPosition(const int index) const { return positions[index]; }
 
 	std::vector<Face> getFaces() const { return faces; }
 
@@ -40,7 +48,10 @@ public:
 
 private:
 	std::vector<Face> faces;
-	std::vector<std::unique_ptr<Vertex>> vertices;
+	std::vector<Math::Vector3df> positions;
+	std::vector<Math::Vector3df> normals;
+	std::vector<Math::Vector2df> texCoords;
+	std::vector<Vertex> vertices;
 };
 
 	}

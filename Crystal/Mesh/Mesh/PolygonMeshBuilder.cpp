@@ -34,8 +34,10 @@ void PolygonMeshBuilder::add(const Sphere3d<float>& surface, const int unum, con
 			const auto n = glm::normalize( p - surface.getCenter() );
 			//const auto n = ::calculateNormal(surface, u, v); //surface.getPosition()
 			const auto t = Vector2df(u, v);
-			const auto index = createVertex(p, n, t);
-			vertices[i][j] = index;
+			const auto pi = createPosition(p);
+			const auto ni = createNormal(n);
+			const auto ti = createTexCoord(t);
+			vertices[i][j] = createVertex(pi,ni,ti);
 		}
 	}
 
@@ -66,8 +68,13 @@ void PolygonMeshBuilder::add(const Box3d<float>& box)
 			const float v = j / static_cast<float>(vnum);
 			for (int k = 0; k <= wnum; ++k) {
 				const float w = k / static_cast<float>(wnum);
-				const auto index = createVertex(box.getPosition(u, v, w), Vector3df(0,1,0), Vector2df(0,0));
-				grid[i][j][k] = index;
+				const auto p = box.getPosition(u, v, w);
+				const auto n = Vector3df(0, 1, 0);
+				const auto t = Vector2df(0, 0);
+				const auto pi = createPosition(p);
+				const auto ni = createNormal(n);
+				const auto ti = createTexCoord(t);
+				grid[i][j][k] = createVertex(pi, ni, ti);
 			}
 		}
 	}
@@ -90,20 +97,18 @@ void PolygonMeshBuilder::add(const Box3d<float>& box)
 	}
 }
 
-int PolygonMeshBuilder::createVertex(const Vector3df& position, const Vector3df& normal, const Vector2df& texCoord)
-{
-	auto v = std::make_unique<PolygonMesh::Vertex>();
-	v->position = position;
-	v->normal = normal;
-	v->texCoord = texCoord;
-	vertices.push_back(std::move(v));
-	return vertices.size() - 1;
-}
-
-
 std::unique_ptr<PolygonMesh> PolygonMeshBuilder::build()
 {
 	auto mesh = std::make_unique<PolygonMesh>();
+	for (const auto& p : positions) {
+		mesh->addPosition(p);
+	}
+	for (const auto& n : normals) {
+		mesh->addNormal(n);
+	}
+	for (const auto& t : texCoords) {
+		mesh->addTexCoord(t);
+	}
 	for (const auto& f : faces) {
 		mesh->addFace(f);
 	}
@@ -140,34 +145,33 @@ std::unique_ptr<PolygonMesh> PolygonMeshBuilder::build()
 //	return glm::normalize(glm::cross(p1 - p0, p2 - p0));
 //}
 //
-//int PolygonMeshBuilder::createPosition(const Vector3dd& v)
-//{
-//	positions.push_back(v);
-//	return static_cast<int>(positions.size() - 1);
-//}
-//
-//int PolygonMeshBuilder::createNormal(const Vector3dd& v)
-//{
-//	normals.push_back(v);
-//	return static_cast<int>(normals.size() - 1);
-//}
-//
-//int PolygonMeshBuilder::createTexCoord(const Vector2dd& v)
-//{
-//	texCoords.push_back(v);
-//	return static_cast<int>(texCoords.size() - 1);
-//}
-//
-//int PolygonMeshBuilder::createVertex(const int positionId, const int normalId, const int texCoordId)
-//{
-//	Vertex v;
-//	v.positionId = positionId;
-//	v.normalId = normalId;
-//	v.texCoordId = texCoordId;
-//	v.id = nextVertexId++;
-//	vertices.push_back(v);
-//	return v.id;
-//}
+int PolygonMeshBuilder::createPosition(const Vector3df& v)
+{
+	positions.push_back(v);
+	return static_cast<int>(positions.size() - 1);
+}
+
+int PolygonMeshBuilder::createNormal(const Vector3df& v)
+{
+	normals.push_back(v);
+	return static_cast<int>(normals.size() - 1);
+}
+
+int PolygonMeshBuilder::createTexCoord(const Vector2df& v)
+{
+	texCoords.push_back(v);
+	return static_cast<int>(texCoords.size() - 1);
+}
+
+int PolygonMeshBuilder::createVertex(const int positionId, const int normalId, const int texCoordId)
+{
+	PolygonMesh::Vertex v;
+	v.positionIndex = positionId;
+	v.normalIndex = normalId;
+	v.texCoordIndex = texCoordId;
+	vertices.push_back(v);
+	return static_cast<int>(vertices.size()-1);
+}
 
 int PolygonMeshBuilder::createFace(int v0, int v1, int v2)
 {

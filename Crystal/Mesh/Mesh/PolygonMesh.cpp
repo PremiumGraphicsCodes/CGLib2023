@@ -15,12 +15,9 @@ PolygonMesh::PolygonMesh(const std::vector<Face>&faces, std::vector<std::unique_
 
 Box3df PolygonMesh::getBoundingBox() const
 {
-	if (vertices.empty()) {
-		return Box3df::createDegeneratedBox();
-	}
-	Math::Box3df bb(vertices.front()->position);
-	for (auto& p : vertices) {
-		bb.add(p->position);
+	auto bb = Box3df::createDegeneratedBox();
+	for (const auto& p : positions) {
+		bb.add(p);
 	}
 	return bb;
 }
