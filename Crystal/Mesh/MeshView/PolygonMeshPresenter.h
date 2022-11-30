@@ -5,13 +5,13 @@
 #include "Crystal/Renderer/TriangleRenderer.h"
 
 namespace Crystal {
-	namespace Scene {
+	namespace Mesh {
 		class PolygonMeshScene;
 
-class PolygonMeshPresenter : public IPresenter
+class PolygonMeshPresenter : public Scene::IPresenter
 {
 public:
-	PolygonMeshPresenter(Scene::PolygonMeshScene* scene, Crystal::Renderer::TriangleRenderer* renderer) :
+	PolygonMeshPresenter(PolygonMeshScene* scene, Crystal::Renderer::TriangleRenderer* renderer) :
 		model(scene),
 		view(renderer)
 	{
@@ -31,7 +31,7 @@ private:
 	VBO vbo;
 	std::vector<unsigned int> indices;
 
-	Scene::PolygonMeshScene* model;
+	PolygonMeshScene* model;
 	Crystal::Renderer::TriangleRenderer* view;
 };
 

@@ -1,18 +1,20 @@
 #include "World.h"
 
-//#include "Renderer.h"
+#include "Renderer.h"
+#include "PolygonMeshScene.h"
+#include "PolygonMeshPresenter.h"
 
 using namespace Crystal::Scene;
 using namespace Crystal::UI;
+using namespace Crystal::Mesh;
 
-/*
-void World::add(std::unique_ptr<VDBPoints>&& points)
+void World::add(std::unique_ptr<PolygonMesh>&& points)
 {
-	auto scene = new VDBPointsScene();
+	auto scene = new PolygonMeshScene();
 	scene->setId(getNextId());
 	scene->setShape(std::move(points));
 
-	auto presenter = std::make_unique<VDBPointsPresenter>(scene, renderer->getPointRenderer());
+	auto presenter = std::make_unique<PolygonMeshPresenter>(scene, renderer->getTriangleRenderer());
 	presenter->build();
 	presenter->send();
 	scene->addPresenter(presenter.get());
@@ -21,6 +23,7 @@ void World::add(std::unique_ptr<VDBPoints>&& points)
 	this->presenters.push_back(std::move(presenter));
 }
 
+/*
 void World::add(std::unique_ptr<VDBVolume>&& volume)
 {
 	auto scene = new VDBVolumeScene();

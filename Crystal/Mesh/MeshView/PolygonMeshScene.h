@@ -8,17 +8,19 @@
 #include <vector>
 
 namespace Crystal {
-	namespace Scene {
+	namespace Mesh {
 
-		class PolygonMeshScene : public SceneBase
+		class PolygonMeshScene : public Scene::SceneBase
 		{
 		public:
-			void setShape(std::unique_ptr<Shape::PolygonMesh> shape) { this->shape = std::move(shape); }
+			void setShape(std::unique_ptr<PolygonMesh> shape) { this->shape = std::move(shape); }
 
-			Shape::PolygonMesh* getShape() { return shape.get(); }
+			PolygonMesh* getShape() { return shape.get(); }
+
+			Math::Box3df getBoundingBox() const override { return shape->getBoundingBox(); }
 
 		private:
-			std::unique_ptr<Shape::PolygonMesh> shape;
+			std::unique_ptr<PolygonMesh> shape;
 		};
 
 	}

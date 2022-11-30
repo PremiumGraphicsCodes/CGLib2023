@@ -5,7 +5,7 @@
 #include <memory>
 
 namespace Crystal {
-	namespace Shape {
+	namespace Mesh {
 
 class PolygonMesh
 {
@@ -24,7 +24,11 @@ public:
 		Math::Vector2df texCoord;
 	};
 
-	void add(std::unique_ptr<Vertex>&& v) { this->vertices.push_back(std::move(v)); }
+	PolygonMesh();
+
+	//PolygonMesh(const std::vector<Face>& faces, std::vector<std::unique_ptr<Vertex>>&& vertices);
+
+	void addVertex(std::unique_ptr<Vertex>&& v) { this->vertices.push_back(std::move(v)); }
 
 	const std::vector<std::unique_ptr<Vertex>>& getVertices() const { return vertices; }
 
@@ -37,7 +41,6 @@ public:
 private:
 	std::vector<Face> faces;
 	std::vector<std::unique_ptr<Vertex>> vertices;
-
 };
 
 	}
