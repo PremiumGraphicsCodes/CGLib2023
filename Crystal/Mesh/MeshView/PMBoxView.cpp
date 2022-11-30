@@ -2,7 +2,8 @@
 #include "Renderer.h"
 #include "World.h"
 
-#include "PolygonMeshScene.h"
+#include "../Mesh/PolygonMesh.h"
+#include "../Mesh/PolygonMeshBuilder.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -22,17 +23,7 @@ void PMBoxView::onOk()
 {
 	const auto box = boxView.getValue();
 
-	auto scene = new PolygonMeshScene();
-
-	/*
-	std::mt19937 mt{ std::random_device{}() };
-	std::uniform_real_distribution<double> dist(0.0, 1.0);
-	for (int i = 0; i < countView.getValue(); ++i) {
-		const auto u = dist(mt);
-		const auto v = dist(mt);
-		const auto w = dist(mt);
-		const auto pos = box.getPosition(u, v, w);
-		scene->add(new Particle(pos));
-	}
-	*/
+	PolygonMeshBuilder builder;
+	builder.add(box);
+	world->add(builder.build());
 }

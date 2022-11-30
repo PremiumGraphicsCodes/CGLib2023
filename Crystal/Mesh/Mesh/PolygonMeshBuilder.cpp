@@ -47,6 +47,49 @@ void PolygonMeshBuilder::add(const Sphere3d<float>& surface, const int unum, con
 	}
 }
 
+void PolygonMeshBuilder::add(const Box3d<float>& box)
+{
+	const int unum = 2;
+	const int vnum = 2;
+	const int wnum = 2;
+	assert(1 <= unum);
+	assert(1 <= vnum);
+	assert(1 <= wnum);
+
+	std::vector<std::vector<std::vector<int>>> grid;
+	grid.resize(unum + 1);
+	for (int i = 0; i <= unum; ++i) {
+		grid[i].resize(vnum + 1);
+		const float u = i / static_cast<float>(unum);
+		for (int j = 0; j <= vnum; ++j) {
+			grid[i][j].resize(wnum + 1);
+			const float v = j / static_cast<float>(vnum);
+			for (int k = 0; k <= wnum; ++k) {
+				const float w = k / static_cast<float>(wnum);
+				const auto index = createVertex(box.getPosition(u, v, w), Vector3df(0,1,0), Vector2df(0,0));
+				grid[i][j][k] = index;
+			}
+		}
+	}
+	for (int i = 0; i < grid.size() - 1; ++i) {
+		for (int j = 0; j < grid[i].size() - 1; ++j) {
+			for (int k = 0; k < grid[i][j].size() - 1; ++k) {
+				const auto v1 = grid[i][j][k];
+				const auto v2 = grid[i + 1][j][k];
+				const auto v3 = grid[i + 1][j + 1][k];
+				const auto v4 = grid[i][j + 1][k];
+
+				const auto v5 = grid[i][j][k + 1];
+				const auto v6 = grid[i + 1][j][k + 1];
+				const auto v7 = grid[i + 1][j + 1][k + 1];
+				const auto v8 = grid[i][j + 1][k + 1];
+				createFace(v1, v2, v4);
+				//createFace(vertices[i + 1][j + 1], vertices[i][j + 1], vertices[i + 1][j]);
+			}
+		}
+	}
+}
+
 int PolygonMeshBuilder::createVertex(const Vector3df& position, const Vector3df& normal, const Vector2df& texCoord)
 {
 	auto v = std::make_unique<PolygonMesh::Vertex>();
