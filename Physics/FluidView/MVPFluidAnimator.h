@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Crystal/Scene/IAnimator.h"
+#include "Crystal/Scene/Scene/IAnimator.h"
 #include "../Fluid/MVPFluidSolver.h"
 #include <memory>
 

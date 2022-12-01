@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Crystal/Scene/SceneBase.h"
+#include "Crystal/Scene/Scene/SceneBase.h"
 #include "../Fluid/PBSPHFluid.h"
 #include <vector>
 #include <memory>

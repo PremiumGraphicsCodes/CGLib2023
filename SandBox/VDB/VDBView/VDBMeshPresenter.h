@@ -3,7 +3,7 @@
 #include "CGLib/Shader/VertexBufferObject.h"
 #include "Crystal/Renderer/TriangleRenderer.h"
 
-#include "Crystal/Scene/IPresenter.h"
+#include "Crystal/Scene/Scene/IPresenter.h"
 
 namespace Crystal {
 	namespace VDB {

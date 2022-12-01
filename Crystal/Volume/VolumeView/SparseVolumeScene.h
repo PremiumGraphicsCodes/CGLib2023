@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Volume/SparseVolume.h"
-#include "Crystal/Scene/SceneBase.h"
+#include "Crystal/Scene/Scene/SceneBase.h"
 #include "SparseVolumePresenter.h"
 #include <vector>
 #include <memory>

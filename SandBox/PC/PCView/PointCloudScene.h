@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Crystal/Scene/SceneBase.h"
+#include "Crystal/Scene/Scene/SceneBase.h"
 #include "PointCloudPresenter.h"
 #include "Point.h"
 #include <vector>
