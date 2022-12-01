@@ -134,3 +134,6 @@
 /Crystal/File/File/x64
 /Crystal/File/FileTest/x64/Debug
 /Crystal/File/FileTest/x64/Release
+/Crystal/Scene/Scene/x64/Debug
+/Crystal/Scene/SceneView/x64
+/Crystal/Scene/SceneView/imgui.ini

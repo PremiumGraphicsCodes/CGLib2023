@@ -6,7 +6,7 @@
 #include "Crystal/Renderer/TriangleShaderSource.h"
 #include "Crystal/Renderer/TexShaderSource.h"
 
-#include "Crystal/Scene/IPresenter.h"
+#include "Crystal/Scene/Scene/IPresenter.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::Scene;

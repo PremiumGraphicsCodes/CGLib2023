@@ -2,7 +2,7 @@
 
 #include "CGLib/UI/IMenu.h"
 #include "CGLib/Graphics/Camera.h"
-#include "Crystal/Scene/SceneGroup.h"
+#include "Crystal/Scene/Scene/SceneGroup.h"
 
 namespace Crystal {
 	namespace UI {

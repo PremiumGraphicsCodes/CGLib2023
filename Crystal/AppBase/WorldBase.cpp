@@ -1,5 +1,5 @@
 #include "WorldBase.h"
-#include "Crystal/Scene/SceneBase.h"
+#include "Crystal/Scene/Scene/SceneBase.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;

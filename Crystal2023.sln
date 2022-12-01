@@ -15,11 +15,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graphics", "CGLib\Graphics\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Renderer", "Crystal\Renderer\Renderer.vcxproj", "{B4138991-BD60-465F-AB44-64D49A9382C3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scene", "Crystal\Scene\Scene.vcxproj", "{8F772D35-8835-4288-941E-867F4E7E7F8F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scene", "Crystal\Scene\Scene\Scene.vcxproj", "{8F772D35-8835-4288-941E-867F4E7E7F8F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UISample", "CGLib\UISample\UISample.vcxproj", "{B25A2CF4-51EC-4B73-8379-78AB042E3F96}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SceneView", "Crystal\SceneView\SceneView.vcxproj", "{283F1C8C-66E9-4D4C-BE95-605F17738CC8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SceneView", "Crystal\Scene\SceneView\SceneView.vcxproj", "{283F1C8C-66E9-4D4C-BE95-605F17738CC8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppBase", "Crystal\AppBase\AppBase.vcxproj", "{66A1065B-73E5-4862-AF0F-ADD2EFA732E1}"
 EndProject

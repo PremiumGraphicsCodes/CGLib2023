@@ -1,8 +1,8 @@
 #pragma once
 
 #include "CGLib/Util/UnCopyable.h"
-#include "Crystal/Scene/SceneGroup.h"
-#include "Crystal/Scene/IAnimator.h"
+#include "Crystal/Scene/Scene/SceneGroup.h"
+#include "Crystal/Scene/Scene/IAnimator.h"
 
 namespace Crystal {
 	namespace UI {

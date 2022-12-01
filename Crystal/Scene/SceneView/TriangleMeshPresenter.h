@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../Renderer/TriangleRenderer.h"
+#include "Crystal/Renderer/TriangleRenderer.h"
 #include "CGLib/Shader/VertexBuffer.h"
-#include "Crystal/Scene/IPresenter.h"
+#include "Crystal/Scene/Scene/IPresenter.h"
 
 namespace Crystal {
 	namespace Scene {

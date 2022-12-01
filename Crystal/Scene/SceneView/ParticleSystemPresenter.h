@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../Renderer/PointRenderer.h"
+#include "Crystal/Renderer/PointRenderer.h"
 #include "CGLib/Shader/VertexBuffer.h"
-#include "Crystal/Scene/IPresenter.h"
+#include "Crystal/Scene/Scene/IPresenter.h"
 
 namespace Crystal {
 	namespace Scene {
