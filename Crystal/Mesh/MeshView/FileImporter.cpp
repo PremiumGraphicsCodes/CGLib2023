@@ -1,7 +1,7 @@
 #include "FileImporter.h"
 
-#include "../Mesh/OBJFileReader.h"
-#include "../Mesh/STLFileReader.h"
+#include "Crystal/File/File/OBJFileReader.h"
+#include "Crystal/File/File/STLFileReader.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;
