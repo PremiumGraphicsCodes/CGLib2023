@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "../Mesh/MTLFileWriter.h"
+#include "../File/MTLFileWriter.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::IO;

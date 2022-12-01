@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "../Mesh/OBJFileWriter.h"
+#include "../File/OBJFileWriter.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::IO;

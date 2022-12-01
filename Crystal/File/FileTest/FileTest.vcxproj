@@ -47,8 +47,8 @@
     <ProjectReference Include="..\..\..\CGLib\Math\Math.vcxproj">
       <Project>{43f2d582-49b6-425d-bf27-6b3a9a9a0acb}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Mesh\Mesh.vcxproj">
-      <Project>{e6501937-9bc8-4e73-8aba-02ce84c230d9}</Project>
+    <ProjectReference Include="..\File\File.vcxproj">
+      <Project>{e728636d-d449-4586-a73a-0be9d5abea22}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

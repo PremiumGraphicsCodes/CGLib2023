@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
 #include "CGLib/Math/Vector3d.h"
-#include "../Mesh/STLFileReader.h"
+#include "../File/STLFileReader.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::IO;

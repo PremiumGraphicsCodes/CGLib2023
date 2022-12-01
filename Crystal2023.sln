@@ -73,11 +73,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VDBView", "SandBox\VDB\VDBV
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mesh", "Crystal\Mesh\Mesh\Mesh.vcxproj", "{E6501937-9BC8-4E73-8ABA-02CE84C230D9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MeshTest", "Crystal\Mesh\MeshTest\MeshTest.vcxproj", "{B48A7EDF-9740-406F-ADC5-E72B6E5D6A78}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MeshView", "Crystal\Mesh\MeshView\MeshView.vcxproj", "{EEA8A357-7C99-4EAC-9251-F75717F9E874}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "File", "Crystal\File\File\File.vcxproj", "{E728636D-D449-4586-A73A-0BE9D5ABEA22}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileTest", "Crystal\File\FileTest\FileTest.vcxproj", "{B48A7EDF-9740-406F-ADC5-E72B6E5D6A78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

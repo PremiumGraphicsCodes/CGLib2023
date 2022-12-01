@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "../Mesh/MTLFileReader.h"
+#include "Crystal/File/File/MTLFileReader.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::IO;

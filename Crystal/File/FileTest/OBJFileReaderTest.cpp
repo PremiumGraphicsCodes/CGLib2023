@@ -1,5 +1,5 @@
 #include "gtest\gtest.h"
-#include "../Mesh/OBJFileReader.h"
+#include "../File/OBJFileReader.h"
 
 using namespace Crystal::IO;
 
