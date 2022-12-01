@@ -31,10 +31,8 @@ void FileMenu::onNew()
 void FileMenu::onImport()
 {
 	FileOpenDialog view("");
-	view.addFilter("*.pcd");
-	view.addFilter("*.ply");
-	view.addFilter("*.txt");
-	//view.addFilter("*.*");
+	view.addFilter("*.obj");
+	view.addFilter("*.stl");
 	view.show();
 	const auto& filename = view.getFileName();
 	if (!filename.empty()) {
