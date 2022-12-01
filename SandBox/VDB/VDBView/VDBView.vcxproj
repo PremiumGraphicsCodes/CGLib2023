@@ -190,10 +190,10 @@
     <ProjectReference Include="..\..\..\Crystal\AppBase\AppBase.vcxproj">
       <Project>{66a1065b-73e5-4862-af0f-add2efa732e1}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Crystal\Renderer\Renderer.vcxproj">
+    <ProjectReference Include="..\..\..\Crystal\Renderer\Renderer\Renderer.vcxproj">
       <Project>{b4138991-bd60-465f-ab44-64d49a9382c3}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Crystal\Scene\Scene.vcxproj">
+    <ProjectReference Include="..\..\..\Crystal\Scene\Scene\Scene.vcxproj">
       <Project>{8f772d35-8835-4288-941e-867f4e7e7f8f}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Crystal\Volume\Volume\Volume.vcxproj">

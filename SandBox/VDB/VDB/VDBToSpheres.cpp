@@ -1,6 +1,7 @@
 #include "VDBToSpheres.h"
 
-#include "openvdb/openvdb.h"
+/*
+//#include "openvdb/openvdb.h"
 #include "openvdb/tools/VolumeToSpheres.h"
 #include "VDBVolume.h"
 #include "VDBVolumeImpl.h"
@@ -18,3 +19,4 @@ void VDBToSpheres::convert(const VDBVolume* src)
 		this->spheres.push_back(ss);
 	}
 }
+*/

@@ -28,6 +28,7 @@
     <ClCompile Include="VDBResampler.cpp" />
     <ClCompile Include="VDBToSpheres.cpp" />
     <ClCompile Include="VDBTransform.cpp" />
+    <ClCompile Include="VDBAdapter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Converter.h" />
@@ -57,6 +58,7 @@
     <ClInclude Include="VDBResampler.h" />
     <ClInclude Include="VDBToSpheres.h" />
     <ClInclude Include="VDBTransform.h" />
+    <ClInclude Include="VDBAdapter.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Points">

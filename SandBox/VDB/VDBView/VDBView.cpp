@@ -12,8 +12,7 @@
 
 #include "World.h"
 #include "Renderer.h"
-
-#include <openvdb/openvdb.h>
+#include "../VDB/VDBAdapter.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Scene;
@@ -23,7 +22,7 @@ using namespace Crystal::UI;
 
 
 int main() {
-	openvdb::initialize();
+	Crystal::VDB::VDBAdapter::initialize();
 
 	World world;
 	Renderer renderer(&world);

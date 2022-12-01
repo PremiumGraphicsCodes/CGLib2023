@@ -1,10 +1,12 @@
 #pragma once
 
-#include "VDBVolume.h"
+//#include "VDBVolume.h"
 #include "CGLib/Math/Sphere3d.h"
+#include <vector>
 
 namespace Crystal {
 	namespace VDB {
+		class VDBVolume;
 
 class VDBToSpheres
 {

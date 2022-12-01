@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Converter.h" />
+    <ClInclude Include="VDBAdapter.h" />
     <ClInclude Include="VDBFileReader.h" />
     <ClInclude Include="VDBFileWriter.h" />
     <ClInclude Include="VDBFilter.h" />
@@ -173,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Converter.cpp" />
+    <ClCompile Include="VDBAdapter.cpp" />
     <ClCompile Include="VDBFileReader.cpp" />
     <ClCompile Include="VDBFileWriter.cpp" />
     <ClCompile Include="VDBFilter.cpp" />
