@@ -1,6 +1,6 @@
 #include "FileImporter.h"
 
-#include "../PC/PLYFileReader.h"
+#include "Crystal/File/File/PLYFileReader.h"
 #include "../PC/PCDFileReader.h"
 #include "../PC/TXTFileReader.h"
 

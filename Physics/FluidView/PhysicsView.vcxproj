@@ -184,7 +184,7 @@
     <ProjectReference Include="..\..\Crystal\Numerics\Numerics\Numerics.vcxproj">
       <Project>{65ca69ad-6106-4f1b-baca-9c10359c31f5}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Crystal\Renderer\Renderer.vcxproj">
+    <ProjectReference Include="..\..\Crystal\Renderer\Renderer\Renderer.vcxproj">
       <Project>{b4138991-bd60-465f-ab44-64d49a9382c3}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\Crystal\Scene\Scene\Scene.vcxproj">

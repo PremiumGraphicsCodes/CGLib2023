@@ -155,7 +155,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="MTLFile.h" />
     <ClInclude Include="MTLFileReader.h" />
@@ -164,7 +163,9 @@
     <ClInclude Include="OBJFileReader.h" />
     <ClInclude Include="OBJFileWriter.h" />
     <ClInclude Include="OBJSyntaxParser.h" />
-    <ClInclude Include="pch.h" />
+    <ClInclude Include="PLYFile.h" />
+    <ClInclude Include="PLYFileReader.h" />
+    <ClInclude Include="PLYFileWriter.h" />
     <ClInclude Include="STLFile.h" />
     <ClInclude Include="STLFileReader.h" />
     <ClInclude Include="STLFileWriter.h" />
@@ -175,12 +176,8 @@
     <ClCompile Include="OBJFileReader.cpp" />
     <ClCompile Include="OBJFileWriter.cpp" />
     <ClCompile Include="OBJSyntaxParser.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="PLYFileReader.cpp" />
+    <ClCompile Include="PLYFileWriter.cpp" />
     <ClCompile Include="STLFileReader.cpp" />
     <ClCompile Include="STLFileWriter.cpp" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "../PC/PLYFileReader.h"
+#include "../File/PLYFileReader.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::PC;

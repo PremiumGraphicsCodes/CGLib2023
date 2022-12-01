@@ -36,14 +36,15 @@
     <ClCompile Include="NormalEstimatorTest.cpp" />
     <ClCompile Include="PCDFileReaderTest.cpp" />
     <ClCompile Include="PCDFileWriterTest.cpp" />
-    <ClCompile Include="PLYFileReaderTest.cpp" />
-    <ClCompile Include="PLYFileWriterTest.cpp" />
     <ClCompile Include="TXTFileReaderTest.cpp" />
     <ClCompile Include="TXTFileWriterTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\CGLib\Math\Math.vcxproj">
       <Project>{43f2d582-49b6-425d-bf27-6b3a9a9a0acb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Crystal\File\File\File.vcxproj">
+      <Project>{e728636d-d449-4586-a73a-0be9d5abea22}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Crystal\Numerics\Numerics\Numerics.vcxproj">
       <Project>{65ca69ad-6106-4f1b-baca-9c10359c31f5}</Project>

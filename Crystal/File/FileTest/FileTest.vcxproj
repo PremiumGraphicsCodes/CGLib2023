@@ -37,6 +37,8 @@
     <ClCompile Include="MTLFileWriterTest.cpp" />
     <ClCompile Include="OBJFileReaderTest.cpp" />
     <ClCompile Include="OBJFileWriterTest.cpp" />
+    <ClCompile Include="PLYFileReaderTest.cpp" />
+    <ClCompile Include="PLYFileWriterTest.cpp" />
     <ClCompile Include="STLASCIIFileReaderTest.cpp" />
     <ClCompile Include="STLASCIIFileWriterTest.cpp" />
   </ItemGroup>

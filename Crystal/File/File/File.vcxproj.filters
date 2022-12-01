@@ -1,28 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
     <ClInclude Include="Helper.h" />
-    <ClInclude Include="MTLFile.h" />
-    <ClInclude Include="MTLFileReader.h" />
-    <ClInclude Include="MTLFileWriter.h" />
-    <ClInclude Include="OBJFile.h" />
-    <ClInclude Include="OBJFileReader.h" />
-    <ClInclude Include="OBJFileWriter.h" />
-    <ClInclude Include="OBJSyntaxParser.h" />
-    <ClInclude Include="STLFile.h" />
-    <ClInclude Include="STLFileReader.h" />
-    <ClInclude Include="STLFileWriter.h" />
+    <ClInclude Include="OBJFile.h">
+      <Filter>OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJFileReader.h">
+      <Filter>OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJFileWriter.h">
+      <Filter>OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJSyntaxParser.h">
+      <Filter>OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="MTLFile.h">
+      <Filter>OBJ\MTL</Filter>
+    </ClInclude>
+    <ClInclude Include="MTLFileReader.h">
+      <Filter>OBJ\MTL</Filter>
+    </ClInclude>
+    <ClInclude Include="MTLFileWriter.h">
+      <Filter>OBJ\MTL</Filter>
+    </ClInclude>
+    <ClInclude Include="STLFile.h">
+      <Filter>STL</Filter>
+    </ClInclude>
+    <ClInclude Include="STLFileReader.h">
+      <Filter>STL</Filter>
+    </ClInclude>
+    <ClInclude Include="STLFileWriter.h">
+      <Filter>STL</Filter>
+    </ClInclude>
+    <ClInclude Include="PLYFile.h">
+      <Filter>PLY</Filter>
+    </ClInclude>
+    <ClInclude Include="PLYFileReader.h">
+      <Filter>PLY</Filter>
+    </ClInclude>
+    <ClInclude Include="PLYFileWriter.h">
+      <Filter>PLY</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp" />
-    <ClCompile Include="MTLFileReader.cpp" />
-    <ClCompile Include="MTLFileWriter.cpp" />
-    <ClCompile Include="OBJFileReader.cpp" />
-    <ClCompile Include="OBJFileWriter.cpp" />
-    <ClCompile Include="OBJSyntaxParser.cpp" />
-    <ClCompile Include="STLFileReader.cpp" />
-    <ClCompile Include="STLFileWriter.cpp" />
+    <ClCompile Include="OBJFileReader.cpp">
+      <Filter>OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="OBJFileWriter.cpp">
+      <Filter>OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="OBJSyntaxParser.cpp">
+      <Filter>OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="MTLFileReader.cpp">
+      <Filter>OBJ\MTL</Filter>
+    </ClCompile>
+    <ClCompile Include="MTLFileWriter.cpp">
+      <Filter>OBJ\MTL</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileReader.cpp">
+      <Filter>STL</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileWriter.cpp">
+      <Filter>STL</Filter>
+    </ClCompile>
+    <ClCompile Include="PLYFileReader.cpp">
+      <Filter>PLY</Filter>
+    </ClCompile>
+    <ClCompile Include="PLYFileWriter.cpp">
+      <Filter>PLY</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="OBJ">
+      <UniqueIdentifier>{d0c33544-f09a-4be5-82f1-01902955a961}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OBJ\MTL">
+      <UniqueIdentifier>{5617a6ee-2f8a-4913-ac26-9eb7f50df7fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="STL">
+      <UniqueIdentifier>{9cef43aa-87c0-4b72-8b18-498d666d7870}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PLY">
+      <UniqueIdentifier>{a309f655-5ddc-411f-b952-08c2efcad785}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
