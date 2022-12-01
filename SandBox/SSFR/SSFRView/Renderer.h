@@ -4,9 +4,9 @@
 
 #include "CGLib/Graphics/Camera.h"
 #include "CGLib/Shader/FrameBufferObject.h"
-#include "Crystal/Renderer/TexRenderer.h"
+#include "Crystal/Renderer/Renderer/TexRenderer.h"
 
-#include "Crystal/Renderer/SkyBoxRenderer.h"
+#include "Crystal/Renderer/Renderer/SkyBoxRenderer.h"
 #include "../SSFR/ParticleDepthRenderer.h"
 #include "../SSFR/SSThicknessRenderer.h"
 #include "../SSFR/SSReflectionRenderer.h"

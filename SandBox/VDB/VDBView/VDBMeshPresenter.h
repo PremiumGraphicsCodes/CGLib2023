@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CGLib/Shader/VertexBufferObject.h"
-#include "Crystal/Renderer/TriangleRenderer.h"
+#include "Crystal/Renderer/Renderer/TriangleRenderer.h"
 
 #include "Crystal/Scene/Scene/IPresenter.h"
 

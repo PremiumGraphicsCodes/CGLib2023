@@ -1,7 +1,7 @@
 #include "TexShader.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
-#include "Crystal/Renderer/TexShaderSource.h"
+#include "Crystal/Renderer/Renderer/TexShaderSource.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::Shader;

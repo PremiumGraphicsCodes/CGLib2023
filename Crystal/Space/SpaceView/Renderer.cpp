@@ -1,6 +1,6 @@
 #include "Renderer.h"
 #include "CGLib/Shader/ShaderBuilder.h"
-#include "Crystal/Renderer/PointShaderSource.h"
+#include "Crystal/Renderer/Renderer/PointShaderSource.h"
 
 using namespace Crystal::Shader;
 using namespace Crystal::UI;

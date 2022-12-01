@@ -1,10 +1,10 @@
 #include "Renderer.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
-#include "Crystal/Renderer/PointShaderSource.h"
-#include "Crystal/Renderer/LineShaderSource.h"
-#include "Crystal/Renderer/TriangleShaderSource.h"
-#include "Crystal/Renderer/TexShaderSource.h"
+#include "Crystal/Renderer/Renderer/PointShaderSource.h"
+#include "Crystal/Renderer/Renderer/LineShaderSource.h"
+#include "Crystal/Renderer/Renderer/TriangleShaderSource.h"
+#include "Crystal/Renderer/Renderer/TexShaderSource.h"
 
 #include "Crystal/Scene/Scene/IPresenter.h"
 

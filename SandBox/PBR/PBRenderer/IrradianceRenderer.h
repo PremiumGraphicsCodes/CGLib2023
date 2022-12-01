@@ -2,7 +2,7 @@
 
 #include "CGLib/Math/Matrix4d.h"
 #include "CGLib/Shader/CubeMapTextureObject.h"
-#include "Crystal/Renderer/IRenderer.h"
+#include "Crystal/Renderer/Renderer/IRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {

@@ -2,7 +2,7 @@
 
 #include "CGLib/Shader/VertexBuffer.h"
 #include "Crystal/Scene/Scene/IPresenter.h"
-#include "Crystal/Renderer/TriangleRenderer.h"
+#include "Crystal/Renderer/Renderer/TriangleRenderer.h"
 
 namespace Crystal {
 	namespace Mesh {

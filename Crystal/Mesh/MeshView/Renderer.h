@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Crystal/AppBase/IRenderer.h"
-#include "Crystal/Renderer/PointRenderer.h"
-#include "Crystal/Renderer/TriangleRenderer.h"
+#include "Crystal/Renderer/Renderer/PointRenderer.h"
+#include "Crystal/Renderer/Renderer/TriangleRenderer.h"
 
 namespace Crystal {
 	namespace UI {

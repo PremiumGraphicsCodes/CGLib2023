@@ -190,7 +190,7 @@
     <ProjectReference Include="..\..\File\File\File.vcxproj">
       <Project>{e728636d-d449-4586-a73a-0be9d5abea22}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Renderer\Renderer.vcxproj">
+    <ProjectReference Include="..\..\Renderer\Renderer\Renderer.vcxproj">
       <Project>{b4138991-bd60-465f-ab44-64d49a9382c3}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\Scene\Scene\Scene.vcxproj">

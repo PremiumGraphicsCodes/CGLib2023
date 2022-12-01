@@ -6,7 +6,7 @@
 #include "../PBRenderer/DFAlbedoRenderer.h"
 #include "../PBRenderer/DFGeometryRenderer.h"
 #include "../PBRenderer/DFLightRenderer.h"
-#include "Crystal/Renderer/TexRenderer.h"
+#include "Crystal/Renderer/Renderer/TexRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {

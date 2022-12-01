@@ -11,8 +11,8 @@
 #include "../PBRenderer/IBLSpecularRenderer.h"
 #include "../PBRenderer/BRDFLUTRenderer.h"
 #include "../PBRenderer/ImportanceRenderer.h"
-#include "Crystal/Renderer/TexRenderer.h"
-#include "Crystal/Renderer/SkyBoxRenderer.h"
+#include "Crystal/Renderer/Renderer/TexRenderer.h"
+#include "Crystal/Renderer/Renderer/SkyBoxRenderer.h"
 
 namespace Crystal {
 	namespace Renderer {

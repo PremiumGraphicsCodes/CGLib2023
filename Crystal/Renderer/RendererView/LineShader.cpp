@@ -2,7 +2,7 @@
 
 #include "CGLib/Shader/ShaderBuilder.h"
 #include "CGLib/Shader/VertexBuffer.h"
-#include "Crystal/Renderer/LineShaderSource.h"
+#include "Crystal/Renderer/Renderer/LineShaderSource.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;

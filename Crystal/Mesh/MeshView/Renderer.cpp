@@ -2,8 +2,8 @@
 #include "World.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
-#include "Crystal/Renderer/PointShaderSource.h"
-#include "Crystal/Renderer/TriangleShaderSource.h"
+#include "Crystal/Renderer/Renderer/PointShaderSource.h"
+#include "Crystal/Renderer/Renderer/TriangleShaderSource.h"
 
 using namespace Crystal::Shader;
 using namespace Crystal::UI;

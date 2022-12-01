@@ -138,3 +138,6 @@
 /Crystal/Scene/SceneView/x64
 /Crystal/Scene/SceneView/imgui.ini
 /Crystal/Scene/Scene/x64/Release
+/Crystal/Renderer/Renderer/x64
+/Crystal/Renderer/RendererView/x64
+/Crystal/Renderer/RendererView/imgui.ini

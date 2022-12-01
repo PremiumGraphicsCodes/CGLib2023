@@ -3,7 +3,7 @@
 #include "CGLib/Shader/ShaderBuilder.h"
 #include "CGLib/Shader/VertexBuffer.h"
 
-#include "Crystal/Renderer/TriangleShaderSource.h"
+#include "Crystal/Renderer/Renderer/TriangleShaderSource.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Graphics;

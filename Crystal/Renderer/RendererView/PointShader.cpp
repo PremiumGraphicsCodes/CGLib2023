@@ -1,5 +1,5 @@
 #include "PointShader.h"
-#include "Crystal/Renderer/PointShaderSource.h"
+#include "Crystal/Renderer/Renderer/PointShaderSource.h"
 
 #include "CGLib/Shader/ShaderBuilder.h"
 #include "CGLib/Shader/VertexBuffer.h"

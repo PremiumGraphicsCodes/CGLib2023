@@ -1,10 +1,10 @@
 #pragma once
 #include "World.h"
 #include "Crystal/AppBase/IRenderer.h"
-#include "Crystal/Renderer/PointRenderer.h"
-#include "Crystal/Renderer/LineRenderer.h"
-#include "Crystal/Renderer/TriangleRenderer.h"
-#include "Crystal/Renderer/TexRenderer.h"
+#include "Crystal/Renderer/Renderer/PointRenderer.h"
+#include "Crystal/Renderer/Renderer/LineRenderer.h"
+#include "Crystal/Renderer/Renderer/TriangleRenderer.h"
+#include "Crystal/Renderer/Renderer/TexRenderer.h"
 #include "CGLib/Shader/FrameBufferObject.h"
 #include "CGLib/Shader/TextureObject.h"
 

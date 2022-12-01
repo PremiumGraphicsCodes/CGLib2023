@@ -9,11 +9,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shader", "CGLib\Shader\Shad
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI", "CGLib\UI\UI.vcxproj", "{02B12DC2-D4AF-4FA1-A2F0-B51326D3C1E6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RendererView", "Crystal\RendererView\RendererView.vcxproj", "{58BFBFA8-9FFD-46DA-BEC2-9CD4244CB82B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RendererView", "Crystal\Renderer\RendererView\RendererView.vcxproj", "{58BFBFA8-9FFD-46DA-BEC2-9CD4244CB82B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graphics", "CGLib\Graphics\Graphics.vcxproj", "{33DF6D05-9610-4794-A1CD-3BC1D86E6A8E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Renderer", "Crystal\Renderer\Renderer.vcxproj", "{B4138991-BD60-465F-AB44-64D49A9382C3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Renderer", "Crystal\Renderer\Renderer\Renderer.vcxproj", "{B4138991-BD60-465F-AB44-64D49A9382C3}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scene", "Crystal\Scene\Scene\Scene.vcxproj", "{8F772D35-8835-4288-941E-867F4E7E7F8F}"
 EndProject

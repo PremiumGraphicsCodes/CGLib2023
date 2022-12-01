@@ -1,7 +1,7 @@
 #pragma once
 #include "World.h"
 #include "Crystal/AppBase/IRenderer.h"
-#include "Crystal/Renderer/PointRenderer.h"
+#include "Crystal/Renderer/Renderer/PointRenderer.h"
 
 namespace Crystal {
 	namespace UI {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Crystal/Renderer/IRenderer.h"
+#include "Crystal/Renderer/Renderer/IRenderer.h"
 
 #include "CGLib/Shader/VertexBufferObject.h"
 #include "CGLib/Math/Matrix4d.h"

@@ -2,7 +2,7 @@
 
 #include "CGLib/Shader/VertexBuffer.h"
 #include "Crystal/Scene/Scene/IPresenter.h"
-#include "Crystal/Renderer/PointRenderer.h"
+#include "Crystal/Renderer/Renderer/PointRenderer.h"
 
 namespace Crystal {
 	namespace PC {

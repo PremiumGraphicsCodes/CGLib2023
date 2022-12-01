@@ -1,7 +1,7 @@
 #include "SkyBoxShader.h"
 #include "CGLib/Graphics/ImageFileReader.h"
 #include "CGLib/Shader/ShaderBuilder.h"
-#include "Crystal/Renderer/SkyBoxShaderSource.h"
+#include "Crystal/Renderer/Renderer/SkyBoxShaderSource.h"
 
 using namespace Crystal::Graphics;
 using namespace Crystal::Shader;
