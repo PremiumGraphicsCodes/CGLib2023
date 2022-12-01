@@ -156,30 +156,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Helper.h" />
-    <ClInclude Include="MTLFile.h" />
-    <ClInclude Include="MTLFileReader.h" />
-    <ClInclude Include="MTLFileWriter.h" />
-    <ClInclude Include="OBJFile.h" />
-    <ClInclude Include="OBJFileReader.h" />
-    <ClInclude Include="OBJFileWriter.h" />
-    <ClInclude Include="OBJSyntaxParser.h" />
     <ClInclude Include="PolygonMesh.h" />
     <ClInclude Include="PolygonMeshBuilder.h" />
-    <ClInclude Include="STLFile.h" />
-    <ClInclude Include="STLFileReader.h" />
-    <ClInclude Include="STLFileWriter.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MTLFileReader.cpp" />
-    <ClCompile Include="MTLFileWriter.cpp" />
-    <ClCompile Include="OBJFileReader.cpp" />
-    <ClCompile Include="OBJFileWriter.cpp" />
-    <ClCompile Include="OBJSyntaxParser.cpp" />
     <ClCompile Include="PolygonMesh.cpp" />
     <ClCompile Include="PolygonMeshBuilder.cpp" />
-    <ClCompile Include="STLFileReader.cpp" />
-    <ClCompile Include="STLFileWriter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,75 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="STLFile.h">
-      <Filter>STL</Filter>
-    </ClInclude>
-    <ClInclude Include="STLFileReader.h">
-      <Filter>STL</Filter>
-    </ClInclude>
-    <ClInclude Include="Helper.h" />
-    <ClInclude Include="STLFileWriter.h">
-      <Filter>STL</Filter>
-    </ClInclude>
-    <ClInclude Include="OBJFile.h">
-      <Filter>OBJ</Filter>
-    </ClInclude>
-    <ClInclude Include="OBJFileReader.h">
-      <Filter>OBJ</Filter>
-    </ClInclude>
-    <ClInclude Include="OBJSyntaxParser.h">
-      <Filter>OBJ</Filter>
-    </ClInclude>
-    <ClInclude Include="OBJFileWriter.h">
-      <Filter>OBJ</Filter>
-    </ClInclude>
-    <ClInclude Include="MTLFile.h">
-      <Filter>OBJ\MTL</Filter>
-    </ClInclude>
-    <ClInclude Include="MTLFileReader.h">
-      <Filter>OBJ\MTL</Filter>
-    </ClInclude>
-    <ClInclude Include="MTLFileWriter.h">
-      <Filter>OBJ\MTL</Filter>
-    </ClInclude>
     <ClInclude Include="PolygonMesh.h" />
     <ClInclude Include="PolygonMeshBuilder.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="STLFileReader.cpp">
-      <Filter>STL</Filter>
-    </ClCompile>
-    <ClCompile Include="STLFileWriter.cpp">
-      <Filter>STL</Filter>
-    </ClCompile>
-    <ClCompile Include="OBJFileReader.cpp">
-      <Filter>OBJ</Filter>
-    </ClCompile>
-    <ClCompile Include="OBJSyntaxParser.cpp">
-      <Filter>OBJ</Filter>
-    </ClCompile>
-    <ClCompile Include="OBJFileWriter.cpp">
-      <Filter>OBJ</Filter>
-    </ClCompile>
-    <ClCompile Include="MTLFileReader.cpp">
-      <Filter>OBJ\MTL</Filter>
-    </ClCompile>
-    <ClCompile Include="MTLFileWriter.cpp">
-      <Filter>OBJ\MTL</Filter>
-    </ClCompile>
     <ClCompile Include="PolygonMesh.cpp" />
     <ClCompile Include="PolygonMeshBuilder.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="STL">
-      <UniqueIdentifier>{c4645c3e-725a-49a9-8f2b-d0cc12af3c08}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OBJ">
-      <UniqueIdentifier>{bc845f5c-a698-4ae3-b532-05a1242dbab3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OBJ\MTL">
-      <UniqueIdentifier>{ec0e446c-6eb3-43a2-8f3d-a84f2db27379}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
