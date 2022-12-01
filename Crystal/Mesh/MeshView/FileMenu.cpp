@@ -51,17 +51,19 @@ void FileMenu::onImport()
 void FileMenu::onExport()
 {
 	FileSaveDialog view("");
-	view.addFilter("*.pcd");
-	view.addFilter("*.ply");
-	view.addFilter("*.txt");
-	//view.addFilter("*.*");
+	view.addFilter("*.obj");
+	view.addFilter("*.stl");
 	view.show();
 	const auto& filename = view.getFileName();
 
-	//world->getRootScene()->fin
+	const auto meshes = world->getRootScene()->findScenesByType(typeid(PolygonMeshScene));
 
 	if (!filename.empty()) {
 		FileExporter exporter;
+		for (auto m : meshes) {
+			auto mm = static_cast<PolygonMeshScene*>(m);
+			exporter.add(*mm->getShape());
+		}
 		exporter.export_(filename);
 	}
 }

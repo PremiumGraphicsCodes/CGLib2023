@@ -18,7 +18,8 @@ void FileSaveDialog::show()
 {
 	//char const * lFilterPatterns[2] = { "*.stl", "*.obj" };
 	const auto filterCount = static_cast<int>(filters.size());
-	tinyfd_saveFileDialog("Save", "", filterCount, filters.data(), nullptr);
+	const auto str = tinyfd_saveFileDialog("Save", "", filterCount, filters.data(), nullptr);
+	this->filename = str;
 }
 
 std::string FileSaveDialog::getFileName() const

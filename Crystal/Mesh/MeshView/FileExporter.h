@@ -1,7 +1,7 @@
 #pragma once
 
 #include <filesystem>
-#include "PolygonMeshScene.h"
+#include "../Mesh/PolygonMesh.h"
 
 namespace Crystal {
 	namespace Mesh {
@@ -9,7 +9,7 @@ namespace Crystal {
 class FileExporter
 {
 public:
-	void add(const std::unique_ptr<PolygonMesh>& mesh);
+	void add(const PolygonMesh& mesh);
 
 	bool export_(const std::filesystem::path& path);
 
@@ -20,6 +20,8 @@ private:
 
 	//bool exportTXT(const std::filesystem::path& path);
 
+	std::vector<PolygonMesh::Face> faces;
+	std::vector<PolygonMesh::Vertex> vertices;
 	std::vector<Math::Vector3df> positions;
 	std::vector<Math::Vector3df> normals;
 	std::vector<Math::Vector2df> texCoords;
