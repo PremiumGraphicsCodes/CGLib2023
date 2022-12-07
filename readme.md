@@ -14,29 +14,9 @@ mabuchi@premiumgraphics.co.jp
 
 At this time, the source is build with VisualStudio 2019.
 
-##build from Command Prompt.
-
->MSBuild CGLib.sln
-
-##Build from GUI.
-
-Open CGLib.sln
-
-[menu] -> [Build] -> [Build Solution] 
-
-I will build other platforms( mac, linux ).
-
 # License
 
-I use the the MIT license and the zlib lisense.
-
-The MIT license is applied for third party independent sources.
-
-http://opensource.org/licenses/mit-license.php
-
-The zlib license is applied for third party dependent sources.
-
-https://opensource.org/licenses/Zlib
+This project is licensed under the MIT License, see LICENSE for more information.
 
 # References
 
@@ -53,7 +33,6 @@ https://opensource.org/licenses/Zlib
 # Demos
 
 [![](https://img.youtube.com/vi/OkSbtqMOQVs/0.jpg)](https://www.youtube.com/watch?v=OkSbtqMOQVs)
-[![](https://img.youtube.com/vi/HjiLsj0-WgI/0.jpg)](https://www.youtube.com/watch?v=HjiLsj0-WgI)
 [![](https://img.youtube.com/vi/Eqh35xWT3gk/0.jpg)](https://www.youtube.com/watch?v=Eqh35xWT3gk)
 
 # Links
