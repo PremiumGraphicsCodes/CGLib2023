@@ -3,6 +3,7 @@
 #include "CGLib/Shader/VertexBuffer.h"
 #include "Crystal/Scene/Scene/IPresenter.h"
 #include "Crystal/Renderer/Renderer/PointRenderer.h"
+#include "CGLib/Graphics/ColorMap.h"
 
 namespace Crystal {
 	namespace Physics {
@@ -34,6 +35,7 @@ private:
 
 	PBSPHFluidScene* model;
 	Crystal::Renderer::PointRenderer* view;
+	Graphics::ColorMap colorMap;
 };
 
 	}
