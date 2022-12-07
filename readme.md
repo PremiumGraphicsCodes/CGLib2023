@@ -12,11 +12,11 @@ mabuchi@premiumgraphics.co.jp
 
 # Build
 
-At this time, the source is build with VisualStudio 2019.
+At present, the source is build with VisualStudio 2019.
 
 # License
 
-This project is licensed under the MIT License, see LICENSE for more information.
+This project is licensed under the MIT License, see the LICENSE file for more information.
 
 # References
 
@@ -32,7 +32,11 @@ This project is licensed under the MIT License, see LICENSE for more information
 
 # Demos
 
+## Real-Time
+
 [![](https://img.youtube.com/vi/DpV4QWvvZjk/0.jpg)](https://www.youtube.com/watch?v=DpV4QWvvZjk)
+
+## Offline Rendering with Blender
 [![](https://img.youtube.com/vi/OkSbtqMOQVs/0.jpg)](https://www.youtube.com/watch?v=OkSbtqMOQVs)
 [![](https://img.youtube.com/vi/Eqh35xWT3gk/0.jpg)](https://www.youtube.com/watch?v=Eqh35xWT3gk)
 
