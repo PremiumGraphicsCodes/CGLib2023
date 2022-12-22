@@ -22,6 +22,8 @@ public:
 
 	void addAnimator(Scene::IAnimator* animator) { animators.push_back(animator); }
 
+	void removeAnimator(Scene::IAnimator* animator);
+
 	//Crystal::Graphics::Camera* getCamera() { return &camera; }
 
 private:

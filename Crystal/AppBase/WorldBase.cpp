@@ -17,3 +17,8 @@ void WorldBase::step()
 		a->step();
 	}
 }
+
+void WorldBase::removeAnimator(IAnimator* animator)
+{
+	std::remove(animators.begin(), animators.end(), animator);
+}
