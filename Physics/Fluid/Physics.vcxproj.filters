@@ -53,6 +53,9 @@
     <ClInclude Include="SPHVolumeConverter.h">
       <Filter>SPHSurface</Filter>
     </ClInclude>
+    <ClInclude Include="MVPFluidEmitter.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -106,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="SPHVolumeConverter.cpp">
       <Filter>SPHSurface</Filter>
+    </ClCompile>
+    <ClCompile Include="MVPFluidEmitter.cpp">
+      <Filter>MVP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
