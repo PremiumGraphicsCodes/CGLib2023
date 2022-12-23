@@ -1,8 +1,0 @@
-@inproceedings{pauly2002efficient,
-  title={Efficient simplification of point-sampled surfaces},
-  author={Pauly, Mark and Gross, Markus and Kobbelt, Leif P},
-  booktitle={IEEE Visualization, 2002. VIS 2002.},
-  pages={163--170},
-  year={2002},
-  organization={IEEE}
-}
