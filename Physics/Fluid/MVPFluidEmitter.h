@@ -12,6 +12,16 @@ namespace Crystal {
 class MVPFluidEmitter : public IMVPFluid
 {
 public:
+	struct Seed
+	{
+		Math::Vector3df pos;
+		Math::Vector3df velocity;
+		float radius;
+		float pressureCoe;
+		float viscosityCoe;
+		float mass;
+	};
+
 	MVPFluidEmitter();
 
 	~MVPFluidEmitter();
@@ -20,7 +30,7 @@ public:
 
 	void clearParticles();
 
-	void addSource(const Math::Sphere3df& s) { this->sourcePositions.push_back(s); }
+	void addSeed(const Seed& s) { this->seeds.push_back(s); }
 
 	void setStartEnd(const int startStep, const int endStep) { this->startEndStep = std::make_pair(startStep, endStep); }
 
@@ -30,9 +40,7 @@ public:
 
 	int getEndStep() const { return startEndStep.second; }
 
-	void setInitialVelocity(const Math::Vector3df& velocity) { this->initialVelocity = velocity; }
-
-	void clearSources() { this->sourcePositions.clear(); }
+	void clearSources() { this->seeds.clear(); }
 
 	MVPVolumeParticle* create(const Math::Vector3df& position, const float radius, const float weight);
 
@@ -41,9 +49,8 @@ public:
 	Math::Box3df getBoundingBox() const override;
 
 private:
-	std::vector<Math::Sphere3df> sourcePositions;
+	std::vector<Seed> seeds;
 	std::list<MVPVolumeParticle*> particles;
-	Math::Vector3df initialVelocity;
 	std::pair<int, int> startEndStep;
 	int interval;
 };

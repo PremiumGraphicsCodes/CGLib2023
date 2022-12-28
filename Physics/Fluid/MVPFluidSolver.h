@@ -12,13 +12,12 @@ namespace Crystal {
 	namespace Physics {
 		class MVPVolumeParticle;
 		class MVPFluid;
+		class MVPFluidEmitter;
 
 class MVPFluidSolver
 {
 public:
 	MVPFluidSolver();
-
-	explicit MVPFluidSolver(const int id);
 
 	void setupBoundaries();
 
@@ -28,7 +27,7 @@ public:
 
 	void addBoundaryScene(MVPFluid* scene);
 
-	//void addEmitterScene(MVPFluidEmitterScene* scene);
+	void addEmitterScene(MVPFluidEmitter* scene);
 
 	void setBoundary(const Math::Box3df& box);
 
@@ -57,6 +56,7 @@ private:
 	float calculateTimeStep(const std::vector<MVPVolumeParticle*>& particles);
 
 	std::list<MVPFluid*> fluids;
+	std::list<MVPFluidEmitter*> emitters;
 	MVPBoundarySolver boundarySolver;
 	float effectLength = 2.0f;
 	float maxTimeStep = 0.03f;

@@ -30,9 +30,11 @@ void MVPFluidEmitter::emitParticle(const int timeStep)
 	if (start <= timeStep && timeStep <= end) {
 		const auto elapsed = timeStep - start;
 		if (elapsed % interval == 0) {
-			for (const auto& s : sourcePositions) {
-				auto mp = create(s.getCenter(), s.getRadius(), 0.25f);
-				mp->setVelocity(this->initialVelocity);
+			for (const auto& s : seeds) {
+				auto mp = create(s.pos, s.radius, s.mass);
+				mp->setVelocity(s.velocity);
+				mp->setPressureCoe(s.pressureCoe);
+				mp->setViscosityCoe(s.viscosityCoe);
 				this->particles.push_back(mp);
 			}
 		}
