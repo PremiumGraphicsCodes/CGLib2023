@@ -67,10 +67,10 @@ void MVPFluidEmitterView::onReset()
 {
 	auto fluid = std::make_unique<MVPFluidEmitter>();
 
-	Box3df box(Vector3df(0, 0, 0), Vector3df(20, 20, 20));
+	Box3df box(Vector3df(0, 100, 0), Vector3df(10, 110, 10));
 	std::mt19937 mt{ std::random_device{}() };
 	std::uniform_real_distribution<float> dist(0.0, 1.0);
-	for (int i = 0; i < 10000; ++i) {
+	for (int i = 0; i < 100; ++i) {
 		const auto u = dist(mt);
 		const auto v = dist(mt);
 		const auto w = dist(mt);
@@ -78,17 +78,20 @@ void MVPFluidEmitterView::onReset()
 		seed.pos = box.getPosition(u, v, w);
 		seed.mass = 0.25f;
 		seed.radius = 1.0f;
+		seed.velocity = Vector3df(1, 0, 0);
 		seed.pressureCoe = this->pressureCoeView.getValue();
 		seed.viscosityCoe = this->viscosityCoeView.getValue();
 		fluid->addSeed(seed);
 	}
+	fluid->setInterval(10);
+	fluid->setStartEnd(0, 100);
 
 	auto solver = std::make_unique<MVPFluidSolver>();
 	solver->setMaxTimeStep(timeStepView.getValue());
 	solver->setBoundary(boundaryView.getValue());
 	solver->setExternalForce(Vector3df(0.0f, -9.8f, 0.0f));
 	solver->setEffectLength(this->radiusView.getValue());
-	//solver->addEmScene(fluid.get());
+	solver->addEmitterScene(fluid.get());
 
 	this->fluidScene->setFluid(std::move(fluid));
 	this->animator->setSolver(std::move(solver));

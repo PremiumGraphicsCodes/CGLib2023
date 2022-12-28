@@ -4,6 +4,7 @@
 #include "MVPVolumeParticle.h"
 
 #include "MVPFluid.h"
+#include "MVPFluidEmitter.h"
 #include "MVPSampler.h"
 
 #include "Crystal/Space/Space/CompactSpaceHash.h"
@@ -37,6 +38,11 @@ void MVPFluidSolver::addFluidScene(MVPFluid* scene)
 	this->fluids.push_back(scene);
 }
 
+void MVPFluidSolver::addEmitterScene(MVPFluidEmitter* scene)
+{
+	this->emitters.push_back(scene);
+}
+
 void MVPFluidSolver::setBoundary(const Box3df& box)
 {
 	this->boundarySolver.clear();
@@ -51,14 +57,12 @@ void MVPFluidSolver::addBoundaryScene(MVPFluid* scene)
 void MVPFluidSolver::simulate()
 {
 	std::vector<MVPVolumeParticle*> fluidParticles;
-	std::list<MVPFluid*> allFluids(this->fluids.begin(), this->fluids.end());
+	std::list<IMVPFluid*> allFluids(this->fluids.begin(), this->fluids.end());
 
-	/*
 	for (auto emitter : emitters) {
 		emitter->emitParticle(currentTimeStep);
 		allFluids.push_back(emitter);
 	}
-	*/
 
 	if (allFluids.empty()) {
 		return;
