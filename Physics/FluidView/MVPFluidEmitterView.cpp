@@ -26,7 +26,10 @@ MVPFluidEmitterView::MVPFluidEmitterView(const std::string& name, World* model, 
 	viscosityCoeView("ViscosityCoe", 50.0f),
 	timeStepView("TimeStep", 0.01f),
 	radiusView("SearchRadius", 1.00f),
-	externalForceView("ExternalForce", Vector3dd(0.0, -9.8, 0.0))
+	externalForceView("ExternalForce", Vector3dd(0.0, -9.8, 0.0)),
+	intervalView("Interval", 10),
+	startStepView("StartStep", 0),
+	endStepView("EndStep", 100)
 {
 	boundaryView.setValue(Box3df(Vector3dd(1.0, 0.0, 1.0), Vector3dd(50.0, 1000.0, 20.0)));
 
@@ -45,6 +48,9 @@ MVPFluidEmitterView::MVPFluidEmitterView(const std::string& name, World* model, 
 	add(&timeStepView);
 	add(&radiusView);
 	add(&externalForceView);
+	add(&intervalView);
+	add(&startStepView);
+	add(&endStepView);
 }
 
 void MVPFluidEmitterView::onStart()
@@ -83,8 +89,8 @@ void MVPFluidEmitterView::onReset()
 		seed.viscosityCoe = this->viscosityCoeView.getValue();
 		fluid->addSeed(seed);
 	}
-	fluid->setInterval(10);
-	fluid->setStartEnd(0, 100);
+	fluid->setInterval(this->intervalView.getValue());
+	fluid->setStartEnd(this->startStepView.getValue(), this->endStepView.getValue());
 
 	auto solver = std::make_unique<MVPFluidSolver>();
 	solver->setMaxTimeStep(timeStepView.getValue());

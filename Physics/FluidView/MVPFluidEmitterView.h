@@ -4,6 +4,7 @@
 #include "CGLib/UI/Box3dView.h"
 #include "CGLib/UI/FloatView.h"
 #include "CGLib/UI/Vector3dView.h"
+#include "CGLib/UI/IntView.h"
 
 #include "../Fluid/MVPFluidEmitter.h"
 
@@ -38,6 +39,10 @@ private:
 	FloatView timeStepView;
 	FloatView radiusView;
 	Box3dView boundaryView;
+	IntView intervalView;
+	IntView startStepView;
+	IntView endStepView;
+
 	Vector3dView externalForceView;
 	Button startButton;
 	Button resetButton;
