@@ -52,3 +52,12 @@ MVPVolumeParticle* MVPFluidEmitter::create(const Vector3df& position, const floa
 	//	restMass *= 1.5;
 	//	selfMass = unum * vnum * wnum * weight;
 }
+
+Box3df MVPFluidEmitter::getBoundingBox() const
+{
+	Box3df bb = Box3df::createDegeneratedBox();
+	for (auto p : particles) {
+		bb.add(p->getPosition());
+	}
+	return bb;
+}

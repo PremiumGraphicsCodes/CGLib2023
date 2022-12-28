@@ -56,6 +56,9 @@
     <ClInclude Include="MVPFluidEmitter.h">
       <Filter>MVP</Filter>
     </ClInclude>
+    <ClInclude Include="IMVPFluid.h">
+      <Filter>MVP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CGLib/Math/Sphere3d.h"
+#include "IMVPFluid.h"
 #include <vector>
 #include <list>
 
@@ -8,7 +9,7 @@ namespace Crystal {
 	namespace Physics {
 		class MVPVolumeParticle;
 
-class MVPFluidEmitter
+class MVPFluidEmitter : public IMVPFluid
 {
 public:
 	MVPFluidEmitter();
@@ -34,6 +35,10 @@ public:
 	void clearSources() { this->sourcePositions.clear(); }
 
 	MVPVolumeParticle* create(const Math::Vector3df& position, const float radius, const float weight);
+
+	std::list<MVPVolumeParticle*> getParticles() const override { return particles; }
+
+	Math::Box3df getBoundingBox() const override;
 
 private:
 	std::vector<Math::Sphere3df> sourcePositions;

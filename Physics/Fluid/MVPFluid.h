@@ -2,19 +2,20 @@
 
 #include <list>
 #include "CGLib/Math/Box3d.h"
+#include "IMVPFluid.h"
 
 namespace Crystal {
 	namespace Physics {
 		class MVPVolumeParticle;
 
-class MVPFluid
+class MVPFluid : public IMVPFluid
 {
 public:
 	MVPFluid();
 
 	~MVPFluid();
 
-	std::list<MVPVolumeParticle*> getParticles() const { return particles; }
+	std::list<MVPVolumeParticle*> getParticles() const override { return particles; }
 
 	void remove(MVPVolumeParticle* p) { particles.remove(p); }
 
@@ -22,15 +23,7 @@ public:
 
 	void add(MVPVolumeParticle* p) { particles.push_back(p); }
 
-	Math::Box3df getBoundingBox() const;
-
-	//void setPressureCoe(const float coe) { this->pressureCoe = coe; }
-
-	//float getPressure() const { return this->pressureCoe; }
-
-	//void setViscosityCoe(const float coe) { this->viscosityCoe = coe; }
-
-	//float getViscosityCoe() const { return this->viscosityCoe; }
+	Math::Box3df getBoundingBox() const override;
 
 	void setLifeLimit(const int limit) { this->lifeLimit = limit; }
 
@@ -38,8 +31,6 @@ public:
 
 private:
 	std::list<MVPVolumeParticle*> particles;
-	//float pressureCoe;
-	//float viscosityCoe;
 	int lifeLimit = -1;
 };
 

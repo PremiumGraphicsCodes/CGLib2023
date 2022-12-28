@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <iterator>
 
-
 using namespace Crystal::Math;
 using namespace Crystal::Physics;
 

@@ -3,6 +3,7 @@
 #include "MVPFluidScene.h"
 #include "../Fluid/MVPFluidSolver.h"
 #include "../Fluid/MVPVolumeParticle.h"
+#include "../Fluid/MVPFluid.h"
 
 #include "Renderer.h"
 
