@@ -9,9 +9,7 @@
 using namespace Crystal::Math;
 using namespace Crystal::Physics;
 
-MVPFluid::MVPFluid() :
-	pressureCoe(10000.0),
-	viscosityCoe(50.0)
+MVPFluid::MVPFluid()
 {
 }
 

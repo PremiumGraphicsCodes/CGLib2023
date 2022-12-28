@@ -65,8 +65,6 @@ void MVPFluidView::onStart()
 void MVPFluidView::onReset()
 {
 	auto fluid = std::make_unique<MVPFluid>();
-	fluid->setPressureCoe(this->pressureCoeView.getValue());
-	fluid->setViscosityCoe(this->viscosityCoeView.getValue());
 
 	/*
 	{

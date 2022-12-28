@@ -24,25 +24,13 @@ public:
 
 	Math::Box3df getBoundingBox() const;
 
-	void setPressureCoe(const float coe) { this->pressureCoe = coe; }
+	//void setPressureCoe(const float coe) { this->pressureCoe = coe; }
 
-	float getPressure() const { return this->pressureCoe; }
+	//float getPressure() const { return this->pressureCoe; }
 
-	void setViscosityCoe(const float coe) { this->viscosityCoe = coe; }
+	//void setViscosityCoe(const float coe) { this->viscosityCoe = coe; }
 
-	float getViscosityCoe() const { return this->viscosityCoe; }
-
-	void setHeatDiffuseCoe(const float coe) { this->heatDiffuseCoe = coe; }
-
-	float getHeatDiffuseCoe() const { return this->heatDiffuseCoe; }
-
-	void setDragHeatCoe(const float c) { this->dragHeatCoe = c; }
-
-	float getDragHeatCoe() const { return this->dragHeatCoe; }
-
-	void setDragForceCoe(const float c) { this->dragForceCoe = c; }
-
-	float getDragForceCoe() const { return this->dragForceCoe; }
+	//float getViscosityCoe() const { return this->viscosityCoe; }
 
 	void setLifeLimit(const int limit) { this->lifeLimit = limit; }
 
@@ -50,11 +38,8 @@ public:
 
 private:
 	std::list<MVPVolumeParticle*> particles;
-	float pressureCoe;
-	float viscosityCoe;
-	float heatDiffuseCoe;
-	float dragHeatCoe;
-	float dragForceCoe;
+	//float pressureCoe;
+	//float viscosityCoe;
 	int lifeLimit = -1;
 };
 
