@@ -49,6 +49,9 @@
     <ClCompile Include="SPHVolumePresenter.cpp">
       <Filter>SPHSurface</Filter>
     </ClCompile>
+    <ClCompile Include="MVPFluidEmitterView.cpp">
+      <Filter>MVP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -104,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="SPHVolumePresenter.h">
       <Filter>SPHSurface</Filter>
+    </ClInclude>
+    <ClInclude Include="MVPFluidEmitterView.h">
+      <Filter>MVP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

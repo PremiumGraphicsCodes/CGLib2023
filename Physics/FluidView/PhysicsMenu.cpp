@@ -5,6 +5,7 @@
 #include "CSPHFluidView.h"
 #include "PBSPHFluidView.h"
 #include "MVPFluidView.h"
+#include "MVPFluidEmitterView.h"
 #include "MVPSamplerView.h"
 #include "SPHVolumeConverterView.h"
 
@@ -21,6 +22,9 @@ PhysicsMenu::PhysicsMenu(const std::string& name, World* world, Renderer* render
 		}));
 	add(new MenuItem("MVP", [control, world, renderer]() {
 		control->setChild(new MVPFluidView("MVPFluid", world, renderer));
+		}));
+	add(new MenuItem("MVPEmitter", [control, world, renderer]() {
+		control->setChild(new MVPFluidEmitterView("MVPEmitter", world, renderer));
 		}));
 	add(new MenuItem("MVPSampler", [control, world, renderer]() {
 		control->setChild(new MVPSamplerView("MVPSampler", world, renderer));

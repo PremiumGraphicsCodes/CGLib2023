@@ -5,22 +5,22 @@
 #include "CGLib/UI/FloatView.h"
 #include "CGLib/UI/Vector3dView.h"
 
-#include "../Fluid/MVPFluidSolver.h"
+#include "../Fluid/MVPFluidEmitter.h"
 
 #include "MVPFluidAnimator.h"
 
 namespace Crystal {
 	namespace Physics {
-		class MVPFluidScene;
+		class MVPFluidEmitterScene;
 	}
 	namespace UI {
 		class World;
 		class Renderer;
 
-class MVPFluidView : public IView
+class MVPFluidEmitterView : public IView
 {
 public:
-	MVPFluidView(const std::string& name, World* model, Renderer* renderer);
+	MVPFluidEmitterView(const std::string& name, World* model, Renderer* renderer);
 
 private:
 	void onStart();
@@ -31,7 +31,6 @@ private:
 
 private:
 	Physics::MVPFluidScene* fluidScene;
-	Physics::MVPFluidScene* staticScene;
 	Physics::MVPFluidSolver solver;
 	Physics::MVPFluidAnimator* animator;
 	FloatView pressureCoeView;
