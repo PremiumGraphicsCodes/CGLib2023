@@ -139,6 +139,7 @@ void MVPFluidSolver::simulate()
 //#pragma omp parallel for
 		for (auto particle : fluidParticles) {
 			particle->addForce(externalForce * particle->getDensity());
+			boundarySolver.solvePressure(particle, dt);
 		}
 
 		// solve incompressibility.
@@ -155,7 +156,6 @@ void MVPFluidSolver::simulate()
 				particle->updateInnerPoints();
 				//particle->calculateDensity();
 				particle->calculatePressureForce(relaxationCoe, dt);
-				boundarySolver.solvePressure(particle, dt);
 			}
 			relaxationCoe *= 0.85f;
 

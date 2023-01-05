@@ -141,38 +141,38 @@ void MVPBoundarySolver::solvePressure(MVPVolumeParticle* particle, const double 
 		if (position.y < min.y) {
 			const auto distance = min.y - position.y;
 			const auto overlap = Vector3dd(0, distance, 0);
-			//particle->addForce(overlap / dt / dt);
-			particle->addDx(overlap);
+			particle->addForce(overlap / dt / dt);
+//			particle->addDx(overlap);
 		}
 		if (position.y > max.y) {
 			const auto distance = max.y - position.y;
 			const auto overlap = Vector3dd(0, distance, 0);
-//			particle->addForce(overlap / dt / dt);
-			particle->addDx(overlap);
+			particle->addForce(overlap / dt / dt);
+			//particle->addDx(overlap);
 		}
 		if (position.x > max.x) {
 			const auto distance = max.x - position.x;
 			const auto overlap = Vector3dd(distance, 0, 0);
-//			particle->addForce(overlap / dt / dt);
-			particle->addDx(overlap);
+			particle->addForce(overlap / dt / dt);
+//			particle->addDx(overlap);
 		}
 		if (position.x < min.x) {
 			const auto distance = min.x - position.x;
 			const auto overlap = Vector3dd(distance, 0, 0);
-//			particle->addForce(overlap / dt / dt);
-			particle->addDx(overlap);
+			particle->addForce(overlap / dt / dt);
+//			particle->addDx(overlap);
 		}
 		if (position.z > max.z) {
 			const auto distance = max.z - position.z;
 			const auto overlap = Vector3dd(0, 0, distance);
-//			particle->addForce(overlap / dt / dt);
-			particle->addDx(overlap);
+			particle->addForce(overlap / dt / dt);
+//			particle->addDx(overlap);
 		}
 		if (position.z < min.z) {
 			const auto distance = min.z - position.z;
 			const auto overlap = Vector3dd(0, 0, distance);
-//			particle->addForce(overlap / dt / dt);
-			particle->addDx(overlap);
+			particle->addForce(overlap / dt / dt);
+//			particle->addDx(overlap);
 		}
 	}
 }
