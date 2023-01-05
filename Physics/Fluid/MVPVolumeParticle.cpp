@@ -76,7 +76,7 @@ void MVPVolumeParticle::calculateViscosityForce()
 {
 	Math::Vector3df f(0, 0, 0);
 	for (auto mp : innerPoints) {
-		f -= (this->velocity - mp->getVelocity()) * mp->getMass() * mp->getViscosityCoe();
+		f -= (this->velocity - mp->getVelocity()) * mp->getMass() * mp->getViscosityCoe() / static_cast<float>(innerPoints.size());
 	}
 	this->force += f;
 }
