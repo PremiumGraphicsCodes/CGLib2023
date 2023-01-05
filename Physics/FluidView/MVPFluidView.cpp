@@ -75,7 +75,7 @@ void MVPFluidView::onReset()
 				for (int k = 0; k < 20; ++k) {
 					//auto mp = new MVPVolumeParticle(radius*2.0, Vector3dd(i * length, j * length, k * length));
 					const auto p = Vector3dd(i * length, j * length, k * length);
-					auto mp = fluid->create(p, length, 0.25f);
+					auto mp = fluid->create(p, length, 1.00f);
 					mp->setPressureCoe(this->pressureCoeView.getValue());
 					mp->setViscosityCoe(this->viscosityCoeView.getValue());
 					fluid->add(mp);
