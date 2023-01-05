@@ -28,7 +28,7 @@ MVPFluidView::MVPFluidView(const std::string& name, World* model, Renderer* rend
 	radiusView("SearchRadius", 1.00f),
 	externalForceView("ExternalForce", Vector3dd(0.0, -9.8, 0.0))
 {
-	boundaryView.setValue(Box3df(Vector3dd(1.0, 0.0, 1.0), Vector3dd(50.0, 1000.0, 20.0)));
+	boundaryView.setValue(Box3df(Vector3dd(0.0, 0.0, 0.0), Vector3dd(50.0, 1000.0, 20.0)));
 
 	startButton.setFunction([=]() { onStart(); });
 	add(&startButton);
@@ -67,7 +67,6 @@ void MVPFluidView::onReset()
 {
 	auto fluid = std::make_unique<MVPFluid>();
 
-	/*
 	{
 		const auto radius = 0.5;
 		const auto length = radius * 2.0;
@@ -84,7 +83,7 @@ void MVPFluidView::onReset()
 			}
 		}
 	}
-	*/
+	/*
 	Box3df box(Vector3df(0, 0, 0), Vector3df(20, 20, 20));
 	std::mt19937 mt{ std::random_device{}() };
 	std::uniform_real_distribution<float> dist(0.0, 1.0);
@@ -98,6 +97,7 @@ void MVPFluidView::onReset()
 		mp->setViscosityCoe(this->viscosityCoeView.getValue());
 		fluid->add(mp);
 	}
+	*/
 
 	auto solver = std::make_unique<MVPFluidSolver>();
 	solver->setMaxTimeStep(timeStepView.getValue());
