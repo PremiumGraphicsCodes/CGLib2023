@@ -51,7 +51,7 @@ MVPVolumeParticle* MVPFluid::create(const Vector3df& position, const float radiu
 {
 	auto vp = new MVPVolumeParticle(radius, position);
 	auto mp = new MVPMassParticle(vp, Vector3dd(0, 0, 0), weight / 3.0);
-	vp->setRestMass(weight);
+	vp->setRestMass(weight * 2.0);
 	vp->addMassParticle(mp);
 	mp->setParent(vp);
 
@@ -65,11 +65,9 @@ MVPVolumeParticle* MVPFluid::create(const Vector3df& position, const float radiu
 		Vector3df v(x, y, z);
 		v = glm::normalize(v);
 		auto mp1 = new MVPMassParticle(vp, v, weight / 3.0);
-		vp->setRestMass(weight * 1.25f);
 		vp->addMassParticle(mp1);
 		mp1->setParent(vp);
 		auto mp2 = new MVPMassParticle(vp, -v, weight / 3.0);
-		vp->setRestMass(weight * 1.25f);
 		vp->addMassParticle(mp2);
 		mp2->setParent(vp);
 	}
