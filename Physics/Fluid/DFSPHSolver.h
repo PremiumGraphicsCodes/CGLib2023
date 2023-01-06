@@ -9,18 +9,18 @@ namespace Crystal {
 	namespace Physics {
 
 class DFSPHParticle;
-class DFFluidScene;
+class DFSPHFluid;
 
 class DFSPHSolver
 {
 public:
 	DFSPHSolver();
 
-	void add(DFFluidScene* fluid) { this->fluids.push_back(fluid); }
+	void add(DFSPHFluid* fluid) { this->fluids.push_back(fluid); }
 
 	void simulate(const float dt, const float effectRadius, const float searchRadius, const int maxIter);
 
-	void setBoundary(const Math::Box3dd& boundary) { this->boundary = boundary; }
+	void setBoundary(const Math::Box3df& boundary) { this->boundary = boundary; }
 
 	void setExternalForce(const Math::Vector3df& force) { this->externalForce = force; }
 
@@ -29,8 +29,8 @@ public:
 	void setTimeStep(const float dt) { this->maxTimeStep = dt; }
 
 private:
-	std::vector<DFFluidScene*> fluids;
-	Math::Box3dd boundary;
+	std::vector<DFSPHFluid*> fluids;
+	Math::Box3df boundary;
 	Math::Vector3df externalForce;
 	float maxTimeStep;
 

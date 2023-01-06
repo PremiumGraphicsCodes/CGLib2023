@@ -1,14 +1,13 @@
 #include "DFSPHParticle.h"
-//#include "DFSPHFluid.h"
+#include "DFSPHFluid.h"
 
 using namespace Crystal::Math;
 using namespace Crystal::Physics;
 
 float DFSPHParticle::getMass() const
 {
-	//const auto diameter = radius * 2.0f;
-	//return constant->getDensity() * diameter * diameter * diameter;
-	return 0.0f;
+	const auto diameter = radius * 2.0f;
+	return parent->getDensity() * diameter * diameter * diameter;
 }
 
 void DFSPHParticle::calculateDensity()
@@ -72,28 +71,28 @@ void DFSPHParticle::calculateVelocityInDivergenceError(const float dt)
 
 void DFSPHParticle::calculateVelocityInDensityError(const float dt)
 {
-	//const auto k_i = (this->predictedDensity - constant->getDensity()) / dt / dt * alpha;
-	//Vector3df dv(0, 0, 0);
-	//for (auto n : neighbors) {
-	//	const auto k_j = (n->predictedDensity - constant->getDensity()) / dt / dt * n->alpha;
-	//	const auto v = this->position - n->position;
-	//	dv += n->getMass() * (k_i / density + k_j / n->density) * kernel->getCubicSplineGradient(v);
-	//}
-	//this->velocity -= dt * dv;
+	const auto k_i = (this->predictedDensity - parent->getDensity()) / dt / dt * alpha;
+	Vector3df dv(0, 0, 0);
+	for (auto n : neighbors) {
+		const auto k_j = (n->predictedDensity - parent->getDensity()) / dt / dt * n->alpha;
+		const auto v = this->position - n->position;
+		dv += n->getMass() * (k_i / density + k_j / n->density) * kernel->getCubicSplineGradient(v);
+	}
+	this->velocity -= dt * dv;
 }
 
 void DFSPHParticle::calculateViscosity()
 {
-	//for (auto n : neighbors) {
-	//	const auto viscosityCoe = (this->constant->getViscosityCoe() + n->constant->getViscosityCoe()) * 0.5f;
-	//	const auto velocityDiff = (n->velocity - this->velocity);
-	//	const auto distance = Math::getDistance(position, n->position);
-	//	this->force += viscosityCoe * velocityDiff * kernel->getCubicSpline(distance);
+	for (auto n : neighbors) {
+		const auto viscosityCoe = (this->parent->getViscosityCoe() + n->parent->getViscosityCoe()) * 0.5f;
+		const auto velocityDiff = (n->velocity - this->velocity);
+		const auto distance = Math::getDistance(position, n->position);
+		this->force += viscosityCoe * velocityDiff * kernel->getCubicSpline(distance);
 
-	//	/*
-	//	const auto vel = n->getVelocity() - this->velocity;
-	//	const auto weight = kernel->getViscosityKernelLaplacian(glm::length(v), kernel->getEffectLength());
-	//	this->xvisc += vel * weight * 0.1f;
-	//	*/
-	//}
+		/*
+		const auto vel = n->getVelocity() - this->velocity;
+		const auto weight = kernel->getViscosityKernelLaplacian(glm::length(v), kernel->getEffectLength());
+		this->xvisc += vel * weight * 0.1f;
+		*/
+	}
 }

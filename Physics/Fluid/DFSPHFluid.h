@@ -23,6 +23,10 @@ public:
 
 	Math::Box3df getBoundingBox() const;
 
+	float getDensity() const { return density; }
+
+	float getViscosityCoe() const { return viscosityCoe; }
+
 	float viscosityCoe;
 	float effectLength;
 	float pressureCoe;
