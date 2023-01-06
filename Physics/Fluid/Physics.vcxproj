@@ -159,6 +159,7 @@
     <ClInclude Include="CSPHFluid.h" />
     <ClInclude Include="CSPHParticle.h" />
     <ClInclude Include="CSPHSolver.h" />
+    <ClInclude Include="DFSPHBoundarySolver.h" />
     <ClInclude Include="DFSPHFluid.h" />
     <ClInclude Include="DFSPHParticle.h" />
     <ClInclude Include="DFSPHSolver.h" />
@@ -184,6 +185,7 @@
     <ClCompile Include="CSPHFluid.cpp" />
     <ClCompile Include="CSPHParticle.cpp" />
     <ClCompile Include="CSPHSolver.cpp" />
+    <ClCompile Include="DFSPHBoundarySolver.cpp" />
     <ClCompile Include="DFSPHFluid.cpp" />
     <ClCompile Include="DFSPHParticle.cpp" />
     <ClCompile Include="DFSPHSolver.cpp" />
