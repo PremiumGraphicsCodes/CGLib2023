@@ -58,6 +58,12 @@
     <ClCompile Include="DFSPHFluidPresenter.cpp">
       <Filter>DFSPH</Filter>
     </ClCompile>
+    <ClCompile Include="DFSPHAnimator.cpp">
+      <Filter>DFSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="DFSPHFluidView.cpp">
+      <Filter>DFSPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -121,6 +127,12 @@
       <Filter>DFSPH</Filter>
     </ClInclude>
     <ClInclude Include="DFSPHFluidPresenter.h">
+      <Filter>DFSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="DFSPHAnimator.h">
+      <Filter>DFSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="DFSPHFluidView.h">
       <Filter>DFSPH</Filter>
     </ClInclude>
   </ItemGroup>
