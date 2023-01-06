@@ -10,12 +10,11 @@ namespace Crystal {
 class DFSPHParticle
 {
 public:
-	DFSPHParticle(const Math::Vector3df& position, const float radius, DFSPHFluid* constant, SPHKernel* kernel) :
+	DFSPHParticle(const Math::Vector3df& position, const float radius, DFSPHFluid* constant) :
 		position(position),
 		velocity(0, 0, 0),
 		radius(radius),
 		parent(constant),
-		kernel(kernel),
 		density(0.0),
 		alpha(0.0)
 	{}
@@ -46,8 +45,6 @@ public:
 
 	void calculateVelocityInDensityError(const float dt);
 
-	void setKernel(SPHKernel* kernel) { this->kernel = kernel; }
-
 	float getDensity() const { return density; }
 
 	float getPredictedDensity() const { return predictedDensity; }
@@ -61,13 +58,14 @@ public:
 	Math::Vector3df position;
 
 private:
+	SPHKernel* getKernel();
+
 	const float radius;
 	float alpha;
 	float dpdt;
 	float predictedDensity;
 	float density;
 	std::vector<DFSPHParticle*> neighbors;
-	SPHKernel* kernel;
 	DFSPHFluid* parent;
 };
 

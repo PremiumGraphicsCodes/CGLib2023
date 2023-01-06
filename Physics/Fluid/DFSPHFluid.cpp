@@ -18,3 +18,9 @@ Box3df DFSPHFluid::getBoundingBox() const
 	}
 	return bb;
 }
+
+void DFSPHFluid::setEffectLength(const float effectLength)
+{
+	this->kernel = SPHKernel(effectLength);
+}
+

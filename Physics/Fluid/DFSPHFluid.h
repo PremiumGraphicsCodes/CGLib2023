@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DFSPHParticle.h"
+#include "SPHKernel.h"
 #include "CGLib/Util/UnCopyable.h"
 #include "CGLib/Math/Box3d.h"
 
@@ -27,6 +28,10 @@ public:
 
 	float getViscosityCoe() const { return viscosityCoe; }
 
+	void setEffectLength(const float effectLength);
+
+	SPHKernel* getKernel() { return &kernel; }
+
 	float viscosityCoe;
 	float effectLength;
 	float pressureCoe;
@@ -34,6 +39,7 @@ public:
 
 private:
 	std::list<std::unique_ptr<DFSPHParticle>> particles;
+	SPHKernel kernel;
 };
 
 	}

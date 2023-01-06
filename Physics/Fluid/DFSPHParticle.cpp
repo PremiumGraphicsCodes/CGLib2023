@@ -13,10 +13,10 @@ float DFSPHParticle::getMass() const
 void DFSPHParticle::calculateDensity()
 {
 	this->density = 0.0f;
-	this->density += (kernel->getCubicSpline(0.0f) * this->getMass());
+	this->density += (getKernel()->getCubicSpline(0.0f) * this->getMass());
 	for (auto n : neighbors) {
 		const float distance = Math::getDistance(this->position, n->position);
-		this->density += (kernel->getCubicSpline(distance) * n->getMass());
+		this->density += (getKernel()->getCubicSpline(distance) * n->getMass());
 	}
 }
 
@@ -28,7 +28,7 @@ void DFSPHParticle::calculateAlpha()
 	float b = 0.0f;
 	for (auto n : neighbors) {
 		const auto v = this->position - n->position;
-		const auto weight = (kernel->getCubicSplineGradient(v) * (float)n->getMass());
+		const auto weight = (getKernel()->getCubicSplineGradient(v) * (float)n->getMass());
 		a += weight;
 		b += Math::getLengthSquared(weight);
 	}
@@ -45,7 +45,7 @@ void DFSPHParticle::calculateDpDt()
 	this->dpdt = 0.0;
 	for (auto n : neighbors) {
 		const auto v = this->position - n->position;
-		const auto grad = kernel->getCubicSplineGradient(v);
+		const auto grad = getKernel()->getCubicSplineGradient(v);
 		dpdt += glm::dot(this->velocity, grad);
 	}
 	this->dpdt *= -density;
@@ -64,7 +64,7 @@ void DFSPHParticle::calculateVelocityInDivergenceError(const float dt)
 	for (auto n : neighbors) {
 		const auto k_j = 1.0f / dt * n->dpdt * n->alpha;
 		const auto v = this->position - n->position;
-		dv += n->getMass() * (k_i / density + k_j / n->density) * kernel->getCubicSplineGradient(v);
+		dv += n->getMass() * (k_i / density + k_j / n->density) * getKernel()->getCubicSplineGradient(v);
 	}
 	this->velocity -= dt * dv;
 }
@@ -76,7 +76,7 @@ void DFSPHParticle::calculateVelocityInDensityError(const float dt)
 	for (auto n : neighbors) {
 		const auto k_j = (n->predictedDensity - parent->getDensity()) / dt / dt * n->alpha;
 		const auto v = this->position - n->position;
-		dv += n->getMass() * (k_i / density + k_j / n->density) * kernel->getCubicSplineGradient(v);
+		dv += n->getMass() * (k_i / density + k_j / n->density) * getKernel()->getCubicSplineGradient(v);
 	}
 	this->velocity -= dt * dv;
 }
@@ -87,7 +87,7 @@ void DFSPHParticle::calculateViscosity()
 		const auto viscosityCoe = (this->parent->getViscosityCoe() + n->parent->getViscosityCoe()) * 0.5f;
 		const auto velocityDiff = (n->velocity - this->velocity);
 		const auto distance = Math::getDistance(position, n->position);
-		this->force += viscosityCoe * velocityDiff * kernel->getCubicSpline(distance);
+		this->force += viscosityCoe * velocityDiff * getKernel()->getCubicSpline(distance);
 
 		/*
 		const auto vel = n->getVelocity() - this->velocity;
@@ -95,4 +95,9 @@ void DFSPHParticle::calculateViscosity()
 		this->xvisc += vel * weight * 0.1f;
 		*/
 	}
+}
+
+SPHKernel* DFSPHParticle::getKernel()
+{
+	return parent->getKernel();
 }

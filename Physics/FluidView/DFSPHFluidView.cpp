@@ -56,25 +56,24 @@ void DFSPHFluidView::onOk()
 
 void DFSPHFluidView::onReset()
 {
-	/*
 	auto fluid = std::make_unique<DFSPHFluid>();
 	fluid->setEffectLength(this->effectLengthView.getValue());
-	fluid->setRestDensity(this->densityView.getValue());
-	fluid->setStiffness(this->stiffnessView.getValue());
-	fluid->setVicsosity(this->vicsocityView.getValue());
+	fluid->density = (this->densityView.getValue());
+	fluid->pressureCoe = (this->stiffnessView.getValue());
+	fluid->viscosityCoe = (this->vicsocityView.getValue());
 
 	const auto radius = 1.0;
 	const auto length = radius * 2.0;
 	for (int i = 0; i < 20; ++i) {
 		for (int j = 0; j < 20; ++j) {
 			for (int k = 0; k < 20; ++k) {
-				auto mp = std::make_unique<PBSPHParticle>(Vector3df(i * length, j * length, k * length), radius, fluid.get());
+				auto mp = std::make_unique<DFSPHParticle>(Vector3df(i * length, j * length, k * length), radius, fluid.get());
 				fluid->addParticle(std::move(mp));
 			}
 		}
 	}
 
-	auto solver = std::make_unique<PBSPHSolver>();
+	auto solver = std::make_unique<DFSPHSolver>();
 	solver->setTimeStep(timeStepView.getValue());
 	solver->setBoundary(boundaryView.getValue());
 	solver->setExternalForce(Vector3df(0.0f, -9.8f, 0.0f));
@@ -83,5 +82,4 @@ void DFSPHFluidView::onReset()
 	this->fluidScene->setFluid(std::move(fluid));
 	this->animator->setSolver(std::move(solver));
 	this->animator->setTimeStep(timeStepView.getValue());
-	*/
 }

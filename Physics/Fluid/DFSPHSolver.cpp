@@ -31,11 +31,6 @@ void DFSPHSolver::simulate(const float dt, const float effectLength, const float
 		}
 	}
 
-	SPHKernel kernel(effectLength);
-	for (auto p : particles) {
-		p->setKernel(&kernel);
-	}
-
 
 	/*
 	for (auto p : particles) {
