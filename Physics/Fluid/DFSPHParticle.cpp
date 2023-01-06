@@ -6,6 +6,7 @@ using namespace Crystal::Physics;
 
 float DFSPHParticle::getMass() const
 {
+	//return 1.0f;
 	const auto diameter = radius * 2.0f;
 	return parent->getDensity() * diameter * diameter * diameter;
 }

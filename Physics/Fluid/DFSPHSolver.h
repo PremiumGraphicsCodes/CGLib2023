@@ -18,7 +18,7 @@ public:
 
 	void add(DFSPHFluid* fluid) { this->fluids.push_back(fluid); }
 
-	void simulate(const float dt, const float effectRadius, const float searchRadius, const int maxIter);
+	void simulate(const float searchRadius, const int maxIter);
 
 	void setBoundary(const Math::Box3df& boundary) { this->boundary = boundary; }
 

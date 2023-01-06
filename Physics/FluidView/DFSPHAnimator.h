@@ -19,12 +19,11 @@ public:
 
 	void step() override;
 
-	void setTimeStep(const float timeStep) { this->timeStep = timeStep; }
+	void setTimeStep(const float timeStep) { this->solver->setTimeStep(timeStep); }
 
 private:
 	std::unique_ptr<DFSPHSolver> solver;
 	DFSPHFluidScene* scene;
-	float timeStep;
 };
 
 	}

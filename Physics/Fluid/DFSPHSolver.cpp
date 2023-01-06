@@ -5,6 +5,8 @@
 
 #include "Crystal/Space/Space/CompactSpaceHash.h"
 
+#include <iostream>
+
 using namespace Crystal::Math;
 using namespace Crystal::Space;
 using namespace Crystal::Physics;
@@ -20,7 +22,7 @@ void DFFluidSolver::step()
 }
 */
 
-void DFSPHSolver::simulate(const float dt, const float effectLength, const float searchLength, const int maxIter)
+void DFSPHSolver::simulate(const float searchLength, const int maxIter)
 {
 	std::vector<DFSPHParticle*> particles;
 	for (auto fluid : fluids) {
@@ -96,6 +98,13 @@ void DFSPHSolver::simulate(const float dt, const float effectLength, const float
 		correctDivergenceError(particles, dt);
 		time += dt;
 	}
+
+	auto densityError = 0.0;
+	for (auto particle : particles) {
+		densityError += particle->getDensity() / (double)particles.size();
+	}
+	std::cout << densityError << std::endl;
+
 }
 
 void DFSPHSolver::correctDivergenceError(const std::vector<DFSPHParticle*>& particles, const float dt)
