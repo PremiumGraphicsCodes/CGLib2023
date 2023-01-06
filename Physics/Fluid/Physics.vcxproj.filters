@@ -59,6 +59,9 @@
     <ClInclude Include="IMVPFluid.h">
       <Filter>MVP</Filter>
     </ClInclude>
+    <ClInclude Include="DFSPHSolver.h">
+      <Filter>DFSPH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -116,6 +119,9 @@
     <ClCompile Include="MVPFluidEmitter.cpp">
       <Filter>MVP</Filter>
     </ClCompile>
+    <ClCompile Include="DFSPHSolver.cpp">
+      <Filter>DFSPH</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CSPH">
@@ -129,6 +135,9 @@
     </Filter>
     <Filter Include="SPHSurface">
       <UniqueIdentifier>{2ce7fb62-bb64-41f2-9156-2b745c042e6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DFSPH">
+      <UniqueIdentifier>{1ba1d0ed-9adf-4997-a7ab-38f078f1347c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
