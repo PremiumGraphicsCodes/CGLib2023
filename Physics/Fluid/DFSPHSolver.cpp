@@ -154,6 +154,8 @@ float DFSPHSolver::calculateTimeStep(const std::vector<DFSPHParticle*>& particle
 	//maxVelocity = std::sqrt(maxVelocity);
 	//const auto dt = 0.4f * particles.front()->getRadius() * 2.0f / maxVelocity;
 	//return std::min(dt, maxTimeStep / 2.0f);
+	return 0.0f;
+
 }
 
 float DFSPHSolver::calculateAverageDensity(const std::vector<DFSPHParticle*>& particles)
@@ -164,6 +166,7 @@ float DFSPHSolver::calculateAverageDensity(const std::vector<DFSPHParticle*>& pa
 	//	totalDensity += p->getPredictedDensity();
 	//}
 	//return totalDensity / (float)particles.size();
+	return 0.0f;
 }
 
 float DFSPHSolver::calculateAverageDpDt(const std::vector<DFSPHParticle*>& particles)
@@ -173,4 +176,6 @@ float DFSPHSolver::calculateAverageDpDt(const std::vector<DFSPHParticle*>& parti
 	//	totalDensity += p->getDpDt();
 	//}
 	//return totalDensity / (float)particles.size();
+	return 0.0f;
+
 }
