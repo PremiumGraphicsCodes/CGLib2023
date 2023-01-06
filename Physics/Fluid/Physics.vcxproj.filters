@@ -65,6 +65,9 @@
     <ClInclude Include="DFSPHParticle.h">
       <Filter>DFSPH</Filter>
     </ClInclude>
+    <ClInclude Include="DFSPHFluid.h">
+      <Filter>DFSPH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPHKernel.cpp" />
@@ -126,6 +129,9 @@
       <Filter>DFSPH</Filter>
     </ClCompile>
     <ClCompile Include="DFSPHParticle.cpp">
+      <Filter>DFSPH</Filter>
+    </ClCompile>
+    <ClCompile Include="DFSPHFluid.cpp">
       <Filter>DFSPH</Filter>
     </ClCompile>
   </ItemGroup>
