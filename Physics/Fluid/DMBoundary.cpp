@@ -1,11 +1,13 @@
 #include "DMBoundary.h"
 
+#include "SPHKernel.h"
+
 using namespace Crystal::Math;
 using namespace Crystal::Physics;
 
-float DMBoundary::calculateWeight(const SPHKernel& kernel)
+float DMBoundary::calculateWeight(const float signedDistance, const float r, const float restDensity, const SPHKernel& kernel)
 {
-	return 0.0f;
+	return calculateDensity(signedDistance, r, restDensity ) * kernel.getCubicSpline(::fabs(signedDistance));
 }
 
 float DMBoundary::calculateDensity(const float x, const float r, const float restDensity)
@@ -14,9 +16,4 @@ float DMBoundary::calculateDensity(const float x, const float r, const float res
 		return 0.0f;
 	}
 	return restDensity * (1.0f - x / r);
-}
-
-float DMBoundary::calculatePhi(const Vector3df& v)
-{
-	return 0.0f;
 }

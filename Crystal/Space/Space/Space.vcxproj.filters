@@ -23,6 +23,9 @@
       <Filter>SpaceHash</Filter>
     </ClInclude>
     <ClInclude Include="ZIndexedSearcher.h" />
+    <ClInclude Include="SignedDistanceCalculator.h">
+      <Filter>Distance</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZOrderCurve3d.cpp" />
@@ -47,6 +50,9 @@
       <Filter>SpaceHash</Filter>
     </ClCompile>
     <ClCompile Include="ZIndexedSearcher.cpp" />
+    <ClCompile Include="SignedDistanceCalculator.cpp">
+      <Filter>Distance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Indexed">

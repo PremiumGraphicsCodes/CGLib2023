@@ -11,11 +11,9 @@ namespace Crystal {
 class DMBoundary
 {
 public:
-	float calculateWeight(const SPHKernel& kernel);
+	float calculateWeight(const float signedDistance, const float r, const float restDensity, const SPHKernel& kernel);
 
 	float calculateDensity(const float x, const float r, const float restDensity);
-
-	float calculatePhi(const Math::Vector3df& v);
 
 private:
 	Math::Sphere3df boundary;

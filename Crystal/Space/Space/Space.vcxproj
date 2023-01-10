@@ -159,6 +159,7 @@
     <ClInclude Include="IndexedSortBasedSeacher.h" />
     <ClInclude Include="IntersectionCalculator.h" />
     <ClInclude Include="LinearOctreeIndex.h" />
+    <ClInclude Include="SignedDistanceCalculator.h" />
     <ClInclude Include="SpaceHash.h" />
     <ClInclude Include="ZIndexedSearcher.h" />
     <ClInclude Include="ZOrderCurve2d.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="IndexedSortBasedSearcher.cpp" />
     <ClCompile Include="IntersectionCalculator.cpp" />
     <ClCompile Include="LinearOctreeIndex.cpp" />
+    <ClCompile Include="SignedDistanceCalculator.cpp" />
     <ClCompile Include="SpaceHash.cpp" />
     <ClCompile Include="ZIndexedSearcher.cpp" />
     <ClCompile Include="ZOrderCurve2d.cpp" />
