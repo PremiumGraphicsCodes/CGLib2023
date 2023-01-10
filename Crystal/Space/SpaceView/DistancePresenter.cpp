@@ -43,7 +43,7 @@ void DistancePresenter::send()
 		position.add(p.position);
 		const auto c = this->colorMap.getInterpolatedColor(p.value);
 		color.add(c);
-		size.add(100);
+		size.add(10);
 	}
 
 	vbo.position.send(position);

@@ -24,6 +24,8 @@ public:
 
 	void render(const Graphics::Camera& camera) override;
 
+	void setMinMax(const float min, const float max) { this->colorMap.setMinMax(min, max); }
+
 private:
 	struct VBO {
 		Shader::VertexBufferObject position;

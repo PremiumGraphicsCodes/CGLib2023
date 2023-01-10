@@ -22,29 +22,30 @@ SignedDistanceCalculatorView::SignedDistanceCalculatorView(const std::string& na
 
 void SignedDistanceCalculatorView::onOk()
 {
-	/*
-	auto psScene = world->getRootScene()->findSceneById<ParticleSystemScene*>(psSelectView.getId());
-	const auto& particles = psScene->getShape()->getParticles();
-	CompactSpaceHash spaceHash(searchRadiusView.getValue(), particles.size());
-	for (const auto& p : particles) {
-		spaceHash.add(p->getPosition());
-	}
-	int totalIndicesCount = 0;
-	for (const auto& p : particles) {
-		const auto indices = spaceHash.findNeighborIndices(p->getPosition());
-		totalIndicesCount += indices.size();
-	}
-	std::cout << totalIndicesCount << std::endl;
-	*/
+	const auto sphere = sphereView.getValue();
+	const auto bb = sphere.getBoundingBox();
 
 	auto scene = new DistanceScene();
-	DistanceNode node;
-	node.position = Vector3df(0, 0, 0);
-	node.value = 1.0f;
-	scene->add(node);
+
+	SignedDistanceCalculator<float> c;
+
+	for (int i = 0; i < 10; ++i) {
+		for (int j = 0; j < 10; ++j) {
+			for (int k = 0; k < 10; ++k) {
+				const auto u = i / 10.0f;
+				const auto v = j / 10.0f;
+				const auto w = k / 10.0f;
+				DistanceNode node;
+				node.position = bb.getPosition(u, v, w);
+				node.value = c.calculate(node.position, sphere);
+				scene->add(node);
+			}
+		}
+	}
 
 	auto presenter = new DistancePresenter(scene, renderer->getPointRenderer());
 	presenter->build();
+	presenter->setMinMax(-sphere.getRadius(), 0.0f);//sphere.getRadius());
 	presenter->send();
 
 	scene->addPresenter(std::move(presenter));
