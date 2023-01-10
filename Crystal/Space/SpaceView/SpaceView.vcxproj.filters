@@ -6,6 +6,7 @@
     <ClCompile Include="SpaceHashView.cpp" />
     <ClCompile Include="CompactSpaceHashView.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SignedDistanceCalculatorView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpaceMenu.h" />
@@ -13,6 +14,7 @@
     <ClInclude Include="CompactSpaceHashView.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SignedDistanceCalculatorView.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

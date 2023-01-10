@@ -28,6 +28,8 @@ class SignedDistanceCalculator
 public:
 	static T calculate(const Math::Vector3d<T>& position, const Math::Sphere3d<T>& sphere);
 
+	static T calculate(const Math::Vector3d<T>& position, const Math::Plane3d<T>& plane);
+
 	//static T calculate(const Math::Vector3d<T>& position, const Math::Box3d<T>& box);
 };
 	}

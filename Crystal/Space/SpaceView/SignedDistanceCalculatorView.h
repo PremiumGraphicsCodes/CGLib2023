@@ -2,23 +2,22 @@
 
 #include "CGLib/UI/IOkCancelView.h"
 #include "CGLib/UI/FloatView.h"
-#include "Crystal/AppBase/SceneSelectView.h"
+#include "CGLib/UI/Sphere3dView.h"
 
 namespace Crystal {
 	namespace UI {
 		class World;
 		class Renderer;
 
-class CompactSpaceHashView : public IOkCancelView
+class SignedDistanceCalculatorView : public IOkCancelView
 {
 public:
-	CompactSpaceHashView(const std::string& name, World* world, Renderer* renderer);
+	SignedDistanceCalculatorView(const std::string& name, World* world, Renderer* renderer);
 
 	void onOk() override;
 
 private:
-	SceneSelectView psSelectView;
-	FloatView searchRadiusView;
+	Sphere3dView sphereView;
 	World* world;
 	Renderer* renderer;
 };
