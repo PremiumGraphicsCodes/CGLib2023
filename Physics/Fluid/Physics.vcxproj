@@ -163,6 +163,7 @@
     <ClInclude Include="DFSPHFluid.h" />
     <ClInclude Include="DFSPHParticle.h" />
     <ClInclude Include="DFSPHSolver.h" />
+    <ClInclude Include="DMBoundary.h" />
     <ClInclude Include="IMVPFluid.h" />
     <ClInclude Include="MVPBoundarySolver.h" />
     <ClInclude Include="MVPFluid.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="DFSPHFluid.cpp" />
     <ClCompile Include="DFSPHParticle.cpp" />
     <ClCompile Include="DFSPHSolver.cpp" />
+    <ClCompile Include="DMBoundary.cpp" />
     <ClCompile Include="MVPBoundarySolver.cpp" />
     <ClCompile Include="MVPFluid.cpp" />
     <ClCompile Include="MVPFluidEmitter.cpp" />
