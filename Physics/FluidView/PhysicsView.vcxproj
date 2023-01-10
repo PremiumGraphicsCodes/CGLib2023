@@ -146,6 +146,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BoundaryPresenter.cpp" />
+    <ClCompile Include="BoundaryScene.cpp" />
     <ClCompile Include="CSPHAnimator.cpp" />
     <ClCompile Include="CSPHFluidPresenter.cpp" />
     <ClCompile Include="CSPHFluidScene.cpp" />
@@ -154,6 +156,7 @@
     <ClCompile Include="DFSPHFluidPresenter.cpp" />
     <ClCompile Include="DFSPHFluidScene.cpp" />
     <ClCompile Include="DFSPHFluidView.cpp" />
+    <ClCompile Include="DMBoundaryView.cpp" />
     <ClCompile Include="MVPFluidAnimator.cpp" />
     <ClCompile Include="MVPFluidEmitterView.cpp" />
     <ClCompile Include="MVPFluidPresenter.cpp" />
@@ -209,6 +212,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BoundaryPresenter.h" />
+    <ClInclude Include="BoundaryScene.h" />
     <ClInclude Include="CSPHAnimator.h" />
     <ClInclude Include="CSPHFluidPresenter.h" />
     <ClInclude Include="CSPHFluidScene.h" />

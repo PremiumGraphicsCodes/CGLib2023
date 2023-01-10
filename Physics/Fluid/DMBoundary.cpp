@@ -1,9 +1,21 @@
 #include "DMBoundary.h"
 
 #include "SPHKernel.h"
+#include "CGLib/Math/Plane3d.h"
+
+#include "Crystal/Space/Space/SignedDistanceCalculator.h"
 
 using namespace Crystal::Math;
+using namespace Crystal::Space;
 using namespace Crystal::Physics;
+
+float DMBoundary::calculateWeight(const Vector3df& position, const float r, const float restDensity, const SPHKernel& kernel)
+{
+	const Plane3df bottom(boundary.getMin(), Vector3df(0,1,0));
+	SignedDistanceCalculator<float> c;
+	const auto sd = c.calculate(position, bottom);
+	return calculateWeight(sd, r, restDensity, kernel);
+}
 
 float DMBoundary::calculateWeight(const float signedDistance, const float r, const float restDensity, const SPHKernel& kernel)
 {

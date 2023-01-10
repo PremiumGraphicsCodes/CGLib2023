@@ -64,6 +64,15 @@
     <ClCompile Include="DFSPHFluidView.cpp">
       <Filter>Solver\DFSPH</Filter>
     </ClCompile>
+    <ClCompile Include="DMBoundaryView.cpp">
+      <Filter>Boundary</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundaryScene.cpp">
+      <Filter>Boundary</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundaryPresenter.cpp">
+      <Filter>Boundary</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -136,6 +145,12 @@
       <Filter>Solver\DFSPH</Filter>
     </ClInclude>
     <ClInclude Include="DMBoundaryView.h">
+      <Filter>Boundary</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundaryScene.h">
+      <Filter>Boundary</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundaryPresenter.h">
       <Filter>Boundary</Filter>
     </ClInclude>
   </ItemGroup>

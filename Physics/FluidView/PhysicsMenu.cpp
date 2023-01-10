@@ -9,6 +9,7 @@
 #include "MVPFluidEmitterView.h"
 #include "MVPSamplerView.h"
 #include "SPHVolumeConverterView.h"
+#include "DMBoundaryView.h"
 
 using namespace Crystal::UI;
 
@@ -35,5 +36,8 @@ PhysicsMenu::PhysicsMenu(const std::string& name, World* world, Renderer* render
 		}));
 	add(new MenuItem("SPHVolume", [control, world, renderer]() {
 		control->setChild(new SPHVolumeConverterView("SPHVolume", world, renderer));
+		}));
+	add(new MenuItem("DMBoundary", [control, world, renderer]() {
+		control->setChild(new DMBoundaryView("DMBoundary", world, renderer));
 		}));
 }
