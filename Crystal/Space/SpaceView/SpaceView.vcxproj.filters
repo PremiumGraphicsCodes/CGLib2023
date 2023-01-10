@@ -7,6 +7,9 @@
     <ClCompile Include="CompactSpaceHashView.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SignedDistanceCalculatorView.cpp" />
+    <ClCompile Include="DistanceScene.cpp">
+      <Filter>DistanceScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpaceMenu.h" />
@@ -15,8 +18,16 @@
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SignedDistanceCalculatorView.h" />
+    <ClInclude Include="DistanceScene.h">
+      <Filter>DistanceScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="DistanceScene">
+      <UniqueIdentifier>{91c0e155-ae92-4ef3-8953-ed2fe4240852}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

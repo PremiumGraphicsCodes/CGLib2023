@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CompactSpaceHashView.cpp" />
+    <ClCompile Include="DistanceScene.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SignedDistanceCalculatorView.cpp" />
     <ClCompile Include="SpaceHashView.cpp" />
@@ -174,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CompactSpaceHashView.h" />
+    <ClInclude Include="DistanceScene.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SignedDistanceCalculatorView.h" />
     <ClInclude Include="SpaceHashView.h" />
