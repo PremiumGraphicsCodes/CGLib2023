@@ -37,6 +37,7 @@
     <ClCompile Include="DistanceCalculatorTest.cpp" />
     <ClCompile Include="IndexedSortBasedSearcherTest.cpp" />
     <ClCompile Include="IntersectionCalculatorTest.cpp" />
+    <ClCompile Include="SignedDistanceCalculatorTest.cpp" />
     <ClCompile Include="SpaceHashTest.cpp" />
   </ItemGroup>
   <ItemGroup>
