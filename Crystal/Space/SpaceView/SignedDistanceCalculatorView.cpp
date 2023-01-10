@@ -1,7 +1,10 @@
 #include "SignedDistanceCalculatorView.h"
 
 #include "../Space/SignedDistanceCalculator.h"
+#include "DistanceScene.h"
+#include "DistancePresenter.h"
 #include "World.h"
+#include "Renderer.h"
 #include <iostream>
 
 using namespace Crystal::Math;
@@ -33,4 +36,20 @@ void SignedDistanceCalculatorView::onOk()
 	}
 	std::cout << totalIndicesCount << std::endl;
 	*/
+
+	auto scene = new DistanceScene();
+	DistanceNode node;
+	node.position = Vector3df(0, 0, 0);
+	node.value = 1.0f;
+	scene->add(node);
+
+	auto presenter = new DistancePresenter(scene, renderer->getPointRenderer());
+	presenter->build();
+	presenter->send();
+
+	scene->addPresenter(std::move(presenter));
+
+	world->getRootScene()->addScene(scene);
+
+	//scene->Presenter(std::move(presenter));
 }

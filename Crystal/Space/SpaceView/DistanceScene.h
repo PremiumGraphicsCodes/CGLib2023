@@ -5,7 +5,7 @@
 #include <vector>
 
 namespace Crystal {
-	namespace Scene {
+	namespace Space {
 
 struct DistanceNode
 {
@@ -13,12 +13,14 @@ struct DistanceNode
 	float value;
 };
 
-class DistanceScene : public SceneBase
+class DistanceScene : public Scene::SceneBase
 {
 public:
 	DistanceScene() = default;
 
 	void add(const DistanceNode& node) { this->nodes.push_back(node); }
+
+	std::vector<DistanceNode> getNodes() const { return nodes; }
 
 	Math::Box3df getBoundingBox() const override;
 

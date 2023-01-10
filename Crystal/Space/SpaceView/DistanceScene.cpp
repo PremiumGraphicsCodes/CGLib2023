@@ -1,7 +1,7 @@
 #include "DistanceScene.h"
 
 using namespace Crystal::Math;
-using namespace Crystal::Scene;
+using namespace Crystal::Space;
 
 Box3df DistanceScene::getBoundingBox() const
 {

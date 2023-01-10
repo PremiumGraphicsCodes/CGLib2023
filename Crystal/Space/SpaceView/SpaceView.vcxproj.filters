@@ -10,6 +10,9 @@
     <ClCompile Include="DistanceScene.cpp">
       <Filter>DistanceScene</Filter>
     </ClCompile>
+    <ClCompile Include="DistancePresenter.cpp">
+      <Filter>DistanceScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpaceMenu.h" />
@@ -19,6 +22,9 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SignedDistanceCalculatorView.h" />
     <ClInclude Include="DistanceScene.h">
+      <Filter>DistanceScene</Filter>
+    </ClInclude>
+    <ClInclude Include="DistancePresenter.h">
       <Filter>DistanceScene</Filter>
     </ClInclude>
   </ItemGroup>
