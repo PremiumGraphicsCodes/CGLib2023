@@ -217,6 +217,7 @@
     <ClInclude Include="DFSPHFluidPresenter.h" />
     <ClInclude Include="DFSPHFluidScene.h" />
     <ClInclude Include="DFSPHFluidView.h" />
+    <ClInclude Include="DMBoundaryView.h" />
     <ClInclude Include="MVPFluidAnimator.h" />
     <ClInclude Include="MVPFluidEmitterView.h" />
     <ClInclude Include="MVPFluidPresenter.h" />

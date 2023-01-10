@@ -3,45 +3,45 @@
   <ItemGroup>
     <ClCompile Include="PhysicsView.cpp" />
     <ClCompile Include="CSPHFluidPresenter.cpp">
-      <Filter>CSPH</Filter>
+      <Filter>Solver\CSPH</Filter>
     </ClCompile>
     <ClCompile Include="CSPHFluidScene.cpp">
-      <Filter>CSPH</Filter>
+      <Filter>Solver\CSPH</Filter>
     </ClCompile>
     <ClCompile Include="CSPHFluidView.cpp">
-      <Filter>CSPH</Filter>
+      <Filter>Solver\CSPH</Filter>
     </ClCompile>
     <ClCompile Include="CSPHAnimator.cpp">
-      <Filter>CSPH</Filter>
+      <Filter>Solver\CSPH</Filter>
     </ClCompile>
     <ClCompile Include="PBSPHFluidView.cpp">
-      <Filter>PBSPH</Filter>
+      <Filter>Solver\PBSPH</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsMenu.cpp" />
     <ClCompile Include="PBSPHFluidPresenter.cpp">
-      <Filter>PBSPH</Filter>
+      <Filter>Solver\PBSPH</Filter>
     </ClCompile>
     <ClCompile Include="PBSPHFluidScene.cpp">
-      <Filter>PBSPH</Filter>
+      <Filter>Solver\PBSPH</Filter>
     </ClCompile>
     <ClCompile Include="PBSPHAnimator.cpp">
-      <Filter>PBSPH</Filter>
+      <Filter>Solver\PBSPH</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="MVPFluidPresenter.cpp">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClCompile>
     <ClCompile Include="MVPSamplerView.cpp">
-      <Filter>MVP\Sampler</Filter>
+      <Filter>Solver\MVP\Sampler</Filter>
     </ClCompile>
     <ClCompile Include="MVPFluidScene.cpp">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClCompile>
     <ClCompile Include="MVPFluidView.cpp">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClCompile>
     <ClCompile Include="MVPFluidAnimator.cpp">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClCompile>
     <ClCompile Include="SPHVolumeConverterView.cpp">
       <Filter>SPHSurface</Filter>
@@ -50,19 +50,19 @@
       <Filter>SPHSurface</Filter>
     </ClCompile>
     <ClCompile Include="MVPFluidEmitterView.cpp">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClCompile>
     <ClCompile Include="DFSPHFluidScene.cpp">
-      <Filter>DFSPH</Filter>
+      <Filter>Solver\DFSPH</Filter>
     </ClCompile>
     <ClCompile Include="DFSPHFluidPresenter.cpp">
-      <Filter>DFSPH</Filter>
+      <Filter>Solver\DFSPH</Filter>
     </ClCompile>
     <ClCompile Include="DFSPHAnimator.cpp">
-      <Filter>DFSPH</Filter>
+      <Filter>Solver\DFSPH</Filter>
     </ClCompile>
     <ClCompile Include="DFSPHFluidView.cpp">
-      <Filter>DFSPH</Filter>
+      <Filter>Solver\DFSPH</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,46 +70,46 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CSPHFluidPresenter.h">
-      <Filter>CSPH</Filter>
+      <Filter>Solver\CSPH</Filter>
     </ClInclude>
     <ClInclude Include="CSPHFluidScene.h">
-      <Filter>CSPH</Filter>
+      <Filter>Solver\CSPH</Filter>
     </ClInclude>
     <ClInclude Include="CSPHFluidView.h">
-      <Filter>CSPH</Filter>
+      <Filter>Solver\CSPH</Filter>
     </ClInclude>
     <ClInclude Include="CSPHAnimator.h">
-      <Filter>CSPH</Filter>
+      <Filter>Solver\CSPH</Filter>
     </ClInclude>
     <ClInclude Include="PBSPHFluidView.h">
-      <Filter>PBSPH</Filter>
+      <Filter>Solver\PBSPH</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsMenu.h" />
     <ClInclude Include="PBSPHFluidScene.h">
-      <Filter>PBSPH</Filter>
+      <Filter>Solver\PBSPH</Filter>
     </ClInclude>
     <ClInclude Include="PBSPHFluidPresenter.h">
-      <Filter>PBSPH</Filter>
+      <Filter>Solver\PBSPH</Filter>
     </ClInclude>
     <ClInclude Include="PBSPHAnimator.h">
-      <Filter>PBSPH</Filter>
+      <Filter>Solver\PBSPH</Filter>
     </ClInclude>
     <ClInclude Include="World.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="MVPFluidPresenter.h">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClInclude>
     <ClInclude Include="MVPSamplerView.h">
-      <Filter>MVP\Sampler</Filter>
+      <Filter>Solver\MVP\Sampler</Filter>
     </ClInclude>
     <ClInclude Include="MVPFluidScene.h">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClInclude>
     <ClInclude Include="MVPFluidView.h">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClInclude>
     <ClInclude Include="MVPFluidAnimator.h">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClInclude>
     <ClInclude Include="SPHVolumeConverterView.h">
       <Filter>SPHSurface</Filter>
@@ -121,39 +121,48 @@
       <Filter>SPHSurface</Filter>
     </ClInclude>
     <ClInclude Include="MVPFluidEmitterView.h">
-      <Filter>MVP</Filter>
+      <Filter>Solver\MVP</Filter>
     </ClInclude>
     <ClInclude Include="DFSPHFluidScene.h">
-      <Filter>DFSPH</Filter>
+      <Filter>Solver\DFSPH</Filter>
     </ClInclude>
     <ClInclude Include="DFSPHFluidPresenter.h">
-      <Filter>DFSPH</Filter>
+      <Filter>Solver\DFSPH</Filter>
     </ClInclude>
     <ClInclude Include="DFSPHAnimator.h">
-      <Filter>DFSPH</Filter>
+      <Filter>Solver\DFSPH</Filter>
     </ClInclude>
     <ClInclude Include="DFSPHFluidView.h">
-      <Filter>DFSPH</Filter>
+      <Filter>Solver\DFSPH</Filter>
+    </ClInclude>
+    <ClInclude Include="DMBoundaryView.h">
+      <Filter>Boundary</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="CSPH">
-      <UniqueIdentifier>{94989af5-e6f4-432b-bccb-598608f81b65}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="PBSPH">
-      <UniqueIdentifier>{d3a591a3-1480-42eb-b7ba-744141408cca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="MVP">
-      <UniqueIdentifier>{95401368-80d9-45dd-9713-e4739b193b77}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="MVP\Sampler">
-      <UniqueIdentifier>{98a6c59c-387d-4b06-93b9-e1535a0a7223}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SPHSurface">
       <UniqueIdentifier>{c4cc57a2-9f9a-4ae7-bb65-87892fdcd239}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DFSPH">
+    <Filter Include="Solver">
+      <UniqueIdentifier>{29f4cd98-b78a-4d81-becc-77af4f6f7160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\CSPH">
+      <UniqueIdentifier>{94989af5-e6f4-432b-bccb-598608f81b65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\DFSPH">
       <UniqueIdentifier>{1759581a-a58d-4a9a-8d82-398f25a65124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\MVP">
+      <UniqueIdentifier>{95401368-80d9-45dd-9713-e4739b193b77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\MVP\Sampler">
+      <UniqueIdentifier>{98a6c59c-387d-4b06-93b9-e1535a0a7223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\PBSPH">
+      <UniqueIdentifier>{d3a591a3-1480-42eb-b7ba-744141408cca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boundary">
+      <UniqueIdentifier>{4901eb8c-d1f1-4c0f-9aa8-636268b03452}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

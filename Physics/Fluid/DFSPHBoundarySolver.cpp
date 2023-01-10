@@ -1,8 +1,12 @@
 #include "DFSPHBoundarySolver.h"
 
 #include "DFSPHParticle.h"
+#include "DMBoundary.h"
+#include "CGLib/Math/Plane3d.h"
+#include "Crystal/Space/Space/SignedDistanceCalculator.h"
 
 using namespace Crystal::Math;
+using namespace Crystal::Space;
 using namespace Crystal::Physics;
 
 DFSPHBoundarySolver::DFSPHBoundarySolver(const float timeStep, const Box3df& boundary) :
@@ -11,7 +15,21 @@ DFSPHBoundarySolver::DFSPHBoundarySolver(const float timeStep, const Box3df& bou
 {
 }
 
-void DFSPHBoundarySolver::solve(const std::vector<DFSPHParticle*>& particles) {
+/*
+void DFSPHBoundarySolver::solveDensity(const std::vector<DFSPHParticle*>& particles)
+{
+	SignedDistanceCalculator<float> c;
+	DMBoundary dm;
+	Plane3df bottom(boundary.getMin(), Vector3df(0, 1, 0));
+	for (int i = 0; i < static_cast<int>(particles.size()); ++i) {
+		const auto sd = c.calculate(particles[i]->getPosition(), bottom);
+		dm.calculateWeight(sd, 60.0f, )
+	}
+}
+*/
+
+void DFSPHBoundarySolver::solve(const std::vector<DFSPHParticle*>& particles)
+{
 	for (int i = 0; i < static_cast<int>(particles.size()); ++i) {
 		const auto force = getBoundaryForce(particles[i]->getPosition());
 		particles[i]->force += (force * particles[i]->getMass());

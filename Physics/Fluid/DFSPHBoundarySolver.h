@@ -15,6 +15,8 @@ public:
 
 	DFSPHBoundarySolver(const float timeStep, const Math::Box3df& boundary);
 
+	//void solveDensity(const std::vector<DFSPHParticle*>& particles);
+
 	void solve(const std::vector<DFSPHParticle*>& particles);
 
 private:
