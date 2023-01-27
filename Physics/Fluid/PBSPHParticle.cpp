@@ -133,7 +133,7 @@ void PBSPHParticle::updateHeat(const float dt)
 	}
 	// 熱エネルギーが追加され続けてしまうので減衰させる．
 	// 厳密に処理するなら熱エネルギー専用のBoundaryHanldingが本来必要．
-	this->enthalpy -= (this->temperature - 300.0f) * 0.01f;
+	this->enthalpy -= (this->temperature - 300.0f) * 0.1f;
 
 	this->temperature += this->enthalpy * dt;
 }

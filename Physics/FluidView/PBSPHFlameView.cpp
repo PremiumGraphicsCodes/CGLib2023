@@ -1,7 +1,7 @@
 #include "PBSPHFlameView.h"
 
 #include "PBSPHFluidScene.h"
-#include "PBSPHFluidPresenter.h"
+#include "PBSPHFlamePresenter.h"
 #include "../Fluid/PBSPHSolver.h"
 #include "../Fluid/PBSPHParticle.h"
 
@@ -16,17 +16,17 @@ PBSPHFlameView::PBSPHFlameView(const std::string& name, World* model, Renderer* 
 	renderer(renderer),
 	startButton("Start"),
 	resetButton("Reset"),
-	timeStepView("TimeStep", 0.01f),
+	timeStepView("TimeStep", 0.03f),
 	radiusView("Radius", 1.0f),
 	effectLengthView("EffectLength", 2.25f),
 	densityView("Density", 1.0f),
 	boundaryView("Boundary"),
-	stiffnessView("Stiffness", 0.05f),
-	vicsocityView("Viscosity", 0.1f),
+	stiffnessView("Stiffness", 1.0f),
+	vicsocityView("Viscosity", 1.0f),
 	heatDiffuseView("HeatDiffuse", 10.0f)
 {
 	resetButton.setFunction([=]() { onReset(); });
-	boundaryView.setValue(Box3df(Vector3dd(0.0, 0.0, 0.0), Vector3dd(40.0, 50.0, 40.0)));
+	boundaryView.setValue(Box3df(Vector3dd(0.0, 0.0, 0.0), Vector3dd(40.0, 40.0, 40.0)));
 
 	add(&resetButton);
 	add(&timeStepView);
@@ -44,7 +44,7 @@ void PBSPHFlameView::onOk()
 	{
 		this->fluidScene = new PBSPHFluidScene();
 
-		auto presenter = new PBSPHFluidPresenter(fluidScene, renderer->getPointRenderer());
+		auto presenter = new PBSPHFlamePresenter(fluidScene, renderer->getPointRenderer());
 		presenter->build();
 		this->fluidScene->addPresenter(std::move(presenter));
 
@@ -54,7 +54,7 @@ void PBSPHFlameView::onOk()
 	{
 		this->sourceScene = new PBSPHFluidScene();
 
-		auto presenter = new PBSPHFluidPresenter(sourceScene, renderer->getPointRenderer());
+		auto presenter = new PBSPHFlamePresenter(sourceScene, renderer->getPointRenderer());
 		presenter->build();
 		this->fluidScene->addPresenter(std::move(presenter));
 
@@ -100,7 +100,7 @@ void PBSPHFlameView::onReset()
 		for (int j = -2; j < 0; ++j) {
 			for (int k = 5; k < 15; ++k) {
 				auto mp = std::make_unique<PBSPHParticle>(Vector3df(i * length, j * length, k * length), radius, source.get());
-				mp->setTemperature(1500.0f);
+				mp->setTemperature(2000.0f);
 				source->addParticle(std::move(mp));				
 			}
 		}

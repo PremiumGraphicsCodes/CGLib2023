@@ -76,6 +76,9 @@
     <ClCompile Include="PBSPHFlameView.cpp">
       <Filter>Solver\PBSPH\Flame</Filter>
     </ClCompile>
+    <ClCompile Include="PBSPHFlamePresenter.cpp">
+      <Filter>Solver\PBSPH\Flame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -157,6 +160,9 @@
       <Filter>Boundary</Filter>
     </ClInclude>
     <ClInclude Include="PBSPHFlameView.h">
+      <Filter>Solver\PBSPH\Flame</Filter>
+    </ClInclude>
+    <ClInclude Include="PBSPHFlamePresenter.h">
       <Filter>Solver\PBSPH\Flame</Filter>
     </ClInclude>
   </ItemGroup>
