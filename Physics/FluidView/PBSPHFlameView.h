@@ -27,6 +27,7 @@ private:
 private:
 	Physics::PBSPHSolver* simulator;
 	Physics::PBSPHFluidScene* fluidScene;
+	Physics::PBSPHFluidScene* sourceScene;
 	Physics::PBSPHAnimator* animator;
 	Button startButton;
 	Button resetButton;

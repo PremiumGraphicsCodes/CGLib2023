@@ -23,10 +23,10 @@ PBSPHFlameView::PBSPHFlameView(const std::string& name, World* model, Renderer* 
 	boundaryView("Boundary"),
 	stiffnessView("Stiffness", 0.05f),
 	vicsocityView("Viscosity", 0.1f),
-	heatDiffuseView("HeatDiffuse", 0.1f)
+	heatDiffuseView("HeatDiffuse", 10.0f)
 {
 	resetButton.setFunction([=]() { onReset(); });
-	boundaryView.setValue(Box3df(Vector3dd(0, 0.0, 0.0), Vector3dd(100.0, 1000.0, 40.0)));
+	boundaryView.setValue(Box3df(Vector3dd(0.0, 0.0, 0.0), Vector3dd(40.0, 50.0, 40.0)));
 
 	add(&resetButton);
 	add(&timeStepView);
@@ -41,13 +41,25 @@ PBSPHFlameView::PBSPHFlameView(const std::string& name, World* model, Renderer* 
 
 void PBSPHFlameView::onOk()
 {
-	this->fluidScene = new PBSPHFluidScene();
+	{
+		this->fluidScene = new PBSPHFluidScene();
 
-	auto presenter = new PBSPHFluidPresenter(fluidScene, renderer->getPointRenderer());
-	presenter->build();
-	this->fluidScene->addPresenter(std::move(presenter));
+		auto presenter = new PBSPHFluidPresenter(fluidScene, renderer->getPointRenderer());
+		presenter->build();
+		this->fluidScene->addPresenter(std::move(presenter));
 
-	model->getRootScene()->addScene(fluidScene);
+		model->getRootScene()->addScene(fluidScene);
+	}
+
+	{
+		this->sourceScene = new PBSPHFluidScene();
+
+		auto presenter = new PBSPHFluidPresenter(sourceScene, renderer->getPointRenderer());
+		presenter->build();
+		this->fluidScene->addPresenter(std::move(presenter));
+
+		model->getRootScene()->addScene(sourceScene);
+	}
 
 	animator = new PBSPHAnimator();
 	animator->setScene(fluidScene);
@@ -84,10 +96,10 @@ void PBSPHFlameView::onReset()
 	source->setHeatDiffuse(this->heatDiffuseView.getValue());
 	source->setIsBoundary(true);
 
-	for (int i = 0; i < 20; ++i) {
+	for (int i = 5; i < 15; ++i) {
 		for (int j = -2; j < 0; ++j) {
-			for (int k = 0; k < 20; ++k) {
-				auto mp = std::make_unique<PBSPHParticle>(Vector3df(i * length, j * length, k * length), radius, fluid.get());
+			for (int k = 5; k < 15; ++k) {
+				auto mp = std::make_unique<PBSPHParticle>(Vector3df(i * length, j * length, k * length), radius, source.get());
 				mp->setTemperature(1500.0f);
 				source->addParticle(std::move(mp));				
 			}
@@ -102,6 +114,7 @@ void PBSPHFlameView::onReset()
 	solver->add(source.get());
 
 	this->fluidScene->setFluid(std::move(fluid));
+	this->sourceScene->setFluid(std::move(source));
 	this->animator->setSolver(std::move(solver));
 	this->animator->setTimeStep(timeStepView.getValue());
 }

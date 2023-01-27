@@ -16,13 +16,6 @@ PBSPHSolver::PBSPHSolver() :
 	maxTimeStep(0.01f)
 {}
 
-/*
-void PBSPHSolver::step()
-{
-	simulate(maxTimeStep, 3);
-}
-*/
-
 void PBSPHSolver::simulate(const float maxTimeStep, const int maxIter)
 {
 	std::vector<PBSPHParticle*> particles;
@@ -42,6 +35,8 @@ void PBSPHSolver::simulate(const float maxTimeStep, const int maxIter)
 	PBSPHBoundarySolver boundarySolver(boundary);
 	for (auto p : particles) {
 		p->addExternalForce(externalForce);
+		const auto t = p->getTemperature() - 300.0f;
+		p->addExternalForce(t * 0.1f * Vector3df(0, 1, 0));
 		p->predictPosition_(dt);
 	}
 
@@ -103,13 +98,14 @@ void PBSPHSolver::simulate(const float maxTimeStep, const int maxIter)
 		p1->calculateViscosity(*p2);
 		p2->calculateViscosity(*p1);
 		p1->calculateHeatDiffusion(*p2);
-		p1->calculateHeatDiffusion(*p1);
+		p2->calculateHeatDiffusion(*p1);
 	}
 
 	for (auto p : particles) {
 		p->updateVelocity(dt);
 		p->addVelocity(p->xvisc);
 		p->updatePosition();
+		p->updateHeat(dt);
 		//	p->integrate(dt);
 	}
 
