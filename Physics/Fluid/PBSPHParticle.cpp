@@ -12,8 +12,9 @@ using namespace Crystal::Physics;
 PBSPHParticle::PBSPHParticle(const Vector3df& center, const float radius, PBSPHFluid* scene) :
 	position(center),
 	radius(radius),
-	//	ISPHParticle(center, radius),
-	scene(scene)
+	scene(scene),
+	temperature(300.0f),
+	enthalpy(0.0f)
 {
 	this->density = scene->getRestDensity();
 }
@@ -25,6 +26,8 @@ void PBSPHParticle::init()
 	normal = Math::Vector3df(0.0f, 0.0f, 0.0f);
 	force = Math::Vector3df(0.0f, 0.0f, 0.0f);
 	this->predictPosition = this->position;
+
+	this->enthalpy = 0.0f;
 }
 
 float PBSPHParticle::getDensityRatio() const
@@ -123,6 +126,14 @@ void PBSPHParticle::updatePosition()
 	this->position = this->predictPosition;
 }
 
+void PBSPHParticle::updateHeat(const float dt)
+{
+	if (scene->isBoundary()) {
+		return;
+	}
+	this->temperature += this->enthalpy * dt;
+}
+
 void PBSPHParticle::addPositionCorrection(const Vector3df& distanceVector)
 {
 	this->dx += distanceVector;
@@ -159,4 +170,12 @@ float PBSPHParticle::getConstraint() const
 SPHKernel* PBSPHParticle::getKernel()
 {
 	return scene->getKernel();
+}
+
+void PBSPHParticle::calculateHeatDiffusion(const PBSPHParticle& rhs)
+{
+	const auto v = this->getPredictPosition() - rhs.getPredictPosition();
+	const auto dt = rhs.temperature - this->temperature;
+	const auto weight = getKernel()->getViscosityKernelLaplacian(glm::length(v));
+	this->enthalpy += dt * weight * scene->getViscosity();
 }

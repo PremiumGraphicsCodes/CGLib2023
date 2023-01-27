@@ -102,6 +102,8 @@ void PBSPHSolver::simulate(const float maxTimeStep, const int maxIter)
 		const auto p2 = particles[pairs[i].second];
 		p1->calculateViscosity(*p2);
 		p2->calculateViscosity(*p1);
+		p1->calculateHeatDiffusion(*p2);
+		p1->calculateHeatDiffusion(*p1);
 	}
 
 	for (auto p : particles) {

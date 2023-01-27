@@ -67,6 +67,8 @@ public:
 
 	void updatePosition();
 
+	void updateHeat(const float dt);
+
 	void addPositionCorrection(const Math::Vector3df& pc);
 
 	//void solveViscosity(const float distance);
@@ -90,6 +92,8 @@ public:
 
 	double getRadius() const { return radius; }
 
+	void calculateHeatDiffusion(const PBSPHParticle& rhs);
+
 private:
 	Math::Vector3df predictPosition;
 	Math::Vector3df force;
@@ -99,6 +103,9 @@ private:
 	Math::Vector3df position;
 	float radius;
 	float density;
+
+	float temperature;
+	float enthalpy;
 
 	PBSPHFluid* scene;
 
