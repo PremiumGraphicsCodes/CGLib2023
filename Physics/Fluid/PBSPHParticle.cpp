@@ -177,5 +177,5 @@ void PBSPHParticle::calculateHeatDiffusion(const PBSPHParticle& rhs)
 	const auto v = this->getPredictPosition() - rhs.getPredictPosition();
 	const auto dt = rhs.temperature - this->temperature;
 	const auto weight = getKernel()->getViscosityKernelLaplacian(glm::length(v));
-	this->enthalpy += dt * weight * scene->getViscosity();
+	this->enthalpy += dt * weight * scene->getHeatDiffuse();
 }

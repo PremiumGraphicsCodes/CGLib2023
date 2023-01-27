@@ -4,6 +4,7 @@
 #include "CGLib/UI/MenuItem.h"
 #include "CSPHFluidView.h"
 #include "PBSPHFluidView.h"
+#include "PBSPHFlameView.h"
 #include "DFSPHFluidView.h"
 #include "MVPFluidView.h"
 #include "MVPFluidEmitterView.h"
@@ -21,6 +22,9 @@ PhysicsMenu::PhysicsMenu(const std::string& name, World* world, Renderer* render
 		}));
 	add(new MenuItem("PBSPH", [control, world, renderer]() {
 		control->setChild(new PBSPHFluidView("PBSPHFluid", world, renderer));
+		}));
+	add(new MenuItem("PBSPHFlame", [control, world, renderer]() {
+		control->setChild(new PBSPHFlameView("PBSPHFlame", world, renderer));
 		}));
 	add(new MenuItem("DFSPH", [control, world, renderer]() {
 		control->setChild(new DFSPHFluidView("DFSPHFluid", world, renderer));

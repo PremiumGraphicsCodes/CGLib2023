@@ -73,6 +73,9 @@
     <ClCompile Include="BoundaryPresenter.cpp">
       <Filter>Boundary</Filter>
     </ClCompile>
+    <ClCompile Include="PBSPHFlameView.cpp">
+      <Filter>Solver\PBSPH\Flame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -153,6 +156,9 @@
     <ClInclude Include="BoundaryPresenter.h">
       <Filter>Boundary</Filter>
     </ClInclude>
+    <ClInclude Include="PBSPHFlameView.h">
+      <Filter>Solver\PBSPH\Flame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="SPHSurface">
@@ -178,6 +184,9 @@
     </Filter>
     <Filter Include="Boundary">
       <UniqueIdentifier>{4901eb8c-d1f1-4c0f-9aa8-636268b03452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver\PBSPH\Flame">
+      <UniqueIdentifier>{8aa1ec6b-92ca-4111-9c2f-b07f6596e2a8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

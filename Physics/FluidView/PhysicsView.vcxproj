@@ -164,6 +164,7 @@
     <ClCompile Include="MVPFluidView.cpp" />
     <ClCompile Include="MVPSamplerView.cpp" />
     <ClCompile Include="PBSPHAnimator.cpp" />
+    <ClCompile Include="PBSPHFlameView.cpp" />
     <ClCompile Include="PBSPHFluidPresenter.cpp" />
     <ClCompile Include="PBSPHFluidScene.cpp" />
     <ClCompile Include="PBSPHFluidView.cpp" />
@@ -230,6 +231,7 @@
     <ClInclude Include="MVPFluidView.h" />
     <ClInclude Include="MVPSamplerView.h" />
     <ClInclude Include="PBSPHAnimator.h" />
+    <ClInclude Include="PBSPHFlameView.h" />
     <ClInclude Include="PBSPHFluidPresenter.h" />
     <ClInclude Include="PBSPHFluidScene.h" />
     <ClInclude Include="PBSPHFluidView.h" />

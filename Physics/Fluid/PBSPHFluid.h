@@ -39,6 +39,10 @@ public:
 
 	float getViscosity() const { return viscosity; }
 
+	void setHeatDiffuse(const float v) { this->heatDiffuse = v; }
+
+	float getHeatDiffuse() const { return heatDiffuse; }
+
 	bool isBoundary() const { return _isBoundary; }
 
 	void setIsBoundary(const bool b) { _isBoundary = b; }
@@ -49,6 +53,7 @@ private:
 	float restDensity;
 	float stiffness;
 	float viscosity;
+	float heatDiffuse;
 	bool _isBoundary;
 };
 

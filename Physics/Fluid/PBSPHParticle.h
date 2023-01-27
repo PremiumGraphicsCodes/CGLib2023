@@ -94,6 +94,10 @@ public:
 
 	void calculateHeatDiffusion(const PBSPHParticle& rhs);
 
+	void setTemperature(const float t) { this->temperature = t; }
+
+	float getTemperature() const { return temperature; }
+
 private:
 	Math::Vector3df predictPosition;
 	Math::Vector3df force;
